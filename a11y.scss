@@ -1,0 +1,418 @@
+@charset "UTF-8";
+/**
+* ==Debug *
+*
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-11-21
+*
+* @subsection Références :
+  * @see https://github.com/redroot/holmes/blob/master/holmes.css
+  * @version v1.0.45(06/08/2012)
+  * @author : @luke_redroot
+  * @author_url :  http://www.red-root.com
+  * Copyright (C) 2012 Luke Williams & RedRoot All Rights Reserved.
+  * holmes.css HTML5 CSS Accessibility Validation
+  * Licenced under GPL license
+  * @see : http://www.gnu.org/licenses/gpl.html
+  *
+  * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
+  *
+  * @see : https://github.com/nternetinspired/debug-css
+  *
+  * @see : Mémento "Sites web - Les bonnes pratiques" aux éditions Eyrolles
+  * @author : Elie Sloïm, Temesis, Opquast, Openweb - @ElieSl
+  *
+  * @see "Intégration Web, les bonnes pratiques", pages 335/336.
+  * @author : Corinne Schillinger, Inseo - @schillinger
+ *
+ * @note : on utilise outline plutôt que border afin de ne pas modifier les dimensions des éléments.
+ * @note : le rouge dénonce une erreur, un code invalide ou un attribut manquant.
+ * @note : le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
+ * @note : le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
+*/
+
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+
+/*
+ == Variables & Mixins
+ == Détection des erreurs
+ == Messages d'erreur
+*/
+
+/* == @section Variables & Mixins
+ *
+*/
+$error: crimson;
+$warning: gold;
+$obsolete: gray;
+
+@mixin outline( $level ) {
+  outline: 4px solid transparentize( $level, .25 ) !important;
+
+  &::after {
+    background: rgba( 255, 255, 255, .98 );
+    color: dimgray;
+    display: block;
+    font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+    height: 4em;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    text-decoration: none;
+    top: 0;
+    -webkit-transform: translateY( -4em );
+    -ms-transform:     translateY( -4em );
+    transition: all .3s ease-in;
+    width: 100%;
+    z-index: 99;
+  }
+
+  &:hover::after {
+    -webkit-transform: translateY( 0 );
+    -ms-transform:     translateY( 0 );
+    transition: all .3s ease-out;
+  }
+}
+
+
+/* == @section Détection des erreurs
+ *
+ * @note : Sert à détecter les liens utilisés comme boutons d'action,
+ * les événements javascript «inline»,
+ * certains liens temporaires dont l'url n'est pas renseignée,
+ * les liens sans titre,
+ * les liens sans cible,
+ * et les liens dont la cible est vide.
+ * @note : Nuisent à l'accessibilité.
+*/
+a[href="#"],
+a[href^="javascript"],
+a:not([href]),
+a[href=""],
+
+/* Repère les images sans alternative textuelle */
+img:not([alt]),
+
+/* Détecte les attributs manquants ou vides. */
+label:not([for]),
+label[for=""],
+
+input:not([name]),
+input[name=""],
+input:not([type]),
+input[type=""],
+input[type="submit"]:not([value]),
+
+select:not([name]),
+select[name=""],
+
+textarea:not([name]),
+textarea[name=""],
+
+abbr:not([title]),
+abbr[title=""],
+
+table:not([summary]),
+table[summary=""],
+
+iframe:not([title]),
+iframe[title=""],
+
+form:not([action]),
+
+[class=""],
+[id=""],
+
+/* Les événements javascript sous forme d’attributs HTML sont déconseillés */
+[onafterprint], [onbeforeprint], [onbeforeunload],
+[onerror], [onhaschange], [onload], [onmessage],
+[onoffline], [ononline], [onpagehide], [onpageshow],
+[onpopstate], [onredo], [onresize], [onstorage],
+[onundo], [onunload],
+[onblur], [onchage], [oncontextmenu], [onfocus],
+[onformchange], [onforminput], [oninput], [oninvalid],
+[onreset], [onselect], [onsubmit],
+[onkeydown], [onkeypress], [onkeyup],
+[onclick], [ondblclick], [ondrag], [ondragend],
+[ondragenter], [ondragleave], [ondragover],
+[ondragstart], [ondrop], [onmousedown], [onmousemove],
+[onmouseout], [onmouseover], [onmouseup], [onmousewheel],
+[onscroll],
+[onabort], [oncanplay], [oncanplaythrough],
+[ondurationchange], [onemptied], [onended], [onerror],
+[onloadeddata], [onloadedmetadata], [onloadstart],
+[onpause], [onplay], [onplaying], [onprogress],
+[onratechange], [onreadystatechange], [onseeked],
+[onseeking], [onstalled], [onsuspend], [ontimeupdate],
+[onvolumechange], [onwaiting] {
+  @include outline( $error );
+}
+
+/* Repère les imbrications inadéquates d'éléments. */
+ul > *:not(li),
+ol > *:not(li),
+table > tr,
+table table,
+/* tfoot doit être *avant* tbody */
+tbody + tfoot,
+
+/* Les liens sans titre ou avec un titre vide doivent être vérifiés. */
+a[title=""],
+a:not([title]),
+
+/* Les images avec une alternative vide doivent être vérifiées. */
+img[alt=""],
+
+/* Détecte les éléments supportant des styles en ligne. */
+[style],
+
+/* Détecte les éléments vides */
+div:empty,
+span:empty,
+li:empty,
+p:empty,
+td:empty,
+th:empty {
+  @include outline( $warning );
+}
+
+/* Éléments obsolètes
+ * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
+*/
+applet,
+acronym,
+bgsound,
+dir,
+frame,
+frameset,
+hgroup,
+isindex,
+listing,
+nextid,
+noembed,
+plaintext,
+rb,
+strike,
+xmp,
+basefont,
+big,
+blink,
+center,
+font,
+marquee,
+multicol,
+nobr,
+spacer,
+tt,
+
+/* Marque les attributs obsolètes. */
+a[charset], link[charset],
+a[coords],
+a[shape],
+a[methods], link[methods],
+a[name], embed[name], img[name], option[name],
+a[rev], link[rev],
+form[accept],
+area[nohref],
+head[profile],
+html[version],
+input[ismap],
+input[usemap],
+iframe[longdesc], img[longdesc],
+img[lowsrc],
+link[target],
+meta[scheme],
+object[archive],
+object[classid],
+object[code],
+object[codebase],
+object[codetype],
+object[declare],
+object[standby],
+param[type],
+param[valuetype],
+script[language],
+script[event],
+script[for],
+table[datapagesize],
+table[summary],
+td[axis], th[axis],
+td[scope],
+a[datasrc], applet[datasrc], button[datasrc], div[datasrc], frame[datasrc], iframe[datasrc], img[datasrc], input[datasrc], label[datasrc], legend[datasrc], marquee[datasrc], object[datasrc], option[datasrc], select[datasrc], span[datasrc], table[datasrc], textarea[datasrc],
+a[datafld], applet[datafld], button[datafld], div[datafld], fieldset[datafld], frame[datafld], iframe[datafld], img[datafld], input[datafld], label[datafld], legend[datafld], marquee[datafld], object[datafld], param[datafld], select[datafld], span[datafld], textarea[datafld],
+button[dataformatas], div[dataformatas], input[dataformatas], label[dataformatas], legend[dataformatas], marquee[dataformatas], object[dataformatas], option[dataformatas], select[dataformatas], span[dataformatas], table[dataformatas],
+body[alink],
+body[bgcolor], table[bgcolor], td[bgcolor], th[bgcolor], tr[bgcolor],
+body[link],
+body[marginbottom],
+body[marginheight], iframe[marginheight],
+body[marginleft],
+body[marginright],
+body[margintop],
+body[marginwidth], iframe[marginwidth],
+body[text],
+body[vlink],
+br[clear],
+col[char], tbody[char], thead[char], tfoot[char], td[char], th[char], tr[char],
+col[charoff], tbody[charoff], thead[charoff], tfoot[charoff], td[charoff], th[charoff], tr[charoff],
+col[valign], tbody[valign], thead[valign], tfoot[valign], td[valign], th[valign], tr[valign],
+col[width], hr[width], pre[width], table[width], td[width], th[width],
+dl[compact], ol[compact], ul[compact],
+embed[hspace], iframe[hspace], input[hspace], img[hspace], object[hspace],
+embed[vspace], iframe[vspace], input[vspace], img[vspace], object[vspace],
+hr[color],
+hr[noshade],
+hr[size],
+h1[align], h2[align], h3[align], h4[align], h5[align], h6[align], iframe[align], caption[align], col[align], div[align], embed[align], hr[align], input[align], img[align], legend[align], object[align], p[align], table[align], tbody[align], thead[align], tfoot[align], td[align], th[align], tr[align],
+iframe[allowtransparency],
+iframe[frameborder],
+iframe[scrolling],
+img[border], object[border],
+li[type], ul[type],
+table[cellpadding],
+table[cellspacing],
+table[frame],
+table[rules],
+td[height], th[height],
+td[nowrap], th[nowrap],
+body[background], table[background], thead[background], tbody[background], tfoot[background], tr[background], td[background], th[background] {
+
+  @include outline( $obsolete );
+
+  &::after {
+    content: "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses.";
+  }
+
+}
+
+
+/* == @section Contenu des alertes */
+a:not([href])::after,
+a[href=""]::after {
+  content: "Attribut [href] manquant. Un lien doit avoir une cible, non ?";
+}
+
+a[href="#"]::after{
+  content: "Attribut [href='#']. Pourqoi ? Un <button> semble plus indiqué.";
+}
+
+a[href^="javascript"]::after{
+  content: "Attribut [href] débutant par javascript. Ça n’augure rien de bon…";
+}
+
+a[title=""]::after,
+a:not([title])::after {
+  content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !";
+}
+
+img:not([alt])::after {
+  content: "Attribut [alt] manquant. Quelle hérésie.";
+}
+
+img[alt=""]::after {
+  content: "Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?";
+}
+
+label:not([for])::after,
+label[for=""]::after{
+  content: "Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?";
+}
+
+input:not([name]),
+input[name=""],
+select:not([name]),
+select[name=""],
+textarea:not([name]),
+textarea[name=""] {
+  &::after {
+    content: "Attribut [name] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire.";
+  }
+}
+
+input:not([type])::after,
+input[type=""]::after {
+  content: "Attribut [type] manquant ou vide. On met quoi, dans ce champ ?";
+}
+
+input[type="submit"]:not([value])::after {
+  content: "Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?";
+}
+
+abbr:not([title])::after,
+abbr[title=""]::after {
+  content: "Attribut [title] manquant ou vide. <abbr> n’a pas vraiment d’intérêt sans le titre qui va avec.";
+}
+
+iframe:not([title])::after,
+iframe[title=""]::after {
+  content: "Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>.";
+}
+
+form:not([action])::after {
+  content: "Attribut [action] manquant. Et après, il se passe quoi ?";
+}
+
+[class=""]::after {
+  content: "Attribut [class] vide. Pourquoi tant de haine ?";
+}
+
+[id=""]::after {
+  content: "Attribut [id] vide. Sérieusement ?";
+}
+
+[style]::after {
+  content: "Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !";
+}
+
+/* Imbrication inadéquate d'éléments */
+ul > *:not(li),
+ol > *:not(li),
+table > tr,
+table table,
+tbody + tfoot {
+  &::after {
+    content: "Imbrication inadéquate d'éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?";
+  }
+}
+
+/* Éléments vides */
+div,
+span,
+li,
+p,
+td,
+th {
+  &:empty::after {
+    content: "Élément vide. Diantre.";
+  }
+}
+
+/* Les événements javscript sous forme d’attributs HTML */
+[onafterprint], [onbeforeprint], [onbeforeunload],
+[onerror], [onhaschange], [onload], [onmessage],
+[onoffline], [ononline], [onpagehide], [onpageshow],
+[onpopstate], [onredo], [onresize], [onstorage],
+[onundo], [onunload],
+[onblur], [onchage], [oncontextmenu], [onfocus],
+[onformchange], [onforminput], [oninput], [oninvalid],
+[onreset], [onselect], [onsubmit],
+[onkeydown], [onkeypress], [onkeyup],
+[onclick], [ondblclick], [ondrag], [ondragend],
+[ondragenter], [ondragleave], [ondragover],
+[ondragstart], [ondrop], [onmousedown], [onmousemove],
+[onmouseout], [onmouseover], [onmouseup], [onmousewheel],
+[onscroll],
+[onabort], [oncanplay], [oncanplaythrough],
+[ondurationchange], [onemptied], [onended], [onerror],
+[onloadeddata], [onloadedmetadata], [onloadstart],
+[onpause], [onplay], [onplaying], [onprogress],
+[onratechange], [onreadystatechange], [onseeked],
+[onseeking], [onstalled], [onsuspend], [ontimeupdate],
+[onvolumechange], [onwaiting] {
+  &::after {
+    content: "Attribut d’événements javscript. Vous êtes sûr de ce que vous faites ?";
+  }
+}
