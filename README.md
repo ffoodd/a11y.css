@@ -18,7 +18,23 @@ Concrètement, les éléments en erreur, en alerte ou obsolète seront cernés d
 Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ainsi marqués, un bandeau apparaitra en haut de votre navigateur avec une petite formule vous précisant le problème, et un indice sous forme de boutade (tentative plus ou moins réussie de faire un peu de pédagogie en passant).
 
 *Attention :*
-Les images étant des balisess auto-fermantes, elles sont considérées comme vides et ne supportent pas les pseudo-éléments. Une image marquée en erreur ou en alerte n’affichera donc pas de message (sauf si vous inspecter le CSS via votre navigateur ;p ). Il est cependant plus que probable qu’il s’agisse de l’alternative, qui est soit manquante soit vide (et donc à vérifier).
+Les balises «auto-fermantes» n’autorisent pas la génération de contenu. Ainsi les erreurs ou alertes seront marquées, mais aucun message n’apparaitra au survol. Voici la liste exhaustive des balises HTML5 auto-fermantes :
+* `<area />`
+* `<base />`
+* `<br />`
+* `<col />`
+* `<command />`
+* `<embed />`
+* `<hr />`
+* `<img />`
+* `<input />`
+* `<keygen />`
+* `<link />`
+* `<meta />`
+* `<param />`
+* `<source />`
+* `<track />`
+* `<wbr />`
 
 PS: Non, les bonnes pratiques CSS n’ont pas cours dans ce fichier puisque certains sélecteurs sont tout simplement immondes. Mais ce fichier n’est pas voué à être chargé sur d’autres machines que celles des intégrateurs en quête de qualité, comme moi :D.
 
