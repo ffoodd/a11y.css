@@ -7,14 +7,9 @@
 * @lastmodified 2013-11-21
 *
 * @subsection Références :
-  * @see https://github.com/redroot/holmes/blob/master/holmes.css
-  * @version v1.0.45(06/08/2012)
-  * @author : @luke_redroot
-  * @author_url :  http://www.red-root.com
-  * Copyright (C) 2012 Luke Williams & RedRoot All Rights Reserved.
-  * holmes.css HTML5 CSS Accessibility Validation
-  * Licenced under GPL license
-  * @see : http://www.gnu.org/licenses/gpl.html
+  * @see : https://github.com/redroot/holmes/blob/master/holmes.css
+  *
+  * @see : https://github.com/karlgroves/diagnostic.css
   *
   * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
   *
@@ -57,6 +52,11 @@ a[href^="javascript"],
 a:not([href]),
 a[href=""],
 img:not([alt]),
+img:not([src]),
+img[src=""],
+img[src="#"],
+input[type="image"]:not([alt]),
+input[type="image"][alt=""],
 label:not([for]),
 label[for=""],
 input:not([name]),
@@ -77,6 +77,8 @@ iframe[title=""],
 form:not([action]),
 [class=""],
 [id=""],
+html:not([lang]),
+meta[http-equiv="refresh"],
 [onafterprint], [onbeforeprint], [onbeforeunload],
 [onerror], [onhaschange], [onload], [onmessage],
 [onoffline], [ononline], [onpagehide], [onpageshow],
@@ -105,6 +107,11 @@ a[href^="javascript"]::after,
 a:not([href])::after,
 a[href=""]::after,
 img:not([alt])::after,
+img:not([src])::after,
+img[src=""]::after,
+img[src="#"]::after,
+input[type="image"]:not([alt])::after,
+input[type="image"][alt=""]::after,
 label:not([for])::after,
 label[for=""]::after,
 input:not([name])::after,
@@ -125,6 +132,8 @@ iframe[title=""]::after,
 form:not([action])::after,
 [class=""]::after,
 [id=""]::after,
+html:not([lang])::after,
+meta[http-equiv="refresh"]::after,
 [onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
 [onerror]::after, [onhaschange]::after, [onload]::after, [onmessage]::after,
 [onoffline]::after, [ononline]::after, [onpagehide]::after, [onpageshow]::after,
@@ -155,6 +164,7 @@ form:not([action])::after,
   position: fixed;
   text-align: center;
   text-decoration: none;
+  text-shadow: none;
   top: 0;
   -webkit-transform: translateY(-4em);
   -ms-transform: translateY(-4em);
@@ -167,6 +177,11 @@ a[href^="javascript"]:hover::after,
 a:not([href]):hover::after,
 a[href=""]:hover::after,
 img:not([alt]):hover::after,
+img:not([src]):hover::after,
+img[src=""]:hover::after,
+img[src="#"]:hover::after,
+input[type="image"]:not([alt]):hover::after,
+input[type="image"][alt=""]:hover::after,
 label:not([for]):hover::after,
 label[for=""]:hover::after,
 input:not([name]):hover::after,
@@ -187,6 +202,8 @@ iframe[title=""]:hover::after,
 form:not([action]):hover::after,
 [class=""]:hover::after,
 [id=""]:hover::after,
+html:not([lang]):hover::after,
+meta[http-equiv="refresh"]:hover::after,
 [onafterprint]:hover::after, [onbeforeprint]:hover::after, [onbeforeunload]:hover::after,
 [onerror]:hover::after, [onhaschange]:hover::after, [onload]:hover::after, [onmessage]:hover::after,
 [onoffline]:hover::after, [ononline]:hover::after, [onpagehide]:hover::after, [onpageshow]:hover::after,
@@ -219,6 +236,8 @@ ol > *:not(li),
 table > tr,
 table table,
 tbody + tfoot,
+fieldset > :not(legend):first-child,
+fieldset > legend:not(:first-child),
 a[title=""],
 a:not([title]),
 img[alt=""],
@@ -228,7 +247,8 @@ span:empty,
 li:empty,
 p:empty,
 td:empty,
-th:empty {
+th:empty,
+title:empty {
   outline: 4px solid rgba(255, 215, 0, 0.75) !important;
 }
 ul > *:not(li)::after,
@@ -236,6 +256,8 @@ ol > *:not(li)::after,
 table > tr::after,
 table table::after,
 tbody + tfoot::after,
+fieldset > :not(legend):first-child::after,
+fieldset > legend:not(:first-child)::after,
 a[title=""]::after,
 a:not([title])::after,
 img[alt=""]::after,
@@ -245,7 +267,8 @@ span:empty::after,
 li:empty::after,
 p:empty::after,
 td:empty::after,
-th:empty::after {
+th:empty::after,
+title:empty::after {
   background: rgba(255, 255, 255, 0.98);
   color: dimgray;
   display: block;
@@ -255,6 +278,7 @@ th:empty::after {
   position: fixed;
   text-align: center;
   text-decoration: none;
+  text-shadow: none;
   top: 0;
   -webkit-transform: translateY(-4em);
   -ms-transform: translateY(-4em);
@@ -267,6 +291,8 @@ ol > *:not(li):hover::after,
 table > tr:hover::after,
 table table:hover::after,
 tbody + tfoot:hover::after,
+fieldset > :not(legend):first-child:hover::after,
+fieldset > legend:not(:first-child):hover::after,
 a[title=""]:hover::after,
 a:not([title]):hover::after,
 img[alt=""]:hover::after,
@@ -276,7 +302,8 @@ span:empty:hover::after,
 li:empty:hover::after,
 p:empty:hover::after,
 td:empty:hover::after,
-th:empty:hover::after {
+th:empty:hover::after,
+title:empty:hover::after {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transition: all .3s ease-out;
@@ -486,6 +513,7 @@ body[background]::after, table[background]::after, thead[background]::after, tbo
   position: fixed;
   text-align: center;
   text-decoration: none;
+  text-shadow: none;
   top: 0;
   -webkit-transform: translateY(-4em);
   -ms-transform: translateY(-4em);
@@ -709,12 +737,20 @@ a:not([title])::after {
   content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !";
 }
 
-img:not([alt])::after {
+img:not([alt])::after,
+input[type="image"]:not([alt])::after,
+input[type="image"][alt=""]::after {
   content: "Attribut [alt] manquant. Quelle hérésie.";
 }
 
 img[alt=""]::after {
   content: "Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?";
+}
+
+img:not([src])::after,
+img[src=""]::after,
+img[src="#"]::after {
+  content: "Attribut [src] manquant ou vide. Bon.";
 }
 
 label:not([for])::after,
@@ -775,6 +811,11 @@ tbody + tfoot::after {
   content: "Imbrication inadéquate d'éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?";
 }
 
+fieldset > :not(legend):first-child::after,
+fieldset > legend:not(:first-child)::after {
+  content: "Imbrication inadéquate d'éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien.";
+}
+
 /* Éléments vides */
 div:empty::after,
 span:empty::after,
@@ -783,6 +824,18 @@ p:empty::after,
 td:empty::after,
 th:empty::after {
   content: "Élément vide. Diantre.";
+}
+
+title:empty::after {
+  content: "La balise <title> est vide. Vous brûlerez en enfer d’ici peu.";
+}
+
+meta[http-equiv="refresh"]::after {
+  content: "<meta http-equiv='refresh'> devrait être supprimé. Définitivement.";
+}
+
+html:not([lang]):after {
+  content: "Pas d’attribut lang sur la balise <html>. Vous parlez quelle langue, vous ?";
 }
 
 /* Les événements javscript sous forme d’attributs HTML */

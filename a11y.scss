@@ -7,14 +7,9 @@
 * @lastmodified 2013-11-21
 *
 * @subsection Références :
-  * @see https://github.com/redroot/holmes/blob/master/holmes.css
-  * @version v1.0.45(06/08/2012)
-  * @author : @luke_redroot
-  * @author_url :  http://www.red-root.com
-  * Copyright (C) 2012 Luke Williams & RedRoot All Rights Reserved.
-  * holmes.css HTML5 CSS Accessibility Validation
-  * Licenced under GPL license
-  * @see : http://www.gnu.org/licenses/gpl.html
+  * @see : https://github.com/redroot/holmes/blob/master/holmes.css
+  *
+  * @see : https://github.com/karlgroves/diagnostic.css
   *
   * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
   *
@@ -62,6 +57,7 @@ $obsolete: gray;
     position: fixed;
     text-align: center;
     text-decoration: none;
+    text-shadow: none;
     top: 0;
     -webkit-transform: translateY( -4em );
     -ms-transform:     translateY( -4em );
@@ -95,6 +91,11 @@ a[href=""],
 
 /* Repère les images sans alternative textuelle */
 img:not([alt]),
+img:not([src]),
+img[src=""],
+img[src="#"],
+input[type="image"]:not([alt]),
+input[type="image"][alt=""],
 
 /* Détecte les attributs manquants ou vides. */
 label:not([for]),
@@ -125,6 +126,11 @@ form:not([action]),
 
 [class=""],
 [id=""],
+
+html:not([lang]),
+
+/* Les valeurs d’attributs contre-indiquées */
+meta[http-equiv="refresh"],
 
 /* Les événements javascript sous forme d’attributs HTML sont déconseillés */
 [onafterprint], [onbeforeprint], [onbeforeunload],
@@ -158,6 +164,9 @@ table > tr,
 table table,
 /* tfoot doit être *avant* tbody */
 tbody + tfoot,
+/* Le premier descendant d’un fieldset *doit* être sa légende */
+fieldset > :not(legend):first-child,
+fieldset > legend:not(:first-child),
 
 /* Les liens sans titre ou avec un titre vide doivent être vérifiés. */
 a[title=""],
@@ -175,7 +184,8 @@ span:empty,
 li:empty,
 p:empty,
 td:empty,
-th:empty {
+th:empty,
+title:empty {
   @include outline( $warning );
 }
 
@@ -308,12 +318,22 @@ a:not([title])::after {
   content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !";
 }
 
-img:not([alt])::after {
+img:not([alt])::after,
+input[type="image"]:not([alt])::after,
+input[type="image"][alt=""]::after {
   content: "Attribut [alt] manquant. Quelle hérésie.";
 }
 
 img[alt=""]::after {
   content: "Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?";
+}
+
+img:not([src]),
+img[src=""],
+img[src="#"] {
+  &::after {
+    content: "Attribut [src] manquant ou vide. Bon.";
+  }
 }
 
 label:not([for])::after,
@@ -378,6 +398,13 @@ tbody + tfoot {
   }
 }
 
+fieldset > :not(legend):first-child,
+fieldset > legend:not(:first-child) {
+  &::after {
+    content: "Imbrication inadéquate d'éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien.";
+  }
+}
+
 /* Éléments vides */
 div,
 span,
@@ -388,6 +415,18 @@ th {
   &:empty::after {
     content: "Élément vide. Diantre.";
   }
+}
+
+title:empty::after {
+  content: "La balise <title> est vide. Vous brûlerez en enfer d’ici peu.";
+}
+
+meta[http-equiv="refresh"]::after {
+  content: "<meta http-equiv='refresh'> devrait être supprimé. Définitivement.";
+}
+
+html:not([lang]):after{
+  content:"Pas d’attribut lang sur la balise <html>. Vous parlez quelle langue, vous ?";
 }
 
 /* Les événements javscript sous forme d’attributs HTML */
