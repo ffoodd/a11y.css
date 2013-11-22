@@ -1,7 +1,7 @@
 a11y.css
 ==============
 
-L’objectif de fichier CSS est d’alerter l’intégrateur sur les erreurs et risques potentiels dans le code - mais il peut également servir à auditer rapidement un site existant afin d’évaluer l’ampleur des dégâts.
+L’objectif de ce fichier CSS est d’alerter l’intégrateur sur les erreurs et risques potentiels dans le code - mais il peut également servir à auditer rapidement un site existant afin d’évaluer l’ampleur des dégâts.
 
 De nombreuses références m’ont inspiré et aidé pour élaborer cette feuille de style :
 * @see : https://github.com/redroot/holmes/blob/master/holmes.css
