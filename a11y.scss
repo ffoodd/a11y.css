@@ -34,6 +34,7 @@
 /*
  == Variables & Mixins
  == Détection des erreurs
+ == Détection des alertes
  == Messages d'erreur
 */
 
@@ -49,22 +50,32 @@ $obsolete: gray;
 
   &::after {
     background: rgba( 255, 255, 255, .98 );
+    border-bottom: 1px solid rgba(0, 0, 0, .3);
     color: dimgray;
     display: block;
     font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif;
     height: 4em;
     left: 0;
+    /* On s’assure que le message ne capte pas le survol. */
     pointer-events: none;
     position: fixed;
+    /* On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes. */
     text-align: center;
     text-decoration: none;
     text-shadow: none;
+    text-transform: none;
+    /* On prépare l’apparition du message. */
     top: 0;
     -webkit-transform: translateY( -4em );
     -ms-transform:     translateY( -4em );
     transition: all .3s ease-in;
     width: 100%;
-    z-index: 99;
+    /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+     * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
+     * @see : http://www.puidokas.com/max-z-index/
+     * Ça nous permet de garantir que notre message sera toujours visible.
+     */
+    z-index: 2147483647;
   }
 
   &:hover::after {
@@ -90,8 +101,14 @@ a[href^="javascript"],
 a:not([href]),
 a[href=""],
 
-/* Repère les images sans alternative textuelle */
+/* Repère les images sans alternative textuelle.
+ * @see : BP1 OpQuast
+*/
 img:not([alt]),
+/* Une alternative contenant un espace est presque pire que pas d’alternative du tout ><
+ * @see : BP1 OpQuast
+*/
+img[alt=" "],
 img:not([src]),
 img[src=""],
 img[src="#"],
@@ -158,6 +175,8 @@ meta[http-equiv="refresh"],
   @include outline( $error );
 }
 
+
+/* == @section détection des alertes ==================== */
 /* Repère les imbrications inadéquates d'éléments. */
 ul > *:not(li),
 ol > *:not(li),
@@ -173,10 +192,20 @@ fieldset > legend:not(:first-child),
 a[title=""],
 a:not([title]),
 
-/* Les images avec une alternative vide doivent être vérifiées. */
+/* La première occurrence d’une abréviation donne accès à sa signification
+ * @see : BP160 OpQuast
+*/
+abbr:not([title]),
+abbr[title=""],
+
+/* Les images avec une alternative vide doivent être vérifiées.
+ * @see : BP1 OpQuast
+*/
 img[alt=""],
 
-/* Détecte les éléments supportant des styles en ligne. */
+/* Détecte les éléments supportant des styles en ligne.
+ * @see : BP156 OpQuast
+*/
 [style],
 
 /* Détecte les éléments vides */
@@ -219,7 +248,9 @@ nobr,
 spacer,
 tt,
 
-/* Marque les attributs obsolètes. */
+/* Attributs obsolètes
+ * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
+*/
 a[charset], link[charset],
 a[coords],
 a[shape],
@@ -319,10 +350,19 @@ a:not([title])::after {
   content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !";
 }
 
+abbr:not([title])::after,
+abbr[title=""]::after {
+  content: "Attribut [title] vide ou manquant. Jetez un œil à la BP 160 d’OpQuast ;-) ";
+}
+
 img:not([alt])::after,
 input[type="image"]:not([alt])::after,
 input[type="image"][alt=""]::after {
   content: "Attribut [alt] manquant. Quelle hérésie.";
+}
+
+img[alt=" "]::after {
+  content: "Un attribut [alt] *presque* vide. C’est une blague, non ?";
 }
 
 img[alt=""]::after {
@@ -426,7 +466,7 @@ meta[http-equiv="refresh"]::after {
   content: "<meta http-equiv='refresh'> devrait être supprimé. Définitivement.";
 }
 
-html:not([lang]):after{
+html:not([lang]):after {
   content:"Pas d’attribut lang sur la balise <html>. Vous parlez quelle langue, vous ?";
 }
 
@@ -444,8 +484,7 @@ html:not([lang]):after{
 [ondragenter], [ondragleave], [ondragover],
 [ondragstart], [ondrop], [onmousedown], [onmousemove],
 [onmouseout], [onmouseover], [onmouseup], [onmousewheel],
-[onscroll],
-[onabort], [oncanplay], [oncanplaythrough],
+[onscroll], [onabort], [oncanplay], [oncanplaythrough],
 [ondurationchange], [onemptied], [onended], [onerror],
 [onloadeddata], [onloadedmetadata], [onloadstart],
 [onpause], [onplay], [onplaying], [onprogress],

@@ -32,6 +32,7 @@
 /*
  == Variables & Mixins
  == Détection des erreurs
+ == Détection des alertes
  == Messages d'erreur
 */
 /* == @section Variables & Mixins
@@ -47,11 +48,13 @@
  * et les liens dont la cible est vide.
  * @note : Nuisent à l'accessibilité.
 */
+/* line 174, a11y.scss */
 a[href="#"],
 a[href^="javascript"],
 a:not([href]),
 a[href=""],
 img:not([alt]),
+img[alt=" "],
 img:not([src]),
 img[src=""],
 img[src="#"],
@@ -102,11 +105,13 @@ meta[http-equiv="refresh"],
 [onvolumechange], [onwaiting] {
   outline: 4px solid rgba(220, 20, 60, 0.75) !important;
 }
+/* line 51, a11y.scss */
 a[href="#"]::after,
 a[href^="javascript"]::after,
 a:not([href])::after,
 a[href=""]::after,
 img:not([alt])::after,
+img[alt=" "]::after,
 img:not([src])::after,
 img[src=""]::after,
 img[src="#"]::after,
@@ -156,28 +161,40 @@ meta[http-equiv="refresh"]::after,
 [onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
 [onvolumechange]::after, [onwaiting]::after {
   background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   color: dimgray;
   display: block;
   font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif;
   height: 4em;
   left: 0;
+  /* On s’assure que le message ne capte pas le survol. */
   pointer-events: none;
   position: fixed;
+  /* On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes. */
   text-align: center;
   text-decoration: none;
   text-shadow: none;
+  text-transform: none;
+  /* On prépare l’apparition du message. */
   top: 0;
   -webkit-transform: translateY(-4em);
   -ms-transform: translateY(-4em);
   transition: all .3s ease-in;
   width: 100%;
-  z-index: 99;
+  /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+   * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
+   * @see : http://www.puidokas.com/max-z-index/
+   * Ça nous permet de garantir que notre message sera toujours visible.
+   */
+  z-index: 2147483647;
 }
+/* line 81, a11y.scss */
 a[href="#"]:hover::after,
 a[href^="javascript"]:hover::after,
 a:not([href]):hover::after,
 a[href=""]:hover::after,
 img:not([alt]):hover::after,
+img[alt=" "]:hover::after,
 img:not([src]):hover::after,
 img[src=""]:hover::after,
 img[src="#"]:hover::after,
@@ -231,7 +248,9 @@ meta[http-equiv="refresh"]:hover::after,
   transition: all .3s ease-out;
 }
 
+/* == @section détection des alertes ==================== */
 /* Repère les imbrications inadéquates d'éléments. */
+/* line 218, a11y.scss */
 ul > *:not(li),
 ol > *:not(li),
 table > tr,
@@ -241,6 +260,8 @@ fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
 a[title=""],
 a:not([title]),
+abbr:not([title]),
+abbr[title=""],
 img[alt=""],
 [style],
 div:empty,
@@ -252,6 +273,7 @@ th:empty,
 title:empty {
   outline: 4px solid rgba(255, 215, 0, 0.75) !important;
 }
+/* line 51, a11y.scss */
 ul > *:not(li)::after,
 ol > *:not(li)::after,
 table > tr::after,
@@ -261,6 +283,8 @@ fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after,
 a[title=""]::after,
 a:not([title])::after,
+abbr:not([title])::after,
+abbr[title=""]::after,
 img[alt=""]::after,
 [style]::after,
 div:empty::after,
@@ -271,23 +295,34 @@ td:empty::after,
 th:empty::after,
 title:empty::after {
   background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   color: dimgray;
   display: block;
   font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif;
   height: 4em;
   left: 0;
+  /* On s’assure que le message ne capte pas le survol. */
   pointer-events: none;
   position: fixed;
+  /* On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes. */
   text-align: center;
   text-decoration: none;
   text-shadow: none;
+  text-transform: none;
+  /* On prépare l’apparition du message. */
   top: 0;
   -webkit-transform: translateY(-4em);
   -ms-transform: translateY(-4em);
   transition: all .3s ease-in;
   width: 100%;
-  z-index: 99;
+  /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+   * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
+   * @see : http://www.puidokas.com/max-z-index/
+   * Ça nous permet de garantir que notre message sera toujours visible.
+   */
+  z-index: 2147483647;
 }
+/* line 81, a11y.scss */
 ul > *:not(li):hover::after,
 ol > *:not(li):hover::after,
 table > tr:hover::after,
@@ -297,6 +332,8 @@ fieldset > :not(legend):first-child:hover::after,
 fieldset > legend:not(:first-child):hover::after,
 a[title=""]:hover::after,
 a:not([title]):hover::after,
+abbr:not([title]):hover::after,
+abbr[title=""]:hover::after,
 img[alt=""]:hover::after,
 [style]:hover::after,
 div:empty:hover::after,
@@ -314,6 +351,7 @@ title:empty:hover::after {
 /* Éléments obsolètes
  * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
 */
+/* line 323, a11y.scss */
 applet,
 acronym,
 bgsound,
@@ -411,6 +449,7 @@ td[nowrap], th[nowrap],
 body[background], table[background], thead[background], tbody[background], tfoot[background], tr[background], td[background], th[background] {
   outline: 4px solid rgba(128, 128, 128, 0.75) !important;
 }
+/* line 51, a11y.scss */
 applet::after,
 acronym::after,
 bgsound::after,
@@ -507,23 +546,34 @@ td[height]::after, th[height]::after,
 td[nowrap]::after, th[nowrap]::after,
 body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
   background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   color: dimgray;
   display: block;
   font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif;
   height: 4em;
   left: 0;
+  /* On s’assure que le message ne capte pas le survol. */
   pointer-events: none;
   position: fixed;
+  /* On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes. */
   text-align: center;
   text-decoration: none;
   text-shadow: none;
+  text-transform: none;
+  /* On prépare l’apparition du message. */
   top: 0;
   -webkit-transform: translateY(-4em);
   -ms-transform: translateY(-4em);
   transition: all .3s ease-in;
   width: 100%;
-  z-index: 99;
+  /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+   * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
+   * @see : http://www.puidokas.com/max-z-index/
+   * Ça nous permet de garantir que notre message sera toujours visible.
+   */
+  z-index: 2147483647;
 }
+/* line 81, a11y.scss */
 applet:hover::after,
 acronym:hover::after,
 bgsound:hover::after,
@@ -623,6 +673,7 @@ body[background]:hover::after, table[background]:hover::after, thead[background]
   -ms-transform: translateY(0);
   transition: all .3s ease-out;
 }
+/* line 327, a11y.scss */
 applet::after,
 acronym::after,
 bgsound::after,
@@ -722,45 +773,65 @@ body[background]::after, table[background]::after, thead[background]::after, tbo
 }
 
 /* == @section Contenu des alertes */
+/* line 336, a11y.scss */
 a:not([href])::after,
 a[href=""]::after {
   content: "Attribut [href] manquant. Un lien doit avoir une cible, non ?";
 }
 
+/* line 340, a11y.scss */
 a[href="#"]::after {
   content: "Attribut [href='#']. Pourqoi ? Un <button> semble plus indiqué.";
 }
 
+/* line 344, a11y.scss */
 a[href^="javascript"]::after {
   content: "Attribut [href] débutant par javascript. Ça n’augure rien de bon…";
 }
 
+/* line 349, a11y.scss */
 a[title=""]::after,
 a:not([title])::after {
   content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !";
 }
 
+/* line 354, a11y.scss */
+abbr:not([title])::after,
+abbr[title=""]::after {
+  content: "Attribut [title] vide ou manquant. Jetez un œil à la BP 160 d’OpQuast ;-) ";
+}
+
+/* line 360, a11y.scss */
 img:not([alt])::after,
 input[type="image"]:not([alt])::after,
 input[type="image"][alt=""]::after {
   content: "Attribut [alt] manquant. Quelle hérésie.";
 }
 
+/* line 364, a11y.scss */
+img[alt=" "]::after {
+  content: "Un attribut [alt] *presque* vide. C’est une blague, non ?";
+}
+
+/* line 368, a11y.scss */
 img[alt=""]::after {
   content: "Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?";
 }
 
+/* line 375, a11y.scss */
 img:not([src])::after,
 img[src=""]::after,
 img[src="#"]::after {
   content: "Attribut [src] manquant ou vide. Bon.";
 }
 
+/* line 381, a11y.scss */
 label:not([for])::after,
 label[for=""]::after {
   content: "Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?";
 }
 
+/* line 391, a11y.scss */
 input:not([name])::after,
 input[name=""]::after,
 select:not([name])::after,
@@ -770,42 +841,51 @@ textarea[name=""]::after {
   content: "Attribut [name] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire.";
 }
 
+/* line 397, a11y.scss */
 input:not([type])::after,
 input[type=""]::after {
   content: "Attribut [type] manquant ou vide. On met quoi, dans ce champ ?";
 }
 
+/* line 401, a11y.scss */
 input[type="submit"]:not([value])::after {
   content: "Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?";
 }
 
+/* line 406, a11y.scss */
 abbr:not([title])::after,
 abbr[title=""]::after {
   content: "Attribut [title] manquant ou vide. <abbr> n’a pas vraiment d’intérêt sans le titre qui va avec.";
 }
 
+/* line 411, a11y.scss */
 iframe:not([title])::after,
 iframe[title=""]::after {
   content: "Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>.";
 }
 
+/* line 415, a11y.scss */
 form:not([action])::after {
   content: "Attribut [action] manquant. Et après, il se passe quoi ?";
 }
 
+/* line 419, a11y.scss */
 [class=""]::after {
   content: "Attribut [class] vide. Pourquoi tant de haine ?";
 }
 
+/* line 423, a11y.scss */
 [id=""]::after {
   content: "Attribut [id] vide. Sérieusement ?";
 }
 
+/* line 427, a11y.scss */
 [style]::after {
   content: "Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !";
 }
 
 /* Imbrication inadéquate d'éléments */
+/* line 437, a11y.scss */
 ul > *:not(li)::after,
 ol > *:not(li)::after,
 table > tr::after,
@@ -814,12 +894,14 @@ tbody + tfoot::after {
   content: "Imbrication inadéquate d'éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?";
 }
 
+/* line 444, a11y.scss */
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after {
   content: "Imbrication inadéquate d'éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien.";
 }
 
 /* Éléments vides */
+/* line 456, a11y.scss */
 div:empty::after,
 span:empty::after,
 li:empty::after,
@@ -829,19 +911,23 @@ th:empty::after {
   content: "Élément vide. Diantre.";
 }
 
+/* line 461, a11y.scss */
 title:empty::after {
   content: "La balise <title> est vide. Vous brûlerez en enfer d’ici peu.";
 }
 
+/* line 465, a11y.scss */
 meta[http-equiv="refresh"]::after {
   content: "<meta http-equiv='refresh'> devrait être supprimé. Définitivement.";
 }
 
+/* line 469, a11y.scss */
 html:not([lang]):after {
   content: "Pas d’attribut lang sur la balise <html>. Vous parlez quelle langue, vous ?";
 }
 
 /* Les événements javscript sous forme d’attributs HTML */
+/* line 494, a11y.scss */
 [onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
 [onerror]::after, [onhaschange]::after, [onload]::after, [onmessage]::after,
 [onoffline]::after, [ononline]::after, [onpagehide]::after, [onpageshow]::after,
@@ -855,8 +941,7 @@ html:not([lang]):after {
 [ondragenter]::after, [ondragleave]::after, [ondragover]::after,
 [ondragstart]::after, [ondrop]::after, [onmousedown]::after, [onmousemove]::after,
 [onmouseout]::after, [onmouseover]::after, [onmouseup]::after, [onmousewheel]::after,
-[onscroll]::after,
-[onabort]::after, [oncanplay]::after, [oncanplaythrough]::after,
+[onscroll]::after, [onabort]::after, [oncanplay]::after, [oncanplaythrough]::after,
 [ondurationchange]::after, [onemptied]::after, [onended]::after, [onerror]::after,
 [onloadeddata]::after, [onloadedmetadata]::after, [onloadstart]::after,
 [onpause]::after, [onplay]::after, [onplaying]::after, [onprogress]::after,
