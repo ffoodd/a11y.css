@@ -3,7 +3,9 @@ a11y.css
 
 L’objectif de ce fichier CSS est d’alerter l’intégrateur sur les erreurs et risques potentiels dans le code - mais il peut également servir à auditer rapidement un site existant afin d’évaluer l’ampleur des dégâts.
 
-De nombreuses références m’ont inspiré et aidé pour élaborer cette feuille de style :
+*Il ne peut pas se ssubstituer à un outil complet tel que [OpQuast Reporting](http://reporting.opquast.com/fr/): il doit uniquement servir pour un aperçu des faiblesses d’une page ou lorsque la page n’est pas disponible pour un test.*
+
+De nombreuses références m’ont inspiré et aidé pour élaborer cette feuille de style:
 * @see : https://github.com/redroot/holmes/blob/master/holmes.css
 * @see : https://github.com/karlgroves/diagnostic.css
 * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
@@ -12,9 +14,9 @@ De nombreuses références m’ont inspiré et aidé pour élaborer cette feuill
 * @see "Intégration Web, les bonnes pratiques", pages 335/336
 
 ## Code couleur
-Concrètement, les éléments en erreur, en alerte ou obsolète seront cernés d’une bordure externe de 4px colorés :
-* en rouge pour les erreurs,
-* en jaune pour les alertes,
+Concrètement, les éléments en erreur, en alerte ou obsolète seront cernés d’une bordure externe de 4px colorés:
+* en rouge pour les erreurs;
+* en jaune pour les alertes;
 * en gris pour les élements & attributs obsolètes.
 
 Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ainsi marqués, un bandeau apparaitra en haut de votre navigateur avec une petite formule vous précisant le problème, et un indice sous forme de boutade (tentative plus ou moins réussie de faire un peu de pédagogie en passant).
@@ -22,13 +24,13 @@ Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ai
 ## Gestion des sélecteurs
 Étant donné la longue liste de sélecteurs à tester, je les ai «externaliser» dans des fichiers partiels, qui étendent les placeholders dans le fichier principal.
 
-Ça n’est pas forcément une bonne solution, mais j’ai préféré la facilité de lecture et de maintenance de chaque degré de gravité à l’homogénéité du résultat : ce fichier n’est - encore une fois - destiné qu’aux phases de développement. Ses performances n’ont donc pas d’intérêt, tout comme sa compatibilité navigateur.
+Ça n’est pas forcément une bonne solution, mais j’ai préféré la facilité de lecture et de maintenance de chaque degré de gravité à l’homogénéité du résultat: ce fichier n’est - encore une fois - destiné qu’aux phases de développement. Ses performances n’ont donc pas d’intérêt, tout comme sa compatibilité navigateur.
 
 ## Gestion des messages
 Chaque test dispose de son propre message, afin d’informer et guider au maximum l’intégrateur en quête d’amélioration. Ils sont eux aussi dans des fichiers partiels, pour en faciliter la lecture et la rédaction. Une personnalisation sera bien plus simple de cette façon (tout le monde n’aimera mes touches d’humour ;-) ).
 
 *Attention :*
-Les balises «auto-fermantes» n’autorisent pas la génération de contenu. Ainsi les erreurs ou alertes seront marquées, mais aucun message n’apparaitra au survol. Il sera en revanche consultable dans la plupart des inspecteurs de DOM : la limite est la création du pseudo-éléments pour l’afichage. Voici la liste exhaustive des balises HTML5 auto-fermantes :
+Les balises «auto-fermantes» n’autorisent pas la génération de contenu. Ainsi les erreurs ou alertes seront marquées, mais aucun message n’apparaitra au survol. Il sera en revanche consultable dans la plupart des inspecteurs de DOM : la limite est la création du pseudo-éléments pour l’afichage. Voici la liste exhaustive des balises HTML5 auto-fermantes:
 * `<area />`
 * `<base />`
 * `<br />`
