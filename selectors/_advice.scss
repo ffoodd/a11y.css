@@ -1,0 +1,35 @@
+// Corrélation entre la sémantique HTML5 et ARIA : aucunes prétentions, simples suggestions. À vous d’avoir le recul nécessaire !
+nav:not([role="navigation"]),
+main:not([role="main"]),
+body > header:not([role="banner"]),
+body > footer:not([role="contentinfo"]),
+aside:not([role="complementary"]),
+
+// Si vous utilisez ces éléments, il y a de fortes chances pour que ces attributs améliorent l’accessibilité
+section:not([aria-labelledby]),
+figure:not([role="group"]),
+figure img:not([aria-describedby]),
+
+// Si on a un ID ou une classe «search», il est fort probable que le role search doive suivre
+.search:not([role="search"]),
+#search:not([role="search"]),
+
+// champ obligatoire / attribut required : ne doit pas être signifié que par la couleur (BP 85)
+[required],
+[aria-required],
+
+// <video>, <audio> : présence d’une alternative, d’un transcript / sous-titre, et indication de la durée ? (BP 155, BP 30)
+video,
+audio,
+
+// format de date compréhensible ? (BP 6)
+time,
+[datetime],
+[pubdate],
+
+// définir le jeu de caractères (BP 100) & s’assurer que c’est utf-8 (BP 89)
+meta[charset] {
+
+  @extend %advice;
+
+}

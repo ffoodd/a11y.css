@@ -4,7 +4,7 @@
 *
 * @author Gaël Poupard
 * @site Thème ffeeeedd
-* @lastmodified 2013-11-21
+* @lastmodified 2013-11-25
 *
 * @subsection Références :
   * @see : https://github.com/redroot/holmes/blob/master/holmes.css
@@ -40,6 +40,7 @@
  == Détection des erreurs
  == Détection des alertes
  == Détection des éléments & attributs obsolètes
+ == Détection des conseils
  == Contenu des messages
 */
 
@@ -48,6 +49,7 @@
 @import "selectors/error";
 @import "selectors/warning";
 @import "selectors/obsolete";
+@import "selectors/advice";
 
 
 // == @section Variables & Mixins ====================
@@ -56,6 +58,7 @@
 $error: crimson;
 $warning: gold;
 $obsolete: gray;
+$advice: forestgreen;
 
 // -- @subsection Mixins --------------------
 %message {
@@ -126,7 +129,14 @@ $obsolete: gray;
   }
 }
 
+// == @section Détection des conseils ====================
+%advice {
+  @include outline( $advice );
+  @extend %message;
+}
 
-/* == @section Contenu des messages ==================== */
+
+// == @section Contenu des messages ====================
 @import "messages/error";
 @import "messages/warning";
+@import "messages/advice";

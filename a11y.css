@@ -1,1 +1,916 @@
-@charset "UTF-8";a[href="#"]::after,a[href^="javascript"]::after,a:not([href])::after,a[href=""]::after,img:not([alt])::after,img[alt=" "]::after,img:not([src])::after,img[src=""]::after,img[src="#"]::after,input[type="image"]:not([alt])::after,input[type="image"][alt=""]::after,label:not([for])::after,label[for=""]::after,input:not([name])::after,input[name=""]::after,input:not([type])::after,input[type=""]::after,input[type="submit"]:not([value])::after,select:not([name])::after,select[name=""]::after,textarea:not([name])::after,textarea[name=""]::after,abbr:not([title])::after,abbr[title=""]::after,table:not([summary])::after,table[summary=""]::after,iframe:not([title])::after,iframe[title=""]::after,form:not([action])::after,[class=""]::after,[id=""]::after,html:not([lang])::after,meta[http-equiv="refresh"]::after,[onafterprint]::after,[onbeforeprint]::after,[onbeforeunload]::after,[onerror]::after,[onhaschange]::after,[onload]::after,[onmessage]::after,[onoffline]::after,[ononline]::after,[onpagehide]::after,[onpageshow]::after,[onpopstate]::after,[onredo]::after,[onresize]::after,[onstorage]::after,[onundo]::after,[onunload]::after,[onblur]::after,[onchage]::after,[oncontextmenu]::after,[onfocus]::after,[onformchange]::after,[onforminput]::after,[oninput]::after,[oninvalid]::after,[onreset]::after,[onselect]::after,[onsubmit]::after,[onkeydown]::after,[onkeypress]::after,[onkeyup]::after,[onclick]::after,[ondblclick]::after,[ondrag]::after,[ondragend]::after,[ondragenter]::after,[ondragleave]::after,[ondragover]::after,[ondragstart]::after,[ondrop]::after,[onmousedown]::after,[onmousemove]::after,[onmouseout]::after,[onmouseover]::after,[onmouseup]::after,[onmousewheel]::after,[onscroll]::after,[onabort]::after,[oncanplay]::after,[oncanplaythrough]::after,[ondurationchange]::after,[onemptied]::after,[onended]::after,[onloadeddata]::after,[onloadedmetadata]::after,[onloadstart]::after,[onpause]::after,[onplay]::after,[onplaying]::after,[onprogress]::after,[onratechange]::after,[onreadystatechange]::after,[onseeked]::after,[onseeking]::after,[onstalled]::after,[onsuspend]::after,[ontimeupdate]::after,[onvolumechange]::after,[onwaiting]::after,ul>:not(li)::after,ol>:not(li)::after,table>tr::after,table table::after,tbody+tfoot::after,fieldset>:first-child:not(legend)::after,fieldset>legend:not(:first-child)::after,a[title=""]::after,a:not([title])::after,img[alt=""]::after,[style]::after,div:empty::after,span:empty::after,li:empty::after,p:empty::after,td:empty::after,th:empty::after,title:empty::after,applet::after,acronym::after,bgsound::after,dir::after,frame::after,frameset::after,hgroup::after,isindex::after,listing::after,nextid::after,noembed::after,plaintext::after,rb::after,strike::after,xmp::after,basefont::after,big::after,blink::after,center::after,font::after,marquee::after,multicol::after,nobr::after,spacer::after,tt::after,a[charset]::after,link[charset]::after,a[coords]::after,a[shape]::after,a[methods]::after,link[methods]::after,a[name]::after,embed[name]::after,img[name]::after,option[name]::after,a[rev]::after,link[rev]::after,form[accept]::after,area[nohref]::after,head[profile]::after,html[version]::after,input[ismap]::after,input[usemap]::after,iframe[longdesc]::after,img[longdesc]::after,img[lowsrc]::after,link[target]::after,meta[scheme]::after,object[archive]::after,object[classid]::after,object[code]::after,object[codebase]::after,object[codetype]::after,object[declare]::after,object[standby]::after,param[type]::after,param[valuetype]::after,script[language]::after,script[event]::after,script[for]::after,table[datapagesize]::after,table[summary]::after,td[axis]::after,th[axis]::after,td[scope]::after,a[datasrc]::after,applet[datasrc]::after,button[datasrc]::after,div[datasrc]::after,frame[datasrc]::after,iframe[datasrc]::after,img[datasrc]::after,input[datasrc]::after,label[datasrc]::after,legend[datasrc]::after,marquee[datasrc]::after,object[datasrc]::after,option[datasrc]::after,select[datasrc]::after,span[datasrc]::after,table[datasrc]::after,textarea[datasrc]::after,a[datafld]::after,applet[datafld]::after,button[datafld]::after,div[datafld]::after,fieldset[datafld]::after,frame[datafld]::after,iframe[datafld]::after,img[datafld]::after,input[datafld]::after,label[datafld]::after,legend[datafld]::after,marquee[datafld]::after,object[datafld]::after,param[datafld]::after,select[datafld]::after,span[datafld]::after,textarea[datafld]::after,button[dataformatas]::after,div[dataformatas]::after,input[dataformatas]::after,label[dataformatas]::after,legend[dataformatas]::after,marquee[dataformatas]::after,object[dataformatas]::after,option[dataformatas]::after,select[dataformatas]::after,span[dataformatas]::after,table[dataformatas]::after,body[alink]::after,body[bgcolor]::after,table[bgcolor]::after,td[bgcolor]::after,th[bgcolor]::after,tr[bgcolor]::after,body[link]::after,body[marginbottom]::after,body[marginheight]::after,iframe[marginheight]::after,body[marginleft]::after,body[marginright]::after,body[margintop]::after,body[marginwidth]::after,iframe[marginwidth]::after,body[text]::after,body[vlink]::after,br[clear]::after,col[char]::after,tbody[char]::after,thead[char]::after,tfoot[char]::after,td[char]::after,th[char]::after,tr[char]::after,col[charoff]::after,tbody[charoff]::after,thead[charoff]::after,tfoot[charoff]::after,td[charoff]::after,th[charoff]::after,tr[charoff]::after,col[valign]::after,tbody[valign]::after,thead[valign]::after,tfoot[valign]::after,td[valign]::after,th[valign]::after,tr[valign]::after,col[width]::after,hr[width]::after,pre[width]::after,table[width]::after,td[width]::after,th[width]::after,dl[compact]::after,ol[compact]::after,ul[compact]::after,embed[hspace]::after,iframe[hspace]::after,input[hspace]::after,img[hspace]::after,object[hspace]::after,embed[vspace]::after,iframe[vspace]::after,input[vspace]::after,img[vspace]::after,object[vspace]::after,hr[color]::after,hr[noshade]::after,hr[size]::after,h1[align]::after,h2[align]::after,h3[align]::after,h4[align]::after,h5[align]::after,h6[align]::after,iframe[align]::after,caption[align]::after,col[align]::after,div[align]::after,embed[align]::after,hr[align]::after,input[align]::after,img[align]::after,legend[align]::after,object[align]::after,p[align]::after,table[align]::after,tbody[align]::after,thead[align]::after,tfoot[align]::after,td[align]::after,th[align]::after,tr[align]::after,iframe[allowtransparency]::after,iframe[frameborder]::after,iframe[scrolling]::after,img[border]::after,object[border]::after,li[type]::after,ul[type]::after,table[cellpadding]::after,table[cellspacing]::after,table[frame]::after,table[rules]::after,td[height]::after,th[height]::after,td[nowrap]::after,th[nowrap]::after,body[background]::after,table[background]::after,thead[background]::after,tbody[background]::after,tfoot[background]::after,tr[background]::after,td[background]::after,th[background]::after{background:rgba(255,255,255,0.98);border-bottom:1px solid rgba(0,0,0,0.3);color:dimgray;display:block;font:normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif;height:4em;left:0;pointer-events:none;position:fixed;text-align:center;text-decoration:none;text-shadow:none;text-transform:none;top:0;-webkit-transform:translateY(-4em);-ms-transform:translateY(-4em);transition:all .3s ease-in;width:100%;z-index:2147483647}a[href="#"]:hover::after,a[href^="javascript"]:hover::after,a:not([href]):hover::after,a[href=""]:hover::after,img:not([alt]):hover::after,img[alt=" "]:hover::after,img:not([src]):hover::after,img[src=""]:hover::after,img[src="#"]:hover::after,input[type="image"]:not([alt]):hover::after,input[type="image"][alt=""]:hover::after,label:not([for]):hover::after,label[for=""]:hover::after,input:not([name]):hover::after,input[name=""]:hover::after,input:not([type]):hover::after,input[type=""]:hover::after,input[type="submit"]:not([value]):hover::after,select:not([name]):hover::after,select[name=""]:hover::after,textarea:not([name]):hover::after,textarea[name=""]:hover::after,abbr:not([title]):hover::after,abbr[title=""]:hover::after,table:not([summary]):hover::after,table[summary=""]:hover::after,iframe:not([title]):hover::after,iframe[title=""]:hover::after,form:not([action]):hover::after,[class=""]:hover::after,[id=""]:hover::after,html:not([lang]):hover::after,meta[http-equiv="refresh"]:hover::after,[onafterprint]:hover::after,[onbeforeprint]:hover::after,[onbeforeunload]:hover::after,[onerror]:hover::after,[onhaschange]:hover::after,[onload]:hover::after,[onmessage]:hover::after,[onoffline]:hover::after,[ononline]:hover::after,[onpagehide]:hover::after,[onpageshow]:hover::after,[onpopstate]:hover::after,[onredo]:hover::after,[onresize]:hover::after,[onstorage]:hover::after,[onundo]:hover::after,[onunload]:hover::after,[onblur]:hover::after,[onchage]:hover::after,[oncontextmenu]:hover::after,[onfocus]:hover::after,[onformchange]:hover::after,[onforminput]:hover::after,[oninput]:hover::after,[oninvalid]:hover::after,[onreset]:hover::after,[onselect]:hover::after,[onsubmit]:hover::after,[onkeydown]:hover::after,[onkeypress]:hover::after,[onkeyup]:hover::after,[onclick]:hover::after,[ondblclick]:hover::after,[ondrag]:hover::after,[ondragend]:hover::after,[ondragenter]:hover::after,[ondragleave]:hover::after,[ondragover]:hover::after,[ondragstart]:hover::after,[ondrop]:hover::after,[onmousedown]:hover::after,[onmousemove]:hover::after,[onmouseout]:hover::after,[onmouseover]:hover::after,[onmouseup]:hover::after,[onmousewheel]:hover::after,[onscroll]:hover::after,[onabort]:hover::after,[oncanplay]:hover::after,[oncanplaythrough]:hover::after,[ondurationchange]:hover::after,[onemptied]:hover::after,[onended]:hover::after,[onloadeddata]:hover::after,[onloadedmetadata]:hover::after,[onloadstart]:hover::after,[onpause]:hover::after,[onplay]:hover::after,[onplaying]:hover::after,[onprogress]:hover::after,[onratechange]:hover::after,[onreadystatechange]:hover::after,[onseeked]:hover::after,[onseeking]:hover::after,[onstalled]:hover::after,[onsuspend]:hover::after,[ontimeupdate]:hover::after,[onvolumechange]:hover::after,[onwaiting]:hover::after,ul>:not(li):hover::after,ol>:not(li):hover::after,table>tr:hover::after,table table:hover::after,tbody+tfoot:hover::after,fieldset>:first-child:not(legend):hover::after,fieldset>legend:not(:first-child):hover::after,a[title=""]:hover::after,a:not([title]):hover::after,img[alt=""]:hover::after,[style]:hover::after,div:empty:hover::after,span:empty:hover::after,li:empty:hover::after,p:empty:hover::after,td:empty:hover::after,th:empty:hover::after,title:empty:hover::after,applet:hover::after,acronym:hover::after,bgsound:hover::after,dir:hover::after,frame:hover::after,frameset:hover::after,hgroup:hover::after,isindex:hover::after,listing:hover::after,nextid:hover::after,noembed:hover::after,plaintext:hover::after,rb:hover::after,strike:hover::after,xmp:hover::after,basefont:hover::after,big:hover::after,blink:hover::after,center:hover::after,font:hover::after,marquee:hover::after,multicol:hover::after,nobr:hover::after,spacer:hover::after,tt:hover::after,a[charset]:hover::after,link[charset]:hover::after,a[coords]:hover::after,a[shape]:hover::after,a[methods]:hover::after,link[methods]:hover::after,a[name]:hover::after,embed[name]:hover::after,img[name]:hover::after,option[name]:hover::after,a[rev]:hover::after,link[rev]:hover::after,form[accept]:hover::after,area[nohref]:hover::after,head[profile]:hover::after,html[version]:hover::after,input[ismap]:hover::after,input[usemap]:hover::after,iframe[longdesc]:hover::after,img[longdesc]:hover::after,img[lowsrc]:hover::after,link[target]:hover::after,meta[scheme]:hover::after,object[archive]:hover::after,object[classid]:hover::after,object[code]:hover::after,object[codebase]:hover::after,object[codetype]:hover::after,object[declare]:hover::after,object[standby]:hover::after,param[type]:hover::after,param[valuetype]:hover::after,script[language]:hover::after,script[event]:hover::after,script[for]:hover::after,table[datapagesize]:hover::after,table[summary]:hover::after,td[axis]:hover::after,th[axis]:hover::after,td[scope]:hover::after,a[datasrc]:hover::after,applet[datasrc]:hover::after,button[datasrc]:hover::after,div[datasrc]:hover::after,frame[datasrc]:hover::after,iframe[datasrc]:hover::after,img[datasrc]:hover::after,input[datasrc]:hover::after,label[datasrc]:hover::after,legend[datasrc]:hover::after,marquee[datasrc]:hover::after,object[datasrc]:hover::after,option[datasrc]:hover::after,select[datasrc]:hover::after,span[datasrc]:hover::after,table[datasrc]:hover::after,textarea[datasrc]:hover::after,a[datafld]:hover::after,applet[datafld]:hover::after,button[datafld]:hover::after,div[datafld]:hover::after,fieldset[datafld]:hover::after,frame[datafld]:hover::after,iframe[datafld]:hover::after,img[datafld]:hover::after,input[datafld]:hover::after,label[datafld]:hover::after,legend[datafld]:hover::after,marquee[datafld]:hover::after,object[datafld]:hover::after,param[datafld]:hover::after,select[datafld]:hover::after,span[datafld]:hover::after,textarea[datafld]:hover::after,button[dataformatas]:hover::after,div[dataformatas]:hover::after,input[dataformatas]:hover::after,label[dataformatas]:hover::after,legend[dataformatas]:hover::after,marquee[dataformatas]:hover::after,object[dataformatas]:hover::after,option[dataformatas]:hover::after,select[dataformatas]:hover::after,span[dataformatas]:hover::after,table[dataformatas]:hover::after,body[alink]:hover::after,body[bgcolor]:hover::after,table[bgcolor]:hover::after,td[bgcolor]:hover::after,th[bgcolor]:hover::after,tr[bgcolor]:hover::after,body[link]:hover::after,body[marginbottom]:hover::after,body[marginheight]:hover::after,iframe[marginheight]:hover::after,body[marginleft]:hover::after,body[marginright]:hover::after,body[margintop]:hover::after,body[marginwidth]:hover::after,iframe[marginwidth]:hover::after,body[text]:hover::after,body[vlink]:hover::after,br[clear]:hover::after,col[char]:hover::after,tbody[char]:hover::after,thead[char]:hover::after,tfoot[char]:hover::after,td[char]:hover::after,th[char]:hover::after,tr[char]:hover::after,col[charoff]:hover::after,tbody[charoff]:hover::after,thead[charoff]:hover::after,tfoot[charoff]:hover::after,td[charoff]:hover::after,th[charoff]:hover::after,tr[charoff]:hover::after,col[valign]:hover::after,tbody[valign]:hover::after,thead[valign]:hover::after,tfoot[valign]:hover::after,td[valign]:hover::after,th[valign]:hover::after,tr[valign]:hover::after,col[width]:hover::after,hr[width]:hover::after,pre[width]:hover::after,table[width]:hover::after,td[width]:hover::after,th[width]:hover::after,dl[compact]:hover::after,ol[compact]:hover::after,ul[compact]:hover::after,embed[hspace]:hover::after,iframe[hspace]:hover::after,input[hspace]:hover::after,img[hspace]:hover::after,object[hspace]:hover::after,embed[vspace]:hover::after,iframe[vspace]:hover::after,input[vspace]:hover::after,img[vspace]:hover::after,object[vspace]:hover::after,hr[color]:hover::after,hr[noshade]:hover::after,hr[size]:hover::after,h1[align]:hover::after,h2[align]:hover::after,h3[align]:hover::after,h4[align]:hover::after,h5[align]:hover::after,h6[align]:hover::after,iframe[align]:hover::after,caption[align]:hover::after,col[align]:hover::after,div[align]:hover::after,embed[align]:hover::after,hr[align]:hover::after,input[align]:hover::after,img[align]:hover::after,legend[align]:hover::after,object[align]:hover::after,p[align]:hover::after,table[align]:hover::after,tbody[align]:hover::after,thead[align]:hover::after,tfoot[align]:hover::after,td[align]:hover::after,th[align]:hover::after,tr[align]:hover::after,iframe[allowtransparency]:hover::after,iframe[frameborder]:hover::after,iframe[scrolling]:hover::after,img[border]:hover::after,object[border]:hover::after,li[type]:hover::after,ul[type]:hover::after,table[cellpadding]:hover::after,table[cellspacing]:hover::after,table[frame]:hover::after,table[rules]:hover::after,td[height]:hover::after,th[height]:hover::after,td[nowrap]:hover::after,th[nowrap]:hover::after,body[background]:hover::after,table[background]:hover::after,thead[background]:hover::after,tbody[background]:hover::after,tfoot[background]:hover::after,tr[background]:hover::after,td[background]:hover::after,th[background]:hover::after{-webkit-transform:translateY(0);-ms-transform:translateY(0);transition:all .3s ease-out}a[href="#"],a[href^="javascript"],a:not([href]),a[href=""],img:not([alt]),img[alt=" "],img:not([src]),img[src=""],img[src="#"],input[type="image"]:not([alt]),input[type="image"][alt=""],label:not([for]),label[for=""],input:not([name]),input[name=""],input:not([type]),input[type=""],input[type="submit"]:not([value]),select:not([name]),select[name=""],textarea:not([name]),textarea[name=""],abbr:not([title]),abbr[title=""],table:not([summary]),table[summary=""],iframe:not([title]),iframe[title=""],form:not([action]),[class=""],[id=""],html:not([lang]),meta[http-equiv="refresh"],[onafterprint],[onbeforeprint],[onbeforeunload],[onerror],[onhaschange],[onload],[onmessage],[onoffline],[ononline],[onpagehide],[onpageshow],[onpopstate],[onredo],[onresize],[onstorage],[onundo],[onunload],[onblur],[onchage],[oncontextmenu],[onfocus],[onformchange],[onforminput],[oninput],[oninvalid],[onreset],[onselect],[onsubmit],[onkeydown],[onkeypress],[onkeyup],[onclick],[ondblclick],[ondrag],[ondragend],[ondragenter],[ondragleave],[ondragover],[ondragstart],[ondrop],[onmousedown],[onmousemove],[onmouseout],[onmouseover],[onmouseup],[onmousewheel],[onscroll],[onabort],[oncanplay],[oncanplaythrough],[ondurationchange],[onemptied],[onended],[onloadeddata],[onloadedmetadata],[onloadstart],[onpause],[onplay],[onplaying],[onprogress],[onratechange],[onreadystatechange],[onseeked],[onseeking],[onstalled],[onsuspend],[ontimeupdate],[onvolumechange],[onwaiting]{outline:4px solid rgba(220,20,60,0.75) !important}ul>*:not(li),ol>*:not(li),table>tr,table table,tbody+tfoot,fieldset>:not(legend):first-child,fieldset>legend:not(:first-child),a[title=""],a:not([title]),abbr:not([title]),abbr[title=""],img[alt=""],[style],div:empty,span:empty,li:empty,p:empty,td:empty,th:empty,title:empty{outline:4px solid rgba(255,215,0,0.75) !important}applet,acronym,bgsound,dir,frame,frameset,hgroup,isindex,listing,nextid,noembed,plaintext,rb,strike,xmp,basefont,big,blink,center,font,marquee,multicol,nobr,spacer,tt,a[charset],link[charset],a[coords],a[shape],a[methods],link[methods],a[name],embed[name],img[name],option[name],a[rev],link[rev],form[accept],area[nohref],head[profile],html[version],input[ismap],input[usemap],iframe[longdesc],img[longdesc],img[lowsrc],link[target],meta[scheme],object[archive],object[classid],object[code],object[codebase],object[codetype],object[declare],object[standby],param[type],param[valuetype],script[language],script[event],script[for],table[datapagesize],table[summary],td[axis],th[axis],td[scope],a[datasrc],applet[datasrc],button[datasrc],div[datasrc],frame[datasrc],iframe[datasrc],img[datasrc],input[datasrc],label[datasrc],legend[datasrc],marquee[datasrc],object[datasrc],option[datasrc],select[datasrc],span[datasrc],table[datasrc],textarea[datasrc],a[datafld],applet[datafld],button[datafld],div[datafld],fieldset[datafld],frame[datafld],iframe[datafld],img[datafld],input[datafld],label[datafld],legend[datafld],marquee[datafld],object[datafld],param[datafld],select[datafld],span[datafld],textarea[datafld],button[dataformatas],div[dataformatas],input[dataformatas],label[dataformatas],legend[dataformatas],marquee[dataformatas],object[dataformatas],option[dataformatas],select[dataformatas],span[dataformatas],table[dataformatas],body[alink],body[bgcolor],table[bgcolor],td[bgcolor],th[bgcolor],tr[bgcolor],body[link],body[marginbottom],body[marginheight],iframe[marginheight],body[marginleft],body[marginright],body[margintop],body[marginwidth],iframe[marginwidth],body[text],body[vlink],br[clear],col[char],tbody[char],thead[char],tfoot[char],td[char],th[char],tr[char],col[charoff],tbody[charoff],thead[charoff],tfoot[charoff],td[charoff],th[charoff],tr[charoff],col[valign],tbody[valign],thead[valign],tfoot[valign],td[valign],th[valign],tr[valign],col[width],hr[width],pre[width],table[width],td[width],th[width],dl[compact],ol[compact],ul[compact],embed[hspace],iframe[hspace],input[hspace],img[hspace],object[hspace],embed[vspace],iframe[vspace],input[vspace],img[vspace],object[vspace],hr[color],hr[noshade],hr[size],h1[align],h2[align],h3[align],h4[align],h5[align],h6[align],iframe[align],caption[align],col[align],div[align],embed[align],hr[align],input[align],img[align],legend[align],object[align],p[align],table[align],tbody[align],thead[align],tfoot[align],td[align],th[align],tr[align],iframe[allowtransparency],iframe[frameborder],iframe[scrolling],img[border],object[border],li[type],ul[type],table[cellpadding],table[cellspacing],table[frame],table[rules],td[height],th[height],td[nowrap],th[nowrap],body[background],table[background],thead[background],tbody[background],tfoot[background],tr[background],td[background],th[background]{outline:4px solid rgba(128,128,128,0.75) !important}applet::after,acronym::after,bgsound::after,dir::after,frame::after,frameset::after,hgroup::after,isindex::after,listing::after,nextid::after,noembed::after,plaintext::after,rb::after,strike::after,xmp::after,basefont::after,big::after,blink::after,center::after,font::after,marquee::after,multicol::after,nobr::after,spacer::after,tt::after,a[charset]::after,link[charset]::after,a[coords]::after,a[shape]::after,a[methods]::after,link[methods]::after,a[name]::after,embed[name]::after,img[name]::after,option[name]::after,a[rev]::after,link[rev]::after,form[accept]::after,area[nohref]::after,head[profile]::after,html[version]::after,input[ismap]::after,input[usemap]::after,iframe[longdesc]::after,img[longdesc]::after,img[lowsrc]::after,link[target]::after,meta[scheme]::after,object[archive]::after,object[classid]::after,object[code]::after,object[codebase]::after,object[codetype]::after,object[declare]::after,object[standby]::after,param[type]::after,param[valuetype]::after,script[language]::after,script[event]::after,script[for]::after,table[datapagesize]::after,table[summary]::after,td[axis]::after,th[axis]::after,td[scope]::after,a[datasrc]::after,applet[datasrc]::after,button[datasrc]::after,div[datasrc]::after,frame[datasrc]::after,iframe[datasrc]::after,img[datasrc]::after,input[datasrc]::after,label[datasrc]::after,legend[datasrc]::after,marquee[datasrc]::after,object[datasrc]::after,option[datasrc]::after,select[datasrc]::after,span[datasrc]::after,table[datasrc]::after,textarea[datasrc]::after,a[datafld]::after,applet[datafld]::after,button[datafld]::after,div[datafld]::after,fieldset[datafld]::after,frame[datafld]::after,iframe[datafld]::after,img[datafld]::after,input[datafld]::after,label[datafld]::after,legend[datafld]::after,marquee[datafld]::after,object[datafld]::after,param[datafld]::after,select[datafld]::after,span[datafld]::after,textarea[datafld]::after,button[dataformatas]::after,div[dataformatas]::after,input[dataformatas]::after,label[dataformatas]::after,legend[dataformatas]::after,marquee[dataformatas]::after,object[dataformatas]::after,option[dataformatas]::after,select[dataformatas]::after,span[dataformatas]::after,table[dataformatas]::after,body[alink]::after,body[bgcolor]::after,table[bgcolor]::after,td[bgcolor]::after,th[bgcolor]::after,tr[bgcolor]::after,body[link]::after,body[marginbottom]::after,body[marginheight]::after,iframe[marginheight]::after,body[marginleft]::after,body[marginright]::after,body[margintop]::after,body[marginwidth]::after,iframe[marginwidth]::after,body[text]::after,body[vlink]::after,br[clear]::after,col[char]::after,tbody[char]::after,thead[char]::after,tfoot[char]::after,td[char]::after,th[char]::after,tr[char]::after,col[charoff]::after,tbody[charoff]::after,thead[charoff]::after,tfoot[charoff]::after,td[charoff]::after,th[charoff]::after,tr[charoff]::after,col[valign]::after,tbody[valign]::after,thead[valign]::after,tfoot[valign]::after,td[valign]::after,th[valign]::after,tr[valign]::after,col[width]::after,hr[width]::after,pre[width]::after,table[width]::after,td[width]::after,th[width]::after,dl[compact]::after,ol[compact]::after,ul[compact]::after,embed[hspace]::after,iframe[hspace]::after,input[hspace]::after,img[hspace]::after,object[hspace]::after,embed[vspace]::after,iframe[vspace]::after,input[vspace]::after,img[vspace]::after,object[vspace]::after,hr[color]::after,hr[noshade]::after,hr[size]::after,h1[align]::after,h2[align]::after,h3[align]::after,h4[align]::after,h5[align]::after,h6[align]::after,iframe[align]::after,caption[align]::after,col[align]::after,div[align]::after,embed[align]::after,hr[align]::after,input[align]::after,img[align]::after,legend[align]::after,object[align]::after,p[align]::after,table[align]::after,tbody[align]::after,thead[align]::after,tfoot[align]::after,td[align]::after,th[align]::after,tr[align]::after,iframe[allowtransparency]::after,iframe[frameborder]::after,iframe[scrolling]::after,img[border]::after,object[border]::after,li[type]::after,ul[type]::after,table[cellpadding]::after,table[cellspacing]::after,table[frame]::after,table[rules]::after,td[height]::after,th[height]::after,td[nowrap]::after,th[nowrap]::after,body[background]::after,table[background]::after,thead[background]::after,tbody[background]::after,tfoot[background]::after,tr[background]::after,td[background]::after,th[background]::after{content:"Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses."}a:not([href])::after,a[href=""]::after{content:"Attribut [href] manquant. Un lien doit avoir une cible, non ?"}a[href="#"]::after{content:"Attribut [href='#']. Pourqoi ? Un <button> semble plus indiqué."}a[href^="javascript"]::after{content:"Attribut [href] débutant par javascript. Ça n’augure rien de bon…"}img:not([alt])::after,input[type="image"]:not([alt])::after,input[type="image"][alt=""]::after{content:"Attribut [alt] manquant. Quelle hérésie."}img[alt=" "]::after{content:"Un attribut [alt] *presque* vide. C’est une blague, non ?"}img:not([src])::after,img[src=""]::after,img[src="#"]::after{content:"Attribut [src] manquant ou vide. Bon."}label:not([for])::after,label[for=""]::after{content:"Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?"}input:not([name])::after,input[name=""]::after,select:not([name])::after,select[name=""]::after,textarea:not([name])::after,textarea[name=""]::after{content:"Attribut [name] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire."}input:not([type])::after,input[type=""]::after{content:"Attribut [type] manquant ou vide. On met quoi, dans ce champ ?"}input[type="submit"]:not([value])::after{content:"Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?"}iframe:not([title])::after,iframe[title=""]::after{content:"Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>."}form:not([action])::after{content:"Attribut [action] manquant. Et après, il se passe quoi ?"}[class=""]::after{content:"Attribut [class] vide. Pourquoi tant de haine ?"}[id=""]::after{content:"Attribut [id] vide. Sérieusement ?"}meta[http-equiv="refresh"]::after{content:"<meta http-equiv='refresh'> devrait être supprimé. Définitivement."}html:not([lang]):after{content:"Pas d’attribut lang sur la balise <html>. Vous parlez quelle langue, vous ?"}[onafterprint]::after,[onbeforeprint]::after,[onbeforeunload]::after,[onerror]::after,[onhaschange]::after,[onload]::after,[onmessage]::after,[onoffline]::after,[ononline]::after,[onpagehide]::after,[onpageshow]::after,[onpopstate]::after,[onredo]::after,[onresize]::after,[onstorage]::after,[onundo]::after,[onunload]::after,[onblur]::after,[onchage]::after,[oncontextmenu]::after,[onfocus]::after,[onformchange]::after,[onforminput]::after,[oninput]::after,[oninvalid]::after,[onreset]::after,[onselect]::after,[onsubmit]::after,[onkeydown]::after,[onkeypress]::after,[onkeyup]::after,[onclick]::after,[ondblclick]::after,[ondrag]::after,[ondragend]::after,[ondragenter]::after,[ondragleave]::after,[ondragover]::after,[ondragstart]::after,[ondrop]::after,[onmousedown]::after,[onmousemove]::after,[onmouseout]::after,[onmouseover]::after,[onmouseup]::after,[onmousewheel]::after,[onscroll]::after,[onabort]::after,[oncanplay]::after,[oncanplaythrough]::after,[ondurationchange]::after,[onemptied]::after,[onended]::after,[onerror]::after,[onloadeddata]::after,[onloadedmetadata]::after,[onloadstart]::after,[onpause]::after,[onplay]::after,[onplaying]::after,[onprogress]::after,[onratechange]::after,[onreadystatechange]::after,[onseeked]::after,[onseeking]::after,[onstalled]::after,[onsuspend]::after,[ontimeupdate]::after,[onvolumechange]::after,[onwaiting]::after{content:"Attribut d’événements javscript. Vous êtes sûr de ce que vous faites ?"}ul>*:not(li)::after,ol>*:not(li)::after,table>tr::after,table table::after,tbody+tfoot::after{content:"Imbrication inadéquate d'éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?"}fieldset>:not(legend):first-child::after,fieldset>legend:not(:first-child)::after{content:"Imbrication inadéquate d'éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien."}a[title=""]::after,a:not([title])::after{content:"Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !"}abbr:not([title])::after,abbr[title=""]::after{content:"Attribut [title] vide ou manquant. Jetez un œil à la BP 160 d’OpQuast ;-) "}img[alt=""]::after{content:"Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?"}[style]::after{content:"Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !"}div:empty::after,span:empty::after,li:empty::after,p:empty::after,td:empty::after,th:empty::after{content:"Élément vide. Diantre."}title:empty::after{content:"La balise <title> est vide. Vous brûlerez en enfer d’ici peu."}
+@charset "UTF-8";
+/**
+* ==Debug *
+*
+* @author Gaël Poupard
+* @site Thème ffeeeedd
+* @lastmodified 2013-11-25
+*
+* @subsection Références :
+  * @see : https://github.com/redroot/holmes/blob/master/holmes.css
+  *
+  * @see : https://github.com/karlgroves/diagnostic.css
+  *
+  * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
+  *
+  * @see : https://github.com/nternetinspired/debug-css
+  *
+  * @see : Mémento "Sites web - Les bonnes pratiques" aux éditions Eyrolles
+  * @author : Elie Sloïm, Temesis, Opquast, Openweb - @ElieSl
+  *
+  * @see "Intégration Web, les bonnes pratiques", pages 335/336.
+  * @author : Corinne Schillinger, Inseo - @schillinger
+ *
+ * @note : on utilise outline plutôt que border afin de ne pas modifier les dimensions des éléments.
+ * @note : le rouge dénonce une erreur, un code invalide ou un attribut manquant.
+ * @note : le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
+ * @note : le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
+*/
+/* ----------------------------- */
+/* Sommaire */
+/* ----------------------------- */
+/*
+ == Import des sélecteurs
+ == Variables & Mixins
+   -- Variables
+   -- Mixins
+ == Détection des erreurs
+ == Détection des alertes
+ == Détection des éléments & attributs obsolètes
+ == Détection des conseils
+ == Contenu des messages
+*/
+a[href="#"]::after,
+a[href^="javascript"]::after,
+a:not([href])::after,
+a[href=""]::after,
+img:not([alt])::after,
+img[alt=" "]::after,
+img:not([src])::after,
+img[src=""]::after,
+img[src="#"]::after,
+input[type="image"]:not([alt])::after,
+input[type="image"][alt=""]::after,
+label:not([for])::after,
+label[for=""]::after,
+input:not([name])::after,
+input[name=""]::after,
+input:not([type])::after,
+input[type=""]::after,
+input[type="submit"]:not([value])::after,
+select:not([name])::after,
+select[name=""]::after,
+textarea:not([name])::after,
+textarea[name=""]::after,
+iframe:not([title])::after,
+iframe[title=""]::after,
+form:not([action])::after,
+[class=""]::after,
+[id=""]::after,
+html:not([lang])::after,
+meta[http-equiv="refresh"]::after,
+[onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
+[onerror]::after, [onhaschange]::after, [onload]::after, [onmessage]::after,
+[onoffline]::after, [ononline]::after, [onpagehide]::after, [onpageshow]::after,
+[onpopstate]::after, [onredo]::after, [onresize]::after, [onstorage]::after,
+[onundo]::after, [onunload]::after,
+[onblur]::after, [onchage]::after, [oncontextmenu]::after, [onfocus]::after,
+[onformchange]::after, [onforminput]::after, [oninput]::after, [oninvalid]::after,
+[onreset]::after, [onselect]::after, [onsubmit]::after,
+[onkeydown]::after, [onkeypress]::after, [onkeyup]::after,
+[onclick]::after, [ondblclick]::after, [ondrag]::after, [ondragend]::after,
+[ondragenter]::after, [ondragleave]::after, [ondragover]::after,
+[ondragstart]::after, [ondrop]::after, [onmousedown]::after, [onmousemove]::after,
+[onmouseout]::after, [onmouseover]::after, [onmouseup]::after, [onmousewheel]::after,
+[onscroll]::after,
+[onabort]::after, [oncanplay]::after, [oncanplaythrough]::after,
+[ondurationchange]::after, [onemptied]::after, [onended]::after,
+[onloadeddata]::after, [onloadedmetadata]::after, [onloadstart]::after,
+[onpause]::after, [onplay]::after, [onplaying]::after, [onprogress]::after,
+[onratechange]::after, [onreadystatechange]::after, [onseeked]::after,
+[onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
+[onvolumechange]::after, [onwaiting]::after, ul > :not(li)::after,
+ol > :not(li)::after,
+table > tr::after,
+table table::after,
+tbody + tfoot::after,
+fieldset > :first-child:not(legend)::after,
+fieldset > legend:not(:first-child)::after,
+a[title=""]::after,
+a:not([title])::after,
+abbr:not([title])::after,
+abbr[title=""]::after,
+img[alt=""]::after,
+[style]::after,
+div:empty::after,
+span:empty::after,
+li:empty::after,
+p:empty::after,
+td:empty::after,
+th:empty::after,
+title:empty::after, applet::after,
+acronym::after,
+bgsound::after,
+dir::after,
+frame::after,
+frameset::after,
+hgroup::after,
+isindex::after,
+listing::after,
+nextid::after,
+noembed::after,
+plaintext::after,
+rb::after,
+strike::after,
+xmp::after,
+basefont::after,
+big::after,
+blink::after,
+center::after,
+font::after,
+marquee::after,
+multicol::after,
+nobr::after,
+spacer::after,
+tt::after,
+a[charset]::after, link[charset]::after,
+a[coords]::after,
+a[shape]::after,
+a[methods]::after, link[methods]::after,
+a[name]::after, embed[name]::after, img[name]::after, option[name]::after,
+a[rev]::after, link[rev]::after,
+form[accept]::after,
+area[nohref]::after,
+head[profile]::after,
+html[version]::after,
+input[ismap]::after,
+input[usemap]::after,
+iframe[longdesc]::after, img[longdesc]::after,
+img[lowsrc]::after,
+link[target]::after,
+meta[scheme]::after,
+object[archive]::after,
+object[classid]::after,
+object[code]::after,
+object[codebase]::after,
+object[codetype]::after,
+object[declare]::after,
+object[standby]::after,
+param[type]::after,
+param[valuetype]::after,
+script[language]::after,
+script[event]::after,
+script[for]::after,
+table[datapagesize]::after,
+table[summary]::after,
+td[axis]::after, th[axis]::after,
+td[scope]::after,
+a[datasrc]::after, applet[datasrc]::after, button[datasrc]::after, div[datasrc]::after, frame[datasrc]::after, iframe[datasrc]::after, img[datasrc]::after, input[datasrc]::after, label[datasrc]::after, legend[datasrc]::after, marquee[datasrc]::after, object[datasrc]::after, option[datasrc]::after, select[datasrc]::after, span[datasrc]::after, table[datasrc]::after, textarea[datasrc]::after,
+a[datafld]::after, applet[datafld]::after, button[datafld]::after, div[datafld]::after, fieldset[datafld]::after, frame[datafld]::after, iframe[datafld]::after, img[datafld]::after, input[datafld]::after, label[datafld]::after, legend[datafld]::after, marquee[datafld]::after, object[datafld]::after, param[datafld]::after, select[datafld]::after, span[datafld]::after, textarea[datafld]::after,
+button[dataformatas]::after, div[dataformatas]::after, input[dataformatas]::after, label[dataformatas]::after, legend[dataformatas]::after, marquee[dataformatas]::after, object[dataformatas]::after, option[dataformatas]::after, select[dataformatas]::after, span[dataformatas]::after, table[dataformatas]::after,
+body[alink]::after,
+body[bgcolor]::after, table[bgcolor]::after, td[bgcolor]::after, th[bgcolor]::after, tr[bgcolor]::after,
+body[link]::after,
+body[marginbottom]::after,
+body[marginheight]::after, iframe[marginheight]::after,
+body[marginleft]::after,
+body[marginright]::after,
+body[margintop]::after,
+body[marginwidth]::after, iframe[marginwidth]::after,
+body[text]::after,
+body[vlink]::after,
+br[clear]::after,
+col[char]::after, tbody[char]::after, thead[char]::after, tfoot[char]::after, td[char]::after, th[char]::after, tr[char]::after,
+col[charoff]::after, tbody[charoff]::after, thead[charoff]::after, tfoot[charoff]::after, td[charoff]::after, th[charoff]::after, tr[charoff]::after,
+col[valign]::after, tbody[valign]::after, thead[valign]::after, tfoot[valign]::after, td[valign]::after, th[valign]::after, tr[valign]::after,
+col[width]::after, hr[width]::after, pre[width]::after, table[width]::after, td[width]::after, th[width]::after,
+dl[compact]::after, ol[compact]::after, ul[compact]::after,
+embed[hspace]::after, iframe[hspace]::after, input[hspace]::after, img[hspace]::after, object[hspace]::after,
+embed[vspace]::after, iframe[vspace]::after, input[vspace]::after, img[vspace]::after, object[vspace]::after,
+hr[color]::after,
+hr[noshade]::after,
+hr[size]::after,
+h1[align]::after, h2[align]::after, h3[align]::after, h4[align]::after, h5[align]::after, h6[align]::after, iframe[align]::after, caption[align]::after, col[align]::after, div[align]::after, embed[align]::after, hr[align]::after, input[align]::after, img[align]::after, legend[align]::after, object[align]::after, p[align]::after, table[align]::after, tbody[align]::after, thead[align]::after, tfoot[align]::after, td[align]::after, th[align]::after, tr[align]::after,
+iframe[allowtransparency]::after,
+iframe[frameborder]::after,
+iframe[scrolling]::after,
+img[border]::after, object[border]::after,
+li[type]::after, ul[type]::after,
+table[cellpadding]::after,
+table[cellspacing]::after,
+table[frame]::after,
+table[rules]::after,
+td[height]::after, th[height]::after,
+td[nowrap]::after, th[nowrap]::after,
+body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after, nav:not([role="navigation"])::after,
+main:not([role="main"])::after,
+body > header:not([role="banner"])::after,
+body > footer:not([role="contentinfo"])::after,
+aside:not([role="complementary"])::after,
+section:not([aria-labelledby])::after,
+figure:not([role="group"])::after,
+figure img:not([aria-describedby])::after,
+.search:not([role="search"])::after,
+#search:not([role="search"])::after,
+[required]::after,
+[aria-required]::after,
+video::after,
+audio::after,
+time::after,
+[datetime]::after,
+[pubdate]::after,
+meta[charset]::after {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  color: dimgray;
+  display: block;
+  font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+  height: 4em;
+  left: 0;
+  /* On s’assure que le message ne capte pas le survol. */
+  pointer-events: none;
+  position: fixed;
+  /* On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes. */
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  /* On prépare l’apparition du message. */
+  top: 0;
+  -webkit-transform: translateY(-4em);
+  -ms-transform: translateY(-4em);
+  transition: all .3s ease-in;
+  width: 100%;
+  /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+   * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
+   * @see : http://www.puidokas.com/max-z-index/
+   * Ça nous permet de garantir que notre message sera toujours visible.
+   */
+  z-index: 2147483647;
+}
+a[href="#"]:hover::after,
+a[href^="javascript"]:hover::after,
+a:not([href]):hover::after,
+a[href=""]:hover::after,
+img:not([alt]):hover::after,
+img[alt=" "]:hover::after,
+img:not([src]):hover::after,
+img[src=""]:hover::after,
+img[src="#"]:hover::after,
+input[type="image"]:not([alt]):hover::after,
+input[type="image"][alt=""]:hover::after,
+label:not([for]):hover::after,
+label[for=""]:hover::after,
+input:not([name]):hover::after,
+input[name=""]:hover::after,
+input:not([type]):hover::after,
+input[type=""]:hover::after,
+input[type="submit"]:not([value]):hover::after,
+select:not([name]):hover::after,
+select[name=""]:hover::after,
+textarea:not([name]):hover::after,
+textarea[name=""]:hover::after,
+iframe:not([title]):hover::after,
+iframe[title=""]:hover::after,
+form:not([action]):hover::after,
+[class=""]:hover::after,
+[id=""]:hover::after,
+html:not([lang]):hover::after,
+meta[http-equiv="refresh"]:hover::after,
+[onafterprint]:hover::after, [onbeforeprint]:hover::after, [onbeforeunload]:hover::after,
+[onerror]:hover::after, [onhaschange]:hover::after, [onload]:hover::after, [onmessage]:hover::after,
+[onoffline]:hover::after, [ononline]:hover::after, [onpagehide]:hover::after, [onpageshow]:hover::after,
+[onpopstate]:hover::after, [onredo]:hover::after, [onresize]:hover::after, [onstorage]:hover::after,
+[onundo]:hover::after, [onunload]:hover::after,
+[onblur]:hover::after, [onchage]:hover::after, [oncontextmenu]:hover::after, [onfocus]:hover::after,
+[onformchange]:hover::after, [onforminput]:hover::after, [oninput]:hover::after, [oninvalid]:hover::after,
+[onreset]:hover::after, [onselect]:hover::after, [onsubmit]:hover::after,
+[onkeydown]:hover::after, [onkeypress]:hover::after, [onkeyup]:hover::after,
+[onclick]:hover::after, [ondblclick]:hover::after, [ondrag]:hover::after, [ondragend]:hover::after,
+[ondragenter]:hover::after, [ondragleave]:hover::after, [ondragover]:hover::after,
+[ondragstart]:hover::after, [ondrop]:hover::after, [onmousedown]:hover::after, [onmousemove]:hover::after,
+[onmouseout]:hover::after, [onmouseover]:hover::after, [onmouseup]:hover::after, [onmousewheel]:hover::after,
+[onscroll]:hover::after,
+[onabort]:hover::after, [oncanplay]:hover::after, [oncanplaythrough]:hover::after,
+[ondurationchange]:hover::after, [onemptied]:hover::after, [onended]:hover::after,
+[onloadeddata]:hover::after, [onloadedmetadata]:hover::after, [onloadstart]:hover::after,
+[onpause]:hover::after, [onplay]:hover::after, [onplaying]:hover::after, [onprogress]:hover::after,
+[onratechange]:hover::after, [onreadystatechange]:hover::after, [onseeked]:hover::after,
+[onseeking]:hover::after, [onstalled]:hover::after, [onsuspend]:hover::after, [ontimeupdate]:hover::after,
+[onvolumechange]:hover::after, [onwaiting]:hover::after, ul > :not(li):hover::after,
+ol > :not(li):hover::after,
+table > tr:hover::after,
+table table:hover::after,
+tbody + tfoot:hover::after,
+fieldset > :first-child:not(legend):hover::after,
+fieldset > legend:not(:first-child):hover::after,
+a[title=""]:hover::after,
+a:not([title]):hover::after,
+abbr:not([title]):hover::after,
+abbr[title=""]:hover::after,
+img[alt=""]:hover::after,
+[style]:hover::after,
+div:empty:hover::after,
+span:empty:hover::after,
+li:empty:hover::after,
+p:empty:hover::after,
+td:empty:hover::after,
+th:empty:hover::after,
+title:empty:hover::after, applet:hover::after,
+acronym:hover::after,
+bgsound:hover::after,
+dir:hover::after,
+frame:hover::after,
+frameset:hover::after,
+hgroup:hover::after,
+isindex:hover::after,
+listing:hover::after,
+nextid:hover::after,
+noembed:hover::after,
+plaintext:hover::after,
+rb:hover::after,
+strike:hover::after,
+xmp:hover::after,
+basefont:hover::after,
+big:hover::after,
+blink:hover::after,
+center:hover::after,
+font:hover::after,
+marquee:hover::after,
+multicol:hover::after,
+nobr:hover::after,
+spacer:hover::after,
+tt:hover::after,
+a[charset]:hover::after, link[charset]:hover::after,
+a[coords]:hover::after,
+a[shape]:hover::after,
+a[methods]:hover::after, link[methods]:hover::after,
+a[name]:hover::after, embed[name]:hover::after, img[name]:hover::after, option[name]:hover::after,
+a[rev]:hover::after, link[rev]:hover::after,
+form[accept]:hover::after,
+area[nohref]:hover::after,
+head[profile]:hover::after,
+html[version]:hover::after,
+input[ismap]:hover::after,
+input[usemap]:hover::after,
+iframe[longdesc]:hover::after, img[longdesc]:hover::after,
+img[lowsrc]:hover::after,
+link[target]:hover::after,
+meta[scheme]:hover::after,
+object[archive]:hover::after,
+object[classid]:hover::after,
+object[code]:hover::after,
+object[codebase]:hover::after,
+object[codetype]:hover::after,
+object[declare]:hover::after,
+object[standby]:hover::after,
+param[type]:hover::after,
+param[valuetype]:hover::after,
+script[language]:hover::after,
+script[event]:hover::after,
+script[for]:hover::after,
+table[datapagesize]:hover::after,
+table[summary]:hover::after,
+td[axis]:hover::after, th[axis]:hover::after,
+td[scope]:hover::after,
+a[datasrc]:hover::after, applet[datasrc]:hover::after, button[datasrc]:hover::after, div[datasrc]:hover::after, frame[datasrc]:hover::after, iframe[datasrc]:hover::after, img[datasrc]:hover::after, input[datasrc]:hover::after, label[datasrc]:hover::after, legend[datasrc]:hover::after, marquee[datasrc]:hover::after, object[datasrc]:hover::after, option[datasrc]:hover::after, select[datasrc]:hover::after, span[datasrc]:hover::after, table[datasrc]:hover::after, textarea[datasrc]:hover::after,
+a[datafld]:hover::after, applet[datafld]:hover::after, button[datafld]:hover::after, div[datafld]:hover::after, fieldset[datafld]:hover::after, frame[datafld]:hover::after, iframe[datafld]:hover::after, img[datafld]:hover::after, input[datafld]:hover::after, label[datafld]:hover::after, legend[datafld]:hover::after, marquee[datafld]:hover::after, object[datafld]:hover::after, param[datafld]:hover::after, select[datafld]:hover::after, span[datafld]:hover::after, textarea[datafld]:hover::after,
+button[dataformatas]:hover::after, div[dataformatas]:hover::after, input[dataformatas]:hover::after, label[dataformatas]:hover::after, legend[dataformatas]:hover::after, marquee[dataformatas]:hover::after, object[dataformatas]:hover::after, option[dataformatas]:hover::after, select[dataformatas]:hover::after, span[dataformatas]:hover::after, table[dataformatas]:hover::after,
+body[alink]:hover::after,
+body[bgcolor]:hover::after, table[bgcolor]:hover::after, td[bgcolor]:hover::after, th[bgcolor]:hover::after, tr[bgcolor]:hover::after,
+body[link]:hover::after,
+body[marginbottom]:hover::after,
+body[marginheight]:hover::after, iframe[marginheight]:hover::after,
+body[marginleft]:hover::after,
+body[marginright]:hover::after,
+body[margintop]:hover::after,
+body[marginwidth]:hover::after, iframe[marginwidth]:hover::after,
+body[text]:hover::after,
+body[vlink]:hover::after,
+br[clear]:hover::after,
+col[char]:hover::after, tbody[char]:hover::after, thead[char]:hover::after, tfoot[char]:hover::after, td[char]:hover::after, th[char]:hover::after, tr[char]:hover::after,
+col[charoff]:hover::after, tbody[charoff]:hover::after, thead[charoff]:hover::after, tfoot[charoff]:hover::after, td[charoff]:hover::after, th[charoff]:hover::after, tr[charoff]:hover::after,
+col[valign]:hover::after, tbody[valign]:hover::after, thead[valign]:hover::after, tfoot[valign]:hover::after, td[valign]:hover::after, th[valign]:hover::after, tr[valign]:hover::after,
+col[width]:hover::after, hr[width]:hover::after, pre[width]:hover::after, table[width]:hover::after, td[width]:hover::after, th[width]:hover::after,
+dl[compact]:hover::after, ol[compact]:hover::after, ul[compact]:hover::after,
+embed[hspace]:hover::after, iframe[hspace]:hover::after, input[hspace]:hover::after, img[hspace]:hover::after, object[hspace]:hover::after,
+embed[vspace]:hover::after, iframe[vspace]:hover::after, input[vspace]:hover::after, img[vspace]:hover::after, object[vspace]:hover::after,
+hr[color]:hover::after,
+hr[noshade]:hover::after,
+hr[size]:hover::after,
+h1[align]:hover::after, h2[align]:hover::after, h3[align]:hover::after, h4[align]:hover::after, h5[align]:hover::after, h6[align]:hover::after, iframe[align]:hover::after, caption[align]:hover::after, col[align]:hover::after, div[align]:hover::after, embed[align]:hover::after, hr[align]:hover::after, input[align]:hover::after, img[align]:hover::after, legend[align]:hover::after, object[align]:hover::after, p[align]:hover::after, table[align]:hover::after, tbody[align]:hover::after, thead[align]:hover::after, tfoot[align]:hover::after, td[align]:hover::after, th[align]:hover::after, tr[align]:hover::after,
+iframe[allowtransparency]:hover::after,
+iframe[frameborder]:hover::after,
+iframe[scrolling]:hover::after,
+img[border]:hover::after, object[border]:hover::after,
+li[type]:hover::after, ul[type]:hover::after,
+table[cellpadding]:hover::after,
+table[cellspacing]:hover::after,
+table[frame]:hover::after,
+table[rules]:hover::after,
+td[height]:hover::after, th[height]:hover::after,
+td[nowrap]:hover::after, th[nowrap]:hover::after,
+body[background]:hover::after, table[background]:hover::after, thead[background]:hover::after, tbody[background]:hover::after, tfoot[background]:hover::after, tr[background]:hover::after, td[background]:hover::after, th[background]:hover::after, nav:not([role="navigation"]):hover::after,
+main:not([role="main"]):hover::after,
+body > header:not([role="banner"]):hover::after,
+body > footer:not([role="contentinfo"]):hover::after,
+aside:not([role="complementary"]):hover::after,
+section:not([aria-labelledby]):hover::after,
+figure:not([role="group"]):hover::after,
+figure img:not([aria-describedby]):hover::after,
+.search:not([role="search"]):hover::after,
+#search:not([role="search"]):hover::after,
+[required]:hover::after,
+[aria-required]:hover::after,
+video:hover::after,
+audio:hover::after,
+time:hover::after,
+[datetime]:hover::after,
+[pubdate]:hover::after,
+meta[charset]:hover::after {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transition: all .3s ease-out;
+}
+
+a[href="#"],
+a[href^="javascript"],
+a:not([href]),
+a[href=""],
+img:not([alt]),
+img[alt=" "],
+img:not([src]),
+img[src=""],
+img[src="#"],
+input[type="image"]:not([alt]),
+input[type="image"][alt=""],
+label:not([for]),
+label[for=""],
+input:not([name]),
+input[name=""],
+input:not([type]),
+input[type=""],
+input[type="submit"]:not([value]),
+select:not([name]),
+select[name=""],
+textarea:not([name]),
+textarea[name=""],
+iframe:not([title]),
+iframe[title=""],
+form:not([action]),
+[class=""],
+[id=""],
+html:not([lang]),
+meta[http-equiv="refresh"],
+[onafterprint], [onbeforeprint], [onbeforeunload],
+[onerror], [onhaschange], [onload], [onmessage],
+[onoffline], [ononline], [onpagehide], [onpageshow],
+[onpopstate], [onredo], [onresize], [onstorage],
+[onundo], [onunload],
+[onblur], [onchage], [oncontextmenu], [onfocus],
+[onformchange], [onforminput], [oninput], [oninvalid],
+[onreset], [onselect], [onsubmit],
+[onkeydown], [onkeypress], [onkeyup],
+[onclick], [ondblclick], [ondrag], [ondragend],
+[ondragenter], [ondragleave], [ondragover],
+[ondragstart], [ondrop], [onmousedown], [onmousemove],
+[onmouseout], [onmouseover], [onmouseup], [onmousewheel],
+[onscroll],
+[onabort], [oncanplay], [oncanplaythrough],
+[ondurationchange], [onemptied], [onended],
+[onloadeddata], [onloadedmetadata], [onloadstart],
+[onpause], [onplay], [onplaying], [onprogress],
+[onratechange], [onreadystatechange], [onseeked],
+[onseeking], [onstalled], [onsuspend], [ontimeupdate],
+[onvolumechange], [onwaiting] {
+  outline: 4px solid rgba(220, 20, 60, 0.75) !important;
+}
+
+ul > *:not(li),
+ol > *:not(li),
+table > tr,
+table table,
+tbody + tfoot,
+fieldset > :not(legend):first-child,
+fieldset > legend:not(:first-child),
+a[title=""],
+a:not([title]),
+abbr:not([title]),
+abbr[title=""],
+img[alt=""],
+[style],
+div:empty,
+span:empty,
+li:empty,
+p:empty,
+td:empty,
+th:empty,
+title:empty {
+  outline: 4px solid rgba(255, 215, 0, 0.75) !important;
+}
+
+applet,
+acronym,
+bgsound,
+dir,
+frame,
+frameset,
+hgroup,
+isindex,
+listing,
+nextid,
+noembed,
+plaintext,
+rb,
+strike,
+xmp,
+basefont,
+big,
+blink,
+center,
+font,
+marquee,
+multicol,
+nobr,
+spacer,
+tt,
+a[charset], link[charset],
+a[coords],
+a[shape],
+a[methods], link[methods],
+a[name], embed[name], img[name], option[name],
+a[rev], link[rev],
+form[accept],
+area[nohref],
+head[profile],
+html[version],
+input[ismap],
+input[usemap],
+iframe[longdesc], img[longdesc],
+img[lowsrc],
+link[target],
+meta[scheme],
+object[archive],
+object[classid],
+object[code],
+object[codebase],
+object[codetype],
+object[declare],
+object[standby],
+param[type],
+param[valuetype],
+script[language],
+script[event],
+script[for],
+table[datapagesize],
+table[summary],
+td[axis], th[axis],
+td[scope],
+a[datasrc], applet[datasrc], button[datasrc], div[datasrc], frame[datasrc], iframe[datasrc], img[datasrc], input[datasrc], label[datasrc], legend[datasrc], marquee[datasrc], object[datasrc], option[datasrc], select[datasrc], span[datasrc], table[datasrc], textarea[datasrc],
+a[datafld], applet[datafld], button[datafld], div[datafld], fieldset[datafld], frame[datafld], iframe[datafld], img[datafld], input[datafld], label[datafld], legend[datafld], marquee[datafld], object[datafld], param[datafld], select[datafld], span[datafld], textarea[datafld],
+button[dataformatas], div[dataformatas], input[dataformatas], label[dataformatas], legend[dataformatas], marquee[dataformatas], object[dataformatas], option[dataformatas], select[dataformatas], span[dataformatas], table[dataformatas],
+body[alink],
+body[bgcolor], table[bgcolor], td[bgcolor], th[bgcolor], tr[bgcolor],
+body[link],
+body[marginbottom],
+body[marginheight], iframe[marginheight],
+body[marginleft],
+body[marginright],
+body[margintop],
+body[marginwidth], iframe[marginwidth],
+body[text],
+body[vlink],
+br[clear],
+col[char], tbody[char], thead[char], tfoot[char], td[char], th[char], tr[char],
+col[charoff], tbody[charoff], thead[charoff], tfoot[charoff], td[charoff], th[charoff], tr[charoff],
+col[valign], tbody[valign], thead[valign], tfoot[valign], td[valign], th[valign], tr[valign],
+col[width], hr[width], pre[width], table[width], td[width], th[width],
+dl[compact], ol[compact], ul[compact],
+embed[hspace], iframe[hspace], input[hspace], img[hspace], object[hspace],
+embed[vspace], iframe[vspace], input[vspace], img[vspace], object[vspace],
+hr[color],
+hr[noshade],
+hr[size],
+h1[align], h2[align], h3[align], h4[align], h5[align], h6[align], iframe[align], caption[align], col[align], div[align], embed[align], hr[align], input[align], img[align], legend[align], object[align], p[align], table[align], tbody[align], thead[align], tfoot[align], td[align], th[align], tr[align],
+iframe[allowtransparency],
+iframe[frameborder],
+iframe[scrolling],
+img[border], object[border],
+li[type], ul[type],
+table[cellpadding],
+table[cellspacing],
+table[frame],
+table[rules],
+td[height], th[height],
+td[nowrap], th[nowrap],
+body[background], table[background], thead[background], tbody[background], tfoot[background], tr[background], td[background], th[background] {
+  outline: 4px solid rgba(128, 128, 128, 0.75) !important;
+}
+applet::after,
+acronym::after,
+bgsound::after,
+dir::after,
+frame::after,
+frameset::after,
+hgroup::after,
+isindex::after,
+listing::after,
+nextid::after,
+noembed::after,
+plaintext::after,
+rb::after,
+strike::after,
+xmp::after,
+basefont::after,
+big::after,
+blink::after,
+center::after,
+font::after,
+marquee::after,
+multicol::after,
+nobr::after,
+spacer::after,
+tt::after,
+a[charset]::after, link[charset]::after,
+a[coords]::after,
+a[shape]::after,
+a[methods]::after, link[methods]::after,
+a[name]::after, embed[name]::after, img[name]::after, option[name]::after,
+a[rev]::after, link[rev]::after,
+form[accept]::after,
+area[nohref]::after,
+head[profile]::after,
+html[version]::after,
+input[ismap]::after,
+input[usemap]::after,
+iframe[longdesc]::after, img[longdesc]::after,
+img[lowsrc]::after,
+link[target]::after,
+meta[scheme]::after,
+object[archive]::after,
+object[classid]::after,
+object[code]::after,
+object[codebase]::after,
+object[codetype]::after,
+object[declare]::after,
+object[standby]::after,
+param[type]::after,
+param[valuetype]::after,
+script[language]::after,
+script[event]::after,
+script[for]::after,
+table[datapagesize]::after,
+table[summary]::after,
+td[axis]::after, th[axis]::after,
+td[scope]::after,
+a[datasrc]::after, applet[datasrc]::after, button[datasrc]::after, div[datasrc]::after, frame[datasrc]::after, iframe[datasrc]::after, img[datasrc]::after, input[datasrc]::after, label[datasrc]::after, legend[datasrc]::after, marquee[datasrc]::after, object[datasrc]::after, option[datasrc]::after, select[datasrc]::after, span[datasrc]::after, table[datasrc]::after, textarea[datasrc]::after,
+a[datafld]::after, applet[datafld]::after, button[datafld]::after, div[datafld]::after, fieldset[datafld]::after, frame[datafld]::after, iframe[datafld]::after, img[datafld]::after, input[datafld]::after, label[datafld]::after, legend[datafld]::after, marquee[datafld]::after, object[datafld]::after, param[datafld]::after, select[datafld]::after, span[datafld]::after, textarea[datafld]::after,
+button[dataformatas]::after, div[dataformatas]::after, input[dataformatas]::after, label[dataformatas]::after, legend[dataformatas]::after, marquee[dataformatas]::after, object[dataformatas]::after, option[dataformatas]::after, select[dataformatas]::after, span[dataformatas]::after, table[dataformatas]::after,
+body[alink]::after,
+body[bgcolor]::after, table[bgcolor]::after, td[bgcolor]::after, th[bgcolor]::after, tr[bgcolor]::after,
+body[link]::after,
+body[marginbottom]::after,
+body[marginheight]::after, iframe[marginheight]::after,
+body[marginleft]::after,
+body[marginright]::after,
+body[margintop]::after,
+body[marginwidth]::after, iframe[marginwidth]::after,
+body[text]::after,
+body[vlink]::after,
+br[clear]::after,
+col[char]::after, tbody[char]::after, thead[char]::after, tfoot[char]::after, td[char]::after, th[char]::after, tr[char]::after,
+col[charoff]::after, tbody[charoff]::after, thead[charoff]::after, tfoot[charoff]::after, td[charoff]::after, th[charoff]::after, tr[charoff]::after,
+col[valign]::after, tbody[valign]::after, thead[valign]::after, tfoot[valign]::after, td[valign]::after, th[valign]::after, tr[valign]::after,
+col[width]::after, hr[width]::after, pre[width]::after, table[width]::after, td[width]::after, th[width]::after,
+dl[compact]::after, ol[compact]::after, ul[compact]::after,
+embed[hspace]::after, iframe[hspace]::after, input[hspace]::after, img[hspace]::after, object[hspace]::after,
+embed[vspace]::after, iframe[vspace]::after, input[vspace]::after, img[vspace]::after, object[vspace]::after,
+hr[color]::after,
+hr[noshade]::after,
+hr[size]::after,
+h1[align]::after, h2[align]::after, h3[align]::after, h4[align]::after, h5[align]::after, h6[align]::after, iframe[align]::after, caption[align]::after, col[align]::after, div[align]::after, embed[align]::after, hr[align]::after, input[align]::after, img[align]::after, legend[align]::after, object[align]::after, p[align]::after, table[align]::after, tbody[align]::after, thead[align]::after, tfoot[align]::after, td[align]::after, th[align]::after, tr[align]::after,
+iframe[allowtransparency]::after,
+iframe[frameborder]::after,
+iframe[scrolling]::after,
+img[border]::after, object[border]::after,
+li[type]::after, ul[type]::after,
+table[cellpadding]::after,
+table[cellspacing]::after,
+table[frame]::after,
+table[rules]::after,
+td[height]::after, th[height]::after,
+td[nowrap]::after, th[nowrap]::after,
+body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
+  content: "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses.";
+}
+
+nav:not([role="navigation"]),
+main:not([role="main"]),
+body > header:not([role="banner"]),
+body > footer:not([role="contentinfo"]),
+aside:not([role="complementary"]),
+section:not([aria-labelledby]),
+figure:not([role="group"]),
+figure img:not([aria-describedby]),
+.search:not([role="search"]),
+#search:not([role="search"]),
+[required],
+[aria-required],
+video,
+audio,
+time,
+[datetime],
+[pubdate],
+meta[charset] {
+  outline: 4px solid rgba(34, 139, 34, 0.75) !important;
+}
+
+a:not([href])::after,
+a[href=""]::after {
+  content: "Attribut [href] manquant. Un lien doit avoir une cible, non ?";
+}
+
+a[href="#"]::after {
+  content: "Attribut [href='#']. Pourqoi ? Un <button> semble plus indiqué.";
+}
+
+a[href^="javascript"]::after {
+  content: "Attribut [href] débutant par javascript. Ça n’augure rien de bon…";
+}
+
+img:not([alt])::after,
+input[type="image"]:not([alt])::after,
+input[type="image"][alt=""]::after {
+  content: "Attribut [alt] manquant. Quelle hérésie.";
+}
+
+img[alt=" "]::after {
+  content: "Un attribut [alt] *presque* vide. C’est une blague, non ?";
+}
+
+img:not([src])::after,
+img[src=""]::after,
+img[src="#"]::after {
+  content: "Attribut [src] manquant ou vide. Bon.";
+}
+
+label:not([for])::after,
+label[for=""]::after {
+  content: "Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?";
+}
+
+input:not([name])::after,
+input[name=""]::after,
+select:not([name])::after,
+select[name=""]::after,
+textarea:not([name])::after,
+textarea[name=""]::after {
+  content: "Attribut [name] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire.";
+}
+
+input:not([type])::after,
+input[type=""]::after {
+  content: "Attribut [type] manquant ou vide. On met quoi, dans ce champ ?";
+}
+
+input[type="submit"]:not([value])::after {
+  content: "Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?";
+}
+
+iframe:not([title])::after,
+iframe[title=""]::after {
+  content: "Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>.";
+}
+
+form:not([action])::after {
+  content: "Attribut [action] manquant. Et après, il se passe quoi ?";
+}
+
+[class=""]::after {
+  content: "Attribut [class] vide. Pourquoi tant de haine ?";
+}
+
+[id=""]::after {
+  content: "Attribut [id] vide. Sérieusement ?";
+}
+
+meta[http-equiv="refresh"]::after {
+  content: "<meta http-equiv='refresh'> devrait être supprimé. Définitivement.";
+}
+
+html:not([lang]):after {
+  content: "Pas d’attribut lang sur la balise <html>. Vous parlez quelle langue, vous ?";
+}
+
+/* Les événements javscript sous forme d’attributs HTML */
+[onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
+[onerror]::after, [onhaschange]::after, [onload]::after, [onmessage]::after,
+[onoffline]::after, [ononline]::after, [onpagehide]::after, [onpageshow]::after,
+[onpopstate]::after, [onredo]::after, [onresize]::after, [onstorage]::after,
+[onundo]::after, [onunload]::after,
+[onblur]::after, [onchage]::after, [oncontextmenu]::after, [onfocus]::after,
+[onformchange]::after, [onforminput]::after, [oninput]::after, [oninvalid]::after,
+[onreset]::after, [onselect]::after, [onsubmit]::after,
+[onkeydown]::after, [onkeypress]::after, [onkeyup]::after,
+[onclick]::after, [ondblclick]::after, [ondrag]::after, [ondragend]::after,
+[ondragenter]::after, [ondragleave]::after, [ondragover]::after,
+[ondragstart]::after, [ondrop]::after, [onmousedown]::after, [onmousemove]::after,
+[onmouseout]::after, [onmouseover]::after, [onmouseup]::after, [onmousewheel]::after,
+[onscroll]::after, [onabort]::after, [oncanplay]::after, [oncanplaythrough]::after,
+[ondurationchange]::after, [onemptied]::after, [onended]::after, [onerror]::after,
+[onloadeddata]::after, [onloadedmetadata]::after, [onloadstart]::after,
+[onpause]::after, [onplay]::after, [onplaying]::after, [onprogress]::after,
+[onratechange]::after, [onreadystatechange]::after, [onseeked]::after,
+[onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
+[onvolumechange]::after, [onwaiting]::after {
+  content: "Attribut d’événements javscript. Vous êtes sûr de ce que vous faites ?";
+}
+
+ul > *:not(li)::after,
+ol > *:not(li)::after,
+table > tr::after,
+table table::after,
+tbody + tfoot::after {
+  content: "Imbrication inadéquate d'éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?";
+}
+
+fieldset > :not(legend):first-child::after,
+fieldset > legend:not(:first-child)::after {
+  content: "Imbrication inadéquate d'éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien.";
+}
+
+a[title=""]::after,
+a:not([title])::after {
+  content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !";
+}
+
+abbr:not([title])::after,
+abbr[title=""]::after {
+  content: "Attribut [title] vide ou manquant. Jetez un œil à la BP 160 d’OpQuast ;-) ";
+}
+
+img[alt=""]::after {
+  content: "Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?";
+}
+
+[style]::after {
+  content: "Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !";
+}
+
+div:empty::after,
+span:empty::after,
+li:empty::after,
+p:empty::after,
+td:empty::after,
+th:empty::after {
+  content: "Élément vide. Diantre.";
+}
+
+title:empty::after {
+  content: "La balise <title> est vide. Vous brûlerez en enfer d’ici peu.";
+}
+
+nav:not([role="navigation"])::after,
+main:not([role="main"])::after,
+body > header:not([role="banner"])::after,
+body > footer:not([role="contentinfo"])::after,
+aside:not([role="complementary"])::after {
+  content: "Ces éléments ont probablement mérité le premier rôle :-) .";
+}
+
+section:not([aria-labelledby])::after {
+  content: "L’élément <section> a une valeur sémantique, vous le saviez ? Il doit donc être décrit par un texte.";
+}
+
+figure:not([role="group"])::after {
+  content: "L’élément <figure> regroupe une <img> et un <figacption> : le rôle «group» semble indiqué, pas vrai ?";
+}
+
+figure img:not([aria-describedby])::after {
+  content: "Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>.";
+}
+
+.search:not([role="search"])::after,
+#search:not([role="search"])::after {
+  content: "Vu ! Cet élément semble être la recherche. Mais alors, le rôle ARIA est là, non ?";
+}
+
+[required]::after,
+[aria-required]::after {
+  content: "Les éléments interactifs devraient disposer d’une alternative, d’un transcript ou d’un sous-titrage, et indiquer sa durée. C’est le cas, n’est-ce pas ?";
+}
+
+video::after,
+audio::after {
+  content: "Les éléments interactif doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage, et indiquer sa durée.";
+}
+
+time::after,
+[datetime]::after,
+[pubdate]::after {
+  content: "Le format de date est-il compréhensible ?";
+}
+
+meta[charset]::after {
+  content: "Sommes-nous bien en utf-8 ?";
+}

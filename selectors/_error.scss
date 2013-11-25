@@ -3,13 +3,12 @@ a[href^="javascript"],
 a:not([href]),
 a[href=""],
 
-/* Repère les images sans alternative textuelle.
- * @see : BP1 OpQuast
-*/
+// Repère les images sans alternative textuelle.
+// @see : BP1 OpQuast
 img:not([alt]),
-/* Une alternative contenant un espace est presque pire que pas d’alternative du tout ><
- * @see : BP1 OpQuast
-*/
+
+// Une alternative contenant un espace est presque pire que pas d’alternative du tout ><
+// @see : BP1 OpQuast
 img[alt=" "],
 img:not([src]),
 img[src=""],
@@ -17,7 +16,7 @@ img[src="#"],
 input[type="image"]:not([alt]),
 input[type="image"][alt=""],
 
-/* Détecte les attributs manquants ou vides. */
+// Détecte les attributs manquants ou vides.
 label:not([for]),
 label[for=""],
 
@@ -33,12 +32,6 @@ select[name=""],
 textarea:not([name]),
 textarea[name=""],
 
-abbr:not([title]),
-abbr[title=""],
-
-table:not([summary]),
-table[summary=""],
-
 iframe:not([title]),
 iframe[title=""],
 
@@ -49,10 +42,10 @@ form:not([action]),
 
 html:not([lang]),
 
-/* Les valeurs d’attributs contre-indiquées */
+// Les valeurs d’attributs contre-indiquées
 meta[http-equiv="refresh"],
 
-/* Les événements javascript sous forme d’attributs HTML sont déconseillés */
+// Les événements javascript sous forme d’attributs HTML sont déconseillés
 [onafterprint], [onbeforeprint], [onbeforeunload],
 [onerror], [onhaschange], [onload], [onmessage],
 [onoffline], [ononline], [onpagehide], [onpageshow],

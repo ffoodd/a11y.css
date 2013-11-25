@@ -1,0 +1,51 @@
+// Corrélation entre la sémantique HTML5 et ARIA : aucunes prétentions, simples suggestions. À vous d’avoir le recul nécessaire !
+nav:not([role="navigation"])::after,
+main:not([role="main"])::after,
+body > header:not([role="banner"])::after,
+body > footer:not([role="contentinfo"])::after,
+aside:not([role="complementary"])::after {
+  content: "Ces éléments ont probablement mérité le premier rôle :-) .";
+}
+
+// Si vous utilisez ces éléments, il y a de fortes chances pour que ces attributs améliorent l’accessibilité
+section:not([aria-labelledby])::after {
+  content: "L’élément <section> a une valeur sémantique, vous le saviez ? Il doit donc être décrit par un texte.";
+}
+
+figure:not([role="group"])::after {
+  content: "L’élément <figure> regroupe une <img> et un <figacption> : le rôle «group» semble indiqué, pas vrai ?";
+}
+
+figure img:not([aria-describedby])::after {
+  content: "Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>.";
+}
+
+// Si on a un ID ou une classe «search», il est fort probable que le role search doive suivre
+.search:not([role="search"])::after,
+#search:not([role="search"])::after {
+  content: "Vu ! Cet élément semble être la recherche. Mais alors, le rôle ARIA est là, non ?";
+}
+
+// champ obligatoire / attribut required : ne doit pas être signifié que par la couleur (BP 85)
+[required]::after,
+[aria-required]::after {
+  content: "Les éléments interactifs devraient disposer d’une alternative, d’un transcript ou d’un sous-titrage, et indiquer sa durée. C’est le cas, n’est-ce pas ?";
+}
+
+// <video>, <audio> : présence d’une alternative, d’un transcript / sous-titre, et indication de la durée ? (BP 155, BP 30)
+video::after,
+audio::after {
+  content: "Les éléments interactif doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage, et indiquer sa durée.";
+}
+
+// format de date compréhensible ? (BP 6)
+time::after,
+[datetime]::after,
+[pubdate]::after {
+  content: "Le format de date est-il compréhensible ?";
+}
+
+// définir le jeu de caractères (BP 100) & s’assurer que c’est utf-8 (BP 89)
+meta[charset]::after {
+  content: "Sommes-nous bien en utf-8 ?";
+}
