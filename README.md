@@ -3,7 +3,7 @@ a11y.css
 
 L’objectif de ce fichier CSS est d’alerter l’intégrateur sur les erreurs et risques potentiels dans le code - mais il peut également servir à auditer rapidement un site existant afin d’évaluer l’ampleur des dégâts.
 
-*Il ne peut pas se ssubstituer à un outil complet tel que [OpQuast Reporting](http://reporting.opquast.com/fr/): il doit uniquement servir pour un aperçu des faiblesses d’une page ou lorsque la page n’est pas disponible pour un test.*
+*Il ne peut pas se substituer à un outil complet tel que [OpQuast Reporting](http://reporting.opquast.com/fr/): il doit uniquement servir à obtenir un aperçu des faiblesses d’une page.*
 
 De nombreuses références m’ont inspiré et aidé pour élaborer cette feuille de style:
 * @see : https://github.com/redroot/holmes/blob/master/holmes.css
@@ -22,7 +22,7 @@ Concrètement, les éléments en erreur, en alerte ou obsolète seront cernés d
 Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ainsi marqués, un bandeau apparaitra en haut de votre navigateur avec une petite formule vous précisant le problème, et un indice sous forme de boutade (tentative plus ou moins réussie de faire un peu de pédagogie en passant).
 
 ## Gestion des sélecteurs
-Étant donné la longue liste de sélecteurs à tester, je les ai «externaliser» dans des fichiers partiels, qui étendent les placeholders dans le fichier principal.
+Étant donné la longue liste de sélecteurs à tester, je les ai «externalisés» dans des fichiers partiels, qui étendent les placeholders dans le fichier principal.
 
 Ça n’est pas forcément une bonne solution, mais j’ai préféré la facilité de lecture et de maintenance de chaque degré de gravité à l’homogénéité du résultat: ce fichier n’est - encore une fois - destiné qu’aux phases de développement. Ses performances n’ont donc pas d’intérêt, tout comme sa compatibilité navigateur.
 
