@@ -1,0 +1,80 @@
+a[href="#"],
+a[href^="javascript"],
+a:not([href]),
+a[href=""],
+
+/* Repère les images sans alternative textuelle.
+ * @see : BP1 OpQuast
+*/
+img:not([alt]),
+/* Une alternative contenant un espace est presque pire que pas d’alternative du tout ><
+ * @see : BP1 OpQuast
+*/
+img[alt=" "],
+img:not([src]),
+img[src=""],
+img[src="#"],
+input[type="image"]:not([alt]),
+input[type="image"][alt=""],
+
+/* Détecte les attributs manquants ou vides. */
+label:not([for]),
+label[for=""],
+
+input:not([name]),
+input[name=""],
+input:not([type]),
+input[type=""],
+input[type="submit"]:not([value]),
+
+select:not([name]),
+select[name=""],
+
+textarea:not([name]),
+textarea[name=""],
+
+abbr:not([title]),
+abbr[title=""],
+
+table:not([summary]),
+table[summary=""],
+
+iframe:not([title]),
+iframe[title=""],
+
+form:not([action]),
+
+[class=""],
+[id=""],
+
+html:not([lang]),
+
+/* Les valeurs d’attributs contre-indiquées */
+meta[http-equiv="refresh"],
+
+/* Les événements javascript sous forme d’attributs HTML sont déconseillés */
+[onafterprint], [onbeforeprint], [onbeforeunload],
+[onerror], [onhaschange], [onload], [onmessage],
+[onoffline], [ononline], [onpagehide], [onpageshow],
+[onpopstate], [onredo], [onresize], [onstorage],
+[onundo], [onunload],
+[onblur], [onchage], [oncontextmenu], [onfocus],
+[onformchange], [onforminput], [oninput], [oninvalid],
+[onreset], [onselect], [onsubmit],
+[onkeydown], [onkeypress], [onkeyup],
+[onclick], [ondblclick], [ondrag], [ondragend],
+[ondragenter], [ondragleave], [ondragover],
+[ondragstart], [ondrop], [onmousedown], [onmousemove],
+[onmouseout], [onmouseover], [onmouseup], [onmousewheel],
+[onscroll],
+[onabort], [oncanplay], [oncanplaythrough],
+[ondurationchange], [onemptied], [onended], [onerror],
+[onloadeddata], [onloadedmetadata], [onloadstart],
+[onpause], [onplay], [onplaying], [onprogress],
+[onratechange], [onreadystatechange], [onseeked],
+[onseeking], [onstalled], [onsuspend], [ontimeupdate],
+[onvolumechange], [onwaiting] {
+
+  @extend %error;
+
+}

@@ -1,0 +1,50 @@
+ul > *:not(li),
+ol > *:not(li),
+table > tr,
+table table,
+tbody + tfoot {
+  &::after {
+    content: "Imbrication inadéquate d'éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?";
+  }
+}
+
+fieldset > :not(legend):first-child,
+fieldset > legend:not(:first-child) {
+  &::after {
+    content: "Imbrication inadéquate d'éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien.";
+  }
+}
+
+a[title=""]::after,
+a:not([title])::after {
+  content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !";
+}
+
+abbr:not([title])::after,
+abbr[title=""]::after {
+  content: "Attribut [title] vide ou manquant. Jetez un œil à la BP 160 d’OpQuast ;-) ";
+}
+
+img[alt=""]::after {
+  content: "Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?";
+}
+
+[style]::after {
+  content: "Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !";
+}
+
+div,
+span,
+li,
+p,
+td,
+th {
+  &:empty::after {
+    content: "Élément vide. Diantre.";
+  }
+}
+
+title:empty::after {
+  content: "La balise <title> est vide. Vous brûlerez en enfer d’ici peu.";
+}
+

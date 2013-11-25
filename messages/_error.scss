@@ -1,0 +1,106 @@
+a:not([href])::after,
+a[href=""]::after {
+  content: "Attribut [href] manquant. Un lien doit avoir une cible, non ?";
+}
+
+a[href="#"]::after{
+  content: "Attribut [href='#']. Pourqoi ? Un <button> semble plus indiqué.";
+}
+
+a[href^="javascript"]::after{
+  content: "Attribut [href] débutant par javascript. Ça n’augure rien de bon…";
+}
+
+img:not([alt])::after,
+input[type="image"]:not([alt])::after,
+input[type="image"][alt=""]::after {
+  content: "Attribut [alt] manquant. Quelle hérésie.";
+}
+
+img[alt=" "]::after {
+  content: "Un attribut [alt] *presque* vide. C’est une blague, non ?";
+}
+
+img:not([src]),
+img[src=""],
+img[src="#"] {
+  &::after {
+    content: "Attribut [src] manquant ou vide. Bon.";
+  }
+}
+
+label:not([for])::after,
+label[for=""]::after{
+  content: "Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?";
+}
+
+input:not([name]),
+input[name=""],
+select:not([name]),
+select[name=""],
+textarea:not([name]),
+textarea[name=""] {
+  &::after {
+    content: "Attribut [name] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire.";
+  }
+}
+
+input:not([type])::after,
+input[type=""]::after {
+  content: "Attribut [type] manquant ou vide. On met quoi, dans ce champ ?";
+}
+
+input[type="submit"]:not([value])::after {
+  content: "Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?";
+}
+
+iframe:not([title])::after,
+iframe[title=""]::after {
+  content: "Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>.";
+}
+
+form:not([action])::after {
+  content: "Attribut [action] manquant. Et après, il se passe quoi ?";
+}
+
+[class=""]::after {
+  content: "Attribut [class] vide. Pourquoi tant de haine ?";
+}
+
+[id=""]::after {
+  content: "Attribut [id] vide. Sérieusement ?";
+}
+
+meta[http-equiv="refresh"]::after {
+  content: "<meta http-equiv='refresh'> devrait être supprimé. Définitivement.";
+}
+
+html:not([lang]):after {
+  content:"Pas d’attribut lang sur la balise <html>. Vous parlez quelle langue, vous ?";
+}
+
+/* Les événements javscript sous forme d’attributs HTML */
+[onafterprint], [onbeforeprint], [onbeforeunload],
+[onerror], [onhaschange], [onload], [onmessage],
+[onoffline], [ononline], [onpagehide], [onpageshow],
+[onpopstate], [onredo], [onresize], [onstorage],
+[onundo], [onunload],
+[onblur], [onchage], [oncontextmenu], [onfocus],
+[onformchange], [onforminput], [oninput], [oninvalid],
+[onreset], [onselect], [onsubmit],
+[onkeydown], [onkeypress], [onkeyup],
+[onclick], [ondblclick], [ondrag], [ondragend],
+[ondragenter], [ondragleave], [ondragover],
+[ondragstart], [ondrop], [onmousedown], [onmousemove],
+[onmouseout], [onmouseover], [onmouseup], [onmousewheel],
+[onscroll], [onabort], [oncanplay], [oncanplaythrough],
+[ondurationchange], [onemptied], [onended], [onerror],
+[onloadeddata], [onloadedmetadata], [onloadstart],
+[onpause], [onplay], [onplaying], [onprogress],
+[onratechange], [onreadystatechange], [onseeked],
+[onseeking], [onstalled], [onsuspend], [ontimeupdate],
+[onvolumechange], [onwaiting] {
+  &::after {
+    content: "Attribut d’événements javscript. Vous êtes sûr de ce que vous faites ?";
+  }
+}
