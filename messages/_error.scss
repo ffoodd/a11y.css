@@ -11,6 +11,10 @@ a[href^="javascript"]::after{
   content: "Attribut [href] débutant par javascript. Ça n’augure rien de bon…";
 }
 
+a:empty::after {
+  content: "Ce lien est vide. Vide…";
+}
+
 img:not([alt])::after,
 input[type="image"]:not([alt])::after,
 input[type="image"][alt=""]::after {
@@ -75,8 +79,9 @@ meta[http-equiv="refresh"]::after {
   content: "<meta http-equiv='refresh'> devrait être supprimé. Définitivement.";
 }
 
-html:not([lang]):after {
-  content:"Pas d’attribut lang sur la balise <html>. Vous parlez quelle langue, vous ?";
+html:not([lang]):after,
+html:not([xml:lang]):after {
+  content:"Pas d’attribut lang / xml:lang sur la balise <html>. Vous parlez quelle langue, vous ?";
 }
 
 /* Les événements javscript sous forme d’attributs HTML */

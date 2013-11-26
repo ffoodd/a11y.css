@@ -1,14 +1,41 @@
-// Corrélation entre la sémantique HTML5 et ARIA : aucunes prétentions, simples suggestions. À vous d’avoir le recul nécessaire !
+// Corrélation entre la sémantique HTML5 et ARIA. Les rôles ARIA doivent être présents mais pas forcément sur les éléments HTML5 qui semblent leur correspondre. À vous d’avoir le recul nécessaire !
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=151
+// @note : Test 12.10.4
 nav:not([role="navigation"]),
 main:not([role="main"]),
 body > header:not([role="banner"]),
 body > footer:not([role="contentinfo"]),
 aside:not([role="complementary"]),
 
+// La balise <nav> est résevée aux navigations principales et secondaires;
+// La balise <main> doit être unique et structurante pour le contenu principal
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=116
+nav,
+main:not(:first-of-type),
+
+// Le <h1> devrait disposer de quelques attributs particuliers
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=117
+h1:not([role="heading"]),
+h1:not([aria-level="1"]),
+
 // Si vous utilisez ces éléments, il y a de fortes chances pour que ces attributs améliorent l’accessibilité
 section:not([aria-labelledby]),
 figure:not([role="group"]),
 figure img:not([aria-describedby]),
+
+// L’internaute doit être averti avant l’ouverture d’une nouvelle fenêtre
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=176
+[target="_blank"],
+
+// Les fichiers en téléchargement doivent indiquer leur poids et format :
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=172
+// Et ils doivent eux-mêmes être accessibles, ou mettre à disposition une version accessible :
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=171
+[href$=".pdf"],
+[href$=".doc"],
+[href$=".docx"],
+[href$=".xls"],
+[href$=".txt"],
 
 // Si on a un ID ou une classe «search», il est fort probable que le role search doive suivre
 .search:not([role="search"]),
@@ -17,6 +44,12 @@ figure img:not([aria-describedby]),
 // champ obligatoire / attribut required : ne doit pas être signifié que par la couleur (BP 85)
 [required],
 [aria-required],
+
+// Les éléments masqués aux technologies d’assistance le sont-ils à bon escient ?
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=120
+// @note: Tests 10.13.2 et 10.13.3
+[hidden],
+[arie-hidden],
 
 // <video>, <audio> : présence d’une alternative, d’un transcript / sous-titre, et indication de la durée ? (BP 155, BP 30)
 video,

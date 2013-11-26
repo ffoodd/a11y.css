@@ -3,6 +3,10 @@ a[href^="javascript"],
 a:not([href]),
 a[href=""],
 
+// Les liens vides sont proscris
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=90
+a:empty,
+
 // Repère les images sans alternative textuelle.
 // @see : BP1 OpQuast
 img:not([alt]),
@@ -40,7 +44,10 @@ form:not([action]),
 [class=""],
 [id=""],
 
+// La langue du document doit être précisée.
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=109
 html:not([lang]),
+html:not([xml:lang]),
 
 // Les valeurs d’attributs contre-indiquées
 meta[http-equiv="refresh"],
