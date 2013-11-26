@@ -16,18 +16,23 @@ a:empty::after {
 }
 
 img:not([alt])::after,
-input[type="image"]:not([alt])::after,
-input[type="image"][alt=""]::after {
+area:not([alt])::after,
+input[type="image"]:not([alt])::after {
   content: "Attribut [alt] manquant. Quelle hérésie.";
 }
 
-img[alt=" "]::after {
+img[alt=" "]::after,
+area[alt=" "]::after,
+input[type="image"][alt=" "]::after {
   content: "Un attribut [alt] *presque* vide. C’est une blague, non ?";
 }
 
 img:not([src]),
 img[src=""],
-img[src="#"] {
+img[src="#"],
+input[type="image"]:not([src]),
+input[type="image"][src=""],
+input[type="image"][src="#"] {
   &::after {
     content: "Attribut [src] manquant ou vide. Bon.";
   }
@@ -79,8 +84,7 @@ meta[http-equiv="refresh"]::after {
   content: "<meta http-equiv='refresh'> devrait être supprimé. Définitivement.";
 }
 
-html:not([lang]):after,
-html:not([xml:lang]):after {
+html:not([lang])::after {
   content:"Pas d’attribut lang / xml:lang sur la balise <html>. Vous parlez quelle langue, vous ?";
 }
 

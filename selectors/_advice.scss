@@ -55,6 +55,24 @@ figure img:not([aria-describedby]),
 video,
 audio,
 
+// L’élément <track> doit préciser son type lorsqu’il sert des sous-titres
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=75
+track:not([kind="caption"]),
+
+// Les balises <svg>, <canvas>, <embed> et <object type="image/.."> devraient être contenues dans un élément <figure role="group">,
+// uniquement si elles sont porteuses d’informations.
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=39
+svg,
+embed,
+canvas,
+object[type^="image"],
+
+// L’attribut title doit être identique à l’alternative
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=46
+img[title],
+area[title],
+svg[title],
+
 // format de date compréhensible ? (BP 6)
 time,
 [datetime],

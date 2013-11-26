@@ -21,6 +21,8 @@ abbr[title=""],
 // Les images avec une alternative vide doivent être vérifiées.
 // @see : BP1 OpQuast
 img[alt=""],
+area[alt=""],
+input[type="image"][alt=""],
 
 // Détecte les éléments supportant des styles en ligne.
 // @see : BP156 OpQuast
@@ -33,7 +35,19 @@ li:empty,
 p:empty,
 td:empty,
 th:empty,
-title:empty {
+title:empty,
+
+// Un tableau de mise en forme ne doit pas contenir les éléments et attributs suivants :
+// <caption>, <thead>, <tfoot>, <th>, scope, headers, colgroup, axis
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=80
+table[role="presentation"],
+
+// Une en-tête de tableau avec l’attribut scope doit s’appliquer à toute la ligne / colonne.
+// Une en-tête ne s’appliquant pas à toute la ligne / colonne ne doit pas porter l’attribut scope.
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=81
+th[scope],
+th:not([scope]),
+th:not([id]) {
 
   @extend %warning;
 

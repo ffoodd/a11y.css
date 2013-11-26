@@ -25,7 +25,9 @@ abbr[title=""]::after {
   content: "Attribut [title] vide ou manquant. Jetez un œil à la BP 160 d’OpQuast ;-) ";
 }
 
-img[alt=""]::after {
+img[alt=""]::after,
+area[alt=""]::after,
+input[type="image"][alt=""]::after {
   content: "Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?";
 }
 
@@ -48,3 +50,18 @@ title:empty::after {
   content: "La balise <title> est vide. Vous brûlerez en enfer d’ici peu.";
 }
 
+table[role="presentation"]::after {
+  content: "Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données. Vous pouvez vérifier ?";
+}
+
+th[scope]::after {
+  content: "Cette celulle d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? Elle le devrait, en tout cas.";
+}
+
+th:not([scope])::after {
+  content: "Cette celulle d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à scope.";
+}
+
+th:not([id])::after {
+  content: "Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête.";
+}

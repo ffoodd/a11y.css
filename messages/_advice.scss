@@ -66,7 +66,24 @@ figure img:not([aria-describedby])::after {
 
 video::after,
 audio::after {
-  content: "Les éléments interactif doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage, et indiquer sa durée.";
+  content: "Les éléments interactif doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer sa durée.";
+}
+
+track:not([kind="caption"])::after {
+  content: "Vous utilisez <track>, c’est bon signe ! Mais l’attribut kind='caption' vous intéressera sûrement aussi :) .";
+}
+
+svg::after,
+embed::after,
+canvas::after,
+object[type^="image"]::after {
+  content: "Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>).";
+}
+
+img[title]::after,
+area[title]::after,
+svg[title]::after {
+  content: "L’attribut title, s’il est présent, doit être identique à l’alternative renseignée. À vous de jouer ;-) .";
 }
 
 time::after,

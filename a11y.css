@@ -44,13 +44,19 @@ a[href="#"]::after,
 a[href^="javascript"]::after,
 a:not([href])::after,
 a[href=""]::after,
+a:empty::after,
 img:not([alt])::after,
+area:not([alt])::after,
+input[type="image"]:not([alt])::after,
 img[alt=" "]::after,
+area[alt=" "]::after,
+input[type="image"][alt=" "]::after,
 img:not([src])::after,
 img[src=""]::after,
 img[src="#"]::after,
-input[type="image"]:not([alt])::after,
-input[type="image"][alt=""]::after,
+input[type="image"]:not([src])::after,
+input[type="image"][src=""]::after,
+input[type="image"][src="#"]::after,
 label:not([for])::after,
 label[for=""]::after,
 input:not([name])::after,
@@ -101,6 +107,8 @@ a:not([title])::after,
 abbr:not([title])::after,
 abbr[title=""]::after,
 img[alt=""]::after,
+area[alt=""]::after,
+input[type="image"][alt=""]::after,
 [style]::after,
 div:empty::after,
 span:empty::after,
@@ -108,7 +116,11 @@ li:empty::after,
 p:empty::after,
 td:empty::after,
 th:empty::after,
-title:empty::after, applet::after,
+title:empty::after,
+table[role="presentation"]::after,
+th[scope]::after,
+th:not([scope])::after,
+th:not([id])::after, applet::after,
 acronym::after,
 bgsound::after,
 dir::after,
@@ -202,20 +214,39 @@ table[frame]::after,
 table[rules]::after,
 td[height]::after, th[height]::after,
 td[nowrap]::after, th[nowrap]::after,
-body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after, nav:not([role="navigation"])::after,
+body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after,
 main:not([role="main"])::after,
 body > header:not([role="banner"])::after,
 body > footer:not([role="contentinfo"])::after,
 aside:not([role="complementary"])::after,
+nav::after,
+main:not(:first-of-type)::after,
+h1:not([role="heading"])::after,
+h1:not([aria-level="1"])::after,
 section:not([aria-labelledby])::after,
 figure:not([role="group"])::after,
 figure img:not([aria-describedby])::after,
+[target="_blank"]::after,
+[href$=".pdf"]::after,
+[href$=".doc"]::after,
+[href$=".docx"]::after,
+[href$=".xls"]::after,
+[href$=".txt"]::after,
 .search:not([role="search"])::after,
 #search:not([role="search"])::after,
 [required]::after,
 [aria-required]::after,
+[hidden]::after,
+[arie-hidden]::after,
 video::after,
 audio::after,
+track:not([kind="caption"])::after,
+svg::after,
+embed::after,
+canvas::after,
+object[type^="image"]::after,
+img[title]::after,
+area[title]::after,
 time::after,
 [datetime]::after,
 [pubdate]::after,
@@ -252,13 +283,19 @@ a[href="#"]:hover::after,
 a[href^="javascript"]:hover::after,
 a:not([href]):hover::after,
 a[href=""]:hover::after,
+a:empty:hover::after,
 img:not([alt]):hover::after,
+area:not([alt]):hover::after,
+input[type="image"]:not([alt]):hover::after,
 img[alt=" "]:hover::after,
+area[alt=" "]:hover::after,
+input[type="image"][alt=" "]:hover::after,
 img:not([src]):hover::after,
 img[src=""]:hover::after,
 img[src="#"]:hover::after,
-input[type="image"]:not([alt]):hover::after,
-input[type="image"][alt=""]:hover::after,
+input[type="image"]:not([src]):hover::after,
+input[type="image"][src=""]:hover::after,
+input[type="image"][src="#"]:hover::after,
 label:not([for]):hover::after,
 label[for=""]:hover::after,
 input:not([name]):hover::after,
@@ -309,6 +346,8 @@ a:not([title]):hover::after,
 abbr:not([title]):hover::after,
 abbr[title=""]:hover::after,
 img[alt=""]:hover::after,
+area[alt=""]:hover::after,
+input[type="image"][alt=""]:hover::after,
 [style]:hover::after,
 div:empty:hover::after,
 span:empty:hover::after,
@@ -316,7 +355,11 @@ li:empty:hover::after,
 p:empty:hover::after,
 td:empty:hover::after,
 th:empty:hover::after,
-title:empty:hover::after, applet:hover::after,
+title:empty:hover::after,
+table[role="presentation"]:hover::after,
+th[scope]:hover::after,
+th:not([scope]):hover::after,
+th:not([id]):hover::after, applet:hover::after,
 acronym:hover::after,
 bgsound:hover::after,
 dir:hover::after,
@@ -410,20 +453,39 @@ table[frame]:hover::after,
 table[rules]:hover::after,
 td[height]:hover::after, th[height]:hover::after,
 td[nowrap]:hover::after, th[nowrap]:hover::after,
-body[background]:hover::after, table[background]:hover::after, thead[background]:hover::after, tbody[background]:hover::after, tfoot[background]:hover::after, tr[background]:hover::after, td[background]:hover::after, th[background]:hover::after, nav:not([role="navigation"]):hover::after,
+body[background]:hover::after, table[background]:hover::after, thead[background]:hover::after, tbody[background]:hover::after, tfoot[background]:hover::after, tr[background]:hover::after, td[background]:hover::after, th[background]:hover::after,
 main:not([role="main"]):hover::after,
 body > header:not([role="banner"]):hover::after,
 body > footer:not([role="contentinfo"]):hover::after,
 aside:not([role="complementary"]):hover::after,
+nav:hover::after,
+main:not(:first-of-type):hover::after,
+h1:not([role="heading"]):hover::after,
+h1:not([aria-level="1"]):hover::after,
 section:not([aria-labelledby]):hover::after,
 figure:not([role="group"]):hover::after,
 figure img:not([aria-describedby]):hover::after,
+[target="_blank"]:hover::after,
+[href$=".pdf"]:hover::after,
+[href$=".doc"]:hover::after,
+[href$=".docx"]:hover::after,
+[href$=".xls"]:hover::after,
+[href$=".txt"]:hover::after,
 .search:not([role="search"]):hover::after,
 #search:not([role="search"]):hover::after,
 [required]:hover::after,
 [aria-required]:hover::after,
+[hidden]:hover::after,
+[arie-hidden]:hover::after,
 video:hover::after,
 audio:hover::after,
+track:not([kind="caption"]):hover::after,
+svg:hover::after,
+embed:hover::after,
+canvas:hover::after,
+object[type^="image"]:hover::after,
+img[title]:hover::after,
+area[title]:hover::after,
 time:hover::after,
 [datetime]:hover::after,
 [pubdate]:hover::after,
@@ -437,13 +499,19 @@ a[href="#"],
 a[href^="javascript"],
 a:not([href]),
 a[href=""],
+a:empty,
 img:not([alt]),
+area:not([alt]),
+input[type="image"]:not([alt]),
 img[alt=" "],
+area[alt=" "],
+input[type="image"][alt=" "],
 img:not([src]),
 img[src=""],
 img[src="#"],
-input[type="image"]:not([alt]),
-input[type="image"][alt=""],
+input[type="image"]:not([src]),
+input[type="image"][src=""],
+input[type="image"][src="#"],
 label:not([for]),
 label[for=""],
 input:not([name]),
@@ -498,6 +566,8 @@ a:not([title]),
 abbr:not([title]),
 abbr[title=""],
 img[alt=""],
+area[alt=""],
+input[type="image"][alt=""],
 [style],
 div:empty,
 span:empty,
@@ -505,7 +575,11 @@ li:empty,
 p:empty,
 td:empty,
 th:empty,
-title:empty {
+title:empty,
+table[role="presentation"],
+th[scope],
+th:not([scope]),
+th:not([id]) {
   outline: 4px solid rgba(255, 215, 0, 0.75) !important;
 }
 
@@ -709,15 +783,35 @@ main:not([role="main"]),
 body > header:not([role="banner"]),
 body > footer:not([role="contentinfo"]),
 aside:not([role="complementary"]),
+nav,
+main:not(:first-of-type),
+h1:not([role="heading"]),
+h1:not([aria-level="1"]),
 section:not([aria-labelledby]),
 figure:not([role="group"]),
 figure img:not([aria-describedby]),
+[target="_blank"],
+[href$=".pdf"],
+[href$=".doc"],
+[href$=".docx"],
+[href$=".xls"],
+[href$=".txt"],
 .search:not([role="search"]),
 #search:not([role="search"]),
 [required],
 [aria-required],
+[hidden],
+[arie-hidden],
 video,
 audio,
+track:not([kind="caption"]),
+svg,
+embed,
+canvas,
+object[type^="image"],
+img[title],
+area[title],
+svg[title],
 time,
 [datetime],
 [pubdate],
@@ -738,19 +832,28 @@ a[href^="javascript"]::after {
   content: "Attribut [href] débutant par javascript. Ça n’augure rien de bon…";
 }
 
+a:empty::after {
+  content: "Ce lien est vide. Vide…";
+}
+
 img:not([alt])::after,
-input[type="image"]:not([alt])::after,
-input[type="image"][alt=""]::after {
+area:not([alt])::after,
+input[type="image"]:not([alt])::after {
   content: "Attribut [alt] manquant. Quelle hérésie.";
 }
 
-img[alt=" "]::after {
+img[alt=" "]::after,
+area[alt=" "]::after,
+input[type="image"][alt=" "]::after {
   content: "Un attribut [alt] *presque* vide. C’est une blague, non ?";
 }
 
 img:not([src])::after,
 img[src=""]::after,
-img[src="#"]::after {
+img[src="#"]::after,
+input[type="image"]:not([src])::after,
+input[type="image"][src=""]::after,
+input[type="image"][src="#"]::after {
   content: "Attribut [src] manquant ou vide. Bon.";
 }
 
@@ -798,8 +901,8 @@ meta[http-equiv="refresh"]::after {
   content: "<meta http-equiv='refresh'> devrait être supprimé. Définitivement.";
 }
 
-html:not([lang]):after {
-  content: "Pas d’attribut lang sur la balise <html>. Vous parlez quelle langue, vous ?";
+html:not([lang])::after {
+  content: "Pas d’attribut lang / xml:lang sur la balise <html>. Vous parlez quelle langue, vous ?";
 }
 
 /* Les événements javscript sous forme d’attributs HTML */
@@ -849,7 +952,9 @@ abbr[title=""]::after {
   content: "Attribut [title] vide ou manquant. Jetez un œil à la BP 160 d’OpQuast ;-) ";
 }
 
-img[alt=""]::after {
+img[alt=""]::after,
+area[alt=""]::after,
+input[type="image"][alt=""]::after {
   content: "Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?";
 }
 
@@ -870,12 +975,41 @@ title:empty::after {
   content: "La balise <title> est vide. Vous brûlerez en enfer d’ici peu.";
 }
 
+table[role="presentation"]::after {
+  content: "Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données. Vous pouvez vérifier ?";
+}
+
+th[scope]::after {
+  content: "Cette celulle d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? Elle le devrait, en tout cas.";
+}
+
+th:not([scope])::after {
+  content: "Cette celulle d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à scope.";
+}
+
+th:not([id])::after {
+  content: "Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête.";
+}
+
 nav:not([role="navigation"])::after,
 main:not([role="main"])::after,
 body > header:not([role="banner"])::after,
 body > footer:not([role="contentinfo"])::after,
 aside:not([role="complementary"])::after {
-  content: "Ces éléments ont probablement mérité le premier rôle :-) .";
+  content: "Ces éléments ont probablement mérité le premier rôle :-) . Navigation, main, banner, contentinfo, complementary : ils sont tous là ?";
+}
+
+nav::after {
+  content: "La balise <nav> est réservée à la structuration des zones de navigations principales et secondaires. Vous le saviez ?";
+}
+
+main:not(:first-of-type)::after {
+  content: "<main> est réservée à la zone de contenu principal, et doit donc être unique. Repentez-vous et tout ira bien :) .";
+}
+
+h1:not([role="heading"])::after,
+h1:not([aria-level="1"])::after {
+  content: "Si vous pouviez ajouter le role «heading» et l’attribut aria-level=1, vous seriez vraiment choupis !";
 }
 
 section:not([aria-labelledby])::after {
@@ -890,6 +1024,18 @@ figure img:not([aria-describedby])::after {
   content: "Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>.";
 }
 
+[target="_blank"]::after {
+  content: "L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre. Mais vous y avez pensé, non :) ?";
+}
+
+[href$=".pdf"]::after,
+[href$=".doc"]::after,
+[href$=".docx"]::after,
+[href$=".xls"]::after,
+[href$=".txt"]::after {
+  content: "Le format et le poids d’un fichier téléchargeable devraient être indiqués - et il devrait être accessible.";
+}
+
 .search:not([role="search"])::after,
 #search:not([role="search"])::after {
   content: "Vu ! Cet élément semble être la recherche. Mais alors, le rôle ARIA est là, non ?";
@@ -900,9 +1046,31 @@ figure img:not([aria-describedby])::after {
   content: "Les éléments interactifs devraient disposer d’une alternative, d’un transcript ou d’un sous-titrage, et indiquer sa durée. C’est le cas, n’est-ce pas ?";
 }
 
+[hidden]::after,
+[arie-hidden]::after {
+  content: "Cet élément (masqué aux technologies d’assistance) ne porte aucune information, vous en êtes bien sûr ?";
+}
+
 video::after,
 audio::after {
-  content: "Les éléments interactif doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage, et indiquer sa durée.";
+  content: "Les éléments interactif doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer sa durée.";
+}
+
+track:not([kind="caption"])::after {
+  content: "Vous utilisez <track>, c’est bon signe ! Mais l’attribut kind='caption' vous intéressera sûrement aussi :) .";
+}
+
+svg::after,
+embed::after,
+canvas::after,
+object[type^="image"]::after {
+  content: "Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>).";
+}
+
+img[title]::after,
+area[title]::after,
+svg[title]::after {
+  content: "L’attribut title, s’il est présent, doit être identique à l’alternative renseignée. À vous de jouer ;-) .";
 }
 
 time::after,

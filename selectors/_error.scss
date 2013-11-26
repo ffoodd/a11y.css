@@ -10,15 +10,22 @@ a:empty,
 // Repère les images sans alternative textuelle.
 // @see : BP1 OpQuast
 img:not([alt]),
+area:not([alt]),
+input[type="image"]:not([alt]),
 
 // Une alternative contenant un espace est presque pire que pas d’alternative du tout ><
 // @see : BP1 OpQuast
 img[alt=" "],
+area[alt=" "],
+input[type="image"][alt=" "],
+
 img:not([src]),
 img[src=""],
 img[src="#"],
-input[type="image"]:not([alt]),
-input[type="image"][alt=""],
+input[type="image"]:not([src]),
+input[type="image"][src=""],
+input[type="image"][src="#"],
+
 
 // Détecte les attributs manquants ou vides.
 label:not([for]),
@@ -47,7 +54,6 @@ form:not([action]),
 // La langue du document doit être précisée.
 // @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=109
 html:not([lang]),
-html:not([xml:lang]),
 
 // Les valeurs d’attributs contre-indiquées
 meta[http-equiv="refresh"],
