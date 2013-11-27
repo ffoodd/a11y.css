@@ -4,39 +4,39 @@ table > tr,
 table table,
 tbody + tfoot {
   &::after {
-    content: "Imbrication inadéquate d'éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?";
+    content: "Imbrication inadéquate d'éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?" !important;
   }
 }
 
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child) {
   &::after {
-    content: "Imbrication inadéquate d'éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien.";
+    content: "Imbrication inadéquate d'éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
   }
 }
 
 a[title=""]::after,
 a:not([title])::after {
-  content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !";
+  content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !" !important;
 }
 
 abbr:not([title])::after,
 abbr[title=""]::after {
-  content: "Attribut [title] vide ou manquant. Jetez un œil à la BP 160 d’OpQuast ;-) ";
+  content: "Attribut [title] vide ou manquant. Jetez un œil à la BP 160 d’OpQuast ;-) " !important;
 }
 
 img[alt=""]::after,
 area[alt=""]::after,
 input[type="image"][alt=""]::after {
-  content: "Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?";
+  content: "Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
 }
 
 [style]::after {
-  content: "Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !";
+  content: "Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !" !important;
 }
 
 label + :not(input):not(select):not(textarea)::after {
-  content: "Un champ et son label devrait être accolés. Mais ce qui suit ce label ne ressemble pas à un champ…";
+  content: "Un champ et son label devrait être accolés. Mais ce qui suit ce label ne ressemble pas à un champ…" !important;
 }
 
 div,
@@ -46,26 +46,26 @@ p,
 td,
 th {
   &:empty::after {
-    content: "Élément vide. Diantre.";
+    content: "Élément vide. Diantre." !important;
   }
 }
 
 title:empty::after {
-  content: "La balise <title> est vide. Vous brûlerez en enfer d’ici peu.";
+  content: "La balise <title> est vide. Vous brûlerez en enfer d’ici peu." !important;
 }
 
 table[role="presentation"]::after {
-  content: "Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données. Vous pouvez vérifier ?";
+  content: "Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données. Vous pouvez vérifier ?" !important;
 }
 
 th[scope]::after {
-  content: "Cette celulle d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? Elle le devrait, en tout cas.";
+  content: "Cette celulle d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? Elle le devrait, en tout cas." !important;
 }
 
 th:not([scope])::after {
-  content: "Cette celulle d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à scope.";
+  content: "Cette celulle d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à scope." !important;
 }
 
 th:not([id])::after {
-  content: "Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête.";
+  content: "Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête." !important;
 }

@@ -64,39 +64,39 @@ $advice: forestgreen;
 %message {
 
   &::after {
-    background: rgba( 255, 255, 255, .98 );
-    border-bottom: 1px solid rgba(0, 0, 0, .3);
-    color: dimgray;
-    display: block;
-    font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif;
-    height: 4em;
-    left: 0;
+    background: rgba( 255, 255, 255, .98 ) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, .3) !important;
+    color: dimgray !important;
+    display: block !important;
+    font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif !important;
+    height: 4em !important;
+    left: 0 !important;
     /* On s’assure que le message ne capte pas le survol. */
-    pointer-events: none;
-    position: fixed;
+    pointer-events: none !important;
+    position: fixed !important;
     /* On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes. */
-    text-align: center;
-    text-decoration: none;
-    text-shadow: none;
-    text-transform: none;
+    text-align: center !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
+    text-transform: none !important;
     /* On prépare l’apparition du message. */
-    top: 0;
-    -webkit-transform: translateY( -4em );
-    -ms-transform:     translateY( -4em );
-    transition: all .3s ease-in;
-    width: 100%;
+    top: 0 !important;
+    -webkit-transform: translateY( -4em ) !important;
+    -ms-transform:     translateY( -4em ) !important;
+    transition: all .3s ease-in !important;
+    width: 100% !important;
     /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
      * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
      * @see : http://www.puidokas.com/max-z-index/
      * Ça nous permet de garantir que notre message sera toujours visible.
      */
-    z-index: 2147483647;
+    z-index: 2147483647 !important;
   }
 
   &:hover::after {
-    -webkit-transform: translateY( 0 );
-    -ms-transform:     translateY( 0 );
-    transition: all .3s ease-out;
+    -webkit-transform: translateY( 0 ) !important;
+    -ms-transform:     translateY( 0 ) !important;
+    transition: all .3s ease-out !important;
   }
 }
 
@@ -125,7 +125,7 @@ $advice: forestgreen;
   @extend %message;
 
   &::after {
-    content: "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses.";
+    content: "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
   }
 }
 

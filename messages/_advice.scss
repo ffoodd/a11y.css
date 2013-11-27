@@ -4,38 +4,38 @@ main:not([role="main"])::after,
 body > header:not([role="banner"])::after,
 body > footer:not([role="contentinfo"])::after,
 aside:not([role="complementary"])::after {
-  content: "Ces éléments ont probablement mérité le premier rôle :-) . Navigation, main, banner, contentinfo, complementary : ils sont tous là ?";
+  content: "Ces éléments ont probablement mérité le premier rôle :-) . Navigation, main, banner, contentinfo, complementary : ils sont tous là ?" !important;
 }
 
 nav::after {
-  content: "La balise <nav> est réservée à la structuration des zones de navigations principales et secondaires. Vous le saviez ?";
+  content: "La balise <nav> est réservée à la structuration des zones de navigations principales et secondaires. Vous le saviez ?" !important;
 }
 
 main:not(:first-of-type)::after {
-  content: "<main> est réservée à la zone de contenu principal, et doit donc être unique. Repentez-vous et tout ira bien :) .";
+  content: "<main> est réservée à la zone de contenu principal, et doit donc être unique. Repentez-vous et tout ira bien :) ." !important;
 }
 
 h1:not([role="heading"])::after,
 h1:not([aria-level="1"])::after {
-  content: "Si vous pouviez ajouter le role «heading» et l’attribut aria-level=1, vous seriez vraiment choupis !";
+  content: "Si vous pouviez ajouter le role «heading» et l’attribut aria-level=1, vous seriez vraiment choupis !" !important;
 }
 
 // Si vous utilisez ces éléments, il y a de fortes chances pour que ces attributs améliorent l’accessibilité
 section:not([aria-labelledby])::after {
-  content: "L’élément <section> a une valeur sémantique, vous le saviez ? Il doit donc être décrit par un texte.";
+  content: "L’élément <section> a une valeur sémantique, vous le saviez ? Il doit donc être décrit par un texte." !important;
 }
 
 figure:not([role="group"])::after {
-  content: "L’élément <figure> regroupe une <img> et un <figacption> : le rôle «group» semble indiqué, pas vrai ?";
+  content: "L’élément <figure> regroupe une <img> et un <figacption> : le rôle «group» semble indiqué, pas vrai ?" !important;
 }
 
 figure img:not([aria-describedby])::after {
-  content: "Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>.";
+  content: "Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>." !important;
 }
 
 // Les liens sont sensibles, vous savez ?
 [target="_blank"]::after {
-  content: "L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre. Mais vous y avez pensé, non :) ?";
+  content: "L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre. Mais vous y avez pensé, non :) ?" !important;
 }
 
 [href$=".pdf"],
@@ -44,58 +44,58 @@ figure img:not([aria-describedby])::after {
 [href$=".xls"],
 [href$=".txt"] {
   &::after {
-    content: "Le format et le poids d’un fichier téléchargeable devraient être indiqués - et il devrait être accessible.";
+    content: "Le format et le poids d’un fichier téléchargeable devraient être indiqués - et il devrait être accessible." !important;
   }
 }
 
 // Si on a un ID ou une classe «search», il est fort probable que le role search doive suivre
 .search:not([role="search"])::after,
 #search:not([role="search"])::after {
-  content: "Vu ! Cet élément semble être la recherche. Mais alors, le rôle ARIA est là, non ?";
+  content: "Vu ! Cet élément semble être la recherche. Mais alors, le rôle ARIA est là, non ?" !important;
 }
 
 [required]::after,
 [aria-required]::after {
-  content: "Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur.";
+  content: "Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur." !important;
 }
 
 [hidden]::after,
 [aria-hidden]::after {
-  content: "Cet élément - masqué aux technologies d’assistance - ne porte aucune information, vous en êtes bien sûr ?";
+  content: "Cet élément - masqué aux technologies d’assistance - ne porte aucune information, vous en êtes bien sûr ?" !important;
 }
 
 [placeholder]::after {
-  content: "Ce placeholder ne remplace pas un <label>, j’espère ? Y’en a qui ont essayé…";
+  content: "Ce placeholder ne remplace pas un <label>, j’espère ? Y’en a qui ont essayé…" !important;
 }
 
 video::after,
 audio::after {
-  content: "Les éléments interactif doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer sa durée.";
+  content: "Les éléments interactif doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer sa durée." !important;
 }
 
 track:not([kind="caption"])::after {
-  content: "Vous utilisez <track>, c’est bon signe ! Mais l’attribut kind='caption' vous intéressera sûrement aussi :) .";
+  content: "Vous utilisez <track>, c’est bon signe ! Mais l’attribut kind='caption' vous intéressera sûrement aussi :) ." !important;
 }
 
 svg::after,
 embed::after,
 canvas::after,
 object[type^="image"]::after {
-  content: "Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>).";
+  content: "Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>)." !important;
 }
 
 img[title]::after,
 area[title]::after,
 svg[title]::after {
-  content: "L’attribut title, s’il est présent, doit être identique à l’alternative renseignée. À vous de jouer ;-) .";
+  content: "L’attribut title, s’il est présent, doit être identique à l’alternative renseignée. À vous de jouer ;-) ." !important;
 }
 
 time::after,
 [datetime]::after,
 [pubdate]::after {
-  content: "Le format de date est-il compréhensible ?";
+  content: "Le format de date est-il compréhensible ?" !important;
 }
 
 meta[charset]::after {
-  content: "Sommes-nous bien en utf-8 ?";
+  content: "Sommes-nous bien en utf-8 ?" !important;
 }

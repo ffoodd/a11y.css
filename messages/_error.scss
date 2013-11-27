@@ -1,30 +1,30 @@
 a:not([href])::after,
 a[href=""]::after {
-  content: "Attribut [href] manquant. Un lien doit avoir une cible, non ?";
+  content: "Attribut [href] manquant. Un lien doit avoir une cible, non ?" !important;
 }
 
 a[href="#"]::after{
-  content: "Attribut [href='#']. Pourqoi ? Un <button> semble plus indiqué.";
+  content: "Attribut [href='#']. Pourqoi ? Un <button> semble plus indiqué." !important;
 }
 
 a[href^="javascript"]::after{
-  content: "Attribut [href] débutant par javascript. Ça n’augure rien de bon…";
+  content: "Attribut [href] débutant par javascript. Ça n’augure rien de bon…" !important;
 }
 
 a:empty::after {
-  content: "Ce lien est vide. Vide…";
+  content: "Ce lien est vide. Vide…" !important;
 }
 
 img:not([alt])::after,
 area:not([alt])::after,
 input[type="image"]:not([alt])::after {
-  content: "Attribut [alt] manquant. Quelle hérésie.";
+  content: "Attribut [alt] manquant. Quelle hérésie." !important;
 }
 
 img[alt=" "]::after,
 area[alt=" "]::after,
 input[type="image"][alt=" "]::after {
-  content: "Un attribut [alt] *presque* vide. C’est une blague, non ?";
+  content: "Un attribut [alt] *presque* vide. C’est une blague, non ?" !important;
 }
 
 img:not([src]),
@@ -34,13 +34,13 @@ input[type="image"]:not([src]),
 input[type="image"][src=""],
 input[type="image"][src="#"] {
   &::after {
-    content: "Attribut [src] manquant ou vide. Bon.";
+    content: "Attribut [src] manquant ou vide. Bon." !important;
   }
 }
 
 label:not([for])::after,
 label[for=""]::after{
-  content: "Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?";
+  content: "Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?" !important;
 }
 
 input:not([id]),
@@ -50,26 +50,26 @@ select[id=""],
 textarea:not([id]),
 textarea[id=""] {
   &::after {
-    content: "Attribut [id] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire.";
+    content: "Attribut [id] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire." !important;
   }
 }
 
 optgroup:not([label])::after {
-  content: "Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. Dommage…";
+  content: "Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. Dommage…" !important;
 }
 
 input:not([type])::after,
 input[type=""]::after {
-  content: "Attribut [type] manquant ou vide. On met quoi, dans ce champ ?";
+  content: "Attribut [type] manquant ou vide. On met quoi, dans ce champ ?" !important;
 }
 
 input[type="submit"]:not([value])::after {
-  content: "Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?";
+  content: "Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?" !important;
 }
 
 iframe:not([title])::after,
 iframe[title=""]::after {
-  content: "Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>.";
+  content: "Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>." !important;
 }
 
 form:not([action])::after {
@@ -78,23 +78,23 @@ form:not([action])::after {
 
 [required]:not([aria-describedby])::after,
 [aria-required]:not([aria-describedby])::after {
-  content: "Si le champ est obligatoire, une indication doit exister : liez-la au champ à l’aide de aria-describedby et de son ID. Merci !"
+  content: "Si le champ est obligatoire, une indication doit exister : liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important;
 }
 
 [class=""]::after {
-  content: "Attribut [class] vide. Pourquoi tant de haine ?";
+  content: "Attribut [class] vide. Pourquoi tant de haine ?" !important;
 }
 
 [id=""]::after {
-  content: "Attribut [id] vide. Sérieusement ?";
+  content: "Attribut [id] vide. Sérieusement ?" !important;
 }
 
 meta[http-equiv="refresh"]::after {
-  content: "<meta http-equiv='refresh'> devrait être supprimé. Définitivement.";
+  content: "<meta http-equiv='refresh'> devrait être supprimé. Définitivement." !important;
 }
 
 html:not([lang])::after {
-  content:"Pas d’attribut lang / xml:lang sur la balise <html>. Vous parlez quelle langue, vous ?";
+  content:"Pas d’attribut lang / xml:lang sur la balise <html>. Vous parlez quelle langue, vous ?" !important;
 }
 
 /* Les événements javscript sous forme d’attributs HTML */
@@ -119,6 +119,6 @@ html:not([lang])::after {
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
   &::after {
-    content: "Attribut d’événements javscript. Vous êtes sûr de ce que vous faites ?";
+    content: "Attribut d’événements javscript. Vous êtes sûr de ce que vous faites ?" !important;
   }
 }
