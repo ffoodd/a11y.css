@@ -3,7 +3,7 @@ a11y.css
 
 L’objectif de ce fichier CSS est d’alerter l’intégrateur sur les erreurs et risques potentiels dans le code - mais il peut également servir à auditer rapidement un site existant afin d’évaluer l’ampleur des dégâts.
 
-*Il ne peut pas se substituer à un outil complet tel que [OpQuast Reporting](http://reporting.opquast.com/fr/): il doit uniquement servir à obtenir un aperçu des faiblesses d’une page.*
+*Il ne peut pas se substituer à un outil complet tel que [OpQuast Reporting](http://reporting.opquast.com/fr/): il doit uniquement servir à obtenir un aperçu des faiblesses d’une page. Chaque critère technique a un alter-ego pour interroger et vérifier la pertinence de la technique employée et du contenu servi à l’utilisateur : c’est alors à vous de faire ces tests, via un contrôle manuel.*
 
 De nombreuses références m’ont inspiré et aidé pour élaborer cette feuille de style:
 * @see : https://github.com/redroot/holmes/blob/master/holmes.css
@@ -18,6 +18,7 @@ Concrètement, les éléments en erreur, en alerte ou obsolète seront cernés d
 * en rouge pour les erreurs;
 * en jaune pour les alertes;
 * en gris pour les élements & attributs obsolètes.
+* en vert les suggestions d’améliorations
 
 Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ainsi marqués, un bandeau apparaitra en haut de votre navigateur avec une petite formule vous précisant le problème, et un indice sous forme de boutade (tentative plus ou moins réussie de faire un peu de pédagogie en passant).
 
@@ -48,10 +49,12 @@ Les balises «auto-fermantes» n’autorisent pas la génération de contenu. Ai
 * `<track />`
 * `<wbr />`
 
+De même, les tests sur les éléments contenus dans le `<head>` posent un souci pour l’affichage du message : je vais devoir trouver une autre méthode pour afficher ces messages.
+
 ## Amélioration(s) à venir
 Dans un futur plus ou moins proche, les points suivants seront à améliorer ou à créer :
 - [ ] trouver un moyen pour afficher les messages liés aux erreurs sur des balises auto-fermantes et des éléments du `<head>` - du javascript sera peut-être nécessaire;
-- [ ] ajouter un quatrième degré : *les recommandations*. Bien que non bloquants, certains points (comme la présence des principaux rôles ARIA) peuvent être testés en CSS : j’aurais bien tort de m’en priver.
+- [x] ajouter un quatrième degré : *les recommandations*. Bien que non bloquants, certains points (comme la présence des principaux rôles ARIA) peuvent être testés en CSS : j’aurais bien tort de m’en priver.
 
 *PS*: Non, les bonnes pratiques CSS n’ont pas cours dans ce fichier puisque certains sélecteurs sont tout simplement immondes. Mais ce fichier n’est pas voué à être chargé sur d’autres machines que celles des intégrateurs en quête de qualité, comme moi :D.
 
