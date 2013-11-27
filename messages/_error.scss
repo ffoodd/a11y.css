@@ -43,15 +43,19 @@ label[for=""]::after{
   content: "Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?";
 }
 
-input:not([name]),
-input[name=""],
-select:not([name]),
-select[name=""],
-textarea:not([name]),
-textarea[name=""] {
+input:not([id]),
+input[id=""],
+select:not([id]),
+select[id=""],
+textarea:not([id]),
+textarea[id=""] {
   &::after {
-    content: "Attribut [name] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire.";
+    content: "Attribut [id] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire.";
   }
+}
+
+optgroup:not([label])::after {
+  content: "Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. Dommage…";
 }
 
 input:not([type])::after,
@@ -70,6 +74,11 @@ iframe[title=""]::after {
 
 form:not([action])::after {
   content: "Attribut [action] manquant. Et après, il se passe quoi ?";
+}
+
+[required]:not([aria-describedby])::after,
+[aria-required]:not([aria-describedby])::after {
+  content: "Si le champ est obligatoire, une indication doit exister : liez-la au champ à l’aide de aria-describedby et de son ID. Merci !"
 }
 
 [class=""]::after {

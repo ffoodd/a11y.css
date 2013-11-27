@@ -35,6 +35,10 @@ input[type="image"][alt=""]::after {
   content: "Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !";
 }
 
+label + :not(input):not(select):not(textarea)::after {
+  content: "Un champ et son label devrait être accolés. Mais ce qui suit ce label ne ressemble pas à un champ…";
+}
+
 div,
 span,
 li,

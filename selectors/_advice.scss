@@ -42,6 +42,7 @@ figure img:not([aria-describedby]),
 #search:not([role="search"]),
 
 // champ obligatoire / attribut required : ne doit pas être signifié que par la couleur (BP 85)
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=137
 [required],
 [aria-required],
 
@@ -49,7 +50,7 @@ figure img:not([aria-describedby]),
 // @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=120
 // @note: Tests 10.13.2 et 10.13.3
 [hidden],
-[arie-hidden],
+[aria-hidden],
 
 // <video>, <audio> : présence d’une alternative, d’un transcript / sous-titre, et indication de la durée ? (BP 155, BP 30)
 video,

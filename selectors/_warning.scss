@@ -6,6 +6,7 @@ table table,
 // tfoot doit être *avant* tbody
 tbody + tfoot,
 // Le premier descendant d’un fieldset *doit* être sa légende
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=140
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
 
@@ -27,6 +28,10 @@ input[type="image"][alt=""],
 // Détecte les éléments supportant des styles en ligne.
 // @see : BP156 OpQuast
 [style],
+
+// Un champ et son label doivent être accolés
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=142
+label + :not(input):not(select):not(textarea),
 
 // Détecte les éléments vides
 div:empty,

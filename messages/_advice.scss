@@ -56,12 +56,12 @@ figure img:not([aria-describedby])::after {
 
 [required]::after,
 [aria-required]::after {
-  content: "Les éléments interactifs devraient disposer d’une alternative, d’un transcript ou d’un sous-titrage, et indiquer sa durée. C’est le cas, n’est-ce pas ?";
+  content: "Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur.";
 }
 
 [hidden]::after,
-[arie-hidden]::after {
-  content: "Cet élément (masqué aux technologies d’assistance) ne porte aucune information, vous en êtes bien sûr ?";
+[aria-hidden]::after {
+  content: "Cet élément - masqué aux technologies d’assistance - ne porte aucune information, vous en êtes bien sûr ?";
 }
 
 video::after,

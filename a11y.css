@@ -45,18 +45,21 @@ input[type="image"][src=""]::after,
 input[type="image"][src="#"]::after,
 label:not([for])::after,
 label[for=""]::after,
-input:not([name])::after,
-input[name=""]::after,
+input:not([id])::after,
+input[id=""]::after,
 input:not([type])::after,
 input[type=""]::after,
 input[type="submit"]:not([value])::after,
-select:not([name])::after,
-select[name=""]::after,
-textarea:not([name])::after,
-textarea[name=""]::after,
+select:not([id])::after,
+select[id=""]::after,
+textarea:not([id])::after,
+textarea[id=""]::after,
+optgroup:not([label])::after,
 iframe:not([title])::after,
 iframe[title=""]::after,
 form:not([action])::after,
+[required]:not([aria-describedby])::after,
+[aria-required]:not([aria-describedby])::after,
 [class=""]::after,
 [id=""]::after,
 html:not([lang])::after,
@@ -96,6 +99,7 @@ img[alt=""]::after,
 area[alt=""]::after,
 input[type="image"][alt=""]::after,
 [style]::after,
+label + :not(textarea):not(select):not(input)::after,
 div:empty::after,
 span:empty::after,
 li:empty::after,
@@ -223,7 +227,7 @@ figure img:not([aria-describedby])::after,
 [required]::after,
 [aria-required]::after,
 [hidden]::after,
-[arie-hidden]::after,
+[aria-hidden]::after,
 video::after,
 audio::after,
 track:not([kind="caption"])::after,
@@ -284,18 +288,21 @@ input[type="image"][src=""]:hover::after,
 input[type="image"][src="#"]:hover::after,
 label:not([for]):hover::after,
 label[for=""]:hover::after,
-input:not([name]):hover::after,
-input[name=""]:hover::after,
+input:not([id]):hover::after,
+input[id=""]:hover::after,
 input:not([type]):hover::after,
 input[type=""]:hover::after,
 input[type="submit"]:not([value]):hover::after,
-select:not([name]):hover::after,
-select[name=""]:hover::after,
-textarea:not([name]):hover::after,
-textarea[name=""]:hover::after,
+select:not([id]):hover::after,
+select[id=""]:hover::after,
+textarea:not([id]):hover::after,
+textarea[id=""]:hover::after,
+optgroup:not([label]):hover::after,
 iframe:not([title]):hover::after,
 iframe[title=""]:hover::after,
 form:not([action]):hover::after,
+[required]:not([aria-describedby]):hover::after,
+[aria-required]:not([aria-describedby]):hover::after,
 [class=""]:hover::after,
 [id=""]:hover::after,
 html:not([lang]):hover::after,
@@ -335,6 +342,7 @@ img[alt=""]:hover::after,
 area[alt=""]:hover::after,
 input[type="image"][alt=""]:hover::after,
 [style]:hover::after,
+label + :not(textarea):not(select):not(input):hover::after,
 div:empty:hover::after,
 span:empty:hover::after,
 li:empty:hover::after,
@@ -462,7 +470,7 @@ figure img:not([aria-describedby]):hover::after,
 [required]:hover::after,
 [aria-required]:hover::after,
 [hidden]:hover::after,
-[arie-hidden]:hover::after,
+[aria-hidden]:hover::after,
 video:hover::after,
 audio:hover::after,
 track:not([kind="caption"]):hover::after,
@@ -500,18 +508,21 @@ input[type="image"][src=""],
 input[type="image"][src="#"],
 label:not([for]),
 label[for=""],
-input:not([name]),
-input[name=""],
+input:not([id]),
+input[id=""],
 input:not([type]),
 input[type=""],
 input[type="submit"]:not([value]),
-select:not([name]),
-select[name=""],
-textarea:not([name]),
-textarea[name=""],
+select:not([id]),
+select[id=""],
+textarea:not([id]),
+textarea[id=""],
+optgroup:not([label]),
 iframe:not([title]),
 iframe[title=""],
 form:not([action]),
+[required]:not([aria-describedby]),
+[aria-required]:not([aria-describedby]),
 [class=""],
 [id=""],
 html:not([lang]),
@@ -555,6 +566,7 @@ img[alt=""],
 area[alt=""],
 input[type="image"][alt=""],
 [style],
+label + :not(input):not(select):not(textarea),
 div:empty,
 span:empty,
 li:empty,
@@ -787,7 +799,7 @@ figure img:not([aria-describedby]),
 [required],
 [aria-required],
 [hidden],
-[arie-hidden],
+[aria-hidden],
 video,
 audio,
 track:not([kind="caption"]),
@@ -848,13 +860,17 @@ label[for=""]::after {
   content: "Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?";
 }
 
-input:not([name])::after,
-input[name=""]::after,
-select:not([name])::after,
-select[name=""]::after,
-textarea:not([name])::after,
-textarea[name=""]::after {
-  content: "Attribut [name] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire.";
+input:not([id])::after,
+input[id=""]::after,
+select:not([id])::after,
+select[id=""]::after,
+textarea:not([id])::after,
+textarea[id=""]::after {
+  content: "Attribut [id] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire.";
+}
+
+optgroup:not([label])::after {
+  content: "Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. Dommage…";
 }
 
 input:not([type])::after,
@@ -873,6 +889,11 @@ iframe[title=""]::after {
 
 form:not([action])::after {
   content: "Attribut [action] manquant. Et après, il se passe quoi ?";
+}
+
+[required]:not([aria-describedby])::after,
+[aria-required]:not([aria-describedby])::after {
+  content: "Si le champ est obligatoire, une indication doit exister : liez-la au champ à l’aide de aria-describedby et de son ID. Merci !";
 }
 
 [class=""]::after {
@@ -946,6 +967,10 @@ input[type="image"][alt=""]::after {
 
 [style]::after {
   content: "Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !";
+}
+
+label + :not(input):not(select):not(textarea)::after {
+  content: "Un champ et son label devrait être accolés. Mais ce qui suit ce label ne ressemble pas à un champ…";
 }
 
 div:empty::after,
@@ -1029,12 +1054,12 @@ figure img:not([aria-describedby])::after {
 
 [required]::after,
 [aria-required]::after {
-  content: "Les éléments interactifs devraient disposer d’une alternative, d’un transcript ou d’un sous-titrage, et indiquer sa durée. C’est le cas, n’est-ce pas ?";
+  content: "Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur.";
 }
 
 [hidden]::after,
-[arie-hidden]::after {
-  content: "Cet élément (masqué aux technologies d’assistance) ne porte aucune information, vous en êtes bien sûr ?";
+[aria-hidden]::after {
+  content: "Cet élément - masqué aux technologies d’assistance - ne porte aucune information, vous en êtes bien sûr ?";
 }
 
 video::after,

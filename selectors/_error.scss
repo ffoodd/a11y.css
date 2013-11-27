@@ -31,22 +31,30 @@ input[type="image"][src="#"],
 label:not([for]),
 label[for=""],
 
-input:not([name]),
-input[name=""],
+input:not([id]),
+input[id=""],
 input:not([type]),
 input[type=""],
 input[type="submit"]:not([value]),
 
-select:not([name]),
-select[name=""],
+select:not([id]),
+select[id=""],
 
-textarea:not([name]),
-textarea[name=""],
+textarea:not([id]),
+textarea[id=""],
+
+// Si des options sont regroupées, ce groupe doit avoir un label (pertinent, de préférence).
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=179
+optgroup:not([label]),
 
 iframe:not([title]),
 iframe[title=""],
 
 form:not([action]),
+
+// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=137
+[required]:not([aria-describedby]),
+[aria-required]:not([aria-describedby]),
 
 [class=""],
 [id=""],
