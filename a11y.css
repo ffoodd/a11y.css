@@ -29,11 +29,8 @@
 main:not([role="main"])::after,
 body > header:not([role="banner"])::after,
 body > footer:not([role="contentinfo"])::after,
-aside:not([role="complementary"])::after,
 nav::after,
 main:not(:first-of-type)::after,
-h1:not([role="heading"])::after,
-h1:not([aria-level="1"])::after,
 section:not([aria-labelledby])::after,
 figure:not([role="group"])::after,
 figure img:not([aria-describedby])::after,
@@ -258,19 +255,18 @@ meta[http-equiv="refresh"]::after,
   text-transform: none !important;
   /* On prépare l’apparition du message. */
   top: 0 !important;
-  -webkit-transform: translateY(-4em) !important;
-  -ms-transform: translateY(-4em) !important;
-  transition: all .3s ease-in !important;
+  -webkit-transform: translateY(-4em) translateZ(0) !important;
+  -ms-transform: translateY(-4em) translateZ(0) !important;
+  transform: translateY(-4em) translateZ(0) !important;
+  -webkit-transition: -webkit-transform .3s ease-in !important;
+  transition: transform .3s ease-in !important;
   width: 100% !important;
 }
 main:not([role="main"]):hover::after,
 body > header:not([role="banner"]):hover::after,
 body > footer:not([role="contentinfo"]):hover::after,
-aside:not([role="complementary"]):hover::after,
 nav:hover::after,
 main:not(:first-of-type):hover::after,
-h1:not([role="heading"]):hover::after,
-h1:not([aria-level="1"]):hover::after,
 section:not([aria-labelledby]):hover::after,
 figure:not([role="group"]):hover::after,
 figure img:not([aria-describedby]):hover::after,
@@ -478,20 +474,19 @@ meta[http-equiv="refresh"]:hover::after,
 [onratechange]:hover::after, [onreadystatechange]:hover::after, [onseeked]:hover::after,
 [onseeking]:hover::after, [onstalled]:hover::after, [onsuspend]:hover::after, [ontimeupdate]:hover::after,
 [onvolumechange]:hover::after, [onwaiting]:hover::after {
-  -webkit-transform: translateY(0) !important;
-  -ms-transform: translateY(0) !important;
-  transition: all .3s ease-out !important;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+  -ms-transform: translateY(0) translateZ(0) !important;
+  transform: translateY(0) translateZ(0) !important;
+  -webkit-transition: -webkit-transform .3s ease-out !important;
+  transition: transform .3s ease-out !important;
 }
 
 nav:not([role="navigation"]),
 main:not([role="main"]),
 body > header:not([role="banner"]),
 body > footer:not([role="contentinfo"]),
-aside:not([role="complementary"]),
 nav,
 main:not(:first-of-type),
-h1:not([role="heading"]),
-h1:not([aria-level="1"]),
 section:not([aria-labelledby]),
 figure:not([role="group"]),
 figure img:not([aria-describedby]),
@@ -528,11 +523,8 @@ nav:not([role="navigation"])::after,
 main:not([role="main"])::after,
 body > header:not([role="banner"])::after,
 body > footer:not([role="contentinfo"])::after,
-aside:not([role="complementary"])::after,
 nav::after,
 main:not(:first-of-type)::after,
-h1:not([role="heading"])::after,
-h1:not([aria-level="1"])::after,
 section:not([aria-labelledby])::after,
 figure:not([role="group"])::after,
 figure img:not([aria-describedby])::after,
@@ -1063,8 +1055,7 @@ meta[http-equiv="refresh"]::after,
 nav:not([role="navigation"])::after,
 main:not([role="main"])::after,
 body > header:not([role="banner"])::after,
-body > footer:not([role="contentinfo"])::after,
-aside:not([role="complementary"])::after {
+body > footer:not([role="contentinfo"])::after {
   content: "Ces éléments ont probablement mérité le premier rôle :-) . Navigation, main, banner, contentinfo, complementary : ils sont tous là ?" !important;
 }
 
@@ -1074,11 +1065,6 @@ nav::after {
 
 main:not(:first-of-type)::after {
   content: "<main> est réservée à la zone de contenu principal, et doit donc être unique. Repentez-vous et tout ira bien :) ." !important;
-}
-
-h1:not([role="heading"])::after,
-h1:not([aria-level="1"])::after {
-  content: "Si vous pouviez ajouter le role «heading» et l’attribut aria-level=1, vous seriez vraiment choupis !" !important;
 }
 
 section:not([aria-labelledby])::after {

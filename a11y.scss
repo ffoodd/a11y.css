@@ -61,6 +61,27 @@ $obsolete: gray;
 $advice: forestgreen;
 
 // -- @subsection Mixins --------------------
+@mixin outline( $level ) {
+  outline: 4px solid transparentize( $level, .25 ) !important;
+
+  &::after {
+    /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+     * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
+     * @see : http://www.puidokas.com/max-z-index/
+     * Ça nous permet de garantir que notre message sera toujours visible.
+     */
+    @if $level == forestgreen {
+      z-index: 2147483644 !important;
+    } @else if $level == gray {
+      z-index: 2147483645 !important;
+    } @else if $level == gold {
+      z-index: 2147483646 !important;
+    } @else if $level == crimson {
+      z-index: 2147483647 !important;
+    }
+  }
+}
+
 %message {
 
   &::after {
@@ -81,37 +102,20 @@ $advice: forestgreen;
     text-transform: none !important;
     /* On prépare l’apparition du message. */
     top: 0 !important;
-    -webkit-transform: translateY( -4em ) !important;
-    -ms-transform:     translateY( -4em ) !important;
-    transition: all .3s ease-in !important;
+    -webkit-transform:  translateY( -4em ) translateZ( 0 ) !important;
+    -ms-transform:      translateY( -4em ) translateZ( 0 ) !important;
+    transform:          translateY( -4em ) translateZ( 0 ) !important;
+    -webkit-transition: -webkit-transform .3s ease-in !important;
+    transition:         transform .3s ease-in !important;
     width: 100% !important;
   }
 
   &:hover::after {
-    -webkit-transform: translateY( 0 ) !important;
-    -ms-transform:     translateY( 0 ) !important;
-    transition: all .3s ease-out !important;
-  }
-}
-
-@mixin outline( $level ) {
-  outline: 4px solid transparentize( $level, .25 ) !important;
-
-  &::after {
-    /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
-     * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
-     * @see : http://www.puidokas.com/max-z-index/
-     * Ça nous permet de garantir que notre message sera toujours visible.
-     */
-    @if $level == forestgreen {
-      z-index: 2147483644 !important;
-    } @else if $level == gray {
-      z-index: 2147483645 !important;
-    } @else if $level == gold {
-      z-index: 2147483646 !important;
-    } @else if $level == crimson {
-      z-index: 2147483647 !important;
-    }
+    -webkit-transform:  translateY( 0 ) translateZ( 0 ) !important;
+    -ms-transform:      translateY( 0 ) translateZ( 0 ) !important;
+    transform:          translateY( 0 ) translateZ( 0 ) !important;
+    -webkit-transition: -webkit-transform .3s ease-out !important;
+    transition:         transform .3s ease-out !important;
   }
 }
 

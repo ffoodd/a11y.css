@@ -5,18 +5,12 @@ nav:not([role="navigation"]),
 main:not([role="main"]),
 body > header:not([role="banner"]),
 body > footer:not([role="contentinfo"]),
-aside:not([role="complementary"]),
 
 // La balise <nav> est résevée aux navigations principales et secondaires;
 // La balise <main> doit être unique et structurante pour le contenu principal
 // @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=116
 nav,
 main:not(:first-of-type),
-
-// Le <h1> devrait disposer de quelques attributs particuliers
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=117
-h1:not([role="heading"]),
-h1:not([aria-level="1"]),
 
 // Si vous utilisez ces éléments, il y a de fortes chances pour que ces attributs améliorent l’accessibilité
 section:not([aria-labelledby]),
