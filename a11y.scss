@@ -37,19 +37,19 @@
 // == Variables & Mixins
 //   -- Variables
 //   -- Mixins
-// == Détection des erreurs
-// == Détection des alertes
-// == Détection des éléments & attributs obsolètes
 // == Détection des conseils
+// == Détection des éléments & attributs obsolètes
+// == Détection des alertes
+// == Détection des erreurs
 // == Contenu des messages
 //
 
 
 // == @section Import des sélecteurs ====================
-@import "selectors/error";
-@import "selectors/warning";
-@import "selectors/obsolete";
 @import "selectors/advice";
+@import "selectors/obsolete";
+@import "selectors/warning";
+@import "selectors/error";
 
 
 // == @section Variables & Mixins ====================
@@ -85,12 +85,6 @@ $advice: forestgreen;
     -ms-transform:     translateY( -4em ) !important;
     transition: all .3s ease-in !important;
     width: 100% !important;
-    /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
-     * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
-     * @see : http://www.puidokas.com/max-z-index/
-     * Ça nous permet de garantir que notre message sera toujours visible.
-     */
-    z-index: 2147483647 !important;
   }
 
   &:hover::after {
@@ -102,19 +96,29 @@ $advice: forestgreen;
 
 @mixin outline( $level ) {
   outline: 4px solid transparentize( $level, .25 ) !important;
+
+  &::after {
+    /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+     * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
+     * @see : http://www.puidokas.com/max-z-index/
+     * Ça nous permet de garantir que notre message sera toujours visible.
+     */
+    @if $level == forestgreen {
+      z-index: 2147483644 !important;
+    } @else if $level == gray {
+      z-index: 2147483645 !important;
+    } @else if $level == gold {
+      z-index: 2147483646 !important;
+    } @else if $level == crimson {
+      z-index: 2147483647 !important;
+    }
+  }
 }
 
 
-// == @section Détection des erreurs ====================
-%error {
-  @include outline( $error );
-  @extend %message;
-}
-
-
-// == @section Détection des alertes ====================
-%warning {
-  @include outline( $warning );
+// == @section Détection des conseils ====================
+%advice {
+  @include outline( $advice );
   @extend %message;
 }
 
@@ -129,14 +133,23 @@ $advice: forestgreen;
   }
 }
 
-// == @section Détection des conseils ====================
-%advice {
-  @include outline( $advice );
+
+// == @section Détection des alertes ====================
+%warning {
+  @include outline( $warning );
+  @extend %message;
+}
+
+
+// == @section Détection des erreurs ====================
+%error {
+  @include outline( $error );
   @extend %message;
 }
 
 
 // == @section Contenu des messages ====================
-@import "messages/error";
-@import "messages/warning";
 @import "messages/advice";
+@import "messages/warning";
+@import "messages/error";
+
