@@ -1,10 +1,10 @@
 @charset "UTF-8";
 /**
-* ==Debug *
+* == a11y.css *
 *
 * @author Gaël Poupard
 * @site Thème ffeeeedd
-* @lastmodified 2013-11-25
+* @lastmodified 2013-11-27
 *
 * @subsection Références :
   * @see : https://github.com/redroot/holmes/blob/master/holmes.css
@@ -25,20 +25,6 @@
  * @note : le rouge dénonce une erreur, un code invalide ou un attribut manquant.
  * @note : le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
  * @note : le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
-*/
-/* ----------------------------- */
-/* Sommaire */
-/* ----------------------------- */
-/*
- == Import des sélecteurs
- == Variables & Mixins
-   -- Variables
-   -- Mixins
- == Détection des erreurs
- == Détection des alertes
- == Détection des éléments & attributs obsolètes
- == Détection des conseils
- == Contenu des messages
 */
 a[href="#"]::after,
 a[href^="javascript"]::after,
