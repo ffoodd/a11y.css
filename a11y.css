@@ -228,6 +228,7 @@ figure img:not([aria-describedby])::after,
 [aria-required]::after,
 [hidden]::after,
 [aria-hidden]::after,
+[placeholder]::after,
 video::after,
 audio::after,
 track:not([kind="caption"])::after,
@@ -471,6 +472,7 @@ figure img:not([aria-describedby]):hover::after,
 [aria-required]:hover::after,
 [hidden]:hover::after,
 [aria-hidden]:hover::after,
+[placeholder]:hover::after,
 video:hover::after,
 audio:hover::after,
 track:not([kind="caption"]):hover::after,
@@ -800,6 +802,7 @@ figure img:not([aria-describedby]),
 [aria-required],
 [hidden],
 [aria-hidden],
+[placeholder],
 video,
 audio,
 track:not([kind="caption"]),
@@ -1060,6 +1063,10 @@ figure img:not([aria-describedby])::after {
 [hidden]::after,
 [aria-hidden]::after {
   content: "Cet élément - masqué aux technologies d’assistance - ne porte aucune information, vous en êtes bien sûr ?";
+}
+
+[placeholder]::after {
+  content: "Ce placeholder ne remplace pas un <label>, j’espère ? Y’en a qui ont essayé…";
 }
 
 video::after,

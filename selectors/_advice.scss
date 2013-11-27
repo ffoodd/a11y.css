@@ -52,6 +52,8 @@ figure img:not([aria-describedby]),
 [hidden],
 [aria-hidden],
 
+[placeholder],
+
 // <video>, <audio> : présence d’une alternative, d’un transcript / sous-titre, et indication de la durée ? (BP 155, BP 30)
 video,
 audio,

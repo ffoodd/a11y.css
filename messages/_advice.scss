@@ -64,6 +64,10 @@ figure img:not([aria-describedby])::after {
   content: "Cet élément - masqué aux technologies d’assistance - ne porte aucune information, vous en êtes bien sûr ?";
 }
 
+[placeholder]::after {
+  content: "Ce placeholder ne remplace pas un <label>, j’espère ? Y’en a qui ont essayé…";
+}
+
 video::after,
 audio::after {
   content: "Les éléments interactif doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer sa durée.";
