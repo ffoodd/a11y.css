@@ -30,26 +30,34 @@ Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ai
 ## Gestion des messages
 Chaque test dispose de son propre message, afin d’informer et guider au maximum l’intégrateur en quête d’amélioration. Ils sont eux aussi dans des fichiers partiels, pour en faciliter la lecture et la rédaction. Une personnalisation sera bien plus simple de cette façon (tout le monde n’aimera mes touches d’humour ;-) ).
 
-*Attention :*
-Les balises «auto-fermantes» n’autorisent pas la génération de contenu. Ainsi les erreurs ou alertes seront marquées, mais aucun message n’apparaitra au survol. Il sera en revanche consultable dans la plupart des inspecteurs de DOM : la limite est la création du pseudo-éléments pour l’afichage. Voici la liste exhaustive des balises HTML5 auto-fermantes:
-* `<area />`
-* `<base />`
-* `<br />`
-* `<col />`
-* `<command />`
-* `<embed />`
-* `<hr />`
-* `<img />`
-* `<input />`
-* `<keygen />`
-* `<link />`
-* `<meta />`
-* `<param />`
-* `<source />`
-* `<track />`
-* `<wbr />`
+## Cas particuliers et problèmes connus
+1. Les balises «auto-fermantes» n’autorisent pas la génération de contenu. Ainsi les erreurs ou alertes seront marquées, mais aucun message n’apparaitra au survol. Il sera en revanche consultable dans la plupart des inspecteurs de DOM : la limite est la création du pseudo-éléments pour l’afichage. Voici la liste exhaustive des balises HTML5 auto-fermantes:
+ * `<area />`
+ * `<base />`
+ * `<br />`
+ * `<col />`
+ * `<command />`
+ * `<embed />`
+ * `<hr />`
+ * `<img />`
+ * `<input />`
+ * `<keygen />`
+ * `<link />`
+ * `<meta />`
+ * `<param />`
+ * `<source />`
+ * `<track />`
+ * `<wbr />`
 
-De même, les tests sur les éléments contenus dans le `<head>` posent un souci pour l’affichage du message : je vais devoir trouver une autre méthode pour afficher ces messages.
+2. Les messages sont générés via un pseudo-élément en position fixe. Il faut cependant souligner un problème de *stacking context* causé par un élément parent, si ce dernier se voit appliqué:
+  * `opacity`
+  * `transform`
+  * `filter`
+  * `CSS regions`
+  * `@page`
+  * @see [What no on told you about z-index](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/)
+
+3. De même, les tests sur les éléments contenus dans le `<head>` posent un souci pour l’affichage du message : je vais devoir trouver une autre méthode pour afficher ces messages.
 
 ## Amélioration(s) à venir
 Dans un futur plus ou moins proche, les points suivants seront à améliorer ou à créer :
