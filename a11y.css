@@ -160,8 +160,6 @@ table table::after,
 tbody + tfoot::after,
 fieldset > :first-child:not(legend)::after,
 fieldset > legend:not(:first-child)::after,
-a[title=""]::after,
-a:not([title])::after,
 abbr:not([title])::after,
 abbr[title=""]::after,
 img[alt=""]::after,
@@ -396,8 +394,6 @@ table table:hover::after,
 tbody + tfoot:hover::after,
 fieldset > :first-child:not(legend):hover::after,
 fieldset > legend:not(:first-child):hover::after,
-a[title=""]:hover::after,
-a:not([title]):hover::after,
 abbr:not([title]):hover::after,
 abbr[title=""]:hover::after,
 img[alt=""]:hover::after,
@@ -867,8 +863,6 @@ table table,
 tbody + tfoot,
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
-a[title=""],
-a:not([title]),
 abbr:not([title]),
 abbr[title=""],
 img[alt=""],
@@ -896,8 +890,6 @@ table table::after,
 tbody + tfoot::after,
 fieldset > :first-child:not(legend)::after,
 fieldset > legend:not(:first-child)::after,
-a[title=""]::after,
-a:not([title])::after,
 abbr:not([title])::after,
 abbr[title=""]::after,
 img[alt=""]::after,
@@ -1153,11 +1145,6 @@ tbody + tfoot::after {
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after {
   content: "Imbrication inadéquate d'éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
-}
-
-a[title=""]::after,
-a:not([title])::after {
-  content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !" !important;
 }
 
 abbr:not([title])::after,

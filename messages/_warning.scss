@@ -15,11 +15,6 @@ fieldset > legend:not(:first-child) {
   }
 }
 
-a[title=""]::after,
-a:not([title])::after {
-  content: "Attribut [title] vide ou manquant. Il vaut mieux que ce soit pertinent !" !important;
-}
-
 abbr:not([title])::after,
 abbr[title=""]::after {
   content: "Attribut [title] vide ou manquant. Jetez un œil à la BP 160 d’OpQuast ;-) " !important;

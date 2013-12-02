@@ -10,10 +10,6 @@ tbody + tfoot,
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
 
-// Les liens sans titre ou avec un titre vide doivent être vérifiés.
-a[title=""],
-a:not([title]),
-
 // La première occurrence d’une abréviation donne accès à sa signification
 // @see : BP160 OpQuast
 abbr:not([title]),
