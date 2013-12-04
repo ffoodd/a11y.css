@@ -1184,11 +1184,11 @@ table[role="presentation"]::after {
 }
 
 th[scope]::after {
-  content: "Cette celulle d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? Elle le devrait, en tout cas." !important;
+  content: "Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? Elle le devrait, en tout cas." !important;
 }
 
 th:not([scope])::after {
-  content: "Cette celulle d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à scope." !important;
+  content: "Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à scope." !important;
 }
 
 th:not([id])::after {
