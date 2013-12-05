@@ -55,7 +55,7 @@ Chaque test dispose de son propre message, afin d’informer et guider au maximu
   * `filter`
   * `CSS regions`
   * `@page`
-  * @see [What no on told you about z-index](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/)
+  * @see [What no one told you about z-index](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/)
 
 3. De même, les tests sur les éléments contenus dans le `<head>` posent un souci pour l’affichage du message : je vais devoir trouver une autre méthode pour afficher ces messages.
 
