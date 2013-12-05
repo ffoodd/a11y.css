@@ -10,8 +10,12 @@ De nombreuses références m’ont inspiré et aidé pour élaborer cette feuill
 * @see : https://github.com/karlgroves/diagnostic.css
 * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
 * @see : https://github.com/nternetinspired/debug-css
+* @see : http://meyerweb.com/eric/tools/css/diagnostics/
+* @see : https://code.google.com/p/qa-style-sheet/
 * @see : Mémento "Sites web - Les bonnes pratiques" aux éditions Eyrolles
 * @see "Intégration Web, les bonnes pratiques", pages 335/336
+
+Je tiens à signaler que l’idée n’est ni neuve, ni de moi (la proposition d’Eric Meyer date de 2007 !). J’ai simplement pensé qu’il était possible d’aller beaucoup plus loin, alors je l’ai fait. Je vous invite à lire [mon article](http://www.ffoodd.fr/a11y-cssun-credo/) pour en apprendre plus sur la genèse de ce projet.
 
 ## Code couleur
 Concrètement, les éléments en erreur, en alerte ou obsolète seront cernés d’une bordure externe de 4px colorés:
