@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // Corrélation entre la sémantique HTML5 et ARIA : aucunes prétentions, simples suggestions. À vous d’avoir le recul nécessaire !
 nav:not([role="navigation"])::after,
 main:not([role="main"])::after,
