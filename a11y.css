@@ -26,6 +26,7 @@
  * @note : le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
  * @note : le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
 */
+nav:not([role="navigation"])::after,
 main:not([role="main"])::after,
 body > header:not([role="banner"])::after,
 body > footer:not([role="contentinfo"])::after,
@@ -56,6 +57,7 @@ canvas::after,
 object[type^="image"]::after,
 img[title]::after,
 area[title]::after,
+svg[title]::after,
 time::after,
 [datetime]::after,
 [pubdate]::after,
@@ -238,7 +240,7 @@ meta[http-equiv="refresh"]::after,
 [onvolumechange]::after, [onwaiting]::after {
   background: rgba(255, 255, 255, 0.98) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
-  color: dimgray !important;
+  color: dimgrey !important;
   display: block !important;
   font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif !important;
   height: 4em !important;
@@ -256,8 +258,8 @@ meta[http-equiv="refresh"]::after,
   -webkit-transform: translateY(-4em) translateZ(0) !important;
   -ms-transform: translateY(-4em) translateZ(0) !important;
   transform: translateY(-4em) translateZ(0) !important;
-  -webkit-transition: -webkit-transform .3s ease-in !important;
-  transition: transform .3s ease-in !important;
+  -webkit-transition: -webkit-transform 0.3s ease-in !important;
+  transition: transform 0.3s ease-in !important;
   width: 100% !important;
 }
 main:not([role="main"]):hover::after,
@@ -473,8 +475,8 @@ meta[http-equiv="refresh"]:hover::after,
   -webkit-transform: translateY(0) translateZ(0) !important;
   -ms-transform: translateY(0) translateZ(0) !important;
   transform: translateY(0) translateZ(0) !important;
-  -webkit-transition: -webkit-transform .3s ease-out !important;
-  transition: transform .3s ease-out !important;
+  -webkit-transition: -webkit-transform 0.3s ease-out !important;
+  transition: transform 0.3s ease-out !important;
 }
 
 nav:not([role="navigation"]),

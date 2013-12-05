@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 a:not([href])::after,
 a[href=""]::after {
   content: "Attribut [href] manquant. Un lien doit avoir une cible, non ?" !important;
