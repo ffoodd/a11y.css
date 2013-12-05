@@ -60,6 +60,11 @@ $warning: gold;
 $obsolete: gray;
 $advice: forestgreen;
 
+$error-ico: \26D4\00A0;
+$warning-ico: \26A0\00A0;
+$obsolete-ico: \271D\00A0;
+$advice-ico: \2665\00A0;
+
 // -- @subsection Mixins --------------------
 @mixin outline( $level ) {
   outline: 4px solid transparentize( $level, .25 ) !important;
@@ -133,7 +138,7 @@ $advice: forestgreen;
   @extend %message;
 
   &::after {
-    content: "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
+    content: "#{$obsolete-ico} Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
   }
 }
 
