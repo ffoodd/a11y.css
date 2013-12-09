@@ -19,11 +19,11 @@ De nombreuses références m’ont inspiré et aidé pour élaborer cette feuill
 Je tiens à signaler que l’idée n’est ni neuve, ni de moi (la proposition d’Eric Meyer date de 2007, et l’article de Marco Battilana de Juillet 2006 !). J’ai simplement pensé qu’il était possible d’aller beaucoup plus loin, alors je l’ai fait. Je vous invite à lire [mon article](http://www.ffoodd.fr/a11y-cssun-credo/) pour en apprendre plus sur la genèse de ce projet.
 
 ## Code couleur
-Concrètement, les éléments en erreur, en alerte ou obsolète seront cernés d’une bordure externe de 4px colorés:
+Concrètement, les éléments en erreur, en alerte, obsolètes ou pouvant être améliorés seront cernés d’un contour de 4px colorés:
 * en rouge pour les erreurs;
 * en jaune pour les alertes;
-* en gris pour les élements & attributs obsolètes.
-* en vert les suggestions d’améliorations
+* en gris pour les élements & attributs obsolètes;
+* en vert les suggestions d’améliorations.
 
 Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ainsi marqués, un bandeau apparaitra en haut de votre navigateur avec une petite formule vous précisant le problème, et un indice sous forme de boutade (tentative plus ou moins réussie de faire un peu de pédagogie en passant).
 
