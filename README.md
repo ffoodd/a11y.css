@@ -64,6 +64,8 @@ Chaque test dispose de son propre message, afin d’informer et guider au maximu
 
 3. De même, les tests sur les éléments contenus dans le `<head>` posent un souci pour l’affichage du message : je vais devoir trouver une autre méthode pour afficher ces messages.
 
+4. Pour éviter les cas dans lesquels le contour pourrait être masqué, la propriété [outline-offset](https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset "Définition sur le MDN") est utilisée afin d’afficher le contour à l’intérieur de l’élément marqué. Amélioration suggérée par @7studio dans l’issue #4.
+
 ## Amélioration(s) à venir
 Dans un futur plus ou moins proche, les points suivants seront à améliorer ou à créer :
 - [ ] trouver un moyen pour afficher les messages liés aux erreurs sur des balises auto-fermantes et des éléments du `<head>` - du javascript sera peut-être nécessaire;

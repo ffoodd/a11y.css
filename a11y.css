@@ -26,7 +26,6 @@
  * @note : le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
  * @note : le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
 */
-nav:not([role="navigation"])::after,
 main:not([role="main"])::after,
 body > header:not([role="banner"])::after,
 body > footer:not([role="contentinfo"])::after,
@@ -57,7 +56,6 @@ canvas::after,
 object[type^="image"]::after,
 img[title]::after,
 area[title]::after,
-svg[title]::after,
 time::after,
 [datetime]::after,
 [pubdate]::after,
@@ -240,7 +238,7 @@ meta[http-equiv="refresh"]::after,
 [onvolumechange]::after, [onwaiting]::after {
   background: rgba(255, 255, 255, 0.98) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
-  color: dimgrey !important;
+  color: dimgray !important;
   display: block !important;
   font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif !important;
   height: 4em !important;
@@ -258,8 +256,8 @@ meta[http-equiv="refresh"]::after,
   -webkit-transform: translateY(-4em) translateZ(0) !important;
   -ms-transform: translateY(-4em) translateZ(0) !important;
   transform: translateY(-4em) translateZ(0) !important;
-  -webkit-transition: -webkit-transform 0.3s ease-in !important;
-  transition: transform 0.3s ease-in !important;
+  -webkit-transition: -webkit-transform .3s ease-in !important;
+  transition: transform .3s ease-in !important;
   width: 100% !important;
 }
 main:not([role="main"]):hover::after,
@@ -475,8 +473,8 @@ meta[http-equiv="refresh"]:hover::after,
   -webkit-transform: translateY(0) translateZ(0) !important;
   -ms-transform: translateY(0) translateZ(0) !important;
   transform: translateY(0) translateZ(0) !important;
-  -webkit-transition: -webkit-transform 0.3s ease-out !important;
-  transition: transform 0.3s ease-out !important;
+  -webkit-transition: -webkit-transform .3s ease-out !important;
+  transition: transform .3s ease-out !important;
 }
 
 nav:not([role="navigation"]),
@@ -516,6 +514,7 @@ time,
 [pubdate],
 meta[charset] {
   outline: 4px solid rgba(34, 139, 34, 0.75) !important;
+  outline-offset: -4px;
 }
 nav:not([role="navigation"])::after,
 main:not([role="main"])::after,
@@ -553,10 +552,10 @@ time::after,
 [datetime]::after,
 [pubdate]::after,
 meta[charset]::after {
-  /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+  /* Ceci est basé sur la valeur maximum d’un z-index pour la plupart des navigateurs.
    * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
    * @see : http://www.puidokas.com/max-z-index/
-   * Ça nous permet de garantir que notre message sera toujours visible.
+   * Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
    */
   z-index: 2147483644 !important;
 }
@@ -657,6 +656,7 @@ td[height], th[height],
 td[nowrap], th[nowrap],
 body[background], table[background], thead[background], tbody[background], tfoot[background], tr[background], td[background], th[background] {
   outline: 4px solid rgba(128, 128, 128, 0.75) !important;
+  outline-offset: -4px;
 }
 applet::after,
 acronym::after,
@@ -753,10 +753,10 @@ table[rules]::after,
 td[height]::after, th[height]::after,
 td[nowrap]::after, th[nowrap]::after,
 body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
-  /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+  /* Ceci est basé sur la valeur maximum d’un z-index pour la plupart des navigateurs.
    * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
    * @see : http://www.puidokas.com/max-z-index/
-   * Ça nous permet de garantir que notre message sera toujours visible.
+   * Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
    */
   z-index: 2147483645 !important;
 }
@@ -884,6 +884,7 @@ th[scope],
 th:not([scope]),
 th:not([id]) {
   outline: 4px solid rgba(255, 215, 0, 0.75) !important;
+  outline-offset: -4px;
 }
 ul > :not(li)::after,
 ol > :not(li)::after,
@@ -910,10 +911,10 @@ table[role="presentation"]::after,
 th[scope]::after,
 th:not([scope])::after,
 th:not([id])::after {
-  /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+  /* Ceci est basé sur la valeur maximum d’un z-index pour la plupart des navigateurs.
    * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
    * @see : http://www.puidokas.com/max-z-index/
-   * Ça nous permet de garantir que notre message sera toujours visible.
+   * Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
    */
   z-index: 2147483646 !important;
 }
@@ -978,6 +979,7 @@ meta[http-equiv="refresh"],
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
   outline: 4px solid rgba(220, 20, 60, 0.75) !important;
+  outline-offset: -4px;
 }
 a[href="#"]::after,
 a[href^="javascript"]::after,
@@ -1038,10 +1040,10 @@ meta[http-equiv="refresh"]::after,
 [onratechange]::after, [onreadystatechange]::after, [onseeked]::after,
 [onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
 [onvolumechange]::after, [onwaiting]::after {
-  /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+  /* Ceci est basé sur la valeur maximum d’un z-index pour la plupart des navigateurs.
    * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
    * @see : http://www.puidokas.com/max-z-index/
-   * Ça nous permet de garantir que notre message sera toujours visible.
+   * Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
    */
   z-index: 2147483647 !important;
 }

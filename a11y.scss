@@ -68,12 +68,15 @@ $advice-ico: \2665\00A0;
 // -- @subsection Mixins --------------------
 @mixin outline( $level ) {
   outline: 4px solid transparentize( $level, .25 ) !important;
+  // @note : astuce suggérée par @7studio pour garantir un affichage homogène des bordures.
+  // @see : https://github.com/ffoodd/a11y.css/issues/4
+  outline-offset: -4px;
 
   &::after {
-    /* Ceci est la valeur maximum d’un z-index pour la plupart des navigateurs.
+    /* Ceci est basé sur la valeur maximum d’un z-index pour la plupart des navigateurs.
      * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
      * @see : http://www.puidokas.com/max-z-index/
-     * Ça nous permet de garantir que notre message sera toujours visible.
+     * Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
      */
     @if $level == forestgreen {
       z-index: 2147483644 !important;
