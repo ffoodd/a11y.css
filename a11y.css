@@ -243,15 +243,12 @@ meta[http-equiv="refresh"]::after,
   font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif !important;
   height: 4em !important;
   left: 0 !important;
-  /* On s’assure que le message ne capte pas le survol. */
   pointer-events: none !important;
   position: fixed !important;
-  /* On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes. */
   text-align: center !important;
   text-decoration: none !important;
   text-shadow: none !important;
   text-transform: none !important;
-  /* On prépare l’apparition du message. */
   top: 0 !important;
   -webkit-transform: translateY(-4em) translateZ(0) !important;
   -ms-transform: translateY(-4em) translateZ(0) !important;
@@ -552,11 +549,6 @@ time::after,
 [datetime]::after,
 [pubdate]::after,
 meta[charset]::after {
-  /* Ceci est basé sur la valeur maximum d’un z-index pour la plupart des navigateurs.
-   * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
-   * @see : http://www.puidokas.com/max-z-index/
-   * Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
-   */
   z-index: 2147483644 !important;
 }
 
@@ -753,11 +745,6 @@ table[rules]::after,
 td[height]::after, th[height]::after,
 td[nowrap]::after, th[nowrap]::after,
 body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
-  /* Ceci est basé sur la valeur maximum d’un z-index pour la plupart des navigateurs.
-   * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
-   * @see : http://www.puidokas.com/max-z-index/
-   * Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
-   */
   z-index: 2147483645 !important;
 }
 applet::after,
@@ -911,11 +898,6 @@ table[role="presentation"]::after,
 th[scope]::after,
 th:not([scope])::after,
 th:not([id])::after {
-  /* Ceci est basé sur la valeur maximum d’un z-index pour la plupart des navigateurs.
-   * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
-   * @see : http://www.puidokas.com/max-z-index/
-   * Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
-   */
   z-index: 2147483646 !important;
 }
 
@@ -1040,11 +1022,6 @@ meta[http-equiv="refresh"]::after,
 [onratechange]::after, [onreadystatechange]::after, [onseeked]::after,
 [onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
 [onvolumechange]::after, [onwaiting]::after {
-  /* Ceci est basé sur la valeur maximum d’un z-index pour la plupart des navigateurs.
-   * Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
-   * @see : http://www.puidokas.com/max-z-index/
-   * Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
-   */
   z-index: 2147483647 !important;
 }
 
