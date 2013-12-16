@@ -54,13 +54,9 @@ Chaque test dispose de son propre message, afin d’informer et guider au maximu
  * `<track />`
  * `<wbr />`
 
-2. Les messages sont générés via un pseudo-élément en position fixe. Il faut cependant souligner un problème de *stacking context* causé par un élément parent, si ce dernier se voit appliqué:
-  * `opacity`
-  * `transform`
-  * `filter`
-  * `CSS regions`
-  * `@page`
-  * @see [What no one told you about z-index](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) [traduit en Français par @iamvdo](http://blog.iamvdo.me/post/41094013194/comprendre-z-index-et-les-contextes-dempilement)
+2. Les messages sont générés via un pseudo-élément en position fixe. Il faut cependant souligner un problème de *containing block* causé par un élément parent, si ce dernier se voit appliqué `transform`:
+  * @see [La spéc W3C](http://www.w3.org/TR/css3-transforms/#transform-property)
+  * @see [What no one told you about z-index](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) [traduit en Français par @iamvdo](http://blog.iamvdo.me/post/41094013194/comprendre-z-index-et-les-contextes-dempilement).
 
 3. De même, les tests sur les éléments contenus dans le `<head>` posent un souci pour l’affichage du message : je vais devoir trouver une autre méthode pour afficher ces messages.
 
