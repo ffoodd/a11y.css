@@ -80,6 +80,6 @@ time,
 // définir le jeu de caractères (BP 100) & s’assurer que c’est utf-8 (BP 89)
 meta[charset] {
 
-  @extend %advice;
+  @extend %a11y-advice;
 
 }

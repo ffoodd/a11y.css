@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+// Liste exhaustive des éléments auto-fermants en HTML5
+// $self-closing: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr;
+
+// -- @subsection Erreurs --------------------
+img:not([alt]):hover ~ *::after,
+area:not([alt]):hover ~ *::after,
+input[type="image"]:not([alt]):hover ~ *::after {
+  content: "#{$error-ico} Attribut [alt] manquant. Quelle hérésie." !important;
+}
+
+img[alt=" "]:hover ~ *::after,
+area[alt=" "]:hover ~ *::after,
+input[type="image"][alt=" "]:hover ~ *::after {
+  content: "#{$error-ico} Un attribut [alt] *presque* vide. C’est une blague, non ?" !important;
+}
+
+img:not([src]),
+img[src=""],
+img[src="#"],
+input[type="image"]:not([src]),
+input[type="image"][src=""],
+input[type="image"][src="#"] {
+  &:hover ~ *::after {
+    content: "#{$error-ico} Attribut [src] manquant ou vide. Bon." !important;
+  }
+}
+
+input:not([id]):hover ~ *::after,
+input[id=""]:hover ~ *::after {
+  content: "#{$error-ico} Attribut [id] manquant ou vide.\A Tout le monde a droit à un nom, même les champs de formulaire." !important;
+}
+
+input:not([type]):hover ~ *::after,
+input[type=""]:hover ~ *::after {
+  content: "#{$error-ico} Attribut [type] manquant ou vide.\A On met quoi, dans ce champ ?" !important;
+}
+
+input[type="submit"]:not([value]):hover ~ *::after {
+  content: "#{$error-ico} Attribut [value] manquant.\A Ça fait quoi alors, si je clique dessus ?" !important;
+}
+
+input[required]:not([aria-describedby]):hover ~ *::after,
+input[aria-required]:not([aria-describedby]):hover ~ *::after {
+  content: "#{$error-ico} Si le champ est obligatoire, une indication doit exister :\A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important;
+}
+
+
+// -- @subsection Alertes --------------------
+img[alt=""]:hover ~ *::after,
+area[alt=""]:hover ~ *::after,
+input[type="image"][alt=""]:hover ~ *::after {
+  content: "#{$warning-ico} Attribut [alt] vide.\A C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
+}
+
+
+// -- @subsection Conseils --------------------
+figure img:not([aria-describedby]):hover ~ *::after {
+  content: "#{$advice-ico} Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>." !important;
+}
+
+input[required]:hover ~ *::after,
+input[aria-required]:hover ~ *::after {
+  content: "#{$advice-ico} Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur." !important;
+}
+
+input[placeholder]:hover ~ *::after {
+  content: "#{$advice-ico} Ce placeholder ne remplace pas un <label>, j’espère ?\A Y’en a qui ont essayé…" !important;
+}
+
+embed:hover ~ *::after {
+  content: "#{$advice-ico} Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>)." !important;
+}
+
+img[title]:hover ~ *::after,
+area[title]:hover ~ *::after {
+  content: "#{$advice-ico} L’attribut title, s’il est présent, doit être identique à l’alternative renseignée.\A À vous de jouer ;-) ." !important;
+}
+
+meta[charset]:hover ~ *::after {
+  content: "#{$advice-ico} Sommes-nous bien en utf-8 ?" !important;
+}
+
+track:not([kind="caption"]):hover ~ *::after {
+  content: "#{$advice-ico} Vous utilisez <track>, c’est bon signe !\A Mais l’attribut kind='caption' vous intéressera sûrement aussi :) ." !important;
+}

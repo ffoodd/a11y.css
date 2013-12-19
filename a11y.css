@@ -26,6 +26,46 @@
  * @note : le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
  * @note : le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
 */
+img:not([alt]) ~ *::after,
+area:not([alt]) ~ *::after,
+input[type="image"]:not([alt]) ~ *::after,
+img[alt=" "] ~ *::after,
+area[alt=" "] ~ *::after,
+input[type="image"][alt=" "] ~ *::after,
+img:not([src]) ~ *::after,
+img[src=""] ~ *::after,
+img[src="#"] ~ *::after,
+input[type="image"]:not([src]) ~ *::after,
+input[type="image"][src=""] ~ *::after,
+input[type="image"][src="#"] ~ *::after,
+input:not([id]) ~ *::after,
+input[id=""] ~ *::after,
+input:not([type]) ~ *::after,
+input[type=""] ~ *::after,
+input[type="submit"]:not([value]) ~ *::after,
+input[required]:not([aria-describedby]) ~ *::after,
+input[aria-required]:not([aria-describedby]) ~ *::after {
+  z-index: 2147483647 !important;
+}
+
+img[alt=""] ~ *::after,
+area[alt=""] ~ *::after,
+input[type="image"][alt=""] ~ *::after {
+  z-index: 2147483646 !important;
+}
+
+figure img:not([aria-describedby]) ~ *::after,
+input[required] ~ *::after,
+input[aria-required] ~ *::after,
+input[placeholder] ~ *::after,
+embed ~ *::after,
+img[title] ~ *::after,
+area[title] ~ *::after,
+meta[charset] ~ *::after,
+track:not([kind="caption"]) ~ *::after {
+  z-index: 2147483644 !important;
+}
+
 nav:not([role="navigation"])::after,
 main:not([role="main"])::after,
 body > header:not([role="banner"])::after,
@@ -237,15 +277,44 @@ meta[http-equiv="refresh"]::after,
 [onpause]::after, [onplay]::after, [onplaying]::after, [onprogress]::after,
 [onratechange]::after, [onreadystatechange]::after, [onseeked]::after,
 [onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
-[onvolumechange]::after, [onwaiting]::after {
+[onvolumechange]::after, [onwaiting]::after, img:not([alt]) ~ *::after,
+area:not([alt]) ~ *::after,
+input[type="image"]:not([alt]) ~ *::after,
+img[alt=" "] ~ *::after,
+area[alt=" "] ~ *::after,
+input[type="image"][alt=" "] ~ *::after,
+img:not([src]) ~ *::after,
+img[src=""] ~ *::after,
+img[src="#"] ~ *::after,
+input[type="image"]:not([src]) ~ *::after,
+input[type="image"][src=""] ~ *::after,
+input[type="image"][src="#"] ~ *::after,
+input:not([id]) ~ *::after,
+input[id=""] ~ *::after,
+input:not([type]) ~ *::after,
+input[type=""] ~ *::after,
+input[type="submit"]:not([value]) ~ *::after,
+input[required]:not([aria-describedby]) ~ *::after,
+input[aria-required]:not([aria-describedby]) ~ *::after, img[alt=""] ~ *::after,
+area[alt=""] ~ *::after,
+input[type="image"][alt=""] ~ *::after, figure img:not([aria-describedby]) ~ *::after,
+input[required] ~ *::after,
+input[aria-required] ~ *::after,
+input[placeholder] ~ *::after,
+embed ~ *::after,
+img[title] ~ *::after,
+area[title] ~ *::after,
+meta[charset] ~ *::after,
+track:not([kind="caption"]) ~ *::after {
   background: rgba(255, 255, 255, 0.98) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
   color: dimgray !important;
   display: block !important;
-  font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif !important;
+  font: normal normal 1rem/2.5 "Lucida Sans Unicode", "Lucida Sans", sans-serif !important;
   height: auto !important;
   left: 0 !important;
   min-height: 4em !important;
+  opacity: 0;
   pointer-events: none !important;
   position: fixed !important;
   text-align: center !important;
@@ -261,6 +330,8 @@ meta[http-equiv="refresh"]::after,
   width: 100% !important;
   white-space: pre;
 }
+
+nav:not([role="navigation"]):hover::after,
 main:not([role="main"]):hover::after,
 body > header:not([role="banner"]):hover::after,
 body > footer:not([role="contentinfo"]):hover::after,
@@ -291,6 +362,7 @@ canvas:hover::after,
 object[type^="image"]:hover::after,
 img[title]:hover::after,
 area[title]:hover::after,
+svg[title]:hover::after,
 time:hover::after,
 [datetime]:hover::after,
 [pubdate]:hover::after,
@@ -470,12 +542,39 @@ meta[http-equiv="refresh"]:hover::after,
 [onpause]:hover::after, [onplay]:hover::after, [onplaying]:hover::after, [onprogress]:hover::after,
 [onratechange]:hover::after, [onreadystatechange]:hover::after, [onseeked]:hover::after,
 [onseeking]:hover::after, [onstalled]:hover::after, [onsuspend]:hover::after, [ontimeupdate]:hover::after,
-[onvolumechange]:hover::after, [onwaiting]:hover::after {
+[onvolumechange]:hover::after, [onwaiting]:hover::after, img:hover:not([alt]) ~ *::after,
+area:hover:not([alt]) ~ *::after,
+input[type="image"]:hover:not([alt]) ~ *::after,
+img[alt=" "]:hover ~ *::after,
+area[alt=" "]:hover ~ *::after,
+input[type="image"][alt=" "]:hover ~ *::after,
+img:hover:not([src]) ~ *::after,
+img[src=""]:hover ~ *::after,
+img[src="#"]:hover ~ *::after,
+input[type="image"]:hover:not([src]) ~ *::after,
+input[type="image"][src=""]:hover ~ *::after,
+input[type="image"][src="#"]:hover ~ *::after,
+input:hover:not([id]) ~ *::after,
+input[id=""]:hover ~ *::after,
+input:hover:not([type]) ~ *::after,
+input[type=""]:hover ~ *::after,
+input[type="submit"]:hover:not([value]) ~ *::after, img[alt=""]:hover ~ *::after,
+area[alt=""]:hover ~ *::after,
+input[type="image"][alt=""]:hover ~ *::after, figure img:hover:not([aria-describedby]) ~ *::after,
+input[required]:hover ~ *::after,
+input[aria-required]:hover ~ *::after,
+input[placeholder]:hover ~ *::after,
+embed:hover ~ *::after,
+img[title]:hover ~ *::after,
+area[title]:hover ~ *::after,
+meta[charset]:hover ~ *::after,
+track:hover:not([kind="caption"]) ~ *::after {
+  opacity: 1;
   -webkit-transform: translateY(0) translateZ(0) !important;
   -ms-transform: translateY(0) translateZ(0) !important;
   transform: translateY(0) translateZ(0) !important;
   -webkit-transition: -webkit-transform .3s ease-out !important;
-  transition: transform .3s ease-out !important;
+  transition: transform .3s ease-in !important;
 }
 
 nav:not([role="navigation"]),
@@ -846,7 +945,7 @@ table[rules]::after,
 td[height]::after, th[height]::after,
 td[nowrap]::after, th[nowrap]::after,
 body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
-  content: "\271D\00A0 Élément ou attribut(s) obsolète(s).\A Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
+  content: "\271D\00A0 Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
 }
 
 ul > *:not(li),
@@ -1297,4 +1396,80 @@ html:not([lang])::after {
 [onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
 [onvolumechange]::after, [onwaiting]::after {
   content: "\26D4\00A0 Attribut d’événements javscript. Vous êtes sûr de ce que vous faites ?" !important;
+}
+
+img:not([alt]):hover ~ *::after,
+area:not([alt]):hover ~ *::after,
+input[type="image"]:not([alt]):hover ~ *::after {
+  content: "\26D4\00A0 Attribut [alt] manquant. Quelle hérésie." !important;
+}
+
+img[alt=" "]:hover ~ *::after,
+area[alt=" "]:hover ~ *::after,
+input[type="image"][alt=" "]:hover ~ *::after {
+  content: "\26D4\00A0 Un attribut [alt] *presque* vide. C’est une blague, non ?" !important;
+}
+
+img:not([src]):hover ~ *::after,
+img[src=""]:hover ~ *::after,
+img[src="#"]:hover ~ *::after,
+input[type="image"]:not([src]):hover ~ *::after,
+input[type="image"][src=""]:hover ~ *::after,
+input[type="image"][src="#"]:hover ~ *::after {
+  content: "\26D4\00A0 Attribut [src] manquant ou vide. Bon." !important;
+}
+
+input:not([id]):hover ~ *::after,
+input[id=""]:hover ~ *::after {
+  content: "\26D4\00A0 Attribut [id] manquant ou vide.\A Tout le monde a droit à un nom, même les champs de formulaire." !important;
+}
+
+input:not([type]):hover ~ *::after,
+input[type=""]:hover ~ *::after {
+  content: "\26D4\00A0 Attribut [type] manquant ou vide.\A On met quoi, dans ce champ ?" !important;
+}
+
+input[type="submit"]:not([value]):hover ~ *::after {
+  content: "\26D4\00A0 Attribut [value] manquant.\A Ça fait quoi alors, si je clique dessus ?" !important;
+}
+
+input[required]:not([aria-describedby]):hover ~ *::after,
+input[aria-required]:not([aria-describedby]):hover ~ *::after {
+  content: "\26D4\00A0 Si le champ est obligatoire, une indication doit exister :\A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important;
+}
+
+img[alt=""]:hover ~ *::after,
+area[alt=""]:hover ~ *::after,
+input[type="image"][alt=""]:hover ~ *::after {
+  content: "\26A0\00A0 Attribut [alt] vide.\A C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
+}
+
+figure img:not([aria-describedby]):hover ~ *::after {
+  content: "\2665\00A0 Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>." !important;
+}
+
+input[required]:hover ~ *::after,
+input[aria-required]:hover ~ *::after {
+  content: "\2665\00A0 Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur." !important;
+}
+
+input[placeholder]:hover ~ *::after {
+  content: "\2665\00A0 Ce placeholder ne remplace pas un <label>, j’espère ?\A Y’en a qui ont essayé…" !important;
+}
+
+embed:hover ~ *::after {
+  content: "\2665\00A0 Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>)." !important;
+}
+
+img[title]:hover ~ *::after,
+area[title]:hover ~ *::after {
+  content: "\2665\00A0 L’attribut title, s’il est présent, doit être identique à l’alternative renseignée.\A À vous de jouer ;-) ." !important;
+}
+
+meta[charset]:hover ~ *::after {
+  content: "\2665\00A0 Sommes-nous bien en utf-8 ?" !important;
+}
+
+track:not([kind="caption"]):hover ~ *::after {
+  content: "\2665\00A0 Vous utilisez <track>, c’est bon signe !\A Mais l’attribut kind='caption' vous intéressera sûrement aussi :) ." !important;
 }

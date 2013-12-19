@@ -91,6 +91,6 @@ meta[http-equiv="refresh"],
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
 
-  @extend %error;
+  @extend %a11y-error;
 
 }

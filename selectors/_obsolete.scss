@@ -101,6 +101,6 @@ td[height], th[height],
 td[nowrap], th[nowrap],
 body[background], table[background], thead[background], tbody[background], tfoot[background], tr[background], td[background], th[background] {
 
-  @extend %obsolete;
+  @extend %a11y-obsolete;
 
 }

@@ -34,13 +34,15 @@
 
 //
 // == Import des sélecteurs
-// == Variables & Mixins
+// == Variables, Mixins & Placeholders
 //   -- Variables
 //   -- Mixins
+//   -- Placeholders
 // == Détection des conseils
 // == Détection des éléments & attributs obsolètes
 // == Détection des alertes
 // == Détection des erreurs
+// == Self-closing
 // == Contenu des messages
 //
 
@@ -50,9 +52,10 @@
 @import "selectors/obsolete";
 @import "selectors/warning";
 @import "selectors/error";
+@import "selectors/self-closing";
 
 
-// == @section Variables & Mixins ====================
+// == @section Variables, Mixins & Placeholders ====================
 
 // -- @subsection Variables --------------------
 $error: crimson;
@@ -66,7 +69,7 @@ $obsolete-ico: \271D\00A0;
 $advice-ico: \2665\00A0;
 
 // -- @subsection Mixins --------------------
-@mixin outline( $level ) {
+@mixin a11y-outline( $level ) {
   outline: 4px solid transparentize( $level, .25 ) !important;
   // @note : astuce suggérée par @7studio pour garantir un affichage homogène des bordures.
   // @see : https://github.com/ffoodd/a11y.css/issues/4
@@ -89,78 +92,102 @@ $advice-ico: \2665\00A0;
   }
 }
 
-%message {
+// -- @subsection Placeholders --------------------
+%a11y-after {
+  background: rgba( 255, 255, 255, .98 ) !important;
+  border: 1px solid rgba(0, 0, 0, .3) !important;
+  color: dimgray !important;
+  display: block !important;
+  font: normal normal 1rem/2.5 "Lucida Sans Unicode", "Lucida Sans", sans-serif !important;
+  height: auto !important;
+  left: 0 !important;
+  min-height: 4em !important;
+  opacity: 0;
+  // On s’assure que le message ne capte pas le survol.
+  pointer-events: none !important;
+  position: fixed !important;
+  // On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes.
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  text-transform: none !important;
+  // On prépare l’apparition du message.
+  top: 0 !important;
+  -webkit-transform:  translateY( -100% ) translateZ( 0 ) !important;
+  -ms-transform:      translateY( -100% ) translateZ( 0 ) !important;
+  transform:          translateY( -100% ) translateZ( 0 ) !important;
+  -webkit-transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  width: 100% !important;
+  // Permet de gérer les retours à la ligne éventuels
+  // @note Les sauts de ligne peuvent être provoqués par le caractère «\A» dans le message lui-même.
+  // @see issue #7 , solution proposée par @7studio
+  white-space: pre;
+}
 
+%a11y-hover {
+  opacity: 1;
+  -webkit-transform:  translateY( 0 ) translateZ( 0 ) !important;
+  -ms-transform:      translateY( 0 ) translateZ( 0 ) !important;
+  transform:          translateY( 0 ) translateZ( 0 ) !important;
+  -webkit-transition: -webkit-transform .3s ease-out !important;
+  transition:         transform .3s ease-in !important;
+}
+
+%a11y-message {
   &::after {
-    background: rgba( 255, 255, 255, .98 ) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, .3) !important;
-    color: dimgray !important;
-    display: block !important;
-    font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif !important;
-    height: auto !important;
-    left: 0 !important;
-    min-height: 4em !important;
-    // On s’assure que le message ne capte pas le survol.
-    pointer-events: none !important;
-    position: fixed !important;
-    // On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes.
-    text-align: center !important;
-    text-decoration: none !important;
-    text-shadow: none !important;
-    text-transform: none !important;
-    // On prépare l’apparition du message.
-    top: 0 !important;
-    -webkit-transform:  translateY( -100% ) translateZ( 0 ) !important;
-    -ms-transform:      translateY( -100% ) translateZ( 0 ) !important;
-    transform:          translateY( -100% ) translateZ( 0 ) !important;
-    -webkit-transition: -webkit-transform .3s ease-in !important;
-    transition:         transform .3s ease-in !important;
-    width: 100% !important;
-    // Permet de gérer les retours à la ligne éventuels
-    // @note Les suats de ligne peuvent être provoqués par le caractère «\A» dans le message lui-même
-    // @see issue #7 , solution proposée par @7studio
-    white-space: pre;
+    @extend %a11y-after;
   }
 
   &:hover::after {
-    -webkit-transform:  translateY( 0 ) translateZ( 0 ) !important;
-    -ms-transform:      translateY( 0 ) translateZ( 0 ) !important;
-    transform:          translateY( 0 ) translateZ( 0 ) !important;
-    -webkit-transition: -webkit-transform .3s ease-out !important;
-    transition:         transform .3s ease-out !important;
+    @extend %a11y-hover;
   }
 }
 
 
-// == @section Détection des conseils ====================
-%advice {
-  @include outline( $advice );
-  @extend %message;
+// == @section Détection ====================
+
+// -- @subsection Conseils --------------------
+%a11y-advice {
+  @include a11y-outline( $advice );
+  @extend %a11y-message;
 }
 
-
-// == @section Détection des éléments & attributs obsolètes ====================
-%obsolete {
-  @include outline( $obsolete );
-  @extend %message;
+// -- @subsection Éléments & attributs obsolètes --------------------
+%a11y-obsolete {
+  @include a11y-outline( $obsolete );
+  @extend %a11y-message;
 
   &::after {
-    content: "#{$obsolete-ico} Élément ou attribut(s) obsolète(s).\A Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
+    content: "#{$obsolete-ico} Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
   }
+
+}
+
+// -- @subsection Alertes --------------------
+%a11y-warning {
+  @include a11y-outline( $warning );
+  @extend %a11y-message;
+}
+
+// -- @subsection Erreurs --------------------
+%a11y-error {
+  @include a11y-outline( $error );
+  @extend %a11y-message;
 }
 
 
-// == @section Détection des alertes ====================
-%warning {
-  @include outline( $warning );
-  @extend %message;
-}
+// == @section Self-closing ====================
+%a11y-self-closing {
 
+  & ~ *::after {
+    @extend %a11y-after;
+  }
 
-// == @section Détection des erreurs ====================
-%error {
-  @include outline( $error );
-  @extend %message;
+  &:hover ~ *::after {
+    @extend %a11y-hover;
+  }
+
 }
 
 
@@ -168,4 +195,5 @@ $advice-ico: \2665\00A0;
 @import "messages/advice";
 @import "messages/warning";
 @import "messages/error";
+@import "messages/self-closing";
 

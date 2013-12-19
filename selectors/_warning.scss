@@ -52,6 +52,6 @@ th[scope],
 th:not([scope]),
 th:not([id]) {
 
-  @extend %warning;
+  @extend %a11y-warning;
 
 }

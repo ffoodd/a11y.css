@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+// Liste exhaustive des éléments auto-fermants en HTML5
+// $self-closing: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr;
+
+// -- @subsection Erreurs --------------------
+img:not([alt]),
+area:not([alt]),
+input[type="image"]:not([alt]),
+img[alt=" "],
+area[alt=" "],
+input[type="image"][alt=" "],
+img:not([src]),
+img[src=""],
+img[src="#"],
+input[type="image"]:not([src]),
+input[type="image"][src=""],
+input[type="image"][src="#"],
+input:not([id]),
+input[id=""],
+input:not([type]),
+input[type=""],
+input[type="submit"]:not([value]),
+input[required]:not([aria-describedby]),
+input[aria-required]:not([aria-describedby]) {
+
+  @extend %a11y-self-closing;
+
+  & ~ *::after {
+    z-index: 2147483647 !important;
+  }
+
+}
+
+
+// -- @subsection Alertes --------------------
+img[alt=""],
+area[alt=""],
+input[type="image"][alt=""] {
+
+  @extend %a11y-self-closing;
+
+  & ~ *::after {
+    z-index: 2147483646 !important;
+  }
+
+}
+
+
+// -- @subsection Conseils --------------------
+figure img:not([aria-describedby]),
+input[required],
+input[aria-required],
+input[placeholder],
+embed,
+img[title],
+area[title],
+meta[charset],
+track:not([kind="caption"]) {
+
+  @extend %a11y-self-closing;
+
+  & ~ *::after {
+    z-index: 2147483644 !important;
+  }
+
+}
