@@ -2,15 +2,20 @@
   "name": "a11y.css",
   "version": "1.0.0",
   "homepage": "https://github.com/ffoodd/a11y.css",
-  "description": "L’objectif de ce fichier CSS est d’alerter l’intégrateur sur les erreurs et risques potentiels dans le code - mais il peut également servir à auditer rapidement un site existant afin d’évaluer l’ampleur des dégâts.",
+  "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
   "main": "_a11y.scss",
   "keywords": [
     "sass",
+    "css",
     "quality",
+    "test",
+    "conformance",
+    "a11y",
     "accessibility"
   ],
   "authors": [
-    "Gaël Poupard"
+    "name": "Gaël Poupard",
+    "web": "http://www.ffoodd.fr"
   ],
   "license": "MIT",
   "ignore": [
