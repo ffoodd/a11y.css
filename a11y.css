@@ -26,6 +26,7 @@
  * @note : le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
  * @note : le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
 */
+nav:not([role="navigation"])::after,
 main:not([role="main"])::after,
 body > header:not([role="banner"])::after,
 body > footer:not([role="contentinfo"])::after,
@@ -56,6 +57,7 @@ canvas::after,
 object[type^="image"]::after,
 img[title]::after,
 area[title]::after,
+svg[title]::after,
 time::after,
 [datetime]::after,
 [pubdate]::after,
@@ -241,8 +243,9 @@ meta[http-equiv="refresh"]::after,
   color: dimgray !important;
   display: block !important;
   font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif !important;
-  height: 4em !important;
+  height: auto !important;
   left: 0 !important;
+  min-height: 4em !important;
   pointer-events: none !important;
   position: fixed !important;
   text-align: center !important;
@@ -250,12 +253,13 @@ meta[http-equiv="refresh"]::after,
   text-shadow: none !important;
   text-transform: none !important;
   top: 0 !important;
-  -webkit-transform: translateY(-4em) translateZ(0) !important;
-  -ms-transform: translateY(-4em) translateZ(0) !important;
-  transform: translateY(-4em) translateZ(0) !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+  -ms-transform: translateY(-100%) translateZ(0) !important;
+  transform: translateY(-100%) translateZ(0) !important;
   -webkit-transition: -webkit-transform .3s ease-in !important;
   transition: transform .3s ease-in !important;
   width: 100% !important;
+  white-space: pre;
 }
 main:not([role="main"]):hover::after,
 body > header:not([role="banner"]):hover::after,
@@ -842,7 +846,7 @@ table[rules]::after,
 td[height]::after, th[height]::after,
 td[nowrap]::after, th[nowrap]::after,
 body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
-  content: "\271D\00A0 Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
+  content: "\271D\00A0 Élément ou attribut(s) obsolète(s).\A Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
 }
 
 ul > *:not(li),
@@ -1029,7 +1033,7 @@ nav:not([role="navigation"])::after,
 main:not([role="main"])::after,
 body > header:not([role="banner"])::after,
 body > footer:not([role="contentinfo"])::after {
-  content: "\2665\00A0 Ces éléments ont probablement mérité le premier rôle :-) . Navigation, main, banner, contentinfo, complementary : ils sont tous là ?" !important;
+  content: "\2665\00A0 Ces éléments ont probablement mérité le premier rôle :-) .\A Navigation, main, banner, contentinfo, complementary : ils sont tous là ?" !important;
 }
 
 nav::after {
@@ -1037,15 +1041,15 @@ nav::after {
 }
 
 main:not(:first-of-type)::after {
-  content: "\2665\00A0 <main> est réservée à la zone de contenu principal, et doit donc être unique. Repentez-vous et tout ira bien :) ." !important;
+  content: "\2665\00A0 <main> est réservée à la zone de contenu principal, et doit donc être unique.\A Repentez-vous et tout ira bien :) ." !important;
 }
 
 section:not([aria-labelledby])::after {
-  content: "\2665\00A0 L’élément <section> a une valeur sémantique, vous le saviez ? Il doit donc être décrit par un texte." !important;
+  content: "\2665\00A0 L’élément <section> a une valeur sémantique, vous le saviez ?\A Il doit donc être décrit par un texte." !important;
 }
 
 figure:not([role="group"])::after {
-  content: "\2665\00A0 L’élément <figure> regroupe une <img> et un <figacption> : le rôle «group» semble indiqué, pas vrai ?" !important;
+  content: "\2665\00A0 L’élément <figure> regroupe une <img> et un <figacption> :\A le rôle «group» semble indiqué, pas vrai ?" !important;
 }
 
 figure img:not([aria-describedby])::after {
@@ -1053,7 +1057,7 @@ figure img:not([aria-describedby])::after {
 }
 
 [target="_blank"]::after {
-  content: "\2665\00A0 L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre. Mais vous y avez pensé, non :) ?" !important;
+  content: "\2665\00A0 L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre.\A Mais vous y avez pensé, non :) ?" !important;
 }
 
 [href$=".pdf"]::after,
@@ -1066,7 +1070,7 @@ figure img:not([aria-describedby])::after {
 
 .search:not([role="search"])::after,
 #search:not([role="search"])::after {
-  content: "\2665\00A0 Vu ! Cet élément semble être la recherche. Mais alors, le rôle ARIA est là, non ?" !important;
+  content: "\2665\00A0 Vu ! Cet élément semble être la recherche.\A Mais alors, le rôle ARIA est là, non ?" !important;
 }
 
 [required]::after,
@@ -1080,7 +1084,7 @@ figure img:not([aria-describedby])::after {
 }
 
 [placeholder]::after {
-  content: "\2665\00A0 Ce placeholder ne remplace pas un <label>, j’espère ? Y’en a qui ont essayé…" !important;
+  content: "\2665\00A0 Ce placeholder ne remplace pas un <label>, j’espère ?\A Y’en a qui ont essayé…" !important;
 }
 
 video::after,
@@ -1089,7 +1093,7 @@ audio::after {
 }
 
 track:not([kind="caption"])::after {
-  content: "\2665\00A0 Vous utilisez <track>, c’est bon signe ! Mais l’attribut kind='caption' vous intéressera sûrement aussi :) ." !important;
+  content: "\2665\00A0 Vous utilisez <track>, c’est bon signe !\A Mais l’attribut kind='caption' vous intéressera sûrement aussi :) ." !important;
 }
 
 svg::after,
@@ -1102,7 +1106,7 @@ object[type^="image"]::after {
 img[title]::after,
 area[title]::after,
 svg[title]::after {
-  content: "\2665\00A0 L’attribut title, s’il est présent, doit être identique à l’alternative renseignée. À vous de jouer ;-) ." !important;
+  content: "\2665\00A0 L’attribut title, s’il est présent, doit être identique à l’alternative renseignée.\A À vous de jouer ;-) ." !important;
 }
 
 time::after,
@@ -1120,31 +1124,31 @@ ol > *:not(li)::after,
 table > tr::after,
 table table::after,
 tbody + tfoot::after {
-  content: "\26A0\00A0 Imbrication inadéquate d'éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?" !important;
+  content: "\26A0\00A0 Imbrication inadéquate d'éléments.\A Ça peut heurter la sensibilité des plus jeunes, vous savez ?" !important;
 }
 
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after {
-  content: "\26A0\00A0 Imbrication inadéquate d'éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
+  content: "\26A0\00A0 Imbrication inadéquate d'éléments.\A Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
 }
 
 abbr:not([title])::after,
 abbr[title=""]::after {
-  content: "\26A0\00A0 Attribut [title] vide ou manquant. Jetez un œil à la BP 160 d’OpQuast ;-) " !important;
+  content: "\26A0\00A0 Attribut [title] vide ou manquant.\A Jetez un œil à la BP 160 d’OpQuast ;-) " !important;
 }
 
 img[alt=""]::after,
 area[alt=""]::after,
 input[type="image"][alt=""]::after {
-  content: "\26A0\00A0 Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
+  content: "\26A0\00A0 Attribut [alt] vide.\A C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
 }
 
 [style]::after {
-  content: "\26A0\00A0 Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !" !important;
+  content: "\26A0\00A0 Éléments supportant des styles en ligne.\A Les pauvres… Vous devriez avoir honte !" !important;
 }
 
 label + :not(input):not(select):not(textarea)::after {
-  content: "\26A0\00A0 Un champ et son label devrait être accolés. Mais ce qui suit ce label ne ressemble pas à un champ…" !important;
+  content: "\26A0\00A0 Un champ et son label devrait être accolés.\A Mais ce qui suit ce label ne ressemble pas à un champ…" !important;
 }
 
 div:empty::after,
@@ -1161,15 +1165,15 @@ title:empty::after {
 }
 
 table[role="presentation"]::after {
-  content: "\26A0\00A0 Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données. Vous pouvez vérifier ?" !important;
+  content: "\26A0\00A0 Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données.\A Vous pouvez vérifier ?" !important;
 }
 
 th[scope]::after {
-  content: "\26A0\00A0 Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? Elle le devrait, en tout cas." !important;
+  content: "\26A0\00A0 Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ?\A Elle le devrait, en tout cas." !important;
 }
 
 th:not([scope])::after {
-  content: "\26A0\00A0 Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à scope." !important;
+  content: "\26A0\00A0 Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ?\A Si oui, pensez à scope." !important;
 }
 
 th:not([id])::after {
@@ -1225,50 +1229,50 @@ select:not([id])::after,
 select[id=""]::after,
 textarea:not([id])::after,
 textarea[id=""]::after {
-  content: "\26D4\00A0 Attribut [id] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire." !important;
+  content: "\26D4\00A0 Attribut [id] manquant ou vide.\A Tout le monde a droit à un nom, même les champs de formulaire." !important;
 }
 
 optgroup:not([label])::after {
-  content: "\26D4\00A0 Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. Dommage…" !important;
+  content: "\26D4\00A0 Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options.\A Dommage…" !important;
 }
 
 input:not([type])::after,
 input[type=""]::after {
-  content: "\26D4\00A0 Attribut [type] manquant ou vide. On met quoi, dans ce champ ?" !important;
+  content: "\26D4\00A0 Attribut [type] manquant ou vide.\A On met quoi, dans ce champ ?" !important;
 }
 
 input[type="submit"]:not([value])::after {
-  content: "\26D4\00A0 Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?" !important;
+  content: "\26D4\00A0 Attribut [value] manquant.\A Ça fait quoi alors, si je clique dessus ?" !important;
 }
 
 iframe:not([title])::after,
 iframe[title=""]::after {
-  content: "\26D4\00A0 Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>." !important;
+  content: "\26D4\00A0 Attribut [title] manquant ou vide.\A Dieu seul sait ce que contient cette <iframe>." !important;
 }
 
 form:not([action])::after {
-  content: "\26D4\00A0 Attribut [action] manquant. Et après, il se passe quoi ?";
+  content: "\26D4\00A0 Attribut [action] manquant.\A Et après, il se passe quoi ?";
 }
 
 [required]:not([aria-describedby])::after,
 [aria-required]:not([aria-describedby])::after {
-  content: "\26D4\00A0 Si le champ est obligatoire, une indication doit exister : liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important;
+  content: "\26D4\00A0 Si le champ est obligatoire, une indication doit exister :\A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important;
 }
 
 [class=""]::after {
-  content: "\26D4\00A0 Attribut [class] vide. Pourquoi tant de haine ?" !important;
+  content: "\26D4\00A0 Attribut [class] vide.\A Pourquoi tant de haine ?" !important;
 }
 
 [id=""]::after {
-  content: "\26D4\00A0 Attribut [id] vide. Sérieusement ?" !important;
+  content: "\26D4\00A0 Attribut [id] vide.\A Sérieusement ?" !important;
 }
 
 meta[http-equiv="refresh"]::after {
-  content: "\26D4\00A0 <meta http-equiv='refresh'> devrait être supprimé. Définitivement." !important;
+  content: "\26D4\00A0 <meta http-equiv='refresh'> devrait être supprimé.\A Définitivement." !important;
 }
 
 html:not([lang])::after {
-  content: "Pas d’attribut lang / xml:lang sur la balise <html>. Vous parlez quelle langue, vous ?" !important;
+  content: "Pas d’attribut lang / xml:lang sur la balise <html>.\A Vous parlez quelle langue, vous ?" !important;
 }
 
 /* Les événements javscript sous forme d’attributs HTML */

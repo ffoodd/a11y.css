@@ -52,51 +52,51 @@ select[id=""],
 textarea:not([id]),
 textarea[id=""] {
   &::after {
-    content: "#{$error-ico} Attribut [id] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire." !important;
+    content: "#{$error-ico} Attribut [id] manquant ou vide.\A Tout le monde a droit à un nom, même les champs de formulaire." !important;
   }
 }
 
 optgroup:not([label])::after {
-  content: "#{$error-ico} Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. Dommage…" !important;
+  content: "#{$error-ico} Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options.\A Dommage…" !important;
 }
 
 input:not([type])::after,
 input[type=""]::after {
-  content: "#{$error-ico} Attribut [type] manquant ou vide. On met quoi, dans ce champ ?" !important;
+  content: "#{$error-ico} Attribut [type] manquant ou vide.\A On met quoi, dans ce champ ?" !important;
 }
 
 input[type="submit"]:not([value])::after {
-  content: "#{$error-ico} Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?" !important;
+  content: "#{$error-ico} Attribut [value] manquant.\A Ça fait quoi alors, si je clique dessus ?" !important;
 }
 
 iframe:not([title])::after,
 iframe[title=""]::after {
-  content: "#{$error-ico} Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>." !important;
+  content: "#{$error-ico} Attribut [title] manquant ou vide.\A Dieu seul sait ce que contient cette <iframe>." !important;
 }
 
 form:not([action])::after {
-  content: "#{$error-ico} Attribut [action] manquant. Et après, il se passe quoi ?";
+  content: "#{$error-ico} Attribut [action] manquant.\A Et après, il se passe quoi ?";
 }
 
 [required]:not([aria-describedby])::after,
 [aria-required]:not([aria-describedby])::after {
-  content: "#{$error-ico} Si le champ est obligatoire, une indication doit exister : liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important;
+  content: "#{$error-ico} Si le champ est obligatoire, une indication doit exister :\A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important;
 }
 
 [class=""]::after {
-  content: "#{$error-ico} Attribut [class] vide. Pourquoi tant de haine ?" !important;
+  content: "#{$error-ico} Attribut [class] vide.\A Pourquoi tant de haine ?" !important;
 }
 
 [id=""]::after {
-  content: "#{$error-ico} Attribut [id] vide. Sérieusement ?" !important;
+  content: "#{$error-ico} Attribut [id] vide.\A Sérieusement ?" !important;
 }
 
 meta[http-equiv="refresh"]::after {
-  content: "#{$error-ico} <meta http-equiv='refresh'> devrait être supprimé. Définitivement." !important;
+  content: "#{$error-ico} <meta http-equiv='refresh'> devrait être supprimé.\A Définitivement." !important;
 }
 
 html:not([lang])::after {
-  content:"Pas d’attribut lang / xml:lang sur la balise <html>. Vous parlez quelle langue, vous ?" !important;
+  content:"Pas d’attribut lang / xml:lang sur la balise <html>.\A Vous parlez quelle langue, vous ?" !important;
 }
 
 /* Les événements javscript sous forme d’attributs HTML */

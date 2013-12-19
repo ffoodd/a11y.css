@@ -97,8 +97,9 @@ $advice-ico: \2665\00A0;
     color: dimgray !important;
     display: block !important;
     font: normal normal 1rem/4 "Lucida Sans Unicode", "Lucida Sans", sans-serif !important;
-    height: 4em !important;
+    height: auto !important;
     left: 0 !important;
+    min-height: 4em !important;
     // On s’assure que le message ne capte pas le survol.
     pointer-events: none !important;
     position: fixed !important;
@@ -109,12 +110,16 @@ $advice-ico: \2665\00A0;
     text-transform: none !important;
     // On prépare l’apparition du message.
     top: 0 !important;
-    -webkit-transform:  translateY( -4em ) translateZ( 0 ) !important;
-    -ms-transform:      translateY( -4em ) translateZ( 0 ) !important;
-    transform:          translateY( -4em ) translateZ( 0 ) !important;
+    -webkit-transform:  translateY( -100% ) translateZ( 0 ) !important;
+    -ms-transform:      translateY( -100% ) translateZ( 0 ) !important;
+    transform:          translateY( -100% ) translateZ( 0 ) !important;
     -webkit-transition: -webkit-transform .3s ease-in !important;
     transition:         transform .3s ease-in !important;
     width: 100% !important;
+    // Permet de gérer les retours à la ligne éventuels
+    // @note Les suats de ligne peuvent être provoqués par le caractère «\A» dans le message lui-même
+    // @see issue #7 , solution proposée par @7studio
+    white-space: pre;
   }
 
   &:hover::after {
@@ -140,7 +145,7 @@ $advice-ico: \2665\00A0;
   @extend %message;
 
   &::after {
-    content: "#{$obsolete-ico} Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
+    content: "#{$obsolete-ico} Élément ou attribut(s) obsolète(s).\A Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
   }
 }
 
