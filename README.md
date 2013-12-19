@@ -36,7 +36,7 @@ Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ai
 Chaque test dispose de son propre message, afin d’informer et guider au maximum l’intégrateur en quête d’amélioration. Ils sont eux aussi dans des fichiers partiels, pour en faciliter la lecture et la rédaction. Une personnalisation sera bien plus simple de cette façon (tout le monde n’aimera mes touches d’humour ;-) ).
 
 ## Cas particuliers et problèmes connus
-1. Les balises «auto-fermantes» n’autorisent pas la génération de contenu. Ainsi les erreurs ou alertes seront marquées, mais aucun message n’apparaitra au survol. Il sera en revanche consultable dans la plupart des inspecteurs de DOM : la limite est la création du pseudo-éléments pour l’afichage. Voici la liste exhaustive des balises HTML5 auto-fermantes:
+1. Les balises «auto-fermantes» n’autorisent pas la génération de contenu. Ainsi les erreurs ou alertes seront marquées, mais aucun message n’apparaitra au survol. Il sera en revanche consultable dans la plupart des inspecteurs de DOM : la limite est la création du pseudo-éléments pour l’afichage (cf [la spécification](http://www.w3.org/TR/CSS2/generate.html#before-after-content). Voici la liste exhaustive des balises HTML5 auto-fermantes:
  * `<area />`
  * `<base />`
  * `<br />`
@@ -53,6 +53,8 @@ Chaque test dispose de son propre message, afin d’informer et guider au maximu
  * `<source />`
  * `<track />`
  * `<wbr />`
+
+*L’issue #7 ouverte par @7studio a permis d’ajouter une astuce qui permettra d’afficher ces messages, à condition que la balise auto-fermante signalée dispose d’un élément adjacent qui ne soit pas auto-fermant.*
 
 2. Les messages sont générés via un pseudo-élément en position fixe. Il faut cependant souligner un problème de *containing block* causé par un élément parent, si ce dernier se voit appliqué `transform`:
   * @see [La spéc W3C](http://www.w3.org/TR/css3-transforms/#transform-property)
