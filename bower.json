@@ -1,6 +1,6 @@
 {
   "name": "a11y.css",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/ffoodd/a11y.css",
   "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
   "main": "a11y.css",
@@ -15,8 +15,10 @@
     "accessibility"
   ],
   "authors": [
-    "name": "Gaël Poupard",
-    "web": "http://www.ffoodd.fr"
+    {
+      "name": "Gaël Poupard",
+      "web": "http://www.ffoodd.fr"
+    }
   ],
   "license": "MIT",
   "ignore": [
