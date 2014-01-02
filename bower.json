@@ -9,6 +9,7 @@
     "css",
     "quality",
     "test",
+    "advices",
     "conformance",
     "a11y",
     "accessibility"
@@ -20,6 +21,9 @@
   "license": "MIT",
   "ignore": [
     "a11y.scss",
+    "selectors",
+    "messages",
+    "config.rb",
     "bower_components",
   ]
 }
