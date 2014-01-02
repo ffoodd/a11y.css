@@ -20,6 +20,7 @@
   ],
   "license": "MIT",
   "ignore": [
+    "**/.*",
     "a11y.scss",
     "selectors",
     "messages",
