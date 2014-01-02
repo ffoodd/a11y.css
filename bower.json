@@ -1,6 +1,6 @@
 {
   "name": "a11y.css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/ffoodd/a11y.css",
   "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
   "main": "a11y.css",
@@ -25,6 +25,6 @@
     "selectors",
     "messages",
     "config.rb",
-    "bower_components",
+    "bower_components"
   ]
 }
