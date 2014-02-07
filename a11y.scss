@@ -1,30 +1,22 @@
 @charset "UTF-8";
-/**
-* == a11y.css *
-*
-* @author Gaël Poupard
-* @lastmodified 2013-11-27
-*
-* @subsection Références :
-  * @see : https://github.com/redroot/holmes/blob/master/holmes.css
-  *
-  * @see : https://github.com/karlgroves/diagnostic.css
-  *
-  * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
-  *
-  * @see : https://github.com/nternetinspired/debug-css
-  *
-  * @see : Mémento "Sites web - Les bonnes pratiques" aux éditions Eyrolles
-  * @author : Elie Sloïm, Temesis, Opquast, Openweb - @ElieSl
-  *
-  * @see "Intégration Web, les bonnes pratiques", pages 335/336.
-  * @author : Corinne Schillinger, Inseo - @schillinger
- *
- * @note : on utilise outline plutôt que border afin de ne pas modifier les dimensions des éléments.
- * @note : le rouge dénonce une erreur, un code invalide ou un attribut manquant.
- * @note : le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
- * @note : le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
-*/
+// == a11y.css
+//
+// @author Gaël Poupard
+// @lastmodified 2013-11-27
+// @subsection Références :
+  // @see https://github.com/redroot/holmes/blob/master/holmes.css
+  // @see https://github.com/karlgroves/diagnostic.css
+  // @see http://www.w3.org/TR/html5/obsolete.html#obsolete
+  // @see https://github.com/nternetinspired/debug-css
+  // @see Mémento "Sites web - Les bonnes pratiques" aux éditions Eyrolles
+  // @author Elie Sloïm, Temesis, Opquast, Openweb - @ElieSl
+  // @see "Intégration Web, les bonnes pratiques", pages 335/336.
+  // @author Corinne Schillinger, Inseo - @schillinger
+// @note on utilise outline plutôt que border afin de ne pas modifier les dimensions des éléments.
+// @note le rouge dénonce une erreur, un code invalide ou un attribut manquant.
+// @note le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
+// @note le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
+//
 
 
 // ----------------------------- //
@@ -160,7 +152,6 @@ $advice-ico: \2665\00A0;
   &::after {
     content: "#{$obsolete-ico} Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
   }
-
 }
 
 // -- @subsection Alertes --------------------
@@ -178,7 +169,6 @@ $advice-ico: \2665\00A0;
 
 // == @section Self-closing ====================
 %a11y-self-closing {
-
   & ~ *::after {
     @extend %a11y-after;
   }
@@ -186,7 +176,6 @@ $advice-ico: \2665\00A0;
   &:hover ~ *::after {
     @extend %a11y-hover;
   }
-
 }
 
 
