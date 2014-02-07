@@ -6,14 +6,14 @@ table > tr,
 table table,
 tbody + tfoot {
   &::after {
-    content: "#{$warning-ico} Imbrication inadéquate d'éléments.\A Ça peut heurter la sensibilité des plus jeunes, vous savez ?" !important;
+    content: "#{$warning-ico} Imbrication inadéquate d’éléments.\A Ça peut heurter la sensibilité des plus jeunes, vous savez ?" !important;
   }
 }
 
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child) {
   &::after {
-    content: "#{$warning-ico} Imbrication inadéquate d'éléments.\A Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
+    content: "#{$warning-ico} Imbrication inadéquate d’éléments.\A Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
   }
 }
 

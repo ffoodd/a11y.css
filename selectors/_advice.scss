@@ -1,16 +1,16 @@
 @charset "UTF-8";
 
 // Corrélation entre la sémantique HTML5 et ARIA. Les rôles ARIA doivent être présents mais pas forcément sur les éléments HTML5 qui semblent leur correspondre. À vous d’avoir le recul nécessaire !
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=151
-// @note : Test 12.10.4
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=151
+// @note Test 12.10.4
 nav:not([role="navigation"]),
 main:not([role="main"]),
 body > header:not([role="banner"]),
 body > footer:not([role="contentinfo"]),
 
-// La balise <nav> est résevée aux navigations principales et secondaires;
+// La balise <nav> est réservée aux navigations principales et secondaires;
 // La balise <main> doit être unique et structurante pour le contenu principal
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=116
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=116
 nav,
 main:not(:first-of-type),
 
@@ -20,13 +20,13 @@ figure:not([role="group"]),
 figure img:not([aria-describedby]),
 
 // L’internaute doit être averti avant l’ouverture d’une nouvelle fenêtre
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=176
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=176
 [target="_blank"],
 
 // Les fichiers en téléchargement doivent indiquer leur poids et format :
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=172
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=172
 // Et ils doivent eux-mêmes être accessibles, ou mettre à disposition une version accessible :
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=171
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=171
 [href$=".pdf"],
 [href$=".doc"],
 [href$=".docx"],
@@ -37,14 +37,14 @@ figure img:not([aria-describedby]),
 .search:not([role="search"]),
 #search:not([role="search"]),
 
-// champ obligatoire / attribut required : ne doit pas être signifié que par la couleur (BP 85)
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=137
+// Champ obligatoire / attribut required : ne doit pas être signifié que par la couleur (BP 85)
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=137
 [required],
 [aria-required],
 
 // Les éléments masqués aux technologies d’assistance le sont-ils à bon escient ?
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=120
-// @note: Tests 10.13.2 et 10.13.3
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=120
+// @note Tests 10.13.2 et 10.13.3
 [hidden],
 [aria-hidden],
 
@@ -55,29 +55,29 @@ video,
 audio,
 
 // L’élément <track> doit préciser son type lorsqu’il sert des sous-titres
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=75
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=75
 track:not([kind="caption"]),
 
 // Les balises <svg>, <canvas>, <embed> et <object type="image/.."> devraient être contenues dans un élément <figure role="group">,
-// uniquement si elles sont porteuses d’informations.
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=39
+// Uniquement si elles sont porteuses d’informations.
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=39
 svg,
 embed,
 canvas,
 object[type^="image"],
 
 // L’attribut title doit être identique à l’alternative
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=46
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=46
 img[title],
 area[title],
 svg[title],
 
-// format de date compréhensible ? (BP 6)
+// Format de date compréhensible ? (BP 6)
 time,
 [datetime],
 [pubdate],
 
-// définir le jeu de caractères (BP 100) & s’assurer que c’est utf-8 (BP 89)
+// Définir le jeu de caractères (BP 100) & s’assurer que c’est utf-8 (BP 89)
 meta[charset] {
 
   @extend %a11y-advice;

@@ -22,7 +22,7 @@ section:not([aria-labelledby])::after {
 }
 
 figure:not([role="group"])::after {
-  content: "#{$advice-ico} L’élément <figure> regroupe une <img> et un <figacption> :\A le rôle «group» semble indiqué, pas vrai ?" !important;
+  content: "#{$advice-ico} L’élément <figure> regroupe une <img> et un <figcaption> :\A le rôle «group» semble indiqué, pas vrai ?" !important;
 }
 
 figure img:not([aria-describedby])::after {
@@ -40,7 +40,7 @@ figure img:not([aria-describedby])::after {
 [href$=".xls"],
 [href$=".txt"] {
   &::after {
-    content: "#{$advice-ico} Le format et le poids d’un fichier téléchargeable devraient être indiqués - et il devrait être accessible." !important;
+    content: "#{$advice-ico} Le format et le poids d’un fichier téléchargeable devraient être indiqués — et il devrait être accessible." !important;
   }
 }
 
@@ -57,7 +57,7 @@ figure img:not([aria-describedby])::after {
 
 [hidden]::after,
 [aria-hidden]::after {
-  content: "#{$advice-ico} Cet élément - masqué aux technologies d’assistance - ne porte aucune information, vous en êtes bien sûr ?" !important;
+  content: "#{$advice-ico} Cet élément — masqué aux technologies d’assistance — ne porte aucune information, vous en êtes bien sûr ?" !important;
 }
 
 [placeholder]::after {
@@ -66,7 +66,7 @@ figure img:not([aria-describedby])::after {
 
 video::after,
 audio::after {
-  content: "#{$advice-ico} Les éléments interactif doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer sa durée." !important;
+  content: "#{$advice-ico} Les éléments interactifs doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée." !important;
 }
 
 track:not([kind="caption"])::after {

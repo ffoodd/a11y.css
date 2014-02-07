@@ -6,17 +6,17 @@ a:not([href]),
 a[href=""],
 
 // Les liens vides sont proscris
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=90
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=90
 a:empty,
 
 // Repère les images sans alternative textuelle.
-// @see : BP1 OpQuast
+// @see BP1 OpQuast
 img:not([alt]),
 area:not([alt]),
 input[type="image"]:not([alt]),
 
 // Une alternative contenant un espace est presque pire que pas d’alternative du tout ><
-// @see : BP1 OpQuast
+// @see BP1 OpQuast
 img[alt=" "],
 area[alt=" "],
 input[type="image"][alt=" "],
@@ -46,7 +46,7 @@ textarea:not([id]),
 textarea[id=""],
 
 // Si des options sont regroupées, ce groupe doit avoir un label (pertinent, de préférence).
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=179
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=179
 optgroup:not([label]),
 
 iframe:not([title]),
@@ -58,7 +58,7 @@ form:not([action]),
 [id=""],
 
 // La langue du document doit être précisée.
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=109
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=109
 html:not([lang]),
 
 // Les valeurs d’attributs contre-indiquées

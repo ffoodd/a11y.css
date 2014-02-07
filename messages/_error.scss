@@ -6,7 +6,7 @@ a[href=""]::after {
 }
 
 a[href="#"]::after{
-  content: "#{$error-ico} Attribut [href='#']. Pourqoi ? Un <button> semble plus indiqué." !important;
+  content: "#{$error-ico} Attribut [href='#']. Pourquoi ? Un <button> semble plus indiqué." !important;
 }
 
 a[href^="javascript"]::after{

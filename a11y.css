@@ -1,30 +1,4 @@
 @charset "UTF-8";
-/**
-* == a11y.css *
-*
-* @author Gaël Poupard
-* @lastmodified 2013-11-27
-*
-* @subsection Références :
-  * @see : https://github.com/redroot/holmes/blob/master/holmes.css
-  *
-  * @see : https://github.com/karlgroves/diagnostic.css
-  *
-  * @see : http://www.w3.org/TR/html5/obsolete.html#obsolete
-  *
-  * @see : https://github.com/nternetinspired/debug-css
-  *
-  * @see : Mémento "Sites web - Les bonnes pratiques" aux éditions Eyrolles
-  * @author : Elie Sloïm, Temesis, Opquast, Openweb - @ElieSl
-  *
-  * @see "Intégration Web, les bonnes pratiques", pages 335/336.
-  * @author : Corinne Schillinger, Inseo - @schillinger
- *
- * @note : on utilise outline plutôt que border afin de ne pas modifier les dimensions des éléments.
- * @note : le rouge dénonce une erreur, un code invalide ou un attribut manquant.
- * @note : le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
- * @note : le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
-*/
 img:not([alt]) ~ *::after,
 area:not([alt]) ~ *::after,
 input[type="image"]:not([alt]) ~ *::after,
@@ -1139,7 +1113,7 @@ section:not([aria-labelledby])::after {
 }
 
 figure:not([role="group"])::after {
-  content: "\2665\00A0 L’élément <figure> regroupe une <img> et un <figacption> :\A le rôle «group» semble indiqué, pas vrai ?" !important;
+  content: "\2665\00A0 L’élément <figure> regroupe une <img> et un <figcaption> :\A le rôle «group» semble indiqué, pas vrai ?" !important;
 }
 
 figure img:not([aria-describedby])::after {
@@ -1155,7 +1129,7 @@ figure img:not([aria-describedby])::after {
 [href$=".docx"]::after,
 [href$=".xls"]::after,
 [href$=".txt"]::after {
-  content: "\2665\00A0 Le format et le poids d’un fichier téléchargeable devraient être indiqués - et il devrait être accessible." !important;
+  content: "\2665\00A0 Le format et le poids d’un fichier téléchargeable devraient être indiqués — et il devrait être accessible." !important;
 }
 
 .search:not([role="search"])::after,
@@ -1170,7 +1144,7 @@ figure img:not([aria-describedby])::after {
 
 [hidden]::after,
 [aria-hidden]::after {
-  content: "\2665\00A0 Cet élément - masqué aux technologies d’assistance - ne porte aucune information, vous en êtes bien sûr ?" !important;
+  content: "\2665\00A0 Cet élément — masqué aux technologies d’assistance — ne porte aucune information, vous en êtes bien sûr ?" !important;
 }
 
 [placeholder]::after {
@@ -1179,7 +1153,7 @@ figure img:not([aria-describedby])::after {
 
 video::after,
 audio::after {
-  content: "\2665\00A0 Les éléments interactif doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer sa durée." !important;
+  content: "\2665\00A0 Les éléments interactifs doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée." !important;
 }
 
 track:not([kind="caption"])::after {
@@ -1214,12 +1188,12 @@ ol > *:not(li)::after,
 table > tr::after,
 table table::after,
 tbody + tfoot::after {
-  content: "\2622\00A0 Imbrication inadéquate d'éléments.\A Ça peut heurter la sensibilité des plus jeunes, vous savez ?" !important;
+  content: "\2622\00A0 Imbrication inadéquate d’éléments.\A Ça peut heurter la sensibilité des plus jeunes, vous savez ?" !important;
 }
 
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after {
-  content: "\2622\00A0 Imbrication inadéquate d'éléments.\A Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
+  content: "\2622\00A0 Imbrication inadéquate d’éléments.\A Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
 }
 
 abbr:not([title])::after,
@@ -1276,7 +1250,7 @@ a[href=""]::after {
 }
 
 a[href="#"]::after {
-  content: "\2620\00A0 Attribut [href='#']. Pourqoi ? Un <button> semble plus indiqué." !important;
+  content: "\2620\00A0 Attribut [href='#']. Pourquoi ? Un <button> semble plus indiqué." !important;
 }
 
 a[href^="javascript"]::after {
