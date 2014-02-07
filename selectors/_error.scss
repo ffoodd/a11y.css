@@ -54,10 +54,6 @@ iframe[title=""],
 
 form:not([action]),
 
-// @see : http://www.accessiweb.org/forumhtml5/viewtopic.php?id=137
-[required]:not([aria-describedby]),
-[aria-required]:not([aria-describedby]),
-
 [class=""],
 [id=""],
 

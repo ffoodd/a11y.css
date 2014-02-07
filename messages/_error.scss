@@ -78,11 +78,6 @@ form:not([action])::after {
   content: "#{$error-ico} Attribut [action] manquant.\A Et après, il se passe quoi ?";
 }
 
-[required]:not([aria-describedby])::after,
-[aria-required]:not([aria-describedby])::after {
-  content: "#{$error-ico} Si le champ est obligatoire, une indication doit exister :\A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important;
-}
-
 [class=""]::after {
   content: "#{$error-ico} Attribut [class] vide.\A Pourquoi tant de haine ?" !important;
 }

@@ -3,7 +3,6 @@
 * == a11y.css *
 *
 * @author Gaël Poupard
-* @site Thème ffeeeedd
 * @lastmodified 2013-11-27
 *
 * @subsection Références :
@@ -251,8 +250,6 @@ optgroup:not([label])::after,
 iframe:not([title])::after,
 iframe[title=""]::after,
 form:not([action])::after,
-[required]:not([aria-describedby])::after,
-[aria-required]:not([aria-describedby])::after,
 [class=""]::after,
 [id=""]::after,
 html:not([lang])::after,
@@ -516,8 +513,6 @@ optgroup:not([label]):hover::after,
 iframe:not([title]):hover::after,
 iframe[title=""]:hover::after,
 form:not([action]):hover::after,
-[required]:not([aria-describedby]):hover::after,
-[aria-required]:not([aria-describedby]):hover::after,
 [class=""]:hover::after,
 [id=""]:hover::after,
 html:not([lang]):hover::after,
@@ -1036,8 +1031,6 @@ optgroup:not([label]),
 iframe:not([title]),
 iframe[title=""],
 form:not([action]),
-[required]:not([aria-describedby]),
-[aria-required]:not([aria-describedby]),
 [class=""],
 [id=""],
 html:not([lang]),
@@ -1098,8 +1091,6 @@ optgroup:not([label])::after,
 iframe:not([title])::after,
 iframe[title=""]::after,
 form:not([action])::after,
-[required]:not([aria-describedby])::after,
-[aria-required]:not([aria-describedby])::after,
 [class=""]::after,
 [id=""]::after,
 html:not([lang])::after,
@@ -1351,11 +1342,6 @@ iframe[title=""]::after {
 
 form:not([action])::after {
   content: "\2620\00A0 Attribut [action] manquant.\A Et après, il se passe quoi ?";
-}
-
-[required]:not([aria-describedby])::after,
-[aria-required]:not([aria-describedby])::after {
-  content: "\2620\00A0 Si le champ est obligatoire, une indication doit exister :\A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important;
 }
 
 [class=""]::after {
