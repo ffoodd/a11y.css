@@ -1334,7 +1334,7 @@ html:not([lang])::after {
   content: "Pas d’attribut lang / xml:lang sur la balise <html>.\A Vous parlez quelle langue, vous ?" !important;
 }
 
-/* Les événements javscript sous forme d’attributs HTML */
+/* Les événements javascript sous forme d’attributs HTML */
 [onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
 [onerror]::after, [onhaschange]::after, [onload]::after, [onmessage]::after,
 [onoffline]::after, [ononline]::after, [onpagehide]::after, [onpageshow]::after,
@@ -1355,7 +1355,7 @@ html:not([lang])::after {
 [onratechange]::after, [onreadystatechange]::after, [onseeked]::after,
 [onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
 [onvolumechange]::after, [onwaiting]::after {
-  content: "\2620\00A0 Attribut d’événements javscript. Vous êtes sûr de ce que vous faites ?" !important;
+  content: "\2620\00A0 Attribut d’événements javascript. Vous êtes sûr de ce que vous faites ?" !important;
 }
 
 img:not([alt]):hover ~ *::after,
