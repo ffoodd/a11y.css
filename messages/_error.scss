@@ -94,7 +94,7 @@ html:not([lang])::after {
   content:"Pas d’attribut lang / xml:lang sur la balise <html>.\A Vous parlez quelle langue, vous ?" !important;
 }
 
-/* Les événements javscript sous forme d’attributs HTML */
+/* Les événements javascript sous forme d’attributs HTML */
 [onafterprint], [onbeforeprint], [onbeforeunload],
 [onerror], [onhaschange], [onload], [onmessage],
 [onoffline], [ononline], [onpagehide], [onpageshow],
@@ -116,6 +116,6 @@ html:not([lang])::after {
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
   &::after {
-    content: "#{$error-ico} Attribut d’événements javscript. Vous êtes sûr de ce que vous faites ?" !important;
+    content: "#{$error-ico} Attribut d’événements javascript. Vous êtes sûr de ce que vous faites ?" !important;
   }
 }
