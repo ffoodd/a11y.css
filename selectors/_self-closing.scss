@@ -27,6 +27,7 @@ input[aria-required]:not([aria-describedby]) {
   @extend %a11y-self-closing;
 
   & ~ *::after {
+    content: "" !important;
     z-index: 2147483647 !important;
   }
 
@@ -41,6 +42,7 @@ input[type="image"][alt=""] {
   @extend %a11y-self-closing;
 
   & ~ *::after {
+    content: "" !important;
     z-index: 2147483646 !important;
   }
 
@@ -61,6 +63,7 @@ track:not([kind="caption"]) {
   @extend %a11y-self-closing;
 
   & ~ *::after {
+    content: "" !important;
     z-index: 2147483644 !important;
   }
 

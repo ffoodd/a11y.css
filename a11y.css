@@ -18,12 +18,14 @@ input[type=""] ~ *::after,
 input[type="submit"]:not([value]) ~ *::after,
 input[required]:not([aria-describedby]) ~ *::after,
 input[aria-required]:not([aria-describedby]) ~ *::after {
+  content: "" !important;
   z-index: 2147483647 !important;
 }
 
 img[alt=""] ~ *::after,
 area[alt=""] ~ *::after,
 input[type="image"][alt=""] ~ *::after {
+  content: "" !important;
   z-index: 2147483646 !important;
 }
 
@@ -36,6 +38,7 @@ img[title] ~ *::after,
 area[title] ~ *::after,
 meta[charset] ~ *::after,
 track:not([kind="caption"]) ~ *::after {
+  content: "" !important;
   z-index: 2147483644 !important;
 }
 
