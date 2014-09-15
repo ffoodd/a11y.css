@@ -39,10 +39,6 @@ track:not([kind="caption"]) ~ *::after {
   z-index: 2147483644 !important;
 }
 
-nav:not([role="navigation"])::after,
-main:not([role="main"])::after,
-body > header:not([role="banner"])::after,
-body > footer:not([role="contentinfo"])::after,
 nav::after,
 main:not(:first-of-type)::after,
 section:not([aria-labelledby])::after,
@@ -302,10 +298,6 @@ track:not([kind="caption"]) ~ *::after {
   white-space: pre;
 }
 
-nav:not([role="navigation"]):hover::after,
-main:not([role="main"]):hover::after,
-body > header:not([role="banner"]):hover::after,
-body > footer:not([role="contentinfo"]):hover::after,
 nav:hover::after,
 main:not(:first-of-type):hover::after,
 section:not([aria-labelledby]):hover::after,
@@ -546,10 +538,6 @@ track:hover:not([kind="caption"]) ~ *::after {
   transition: transform .3s ease-in !important;
 }
 
-nav:not([role="navigation"]),
-main:not([role="main"]),
-body > header:not([role="banner"]),
-body > footer:not([role="contentinfo"]),
 nav,
 main:not(:first-of-type),
 section:not([aria-labelledby]),
@@ -585,10 +573,6 @@ meta[charset] {
   outline: 4px solid rgba(34, 139, 34, 0.75) !important;
   outline-offset: -4px;
 }
-nav:not([role="navigation"])::after,
-main:not([role="main"])::after,
-body > header:not([role="banner"])::after,
-body > footer:not([role="contentinfo"])::after,
 nav::after,
 main:not(:first-of-type)::after,
 section:not([aria-labelledby])::after,
@@ -1091,13 +1075,6 @@ meta[http-equiv="refresh"]::after,
 [onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
 [onvolumechange]::after, [onwaiting]::after {
   z-index: 2147483647 !important;
-}
-
-nav:not([role="navigation"])::after,
-main:not([role="main"])::after,
-body > header:not([role="banner"])::after,
-body > footer:not([role="contentinfo"])::after {
-  content: "\2665\00A0 Ces éléments ont probablement mérité le premier rôle :-) .\A Navigation, main, banner, contentinfo, complementary : ils sont tous là ?" !important;
 }
 
 nav::after {

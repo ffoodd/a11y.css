@@ -1,13 +1,5 @@
 @charset "UTF-8";
 
-// Corrélation entre la sémantique HTML5 et ARIA. Les rôles ARIA doivent être présents mais pas forcément sur les éléments HTML5 qui semblent leur correspondre. À vous d’avoir le recul nécessaire !
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=151
-// @note Test 12.10.4
-nav:not([role="navigation"]),
-main:not([role="main"]),
-body > header:not([role="banner"]),
-body > footer:not([role="contentinfo"]),
-
 // La balise <nav> est réservée aux navigations principales et secondaires;
 // La balise <main> doit être unique et structurante pour le contenu principal
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=116

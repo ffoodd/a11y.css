@@ -1,13 +1,5 @@
 @charset "UTF-8";
 
-// Corrélation entre la sémantique HTML5 et ARIA : aucunes prétentions, simples suggestions. À vous d’avoir le recul nécessaire !
-nav:not([role="navigation"])::after,
-main:not([role="main"])::after,
-body > header:not([role="banner"])::after,
-body > footer:not([role="contentinfo"])::after {
-  content: "#{$advice-ico} Ces éléments ont probablement mérité le premier rôle :-) .\A Navigation, main, banner, contentinfo, complementary : ils sont tous là ?" !important;
-}
-
 nav::after {
   content: "#{$advice-ico} La balise <nav> est réservée à la structuration des zones de navigations principales et secondaires. Vous le saviez ?" !important;
 }
