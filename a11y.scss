@@ -196,7 +196,7 @@ $advice-ico: \2665\00A0;
 
 
 // == @section Compteurs ====================
-body {
+html {
   counter-reset: error warning obsolete advice;
 
   &::after {

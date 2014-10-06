@@ -1418,10 +1418,10 @@ track:not([kind="caption"]):hover ~ *::after {
   content: "\2665\00A0 Vous utilisez <track>, c’est bon signe !\A Mais l’attribut kind='caption' vous intéressera sûrement aussi :) ." !important;
 }
 
-body {
+html {
   counter-reset: error warning obsolete advice;
 }
-body::after {
+html::after {
   content: "Erreurs : " counter(error) "\A Avertissements : " counter(warning) "\A Obsolètes : " counter(obsolete) "\A Conseils : " counter(advice) "\A";
   background: rgba(0, 0, 0, 0.8);
   border: 1px solid black;
