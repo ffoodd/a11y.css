@@ -47,8 +47,8 @@ figure img:not([aria-describedby])::after {
   content: "#{$advice-ico} Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur." !important;
 }
 
-[hidden]::after,
-[aria-hidden]::after {
+[hidden]:not(:empty)::after,
+[aria-hidden]:not(:empty)::after {
   content: "#{$advice-ico} Cet élément — masqué aux technologies d’assistance — ne porte aucune information, vous en êtes bien sûr ?" !important;
 }
 

@@ -37,8 +37,8 @@ figure img:not([aria-describedby]),
 // Les éléments masqués aux technologies d’assistance le sont-ils à bon escient ?
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=120
 // @note Tests 10.13.2 et 10.13.3
-[hidden],
-[aria-hidden],
+[hidden]:not(:empty),
+[aria-hidden]:not(:empty),
 
 [placeholder],
 
