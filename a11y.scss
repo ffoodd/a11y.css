@@ -87,14 +87,14 @@ $advice-ico: \2665\00A0;
 // -- @subsection Placeholders --------------------
 %a11y-after {
   background: rgba( 255, 255, 255, .98 ) !important;
-  border: 1px solid rgba(0, 0, 0, .3) !important;
+  border: 1px solid rgba( 0, 0, 0, .3 ) !important;
   color: dimgray !important;
   display: block !important;
-  font: normal normal 1rem/2.5 "Arial unicode MS", "Arial", sans-serif !important;
+  font: normal normal 1rem/1.5 monospace !important;
   height: auto !important;
   left: 0 !important;
-  min-height: 4em !important;
   opacity: 0;
+  padding: 1em 0;
   // On s’assure que le message ne capte pas le survol.
   pointer-events: none !important;
   position: fixed !important;
@@ -143,12 +143,16 @@ $advice-ico: \2665\00A0;
 %a11y-advice {
   @include a11y-outline( $advice );
   @extend %a11y-message;
+
+  counter-increment: advice;
 }
 
 // -- @subsection Éléments & attributs obsolètes --------------------
 %a11y-obsolete {
   @include a11y-outline( $obsolete );
   @extend %a11y-message;
+
+  counter-increment: obsolete;
 
   &::after {
     content: "#{$obsolete-ico} Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
@@ -159,12 +163,16 @@ $advice-ico: \2665\00A0;
 %a11y-warning {
   @include a11y-outline( $warning );
   @extend %a11y-message;
+
+  counter-increment: warning;
 }
 
 // -- @subsection Erreurs --------------------
 %a11y-error {
   @include a11y-outline( $error );
   @extend %a11y-message;
+
+  counter-increment: error;
 }
 
 
@@ -186,3 +194,24 @@ $advice-ico: \2665\00A0;
 @import "messages/error";
 @import "messages/self-closing";
 
+
+// == @section Compteurs ====================
+body {
+  counter-reset: error warning obsolete advice;
+
+  &::after {
+    content: "Erreurs : " counter( error ) "\A Avertissements : " counter( warning ) "\A Obsolètes : " counter( obsolete ) "\A Conseils : " counter( advice ) "\A";
+    background: rgba( 0, 0, 0, .8 );
+    border: 1px solid black;
+    border-radius: 3px;
+    bottom: 1em;
+    box-shadow: inset 1px 1px 0 rgba( 255, 255, 255, .3 );
+    color: white;
+    font-family: monospace;
+    left: 1em;
+    padding: .75em 1em;
+    position: fixed;
+    text-shadow: 1px 1px black;
+    white-space: pre;
+  }
+}
