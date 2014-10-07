@@ -215,5 +215,6 @@ html {
     position: fixed;
     text-shadow: 1px 1px black;
     white-space: pre;
+    z-index: $max-z-index;
   }
 }
