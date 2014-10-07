@@ -6,6 +6,8 @@ Prononcez « Alix », c’est rigolo et ça mange pas de pain.
 ## Nouveautés
 Désormais des compteurs `CSS` ont incrémentés par chaque erreur, et les résultats sont affichés dans le `body::after`. C’est donc du faux-contenu, son intérêt est purement visuel afin de simplement indiquer au développeur l’étendue du chantier qui l’attend :) .
 
+*À noter :* ce nouveau compteur permet d’obtenir des indications sur l’éventuelle présence de messages incriminant les balises du `<head>`. Ils n’ont toujours pas d’affichage mais ils sont désormais mentionnés dans ce compteur qu’ils incrémentent bien gentimment.
+
 ## Présentation
 L’objectif de ce fichier `CSS` est d’alerter l’intégrateur sur les erreurs et risques potentiels dans le code — mais il peut également servir à auditer rapidement un site existant afin d’évaluer l’ampleur des dégâts.
 
