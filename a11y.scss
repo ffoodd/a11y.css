@@ -60,6 +60,8 @@ $warning-ico: \2622\00A0;
 $obsolete-ico: \271D\00A0;
 $advice-ico: \2665\00A0;
 
+$max-z-index: 2147483647;
+
 // -- @subsection Mixins --------------------
 @mixin a11y-outline( $level ) {
   outline: 4px solid transparentize( $level, .25 ) !important;
@@ -73,13 +75,13 @@ $advice-ico: \2665\00A0;
     // @see http://www.puidokas.com/max-z-index/
     // @note Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
     @if $level == forestgreen {
-      z-index: 2147483644 !important;
+      z-index: $max-z-index - 3 !important;
     } @else if $level == gray {
-      z-index: 2147483645 !important;
+      z-index: $max-z-index - 2 !important;
     } @else if $level == gold {
-      z-index: 2147483646 !important;
+      z-index: $max-z-index - 1 !important;
     } @else if $level == crimson {
-      z-index: 2147483647 !important;
+      z-index: $max-z-index     !important;
     }
   }
 }
