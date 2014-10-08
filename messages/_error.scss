@@ -45,14 +45,23 @@ label[for=""]::after{
   content: "#{$error-ico} Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?" !important;
 }
 
-input:not([id]),
 input[id=""],
-select:not([id]),
 select[id=""],
-textarea:not([id]),
-textarea[id=""] {
+textarea[id=""],
+input[type=""],
+input:not([type]) {
   &::after {
-    content: "#{$error-ico} Attribut [id] manquant ou vide.\A Tout le monde a droit à un nom, même les champs de formulaire." !important;
+    content: "#{$error-ico} Attribut [id] ou [type] vide ou absent.\A C’est un bon indice, vous savez ?" !important;
+  }
+}
+
+input[type="submit"]:not([value]),
+input[type="button"]:not([value]),
+select:not([id]):not([title]),
+textarea:not([id]):not([title]),
+input:not([type="submit"]):not([type="button"]):not([id]):not([title]) {
+  &::after {
+    content: "#{$error-ico} Cet élément est en manque de [value], [id] ou [title]. Aidez-le !" !important;
   }
 }
 

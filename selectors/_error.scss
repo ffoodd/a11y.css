@@ -32,17 +32,17 @@ input[type="image"][src="#"],
 // Détecte les attributs manquants ou vides.
 label:not([for]),
 label[for=""],
-
-input:not([id]),
 input[id=""],
 input:not([type]),
 input[type=""],
 input[type="submit"]:not([value]),
+input[type="button"]:not([value]),
+input:not([type="submit"]):not([type="button"]):not([id]):not([title]),
 
-select:not([id]),
+select:not([id]):not([title]),
 select[id=""],
 
-textarea:not([id]),
+textarea:not([id]):not([title]),
 textarea[id=""],
 
 // Si des options sont regroupées, ce groupe doit avoir un label (pertinent, de préférence).
