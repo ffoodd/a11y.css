@@ -90,10 +90,6 @@ $max-z-index: 2147483647;
 %a11y-after {
   background: rgba( 255, 255, 255, .98 ) !important;
   border: 1px solid rgba( 0, 0, 0, .3 ) !important;
-  // Les trois instructions suivantes évitent l’héritage de certains styles par un message sur <html>
-  border-radius: 0 !important;
-  bottom: auto !important;
-  box-shadow: none !important;
   color: dimgray !important;
   display: block !important;
   font: normal normal 1rem/1.5 monospace !important;
@@ -205,7 +201,7 @@ $max-z-index: 2147483647;
 html {
   counter-reset: error warning obsolete advice;
 
-  &::after {
+  &::before {
     content: "Erreurs : " counter( error ) "\A Avertissements : " counter( warning ) "\A Obsolètes : " counter( obsolete ) "\A Conseils : " counter( advice ) "\A";
     background: rgba( 0, 0, 0, .8 );
     border: 1px solid black;
