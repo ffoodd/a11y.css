@@ -7,9 +7,7 @@ nav,
 main:not(:first-of-type),
 
 // Si vous utilisez ces éléments, il y a de fortes chances pour que ces attributs améliorent l’accessibilité
-section:not([aria-labelledby]),
 figure:not([role="group"]),
-figure img:not([aria-describedby]),
 
 // L’internaute doit être averti avant l’ouverture d’une nouvelle fenêtre
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=176

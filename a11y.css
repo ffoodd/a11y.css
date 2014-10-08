@@ -44,9 +44,7 @@ track:not([kind="caption"]) ~ *::after {
 
 nav::after,
 main:not(:first-of-type)::after,
-section:not([aria-labelledby])::after,
 figure:not([role="group"])::after,
-figure img:not([aria-describedby])::after,
 [target="_blank"]::after,
 [href$=".pdf"]::after,
 [href$=".doc"]::after,
@@ -304,9 +302,7 @@ track:not([kind="caption"]) ~ *::after {
 
 nav:hover::after,
 main:not(:first-of-type):hover::after,
-section:not([aria-labelledby]):hover::after,
 figure:not([role="group"]):hover::after,
-figure img:not([aria-describedby]):hover::after,
 [target="_blank"]:hover::after,
 [href$=".pdf"]:hover::after,
 [href$=".doc"]:hover::after,
@@ -545,9 +541,7 @@ track:hover:not([kind="caption"]) ~ *::after {
 
 nav,
 main:not(:first-of-type),
-section:not([aria-labelledby]),
 figure:not([role="group"]),
-figure img:not([aria-describedby]),
 [target="_blank"],
 [href$=".pdf"],
 [href$=".doc"],
@@ -581,9 +575,7 @@ meta[charset] {
 }
 nav::after,
 main:not(:first-of-type)::after,
-section:not([aria-labelledby])::after,
 figure:not([role="group"])::after,
-figure img:not([aria-describedby])::after,
 [target="_blank"]::after,
 [href$=".pdf"]::after,
 [href$=".doc"]::after,
@@ -1096,16 +1088,8 @@ main:not(:first-of-type)::after {
   content: "\2665\00A0 <main> est réservée à la zone de contenu principal, et doit donc être unique.\A Repentez-vous et tout ira bien :) ." !important;
 }
 
-section:not([aria-labelledby])::after {
-  content: "\2665\00A0 L’élément <section> a une valeur sémantique, vous le saviez ?\A Il doit donc être décrit par un texte." !important;
-}
-
 figure:not([role="group"])::after {
   content: "\2665\00A0 L’élément <figure> regroupe une <img> et un <figcaption> :\A le rôle «group» semble indiqué, pas vrai ?" !important;
-}
-
-figure img:not([aria-describedby])::after {
-  content: "\2665\00A0 Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>." !important;
 }
 
 [target="_blank"]::after {

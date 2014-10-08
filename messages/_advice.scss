@@ -9,16 +9,8 @@ main:not(:first-of-type)::after {
 }
 
 // Si vous utilisez ces éléments, il y a de fortes chances pour que ces attributs améliorent l’accessibilité
-section:not([aria-labelledby])::after {
-  content: "#{$advice-ico} L’élément <section> a une valeur sémantique, vous le saviez ?\A Il doit donc être décrit par un texte." !important;
-}
-
 figure:not([role="group"])::after {
   content: "#{$advice-ico} L’élément <figure> regroupe une <img> et un <figcaption> :\A le rôle «group» semble indiqué, pas vrai ?" !important;
-}
-
-figure img:not([aria-describedby])::after {
-  content: "#{$advice-ico} Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>." !important;
 }
 
 // Les liens sont sensibles, vous savez ?
