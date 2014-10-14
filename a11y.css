@@ -46,7 +46,7 @@ track:not([kind="caption"]) ~ *::after {
 nav::after,
 main:not(:first-of-type)::after,
 figure:not([role="group"])::after,
-[target="_blank"]::after,
+[target$="_blank"]::after,
 [href$=".pdf"]::after,
 [href$=".doc"]::after,
 [href$=".docx"]::after,
@@ -194,6 +194,8 @@ th:not([id])::after, a[href="#"]::after,
 a[href^="javascript"]::after,
 a:not([href])::after,
 a[href=""]::after,
+a[href="mailto:"]::after,
+a[href="mailto"]::after,
 a:empty::after,
 img:not([alt])::after,
 area:not([alt])::after,
@@ -304,7 +306,7 @@ track:not([kind="caption"]) ~ *::after {
 nav:hover::after,
 main:not(:first-of-type):hover::after,
 figure:not([role="group"]):hover::after,
-[target="_blank"]:hover::after,
+[target$="_blank"]:hover::after,
 [href$=".pdf"]:hover::after,
 [href$=".doc"]:hover::after,
 [href$=".docx"]:hover::after,
@@ -452,6 +454,8 @@ th:not([id]):hover::after, a[href="#"]:hover::after,
 a[href^="javascript"]:hover::after,
 a:not([href]):hover::after,
 a[href=""]:hover::after,
+a[href="mailto:"]:hover::after,
+a[href="mailto"]:hover::after,
 a:empty:hover::after,
 img:not([alt]):hover::after,
 area:not([alt]):hover::after,
@@ -543,7 +547,7 @@ track:hover:not([kind="caption"]) ~ *::after {
 nav,
 main:not(:first-of-type),
 figure:not([role="group"]),
-[target="_blank"],
+[target$="_blank"],
 [href$=".pdf"],
 [href$=".doc"],
 [href$=".docx"],
@@ -577,7 +581,7 @@ meta[charset] {
 nav::after,
 main:not(:first-of-type)::after,
 figure:not([role="group"])::after,
-[target="_blank"]::after,
+[target$="_blank"]::after,
 [href$=".pdf"]::after,
 [href$=".doc"]::after,
 [href$=".docx"]::after,
@@ -962,6 +966,8 @@ a[href="#"],
 a[href^="javascript"],
 a:not([href]),
 a[href=""],
+a[href="mailto:"],
+a[href="mailto"],
 a:empty,
 img:not([alt]),
 area:not([alt]),
@@ -1024,6 +1030,8 @@ a[href="#"]::after,
 a[href^="javascript"]::after,
 a:not([href])::after,
 a[href=""]::after,
+a[href="mailto:"]::after,
+a[href="mailto"]::after,
 a:empty::after,
 img:not([alt])::after,
 area:not([alt])::after,
@@ -1093,7 +1101,7 @@ figure:not([role="group"])::after {
   content: "\2665\00A0 L’élément <figure> regroupe une <img> et un <figcaption> :\A le rôle «group» semble indiqué, pas vrai ?" !important;
 }
 
-[target="_blank"]::after {
+[target$="_blank"]::after {
   content: "\2665\00A0 L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre.\A Mais vous y avez pensé, non :) ?" !important;
 }
 
@@ -1218,7 +1226,9 @@ th:not([id])::after {
 }
 
 a:not([href])::after,
-a[href=""]::after {
+a[href=""]::after,
+a[href="mailto:"]::after,
+a[href="mailto"]::after {
   content: "\2620\00A0 Attribut [href] manquant. Un lien doit avoir une cible, non ?" !important;
 }
 

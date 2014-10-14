@@ -11,7 +11,7 @@ figure:not([role="group"]),
 
 // L’internaute doit être averti avant l’ouverture d’une nouvelle fenêtre
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=176
-[target="_blank"],
+[target$="blank"],
 
 // Les fichiers en téléchargement doivent indiquer leur poids et format :
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=172
