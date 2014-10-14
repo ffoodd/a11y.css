@@ -14,8 +14,12 @@ figure:not([role="group"])::after {
 }
 
 // Les liens sont sensibles, vous savez ?
-[target="_blank"]::after {
+[target$="blank"]::after {
   content: "#{$advice-ico} L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre.\A Mais vous y avez pensé, non :) ?" !important;
+}
+
+[href^="mailto"]::after {
+  content: "#{$advice-ico} Attribut [href] débutant par mailto. L’adresse mail est valide ?" !important;
 }
 
 [href$=".pdf"],

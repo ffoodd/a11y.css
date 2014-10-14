@@ -46,7 +46,7 @@ track:not([kind="caption"]) ~ *::after {
 nav::after,
 main:not(:first-of-type)::after,
 figure:not([role="group"])::after,
-[target$="_blank"]::after,
+[href^="mailto"]::after,
 [href$=".pdf"]::after,
 [href$=".doc"]::after,
 [href$=".docx"]::after,
@@ -194,8 +194,6 @@ th:not([id])::after, a[href="#"]::after,
 a[href^="javascript"]::after,
 a:not([href])::after,
 a[href=""]::after,
-a[href="mailto:"]::after,
-a[href="mailto"]::after,
 a:empty::after,
 img:not([alt])::after,
 area:not([alt])::after,
@@ -306,7 +304,7 @@ track:not([kind="caption"]) ~ *::after {
 nav:hover::after,
 main:not(:first-of-type):hover::after,
 figure:not([role="group"]):hover::after,
-[target$="_blank"]:hover::after,
+[href^="mailto"]:hover::after,
 [href$=".pdf"]:hover::after,
 [href$=".doc"]:hover::after,
 [href$=".docx"]:hover::after,
@@ -454,8 +452,6 @@ th:not([id]):hover::after, a[href="#"]:hover::after,
 a[href^="javascript"]:hover::after,
 a:not([href]):hover::after,
 a[href=""]:hover::after,
-a[href="mailto:"]:hover::after,
-a[href="mailto"]:hover::after,
 a:empty:hover::after,
 img:not([alt]):hover::after,
 area:not([alt]):hover::after,
@@ -547,7 +543,7 @@ track:hover:not([kind="caption"]) ~ *::after {
 nav,
 main:not(:first-of-type),
 figure:not([role="group"]),
-[target$="_blank"],
+[href^="mailto"],
 [href$=".pdf"],
 [href$=".doc"],
 [href$=".docx"],
@@ -581,7 +577,7 @@ meta[charset] {
 nav::after,
 main:not(:first-of-type)::after,
 figure:not([role="group"])::after,
-[target$="_blank"]::after,
+[href^="mailto"]::after,
 [href$=".pdf"]::after,
 [href$=".doc"]::after,
 [href$=".docx"]::after,
@@ -966,8 +962,6 @@ a[href="#"],
 a[href^="javascript"],
 a:not([href]),
 a[href=""],
-a[href="mailto:"],
-a[href="mailto"],
 a:empty,
 img:not([alt]),
 area:not([alt]),
@@ -1022,71 +1016,9 @@ meta[http-equiv="refresh"],
 [onratechange], [onreadystatechange], [onseeked],
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
-  outline: 4px solid rgba(220, 20, 60, 0.75) !important;
+  outline: 4px solid rgba(153, 17, 17, 0.75) !important;
   outline-offset: -4px;
   counter-increment: error;
-}
-a[href="#"]::after,
-a[href^="javascript"]::after,
-a:not([href])::after,
-a[href=""]::after,
-a[href="mailto:"]::after,
-a[href="mailto"]::after,
-a:empty::after,
-img:not([alt])::after,
-area:not([alt])::after,
-input[type="image"]:not([alt])::after,
-img[alt=" "]::after,
-area[alt=" "]::after,
-input[type="image"][alt=" "]::after,
-img:not([src])::after,
-img[src=""]::after,
-img[src="#"]::after,
-input[type="image"]:not([src])::after,
-input[type="image"][src=""]::after,
-input[type="image"][src="#"]::after,
-label:not([for])::after,
-label[for=""]::after,
-input[id=""]::after,
-input:not([type])::after,
-input[type=""]::after,
-input[type="submit"]:not([value])::after,
-input[type="button"]:not([value])::after,
-input:not([title]):not([id]):not([type="button"]):not([type="submit"])::after,
-select:not([title]):not([id])::after,
-select[id=""]::after,
-textarea:not([title]):not([id])::after,
-textarea[id=""]::after,
-optgroup:not([label])::after,
-iframe:not([title])::after,
-iframe[title=""]::after,
-form:not([action])::after,
-[class=""]::after,
-[id=""]::after,
-html:not([lang])::after,
-meta[http-equiv="refresh"]::after,
-[onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
-[onerror]::after, [onhaschange]::after, [onload]::after, [onmessage]::after,
-[onoffline]::after, [ononline]::after, [onpagehide]::after, [onpageshow]::after,
-[onpopstate]::after, [onredo]::after, [onresize]::after, [onstorage]::after,
-[onundo]::after, [onunload]::after,
-[onblur]::after, [onchage]::after, [oncontextmenu]::after, [onfocus]::after,
-[onformchange]::after, [onforminput]::after, [oninput]::after, [oninvalid]::after,
-[onreset]::after, [onselect]::after, [onsubmit]::after,
-[onkeydown]::after, [onkeypress]::after, [onkeyup]::after,
-[onclick]::after, [ondblclick]::after, [ondrag]::after, [ondragend]::after,
-[ondragenter]::after, [ondragleave]::after, [ondragover]::after,
-[ondragstart]::after, [ondrop]::after, [onmousedown]::after, [onmousemove]::after,
-[onmouseout]::after, [onmouseover]::after, [onmouseup]::after, [onmousewheel]::after,
-[onscroll]::after,
-[onabort]::after, [oncanplay]::after, [oncanplaythrough]::after,
-[ondurationchange]::after, [onemptied]::after, [onended]::after,
-[onloadeddata]::after, [onloadedmetadata]::after, [onloadstart]::after,
-[onpause]::after, [onplay]::after, [onplaying]::after, [onprogress]::after,
-[onratechange]::after, [onreadystatechange]::after, [onseeked]::after,
-[onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
-[onvolumechange]::after, [onwaiting]::after {
-  z-index: 2147483647 !important;
 }
 
 nav::after {
@@ -1101,8 +1033,12 @@ figure:not([role="group"])::after {
   content: "\2665\00A0 L’élément <figure> regroupe une <img> et un <figcaption> :\A le rôle «group» semble indiqué, pas vrai ?" !important;
 }
 
-[target$="_blank"]::after {
+[target$="blank"]::after {
   content: "\2665\00A0 L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre.\A Mais vous y avez pensé, non :) ?" !important;
+}
+
+[href^="mailto"]::after {
+  content: "\2665\00A0 Attribut [href] débutant par mailto. L’adresse mail est valide ?" !important;
 }
 
 [href$=".pdf"]::after,
@@ -1226,9 +1162,7 @@ th:not([id])::after {
 }
 
 a:not([href])::after,
-a[href=""]::after,
-a[href="mailto:"]::after,
-a[href="mailto"]::after {
+a[href=""]::after {
   content: "\2620\00A0 Attribut [href] manquant. Un lien doit avoir une cible, non ?" !important;
 }
 
