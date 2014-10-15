@@ -51,7 +51,8 @@ table[role="presentation"],
 th[scope],
 th:not([scope]),
 th:not([id]) {
+  @include a11y-outline('warning');
+  @extend %a11y-message;
 
-  @extend %a11y-warning;
-
+  counter-increment: warning;
 }

@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+ul > *:not(li),
+ol > *:not(li),
+table > tr,
+table table,
+tbody + tfoot {
+  &::after {
+    @include message('warning', 'invalid-nesting');
+  }
+}
+
+fieldset > :not(legend):first-child,
+fieldset > legend:not(:first-child) {
+  &::after {
+    @include message('warning', 'fieldset');
+  }
+}
+
+abbr:not([title])::after,
+abbr[title=""]::after {
+  @include message('warning', 'empty-title');
+}
+
+img[alt=""]::after,
+area[alt=""]::after,
+input[type="image"][alt=""]::after,
+img[alt=""]:hover ~ *::after,
+area[alt=""]:hover ~ *::after,
+input[type="image"][alt=""]:hover ~ *::after {
+  @include message('warning', 'empty-alt');
+}
+
+[style]::after {
+  @include message('warning', 'style-attr');
+}
+
+label + :not(input):not(select):not(textarea)::after {
+  @include message('warning', 'label-field');
+}
+
+div,
+span,
+li,
+p,
+td,
+th {
+  &:empty::after {
+    @include message('warning', 'empty-nodes');
+  }
+}
+
+title:empty::after {
+  @include message('warning', 'empty-title');
+}
+
+table[role="presentation"]::after {
+  @include message('warning', 'table-presentation');
+}
+
+th[scope]::after {
+  @include message('warning', 'th-scope');
+}
+
+th:not([scope])::after {
+  @include message('warning', 'th-no-scope');
+}
+
+th:not([id])::after {
+  @include message('warning', 'th-no-id');
+}

@@ -1,0 +1,64 @@
+/// a11y-after
+%a11y-after {
+  background: rgba( 255, 255, 255, .98 ) !important;
+  border: 1px solid rgba( 0, 0, 0, .3 ) !important;
+  color: dimgray !important;
+  display: block !important;
+  font: normal normal 1rem/1.5 monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  // On s’assure que le message ne capte pas le survol.
+  pointer-events: none !important;
+  position: fixed !important;
+  // On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes.
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  text-transform: none !important;
+  // On prépare l’apparition du message.
+  top: 0 !important;
+  -webkit-transform:  translateY( -100% ) translateZ( 0 ) !important;
+  -ms-transform:      translateY( -100% ) translateZ( 0 ) !important;
+  transform:          translateY( -100% ) translateZ( 0 ) !important;
+  -webkit-transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  width: 100% !important;
+  // Permet de gérer les retours à la ligne éventuels
+  // @note Les sauts de ligne peuvent être provoqués par le caractère «\A» dans le message lui-même.
+  // @see issue #7 , solution proposée par @7studio
+  white-space: pre;
+}
+
+/// a11y-hover
+%a11y-hover {
+  opacity: 1;
+  -webkit-transform:  translateY( 0 ) translateZ( 0 ) !important;
+  -ms-transform:      translateY( 0 ) translateZ( 0 ) !important;
+  transform:          translateY( 0 ) translateZ( 0 ) !important;
+  -webkit-transition: -webkit-transform .3s ease-out !important;
+  transition:         transform .3s ease-in !important;
+}
+
+/// a11y message
+%a11y-message {
+  &::after {
+    @extend %a11y-after;
+  }
+
+  &:hover::after {
+    @extend %a11y-hover;
+  }
+}
+
+/// a11y-self-closing
+%a11y-self-closing {
+  & ~ *::after {
+    @extend %a11y-after;
+  }
+
+  &:hover ~ *::after {
+    @extend %a11y-hover;
+  }
+}

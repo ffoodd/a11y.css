@@ -1,0 +1,251 @@
+/// Messages map
+/// @type Map
+/// @prop {Map} theme
+/// @prop {Map} theme.key
+/// @prop {Map} theme.key.fr - French version of the message
+/// @prop {Map} theme.key.en - English version of the message
+$messages: (
+  'advice': (
+    'nav': (
+      'fr': 'La balise <nav> est réservée à la structuration des zones de navigations principales et secondaires. Vous le saviez ?',
+      'en': ''
+    ),
+    'main': (
+      'fr': '<main> est réservée à la zone de contenu principal, et doit donc être unique.\A Repentez-vous et tout ira bien :) .',
+      'en': ''
+    ),
+    'section': (
+      'fr': 'L’élément <section> a une valeur sémantique, vous le saviez ?\A Il doit donc être décrit par un texte.',
+      'en': ''
+    ),
+    'figure': (
+      'fr': 'L’élément <figure> regroupe une <img> et un <figcaption> :\A le rôle «group» semble indiqué, pas vrai ?',
+      'en': ''
+    ),
+    'figure-img': (
+      'fr': 'Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>.',
+      'en': ''
+    ),
+    'target-blank': (
+      'fr': 'L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre.\A Mais vous y avez pensé, non :) ?',
+      'en': ''
+    ),
+    'file-format': (
+      'fr': 'Le format et le poids d’un fichier téléchargeable devraient être indiqués — et il devrait être accessible.',
+      'en': ''
+    ),
+    'search': (
+      'fr': 'Vu ! Cet élément semble être la recherche.\A Mais alors, le rôle ARIA est là, non ?',
+      'en': ''
+    ),
+    'required': (
+      'fr': 'Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur.',
+      'en': ''
+    ),
+    'hidden': (
+      'fr': 'Cet élément — masqué aux technologies d’assistance — ne porte aucune information, vous en êtes bien sûr ?',
+      'en': ''
+    ),
+    'placeholder': (
+      'fr': 'Ce placeholder ne remplace pas un <label>, j’espère ?\A Y’en a qui ont essayé…',
+      'en': ''
+    ),
+    'video-audio': (
+      'fr': 'Les éléments interactifs doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée.',
+      'en': ''
+    ),
+    'track': (
+      'fr': 'Vous utilisez <track>, c’est bon signe !\A Mais l’attribut kind='caption' vous intéressera sûrement aussi :) .',
+      'en': ''
+    ),
+    'embed': (
+      'fr': 'Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>).',
+      'en': ''
+    ),
+    'title': (
+      'fr': 'L’attribut title, s’il est présent, doit être identique à l’alternative renseignée.\A À vous de jouer ;-) .',
+      'en': ''
+    ),
+    'time': (
+      'fr': 'Le format de date est-il compréhensible ?',
+      'en': ''
+    ),
+    'meta-charset': (
+      'fr': 'Sommes-nous bien en utf-8 ?',
+      'en': ''
+    )
+  ),
+
+  'error': (
+    'no-href': (
+      'fr': 'Attribut [href] manquant. Un lien doit avoir une cible, non ?',
+      'en': ''
+    ),
+    'empty-href': (
+      'fr': 'Attribut [href=\'#\']. Pourquoi ? Un <button> semble plus indiqué.',
+      'en': ''
+    ),
+    'href-js': (
+      'fr': 'Attribut [href] débutant par javascript. Ça n’augure rien de bon…',
+      'en': ''
+    ),
+    'empty-link': (
+      'fr': 'Ce lien est vide. Vide…',
+      'en': ''
+    ),
+    'no-alt': (
+      'fr': 'Attribut [alt] manquant. Quelle hérésie.',
+      'en': ''
+    ),
+    'empty-alt': (
+      'fr': 'Un attribut [alt] *presque* vide. C’est une blague, non ?',
+      'en': ''
+    ),
+    'no-src': (
+      'fr': 'Attribut [src] manquant ou vide. Bon.',
+      'en': ''
+    ),
+    'no-for': (
+      'fr': 'Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?',
+      'en': ''
+    ),
+    'no-id': (
+      'fr': 'Attribut [id] manquant ou vide.\A Tout le monde a droit à un nom, même les champs de formulaire.',
+      'en': ''
+    ),
+    'optgroup': (
+      'fr': 'Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options.\A Dommage…',
+      'en': ''
+    ),
+    'no-type': (
+      'fr': 'Attribut [type] manquant ou vide.\A On met quoi, dans ce champ ?',
+      'en': ''
+    ),
+    'no-value': (
+      'fr': 'Attribut [value] manquant.\A Ça fait quoi alors, si je clique dessus ?',
+      'en': ''
+    ),
+    'no-title': (
+      'fr': 'Attribut [title] manquant ou vide.\A Dieu seul sait ce que contient cette <iframe>.',
+      'en': ''
+    ),
+    'no-action': (
+      'fr': 'Attribut [action] manquant.\A Et après, il se passe quoi ?',
+      'en': ''
+    ),
+    'empty-class': (
+      'fr': 'Attribut [class] vide.\A Pourquoi tant de haine ?',
+      'en': ''
+    ),
+    'empty-id': (
+      'fr': 'Attribut [id] vide.\A Sérieusement ?',
+      'en': ''
+    ),
+    'meta-refresh': (
+      'fr': '<meta http-equiv=\'refresh\'> devrait être supprimé.\A Définitivement.',
+      'en': ''
+    ),
+    'no-lang': (
+      'fr': 'Pas d’attribut lang / xml:lang sur la balise <html>.\A Vous parlez quelle langue, vous ?',
+      'en': ''
+    ),
+    'js-events': (
+      'fr': 'Attribut d’événements javascript. Vous êtes sûr de ce que vous faites ?',
+      'en': ''
+    ),
+    'no-aria-describedby':  (
+      'fr': 'Si le champ est obligatoire, une indication doit exister :\A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !',
+      'en': ''
+    )
+  ),
+
+  'warning': (
+    'invalid-nesting': (
+      'fr': 'Imbrication inadéquate d’éléments.\A Ça peut heurter la sensibilité des plus jeunes, vous savez ?',
+      'en': ''
+    ),
+    'fieldset': (
+      'fr': 'Imbrication inadéquate d’éléments.\A Un fieldset doit enfanter d’une légende d’abord, sinon rien.',
+      'en': ''
+    ),
+    'abbr': (
+      'fr': 'Attribut [title] vide ou manquant.\A Jetez un œil à la BP 160 d’OpQuast ;-) ',
+      'en': ''
+    ),
+    'empty-alt': (
+      'fr': 'Attribut [alt] vide.\A C’est toléré pour les images de décoration uniquement. Est-ce le cas ?',
+      'en': ''
+    ),
+    'style-attr': (
+      'fr': 'Éléments supportant des styles en ligne.\A Les pauvres… Vous devriez avoir honte !',
+      'en': ''
+    ),
+    'label-field': (
+      'fr': 'Un champ et son label devrait être accolés.\A Mais ce qui suit ce label ne ressemble pas à un champ…',
+      'en': ''
+    ),
+    'empty-nodes': (
+      'fr': 'Élément vide. Diantre.',
+      'en': ''
+    ),
+    'empty-title': (
+      'fr': 'La balise <title> est vide. Vous brûlerez en enfer d’ici peu.',
+      'en': ''
+    ),
+    'table-presentation': (
+      'fr': 'Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données.\A Vous pouvez vérifier ?',
+      'en': ''
+    ),
+    'th-scope': (
+      'fr': 'Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ?\A Elle le devrait, en tout cas.',
+      'en': ''
+    ),
+    'th-no-scope': (
+      'fr': 'Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ?\A Si oui, pensez à scope.',
+      'en': ''
+    ),
+    'th-no-id': (
+      'fr': 'Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête.',
+      'en': ''
+    )
+  )
+);
+
+
+/// Max z-index
+/// This is the maximum allowed z-index on most browsers.
+/// If a z-index value happens to be higher, all browsers truncate it to this value.
+/// This is meant to make sure messages will always be on top of everything else.
+/// @type Number
+/// @see http://www.puidokas.com/max-z-index/
+$max-z-index: 2147483647;
+
+
+/// Theme map
+/// @type Map
+/// @prop {Map} theme
+/// @prop {String} theme.icon  - Theme icon
+/// @prop {Color} theme.color  - Theme color
+/// @prop {Number} theme.index - Theme z-index
+$themes: (
+  'error': (
+    'icon': \2620\00A0,
+    'color': crimson,
+    'index': ($max-z-index)
+  ),
+  'warning': (
+    'icon': \2622\00A0,
+    'color': gold,
+    'index': ($max-z-index - 1)
+  ),
+  'obsolete': (
+    'icon': \271D\00A0,
+    'color': gray,
+    'index': ($max-z-index - 2)
+  ),
+  'advice': (
+    'icon': \2665\00A0,
+    'color': forestgreen,
+    'index': ($max-z-index - 3)
+  ),
+);

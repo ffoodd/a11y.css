@@ -100,7 +100,12 @@ table[rules],
 td[height], th[height],
 td[nowrap], th[nowrap],
 body[background], table[background], thead[background], tbody[background], tfoot[background], tr[background], td[background], th[background] {
+  @include a11y-outline('obsolete');
+  @extend %a11y-message;
 
-  @extend %a11y-obsolete;
+  counter-increment: obsolete;
 
+  &::after {
+    content: theme-conf('obsolete', 'icon') "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
+  }
 }

@@ -23,14 +23,12 @@ input[type=""],
 input[type="submit"]:not([value]),
 input[required]:not([aria-describedby]),
 input[aria-required]:not([aria-describedby]) {
-
   @extend %a11y-self-closing;
 
   & ~ *::after {
     content: "" !important;
-    z-index: 2147483647 !important;
+    z-index: theme-conf('error', 'index') !important;
   }
-
 }
 
 
@@ -38,14 +36,12 @@ input[aria-required]:not([aria-describedby]) {
 img[alt=""],
 area[alt=""],
 input[type="image"][alt=""] {
-
   @extend %a11y-self-closing;
 
   & ~ *::after {
     content: "" !important;
-    z-index: 2147483646 !important;
+    z-index: theme-conf('warning', 'index') !important;
   }
-
 }
 
 
@@ -59,12 +55,10 @@ img[title],
 area[title],
 meta[charset],
 track:not([kind="caption"]) {
-
   @extend %a11y-self-closing;
 
   & ~ *::after {
     content: "" !important;
-    z-index: 2147483644 !important;
+    z-index: theme-conf('advice', 'index') !important;
   }
-
 }
