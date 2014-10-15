@@ -1,0 +1,16 @@
+// == @section Base ====================
+@import "base/base";
+
+
+// == @section Import des sélecteurs ====================
+@import "selectors/advice";
+@import "selectors/obsolete";
+@import "selectors/warning";
+@import "selectors/error";
+@import "selectors/self-closing";
+
+
+// == @section Contenu des messages ====================
+@import "messages/advice";
+@import "messages/warning";
+@import "messages/error";

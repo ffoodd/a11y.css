@@ -1,0 +1,43 @@
+/// Set a locale
+/// @param {String} $language
+/// @throws "Language `#{$language}` is not supported. Pull request welcome!"
+/// @output Nothing
+@mixin set-locale($language) {
+  $supported-languages: 'fr', 'en';
+  $language: to-lower-case($language);
+
+  @if not index($supported-languages, $language) {
+    @error "Language `#{$language}` is not supported. Pull request welcome!";
+  }
+
+  $language: $language !global;
+}
+
+
+/// A11y outline
+/// @param {String} $level - level to use
+@mixin a11y-outline($level) {
+  outline: 4px solid transparentize(theme-conf($level, 'color'), .25) !important;
+  // @note Astuce suggérée par @7studio pour garantir un affichage homogène des bordures.
+  // @see https://github.com/ffoodd/a11y.css/issues/4
+  outline-offset: -4px;
+
+  &::after {
+    // @note Ceci est basé sur la valeur maximum d’un z-index pour la plupart des navigateurs.
+    // @note Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
+    // @see http://www.puidokas.com/max-z-index/
+    // @note Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
+    z-index: theme-conf($level, 'index') !important;
+  }
+}
+
+
+/// Set message
+/// Basically in alias to the `message` function
+/// @param {Arglist} $args - Arguments
+/// @require {function} message
+/// @require $icons
+/// @output `content`, with `!important`
+@mixin message($theme, $key) {
+  content: quote(theme-conf($theme, 'icon') #{message($theme, $key)}) !important;
+}
