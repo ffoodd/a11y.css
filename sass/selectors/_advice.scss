@@ -71,10 +71,8 @@ time,
 
 // Définir le jeu de caractères (BP 100) & s’assurer que c’est utf-8 (BP 89)
 meta[charset] {
-
   @include a11y-outline('advice');
   @extend %a11y-message;
 
   counter-increment: advice;
-
 }

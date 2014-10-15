@@ -86,10 +86,8 @@ meta[http-equiv="refresh"],
 [onratechange], [onreadystatechange], [onseeked],
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
-
   @include a11y-outline('error');
   @extend %a11y-message;
 
   counter-increment: error;
-
 }
