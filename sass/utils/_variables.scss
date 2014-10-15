@@ -1,5 +1,9 @@
 /// Messages map
 /// @type Map
+/// @prop {Map} theme
+/// @prop {Map} theme.key
+/// @prop {Map} theme.key.fr - French version of the message
+/// @prop {Map} theme.key.en - English version of the message
 $messages: (
   'advice': (
     'nav': (
@@ -209,7 +213,11 @@ $messages: (
 
 
 /// Max z-index
+/// This is the maximum allowed z-index on most browsers.
+/// If a z-index value happens to be higher, all browsers truncate it to this value.
+/// This is meant to make sure messages will always be on top of everything else.
 /// @type Number
+/// @see http://www.puidokas.com/max-z-index/
 $max-z-index: 2147483647;
 
 

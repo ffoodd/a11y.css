@@ -41,6 +41,14 @@
 /// @param {String} $key
 /// @require $themes
 /// @return {*}
+/// @example scss - Get color from error theme
+/// .selector {
+///   color: theme-conf('error', 'color');
+/// }
+/// @example css - Resulting CSS
+/// .selector {
+///   color: crimson;
+/// }
 @function theme-conf($theme, $key) {
   @return map-deep-get($themes, $theme, $key);
 }

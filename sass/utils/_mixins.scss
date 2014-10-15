@@ -16,6 +16,7 @@
 
 /// A11y outline
 /// @param {String} $level - level to use
+/// @output `outline`, `outline-offset` and `z-index`, all with `!important`
 @mixin a11y-outline($level) {
   outline: 4px solid transparentize(theme-conf($level, 'color'), .25) !important;
   // @note Astuce suggérée par @7studio pour garantir un affichage homogène des bordures.
@@ -23,10 +24,6 @@
   outline-offset: -4px;
 
   &::after {
-    // @note Ceci est basé sur la valeur maximum d’un z-index pour la plupart des navigateurs.
-    // @note Si la valeur renseignée est supérieure, les navigateurs la réduise jusqu’à celle-ci.
-    // @see http://www.puidokas.com/max-z-index/
-    // @note Ça nous permet de garantir que notre message sera toujours visible, et que les plus importants apparaitront en premier.
     z-index: theme-conf($level, 'index') !important;
   }
 }
