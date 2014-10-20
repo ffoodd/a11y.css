@@ -1,59 +1,68 @@
 a11y.css
 ========
 
-Prononcez « Alix », c’est rigolo et ça mange pas de pain.
+Pronounced « Alix ». Because it's fun.
 
-## Nouveautés
-Désormais des compteurs `CSS` ont incrémentés par chaque erreur, et les résultats sont affichés dans le `body::after`. C’est donc du faux-contenu, son intérêt est purement visuel afin de simplement indiquer au développeur l’étendue du chantier qui l’attend :) .
+## News
 
-*À noter :* ce nouveau compteur permet d’obtenir des indications sur l’éventuelle présence de messages incriminant les balises du `<head>`. Ils n’ont toujours pas d’affichage mais ils sont désormais mentionnés dans ce compteur qu’ils incrémentent bien gentimment.
+From now on, CSS counters are incremented on each error/advice/warning and results are displayed with `body::after`. Since it is added through CSS, it is basically fake-content which is good since it is no more than visual indication for the user to see what's going on.
+
+*Note: this counter takes into account possible issues with elements within `<head>` tag. Related messages are not displayed, but they do increment the counter correctly, as any other issues.*
 
 ## Bookmarklet
-Vous pouvez utiliser facilement la dernière version à jour en ajoutant ce *bookmarklet* à vos favoris :
+
+You can easily use the latest version of this stylesheet by adding this *bookmarklet* to your bookmarks:
+
 ```
-javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/a11y.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();
+javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-fr.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();
 ```
-Vous pouvez également l’ajouter en allant sur [la page dédiée](http://ffoodd.github.io/a11y.css/) et en glissant le bouton rouge intitulé « a11y.css » vers votre barre de favoris.
 
-Pratique, n’est-ce pas ?
+You can also add it by going on [the dedicated page](http://ffoodd.github.io/a11y.css/) then dragging it to your bookmarks. Isn't it handy?
 
-## Présentation
-L’objectif de ce fichier `CSS` est d’alerter l’intégrateur sur les erreurs et risques potentiels dans le code — mais il peut également servir à auditer rapidement un site existant afin d’évaluer l’ampleur des dégâts.
+## Introduction
 
-*Il ne peut pas se substituer à un outil complet tel que [OpQuast Reporting](http://reporting.opquast.com/fr/) : il doit uniquement servir à obtenir un aperçu des faiblesses d’une page. Chaque critère technique a un alter-ego pour interroger et vérifier la pertinence de la technique employée et du contenu servi à l’utilisateur : c’est alors à vous de faire ces tests, via un contrôle manuel.*
+This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.
 
-De nombreuses références m’ont inspiré et aidé pour élaborer cette feuille de styles :
-* @see https://github.com/redroot/holmes/blob/master/holmes.css
-* @see https://github.com/karlgroves/diagnostic.css
-* @see http://www.w3.org/TR/html5/obsolete.html#obsolete
-* @see https://github.com/nternetinspired/debug-css
-* @see http://meyerweb.com/eric/tools/css/diagnostics/
-* @see http://accessites.org/site/2006/07/big-red-angry-text/
-* @see https://code.google.com/p/qa-style-sheet/
-* @see Mémento «Sites web — Les bonnes pratiques» aux éditions Eyrolles
-* @see «Intégration Web, les bonnes pratiques», pages 335/336
+*This file is not a replacement to a complete tool such as [OpQuast Reporting](http://reporting.opquast.com/fr/). It only intends to show possible weaknesses. You should obviously do some manual check by hand to know whether the code should or should not be fixed.*
 
-Je tiens à signaler que l’idée n’est ni neuve, ni de moi (la proposition d’Eric Meyer date de 2007, et l’article de Marco Battilana de Juillet 2006 !). J’ai simplement pensé qu’il était possible d’aller beaucoup plus loin, alors je l’ai fait. Je vous invite à lire [mon article](http://www.ffoodd.fr/a11y-cssun-credo/) pour en apprendre plus sur la genèse de ce projet.
+Many references helped me in the making of this stylesheet:
 
-## Code couleur
-Concrètement, les éléments en erreur, en alerte, obsolètes ou pouvant être améliorés seront cernés d’un contour de quatre pixels colorés:
-* en rouge pour les erreurs;
-* en jaune pour les alertes;
-* en gris pour les élements & attributs obsolètes;
-* en vert les suggestions d’améliorations.
+* [https://github.com/redroot/holmes/blob/master/holmes.css](https://github.com/redroot/holmes/blob/master/holmes.css)
+* [https://github.com/karlgroves/diagnostic.css](https://github.com/karlgroves/diagnostic.css)
+* [http://www.w3.org/TR/html5/obsolete.html#obsolete](http://www.w3.org/TR/html5/obsolete.html#obsolete)
+* [https://github.com/nternetinspired/debug-css](https://github.com/nternetinspired/debug-css)
+* [http://meyerweb.com/eric/tools/css/diagnostics/](http://meyerweb.com/eric/tools/css/diagnostics/)
+* [http://accessites.org/site/2006/07/big-red-angry-text/](http://accessites.org/site/2006/07/big-red-angry-text/)
+* [https://code.google.com/p/qa-style-sheet/](https://code.google.com/p/qa-style-sheet/)
+* Mémento «Sites web — Les bonnes pratiques» aux éditions Eyrolles
+* «Intégration Web, les bonnes pratiques», pages 335/336
 
-Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ainsi marqués, un bandeau apparaitra en haut de votre navigateur avec une petite formule vous précisant le problème, et un indice sous forme de boutade (tentative plus ou moins réussie de faire un peu de pédagogie en passant).
+Although let's keep in mind the idea has nothing new (there is an article from Marco Battilana from 2006, and a proposal by Eric Meyer himself from 2007). I only tried to push things further. I suggest you read [my article](http://www.ffoodd.fr/a11y-cssun-credo/) (in French) to learn more about the project.
 
-## Gestion des sélecteurs
-Étant donné la longue liste de sélecteurs à tester, je les ai «externalisés» dans des fichiers partiels, qui étendent les placeholders dans le fichier principal.
+## About colors
 
-Ça n’est pas forcément une bonne solution, mais j’ai préféré la facilité de lecture et de maintenance de chaque degré de gravité à l’homogénéité du résultat: ce fichier n’est — encore une fois — destiné qu’aux phases de développement. Ses performances n’ont donc pas d’intérêt, tout comme sa compatibilité navigateur.
+In concrete terms, errors, warnings and advices are outlined by a 4px colored border:
 
-## Gestion des messages
-Chaque test dispose de son propre message, afin d’informer et guider au maximum l’intégrateur en quête d’amélioration. Ils sont eux aussi dans des fichiers partiels, pour en faciliter la lecture et la rédaction. Une personnalisation sera bien plus simple de cette façon (tout le monde n’aimera mes touches d’humour ;-) ).
+* red for errors;
+* yellow for alerts;
+* gray for obsolete stuff;
+* green for advices.
 
-## Cas particuliers et problèmes connus
-1. Les balises « auto-fermantes » n’autorisent pas la génération de contenu. Ainsi les erreurs ou alertes seront marquées, mais aucun message n’apparaitra au survol. Il sera en revanche consultable dans la plupart des inspecteurs de `DOM` : la limite est la création du pseudo-élément pour l’affichage (cf [la spécification](http://www.w3.org/TR/CSS2/generate.html#before-after-content). Voici la liste exhaustive des balises `HTML5` auto-fermantes:
+Those colors are obviously customisable through [the configuration file](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L230). When hovering marked elements, a little banner should appear on top of your browser displaying what's going on.
+
+## About selectors
+
+Given the very long list of selectors to test, [they are splitted across several files](https://github.com/ffoodd/a11y.css/tree/master/sass/selectors). Errors are in their own file, advices in their own, and so on.
+
+## About messages
+
+Each test has its own message, trying to explain and guide you as much as possible. All messages are [gathered in a Sass map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L1), in both English and French. It should be quite easy for you to update the messages for internal use if you don't like them.
+
+## Edge cases and known issues
+
+1. Self-closing tags do not allow generated content through pseudo-elements. Thus, errors or whatever will correctly be displayed, but not the message on hover. That being said, it should be available for consultation with any DOM reader (DevTools, Firebug or whatever).
+Here are affected self-closing tags:
+
  * `<area />`
  * `<base />`
  * `<br />`
@@ -71,22 +80,25 @@ Chaque test dispose de son propre message, afin d’informer et guider au maximu
  * `<track />`
  * `<wbr />`
 
-*L’issue #7 ouverte par @7studio a permis d’ajouter une astuce qui permettra d’afficher ces messages, à condition que la balise auto-fermante signalée dispose d’un élément adjacent qui ne soit pas auto-fermant.*
+*Issue [#7](https://github.com/ffoodd/a11y.css/issues/7) opened by [@7studio](https://twitter.com/7studio) suggested a decent work-around to display messages for those tags, as long as they are followed by a non-self-closing element. Still better than nothing.*
 
-2. Les messages sont générés via un pseudo-élément en position fixe. Il faut cependant souligner un problème de *containing block* causé par un élément parent, si ce dernier se voit appliqué `transform`:
-  * @see [La spéc W3C](http://www.w3.org/TR/css3-transforms/#transform-property)
-  * @see [What no one told you about z-index](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) [traduit en Français par @iamvdo](http://blog.iamvdo.me/post/41094013194/comprendre-z-index-et-les-contextes-dempilement).
+2. Messages are generated through a fixed pseudo-element. However there could be an a containing block issue if the parent is a transformed element (`transform`):
+* [W3C Specification about this](http://www.w3.org/TR/css3-transforms/#transform-property)
+* [What no one told you about z-index](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) ([translated in French by @iamvdo](http://blog.iamvdo.me/post/41094013194/comprendre-z-index-et-les-contextes-dempilement))
 
-3. De même, les tests sur les éléments contenus dans le `<head>` posent un souci pour l’affichage du message : je vais devoir trouver une autre méthode pour afficher ces messages.
+3. Along the same lines, tests on elements that are contained within `<head>` cannot be displayed (since `<head>` is a hidden element). I need to find a way to do this.
 
-4. Pour éviter les cas dans lesquels le contour pourrait être masqué, la propriété [outline-offset](https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset "Définition sur le MDN") est utilisée afin d’afficher le contour à l’intérieur de l’élément marqué. Amélioration suggérée par @7studio dans l’issue #4.
+4. To avoid cases when outline could be hidden, the property [outline-offset](https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset) is being used in order to display it inside the element (rather than outside). Thanks to [@7studio](https://twitter.com/7studio) in [#4](https://github.com/ffoodd/a11y.css/issues/4).
 
-## Amélioration(s) à venir
-Dans un futur plus ou moins proche, les points suivants seront à améliorer ou à créer :
-- [ ] Trouver un moyen pour afficher les messages liés aux erreurs sur des balises auto-fermantes et des éléments du `<head>` — du javascript sera peut-être nécessaire;
-- [x] Ajouter un quatrième degré : *les recommandations*. Bien que non bloquants, certains points (comme la présence des principaux rôles ARIA) peuvent être testés en `CSS` : j’aurais bien tort de m’en priver.
+## Improvements to come
 
-*PS*: Non, les bonnes pratiques `CSS` n’ont pas cours dans ce fichier puisque certains sélecteurs sont tout simplement immondes. Mais ce fichier n’est pas voué à être chargé sur d’autres machines que celles des intégrateurs en quête de qualité, comme moi :D.
+In a not-so-distant future, I'd like to:
 
-Ce projet est sous licence [MIT](http://opensource.org/licenses/MIT "The MIT licence") et [CC BY 3.0 FR](http://creativecommons.org/licenses/by/3.0/fr/ "Explications de la licence").
+* [ ] find a way to display messages from `<head>` contained elements (JavaScript?);
+* [ ] improve the way we deal with self-closing tags (JavaScript?);
+* [x] add a new *advice* role. While not critical, some things (like ARIA roles) can be tested through CSS, let's do this!
+
+*PS: CSS best practices do not belong to this CSS file. Some selectors are ugly as hell, but we need them in order to select what we need to select.*
+
+This project is distributed under [MIT](http://opensource.org/licenses/MIT "The MIT licence") license and [CC BY 3.0 FR](http://creativecommons.org/licenses/by/3.0/fr/).
 *Copyright (c) 2013 Gaël Poupard*
