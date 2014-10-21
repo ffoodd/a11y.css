@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 nav::after {
   @include message('advice', 'nav');
 }
@@ -8,7 +6,6 @@ main:not(:first-of-type)::after {
   @include message('advice', 'main');
 }
 
-// Si vous utilisez ces éléments, il y a de fortes chances pour que ces attributs améliorent l’accessibilité
 section:not([aria-labelledby])::after {
   @include message('advice', 'section');
 }
@@ -22,7 +19,6 @@ figure img:not([aria-describedby]):hover ~ *::after {
   @include message('advice', 'figure-img');
 }
 
-// Les liens sont sensibles, vous savez ?
 [target="_blank"]::after {
   @include message('advice', 'target-blank');
 }
@@ -37,7 +33,6 @@ figure img:not([aria-describedby]):hover ~ *::after {
   }
 }
 
-// Si on a un ID ou une classe «search», il est fort probable que le role search doive suivre
 .search:not([role="search"])::after,
 #search:not([role="search"])::after {
   @include message('advice', 'search');

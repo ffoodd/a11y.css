@@ -1,21 +1,13 @@
-@charset "UTF-8";
-
-// La balise <nav> est réservée aux navigations principales et secondaires;
-// La balise <main> doit être unique et structurante pour le contenu principal
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=116
 nav,
 main:not(:first-of-type),
 
-// Si vous utilisez ces éléments, il y a de fortes chances pour que ces attributs améliorent l’accessibilité
 figure:not([role="group"]),
 
-// L’internaute doit être averti avant l’ouverture d’une nouvelle fenêtre
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=176
 [href^="mailto"],
 
-// Les fichiers en téléchargement doivent indiquer leur poids et format :
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=172
-// Et ils doivent eux-mêmes être accessibles, ou mettre à disposition une version accessible :
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=171
 [href$=".pdf"],
 [href$=".doc"],
@@ -23,16 +15,13 @@ figure:not([role="group"]),
 [href$=".xls"],
 [href$=".txt"],
 
-// Si on a un ID ou une classe «search», il est fort probable que le role search doive suivre
 .search:not([role="search"]),
 #search:not([role="search"]),
 
-// Champ obligatoire / attribut required : ne doit pas être signifié que par la couleur (BP 85)
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=137
 [required],
 [aria-required],
 
-// Les éléments masqués aux technologies d’assistance le sont-ils à bon escient ?
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=120
 // @note Tests 10.13.2 et 10.13.3
 [hidden]:not(:empty),
@@ -40,34 +29,27 @@ figure:not([role="group"]),
 
 [placeholder],
 
-// <video>, <audio> : présence d’une alternative, d’un transcript / sous-titre, et indication de la durée ? (BP 155, BP 30)
 video,
 audio,
 
-// L’élément <track> doit préciser son type lorsqu’il sert des sous-titres
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=75
 track:not([kind="caption"]),
 
-// Les balises <svg>, <canvas>, <embed> et <object type="image/.."> devraient être contenues dans un élément <figure role="group">,
-// Uniquement si elles sont porteuses d’informations.
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=39
 svg,
 embed,
 canvas,
 object[type^="image"],
 
-// L’attribut title doit être identique à l’alternative
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=46
 img[title],
 area[title],
 svg[title],
 
-// Format de date compréhensible ? (BP 6)
 time,
 [datetime],
 [pubdate],
 
-// Définir le jeu de caractères (BP 100) & s’assurer que c’est utf-8 (BP 89)
 meta[charset] {
   @include a11y-outline('advice');
   @extend %a11y-message;

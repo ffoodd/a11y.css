@@ -9,15 +9,12 @@
   left: 0 !important;
   opacity: 0;
   padding: 1em 0;
-  // On s’assure que le message ne capte pas le survol.
   pointer-events: none !important;
   position: fixed !important;
-  // On fait en sorte de ne pas hériter des mises en formes spéciales: les messages doivent être homogènes.
   text-align: center !important;
   text-decoration: none !important;
   text-shadow: none !important;
   text-transform: none !important;
-  // On prépare l’apparition du message.
   top: 0 !important;
   -webkit-transform:  translateY( -100% ) translateZ( 0 ) !important;
   -ms-transform:      translateY( -100% ) translateZ( 0 ) !important;
@@ -25,9 +22,8 @@
   -webkit-transition: -webkit-transform .3s ease-in !important;
   transition:         transform .3s ease-in !important;
   width: 100% !important;
-  // Permet de gérer les retours à la ligne éventuels
-  // @note Les sauts de ligne peuvent être provoqués par le caractère «\A» dans le message lui-même.
-  // @see issue #7 , solution proposée par @7studio
+  // @note Line breaks can be triggered by «\A» within the message content.
+  // @see issue #7, solution from @7studio
   white-space: pre;
 }
 
@@ -42,6 +38,8 @@
 }
 
 /// a11y message
+/// @requires %a11y-after
+/// @requires %a11y-hover
 %a11y-message {
   &::after {
     @extend %a11y-after;
@@ -53,6 +51,8 @@
 }
 
 /// a11y-self-closing
+/// @requires %a11y-after
+/// @requires %a11y-hover
 %a11y-self-closing {
   & ~ *::after {
     @extend %a11y-after;
