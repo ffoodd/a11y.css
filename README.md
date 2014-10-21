@@ -102,3 +102,10 @@ In a not-so-distant future, I'd like to:
 
 This project is distributed under [MIT](http://opensource.org/licenses/MIT "The MIT licence") license and [CC BY 3.0 FR](http://creativecommons.org/licenses/by/3.0/fr/).
 *Copyright (c) 2013 Gaël Poupard*
+
+## Building docs
+
+```sh
+$ npm install sassdoc -g
+sassdoc sass/ docs/ --verbose --config .sassdocrc
+```
