@@ -1,4 +1,5 @@
 /// Messages map
+/// @access private
 /// @type Map
 /// @prop {Map} theme
 /// @prop {Map} theme.key
@@ -213,15 +214,16 @@ $messages: (
 
 
 /// Max z-index
+/// @access private
 /// This is the maximum allowed z-index on most browsers.
 /// If a z-index value happens to be higher, all browsers truncate it to this value.
 /// This is meant to make sure messages will always be on top of everything else.
 /// @type Number
-/// @see http://www.puidokas.com/max-z-index/
+/// @link http://www.puidokas.com/max-z-index/
 $max-z-index: 2147483647;
 
 
-/// Theme map
+/// This map holds configuration for all themes. Each theme has an icon, a color and a z-index.
 /// @type Map
 /// @prop {Map} theme
 /// @prop {String} theme.icon  - Theme icon

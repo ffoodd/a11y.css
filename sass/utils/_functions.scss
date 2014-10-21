@@ -13,13 +13,10 @@
 
 
 /// Retrieve message from series of keys
-/// @access public
+/// @access private
 /// @param {String} $theme - Either `advice`, `error` or `warning`
 /// @param {String} $key - Key to find message for
 /// @requires $messages
-/// @requires $locale
-/// @throws "Theme `#{$theme}` does not exist."
-/// @throws "Key `#{$key}` not found for theme `#{$theme}`."
 /// @return {String} Message
 @function message($theme, $key) {
   $locale: if(global-variable-exists('language'), $language, 'en');
@@ -37,6 +34,7 @@
 
 
 /// Configuration helper
+/// @access private
 /// @param {String} $theme
 /// @param {String} $key
 /// @require $themes

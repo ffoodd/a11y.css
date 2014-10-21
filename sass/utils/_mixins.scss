@@ -1,7 +1,9 @@
-/// Set a locale
+/// Defines the language used by `a11y.css`. For now, only `fr` and `en` allowed.
+/// @group languages
 /// @param {String} $language
-/// @throws "Language `#{$language}` is not supported. Pull request welcome!"
 /// @output Nothing
+/// @example scss - Defines the language to `fr`.
+///  @include set-locale('fr');
 @mixin set-locale($language) {
   $supported-languages: 'fr', 'en';
   $language: to-lower-case($language);
@@ -15,6 +17,7 @@
 
 
 /// A11y outline
+/// @access private
 /// @param {String} $level - level to use
 /// @output `outline`, `outline-offset` and `z-index`, all with `!important`
 @mixin a11y-outline($level) {
@@ -29,12 +32,22 @@
 }
 
 
-/// Set message
-/// Basically in alias to the `message` function
-/// @param {Arglist} $args - Arguments
+/// Get a message from the translation map based on the defined language.
+/// The message contains the icon associated to the message type.
+/// @group languages
+/// @param {String} $theme - Theme name
+/// @param {String} $key - Key name
 /// @require {function} message
-/// @require $icons
+/// @require $themes
 /// @output `content`, with `!important`
+/// @example scss - Get message for `nav` from `advice` category when language is set to `en`
+/// .selector {
+///   @include message('advice', 'nav');
+/// }
+/// @example css - Resulting CSS
+/// .selector {
+///   content: '\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?';
+/// }
 @mixin message($theme, $key) {
   content: quote(theme-conf($theme, 'icon') #{message($theme, $key)}) !important;
 }
