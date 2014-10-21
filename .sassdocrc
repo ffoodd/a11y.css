@@ -1,0 +1,13 @@
+{
+    "display": {
+        "access": ["public"],
+        "alias": false,
+        "watermark": true
+    },
+    "basePath": "https://github.com/ffoodd/a11y.css/tree/master/sass",
+    "theme": "default",
+    "groups": {
+        "undefined": "Configuration",
+        "languages": "Translation"
+    }
+}
