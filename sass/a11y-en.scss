@@ -1,24 +1,4 @@
 @charset "UTF-8";
-// == a11y.css
-//
-// @author Gaël Poupard
-// @lastmodified 2013-11-27
-// @subsection Références :
-  // @see https://github.com/redroot/holmes/blob/master/holmes.css
-  // @see https://github.com/karlgroves/diagnostic.css
-  // @see http://www.w3.org/TR/html5/obsolete.html#obsolete
-  // @see https://github.com/nternetinspired/debug-css
-  // @see Mémento «Sites web — Les bonnes pratiques» aux éditions Eyrolles
-  // @author Elie Sloïm, Temesis, Opquast, Openweb — @ElieSl
-  // @see "Intégration Web, les bonnes pratiques", pages 335/336.
-  // @author Corinne Schillinger, Inseo — @schillinger
-// @note On utilise outline plutôt que border afin de ne pas modifier les dimensions des éléments.
-// @note Le rouge dénonce une erreur, un code invalide ou un attribut manquant.
-// @note Le jaune est une alerte, relevant un balisage erroné ou une mauvaise pratique potentielle.
-// @note Le gris signale les éléments obsolètes ou utilisant un attribut obsolète.
-// @note Le vert informe d’une amélioration éventuelle.
-//
-
 
 @import "utils/all";
 @include set-locale("en");

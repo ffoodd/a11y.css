@@ -1,9 +1,5 @@
-@charset "UTF-8";
-
-// Liste exhaustive des éléments auto-fermants en HTML5
 // $self-closing: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr;
 
-// -- @subsection Erreurs --------------------
 img:not([alt]),
 area:not([alt]),
 input[type="image"]:not([alt]),
@@ -31,8 +27,6 @@ input[aria-required]:not([aria-describedby]) {
   }
 }
 
-
-// -- @subsection Alertes --------------------
 img[alt=""],
 area[alt=""],
 input[type="image"][alt=""] {
@@ -44,8 +38,6 @@ input[type="image"][alt=""] {
   }
 }
 
-
-// -- @subsection Conseils --------------------
 figure img:not([aria-describedby]),
 input[required],
 input[aria-required],
