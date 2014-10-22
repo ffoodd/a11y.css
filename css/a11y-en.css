@@ -497,7 +497,7 @@ track:hover:not([kind="caption"]) ~ *::after {
 html {
   counter-reset: error warning obsolete advice; }
   html::after {
-    content: "Erreurs : " counter(error) "\a Avertissements : " counter(warning) "\aObsolÃ¨tes : " counter(obsolete) "\a Conseils : " counter(advice) "\a";
+    content: "Erreurs : " counter(error) "\a Avertissements : " counter(warning) "\aObsolètes : " counter(obsolete) "\a Conseils : " counter(advice) "\a";
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid black;
     border-radius: 3px;
@@ -865,7 +865,7 @@ body[background], table[background], thead[background], tbody[background], tfoot
   td[height]::after, th[height]::after,
   td[nowrap]::after, th[nowrap]::after,
   body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
-    content: \271D\00A0 "Ã‰lÃ©ment ou attribut(s) obsolÃ¨te(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important; }
+    content: \271D\00A0 "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important; }
 
 ul > *:not(li),
 ol > *:not(li),
@@ -1185,7 +1185,7 @@ input[type="image"][alt=""]:hover ~ *::after {
   content: "\\2622\\00A0 Inline styles. You should be ashamed." !important; }
 
 label + :not(input):not(select):not(textarea)::after {
-  content: "\\2622\\00A0 A field and its label should be one next to each other. But the next node doesn't look lik a fieldâ€¦" !important; }
+  content: "\\2622\\00A0 A field and its label should be one next to each other. But the next node doesn't look lik a field…" !important; }
 
 div:empty::after,
 span:empty::after,
@@ -1218,10 +1218,10 @@ a[href="#"]::after {
   content: "\\2620\\00A0 [href='#'] attribute. Why? A <button> would be semantically better." !important; }
 
 a[href^="javascript"]::after {
-  content: "\\2620\\00A0 [href] attribute starting with `javascript:`. Doesn`t sound goodâ€¦" !important; }
+  content: "\\2620\\00A0 [href] attribute starting with `javascript:`. Doesn`t sound good…" !important; }
 
 a:empty::after {
-  content: "\\2620\\00A0 Empty link. Emptyâ€¦" !important; }
+  content: "\\2620\\00A0 Empty link. Empty…" !important; }
 
 img:not([alt])::after,
 area:not([alt])::after,
@@ -1250,7 +1250,7 @@ input[type="image"][src=""]::after,
 input[type="image"][src=""]:hover ~ *::after,
 input[type="image"][src="#"]::after,
 input[type="image"][src="#"]:hover ~ *::after {
-  content: "\\2620\\00A0 [src] attribute missing or empty. Oh, wellâ€¦" !important; }
+  content: "\\2620\\00A0 [src] attribute missing or empty. Oh, well…" !important; }
 
 label:not([for])::after,
 label[for=""]::after {
@@ -1270,7 +1270,7 @@ textarea[id=""]:hover ~ *::after {
   content: "\\2620\\00A0 Missing or empty [id] attribute. Everybody has a name, even form fields." !important; }
 
 optgroup:not([label])::after {
-  content: "\\2620\\00A0 You have gathered options, but no label attribute introduces this options group. Too badâ€¦" !important; }
+  content: "\\2620\\00A0 You have gathered options, but no label attribute introduces this options group. Too bad…" !important; }
 
 input:not([type])::after,
 input[type=""]::after,
@@ -1326,5 +1326,3 @@ html:not([lang])::after {
 input[required]:not([aria-describedby]):hover ~ *::after,
 input[aria-required]:not([aria-describedby]):hover ~ *::after {
   content: "\\2620\\00A0 If field is mandatory, it should be explicity told so. Map an indication to the field with [aria-describedby] and its [id]." !important; }
-
-/*# sourceMappingURL=a11y-en.css.map */
