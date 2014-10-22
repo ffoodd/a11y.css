@@ -50,31 +50,21 @@
 /// @requires {mixin} message
 /// @requires {function} theme-conf
 @mixin item($theme, $key, $self-closing: false) {
-  // Extend CSS related to the theme
-  @extend %a11y-#{$theme};
-
   // If it's a self closing tag
   // Include message on next item
   @if $self-closing {
+    @extend %a11y-#{$theme}-self-closing;
+
     & ~ ::after {
       @include message($theme, $key);
-      @extend %a11y-after;
-      z-index: theme-conf($theme, "index") !important;
-    }
-
-    &:hover ~ ::after {
-      @extend %a11y-hover;
     }
   }
 
   @else {
+    @extend %a11y-#{$theme};
+
     &::after {
       @include message($theme, $key);
-      @extend %a11y-after;
-    }
-
-    &:hover::after {
-      @extend %a11y-hover;
     }
   }
 }
