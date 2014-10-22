@@ -25,6 +25,7 @@ a11y.css currently exists in both English and French: you'll find both files in 
 
 1. Add the name of the language [this list](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_mixins.scss#L10);
 2. Update [this map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L10) with your translations.
+3. Update [this map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L241) to translate theme names.
 
 Done!
 
