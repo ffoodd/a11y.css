@@ -19,6 +19,15 @@ javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='http
 
 You can also add it by going on [the dedicated page](http://ffoodd.github.io/a11y.css/) then dragging it to your bookmarks. Isn't it handy?
 
+## About languages
+
+a11y.css currently exists in both English and French: you'll find both files in the [css](https://github.com/ffoodd/a11y.css/tree/master/css) folder. If you want to contribute and add a new language, it is very easy to do:
+
+1. Add the name of the language [this list](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_mixins.scss#L10);
+2. Update [this map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L10) with your translations.
+
+Done!
+
 ## Introduction
 
 This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.
