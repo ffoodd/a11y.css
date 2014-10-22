@@ -1,10 +1,23 @@
 @charset "UTF-8";
 
+// Ugly work-around required to prevent Sass 3.4.x
+// from converting `\A ` to `\a`.
+// To remove once the bug is fixed in Sass.
+// @see https://twitter.com/HugoGiraudel/status/524842407872200705
+@function line-break() {
+  @return unquote("\"\\A\"");
+}
+
 html {
   counter-reset: error warning obsolete advice;
 
   &::after {
-    content: "Erreurs : " counter( error ) "\A Avertissements : " counter( warning ) "\A Obsolètes : " counter( obsolete ) "\A Conseils : " counter( advice ) "\A";
+    content:
+        "Errors:   " counter(error)    line-break()
+        "Warnings: " counter(warning)  line-break()
+        "Obsolete: " counter(obsolete) line-break()
+        "Advices:  " counter(advice)   line-break();
+
     background: rgba( 0, 0, 0, .8 );
     border: 1px solid black;
     border-radius: 3px;
