@@ -105,7 +105,16 @@ This project is distributed under [MIT](http://opensource.org/licenses/MIT "The 
 
 ## Building docs
 
+With global SassDoc install:
+
 ```sh
 $ npm install sassdoc -g
-sassdoc sass/ docs/ --verbose --config .sassdocrc
+$ sassdoc sass/ docs/ --verbose --config .sassdocrc
+```
+
+With local SassDoc install:
+
+```sh
+$ npm install
+$ node_modules/sassdoc/bin/sassdoc sass/ docs/ --verbose --config .sassdocrc
 ```
