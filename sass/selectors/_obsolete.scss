@@ -104,6 +104,6 @@ body[background], table[background], thead[background], tbody[background], tfoot
   counter-increment: obsolete;
 
   &::after {
-    content: theme-conf('obsolete', 'icon') "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important;
+    @include message('obsolete', 'any');
   }
 }
