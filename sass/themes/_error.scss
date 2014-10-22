@@ -25,13 +25,6 @@ input[type="image"]:not([alt]) {
   @include error('no-alt', $self-closing: true);
 }
 
-// @see BP1 OpQuast
-img[alt=" "],
-area[alt=" "],
-input[type="image"][alt=" "] {
-  @include error('empty-alt', $self-closing: true);
-}
-
 img:not([src]),
 img[src=""],
 img[src="#"],
