@@ -55,6 +55,7 @@
   @if $self-closing {
     @extend %a11y-#{$theme}-self-closing;
 
+    &::after,
     & ~ ::after {
       @include message($theme, $key);
     }
