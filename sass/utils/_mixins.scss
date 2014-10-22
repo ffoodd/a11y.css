@@ -39,27 +39,30 @@
 }
 
 
-/// Theme mixin extending everything for a message,
-/// everything for the defined `$theme`,
+/// Theme mixin extending everything needed for the `$theme`,
 /// and including a message in a pseudo-element.
 /// @access private
 /// @param {String} $theme - Theme
 /// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing - Whether or not to use message on self or next node
-@mixin theme($theme, $key, $self-closing: false) {
+/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @requires %a11y-after
+/// @requires %a11y-hover
+/// @requires {mixin} message
+/// @requires {function} theme-conf
+@mixin item($theme, $key, $self-closing: false) {
   // Extend CSS related to the theme
   @extend %a11y-#{$theme};
 
   // If it's a self closing tag
   // Include message on next item
   @if $self-closing {
-    & ~ *::after {
+    & ~ ::after {
       @include message($theme, $key);
       @extend %a11y-after;
       z-index: theme-conf($theme, 'index') !important;
     }
 
-    &:hover ~ *::after {
+    &:hover ~ ::after {
       @extend %a11y-hover;
     }
   }
@@ -78,32 +81,56 @@
 
 
 /// Defines an advice
+/// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing - Whether or not to use message on self or next node
+/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @requires {mixin} item
+/// @example scss - Define an advice
+/// .selector {
+///   @include advice('nav');
+/// }
 @mixin advice($key, $self-closing: false) {
-  @include theme('advice', $key, $self-closing);
+  @include item('advice', $key, $self-closing);
 }
 
 
 /// Defines an error
+/// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing - Whether or not to use message on self or next node
+/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @requires {mixin} item
+/// @example scss - Define an error
+/// .selector {
+///   @include error('no-src');
+/// }
 @mixin error($key, $self-closing: false) {
-  @include theme('error', $key, $self-closing);
+  @include item('error', $key, $self-closing);
 }
 
 
 /// Defines a warning
+/// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing - Whether or not to use message on self or next node
+/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @requires {mixin} item
+/// @example scss - Define an warning
+/// .selector {
+///   @include warning('abbr');
+/// }
 @mixin warning($key, $self-closing: false) {
-  @include theme('warning', $key, $self-closing);
+  @include item('warning', $key, $self-closing);
 }
 
 
 /// Defines an obsolete thing
+/// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing - Whether or not to use message on self or next node
+/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @requires {mixin} item
+/// @example scss - Define an obsolete
+/// .selector {
+///   @include obsolete('any');
+/// }
 @mixin obsolete($key, $self-closing: false) {
-  @include theme('obsolete', $key, $self-closing);
+  @include item('obsolete', $key, $self-closing);
 }
