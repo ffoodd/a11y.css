@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 a:not([href]),
 a[href=""] {
   @include error('no-href');
