@@ -51,5 +51,5 @@
 ///   content: '\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?';
 /// }
 @mixin message($theme, $key) {
-  content: quote(theme-conf($theme, 'icon') #{message($theme, $key)}) !important;
+  content: quote(unquote(theme-conf($theme, 'icon')) #{message($theme, $key)}) !important;
 }
