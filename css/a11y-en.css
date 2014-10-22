@@ -1,8 +1,8 @@
 @charset "UTF-8";
 nav::after,
 main:not(:first-of-type)::after,
-figure:not([role="group"])::after,
 [href^="mailto"]::after,
+[target$="blank"]::after,
 [href$=".pdf"]::after,
 [href$=".doc"]::after,
 [href$=".docx"]::after,
@@ -258,8 +258,8 @@ track:not([kind="caption"]) ~ *::after {
 
 nav:hover::after,
 main:not(:first-of-type):hover::after,
-figure:not([role="group"]):hover::after,
 [href^="mailto"]:hover::after,
+[target$="blank"]:hover::after,
 [href$=".pdf"]:hover::after,
 [href$=".doc"]:hover::after,
 [href$=".docx"]:hover::after,
@@ -496,8 +496,8 @@ track:hover:not([kind="caption"]) ~ *::after {
 
 html {
   counter-reset: error warning obsolete advice; }
-  html::after {
-    content: "Erreurs : " counter(error) "\a Avertissements : " counter(warning) "\aObsolètes : " counter(obsolete) "\a Conseils : " counter(advice) "\a";
+  html::before {
+    content: "Errors:   " counter(error) "\a" "Warnings: " counter(warning) "\a" "Obsolete: " counter(obsolete) "\a" "Advices:  " counter(advice) "\a";
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid black;
     border-radius: 3px;
@@ -513,8 +513,8 @@ html {
 
 nav,
 main:not(:first-of-type),
-figure:not([role="group"]),
 [href^="mailto"],
+[target$="blank"],
 [href$=".pdf"],
 [href$=".doc"],
 [href$=".docx"],
@@ -546,8 +546,8 @@ meta[charset] {
   counter-increment: advice; }
   nav::after,
   main:not(:first-of-type)::after,
-  figure:not([role="group"])::after,
   [href^="mailto"]::after,
+  [target$="blank"]::after,
   [href$=".pdf"]::after,
   [href$=".doc"]::after,
   [href$=".docx"]::after,
@@ -865,7 +865,7 @@ body[background], table[background], thead[background], tbody[background], tfoot
   td[height]::after, th[height]::after,
   td[nowrap]::after, th[nowrap]::after,
   body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
-    content: "✝ " "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important; }
+    content: "✝  Obsolete element or attribute. Please make sure you know what you're doing." !important; }
 
 ul > *:not(li),
 ol > *:not(li),
@@ -1089,17 +1089,10 @@ nav::after {
 main:not(:first-of-type)::after {
   content: "♥  The <main> tag is exclusively restricted to the main content area, thus should be unique. Repent yourself now." !important; }
 
-section:not([aria-labelledby])::after {
-  content: "♥  Did you know the <section> has a semantic value? It should be described with text content." !important; }
+[href^="mailto"]::after {
+  content: "♥  This email is valid, isn't it?" !important; }
 
-figure:not([role="group"])::after {
-  content: "♥  The <figure> element gathers an <img> and a <figcaption>: `group` role sounds perfect, doesn't it?" !important; }
-
-figure img:not([aria-describedby])::after,
-figure img:not([aria-describedby]):hover ~ *::after {
-  content: "♥  An image within a <figure> element should be described by a <figcaption>." !important; }
-
-[target="_blank"]::after {
+[target$="blank"]::after {
   content: "♥  User should be warned whenever a link is being opened in a new tab. But you know it already, right?" !important; }
 
 [href$=".pdf"]::after,
@@ -1173,11 +1166,10 @@ abbr:not([title])::after,
 abbr[title=""]::after {
   content: "☢  Empty <title> tag. Hell is full of people like you." !important; }
 
-img[alt=""]::after,
+img[alt=""]::after, img[alt=""]:hover ~ *::after,
 area[alt=""]::after,
-input[type="image"][alt=""]::after,
-img[alt=""]:hover ~ *::after,
 area[alt=""]:hover ~ *::after,
+input[type="image"][alt=""]::after,
 input[type="image"][alt=""]:hover ~ *::after {
   content: "☢  Empty [alt] attribute. This is only okay for decorative images. Is it a decorative image?" !important; }
 
@@ -1202,7 +1194,7 @@ table[role="presentation"]::after {
   content: "☢  A presentional table should not contain elements proper to data tables. Would you mind double checking?" !important; }
 
 th[scope]::after {
-  content: "☢  This head cell applies to a full line/row, doesn't it? It should be anyway." !important; }
+  content: "☢  This head cell applies to a full line/row, doesn't it? 'Cause that's what its [scope] says." !important; }
 
 th:not([scope])::after {
   content: "☢  This head cell doesn't apply to a full line/row, or does it? If so, think of [scope]." !important; }
@@ -1223,19 +1215,17 @@ a[href^="javascript"]::after {
 a:empty::after {
   content: "☠  Empty link. Empty…" !important; }
 
-img:not([alt])::after,
+img:not([alt])::after, img:not([alt]):hover ~ *::after,
 area:not([alt])::after,
-input[type="image"]:not([alt])::after,
-img:not([alt]):hover ~ *::after,
 area:not([alt]):hover ~ *::after,
-input[type="image"]:not([alt]):hover ~ *::after {
+input[type="image"]::after,
+input[type="image"]:hover ~ *::after {
   content: "☠  Missing [alt] attribute. Sacrilege!" !important; }
 
-img[alt=" "]::after,
+img[alt=" "]::after, img[alt=" "]:hover ~ *::after,
 area[alt=" "]::after,
-input[type="image"][alt=" "]::after,
-img[alt=" "]:hover ~ *::after,
 area[alt=" "]:hover ~ *::after,
+input[type="image"][alt=" "]::after,
 input[type="image"][alt=" "]:hover ~ *::after {
   content: "☠  [alt] attribute *almost* empty. Is it some kind of a joke?" !important; }
 
@@ -1256,7 +1246,7 @@ label:not([for])::after,
 label[for=""]::after {
   content: "☠  Missing [for] attribute. Still, this label must be here for some reason." !important; }
 
-input:not([id])::after, input:not([id]):hover ~ *::after,
+input:not([type="submit"]):not([type="button"]):not([id]):not([title])::after, input:not([type="submit"]):not([type="button"]):not([id]):not([title]):hover ~ *::after,
 input[id=""]::after,
 input[id=""]:hover ~ *::after,
 select:not([id])::after,
@@ -1272,14 +1262,12 @@ textarea[id=""]:hover ~ *::after {
 optgroup:not([label])::after {
   content: "☠  You have gathered options, but no label attribute introduces this options group. Too bad…" !important; }
 
-input:not([type])::after,
+input:not([type])::after, input:not([type]):hover ~ *::after,
 input[type=""]::after,
-input:not([type]):hover ~ *::after,
 input[type=""]:hover ~ *::after {
   content: "☠  Missing or empty [type] attribute. What is the field for then?" !important; }
 
-input[type="submit"]:not([value])::after,
-input[type="submit"]:not([value]):hover ~ *::after {
+input[type="submit"]:not([value])::after, input[type="submit"]:not([value]):hover ~ *::after {
   content: "☠  Missing [value] attribute. What should happen when I click?" !important; }
 
 iframe:not([title])::after,
@@ -1323,6 +1311,4 @@ html:not([lang])::after {
 [onvolumechange]::after, [onwaiting]::after {
   content: "☠  JavaScript event attributes. You sure?" !important; }
 
-input[required]:not([aria-describedby]):hover ~ *::after,
-input[aria-required]:not([aria-describedby]):hover ~ *::after {
-  content: "☠  If field is mandatory, it should be explicity told so. Map an indication to the field with [aria-describedby] and its [id]." !important; }
+/*# sourceMappingURL=a11y-en.css.map */

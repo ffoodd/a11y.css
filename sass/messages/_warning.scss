@@ -22,13 +22,13 @@ abbr[title=""]::after {
   @include message('warning', 'empty-title');
 }
 
-img[alt=""]::after,
-area[alt=""]::after,
-input[type="image"][alt=""]::after,
-img[alt=""]:hover ~ *::after,
-area[alt=""]:hover ~ *::after,
-input[type="image"][alt=""]:hover ~ *::after {
-  @include message('warning', 'empty-alt');
+img[alt=""],
+area[alt=""],
+input[type="image"][alt=""] {
+  &::after,
+  &:hover ~ *::after {
+    @include message('warning', 'empty-alt');
+  }
 }
 
 [style]::after {

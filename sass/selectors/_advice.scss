@@ -2,10 +2,9 @@
 nav,
 main:not(:first-of-type),
 
-figure:not([role="group"]),
-
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=176
 [href^="mailto"],
+[target$="blank"],
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=172
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=171

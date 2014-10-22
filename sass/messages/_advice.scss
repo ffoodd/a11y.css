@@ -8,20 +8,11 @@ main:not(:first-of-type)::after {
   @include message('advice', 'main');
 }
 
-section:not([aria-labelledby])::after {
-  @include message('advice', 'section');
+[href^="mailto"]::after {
+  @include message('advice', 'mailto');
 }
 
-figure:not([role="group"])::after {
-  @include message('advice', 'figure');
-}
-
-figure img:not([aria-describedby])::after,
-figure img:not([aria-describedby]):hover ~ *::after {
-  @include message('advice', 'figure-img');
-}
-
-[target="_blank"]::after {
+[target$="blank"]::after {
   @include message('advice', 'target-blank');
 }
 

@@ -1,8 +1,8 @@
 @charset "UTF-8";
 nav::after,
 main:not(:first-of-type)::after,
-figure:not([role="group"])::after,
 [href^="mailto"]::after,
+[target$="blank"]::after,
 [href$=".pdf"]::after,
 [href$=".doc"]::after,
 [href$=".docx"]::after,
@@ -258,8 +258,8 @@ track:not([kind="caption"]) ~ *::after {
 
 nav:hover::after,
 main:not(:first-of-type):hover::after,
-figure:not([role="group"]):hover::after,
 [href^="mailto"]:hover::after,
+[target$="blank"]:hover::after,
 [href$=".pdf"]:hover::after,
 [href$=".doc"]:hover::after,
 [href$=".docx"]:hover::after,
@@ -496,8 +496,8 @@ track:hover:not([kind="caption"]) ~ *::after {
 
 html {
   counter-reset: error warning obsolete advice; }
-  html::after {
-    content: "Erreurs : " counter(error) "\a Avertissements : " counter(warning) "\aObsolètes : " counter(obsolete) "\a Conseils : " counter(advice) "\a";
+  html::before {
+    content: "Errors:   " counter(error) "\a" "Warnings: " counter(warning) "\a" "Obsolete: " counter(obsolete) "\a" "Advices:  " counter(advice) "\a";
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid black;
     border-radius: 3px;
@@ -513,8 +513,8 @@ html {
 
 nav,
 main:not(:first-of-type),
-figure:not([role="group"]),
 [href^="mailto"],
+[target$="blank"],
 [href$=".pdf"],
 [href$=".doc"],
 [href$=".docx"],
@@ -546,8 +546,8 @@ meta[charset] {
   counter-increment: advice; }
   nav::after,
   main:not(:first-of-type)::after,
-  figure:not([role="group"])::after,
   [href^="mailto"]::after,
+  [target$="blank"]::after,
   [href$=".pdf"]::after,
   [href$=".doc"]::after,
   [href$=".docx"]::after,
@@ -865,7 +865,7 @@ body[background], table[background], thead[background], tbody[background], tfoot
   td[height]::after, th[height]::after,
   td[nowrap]::after, th[nowrap]::after,
   body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
-    content: "✝ " "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important; }
+    content: "✝  Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important; }
 
 ul > *:not(li),
 ol > *:not(li),
@@ -1089,17 +1089,10 @@ nav::after {
 main:not(:first-of-type)::after {
   content: "♥  <main> est réservée à la zone de contenu principal, et doit donc être unique. Repentez-vous et tout ira bien :) ." !important; }
 
-section:not([aria-labelledby])::after {
-  content: "♥  L’élément <section> a une valeur sémantique, vous le saviez ? Il doit donc être décrit par un texte." !important; }
+[href^="mailto"]::after {
+  content: "♥  L’adresse mail est valide, pas vrai ?" !important; }
 
-figure:not([role="group"])::after {
-  content: "♥  L’élément <figure> regroupe une <img> et un <figcaption> : le rôle «group» semble indiqué, pas vrai ?" !important; }
-
-figure img:not([aria-describedby])::after,
-figure img:not([aria-describedby]):hover ~ *::after {
-  content: "♥  Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>." !important; }
-
-[target="_blank"]::after {
+[target$="blank"]::after {
   content: "♥  L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre. Mais vous y avez pensé, non :) ?" !important; }
 
 [href$=".pdf"]::after,
@@ -1173,11 +1166,10 @@ abbr:not([title])::after,
 abbr[title=""]::after {
   content: "☢  La balise <title> est vide. Vous brûlerez en enfer d’ici peu." !important; }
 
-img[alt=""]::after,
+img[alt=""]::after, img[alt=""]:hover ~ *::after,
 area[alt=""]::after,
-input[type="image"][alt=""]::after,
-img[alt=""]:hover ~ *::after,
 area[alt=""]:hover ~ *::after,
+input[type="image"][alt=""]::after,
 input[type="image"][alt=""]:hover ~ *::after {
   content: "☢  Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important; }
 
@@ -1202,7 +1194,7 @@ table[role="presentation"]::after {
   content: "☢  Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données. Vous pouvez vérifier ?" !important; }
 
 th[scope]::after {
-  content: "☢  Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? Elle le devrait, en tout cas." !important; }
+  content: "☢  Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? C’est ce que dit son [scope], en tout cas." !important; }
 
 th:not([scope])::after {
   content: "☢  Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à scope." !important; }
@@ -1223,19 +1215,17 @@ a[href^="javascript"]::after {
 a:empty::after {
   content: "☠  Ce lien est vide. Vide…" !important; }
 
-img:not([alt])::after,
+img:not([alt])::after, img:not([alt]):hover ~ *::after,
 area:not([alt])::after,
-input[type="image"]:not([alt])::after,
-img:not([alt]):hover ~ *::after,
 area:not([alt]):hover ~ *::after,
-input[type="image"]:not([alt]):hover ~ *::after {
+input[type="image"]::after,
+input[type="image"]:hover ~ *::after {
   content: "☠  Attribut [alt] manquant. Quelle hérésie." !important; }
 
-img[alt=" "]::after,
+img[alt=" "]::after, img[alt=" "]:hover ~ *::after,
 area[alt=" "]::after,
-input[type="image"][alt=" "]::after,
-img[alt=" "]:hover ~ *::after,
 area[alt=" "]:hover ~ *::after,
+input[type="image"][alt=" "]::after,
 input[type="image"][alt=" "]:hover ~ *::after {
   content: "☠  Un attribut [alt] *presque* vide. C’est une blague, non ?" !important; }
 
@@ -1256,7 +1246,7 @@ label:not([for])::after,
 label[for=""]::after {
   content: "☠  Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?" !important; }
 
-input:not([id])::after, input:not([id]):hover ~ *::after,
+input:not([type="submit"]):not([type="button"]):not([id]):not([title])::after, input:not([type="submit"]):not([type="button"]):not([id]):not([title]):hover ~ *::after,
 input[id=""]::after,
 input[id=""]:hover ~ *::after,
 select:not([id])::after,
@@ -1272,14 +1262,12 @@ textarea[id=""]:hover ~ *::after {
 optgroup:not([label])::after {
   content: "☠  Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. Dommage…" !important; }
 
-input:not([type])::after,
+input:not([type])::after, input:not([type]):hover ~ *::after,
 input[type=""]::after,
-input:not([type]):hover ~ *::after,
 input[type=""]:hover ~ *::after {
   content: "☠  Attribut [type] manquant ou vide. On met quoi, dans ce champ ?" !important; }
 
-input[type="submit"]:not([value])::after,
-input[type="submit"]:not([value]):hover ~ *::after {
+input[type="submit"]:not([value])::after, input[type="submit"]:not([value]):hover ~ *::after {
   content: "☠  Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?" !important; }
 
 iframe:not([title])::after,
@@ -1323,6 +1311,4 @@ html:not([lang])::after {
 [onvolumechange]::after, [onwaiting]::after {
   content: "☠  Attribut d’événements javascript. Vous êtes sûr de ce que vous faites ?" !important; }
 
-input[required]:not([aria-describedby]):hover ~ *::after,
-input[aria-required]:not([aria-describedby]):hover ~ *::after {
-  content: "☠  Si le champ est obligatoire, une indication doit exister : liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important; }
+/*# sourceMappingURL=a11y-fr.css.map */

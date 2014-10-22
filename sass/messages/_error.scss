@@ -17,22 +17,22 @@ a:empty::after {
   @include message('error', 'empty-link');
 }
 
-img:not([alt])::after,
-area:not([alt])::after,
-input[type="image"]:not([alt])::after,
-img:not([alt]):hover ~ *::after,
-area:not([alt]):hover ~ *::after,
-input[type="image"]:not([alt]):hover ~ *::after {
-  @include message('error', 'no-alt');
+img:not([alt]),
+area:not([alt]),
+input[type="image"] {
+  &::after,
+  &:hover ~ *::after {
+    @include message('error', 'no-alt');
+  }
 }
 
-img[alt=" "]::after,
-area[alt=" "]::after,
-input[type="image"][alt=" "]::after,
-img[alt=" "]:hover ~ *::after,
-area[alt=" "]:hover ~ *::after,
-input[type="image"][alt=" "]:hover ~ *::after {
-  @include message('error', 'empty-alt');
+img[alt=" "],
+area[alt=" "],
+input[type="image"][alt=" "] {
+  &::after,
+  &:hover ~ *::after {
+    @include message('error', 'empty-alt');
+  }
 }
 
 img:not([src]),
@@ -52,7 +52,7 @@ label[for=""]::after{
   @include message('error', 'no-for');
 }
 
-input:not([id]),
+input:not([type="submit"]):not([type="button"]):not([id]):not([title]),
 input[id=""],
 select:not([id]),
 select[id=""],
@@ -68,16 +68,19 @@ optgroup:not([label])::after {
   @include message('error', 'optgroup');
 }
 
-input:not([type])::after,
-input[type=""]::after,
-input:not([type]):hover ~ *::after,
-input[type=""]:hover ~ *::after {
-  @include message('error', 'no-type');
+input:not([type]),
+input[type=""] {
+  &::after,
+  &:hover ~ *::after {
+    @include message('error', 'no-type');
+  }
 }
 
-input[type="submit"]:not([value])::after,
-input[type="submit"]:not([value]):hover ~ *::after {
-  @include message('error', 'no-value');
+input[type="submit"]:not([value]) {
+  &::after,
+  &:hover ~ *::after {
+    @include message('error', 'no-value');
+  }
 }
 
 iframe:not([title])::after,
@@ -128,9 +131,4 @@ html:not([lang])::after {
   &::after {
     @include message('error', 'js-events');
   }
-}
-
-input[required]:not([aria-describedby]):hover ~ *::after,
-input[aria-required]:not([aria-describedby]):hover ~ *::after {
-  @include message('error', 'no-aria-describedby');
 }
