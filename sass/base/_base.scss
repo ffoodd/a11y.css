@@ -5,20 +5,23 @@ html {
 
   &::before {
     content:
-      map-get(theme-conf("error",    "name"), $language) ": " #{counter(unquote("error"))}    "\A "
-      map-get(theme-conf("warning",  "name"), $language) ": " #{counter(unquote("warning"))}  "\A "
-      map-get(theme-conf("obsolete", "name"), $language) ": " #{counter(unquote("obsolete"))} "\A "
-      map-get(theme-conf("advice",   "name"), $language) ": " #{counter(unquote("obsolete"))} "\A ";
-    background: rgba( 0, 0, 0, .8 );
+      map-get(theme-conf("error",    "name"), $language) ": " #{counter(error)}    "\A "
+      map-get(theme-conf("warning",  "name"), $language) ": " #{counter(warning)}  "\A "
+      map-get(theme-conf("obsolete", "name"), $language) ": " #{counter(obsolete)} "\A "
+      map-get(theme-conf("advice",   "name"), $language) ": " #{counter(obsolete)} "\A ";
+
+    background: rgba(0, 0, 0, .8);
     border: 1px solid black;
     border-radius: 3px;
-    bottom: 1em;
     box-shadow: inset 1px 1px 0 rgba( 255, 255, 255, .3 );
-    color: white;
-    font-family: monospace;
+
+    position: fixed;
+    bottom: 1em;
     left: 1em;
     padding: .75em 1em;
-    position: fixed;
+
+    color: white;
+    font-family: monospace;
     text-shadow: 1px 1px black;
     white-space: pre;
   }
