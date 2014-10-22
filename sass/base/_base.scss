@@ -3,7 +3,7 @@
 html {
   counter-reset: error warning obsolete advice;
 
-  &::after {
+  &::before {
     content:
         "Errors:   " counter(error)    "\A "
         "Warnings: " counter(warning)  "\A "
