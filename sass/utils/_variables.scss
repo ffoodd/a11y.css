@@ -33,6 +33,10 @@ $messages: (
       'fr': 'L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre.\A Mais vous y avez pensé, non :) ?',
       'en': 'User should be warned whenever a link is being opened in a new tab.\A But you know it already, right?'
     ),
+    'mailto': (
+      'fr': 'L’adresse mail est valide, pas vrai ?',
+      'en': 'This email is valid, isn\'t it?'
+    ),
     'file-format': (
       'fr': 'Le format et le poids d’un fichier téléchargeable devraient être indiqués — et il devrait être accessible.',
       'en': 'Format and size from a downloadable file should be displayed, and accessible.'
@@ -200,8 +204,8 @@ $messages: (
       'en': 'A presentional table should not contain elements proper to data tables.\A Would you mind double checking?'
     ),
     'th-scope': (
-      'fr': 'Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ?\A Elle le devrait, en tout cas.',
-      'en': 'This head cell applies to a full line/row, doesn\'t it?\A It should be anyway.'
+      'fr': 'Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ?\A C’est ce que dit son [scope], en tout cas.',
+      'en': 'This head cell applies to a full line/row, doesn\'t it?\A \'Cause that\'s what its [scope] says.'
     ),
     'th-no-scope': (
       'fr': 'Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ?\A Si oui, pensez à scope.',

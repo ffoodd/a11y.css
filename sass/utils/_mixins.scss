@@ -18,22 +18,6 @@
 }
 
 
-/// A11y outline
-/// @access private
-/// @param {String} $level - level to use
-/// @output `outline`, `outline-offset` and `z-index`, all with `!important`
-@mixin a11y-outline($level) {
-  outline: 4px solid transparentize(theme-conf($level, 'color'), .25) !important;
-  // @note Astuce suggérée par @7studio pour garantir un affichage homogène des bordures.
-  // @see https://github.com/ffoodd/a11y.css/issues/4
-  outline-offset: -4px;
-
-  &::after {
-    z-index: theme-conf($level, 'index') !important;
-  }
-}
-
-
 /// Get a message from the translation map based on the defined language.
 /// The message contains the icon associated to the message type.
 /// @group languages
@@ -52,4 +36,74 @@
 /// }
 @mixin message($theme, $key) {
   content: quote(unquote(theme-conf($theme, 'icon')) #{message($theme, $key)}) !important;
+}
+
+
+/// Theme mixin extending everything for a message,
+/// everything for the defined `$theme`,
+/// and including a message in a pseudo-element.
+/// @access private
+/// @param {String} $theme - Theme
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing - Whether or not to use message on self or next node
+@mixin theme($theme, $key, $self-closing: false) {
+  // Extend CSS related to the theme
+  @extend %a11y-#{$theme};
+
+  // If it's a self closing tag
+  // Include message on next item
+  @if $self-closing {
+    & ~ *::after {
+      @include message($theme, $key);
+      @extend %a11y-after;
+      z-index: theme-conf($theme, 'index') !important;
+    }
+
+    &:hover ~ *::after {
+      @extend %a11y-hover;
+    }
+  }
+
+  @else {
+    &::after {
+      @include message($theme, $key);
+      @extend %a11y-after;
+    }
+
+    &:hover::after {
+      @extend %a11y-hover;
+    }
+  }
+}
+
+
+/// Defines an advice
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing - Whether or not to use message on self or next node
+@mixin advice($key, $self-closing: false) {
+  @include theme('advice', $key, $self-closing);
+}
+
+
+/// Defines an error
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing - Whether or not to use message on self or next node
+@mixin error($key, $self-closing: false) {
+  @include theme('error', $key, $self-closing);
+}
+
+
+/// Defines a warning
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing - Whether or not to use message on self or next node
+@mixin warning($key, $self-closing: false) {
+  @include theme('warning', $key, $self-closing);
+}
+
+
+/// Defines an obsolete thing
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing - Whether or not to use message on self or next node
+@mixin obsolete($key, $self-closing: false) {
+  @include theme('obsolete', $key, $self-closing);
 }

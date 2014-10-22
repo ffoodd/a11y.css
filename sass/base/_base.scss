@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 html {
-  counter-reset: error warning obsolete advice;
+  counter-reset: map-keys($themes);
 
   &::before {
     content:
