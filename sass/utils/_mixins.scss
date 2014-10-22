@@ -18,25 +18,6 @@
 }
 
 
-<<<<<<< HEAD
-/// A11y outline
-/// @access private
-/// @param {String} $level - level to use
-/// @output `outline`, `outline-offset` and `z-index`, all with `!important`
-@mixin a11y-outline($level) {
-  outline: 4px solid transparentize(theme-conf($level, 'color'), .25) !important;
-  // @note Suggested trick by @7studio to grant a homogeneous appearance.
-  // @see https://github.com/ffoodd/a11y.css/issues/4
-  outline-offset: -4px;
-
-  &::after {
-    z-index: theme-conf($level, 'index') !important;
-  }
-}
-
-
-=======
->>>>>>> 1da6dce1d5754bbf7522fd6feae6713624049c25
 /// Get a message from the translation map based on the defined language.
 /// The message contains the icon associated to the message type.
 /// @group languages
