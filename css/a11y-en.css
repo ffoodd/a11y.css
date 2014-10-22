@@ -865,7 +865,7 @@ body[background], table[background], thead[background], tbody[background], tfoot
   td[height]::after, th[height]::after,
   td[nowrap]::after, th[nowrap]::after,
   body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
-    content: \271D\00A0 "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important; }
+    content: "✝ " "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important; }
 
 ul > *:not(li),
 ol > *:not(li),
@@ -1084,94 +1084,94 @@ track:not([kind="caption"]) ~ *::after {
   z-index: 2147483644 !important; }
 
 nav::after {
-  content: "\\2665\\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?" !important; }
+  content: "♥  Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?" !important; }
 
 main:not(:first-of-type)::after {
-  content: "\\2665\\00A0 The <main> tag is exclusively restricted to the main content area, thus should be unique. Repent yourself now." !important; }
+  content: "♥  The <main> tag is exclusively restricted to the main content area, thus should be unique. Repent yourself now." !important; }
 
 section:not([aria-labelledby])::after {
-  content: "\\2665\\00A0 Did you know the <section> has a semantic value? It should be described with text content." !important; }
+  content: "♥  Did you know the <section> has a semantic value? It should be described with text content." !important; }
 
 figure:not([role="group"])::after {
-  content: "\\2665\\00A0 The <figure> element gathers an <img> and a <figcaption>: `group` role sounds perfect, doesn't it?" !important; }
+  content: "♥  The <figure> element gathers an <img> and a <figcaption>: `group` role sounds perfect, doesn't it?" !important; }
 
 figure img:not([aria-describedby])::after,
 figure img:not([aria-describedby]):hover ~ *::after {
-  content: "\\2665\\00A0 An image within a <figure> element should be described by a <figcaption>." !important; }
+  content: "♥  An image within a <figure> element should be described by a <figcaption>." !important; }
 
 [target="_blank"]::after {
-  content: "\\2665\\00A0 User should be warned whenever a link is being opened in a new tab. But you know it already, right?" !important; }
+  content: "♥  User should be warned whenever a link is being opened in a new tab. But you know it already, right?" !important; }
 
 [href$=".pdf"]::after,
 [href$=".doc"]::after,
 [href$=".docx"]::after,
 [href$=".xls"]::after,
 [href$=".txt"]::after {
-  content: "\\2665\\00A0 Format and size from a downloadable file should be displayed, and accessible." !important; }
+  content: "♥  Format and size from a downloadable file should be displayed, and accessible." !important; }
 
 .search:not([role="search"])::after,
 #search:not([role="search"])::after {
-  content: "\\2665\\00A0 Gotcha! This component seems to the search. Where is the ARIA role?" !important; }
+  content: "♥  Gotcha! This component seems to the search. Where is the ARIA role?" !important; }
 
 [required]::after,
 [aria-required]::after,
 input[required]:hover ~ *::after,
 input[aria-required]:hover ~ *::after {
-  content: "\\2665\\00A0 The fact that a field is required should be explicitly pointed out, and not only with colors." !important; }
+  content: "♥  The fact that a field is required should be explicitly pointed out, and not only with colors." !important; }
 
 [hidden]:not(:empty)::after,
 [aria-hidden]:not(:empty)::after {
-  content: "\\2665\\00A0 Are you plain sure this element should be hidden to accessibility helpers?" !important; }
+  content: "♥  Are you plain sure this element should be hidden to accessibility helpers?" !important; }
 
 [placeholder]::after,
 input[placeholder]:hover ~ *::after {
-  content: "\\2665\\00A0 I hope you don't use this placeholder in place of a <label>." !important; }
+  content: "♥  I hope you don't use this placeholder in place of a <label>." !important; }
 
 video::after,
 audio::after {
-  content: "\\2665\\00A0 Interactive elements should have an alternate version, like a transcript or subtitles (<track>), and have their duration displayed." !important; }
+  content: "♥  Interactive elements should have an alternate version, like a transcript or subtitles (<track>), and have their duration displayed." !important; }
 
 track:not([kind="caption"])::after,
 track:not([kind="caption"]):hover ~ *::after {
-  content: "\\2665\\00A0 You use <track> which is good, but the [kind='caption'] would make things even better!" !important; }
+  content: "♥  You use <track> which is good, but the [kind='caption'] would make things even better!" !important; }
 
 svg::after,
 embed::after,
 canvas::after,
 object[type^="image"]::after,
 embed:hover ~ *::after {
-  content: "\\2665\\00A0 <svg>, <embed>, <canvas> and other <object> giving informations should be presented within a <figure> element and associated to a <figcaption> (or <desc> for <svg>)." !important; }
+  content: "♥  <svg>, <embed>, <canvas> and other <object> giving informations should be presented within a <figure> element and associated to a <figcaption> (or <desc> for <svg>)." !important; }
 
 img[title]::after,
 area[title]::after,
 svg[title]::after,
 img[title]:hover ~ *::after,
 area[title]:hover ~ *::after {
-  content: "\\2665\\00A0 [title] attribute, if present, should be identical to the given alternative. Your move!" !important; }
+  content: "♥  [title] attribute, if present, should be identical to the given alternative. Your move!" !important; }
 
 time::after,
 [datetime]::after,
 [pubdate]::after {
-  content: "\\2665\\00A0 Is this is a valid date format?" !important; }
+  content: "♥  Is this is a valid date format?" !important; }
 
 meta[charset]::after,
 meta[charset]:hover ~ *::after {
-  content: "\\2665\\00A0 Can you confirm this is UTF-8?" !important; }
+  content: "♥  Can you confirm this is UTF-8?" !important; }
 
 ul > *:not(li)::after,
 ol > *:not(li)::after,
 table > tr::after,
 table table::after,
 tbody + tfoot::after {
-  content: "\\2622\\00A0 Invalid nesting. Please be aware this may offend the viewer." !important; }
+  content: "☢  Invalid nesting. Please be aware this may offend the viewer." !important; }
 
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after {
-  content: "\\2622\\00A0 Invalid nesting. A fieldset should contain a <legend> before anything else." !important; }
+  content: "☢  Invalid nesting. A fieldset should contain a <legend> before anything else." !important; }
 
 abbr:not([title])::after,
 abbr[title=""]::after {
-  content: "\\2622\\00A0 Empty <title> tag. Hell is full of people like you." !important; }
+  content: "☢  Empty <title> tag. Hell is full of people like you." !important; }
 
 img[alt=""]::after,
 area[alt=""]::after,
@@ -1179,13 +1179,13 @@ input[type="image"][alt=""]::after,
 img[alt=""]:hover ~ *::after,
 area[alt=""]:hover ~ *::after,
 input[type="image"][alt=""]:hover ~ *::after {
-  content: "\\2622\\00A0 Empty [alt] attribute. This is only okay for decorative images. Is it a decorative image?" !important; }
+  content: "☢  Empty [alt] attribute. This is only okay for decorative images. Is it a decorative image?" !important; }
 
 [style]::after {
-  content: "\\2622\\00A0 Inline styles. You should be ashamed." !important; }
+  content: "☢  Inline styles. You should be ashamed." !important; }
 
 label + :not(input):not(select):not(textarea)::after {
-  content: "\\2622\\00A0 A field and its label should be one next to each other. But the next node doesn't look lik a field…" !important; }
+  content: "☢  A field and its label should be one next to each other. But the next node doesn't look lik a field…" !important; }
 
 div:empty::after,
 span:empty::after,
@@ -1193,35 +1193,35 @@ li:empty::after,
 p:empty::after,
 td:empty::after,
 th:empty::after {
-  content: "\\2622\\00A0 Empty element. Oh my." !important; }
+  content: "☢  Empty element. Oh my." !important; }
 
 title:empty::after {
-  content: "\\2622\\00A0 Empty <title> tag. Hell is full of people like you." !important; }
+  content: "☢  Empty <title> tag. Hell is full of people like you." !important; }
 
 table[role="presentation"]::after {
-  content: "\\2622\\00A0 A presentional table should not contain elements proper to data tables. Would you mind double checking?" !important; }
+  content: "☢  A presentional table should not contain elements proper to data tables. Would you mind double checking?" !important; }
 
 th[scope]::after {
-  content: "\\2622\\00A0 This head cell applies to a full line/row, doesn't it? It should be anyway." !important; }
+  content: "☢  This head cell applies to a full line/row, doesn't it? It should be anyway." !important; }
 
 th:not([scope])::after {
-  content: "\\2622\\00A0 This head cell doesn't apply to a full line/row, or does it? If so, think of [scope]." !important; }
+  content: "☢  This head cell doesn't apply to a full line/row, or does it? If so, think of [scope]." !important; }
 
 th:not([id])::after {
-  content: "\\2622\\00A0 I'm pretty this head cell would love an [id]." !important; }
+  content: "☢  I'm pretty this head cell would love an [id]." !important; }
 
 a:not([href])::after,
 a[href=""]::after {
-  content: "\\2620\\00A0 Missing [href] attribute. A link must lead to somewhere, don't you think?" !important; }
+  content: "☠  Missing [href] attribute. A link must lead to somewhere, don't you think?" !important; }
 
 a[href="#"]::after {
-  content: "\\2620\\00A0 [href='#'] attribute. Why? A <button> would be semantically better." !important; }
+  content: "☠  [href='#'] attribute. Why? A <button> would be semantically better." !important; }
 
 a[href^="javascript"]::after {
-  content: "\\2620\\00A0 [href] attribute starting with `javascript:`. Doesn`t sound good…" !important; }
+  content: "☠  [href] attribute starting with `javascript:`. Doesn`t sound good…" !important; }
 
 a:empty::after {
-  content: "\\2620\\00A0 Empty link. Empty…" !important; }
+  content: "☠  Empty link. Empty…" !important; }
 
 img:not([alt])::after,
 area:not([alt])::after,
@@ -1229,7 +1229,7 @@ input[type="image"]:not([alt])::after,
 img:not([alt]):hover ~ *::after,
 area:not([alt]):hover ~ *::after,
 input[type="image"]:not([alt]):hover ~ *::after {
-  content: "\\2620\\00A0 Missing [alt] attribute. Sacrilege!" !important; }
+  content: "☠  Missing [alt] attribute. Sacrilege!" !important; }
 
 img[alt=" "]::after,
 area[alt=" "]::after,
@@ -1237,7 +1237,7 @@ input[type="image"][alt=" "]::after,
 img[alt=" "]:hover ~ *::after,
 area[alt=" "]:hover ~ *::after,
 input[type="image"][alt=" "]:hover ~ *::after {
-  content: "\\2620\\00A0 [alt] attribute *almost* empty. Is it some kind of a joke?" !important; }
+  content: "☠  [alt] attribute *almost* empty. Is it some kind of a joke?" !important; }
 
 img:not([src])::after, img:not([src]):hover ~ *::after,
 img[src=""]::after,
@@ -1250,11 +1250,11 @@ input[type="image"][src=""]::after,
 input[type="image"][src=""]:hover ~ *::after,
 input[type="image"][src="#"]::after,
 input[type="image"][src="#"]:hover ~ *::after {
-  content: "\\2620\\00A0 [src] attribute missing or empty. Oh, well…" !important; }
+  content: "☠  [src] attribute missing or empty. Oh, well…" !important; }
 
 label:not([for])::after,
 label[for=""]::after {
-  content: "\\2620\\00A0 Missing [for] attribute. Still, this label must be here for some reason." !important; }
+  content: "☠  Missing [for] attribute. Still, this label must be here for some reason." !important; }
 
 input:not([id])::after, input:not([id]):hover ~ *::after,
 input[id=""]::after,
@@ -1267,39 +1267,39 @@ textarea:not([id])::after,
 textarea:not([id]):hover ~ *::after,
 textarea[id=""]::after,
 textarea[id=""]:hover ~ *::after {
-  content: "\\2620\\00A0 Missing or empty [id] attribute. Everybody has a name, even form fields." !important; }
+  content: "☠  Missing or empty [id] attribute. Everybody has a name, even form fields." !important; }
 
 optgroup:not([label])::after {
-  content: "\\2620\\00A0 You have gathered options, but no label attribute introduces this options group. Too bad…" !important; }
+  content: "☠  You have gathered options, but no label attribute introduces this options group. Too bad…" !important; }
 
 input:not([type])::after,
 input[type=""]::after,
 input:not([type]):hover ~ *::after,
 input[type=""]:hover ~ *::after {
-  content: "\\2620\\00A0 Missing or empty [type] attribute. What is the field for then?" !important; }
+  content: "☠  Missing or empty [type] attribute. What is the field for then?" !important; }
 
 input[type="submit"]:not([value])::after,
 input[type="submit"]:not([value]):hover ~ *::after {
-  content: "\\2620\\00A0 Missing [value] attribute. What should happen when I click?" !important; }
+  content: "☠  Missing [value] attribute. What should happen when I click?" !important; }
 
 iframe:not([title])::after,
 iframe[title=""]::after {
-  content: "\\2620\\00A0 Missing or empty [title]. Only God knows what is this <iframe>." !important; }
+  content: "☠  Missing or empty [title]. Only God knows what is this <iframe>." !important; }
 
 form:not([action])::after {
-  content: "\\2620\\00A0 Missing [action] attribute. What now?" !important; }
+  content: "☠  Missing [action] attribute. What now?" !important; }
 
 [class=""]::after {
-  content: "\\2620\\00A0 Missing [class] attribute. Why so much hatred?" !important; }
+  content: "☠  Missing [class] attribute. Why so much hatred?" !important; }
 
 [id=""]::after {
-  content: "\\2620\\00A0 Empty [id] attribute. Does this look like a game to you?" !important; }
+  content: "☠  Empty [id] attribute. Does this look like a game to you?" !important; }
 
 meta[http-equiv="refresh"]::after {
-  content: "\\2620\\00A0 <meta http-equiv='refresh'> should be removed. Forever." !important; }
+  content: "☠  <meta http-equiv='refresh'> should be removed. Forever." !important; }
 
 html:not([lang])::after {
-  content: "\\2620\\00A0 No lang / xml:lang found on <html> tag. Which language is that?" !important; }
+  content: "☠  No lang / xml:lang found on <html> tag. Which language is that?" !important; }
 
 [onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
 [onerror]::after, [onhaschange]::after, [onload]::after, [onmessage]::after,
@@ -1321,8 +1321,8 @@ html:not([lang])::after {
 [onratechange]::after, [onreadystatechange]::after, [onseeked]::after,
 [onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
 [onvolumechange]::after, [onwaiting]::after {
-  content: "\\2620\\00A0 JavaScript event attributes. You sure?" !important; }
+  content: "☠  JavaScript event attributes. You sure?" !important; }
 
 input[required]:not([aria-describedby]):hover ~ *::after,
 input[aria-required]:not([aria-describedby]):hover ~ *::after {
-  content: "\\2620\\00A0 If field is mandatory, it should be explicity told so. Map an indication to the field with [aria-describedby] and its [id]." !important; }
+  content: "☠  If field is mandatory, it should be explicity told so. Map an indication to the field with [aria-describedby] and its [id]." !important; }

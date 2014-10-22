@@ -865,7 +865,7 @@ body[background], table[background], thead[background], tbody[background], tfoot
   td[height]::after, th[height]::after,
   td[nowrap]::after, th[nowrap]::after,
   body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
-    content: \271D\00A0 "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important; }
+    content: "✝ " "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses." !important; }
 
 ul > *:not(li),
 ol > *:not(li),
@@ -1084,94 +1084,94 @@ track:not([kind="caption"]) ~ *::after {
   z-index: 2147483644 !important; }
 
 nav::after {
-  content: "\\2665\\00A0 La balise <nav> est réservée à la structuration des zones de navigations principales et secondaires. Vous le saviez ?" !important; }
+  content: "♥  La balise <nav> est réservée à la structuration des zones de navigations principales et secondaires. Vous le saviez ?" !important; }
 
 main:not(:first-of-type)::after {
-  content: "\\2665\\00A0 <main> est réservée à la zone de contenu principal, et doit donc être unique. Repentez-vous et tout ira bien :) ." !important; }
+  content: "♥  <main> est réservée à la zone de contenu principal, et doit donc être unique. Repentez-vous et tout ira bien :) ." !important; }
 
 section:not([aria-labelledby])::after {
-  content: "\\2665\\00A0 L’élément <section> a une valeur sémantique, vous le saviez ? Il doit donc être décrit par un texte." !important; }
+  content: "♥  L’élément <section> a une valeur sémantique, vous le saviez ? Il doit donc être décrit par un texte." !important; }
 
 figure:not([role="group"])::after {
-  content: "\\2665\\00A0 L’élément <figure> regroupe une <img> et un <figcaption> : le rôle «group» semble indiqué, pas vrai ?" !important; }
+  content: "♥  L’élément <figure> regroupe une <img> et un <figcaption> : le rôle «group» semble indiqué, pas vrai ?" !important; }
 
 figure img:not([aria-describedby])::after,
 figure img:not([aria-describedby]):hover ~ *::after {
-  content: "\\2665\\00A0 Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>." !important; }
+  content: "♥  Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>." !important; }
 
 [target="_blank"]::after {
-  content: "\\2665\\00A0 L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre. Mais vous y avez pensé, non :) ?" !important; }
+  content: "♥  L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre. Mais vous y avez pensé, non :) ?" !important; }
 
 [href$=".pdf"]::after,
 [href$=".doc"]::after,
 [href$=".docx"]::after,
 [href$=".xls"]::after,
 [href$=".txt"]::after {
-  content: "\\2665\\00A0 Le format et le poids d’un fichier téléchargeable devraient être indiqués — et il devrait être accessible." !important; }
+  content: "♥  Le format et le poids d’un fichier téléchargeable devraient être indiqués — et il devrait être accessible." !important; }
 
 .search:not([role="search"])::after,
 #search:not([role="search"])::after {
-  content: "\\2665\\00A0 Vu ! Cet élément semble être la recherche. Mais alors, le rôle ARIA est là, non ?" !important; }
+  content: "♥  Vu ! Cet élément semble être la recherche. Mais alors, le rôle ARIA est là, non ?" !important; }
 
 [required]::after,
 [aria-required]::after,
 input[required]:hover ~ *::after,
 input[aria-required]:hover ~ *::after {
-  content: "\\2665\\00A0 Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur." !important; }
+  content: "♥  Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur." !important; }
 
 [hidden]:not(:empty)::after,
 [aria-hidden]:not(:empty)::after {
-  content: "\\2665\\00A0 Cet élément — masqué aux technologies d’assistance — ne porte aucune information, vous en êtes bien sûr ?" !important; }
+  content: "♥  Cet élément — masqué aux technologies d’assistance — ne porte aucune information, vous en êtes bien sûr ?" !important; }
 
 [placeholder]::after,
 input[placeholder]:hover ~ *::after {
-  content: "\\2665\\00A0 Ce placeholder ne remplace pas un <label>, j’espère ? Y’en a qui ont essayé…" !important; }
+  content: "♥  Ce placeholder ne remplace pas un <label>, j’espère ? Y’en a qui ont essayé…" !important; }
 
 video::after,
 audio::after {
-  content: "\\2665\\00A0 Les éléments interactifs doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée." !important; }
+  content: "♥  Les éléments interactifs doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée." !important; }
 
 track:not([kind="caption"])::after,
 track:not([kind="caption"]):hover ~ *::after {
-  content: "\\2665\\00A0 Vous utilisez <track>, c’est bon signe ! Mais l’attribut kind='caption' vous intéressera sûrement aussi :) ." !important; }
+  content: "♥  Vous utilisez <track>, c’est bon signe ! Mais l’attribut kind='caption' vous intéressera sûrement aussi :) ." !important; }
 
 svg::after,
 embed::after,
 canvas::after,
 object[type^="image"]::after,
 embed:hover ~ *::after {
-  content: "\\2665\\00A0 Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>)." !important; }
+  content: "♥  Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>)." !important; }
 
 img[title]::after,
 area[title]::after,
 svg[title]::after,
 img[title]:hover ~ *::after,
 area[title]:hover ~ *::after {
-  content: "\\2665\\00A0 L’attribut title, s’il est présent, doit être identique à l’alternative renseignée. À vous de jouer ;-) ." !important; }
+  content: "♥  L’attribut title, s’il est présent, doit être identique à l’alternative renseignée. À vous de jouer ;-) ." !important; }
 
 time::after,
 [datetime]::after,
 [pubdate]::after {
-  content: "\\2665\\00A0 Le format de date est-il compréhensible ?" !important; }
+  content: "♥  Le format de date est-il compréhensible ?" !important; }
 
 meta[charset]::after,
 meta[charset]:hover ~ *::after {
-  content: "\\2665\\00A0 Sommes-nous bien en utf-8 ?" !important; }
+  content: "♥  Sommes-nous bien en utf-8 ?" !important; }
 
 ul > *:not(li)::after,
 ol > *:not(li)::after,
 table > tr::after,
 table table::after,
 tbody + tfoot::after {
-  content: "\\2622\\00A0 Imbrication inadéquate d’éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?" !important; }
+  content: "☢  Imbrication inadéquate d’éléments. Ça peut heurter la sensibilité des plus jeunes, vous savez ?" !important; }
 
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after {
-  content: "\\2622\\00A0 Imbrication inadéquate d’éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important; }
+  content: "☢  Imbrication inadéquate d’éléments. Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important; }
 
 abbr:not([title])::after,
 abbr[title=""]::after {
-  content: "\\2622\\00A0 La balise <title> est vide. Vous brûlerez en enfer d’ici peu." !important; }
+  content: "☢  La balise <title> est vide. Vous brûlerez en enfer d’ici peu." !important; }
 
 img[alt=""]::after,
 area[alt=""]::after,
@@ -1179,13 +1179,13 @@ input[type="image"][alt=""]::after,
 img[alt=""]:hover ~ *::after,
 area[alt=""]:hover ~ *::after,
 input[type="image"][alt=""]:hover ~ *::after {
-  content: "\\2622\\00A0 Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important; }
+  content: "☢  Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important; }
 
 [style]::after {
-  content: "\\2622\\00A0 Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !" !important; }
+  content: "☢  Éléments supportant des styles en ligne. Les pauvres… Vous devriez avoir honte !" !important; }
 
 label + :not(input):not(select):not(textarea)::after {
-  content: "\\2622\\00A0 Un champ et son label devrait être accolés. Mais ce qui suit ce label ne ressemble pas à un champ…" !important; }
+  content: "☢  Un champ et son label devrait être accolés. Mais ce qui suit ce label ne ressemble pas à un champ…" !important; }
 
 div:empty::after,
 span:empty::after,
@@ -1193,35 +1193,35 @@ li:empty::after,
 p:empty::after,
 td:empty::after,
 th:empty::after {
-  content: "\\2622\\00A0 Élément vide. Diantre." !important; }
+  content: "☢  Élément vide. Diantre." !important; }
 
 title:empty::after {
-  content: "\\2622\\00A0 La balise <title> est vide. Vous brûlerez en enfer d’ici peu." !important; }
+  content: "☢  La balise <title> est vide. Vous brûlerez en enfer d’ici peu." !important; }
 
 table[role="presentation"]::after {
-  content: "\\2622\\00A0 Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données. Vous pouvez vérifier ?" !important; }
+  content: "☢  Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données. Vous pouvez vérifier ?" !important; }
 
 th[scope]::after {
-  content: "\\2622\\00A0 Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? Elle le devrait, en tout cas." !important; }
+  content: "☢  Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? Elle le devrait, en tout cas." !important; }
 
 th:not([scope])::after {
-  content: "\\2622\\00A0 Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à scope." !important; }
+  content: "☢  Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à scope." !important; }
 
 th:not([id])::after {
-  content: "\\2622\\00A0 Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête." !important; }
+  content: "☢  Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête." !important; }
 
 a:not([href])::after,
 a[href=""]::after {
-  content: "\\2620\\00A0 Attribut [href] manquant. Un lien doit avoir une cible, non ?" !important; }
+  content: "☠  Attribut [href] manquant. Un lien doit avoir une cible, non ?" !important; }
 
 a[href="#"]::after {
-  content: "\\2620\\00A0 Attribut [href='#']. Pourquoi ? Un <button> semble plus indiqué." !important; }
+  content: "☠  Attribut [href='#']. Pourquoi ? Un <button> semble plus indiqué." !important; }
 
 a[href^="javascript"]::after {
-  content: "\\2620\\00A0 Attribut [href] débutant par javascript. Ça n’augure rien de bon…" !important; }
+  content: "☠  Attribut [href] débutant par javascript. Ça n’augure rien de bon…" !important; }
 
 a:empty::after {
-  content: "\\2620\\00A0 Ce lien est vide. Vide…" !important; }
+  content: "☠  Ce lien est vide. Vide…" !important; }
 
 img:not([alt])::after,
 area:not([alt])::after,
@@ -1229,7 +1229,7 @@ input[type="image"]:not([alt])::after,
 img:not([alt]):hover ~ *::after,
 area:not([alt]):hover ~ *::after,
 input[type="image"]:not([alt]):hover ~ *::after {
-  content: "\\2620\\00A0 Attribut [alt] manquant. Quelle hérésie." !important; }
+  content: "☠  Attribut [alt] manquant. Quelle hérésie." !important; }
 
 img[alt=" "]::after,
 area[alt=" "]::after,
@@ -1237,7 +1237,7 @@ input[type="image"][alt=" "]::after,
 img[alt=" "]:hover ~ *::after,
 area[alt=" "]:hover ~ *::after,
 input[type="image"][alt=" "]:hover ~ *::after {
-  content: "\\2620\\00A0 Un attribut [alt] *presque* vide. C’est une blague, non ?" !important; }
+  content: "☠  Un attribut [alt] *presque* vide. C’est une blague, non ?" !important; }
 
 img:not([src])::after, img:not([src]):hover ~ *::after,
 img[src=""]::after,
@@ -1250,11 +1250,11 @@ input[type="image"][src=""]::after,
 input[type="image"][src=""]:hover ~ *::after,
 input[type="image"][src="#"]::after,
 input[type="image"][src="#"]:hover ~ *::after {
-  content: "\\2620\\00A0 Attribut [src] manquant ou vide. Bon." !important; }
+  content: "☠  Attribut [src] manquant ou vide. Bon." !important; }
 
 label:not([for])::after,
 label[for=""]::after {
-  content: "\\2620\\00A0 Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?" !important; }
+  content: "☠  Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?" !important; }
 
 input:not([id])::after, input:not([id]):hover ~ *::after,
 input[id=""]::after,
@@ -1267,39 +1267,39 @@ textarea:not([id])::after,
 textarea:not([id]):hover ~ *::after,
 textarea[id=""]::after,
 textarea[id=""]:hover ~ *::after {
-  content: "\\2620\\00A0 Attribut [id] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire." !important; }
+  content: "☠  Attribut [id] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire." !important; }
 
 optgroup:not([label])::after {
-  content: "\\2620\\00A0 Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. Dommage…" !important; }
+  content: "☠  Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. Dommage…" !important; }
 
 input:not([type])::after,
 input[type=""]::after,
 input:not([type]):hover ~ *::after,
 input[type=""]:hover ~ *::after {
-  content: "\\2620\\00A0 Attribut [type] manquant ou vide. On met quoi, dans ce champ ?" !important; }
+  content: "☠  Attribut [type] manquant ou vide. On met quoi, dans ce champ ?" !important; }
 
 input[type="submit"]:not([value])::after,
 input[type="submit"]:not([value]):hover ~ *::after {
-  content: "\\2620\\00A0 Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?" !important; }
+  content: "☠  Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?" !important; }
 
 iframe:not([title])::after,
 iframe[title=""]::after {
-  content: "\\2620\\00A0 Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>." !important; }
+  content: "☠  Attribut [title] manquant ou vide. Dieu seul sait ce que contient cette <iframe>." !important; }
 
 form:not([action])::after {
-  content: "\\2620\\00A0 Attribut [action] manquant. Et après, il se passe quoi ?" !important; }
+  content: "☠  Attribut [action] manquant. Et après, il se passe quoi ?" !important; }
 
 [class=""]::after {
-  content: "\\2620\\00A0 Attribut [class] vide. Pourquoi tant de haine ?" !important; }
+  content: "☠  Attribut [class] vide. Pourquoi tant de haine ?" !important; }
 
 [id=""]::after {
-  content: "\\2620\\00A0 Attribut [id] vide. Sérieusement ?" !important; }
+  content: "☠  Attribut [id] vide. Sérieusement ?" !important; }
 
 meta[http-equiv="refresh"]::after {
-  content: "\\2620\\00A0 <meta http-equiv='refresh'> devrait être supprimé. Définitivement." !important; }
+  content: "☠  <meta http-equiv='refresh'> devrait être supprimé. Définitivement." !important; }
 
 html:not([lang])::after {
-  content: "\\2620\\00A0 Pas d’attribut lang / xml:lang sur la balise <html>. Vous parlez quelle langue, vous ?" !important; }
+  content: "☠  Pas d’attribut lang / xml:lang sur la balise <html>. Vous parlez quelle langue, vous ?" !important; }
 
 [onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
 [onerror]::after, [onhaschange]::after, [onload]::after, [onmessage]::after,
@@ -1321,8 +1321,8 @@ html:not([lang])::after {
 [onratechange]::after, [onreadystatechange]::after, [onseeked]::after,
 [onseeking]::after, [onstalled]::after, [onsuspend]::after, [ontimeupdate]::after,
 [onvolumechange]::after, [onwaiting]::after {
-  content: "\\2620\\00A0 Attribut d’événements javascript. Vous êtes sûr de ce que vous faites ?" !important; }
+  content: "☠  Attribut d’événements javascript. Vous êtes sûr de ce que vous faites ?" !important; }
 
 input[required]:not([aria-describedby]):hover ~ *::after,
 input[aria-required]:not([aria-describedby]):hover ~ *::after {
-  content: "\\2620\\00A0 Si le champ est obligatoire, une indication doit exister : liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important; }
+  content: "☠  Si le champ est obligatoire, une indication doit exister : liez-la au champ à l’aide de aria-describedby et de son ID. Merci !" !important; }
