@@ -5,15 +5,15 @@ nav::after, main:not(:first-of-type)::after, section:not([aria-labelledby])::aft
 [href$=".xls"]::after,
 [href$=".txt"]::after, .search:not([role="search"])::after,
 #search:not([role="search"])::after, [required]::after,
-[aria-required]::after, input[required] ~ *::after,
-input[aria-required] ~ *::after, [hidden]:not(:empty)::after,
-[aria-hidden]:not(:empty)::after, [placeholder]::after, input[placeholder] ~ *::after, video::after,
-audio::after, track:not([kind="caption"]) ~ *::after, svg::after,
+[aria-required]::after, input[required] ~ ::after,
+input[aria-required] ~ ::after, [hidden]:not(:empty)::after,
+[aria-hidden]:not(:empty)::after, [placeholder]::after, input[placeholder] ~ ::after, video::after,
+audio::after, track:not([kind="caption"]) ~ ::after, svg::after,
 canvas::after,
-object[type^="image"]::after, embed ~ *::after, svg[title]::after, img[title] ~ *::after,
-area[title] ~ *::after, time::after,
+object[type^="image"]::after, embed ~ ::after, svg[title]::after, img[title] ~ ::after,
+area[title] ~ ::after, time::after,
 [datetime]::after,
-[pubdate]::after, meta[charset] ~ *::after, applet::after,
+[pubdate]::after, meta[charset] ~ ::after, applet::after,
 acronym::after,
 bgsound::after,
 dir::after,
@@ -113,34 +113,32 @@ table > tr::after,
 table table::after,
 tbody + tfoot::after, fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after, abbr:not([title])::after,
-abbr[title=""]::after, img[alt=""] ~ *::after,
-area[alt=""] ~ *::after,
-input[type="image"][alt=""] ~ *::after, [style]::after, label + :not(input):not(select):not(textarea)::after, div:empty::after,
+abbr[title=""]::after, img[alt=""] ~ ::after,
+area[alt=""] ~ ::after,
+input[type="image"][alt=""] ~ ::after, [style]::after, label + :not(input):not(select):not(textarea)::after, div:empty::after,
 span:empty::after,
 li:empty::after,
 p:empty::after,
 td:empty::after,
 th:empty::after,
 title:empty::after, table[role="presentation"]::after, th[scope]::after, th:not([scope])::after, th:not([id])::after, a:not([href])::after,
-a[href=""]::after, a[href^="javascript"]::after, a[href="#"]::after, a:empty::after, img:not([alt]) ~ *::after,
-area:not([alt]) ~ *::after,
-input[type="image"]:not([alt]) ~ *::after, img[alt=" "] ~ *::after,
-area[alt=" "] ~ *::after,
-input[type="image"][alt=" "] ~ *::after, img:not([src]) ~ *::after,
-img[src=""] ~ *::after,
-img[src="#"] ~ *::after,
-input[type="image"]:not([src]) ~ *::after,
-input[type="image"][src=""] ~ *::after,
-input[type="image"][src="#"] ~ *::after, label:not([for])::after,
-label[for=""]::after, input:not([id]) ~ *::after,
-input[id=""] ~ *::after,
-select:not([id]) ~ *::after,
-select[id=""] ~ *::after,
-textarea:not([id]) ~ *::after,
-textarea[id=""] ~ *::after, input:not([type]) ~ *::after,
-input[type=""] ~ *::after, input[type="submit"]:not([value]) ~ *::after,
-input[type="button"]:not([value]) ~ *::after, optgroup:not([label])::after, iframe:not([title])::after,
-iframe[title=""]::after, form:not([action])::after, [class=""]::after, [id=""]::after, html:not([lang])::after, meta[http-equiv="refresh"] ~ *::after, [onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
+a[href=""]::after, a[href^="javascript"]::after, a[href="#"]::after, a:empty::after, img:not([alt]) ~ ::after,
+area:not([alt]) ~ ::after,
+input[type="image"]:not([alt]) ~ ::after, img:not([src]) ~ ::after,
+img[src=""] ~ ::after,
+img[src="#"] ~ ::after,
+input[type="image"]:not([src]) ~ ::after,
+input[type="image"][src=""] ~ ::after,
+input[type="image"][src="#"] ~ ::after, label:not([for])::after,
+label[for=""]::after, input:not([id]) ~ ::after,
+input[id=""] ~ ::after,
+select:not([id]) ~ ::after,
+select[id=""] ~ ::after,
+textarea:not([id]) ~ ::after,
+textarea[id=""] ~ ::after, input:not([type]) ~ ::after,
+input[type=""] ~ ::after, input[type="submit"]:not([value]) ~ ::after,
+input[type="button"]:not([value]) ~ ::after, optgroup:not([label])::after, iframe:not([title])::after,
+iframe[title=""]::after, form:not([action])::after, [class=""]::after, [id=""]::after, html:not([lang])::after, meta[http-equiv="refresh"] ~ ::after, [onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
 [onerror]::after, [onhaschange]::after, [onload]::after, [onmessage]::after,
 [onoffline]::after, [ononline]::after, [onpagehide]::after, [onpageshow]::after,
 [onpopstate]::after, [onredo]::after, [onresize]::after, [onstorage]::after,
@@ -191,15 +189,15 @@ nav:hover::after, main:not(:first-of-type):hover::after, section:not([aria-label
 [href$=".xls"]:hover::after,
 [href$=".txt"]:hover::after, .search:not([role="search"]):hover::after,
 #search:not([role="search"]):hover::after, [required]:hover::after,
-[aria-required]:hover::after, input[required]:hover ~ *::after,
-input[aria-required]:hover ~ *::after, [hidden]:not(:empty):hover::after,
-[aria-hidden]:not(:empty):hover::after, [placeholder]:hover::after, input[placeholder]:hover ~ *::after, video:hover::after,
-audio:hover::after, track:not([kind="caption"]):hover ~ *::after, svg:hover::after,
+[aria-required]:hover::after, input[required]:hover ~ ::after,
+input[aria-required]:hover ~ ::after, [hidden]:not(:empty):hover::after,
+[aria-hidden]:not(:empty):hover::after, [placeholder]:hover::after, input[placeholder]:hover ~ ::after, video:hover::after,
+audio:hover::after, track:not([kind="caption"]):hover ~ ::after, svg:hover::after,
 canvas:hover::after,
-object[type^="image"]:hover::after, embed:hover ~ *::after, svg[title]:hover::after, img[title]:hover ~ *::after,
-area[title]:hover ~ *::after, time:hover::after,
+object[type^="image"]:hover::after, embed:hover ~ ::after, svg[title]:hover::after, img[title]:hover ~ ::after,
+area[title]:hover ~ ::after, time:hover::after,
 [datetime]:hover::after,
-[pubdate]:hover::after, meta[charset]:hover ~ *::after, applet:hover::after,
+[pubdate]:hover::after, meta[charset]:hover ~ ::after, applet:hover::after,
 acronym:hover::after,
 bgsound:hover::after,
 dir:hover::after,
@@ -299,34 +297,32 @@ table > tr:hover::after,
 table table:hover::after,
 tbody + tfoot:hover::after, fieldset > :not(legend):first-child:hover::after,
 fieldset > legend:not(:first-child):hover::after, abbr:not([title]):hover::after,
-abbr[title=""]:hover::after, img[alt=""]:hover ~ *::after,
-area[alt=""]:hover ~ *::after,
-input[type="image"][alt=""]:hover ~ *::after, [style]:hover::after, label + :not(input):not(select):not(textarea):hover::after, div:empty:hover::after,
+abbr[title=""]:hover::after, img[alt=""]:hover ~ ::after,
+area[alt=""]:hover ~ ::after,
+input[type="image"][alt=""]:hover ~ ::after, [style]:hover::after, label + :not(input):not(select):not(textarea):hover::after, div:empty:hover::after,
 span:empty:hover::after,
 li:empty:hover::after,
 p:empty:hover::after,
 td:empty:hover::after,
 th:empty:hover::after,
 title:empty:hover::after, table[role="presentation"]:hover::after, th[scope]:hover::after, th:not([scope]):hover::after, th:not([id]):hover::after, a:not([href]):hover::after,
-a[href=""]:hover::after, a[href^="javascript"]:hover::after, a[href="#"]:hover::after, a:empty:hover::after, img:not([alt]):hover ~ *::after,
-area:not([alt]):hover ~ *::after,
-input[type="image"]:not([alt]):hover ~ *::after, img[alt=" "]:hover ~ *::after,
-area[alt=" "]:hover ~ *::after,
-input[type="image"][alt=" "]:hover ~ *::after, img:not([src]):hover ~ *::after,
-img[src=""]:hover ~ *::after,
-img[src="#"]:hover ~ *::after,
-input[type="image"]:not([src]):hover ~ *::after,
-input[type="image"][src=""]:hover ~ *::after,
-input[type="image"][src="#"]:hover ~ *::after, label:not([for]):hover::after,
-label[for=""]:hover::after, input:not([id]):hover ~ *::after,
-input[id=""]:hover ~ *::after,
-select:not([id]):hover ~ *::after,
-select[id=""]:hover ~ *::after,
-textarea:not([id]):hover ~ *::after,
-textarea[id=""]:hover ~ *::after, input:not([type]):hover ~ *::after,
-input[type=""]:hover ~ *::after, input[type="submit"]:not([value]):hover ~ *::after,
-input[type="button"]:not([value]):hover ~ *::after, optgroup:not([label]):hover::after, iframe:not([title]):hover::after,
-iframe[title=""]:hover::after, form:not([action]):hover::after, [class=""]:hover::after, [id=""]:hover::after, html:not([lang]):hover::after, meta[http-equiv="refresh"]:hover ~ *::after, [onafterprint]:hover::after, [onbeforeprint]:hover::after, [onbeforeunload]:hover::after,
+a[href=""]:hover::after, a[href^="javascript"]:hover::after, a[href="#"]:hover::after, a:empty:hover::after, img:not([alt]):hover ~ ::after,
+area:not([alt]):hover ~ ::after,
+input[type="image"]:not([alt]):hover ~ ::after, img:not([src]):hover ~ ::after,
+img[src=""]:hover ~ ::after,
+img[src="#"]:hover ~ ::after,
+input[type="image"]:not([src]):hover ~ ::after,
+input[type="image"][src=""]:hover ~ ::after,
+input[type="image"][src="#"]:hover ~ ::after, label:not([for]):hover::after,
+label[for=""]:hover::after, input:not([id]):hover ~ ::after,
+input[id=""]:hover ~ ::after,
+select:not([id]):hover ~ ::after,
+select[id=""]:hover ~ ::after,
+textarea:not([id]):hover ~ ::after,
+textarea[id=""]:hover ~ ::after, input:not([type]):hover ~ ::after,
+input[type=""]:hover ~ ::after, input[type="submit"]:not([value]):hover ~ ::after,
+input[type="button"]:not([value]):hover ~ ::after, optgroup:not([label]):hover::after, iframe:not([title]):hover::after,
+iframe[title=""]:hover::after, form:not([action]):hover::after, [class=""]:hover::after, [id=""]:hover::after, html:not([lang]):hover::after, meta[http-equiv="refresh"]:hover ~ ::after, [onafterprint]:hover::after, [onbeforeprint]:hover::after, [onbeforeunload]:hover::after,
 [onerror]:hover::after, [onhaschange]:hover::after, [onload]:hover::after, [onmessage]:hover::after,
 [onoffline]:hover::after, [ononline]:hover::after, [onpagehide]:hover::after, [onpageshow]:hover::after,
 [onpopstate]:hover::after, [onredo]:hover::after, [onresize]:hover::after, [onstorage]:hover::after,
@@ -357,9 +353,7 @@ iframe[title=""]:hover::after, form:not([action]):hover::after, [class=""]:hover
 a:not([href]),
 a[href=""], a[href^="javascript"], a[href="#"], a:empty, img:not([alt]),
 area:not([alt]),
-input[type="image"]:not([alt]), img[alt=" "],
-area[alt=" "],
-input[type="image"][alt=" "], img:not([src]),
+input[type="image"]:not([alt]), img:not([src]),
 img[src=""],
 img[src="#"],
 input[type="image"]:not([src]),
@@ -400,9 +394,7 @@ iframe[title=""], form:not([action]), [class=""], [id=""], html:not([lang]), met
   a:not([href])::after,
   a[href=""]::after, a[href^="javascript"]::after, a[href="#"]::after, a:empty::after, img:not([alt])::after,
   area:not([alt])::after,
-  input[type="image"]:not([alt])::after, img[alt=" "]::after,
-  area[alt=" "]::after,
-  input[type="image"][alt=" "]::after, img:not([src])::after,
+  input[type="image"]:not([alt])::after, img:not([src])::after,
   img[src=""]::after,
   img[src="#"]::after,
   input[type="image"]:not([src])::after,
@@ -730,13 +722,13 @@ section:not([aria-labelledby])::after {
   content: "♥  Did you know the <section> has a semantic value? It should be described with text content." !important; }
 
 figure:not([role="group"])::after {
-  content: "♥  The <figure> element gathers an <img> and a <figcaption>: `group` role sounds perfect, doesn't it?" !important; }
+  content: "♥  The <figure> element gathers an <img> and a <figcaption>: `group` role sounds perfect, doesn’t it?" !important; }
 
 figure img:not([aria-describedby])::after {
   content: "♥  An image within a <figure> element should be described by a <figcaption>." !important; }
 
 [href^="mailto"]::after {
-  content: "♥  This email is valid, isn't it?" !important; }
+  content: "♥  This email is valid, isn’t it?" !important; }
 
 [target$="blank"]::after::after {
   content: "♥  User should be warned whenever a link is being opened in a new tab. But you know it already, right?" !important; }
@@ -756,8 +748,8 @@ figure img:not([aria-describedby])::after {
 [aria-required]::after {
   content: "♥  The fact that a field is required should be explicitly pointed out, and not only with colors." !important; }
 
-input[required] ~ *::after,
-input[aria-required] ~ *::after {
+input[required] ~ ::after,
+input[aria-required] ~ ::after {
   content: "♥  The fact that a field is required should be explicitly pointed out, and not only with colors." !important;
   z-index: 2147483644 !important; }
 
@@ -766,18 +758,18 @@ input[aria-required] ~ *::after {
   content: "♥  Are you plain sure this element should be hidden to accessibility helpers?" !important; }
 
 [placeholder]::after {
-  content: "♥  I hope you don't use this placeholder in place of a <label>." !important; }
+  content: "♥  I hope you don’t use this placeholder in place of a <label>." !important; }
 
-input[placeholder] ~ *::after {
-  content: "♥  I hope you don't use this placeholder in place of a <label>." !important;
+input[placeholder] ~ ::after {
+  content: "♥  I hope you don’t use this placeholder in place of a <label>." !important;
   z-index: 2147483644 !important; }
 
 video::after,
 audio::after {
   content: "♥  Interactive elements should have an alternate version, like a transcript or subtitles (<track>), and have their duration displayed." !important; }
 
-track:not([kind="caption"]) ~ *::after {
-  content: "♥  You use <track> which is good, but the [kind='caption'] would make things even better!" !important;
+track:not([kind="caption"]) ~ ::after {
+  content: '♥  You use <track> which is good, but the [kind="caption"] would make things even better!' !important;
   z-index: 2147483644 !important; }
 
 svg::after,
@@ -785,15 +777,15 @@ canvas::after,
 object[type^="image"]::after {
   content: "♥  <svg>, <embed>, <canvas> and other <object> giving informations should be presented within a <figure> element and associated to a <figcaption> (or <desc> for <svg>)." !important; }
 
-embed ~ *::after {
+embed ~ ::after {
   content: "♥  <svg>, <embed>, <canvas> and other <object> giving informations should be presented within a <figure> element and associated to a <figcaption> (or <desc> for <svg>)." !important;
   z-index: 2147483644 !important; }
 
 svg[title]::after {
   content: "♥  [title] attribute, if present, should be identical to the given alternative. Your move!" !important; }
 
-img[title] ~ *::after,
-area[title] ~ *::after {
+img[title] ~ ::after,
+area[title] ~ ::after {
   content: "♥  [title] attribute, if present, should be identical to the given alternative. Your move!" !important;
   z-index: 2147483644 !important; }
 
@@ -802,7 +794,7 @@ time::after,
 [pubdate]::after {
   content: "♥  Is this is a valid date format?" !important; }
 
-meta[charset] ~ *::after {
+meta[charset] ~ ::after {
   content: "♥  Can you confirm this is UTF-8?" !important;
   z-index: 2147483644 !important; }
 
@@ -901,7 +893,7 @@ table[rules]::after,
 td[height]::after, th[height]::after,
 td[nowrap]::after, th[nowrap]::after,
 body[background]::after, table[background]::after, thead[background]::after, tbody[background]::after, tfoot[background]::after, tr[background]::after, td[background]::after, th[background]::after {
-  content: "✝  Obsolete element or attribute. Please make sure you know what you're doing." !important; }
+  content: "✝  Obsolete element or attribute. Please make sure you know what you’re doing." !important; }
 
 ul > *:not(li)::after,
 ol > *:not(li)::after,
@@ -918,9 +910,9 @@ abbr:not([title])::after,
 abbr[title=""]::after {
   content: "☢  Empty <title> tag. Hell is full of people like you." !important; }
 
-img[alt=""] ~ *::after,
-area[alt=""] ~ *::after,
-input[type="image"][alt=""] ~ *::after {
+img[alt=""] ~ ::after,
+area[alt=""] ~ ::after,
+input[type="image"][alt=""] ~ ::after {
   content: "☢  Empty [alt] attribute. This is only okay for decorative images. Is it a decorative image?" !important;
   z-index: 2147483646 !important; }
 
@@ -928,7 +920,7 @@ input[type="image"][alt=""] ~ *::after {
   content: "☢  Inline styles. You should be ashamed." !important; }
 
 label + :not(input):not(select):not(textarea)::after {
-  content: "☢  A field and its label should be one next to each other. But the next node doesn't look lik a field…" !important; }
+  content: "☢  A field and its label should be one next to each other. But the next node doesn’t look lik a field…" !important; }
 
 div:empty::after,
 span:empty::after,
@@ -943,45 +935,39 @@ table[role="presentation"]::after {
   content: "☢  A presentional table should not contain elements proper to data tables. Would you mind double checking?" !important; }
 
 th[scope]::after {
-  content: "☢  This head cell applies to a full line/row, doesn't it? 'Cause that's what its [scope] says." !important; }
+  content: "☢  This head cell applies to a full line/row, doesn’t it? ’Cause that’s what its [scope] says." !important; }
 
 th:not([scope])::after {
-  content: "☢  This head cell doesn't apply to a full line/row, or does it? If so, think of [scope]." !important; }
+  content: "☢  This head cell doesn’t apply to a full line/row, or does it? If so, think of [scope]." !important; }
 
 th:not([id])::after {
-  content: "☢  I'm pretty this head cell would love an [id]." !important; }
+  content: "☢  I’m pretty this head cell would love an [id]." !important; }
 
 a:not([href])::after,
 a[href=""]::after {
-  content: "☠  Missing [href] attribute. A link must lead to somewhere, don't you think?" !important; }
+  content: "☠  Missing [href] attribute. A link must lead to somewhere, don’t you think?" !important; }
 
 a[href^="javascript"]::after {
   content: "☠  [href] attribute starting with `javascript:`. Doesn`t sound good…" !important; }
 
 a[href="#"]::after {
-  content: "☠  [href='#'] attribute. Why? A <button> would be semantically better." !important; }
+  content: '☠  [href="#"] attribute. Why? A <button> would be semantically better.' !important; }
 
 a:empty::after {
   content: "☠  Empty link. Empty…" !important; }
 
-img:not([alt]) ~ *::after,
-area:not([alt]) ~ *::after,
-input[type="image"]:not([alt]) ~ *::after {
+img:not([alt]) ~ ::after,
+area:not([alt]) ~ ::after,
+input[type="image"]:not([alt]) ~ ::after {
   content: "☠  Missing [alt] attribute. Sacrilege!" !important;
   z-index: 2147483647 !important; }
 
-img[alt=" "] ~ *::after,
-area[alt=" "] ~ *::after,
-input[type="image"][alt=" "] ~ *::after {
-  content: "☠  [alt] attribute *almost* empty. Is it some kind of a joke?" !important;
-  z-index: 2147483647 !important; }
-
-img:not([src]) ~ *::after,
-img[src=""] ~ *::after,
-img[src="#"] ~ *::after,
-input[type="image"]:not([src]) ~ *::after,
-input[type="image"][src=""] ~ *::after,
-input[type="image"][src="#"] ~ *::after {
+img:not([src]) ~ ::after,
+img[src=""] ~ ::after,
+img[src="#"] ~ ::after,
+input[type="image"]:not([src]) ~ ::after,
+input[type="image"][src=""] ~ ::after,
+input[type="image"][src="#"] ~ ::after {
   content: "☠  [src] attribute missing or empty. Oh, well…" !important;
   z-index: 2147483647 !important; }
 
@@ -989,22 +975,22 @@ label:not([for])::after,
 label[for=""]::after {
   content: "☠  Missing [for] attribute. Still, this label must be here for some reason." !important; }
 
-input:not([id]) ~ *::after,
-input[id=""] ~ *::after,
-select:not([id]) ~ *::after,
-select[id=""] ~ *::after,
-textarea:not([id]) ~ *::after,
-textarea[id=""] ~ *::after {
+input:not([id]) ~ ::after,
+input[id=""] ~ ::after,
+select:not([id]) ~ ::after,
+select[id=""] ~ ::after,
+textarea:not([id]) ~ ::after,
+textarea[id=""] ~ ::after {
   content: "☠  Missing or empty [id] attribute. Everybody has a name, even form fields." !important;
   z-index: 2147483647 !important; }
 
-input:not([type]) ~ *::after,
-input[type=""] ~ *::after {
+input:not([type]) ~ ::after,
+input[type=""] ~ ::after {
   content: "☠  Missing or empty [type] attribute. What is the field for then?" !important;
   z-index: 2147483647 !important; }
 
-input[type="submit"]:not([value]) ~ *::after,
-input[type="button"]:not([value]) ~ *::after {
+input[type="submit"]:not([value]) ~ ::after,
+input[type="button"]:not([value]) ~ ::after {
   content: "☠  Missing [value] attribute. What should happen when I click?" !important;
   z-index: 2147483647 !important; }
 
@@ -1027,8 +1013,8 @@ form:not([action])::after {
 html:not([lang])::after {
   content: "☠  No lang / xml:lang found on <html> tag. Which language is that?" !important; }
 
-meta[http-equiv="refresh"] ~ *::after {
-  content: "☠  <meta http-equiv='refresh'> should be removed. Forever." !important;
+meta[http-equiv="refresh"] ~ ::after {
+  content: '☠  <meta http-equiv="refresh"> should be removed. Forever.' !important;
   z-index: 2147483647 !important; }
 
 [onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,

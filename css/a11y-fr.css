@@ -5,15 +5,15 @@ nav::after, main:not(:first-of-type)::after, section:not([aria-labelledby])::aft
 [href$=".xls"]::after,
 [href$=".txt"]::after, .search:not([role="search"])::after,
 #search:not([role="search"])::after, [required]::after,
-[aria-required]::after, input[required] ~ *::after,
-input[aria-required] ~ *::after, [hidden]:not(:empty)::after,
-[aria-hidden]:not(:empty)::after, [placeholder]::after, input[placeholder] ~ *::after, video::after,
-audio::after, track:not([kind="caption"]) ~ *::after, svg::after,
+[aria-required]::after, input[required] ~ ::after,
+input[aria-required] ~ ::after, [hidden]:not(:empty)::after,
+[aria-hidden]:not(:empty)::after, [placeholder]::after, input[placeholder] ~ ::after, video::after,
+audio::after, track:not([kind="caption"]) ~ ::after, svg::after,
 canvas::after,
-object[type^="image"]::after, embed ~ *::after, svg[title]::after, img[title] ~ *::after,
-area[title] ~ *::after, time::after,
+object[type^="image"]::after, embed ~ ::after, svg[title]::after, img[title] ~ ::after,
+area[title] ~ ::after, time::after,
 [datetime]::after,
-[pubdate]::after, meta[charset] ~ *::after, applet::after,
+[pubdate]::after, meta[charset] ~ ::after, applet::after,
 acronym::after,
 bgsound::after,
 dir::after,
@@ -113,34 +113,32 @@ table > tr::after,
 table table::after,
 tbody + tfoot::after, fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after, abbr:not([title])::after,
-abbr[title=""]::after, img[alt=""] ~ *::after,
-area[alt=""] ~ *::after,
-input[type="image"][alt=""] ~ *::after, [style]::after, label + :not(input):not(select):not(textarea)::after, div:empty::after,
+abbr[title=""]::after, img[alt=""] ~ ::after,
+area[alt=""] ~ ::after,
+input[type="image"][alt=""] ~ ::after, [style]::after, label + :not(input):not(select):not(textarea)::after, div:empty::after,
 span:empty::after,
 li:empty::after,
 p:empty::after,
 td:empty::after,
 th:empty::after,
 title:empty::after, table[role="presentation"]::after, th[scope]::after, th:not([scope])::after, th:not([id])::after, a:not([href])::after,
-a[href=""]::after, a[href^="javascript"]::after, a[href="#"]::after, a:empty::after, img:not([alt]) ~ *::after,
-area:not([alt]) ~ *::after,
-input[type="image"]:not([alt]) ~ *::after, img[alt=" "] ~ *::after,
-area[alt=" "] ~ *::after,
-input[type="image"][alt=" "] ~ *::after, img:not([src]) ~ *::after,
-img[src=""] ~ *::after,
-img[src="#"] ~ *::after,
-input[type="image"]:not([src]) ~ *::after,
-input[type="image"][src=""] ~ *::after,
-input[type="image"][src="#"] ~ *::after, label:not([for])::after,
-label[for=""]::after, input:not([id]) ~ *::after,
-input[id=""] ~ *::after,
-select:not([id]) ~ *::after,
-select[id=""] ~ *::after,
-textarea:not([id]) ~ *::after,
-textarea[id=""] ~ *::after, input:not([type]) ~ *::after,
-input[type=""] ~ *::after, input[type="submit"]:not([value]) ~ *::after,
-input[type="button"]:not([value]) ~ *::after, optgroup:not([label])::after, iframe:not([title])::after,
-iframe[title=""]::after, form:not([action])::after, [class=""]::after, [id=""]::after, html:not([lang])::after, meta[http-equiv="refresh"] ~ *::after, [onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
+a[href=""]::after, a[href^="javascript"]::after, a[href="#"]::after, a:empty::after, img:not([alt]) ~ ::after,
+area:not([alt]) ~ ::after,
+input[type="image"]:not([alt]) ~ ::after, img:not([src]) ~ ::after,
+img[src=""] ~ ::after,
+img[src="#"] ~ ::after,
+input[type="image"]:not([src]) ~ ::after,
+input[type="image"][src=""] ~ ::after,
+input[type="image"][src="#"] ~ ::after, label:not([for])::after,
+label[for=""]::after, input:not([id]) ~ ::after,
+input[id=""] ~ ::after,
+select:not([id]) ~ ::after,
+select[id=""] ~ ::after,
+textarea:not([id]) ~ ::after,
+textarea[id=""] ~ ::after, input:not([type]) ~ ::after,
+input[type=""] ~ ::after, input[type="submit"]:not([value]) ~ ::after,
+input[type="button"]:not([value]) ~ ::after, optgroup:not([label])::after, iframe:not([title])::after,
+iframe[title=""]::after, form:not([action])::after, [class=""]::after, [id=""]::after, html:not([lang])::after, meta[http-equiv="refresh"] ~ ::after, [onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
 [onerror]::after, [onhaschange]::after, [onload]::after, [onmessage]::after,
 [onoffline]::after, [ononline]::after, [onpagehide]::after, [onpageshow]::after,
 [onpopstate]::after, [onredo]::after, [onresize]::after, [onstorage]::after,
@@ -191,15 +189,15 @@ nav:hover::after, main:not(:first-of-type):hover::after, section:not([aria-label
 [href$=".xls"]:hover::after,
 [href$=".txt"]:hover::after, .search:not([role="search"]):hover::after,
 #search:not([role="search"]):hover::after, [required]:hover::after,
-[aria-required]:hover::after, input[required]:hover ~ *::after,
-input[aria-required]:hover ~ *::after, [hidden]:not(:empty):hover::after,
-[aria-hidden]:not(:empty):hover::after, [placeholder]:hover::after, input[placeholder]:hover ~ *::after, video:hover::after,
-audio:hover::after, track:not([kind="caption"]):hover ~ *::after, svg:hover::after,
+[aria-required]:hover::after, input[required]:hover ~ ::after,
+input[aria-required]:hover ~ ::after, [hidden]:not(:empty):hover::after,
+[aria-hidden]:not(:empty):hover::after, [placeholder]:hover::after, input[placeholder]:hover ~ ::after, video:hover::after,
+audio:hover::after, track:not([kind="caption"]):hover ~ ::after, svg:hover::after,
 canvas:hover::after,
-object[type^="image"]:hover::after, embed:hover ~ *::after, svg[title]:hover::after, img[title]:hover ~ *::after,
-area[title]:hover ~ *::after, time:hover::after,
+object[type^="image"]:hover::after, embed:hover ~ ::after, svg[title]:hover::after, img[title]:hover ~ ::after,
+area[title]:hover ~ ::after, time:hover::after,
 [datetime]:hover::after,
-[pubdate]:hover::after, meta[charset]:hover ~ *::after, applet:hover::after,
+[pubdate]:hover::after, meta[charset]:hover ~ ::after, applet:hover::after,
 acronym:hover::after,
 bgsound:hover::after,
 dir:hover::after,
@@ -299,34 +297,32 @@ table > tr:hover::after,
 table table:hover::after,
 tbody + tfoot:hover::after, fieldset > :not(legend):first-child:hover::after,
 fieldset > legend:not(:first-child):hover::after, abbr:not([title]):hover::after,
-abbr[title=""]:hover::after, img[alt=""]:hover ~ *::after,
-area[alt=""]:hover ~ *::after,
-input[type="image"][alt=""]:hover ~ *::after, [style]:hover::after, label + :not(input):not(select):not(textarea):hover::after, div:empty:hover::after,
+abbr[title=""]:hover::after, img[alt=""]:hover ~ ::after,
+area[alt=""]:hover ~ ::after,
+input[type="image"][alt=""]:hover ~ ::after, [style]:hover::after, label + :not(input):not(select):not(textarea):hover::after, div:empty:hover::after,
 span:empty:hover::after,
 li:empty:hover::after,
 p:empty:hover::after,
 td:empty:hover::after,
 th:empty:hover::after,
 title:empty:hover::after, table[role="presentation"]:hover::after, th[scope]:hover::after, th:not([scope]):hover::after, th:not([id]):hover::after, a:not([href]):hover::after,
-a[href=""]:hover::after, a[href^="javascript"]:hover::after, a[href="#"]:hover::after, a:empty:hover::after, img:not([alt]):hover ~ *::after,
-area:not([alt]):hover ~ *::after,
-input[type="image"]:not([alt]):hover ~ *::after, img[alt=" "]:hover ~ *::after,
-area[alt=" "]:hover ~ *::after,
-input[type="image"][alt=" "]:hover ~ *::after, img:not([src]):hover ~ *::after,
-img[src=""]:hover ~ *::after,
-img[src="#"]:hover ~ *::after,
-input[type="image"]:not([src]):hover ~ *::after,
-input[type="image"][src=""]:hover ~ *::after,
-input[type="image"][src="#"]:hover ~ *::after, label:not([for]):hover::after,
-label[for=""]:hover::after, input:not([id]):hover ~ *::after,
-input[id=""]:hover ~ *::after,
-select:not([id]):hover ~ *::after,
-select[id=""]:hover ~ *::after,
-textarea:not([id]):hover ~ *::after,
-textarea[id=""]:hover ~ *::after, input:not([type]):hover ~ *::after,
-input[type=""]:hover ~ *::after, input[type="submit"]:not([value]):hover ~ *::after,
-input[type="button"]:not([value]):hover ~ *::after, optgroup:not([label]):hover::after, iframe:not([title]):hover::after,
-iframe[title=""]:hover::after, form:not([action]):hover::after, [class=""]:hover::after, [id=""]:hover::after, html:not([lang]):hover::after, meta[http-equiv="refresh"]:hover ~ *::after, [onafterprint]:hover::after, [onbeforeprint]:hover::after, [onbeforeunload]:hover::after,
+a[href=""]:hover::after, a[href^="javascript"]:hover::after, a[href="#"]:hover::after, a:empty:hover::after, img:not([alt]):hover ~ ::after,
+area:not([alt]):hover ~ ::after,
+input[type="image"]:not([alt]):hover ~ ::after, img:not([src]):hover ~ ::after,
+img[src=""]:hover ~ ::after,
+img[src="#"]:hover ~ ::after,
+input[type="image"]:not([src]):hover ~ ::after,
+input[type="image"][src=""]:hover ~ ::after,
+input[type="image"][src="#"]:hover ~ ::after, label:not([for]):hover::after,
+label[for=""]:hover::after, input:not([id]):hover ~ ::after,
+input[id=""]:hover ~ ::after,
+select:not([id]):hover ~ ::after,
+select[id=""]:hover ~ ::after,
+textarea:not([id]):hover ~ ::after,
+textarea[id=""]:hover ~ ::after, input:not([type]):hover ~ ::after,
+input[type=""]:hover ~ ::after, input[type="submit"]:not([value]):hover ~ ::after,
+input[type="button"]:not([value]):hover ~ ::after, optgroup:not([label]):hover::after, iframe:not([title]):hover::after,
+iframe[title=""]:hover::after, form:not([action]):hover::after, [class=""]:hover::after, [id=""]:hover::after, html:not([lang]):hover::after, meta[http-equiv="refresh"]:hover ~ ::after, [onafterprint]:hover::after, [onbeforeprint]:hover::after, [onbeforeunload]:hover::after,
 [onerror]:hover::after, [onhaschange]:hover::after, [onload]:hover::after, [onmessage]:hover::after,
 [onoffline]:hover::after, [ononline]:hover::after, [onpagehide]:hover::after, [onpageshow]:hover::after,
 [onpopstate]:hover::after, [onredo]:hover::after, [onresize]:hover::after, [onstorage]:hover::after,
@@ -357,9 +353,7 @@ iframe[title=""]:hover::after, form:not([action]):hover::after, [class=""]:hover
 a:not([href]),
 a[href=""], a[href^="javascript"], a[href="#"], a:empty, img:not([alt]),
 area:not([alt]),
-input[type="image"]:not([alt]), img[alt=" "],
-area[alt=" "],
-input[type="image"][alt=" "], img:not([src]),
+input[type="image"]:not([alt]), img:not([src]),
 img[src=""],
 img[src="#"],
 input[type="image"]:not([src]),
@@ -400,9 +394,7 @@ iframe[title=""], form:not([action]), [class=""], [id=""], html:not([lang]), met
   a:not([href])::after,
   a[href=""]::after, a[href^="javascript"]::after, a[href="#"]::after, a:empty::after, img:not([alt])::after,
   area:not([alt])::after,
-  input[type="image"]:not([alt])::after, img[alt=" "]::after,
-  area[alt=" "]::after,
-  input[type="image"][alt=" "]::after, img:not([src])::after,
+  input[type="image"]:not([alt])::after, img:not([src])::after,
   img[src=""]::after,
   img[src="#"]::after,
   input[type="image"]:not([src])::after,
@@ -756,8 +748,8 @@ figure img:not([aria-describedby])::after {
 [aria-required]::after {
   content: "♥  Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur." !important; }
 
-input[required] ~ *::after,
-input[aria-required] ~ *::after {
+input[required] ~ ::after,
+input[aria-required] ~ ::after {
   content: "♥  Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur." !important;
   z-index: 2147483644 !important; }
 
@@ -768,7 +760,7 @@ input[aria-required] ~ *::after {
 [placeholder]::after {
   content: "♥  Ce placeholder ne remplace pas un <label>, j’espère ? Y’en a qui ont essayé…" !important; }
 
-input[placeholder] ~ *::after {
+input[placeholder] ~ ::after {
   content: "♥  Ce placeholder ne remplace pas un <label>, j’espère ? Y’en a qui ont essayé…" !important;
   z-index: 2147483644 !important; }
 
@@ -776,8 +768,8 @@ video::after,
 audio::after {
   content: "♥  Les éléments interactifs doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée." !important; }
 
-track:not([kind="caption"]) ~ *::after {
-  content: "♥  Vous utilisez <track>, c’est bon signe ! Mais l’attribut kind='caption' vous intéressera sûrement aussi :) ." !important;
+track:not([kind="caption"]) ~ ::after {
+  content: '♥  Vous utilisez <track>, c’est bon signe ! Mais l’attribut [kind="caption"] vous intéressera sûrement aussi :) .' !important;
   z-index: 2147483644 !important; }
 
 svg::after,
@@ -785,15 +777,15 @@ canvas::after,
 object[type^="image"]::after {
   content: "♥  Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>)." !important; }
 
-embed ~ *::after {
+embed ~ ::after {
   content: "♥  Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>)." !important;
   z-index: 2147483644 !important; }
 
 svg[title]::after {
   content: "♥  L’attribut title, s’il est présent, doit être identique à l’alternative renseignée. À vous de jouer ;-) ." !important; }
 
-img[title] ~ *::after,
-area[title] ~ *::after {
+img[title] ~ ::after,
+area[title] ~ ::after {
   content: "♥  L’attribut title, s’il est présent, doit être identique à l’alternative renseignée. À vous de jouer ;-) ." !important;
   z-index: 2147483644 !important; }
 
@@ -802,7 +794,7 @@ time::after,
 [pubdate]::after {
   content: "♥  Le format de date est-il compréhensible ?" !important; }
 
-meta[charset] ~ *::after {
+meta[charset] ~ ::after {
   content: "♥  Sommes-nous bien en utf-8 ?" !important;
   z-index: 2147483644 !important; }
 
@@ -918,9 +910,9 @@ abbr:not([title])::after,
 abbr[title=""]::after {
   content: "☢  La balise <title> est vide. Vous brûlerez en enfer d’ici peu." !important; }
 
-img[alt=""] ~ *::after,
-area[alt=""] ~ *::after,
-input[type="image"][alt=""] ~ *::after {
+img[alt=""] ~ ::after,
+area[alt=""] ~ ::after,
+input[type="image"][alt=""] ~ ::after {
   content: "☢  Attribut [alt] vide. C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
   z-index: 2147483646 !important; }
 
@@ -959,29 +951,23 @@ a[href^="javascript"]::after {
   content: "☠  Attribut [href] débutant par javascript. Ça n’augure rien de bon…" !important; }
 
 a[href="#"]::after {
-  content: "☠  Attribut [href='#']. Pourquoi ? Un <button> semble plus indiqué." !important; }
+  content: '☠  Attribut [href="#"]. Pourquoi ? Un <button> semble plus indiqué.' !important; }
 
 a:empty::after {
   content: "☠  Ce lien est vide. Vide…" !important; }
 
-img:not([alt]) ~ *::after,
-area:not([alt]) ~ *::after,
-input[type="image"]:not([alt]) ~ *::after {
+img:not([alt]) ~ ::after,
+area:not([alt]) ~ ::after,
+input[type="image"]:not([alt]) ~ ::after {
   content: "☠  Attribut [alt] manquant. Quelle hérésie." !important;
   z-index: 2147483647 !important; }
 
-img[alt=" "] ~ *::after,
-area[alt=" "] ~ *::after,
-input[type="image"][alt=" "] ~ *::after {
-  content: "☠  Un attribut [alt] *presque* vide. C’est une blague, non ?" !important;
-  z-index: 2147483647 !important; }
-
-img:not([src]) ~ *::after,
-img[src=""] ~ *::after,
-img[src="#"] ~ *::after,
-input[type="image"]:not([src]) ~ *::after,
-input[type="image"][src=""] ~ *::after,
-input[type="image"][src="#"] ~ *::after {
+img:not([src]) ~ ::after,
+img[src=""] ~ ::after,
+img[src="#"] ~ ::after,
+input[type="image"]:not([src]) ~ ::after,
+input[type="image"][src=""] ~ ::after,
+input[type="image"][src="#"] ~ ::after {
   content: "☠  Attribut [src] manquant ou vide. Bon." !important;
   z-index: 2147483647 !important; }
 
@@ -989,22 +975,22 @@ label:not([for])::after,
 label[for=""]::after {
   content: "☠  Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?" !important; }
 
-input:not([id]) ~ *::after,
-input[id=""] ~ *::after,
-select:not([id]) ~ *::after,
-select[id=""] ~ *::after,
-textarea:not([id]) ~ *::after,
-textarea[id=""] ~ *::after {
+input:not([id]) ~ ::after,
+input[id=""] ~ ::after,
+select:not([id]) ~ ::after,
+select[id=""] ~ ::after,
+textarea:not([id]) ~ ::after,
+textarea[id=""] ~ ::after {
   content: "☠  Attribut [id] manquant ou vide. Tout le monde a droit à un nom, même les champs de formulaire." !important;
   z-index: 2147483647 !important; }
 
-input:not([type]) ~ *::after,
-input[type=""] ~ *::after {
+input:not([type]) ~ ::after,
+input[type=""] ~ ::after {
   content: "☠  Attribut [type] manquant ou vide. On met quoi, dans ce champ ?" !important;
   z-index: 2147483647 !important; }
 
-input[type="submit"]:not([value]) ~ *::after,
-input[type="button"]:not([value]) ~ *::after {
+input[type="submit"]:not([value]) ~ ::after,
+input[type="button"]:not([value]) ~ ::after {
   content: "☠  Attribut [value] manquant. Ça fait quoi alors, si je clique dessus ?" !important;
   z-index: 2147483647 !important; }
 
@@ -1027,8 +1013,8 @@ form:not([action])::after {
 html:not([lang])::after {
   content: "☠  Pas d’attribut lang / xml:lang sur la balise <html>. Vous parlez quelle langue, vous ?" !important; }
 
-meta[http-equiv="refresh"] ~ *::after {
-  content: "☠  <meta http-equiv='refresh'> devrait être supprimé. Définitivement." !important;
+meta[http-equiv="refresh"] ~ ::after {
+  content: '☠  <meta http-equiv="refresh"> devrait être supprimé. Définitivement.' !important;
   z-index: 2147483647 !important; }
 
 [onafterprint]::after, [onbeforeprint]::after, [onbeforeunload]::after,
