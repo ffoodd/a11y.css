@@ -3,7 +3,7 @@
 $counters: ();
 
 @each $key, $value in $themes {
-    $counters: append($counters, unquote($key), space);
+  $counters: append($counters, unquote($key), space);
 }
 
 html {
@@ -11,10 +11,10 @@ html {
 
   &::before {
     content:
-        "Errors:   " counter(error)    "\A "
-        "Warnings: " counter(warning)  "\A "
-        "Obsolete: " counter(obsolete) "\A "
-        "Advices:  " counter(advice)   "\A ";
+      "Errors:   " counter(error)    "\A "
+      "Warnings: " counter(warning)  "\A "
+      "Obsolete: " counter(obsolete) "\A "
+      "Advices:  " counter(advice)   "\A ";
 
     background: rgba( 0, 0, 0, .8 );
     border: 1px solid black;
