@@ -233,22 +233,22 @@ $max-z-index: 2147483647;
 /// @prop {Number} theme.index - Theme z-index
 $themes: (
   'error': (
-    'icon': \2620\00A0,
+    'icon': '\2620\00A0',
     'color': #911,
     'index': ($max-z-index)
   ),
   'warning': (
-    'icon': \2622\00A0,
+    'icon': '\2622\00A0',
     'color': gold,
     'index': ($max-z-index - 1)
   ),
   'obsolete': (
-    'icon': \271D\00A0,
+    'icon': '\271D\00A0',
     'color': gray,
     'index': ($max-z-index - 2)
   ),
   'advice': (
-    'icon': \2665\00A0,
+    'icon': '\2665\00A0',
     'color': forestgreen,
     'index': ($max-z-index - 3)
   ),
