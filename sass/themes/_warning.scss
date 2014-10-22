@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+ul > *:not(li),
+ol > *:not(li),
+table > tr,
+table table,
+tbody + tfoot {
+  @include warning("invalid-nesting");
+}
+
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=140
+fieldset > :not(legend):first-child,
+fieldset > legend:not(:first-child) {
+  @include warning("fieldset");
+}
+
+// @see BP160 OpQuast
+abbr:not([title]),
+abbr[title=""] {
+  @include warning("empty-title");
+}
+
+// @see BP1 OpQuast
+img[alt=""],
+area[alt=""],
+input[type="image"][alt=""] {
+  @include warning("empty-alt", $self-closing: true);
+}
+
+// @see BP156 OpQuast
+[style] {
+  @include warning("style-attr");
+}
+
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=142
+label + :not(input):not(select):not(textarea) {
+  @include warning("label-field");
+}
+
+div:empty,
+span:empty,
+li:empty,
+p:empty,
+td:empty,
+th:empty,
+title:empty {
+  @include warning("empty-nodes");
+}
+
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=80
+table[role="presentation"] {
+  @include warning("table-presentation");
+}
+
+// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=81
+th[scope] {
+  @include warning("th-scope");
+}
+
+th:not([scope]) {
+  @include warning("th-no-scope");
+}
+
+th:not([id]) {
+  @include warning("th-no-id");
+}

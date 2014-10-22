@@ -1,58 +1,93 @@
-a[href="#"],
-a[href^="javascript"],
+@charset "UTF-8";
+
 a:not([href]),
-a[href=""],
+a[href=""] {
+  @include error("no-href");
+}
+
+a[href^="javascript"] {
+  @include error("href-js");
+}
+
+a[href="#"] {
+  @include error("empty-href");
+}
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=90
-a:empty,
+a:empty {
+  @include error("empty-link");
+}
 
 // @see BP1 OpQuast
 img:not([alt]),
 area:not([alt]),
-input[type="image"]:not([alt]),
-
-// @see BP1 OpQuast
-img[alt=" "],
-area[alt=" "],
-input[type="image"][alt=" "],
+input[type="image"]:not([alt]) {
+  @include error("no-alt", $self-closing: true);
+}
 
 img:not([src]),
 img[src=""],
 img[src="#"],
 input[type="image"]:not([src]),
 input[type="image"][src=""],
-input[type="image"][src="#"],
+input[type="image"][src="#"] {
+  @include error("no-src", $self-closing: true);
+}
 
 label:not([for]),
-label[for=""],
+label[for=""] {
+  @include error("no-for");
+}
+
+input:not([id]),
 input[id=""],
-input:not([type]),
-input[type=""],
-input[type="submit"]:not([value]),
-input[type="button"]:not([value]),
-input:not([type="submit"]):not([type="button"]):not([id]):not([title]),
-
-select:not([id]):not([title]),
+select:not([id]),
 select[id=""],
+textarea:not([id]),
+textarea[id=""] {
+  @include error("no-id", $self-closing: true);
+}
 
-textarea:not([id]):not([title]),
-textarea[id=""],
+input:not([type]),
+input[type=""] {
+  @include error("no-type", $self-closing: true);
+}
+
+input[type="submit"]:not([value]),
+input[type="button"]:not([value]) {
+  @include error("no-value", $self-closing: true);
+}
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=179
-optgroup:not([label]),
+optgroup:not([label]) {
+  @include error("optgroup");
+}
 
 iframe:not([title]),
-iframe[title=""],
+iframe[title=""] {
+  @include error("no-title");
+}
 
-form:not([action]),
+form:not([action]) {
+  @include error("no-action");
+}
 
-[class=""],
-[id=""],
+[class=""] {
+  @include error("empty-class");
+}
+
+[id=""] {
+  @include error("empty-id");
+}
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=109
-html:not([lang]),
+html:not([lang]) {
+  @include error("no-lang");
+}
 
-meta[http-equiv="refresh"],
+meta[http-equiv="refresh"] {
+  @include error("meta-refresh", $self-closing: true);
+}
 
 [onafterprint], [onbeforeprint], [onbeforeunload],
 [onerror], [onhaschange], [onload], [onmessage],
@@ -75,8 +110,5 @@ meta[http-equiv="refresh"],
 [onratechange], [onreadystatechange], [onseeked],
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
-  @include a11y-outline('error');
-  @extend %a11y-message;
-
-  counter-increment: error;
+  @include error("js-events");
 }

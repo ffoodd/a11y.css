@@ -16,12 +16,12 @@
 
 /// Retrieve message from series of keys
 /// @access private
-/// @param {String} $theme - Either `advice`, `error` or `warning`
+/// @param {String} $theme - Either `advice`, `error`, `warning` or `obsolete`
 /// @param {String} $key - Key to find message for
 /// @requires $messages
 /// @return {String} Message
 @function message($theme, $key) {
-  $locale: if(global-variable-exists('language'), $language, 'en');
+  $locale: if(global-variable-exists("language"), $language, "en");
 
   @if not index(map-keys($messages), $theme) {
     @error "Theme `#{$theme}` does not exist.";
@@ -43,11 +43,11 @@
 /// @return {*}
 /// @example scss - Get color from error theme
 /// .selector {
-///   color: theme-conf('error', 'color');
+///   color: theme-conf("error", "color");
 /// }
 /// @example css - Resulting CSS
 /// .selector {
-///   color: crimson;
+///   color: #911;
 /// }
 @function theme-conf($theme, $key) {
   @return map-deep-get($themes, $theme, $key);

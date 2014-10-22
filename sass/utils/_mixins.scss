@@ -5,9 +5,9 @@
 /// @param {String} $language
 /// @output Nothing
 /// @example scss - Defines the language to `fr`.
-///  @include set-locale('fr');
+///  @include set-locale("fr");
 @mixin set-locale($language) {
-  $supported-languages: 'fr', 'en';
+  $supported-languages: "fr", "en";
   $language: to-lower-case($language);
 
   @if not index($supported-languages, $language) {
@@ -18,6 +18,7 @@
 }
 
 
+<<<<<<< HEAD
 /// A11y outline
 /// @access private
 /// @param {String} $level - level to use
@@ -34,6 +35,8 @@
 }
 
 
+=======
+>>>>>>> 1da6dce1d5754bbf7522fd6feae6713624049c25
 /// Get a message from the translation map based on the defined language.
 /// The message contains the icon associated to the message type.
 /// @group languages
@@ -44,12 +47,100 @@
 /// @output `content`, with `!important`
 /// @example scss - Get message for `nav` from `advice` category when language is set to `en`
 /// .selector {
-///   @include message('advice', 'nav');
+///   @include message("advice", "nav");
 /// }
 /// @example css - Resulting CSS
 /// .selector {
-///   content: '\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?';
+///   content: "\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
 /// }
 @mixin message($theme, $key) {
-  content: quote(unquote(theme-conf($theme, 'icon')) #{message($theme, $key)}) !important;
+  content: quote(unquote(theme-conf($theme, "icon")) #{message($theme, $key)}) !important;
+}
+
+
+/// Theme mixin extending everything needed for the `$theme`,
+/// and including a message in a pseudo-element.
+/// @access private
+/// @param {String} $theme - Theme
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @requires %a11y-after
+/// @requires %a11y-hover
+/// @requires {mixin} message
+/// @requires {function} theme-conf
+@mixin item($theme, $key, $self-closing: false) {
+  // If it's a self closing tag
+  // Include message on next item
+  @if $self-closing {
+    @extend %a11y-#{$theme}-self-closing;
+
+    &::after,
+    & ~ ::after {
+      @include message($theme, $key);
+    }
+  }
+
+  @else {
+    @extend %a11y-#{$theme};
+
+    &::after {
+      @include message($theme, $key);
+    }
+  }
+}
+
+
+/// Defines an advice
+/// @access public
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @requires {mixin} item
+/// @example scss - Define an advice
+/// .selector {
+///   @include advice("nav");
+/// }
+@mixin advice($key, $self-closing: false) {
+  @include item("advice", $key, $self-closing);
+}
+
+
+/// Defines an error
+/// @access public
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @requires {mixin} item
+/// @example scss - Define an error
+/// .selector {
+///   @include error("no-src");
+/// }
+@mixin error($key, $self-closing: false) {
+  @include item("error", $key, $self-closing);
+}
+
+
+/// Defines a warning
+/// @access public
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @requires {mixin} item
+/// @example scss - Define an warning
+/// .selector {
+///   @include warning("abbr");
+/// }
+@mixin warning($key, $self-closing: false) {
+  @include item("warning", $key, $self-closing);
+}
+
+
+/// Defines an obsolete thing
+/// @access public
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @requires {mixin} item
+/// @example scss - Define an obsolete
+/// .selector {
+///   @include obsolete("any");
+/// }
+@mixin obsolete($key, $self-closing: false) {
+  @include item("obsolete", $key, $self-closing);
 }

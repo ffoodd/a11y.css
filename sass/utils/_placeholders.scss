@@ -3,68 +3,81 @@
 /// a11y-after
 /// @access private
 %a11y-after {
-  background: rgba( 255, 255, 255, .98 ) !important;
-  border: 1px solid rgba( 0, 0, 0, .3 ) !important;
-  color: dimgray !important;
-  display: block !important;
-  font: normal normal 1rem/1.5 monospace !important;
-  height: auto !important;
-  left: 0 !important;
-  opacity: 0;
+  width: 100%                                                           !important;
+  height: auto                                                          !important;
+  display: block                                                        !important;
   padding: 1em 0;
-  pointer-events: none !important;
-  position: fixed !important;
-  text-align: center !important;
-  text-decoration: none !important;
-  text-shadow: none !important;
-  text-transform: none !important;
-  top: 0 !important;
-  -webkit-transform:  translateY( -100% ) translateZ( 0 ) !important;
-  -ms-transform:      translateY( -100% ) translateZ( 0 ) !important;
-  transform:          translateY( -100% ) translateZ( 0 ) !important;
-  -webkit-transition: -webkit-transform .3s ease-in !important;
-  transition:         transform .3s ease-in !important;
-  width: 100% !important;
+
+  position: fixed                                                       !important;
+  left: 0                                                               !important;
+  top: 0                                                                !important;
+
+  background: rgba( 255, 255, 255, .98 )                                !important;
+  border: 1px solid rgba( 0, 0, 0, .3 )                                 !important;
+  pointer-events: none                                                  !important;
+  opacity: 0;
+
+  color: dimgray                                                        !important;
+  font: normal normal 1rem/1.5 monospace                                !important;
+  text-align: center                                                    !important;
+  text-decoration: none                                                 !important;
+  text-shadow: none                                                     !important;
+  text-transform: none                                                  !important;
+  white-space: pre;
+
+  -webkit-transform:  translateY( -100% ) translateZ( 0 )               !important;
+  -ms-transform:      translateY( -100% ) translateZ( 0 )               !important;
+  transform:          translateY( -100% ) translateZ( 0 )               !important;
+  -webkit-transition: -webkit-transform .3s ease-in                     !important;
+  transition:         transform .3s ease-in                             !important;
   // @note Line breaks can be triggered by «\A» within the message content.
   // @see issue #7, solution from @7studio
-  white-space: pre;
 }
 
 /// a11y-hover
 /// @access private
 %a11y-hover {
   opacity: 1;
-  -webkit-transform:  translateY( 0 ) translateZ( 0 ) !important;
-  -ms-transform:      translateY( 0 ) translateZ( 0 ) !important;
-  transform:          translateY( 0 ) translateZ( 0 ) !important;
-  -webkit-transition: -webkit-transform .3s ease-out !important;
-  transition:         transform .3s ease-in !important;
+  -webkit-transform:  translateY( 0 ) translateZ( 0 )                   !important;
+  -ms-transform:      translateY( 0 ) translateZ( 0 )                   !important;
+  transform:          translateY( 0 ) translateZ( 0 )                   !important;
+  -webkit-transition: -webkit-transform .3s ease-out                    !important;
+  transition:         transform .3s ease-in                             !important;
 }
 
-/// a11y message
-/// @access private
-/// @requires %a11y-after
-/// @requires %a11y-hover
-%a11y-message {
-  &::after {
-    @extend %a11y-after;
+// Dynamically generating a placeholder for each theme
+@each $theme in "error" "warning" "advice" "obsolete" {
+  /// a11y-#{$theme}
+  /// @access private
+  %a11y-#{$theme} {
+    outline: 4px solid transparentize(theme-conf($theme, "color"), .25) !important;
+    outline-offset: -4px;
+    counter-increment: unquote($theme);
+
+    &::after {
+      @extend %a11y-after;
+      z-index: theme-conf($theme, "index") !important;
+    }
+
+    &:hover::after {
+      @extend %a11y-hover;
+    }
   }
 
-  &:hover::after {
-    @extend %a11y-hover;
-  }
-}
+  /// a11y-#{$theme}-self-closing
+  /// @access private
+  %a11y-#{$theme}-self-closing {
+    outline: 4px solid transparentize(theme-conf($theme, "color"), .25) !important;
+    outline-offset: -4px;
+    counter-increment: unquote($theme);
 
-/// a11y-self-closing
-/// @access private
-/// @requires %a11y-after
-/// @requires %a11y-hover
-%a11y-self-closing {
-  & ~ *::after {
-    @extend %a11y-after;
-  }
+    & ~ ::after {
+      @extend %a11y-after;
+      z-index: theme-conf($theme, "index") !important;
+    }
 
-  &:hover ~ *::after {
-    @extend %a11y-hover;
+    &:hover ~ ::after {
+      @extend %a11y-hover;
+    }
   }
 }

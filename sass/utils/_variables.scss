@@ -8,6 +8,7 @@
 /// @prop {Map} theme.key.fr - French version of the message
 /// @prop {Map} theme.key.en - English version of the message
 $messages: (
+<<<<<<< HEAD
   'advice': (
     'nav': (
       'fr': 'La balise <nav> est réservée à la structuration des zones de navigations principales et secondaires. Vous le saviez ?',
@@ -198,13 +199,217 @@ $messages: (
     'th-no-id': (
       'fr': 'Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête.',
       'en': 'I\'m pretty this head cell would love an [id].'
+=======
+  "advice": (
+    "nav": (
+      "fr": "La balise <nav> est réservée à la structuration des zones de navigations principales et secondaires. Vous le saviez ?",
+      "en": "Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?"
+    ),
+    "main": (
+      "fr": "<main> est réservée à la zone de contenu principal, et doit donc être unique.\A Repentez-vous et tout ira bien :) .",
+      "en": "The <main> tag is exclusively restricted to the main content area, thus should be unique.\A Repent yourself now."
+    ),
+    "section": (
+      "fr": "L’élément <section> a une valeur sémantique, vous le saviez ?\A Il doit donc être décrit par un texte.",
+      "en": "Did you know the <section> has a semantic value?\A It should be described with text content."
+    ),
+    "figure": (
+      "fr": "L’élément <figure> regroupe une <img> et un <figcaption> :\A le rôle «group» semble indiqué, pas vrai ?",
+      "en": "The <figure> element gathers an <img> and a <figcaption>:\A `group` role sounds perfect, doesn’t it?"
+    ),
+    "figure-img": (
+      "fr": "Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>.",
+      "en": "An image within a <figure> element should be described by a <figcaption>."
+    ),
+    "target-blank": (
+      "fr": "L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre.\A Mais vous y avez pensé, non :) ?",
+      "en": "User should be warned whenever a link is being opened in a new tab.\A But you know it already, right?"
+    ),
+    "mailto": (
+      "fr": "L’adresse mail est valide, pas vrai ?",
+      "en": "This email is valid, isn’t it?"
+    ),
+    "file-format": (
+      "fr": "Le format et le poids d’un fichier téléchargeable devraient être indiqués — et il devrait être accessible.",
+      "en": "Format and size from a downloadable file should be displayed, and accessible."
+    ),
+    "search": (
+      "fr": "Vu ! Cet élément semble être la recherche.\A Mais alors, le rôle ARIA est là, non ?",
+      "en": "Gotcha! This component seems to the search.\A Where is the ARIA role?"
+    ),
+    "required": (
+      "fr": "Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur.",
+      "en": "The fact that a field is required should be explicitly pointed out, and not only with colors."
+    ),
+    "hidden": (
+      "fr": "Cet élément — masqué aux technologies d’assistance — ne porte aucune information, vous en êtes bien sûr ?",
+      "en": "Are you plain sure this element should be hidden to accessibility helpers?"
+    ),
+    "placeholder": (
+      "fr": "Ce placeholder ne remplace pas un <label>, j’espère ?\A Y’en a qui ont essayé…",
+      "en": "I hope you don’t use this placeholder in place of a <label>."
+    ),
+    "video-audio": (
+      "fr": "Les éléments interactifs doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée.",
+      "en": "Interactive elements should have an alternate version, like a transcript or subtitles (<track>), and have their duration displayed."
+    ),
+    "track": (
+      "fr": "Vous utilisez <track>, c’est bon signe !\A Mais l’attribut [kind=\"caption\"] vous intéressera sûrement aussi :) .",
+      "en": "You use <track> which is good, but the [kind=\"caption\"] would make things even better!"
+    ),
+    "embed": (
+      "fr": "Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>).",
+      "en": "<svg>, <embed>, <canvas> and other <object> giving informations should be presented within a <figure> element and associated to a <figcaption> (or <desc> for <svg>)."
+    ),
+    "title": (
+      "fr": "L’attribut title, s’il est présent, doit être identique à l’alternative renseignée.\A À vous de jouer ;-) .",
+      "en": "[title] attribute, if present, should be identical to the given alternative.\A Your move!"
+    ),
+    "time": (
+      "fr": "Le format de date est-il compréhensible ?",
+      "en": "Is this is a valid date format?"
+    ),
+    "meta-charset": (
+      "fr": "Sommes-nous bien en utf-8 ?",
+      "en": "Can you confirm this is UTF-8?"
     )
   ),
 
-  'obsolete': (
-    'any': (
-      'fr': 'Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses.',
-      'en': 'Obsolete element or attribute. Please make sure you know what you\'re doing.'
+  "error": (
+    "no-href": (
+      "fr": "Attribut [href] manquant. Un lien doit avoir une cible, non ?",
+      "en": "Missing [href] attribute. A link must lead to somewhere, don’t you think?"
+    ),
+    "empty-href": (
+      "fr": "Attribut [href=\"#\"]. Pourquoi ? Un <button> semble plus indiqué.",
+      "en": "[href=\"#\"] attribute. Why? A <button> would be semantically better."
+    ),
+    "href-js": (
+      "fr": "Attribut [href] débutant par javascript. Ça n’augure rien de bon…",
+      "en": "[href] attribute starting with `javascript:`. Doesn`t sound good…"
+    ),
+    "empty-link": (
+      "fr": "Ce lien est vide. Vide…",
+      "en": "Empty link. Empty…"
+    ),
+    "no-alt": (
+      "fr": "Attribut [alt] manquant. Quelle hérésie.",
+      "en": "Missing [alt] attribute. Sacrilege!"
+    ),
+    "no-src": (
+      "fr": "Attribut [src] manquant ou vide. Bon.",
+      "en": "[src] attribute missing or empty. Oh, well…"
+    ),
+    "no-for": (
+      "fr": "Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?",
+      "en": "Missing [for] attribute. Still, this label must be here for some reason."
+    ),
+    "no-id": (
+      "fr": "Attribut [id] manquant ou vide.\A Tout le monde a droit à un nom, même les champs de formulaire.",
+      "en": "Missing or empty [id] attribute.\A Everybody has a name, even form fields."
+    ),
+    "optgroup": (
+      "fr": "Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options.\A Dommage…",
+      "en": "You have gathered options, but no label attribute introduces this options group.\A Too bad…"
+    ),
+    "no-type": (
+      "fr": "Attribut [type] manquant ou vide.\A On met quoi, dans ce champ ?",
+      "en": "Missing or empty [type] attribute.\A What is the field for then?"
+    ),
+    "no-value": (
+      "fr": "Attribut [value] manquant.\A Ça fait quoi alors, si je clique dessus ?",
+      "en": "Missing [value] attribute.\A What should happen when I click?"
+    ),
+    "no-title": (
+      "fr": "Attribut [title] manquant ou vide.\A Dieu seul sait ce que contient cette <iframe>.",
+      "en": "Missing or empty [title].\A Only God knows what is this <iframe>."
+    ),
+    "no-action": (
+      "fr": "Attribut [action] manquant.\A Et après, il se passe quoi ?",
+      "en": "Missing [action] attribute.\A What now?"
+    ),
+    "empty-class": (
+      "fr": "Attribut [class] vide.\A Pourquoi tant de haine ?",
+      "en": "Missing [class] attribute.\A Why so much hatred?"
+    ),
+    "empty-id": (
+      "fr": "Attribut [id] vide.\A Sérieusement ?",
+      "en": "Empty [id] attribute.\A Does this look like a game to you?"
+    ),
+    "meta-refresh": (
+      "fr": "<meta http-equiv=\"refresh\"> devrait être supprimé.\A Définitivement.",
+      "en": "<meta http-equiv=\"refresh\"> should be removed.\A Forever."
+    ),
+    "no-lang": (
+      "fr": "Pas d’attribut lang / xml:lang sur la balise <html>.\A Vous parlez quelle langue, vous ?",
+      "en": "No lang / xml:lang found on <html> tag.\A Which language is that?"
+    ),
+    "js-events": (
+      "fr": "Attribut d’événements javascript. Vous êtes sûr de ce que vous faites ?",
+      "en": "JavaScript event attributes. You sure?"
+    ),
+    "no-aria-describedby":  (
+      "fr": "Si le champ est obligatoire, une indication doit exister :\A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !",
+      "en": "If field is mandatory, it should be explicity told so.\A Map an indication to the field with [aria-describedby] and its [id]."
+    )
+  ),
+
+  "warning": (
+    "invalid-nesting": (
+      "fr": "Imbrication inadéquate d’éléments.\A Ça peut heurter la sensibilité des plus jeunes, vous savez ?",
+      "en": "Invalid nesting.\A Please be aware this may offend the viewer."
+    ),
+    "fieldset": (
+      "fr": "Imbrication inadéquate d’éléments.\A Un fieldset doit enfanter d’une légende d’abord, sinon rien.",
+      "en": "Invalid nesting.\A A fieldset should contain a <legend> before anything else."
+    ),
+    "abbr": (
+      "fr": "Attribut [title] vide ou manquant.\A Jetez un œil à la BP 160 d’OpQuast ;-) ",
+      "en": "Missing or empty [title].\A Have a look at at BP 16 from OpQuast!"
+    ),
+    "empty-alt": (
+      "fr": "Attribut [alt] vide.\A C’est toléré pour les images de décoration uniquement. Est-ce le cas ?",
+      "en": "Empty [alt] attribute.\A This is only okay for decorative images. Is it a decorative image?"
+    ),
+    "style-attr": (
+      "fr": "Éléments supportant des styles en ligne.\A Les pauvres… Vous devriez avoir honte !",
+      "en": "Inline styles.\A You should be ashamed."
+    ),
+    "label-field": (
+      "fr": "Un champ et son label devrait être accolés.\A Mais ce qui suit ce label ne ressemble pas à un champ…",
+      "en": "A field and its label should be one next to each other.\A But the next node doesn’t look lik a field…"
+    ),
+    "empty-nodes": (
+      "fr": "Élément vide. Diantre.",
+      "en": "Empty element. Oh my."
+    ),
+    "empty-title": (
+      "fr": "La balise <title> est vide. Vous brûlerez en enfer d’ici peu.",
+      "en": "Empty <title> tag. Hell is full of people like you."
+    ),
+    "table-presentation": (
+      "fr": "Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données.\A Vous pouvez vérifier ?",
+      "en": "A presentional table should not contain elements proper to data tables.\A Would you mind double checking?"
+    ),
+    "th-scope": (
+      "fr": "Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ?\A C’est ce que dit son [scope], en tout cas.",
+      "en": "This head cell applies to a full line/row, doesn’t it?\A ’Cause that’s what its [scope] says."
+    ),
+    "th-no-scope": (
+      "fr": "Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ?\A Si oui, pensez à scope.",
+      "en": "This head cell doesn’t apply to a full line/row, or does it?\A If so, think of [scope]."
+    ),
+    "th-no-id": (
+      "fr": "Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête.",
+      "en": "I’m pretty this head cell would love an [id]."
+>>>>>>> 1da6dce1d5754bbf7522fd6feae6713624049c25
+    )
+  ),
+
+  "obsolete": (
+    "any": (
+      "fr": "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses.",
+      "en": "Obsolete element or attribute. Please make sure you know what you’re doing."
     )
   )
 );
@@ -227,24 +432,24 @@ $max-z-index: 2147483647;
 /// @prop {Color} theme.color  - Theme color
 /// @prop {Number} theme.index - Theme z-index
 $themes: (
-  'error': (
-    'icon': '\2620\00A0',
-    'color': #911,
-    'index': ($max-z-index)
+  "error": (
+    "icon": "\2620\00A0",
+    "color": #911,
+    "index": ($max-z-index)
   ),
-  'warning': (
-    'icon': '\2622\00A0',
-    'color': gold,
-    'index': ($max-z-index - 1)
+  "warning": (
+    "icon": "\2622\00A0",
+    "color": gold,
+    "index": ($max-z-index - 1)
   ),
-  'obsolete': (
-    'icon': '\271D\00A0',
-    'color': gray,
-    'index': ($max-z-index - 2)
+  "obsolete": (
+    "icon": "\271D\00A0",
+    "color": gray,
+    "index": ($max-z-index - 2)
   ),
-  'advice': (
-    'icon': '\2665\00A0',
-    'color': forestgreen,
-    'index': ($max-z-index - 3)
+  "advice": (
+    "icon": "\2665\00A0",
+    "color": forestgreen,
+    "index": ($max-z-index - 3)
   ),
 );
