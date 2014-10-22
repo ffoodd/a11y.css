@@ -16,7 +16,7 @@
 
 /// Retrieve message from series of keys
 /// @access private
-/// @param {String} $theme - Either `advice`, `error` or `warning`
+/// @param {String} $theme - Either `advice`, `error`, `warning` or `obsolete`
 /// @param {String} $key - Key to find message for
 /// @requires $messages
 /// @return {String} Message
@@ -47,7 +47,7 @@
 /// }
 /// @example css - Resulting CSS
 /// .selector {
-///   color: crimson;
+///   color: #911;
 /// }
 @function theme-conf($theme, $key) {
   @return map-deep-get($themes, $theme, $key);
