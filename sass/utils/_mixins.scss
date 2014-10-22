@@ -5,9 +5,9 @@
 /// @param {String} $language
 /// @output Nothing
 /// @example scss - Defines the language to `fr`.
-///  @include set-locale('fr');
+///  @include set-locale("fr");
 @mixin set-locale($language) {
-  $supported-languages: 'fr', 'en';
+  $supported-languages: "fr", "en";
   $language: to-lower-case($language);
 
   @if not index($supported-languages, $language) {
@@ -28,14 +28,14 @@
 /// @output `content`, with `!important`
 /// @example scss - Get message for `nav` from `advice` category when language is set to `en`
 /// .selector {
-///   @include message('advice', 'nav');
+///   @include message("advice", "nav");
 /// }
 /// @example css - Resulting CSS
 /// .selector {
-///   content: '\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?';
+///   content: "\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
 /// }
 @mixin message($theme, $key) {
-  content: quote(unquote(theme-conf($theme, 'icon')) #{message($theme, $key)}) !important;
+  content: quote(unquote(theme-conf($theme, "icon")) #{message($theme, $key)}) !important;
 }
 
 
@@ -59,7 +59,7 @@
     & ~ ::after {
       @include message($theme, $key);
       @extend %a11y-after;
-      z-index: theme-conf($theme, 'index') !important;
+      z-index: theme-conf($theme, "index") !important;
     }
 
     &:hover ~ ::after {
@@ -87,10 +87,10 @@
 /// @requires {mixin} item
 /// @example scss - Define an advice
 /// .selector {
-///   @include advice('nav');
+///   @include advice("nav");
 /// }
 @mixin advice($key, $self-closing: false) {
-  @include item('advice', $key, $self-closing);
+  @include item("advice", $key, $self-closing);
 }
 
 
@@ -101,10 +101,10 @@
 /// @requires {mixin} item
 /// @example scss - Define an error
 /// .selector {
-///   @include error('no-src');
+///   @include error("no-src");
 /// }
 @mixin error($key, $self-closing: false) {
-  @include item('error', $key, $self-closing);
+  @include item("error", $key, $self-closing);
 }
 
 
@@ -115,10 +115,10 @@
 /// @requires {mixin} item
 /// @example scss - Define an warning
 /// .selector {
-///   @include warning('abbr');
+///   @include warning("abbr");
 /// }
 @mixin warning($key, $self-closing: false) {
-  @include item('warning', $key, $self-closing);
+  @include item("warning", $key, $self-closing);
 }
 
 
@@ -129,8 +129,8 @@
 /// @requires {mixin} item
 /// @example scss - Define an obsolete
 /// .selector {
-///   @include obsolete('any');
+///   @include obsolete("any");
 /// }
 @mixin obsolete($key, $self-closing: false) {
-  @include item('obsolete', $key, $self-closing);
+  @include item("obsolete", $key, $self-closing);
 }

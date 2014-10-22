@@ -98,5 +98,5 @@ table[rules],
 td[height], th[height],
 td[nowrap], th[nowrap],
 body[background], table[background], thead[background], tbody[background], tfoot[background], tr[background], td[background], th[background] {
-  @include obsolete('any');
+  @include obsolete("any");
 }

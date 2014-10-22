@@ -2,32 +2,32 @@
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=116
 nav {
-  @include advice('nav');
+  @include advice("nav");
 }
 
 main:not(:first-of-type) {
-  @include advice('main');
+  @include advice("main");
 }
 
 section:not([aria-labelledby]) {
-  @include advice('section');
+  @include advice("section");
 }
 
 figure:not([role="group"]) {
-  @include advice('figure');
+  @include advice("figure");
 }
 
 figure img:not([aria-describedby]) {
-  @include advice('figure-img');
+  @include advice("figure-img");
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=176
 [href^="mailto"] {
-  @include advice('mailto');
+  @include advice("mailto");
 }
 
 [target$="blank"]::after {
-  @include advice('target-blank');
+  @include advice("target-blank");
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=172
@@ -37,77 +37,77 @@ figure img:not([aria-describedby]) {
 [href$=".docx"],
 [href$=".xls"],
 [href$=".txt"] {
-  @include advice('file-format');
+  @include advice("file-format");
 }
 
 .search:not([role="search"]),
 #search:not([role="search"]) {
-  @include advice('search');
+  @include advice("search");
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=137
 [required],
 [aria-required] {
-  @include advice('required');
+  @include advice("required");
 }
 
 input[required],
 input[aria-required] {
-  @include advice('required', $self-closing: true);
+  @include advice("required", $self-closing: true);
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=120
 // @note Tests 10.13.2 et 10.13.3
 [hidden]:not(:empty),
 [aria-hidden]:not(:empty) {
-  @include advice('hidden');
+  @include advice("hidden");
 }
 
 [placeholder] {
-  @include advice('placeholder');
+  @include advice("placeholder");
 }
 
 input[placeholder] {
-  @include advice('placeholder', $self-closing: true);
+  @include advice("placeholder", $self-closing: true);
 }
 
 video,
 audio {
-  @include advice('video-audio');
+  @include advice("video-audio");
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=75
 track:not([kind="caption"]) {
-  @include advice('track', $self-closing: true);
+  @include advice("track", $self-closing: true);
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=39
 svg,
 canvas,
 object[type^="image"] {
-  @include advice('embed');
+  @include advice("embed");
 }
 
 embed {
-  @include advice('embed', $self-closing: true);
+  @include advice("embed", $self-closing: true);
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=46
 svg[title] {
-  @include advice('title');
+  @include advice("title");
 }
 
 img[title],
 area[title] {
-  @include advice('title', $self-closing: true);
+  @include advice("title", $self-closing: true);
 }
 
 time,
 [datetime],
 [pubdate] {
-  @include advice('time');
+  @include advice("time");
 }
 
 meta[charset] {
-  @include advice('meta-charset', $self-closing: true);
+  @include advice("meta-charset", $self-closing: true);
 }

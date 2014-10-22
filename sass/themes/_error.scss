@@ -2,27 +2,27 @@
 
 a:not([href]),
 a[href=""] {
-  @include error('no-href');
+  @include error("no-href");
 }
 
 a[href^="javascript"] {
-  @include error('href-js');
+  @include error("href-js");
 }
 
 a[href="#"] {
-  @include error('empty-href');
+  @include error("empty-href");
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=90
 a:empty {
-  @include error('empty-link');
+  @include error("empty-link");
 }
 
 // @see BP1 OpQuast
 img:not([alt]),
 area:not([alt]),
 input[type="image"]:not([alt]) {
-  @include error('no-alt', $self-closing: true);
+  @include error("no-alt", $self-closing: true);
 }
 
 img:not([src]),
@@ -31,12 +31,12 @@ img[src="#"],
 input[type="image"]:not([src]),
 input[type="image"][src=""],
 input[type="image"][src="#"] {
-  @include error('no-src', $self-closing: true);
+  @include error("no-src", $self-closing: true);
 }
 
 label:not([for]),
 label[for=""] {
-  @include error('no-for');
+  @include error("no-for");
 }
 
 input:not([id]),
@@ -45,48 +45,48 @@ select:not([id]),
 select[id=""],
 textarea:not([id]),
 textarea[id=""] {
-  @include error('no-id', $self-closing: true);
+  @include error("no-id", $self-closing: true);
 }
 
 input:not([type]),
 input[type=""] {
-  @include error('no-type', $self-closing: true);
+  @include error("no-type", $self-closing: true);
 }
 
 input[type="submit"]:not([value]),
 input[type="button"]:not([value]) {
-  @include error('no-value', $self-closing: true);
+  @include error("no-value", $self-closing: true);
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=179
 optgroup:not([label]) {
-  @include error('optgroup');
+  @include error("optgroup");
 }
 
 iframe:not([title]),
 iframe[title=""] {
-  @include error('no-title');
+  @include error("no-title");
 }
 
 form:not([action]) {
-  @include error('no-action');
+  @include error("no-action");
 }
 
 [class=""] {
-  @include error('empty-class');
+  @include error("empty-class");
 }
 
 [id=""] {
-  @include error('empty-id');
+  @include error("empty-id");
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=109
 html:not([lang]) {
-  @include error('no-lang');
+  @include error("no-lang");
 }
 
 meta[http-equiv="refresh"] {
-  @include error('meta-refresh', $self-closing: true);
+  @include error("meta-refresh", $self-closing: true);
 }
 
 [onafterprint], [onbeforeprint], [onbeforeunload],
@@ -110,5 +110,5 @@ meta[http-equiv="refresh"] {
 [onratechange], [onreadystatechange], [onseeked],
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
-  @include error('js-events');
+  @include error("js-events");
 }

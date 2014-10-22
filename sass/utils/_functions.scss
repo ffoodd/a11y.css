@@ -21,7 +21,7 @@
 /// @requires $messages
 /// @return {String} Message
 @function message($theme, $key) {
-  $locale: if(global-variable-exists('language'), $language, 'en');
+  $locale: if(global-variable-exists("language"), $language, "en");
 
   @if not index(map-keys($messages), $theme) {
     @error "Theme `#{$theme}` does not exist.";
@@ -43,7 +43,7 @@
 /// @return {*}
 /// @example scss - Get color from error theme
 /// .selector {
-///   color: theme-conf('error', 'color');
+///   color: theme-conf("error", "color");
 /// }
 /// @example css - Resulting CSS
 /// .selector {
