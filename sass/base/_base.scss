@@ -1,21 +1,14 @@
 @charset "UTF-8";
 
-$counters: ();
-
-@each $key, $value in $themes {
-  $counters: append($counters, unquote($key), space);
-}
-
 html {
-  counter-reset: $counters;
+  counter-reset: error warning obsolete advice;
 
   &::before {
     content:
-      "Errors:   " counter(error)    "\A "
-      "Warnings: " counter(warning)  "\A "
-      "Obsolete: " counter(obsolete) "\A "
-      "Advices:  " counter(advice)   "\A ";
-
+      map-get(theme-conf("error",    "name"), $language) ": " #{counter(unquote("error"))}    "\A "
+      map-get(theme-conf("warning",  "name"), $language) ": " #{counter(unquote("warning"))}  "\A "
+      map-get(theme-conf("obsolete", "name"), $language) ": " #{counter(unquote("obsolete"))} "\A "
+      map-get(theme-conf("advice",   "name"), $language) ": " #{counter(unquote("obsolete"))} "\A ";
     background: rgba( 0, 0, 0, .8 );
     border: 1px solid black;
     border-radius: 3px;
