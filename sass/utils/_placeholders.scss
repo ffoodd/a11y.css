@@ -52,10 +52,10 @@
   %a11y-#{$theme} {
     outline: 4px solid transparentize(theme-conf($theme, "color"), .25) !important;
     outline-offset: -4px;
-    counter-increment: unquote($theme);
 
     &::after {
       @extend %a11y-after;
+      counter-increment: unquote($theme);
       z-index: theme-conf($theme, "index") !important;
     }
 
@@ -69,10 +69,10 @@
   %a11y-#{$theme}-self-closing {
     outline: 4px solid transparentize(theme-conf($theme, "color"), .25) !important;
     outline-offset: -4px;
-    counter-increment: unquote($theme);
 
     & ~ ::after {
       @extend %a11y-after;
+      counter-increment: unquote($theme);
       z-index: theme-conf($theme, "index") !important;
     }
 
