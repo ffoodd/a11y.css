@@ -2,14 +2,13 @@
 
 html {
   counter-reset: error warning obsolete advice;
-}
 
-body::before {
+  &::before {
     content:
       map-get(theme-conf("error",    "name"), $language) ": " #{counter(error)}    "\A "
       map-get(theme-conf("warning",  "name"), $language) ": " #{counter(warning)}  "\A "
       map-get(theme-conf("obsolete", "name"), $language) ": " #{counter(obsolete)} "\A "
-      map-get(theme-conf("advice",   "name"), $language) ": " #{counter(obsolete)} "\A ";
+      map-get(theme-conf("advice",   "name"), $language) ": " #{counter(advice)} "\A ";
 
     background: rgba(0, 0, 0, .8);
     border: 1px solid black;
@@ -25,4 +24,5 @@ body::before {
     font-family: monospace;
     text-shadow: 1px 1px black;
     white-space: pre;
+  }
 }
