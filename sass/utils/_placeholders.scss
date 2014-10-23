@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-/// a11y-after
+/// a11y-before
 /// @access private
-%a11y-after {
+%a11y-before {
   width: 100%                                                           !important;
   height: auto                                                          !important;
   display: block                                                        !important;
@@ -54,12 +54,12 @@
     outline-offset: -4px;
     counter-increment: unquote($theme);
 
-    &::after {
-      @extend %a11y-after;
+    &::before {
+      @extend %a11y-before;
       z-index: theme-conf($theme, "index") !important;
     }
 
-    &:hover::after {
+    &:hover::before {
       @extend %a11y-hover;
     }
   }
@@ -71,12 +71,12 @@
     outline-offset: -4px;
     counter-increment: unquote($theme);
 
-    & ~ ::after {
-      @extend %a11y-after;
+    & ~ ::before {
+      @extend %a11y-before;
       z-index: theme-conf($theme, "index") !important;
     }
 
-    &:hover ~ ::after {
+    &:hover ~ ::before {
       @extend %a11y-hover;
     }
   }

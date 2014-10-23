@@ -5,7 +5,7 @@ Pronounced « Alix ». Because it's fun.
 
 ## News
 
-From now on, CSS counters are incremented on each error/advice/warning and results are displayed with `body::after`. Since it is added through CSS, it is basically fake-content which is good since it is no more than visual indication for the user to see what's going on.
+From now on, CSS counters are incremented on each error/advice/warning and results are displayed with `html::after`. Since it is added through CSS, it is basically fake-content which is good since it is no more than visual indication for the user to see what's going on.
 
 *Note: this counter takes into account possible issues with elements within `<head>` tag. Related messages are not displayed, but they do increment the counter correctly, as any other issues.*
 

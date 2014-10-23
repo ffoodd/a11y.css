@@ -55,8 +55,8 @@
   @if $self-closing {
     @extend %a11y-#{$theme}-self-closing;
 
-    &::after,
-    & ~ ::after {
+    &::before,
+    & ~ ::before {
       @include message($theme, $key);
     }
   }
@@ -64,7 +64,7 @@
   @else {
     @extend %a11y-#{$theme};
 
-    &::after {
+    &::before {
       @include message($theme, $key);
     }
   }
