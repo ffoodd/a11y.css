@@ -7,7 +7,8 @@ table table,
 tr > :not(td):not(th),
 tbody + tfoot,
 dt + :not(dd),
-dl > :not(dt):not(dd) {
+dl > :not(dt):not(dd),
+:not(figure) > figcaption {
   @include warning("invalid-nesting");
 }
 

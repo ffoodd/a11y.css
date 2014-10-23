@@ -9,16 +9,13 @@ main:not(:first-of-type) {
   @include advice("main");
 }
 
-section:not([aria-labelledby]) {
-  @include advice("section");
+// @see http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element
+figcaption:not(:only-of-type) {
+  @include advice("figcaption");
 }
 
-figure:not([role="group"]) {
-  @include advice("figure");
-}
-
-figure img:not([aria-describedby]) {
-  @include advice("figure-img");
+figcaption:not(:first-child):not(:last-child) {
+  @include advice("figcaption-order");
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=176

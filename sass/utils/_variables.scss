@@ -17,17 +17,13 @@ $messages: (
       "fr": "<main> est réservée à la zone de contenu principal, et doit donc être unique.\A Repentez-vous et tout ira bien :) .",
       "en": "The <main> tag is exclusively restricted to the main content area, thus should be unique.\A Repent yourself now."
     ),
-    "section": (
-      "fr": "L’élément <section> a une valeur sémantique, vous le saviez ?\A Il doit donc être décrit par un texte.",
-      "en": "Did you know the <section> has a semantic value?\A It should be described with text content."
+    "figcaption": (
+      "fr": "<figcaption> décrit le contenu d’une <figure> et doit donc être unique dans cette <figure>.\A Oups :) .",
+      "en": "The <figcaption> tag describes a <figure> content, thus should be unique in these <figure>.\A Oups!"
     ),
-    "figure": (
-      "fr": "L’élément <figure> regroupe une <img> et un <figcaption> :\A le rôle «group» semble indiqué, pas vrai ?",
-      "en": "The <figure> element gathers an <img> and a <figcaption>:\A `group` role sounds perfect, doesn’t it?"
-    ),
-    "figure-img": (
-      "fr": "Une image dans l’élément <figure> doit être liée à / décrite par un <figcaption>.",
-      "en": "An image within a <figure> element should be described by a <figcaption>."
+    "figcaption-order": (
+      "fr": "<figcaption> est censé être le premier ou le dernier enfant d’une <figure>.\A On en apprend tous les jours !",
+      "en": "The <figcaption> tag is supposed to be <figure>'s first or last child.\A You learn something every day!"
     ),
     "target-blank": (
       "fr": "L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre.\A Mais vous y avez pensé, non :) ?",
