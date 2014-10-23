@@ -3,7 +3,7 @@
 html {
   counter-reset: error warning obsolete advice;
 
-  &::before {
+  &::after {
     content:
       map-get(theme-conf("error",    "name"), $language) ": " #{counter(error)}    "\A "
       map-get(theme-conf("warning",  "name"), $language) ": " #{counter(warning)}  "\A "
