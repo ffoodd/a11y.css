@@ -1,10 +1,12 @@
 @charset "UTF-8";
 
-ul > *:not(li),
-ol > *:not(li),
+ul > :not(li),
+ol > :not(li),
 table > tr,
 table table,
-tbody + tfoot {
+tbody + tfoot,
+dt + :not(dd),
+dl > :not(dt):not(dd) {
   @include warning("invalid-nesting");
 }
 
