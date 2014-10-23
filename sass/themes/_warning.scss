@@ -4,6 +4,7 @@ ul > :not(li),
 ol > :not(li),
 table > tr,
 table table,
+tr > :not(td):not(th),
 tbody + tfoot,
 dt + :not(dd),
 dl > :not(dt):not(dd) {
