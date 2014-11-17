@@ -39,8 +39,8 @@ label[for=""] {
   @include error("no-for");
 }
 
-input:not([id]),
-input[id=""],
+input:not([type="button"]):not([type="submit"]):not([id]),
+input:not([type="button"]):not([type="submit"])[id=""],
 select:not([id]),
 select[id=""],
 textarea:not([id]),
@@ -51,11 +51,6 @@ textarea[id=""] {
 input:not([type]),
 input[type=""] {
   @include error("no-type", $self-closing: true);
-}
-
-input[type="submit"]:not([value]),
-input[type="button"]:not([value]) {
-  @include error("no-value", $self-closing: true);
 }
 
 // @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=179
