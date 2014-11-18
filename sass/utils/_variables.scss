@@ -54,19 +54,19 @@ $messages: (
       "en": "I hope you don’t use this placeholder in place of a <label>."
     ),
     "video-audio": (
-      "fr": "Les éléments interactifs doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée.",
-      "en": "Interactive elements should have an alternate version, like a transcript or subtitles (<track>), and have their duration displayed."
+      "fr": "Les médias temporels doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée.",
+      "en": "Time-based medias should have an alternate version, like a transcript or subtitles (<track>), and have their duration displayed."
     ),
     "track": (
-      "fr": "Vous utilisez <track>, c’est bon signe !\A Mais l’attribut [kind=\"caption\"] vous intéressera sûrement aussi :) .",
-      "en": "You use <track> which is good, but the [kind=\"caption\"] would make things even better!"
+      "fr": "Vous utilisez <track>, c’est bon signe !\A Mais l’attribut [kind] vous intéressera sûrement aussi :) .",
+      "en": "You use <track> which is good, but the [kind] attribute would make things even better!"
     ),
     "embed": (
       "fr": "Les <svg>, <embed>, <canvas> et autres <object> porteurs d’information devraient être regroupés dans un parent <figure> et associés à un <figcaption> (ou <desc> pour <svg>).",
       "en": "<svg>, <embed>, <canvas> and other <object> giving informations should be presented within a <figure> element and associated to a <figcaption> (or <desc> for <svg>)."
     ),
     "title": (
-      "fr": "L’attribut title, s’il est présent, doit être identique à l’alternative renseignée.\A À vous de jouer ;-) .",
+      "fr": "L’attribut [title], s’il est présent, doit être identique à l’alternative renseignée.\A À vous de jouer ;-) .",
       "en": "[title] attribute, if present, should be identical to the given alternative.\A Your move!"
     ),
     "time": (
@@ -116,9 +116,9 @@ $messages: (
       "fr": "Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options.\A Dommage…",
       "en": "You have gathered options, but no label attribute introduces this options group.\A Too bad…"
     ),
-    "no-value": (		
-      "fr": "Attribut [value] manquant.\A Ça fait quoi alors, si je clique dessus ?",		
-      "en": "Missing [value] attribute.\A What should happen when I click?"		
+    "no-value": (
+      "fr": "Attribut [value] manquant.\A Ça fait quoi alors, si je clique dessus ?",
+      "en": "Missing [value] attribute.\A What should happen when I click?"
     ),
     "no-type": (
       "fr": "Attribut [type] manquant ou vide.\A On met quoi, dans ce champ ?",
@@ -178,6 +178,14 @@ $messages: (
     "no-aria-label": (
       "fr": "Ce svg n’a pas d’attribut [aria-label].\A Si ce n’est pas décoratif, un élément <desc> devrait être présent. Il y en a un ?",
       "en": "No [aria-label] attribute for this SVG.\A If it's not decorative, it's only okay if a <desc> tag is included. Is this ok?"
+    ),
+    "autoplay": (
+      "fr": "Ce média temporel se déclenche automatiquement. Existe-t-il un moyen de l’arrêter ?",
+      "en": "This time-based media plays automatically. Is there a way to sopt it?"
+    ),
+    "controls": (
+      "fr": "Ce média temporel ne dispose pas des contrôles par défaut.\A Avez-vous implémenté des contrôles satisfaisants ?",
+      "en": "This time-based media doesn't use native controls.\A Did you add satisfying controls on your own?"
     ),
     "style-attr": (
       "fr": "Éléments supportant des styles en ligne.\A Les pauvres… Vous devriez avoir honte !",

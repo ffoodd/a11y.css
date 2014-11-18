@@ -49,9 +49,9 @@ textarea[id=""] {
   @include error("no-id", $self-closing: true);
 }
 
-input[type="submit"]:not([value]),		
-input[type="button"]:not([value]) {		
-  @include error("no-value", $self-closing: true);		
+input[type="submit"]:not([value]),
+input[type="button"]:not([value]) {
+  @include error("no-value", $self-closing: true);
 }
 
 input:not([type]),
@@ -64,6 +64,8 @@ optgroup:not([label]) {
   @include error("optgroup");
 }
 
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-2-1
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
 iframe:not([title]),
 iframe[title=""] {
   @include error("no-title");

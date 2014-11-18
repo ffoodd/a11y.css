@@ -32,10 +32,33 @@ input[type="image"][alt=""] {
   @include warning("empty-alt", $self-closing: true);
 }
 
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-2
+// @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all
+embed[type="image"][alt=""],
+object[type="image"][alt=""] {
+  @include warning("empty-alt");
+}
+
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1
 // @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all
 svg:not([aria-label]) {
   @include warning("no-aria-label");
+}
+
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-18
+// @see http://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio
+video[autoplay],
+audio[autoplay] {
+  @include warning("autoplay");
+}
+
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-20
+// @see http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc
+// @see http://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable
+// @see http://www.w3.org/TR/WCAG20/#keyboard-operation-trapping
+video:not([controls]),
+audio:not([controls]) {
+  @include warning("controls");
 }
 
 // @see BP156 OpQuast

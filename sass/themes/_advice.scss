@@ -68,40 +68,51 @@ input[placeholder] {
   @include advice("placeholder", $self-closing: true);
 }
 
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-1
+// @see http://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt
+// @see http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-13
+// @see http://www.w3.org/TR/WCAG20/#media-equiv-text-doc
 video,
 audio {
   @include advice("video-audio");
 }
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=75
-track:not([kind="caption"]) {
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-3
+// @see http://www.w3.org/TR/WCAG20/#media-equiv-captions
+track:not([kind]) {
   @include advice("track", $self-closing: true);
 }
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=39
-svg,
-canvas,
-object[type^="image"] {
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1
+// @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all
+:not(figure) svg,
+:not(figure) canvas {
   @include advice("embed");
 }
 
-embed {
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1
+// @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all
+:not(figure) embed,
+:not(figure) object {
   @include advice("embed", $self-closing: true);
 }
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=46
-svg[title] {
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-3
+// @see http://www.w3.org/TR/WCAG20/#text-equiv-all
+svg[aria-label][title] {
   @include advice("title");
 }
 
-img[title],
-area[title] {
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-3
+// @see http://www.w3.org/TR/WCAG20/#text-equiv-all
+img[alt][title],
+area[alt][title] {
   @include advice("title", $self-closing: true);
 }
 
 time,
-[datetime],
-[pubdate] {
+[datetime] {
   @include advice("time");
 }
 
