@@ -24,11 +24,18 @@ abbr[title=""] {
   @include warning("empty-title");
 }
 
-// @see BP1 OpQuast
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1
+// @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all
 img[alt=""],
 area[alt=""],
 input[type="image"][alt=""] {
   @include warning("empty-alt", $self-closing: true);
+}
+
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1
+// @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all
+svg:not([aria-label]) {
+  @include warning("no-aria-label");
 }
 
 // @see BP156 OpQuast
