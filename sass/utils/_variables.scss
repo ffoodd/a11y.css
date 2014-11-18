@@ -144,6 +144,10 @@ $messages: (
       "fr": "<meta http-equiv=\"refresh\"> devrait être supprimé.\A Définitivement.",
       "en": "<meta http-equiv=\"refresh\"> should be removed.\A Forever."
     ),
+    "table-for-layout": (
+      "fr": "Cet élément / attribut a une valeur sémantique, il n’a rien à faire dans un tableau de mise en page.\A C’est un crime dans plusieurs pays, faites gaffe.",
+      "en": "This tag / attribute has a semantic value, it has nothing to do in a table used for layout.\A This is a crime in many countries, you should care."
+    ),
     "no-lang": (
       "fr": "Pas d’attribut lang / xml:lang sur la balise <html>.\A Vous parlez quelle langue, vous ?",
       "en": "No lang / xml:lang found on <html> tag.\A Which language is that?"
@@ -204,15 +208,19 @@ $messages: (
       "en": "Empty <title> tag. Hell is full of people like you."
     ),
     "table-presentation": (
-      "fr": "Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données.\A Vous pouvez vérifier ?",
-      "en": "A presentional table should not contain elements proper to data tables.\A Would you mind double checking?"
+      "fr": "Un tableau de mise en forme ne doit pas avoir de résumé.\A Il doit également rester compréhensible une fois linéarisé.",
+      "en": "A presentional table should not contain a summary nor a caption.\A And it should be understandable once linearized."
+    ),
+    "table-caption": (
+      "fr": "Un tableau de données doit avoir un titre, sous forme de <caption>.\A Et c’est pas du bluff !",
+      "en": "A data table should have a <caption>.\A And that's not bluff!"
     ),
     "th-scope": (
       "fr": "Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ?\A C’est ce que dit son [scope], en tout cas.",
       "en": "This head cell applies to a full line/row, doesn’t it?\A ’Cause that’s what its [scope] says."
     ),
     "th-no-scope": (
-      "fr": "Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ?\A Si oui, pensez à scope.",
+      "fr": "Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ?\A Si oui, pensez à [scope].",
       "en": "This head cell doesn’t apply to a full line/row, or does it?\A If so, think of [scope]."
     ),
     "th-no-id": (

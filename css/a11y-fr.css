@@ -2,7 +2,14 @@
 a:not([href])::before,
 a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:empty::before, label:not([for])::before,
 label[for=""]::before, optgroup:not([label])::before, iframe:not([title])::before,
-iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before, [onafterprint]::before, [onbeforeprint]::before, [onbeforeunload]::before,
+iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before, table[role="presentation"] th::before,
+table[role="presentation"] thead::before,
+table[role="presentation"] tfoot::before,
+table[role="presentation"] caption::before,
+table[role="presentation"] [axis]::before,
+table[role="presentation"] [scope]::before,
+table[role="presentation"] [headers]::before,
+table[role="presentation"] [colgroup]::before, [onafterprint]::before, [onbeforeprint]::before, [onbeforeunload]::before,
 [onerror]::before, [onhaschange]::before, [onload]::before, [onmessage]::before,
 [onoffline]::before, [ononline]::before, [onpagehide]::before, [onpageshow]::before,
 [onpopstate]::before, [onredo]::before, [onresize]::before, [onstorage]::before,
@@ -55,7 +62,7 @@ li:empty::before,
 p:empty::before,
 td:empty::before,
 th:empty::before,
-title:empty::before, table[role="presentation"]::before, th[scope]::before, th:not([scope])::before, th:not([id])::before, img[alt=""] ~ ::before,
+title:empty::before, table[role="presentation"]::before, table:not([role="presentation"])::before, th[scope]::before, th:not([scope])::before, th:not([id])::before, img[alt=""] ~ ::before,
 area[alt=""] ~ ::before,
 input[type="image"][alt=""] ~ ::before, nav::before, main:not(:first-of-type)::before, figcaption:not(:only-of-type)::before, figcaption:not(:last-child):not(:first-child)::before, [href^="mailto"]::before, [target$="blank"]::before, [href$=".pdf"]::before,
 [href$=".doc"]::before,
@@ -192,7 +199,14 @@ body[background]::before, table[background]::before, thead[background]::before, 
 a:not([href]):hover::before,
 a[href=""]:hover::before, a[href^="javascript"]:hover::before, a[href="#"]:hover::before, a:empty:hover::before, label:not([for]):hover::before,
 label[for=""]:hover::before, optgroup:not([label]):hover::before, iframe:not([title]):hover::before,
-iframe[title=""]:hover::before, form:not([action]):hover::before, [class=""]:hover::before, [id=""]:hover::before, html:not([lang]):hover::before, [onafterprint]:hover::before, [onbeforeprint]:hover::before, [onbeforeunload]:hover::before,
+iframe[title=""]:hover::before, form:not([action]):hover::before, [class=""]:hover::before, [id=""]:hover::before, html:not([lang]):hover::before, table[role="presentation"] th:hover::before,
+table[role="presentation"] thead:hover::before,
+table[role="presentation"] tfoot:hover::before,
+table[role="presentation"] caption:hover::before,
+table[role="presentation"] [axis]:hover::before,
+table[role="presentation"] [scope]:hover::before,
+table[role="presentation"] [headers]:hover::before,
+table[role="presentation"] [colgroup]:hover::before, [onafterprint]:hover::before, [onbeforeprint]:hover::before, [onbeforeunload]:hover::before,
 [onerror]:hover::before, [onhaschange]:hover::before, [onload]:hover::before, [onmessage]:hover::before,
 [onoffline]:hover::before, [ononline]:hover::before, [onpagehide]:hover::before, [onpageshow]:hover::before,
 [onpopstate]:hover::before, [onredo]:hover::before, [onresize]:hover::before, [onstorage]:hover::before,
@@ -245,7 +259,7 @@ li:empty:hover::before,
 p:empty:hover::before,
 td:empty:hover::before,
 th:empty:hover::before,
-title:empty:hover::before, table[role="presentation"]:hover::before, th[scope]:hover::before, th:not([scope]):hover::before, th:not([id]):hover::before, img[alt=""]:hover ~ ::before,
+title:empty:hover::before, table[role="presentation"]:hover::before, table:not([role="presentation"]):hover::before, th[scope]:hover::before, th:not([scope]):hover::before, th:not([id]):hover::before, img[alt=""]:hover ~ ::before,
 area[alt=""]:hover ~ ::before,
 input[type="image"][alt=""]:hover ~ ::before, nav:hover::before, main:not(:first-of-type):hover::before, figcaption:not(:only-of-type):hover::before, figcaption:not(:last-child):not(:first-child):hover::before, [href^="mailto"]:hover::before, [target$="blank"]:hover::before, [href$=".pdf"]:hover::before,
 [href$=".doc"]:hover::before,
@@ -365,7 +379,14 @@ body[background]:hover::before, table[background]:hover::before, thead[backgroun
 a:not([href]),
 a[href=""], a[href^="javascript"], a[href="#"], a:empty, label:not([for]),
 label[for=""], optgroup:not([label]), iframe:not([title]),
-iframe[title=""], form:not([action]), [class=""], [id=""], html:not([lang]), [onafterprint], [onbeforeprint], [onbeforeunload],
+iframe[title=""], form:not([action]), [class=""], [id=""], html:not([lang]), table[role="presentation"] th,
+table[role="presentation"] thead,
+table[role="presentation"] tfoot,
+table[role="presentation"] caption,
+table[role="presentation"] [axis],
+table[role="presentation"] [scope],
+table[role="presentation"] [headers],
+table[role="presentation"] [colgroup], [onafterprint], [onbeforeprint], [onbeforeunload],
 [onerror], [onhaschange], [onload], [onmessage],
 [onoffline], [ononline], [onpagehide], [onpageshow],
 [onpopstate], [onredo], [onresize], [onstorage],
@@ -392,7 +413,14 @@ iframe[title=""], form:not([action]), [class=""], [id=""], html:not([lang]), [on
   a:not([href])::before,
   a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:empty::before, label:not([for])::before,
   label[for=""]::before, optgroup:not([label])::before, iframe:not([title])::before,
-  iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before, [onafterprint]::before, [onbeforeprint]::before, [onbeforeunload]::before,
+  iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before, table[role="presentation"] th::before,
+  table[role="presentation"] thead::before,
+  table[role="presentation"] tfoot::before,
+  table[role="presentation"] caption::before,
+  table[role="presentation"] [axis]::before,
+  table[role="presentation"] [scope]::before,
+  table[role="presentation"] [headers]::before,
+  table[role="presentation"] [colgroup]::before, [onafterprint]::before, [onbeforeprint]::before, [onbeforeunload]::before,
   [onerror]::before, [onhaschange]::before, [onload]::before, [onmessage]::before,
   [onoffline]::before, [ononline]::before, [onpagehide]::before, [onpageshow]::before,
   [onpopstate]::before, [onredo]::before, [onresize]::before, [onstorage]::before,
@@ -469,7 +497,7 @@ li:empty,
 p:empty,
 td:empty,
 th:empty,
-title:empty, table[role="presentation"], th[scope], th:not([scope]), th:not([id]) {
+title:empty, table[role="presentation"], table:not([role="presentation"]), th[scope], th:not([scope]), th:not([id]) {
   outline: 4px solid rgba(255, 215, 0, 0.75) !important;
   outline-offset: -4px;
   counter-increment: warning; }
@@ -492,7 +520,7 @@ title:empty, table[role="presentation"], th[scope], th:not([scope]), th:not([id]
   p:empty::before,
   td:empty::before,
   th:empty::before,
-  title:empty::before, table[role="presentation"]::before, th[scope]::before, th:not([scope])::before, th:not([id])::before {
+  title:empty::before, table[role="presentation"]::before, table:not([role="presentation"])::before, th[scope]::before, th:not([scope])::before, th:not([id])::before {
     z-index: 2147483646 !important; }
 
 img[alt=""],
@@ -991,13 +1019,16 @@ title:empty::before {
   content: "☢  Élément vide. Diantre." !important; }
 
 table[role="presentation"]::before {
-  content: "☢  Un tableau de mise en forme ne doit pas contenir d’éléments propres aux tableaux de données. Vous pouvez vérifier ?" !important; }
+  content: "☢  Un tableau de mise en forme ne doit pas avoir de résumé. Il doit également rester compréhensible une fois linéarisé." !important; }
+
+table:not([role="presentation"])::before {
+  content: "☢  Un tableau de données doit avoir un titre, sous forme de <caption>. Et c’est pas du bluff !" !important; }
 
 th[scope]::before {
   content: "☢  Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? C’est ce que dit son [scope], en tout cas." !important; }
 
 th:not([scope])::before {
-  content: "☢  Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à scope." !important; }
+  content: "☢  Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ? Si oui, pensez à [scope]." !important; }
 
 th:not([id])::before {
   content: "☢  Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête." !important; }
@@ -1083,6 +1114,16 @@ html:not([lang])::before {
 
 meta[http-equiv="refresh"]::before, meta[http-equiv="refresh"] ~ ::before {
   content: '☠  <meta http-equiv="refresh"> devrait être supprimé. Définitivement.' !important; }
+
+table[role="presentation"] th::before,
+table[role="presentation"] thead::before,
+table[role="presentation"] tfoot::before,
+table[role="presentation"] caption::before,
+table[role="presentation"] [axis]::before,
+table[role="presentation"] [scope]::before,
+table[role="presentation"] [headers]::before,
+table[role="presentation"] [colgroup]::before {
+  content: "☠  Cet élément / attribut a une valeur sémantique, il n’a rien à faire dans un tableau de mise en page. C’est un crime dans plusieurs pays, faites gaffe." !important; }
 
 [onafterprint]::before, [onbeforeprint]::before, [onbeforeunload]::before,
 [onerror]::before, [onhaschange]::before, [onload]::before, [onmessage]::before,

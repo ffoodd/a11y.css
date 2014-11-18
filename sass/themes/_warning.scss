@@ -81,20 +81,32 @@ title:empty {
   @include warning("empty-nodes");
 }
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=80
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-3
+// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence
 table[role="presentation"] {
   @include warning("table-presentation");
 }
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=81
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-4
+// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+table:not([role="presentation"]) {
+  @include warning("table-caption");
+}
+
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-7
+// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
 th[scope] {
   @include warning("th-scope");
 }
 
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-7
+// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
 th:not([scope]) {
   @include warning("th-no-scope");
 }
 
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-7
+// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
 th:not([id]) {
   @include warning("th-no-id");
 }
