@@ -48,6 +48,11 @@ textarea[id=""] {
   @include error("no-id", $self-closing: true);
 }
 
+input[type="submit"]:not([value]),		
+input[type="button"]:not([value]) {		
+  @include error("no-value", $self-closing: true);		
+}
+
 input:not([type]),
 input[type=""] {
   @include error("no-type", $self-closing: true);
