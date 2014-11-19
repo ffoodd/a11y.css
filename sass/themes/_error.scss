@@ -13,9 +13,20 @@ a[href="#"] {
   @include error("empty-href");
 }
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=90
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5
+// @see http://www.w3.org/TR/WCAG20/#text-equiv-all
+// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
+// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link
 a:empty {
   @include error("empty-link");
+}
+
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5
+// @see http://www.w3.org/TR/WCAG20/#text-equiv-all
+// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
+// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link
+a img:only-child:not([alt]) {
+  @include error("empty-image-link");
 }
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1

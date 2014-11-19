@@ -1,6 +1,6 @@
 @charset "UTF-8";
 a:not([href])::before,
-a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:empty::before, label:not([for])::before,
+a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:empty::before, a img:not([alt]):only-child::before, label:not([for])::before,
 label[for=""]::before, optgroup:not([label])::before, iframe:not([title])::before,
 iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before, table[role="presentation"] th::before,
 table[role="presentation"] thead::before,
@@ -197,7 +197,7 @@ body[background]::before, table[background]::before, thead[background]::before, 
   transition: transform .3s ease-in                             !important; }
 
 a:not([href]):hover::before,
-a[href=""]:hover::before, a[href^="javascript"]:hover::before, a[href="#"]:hover::before, a:empty:hover::before, label:not([for]):hover::before,
+a[href=""]:hover::before, a[href^="javascript"]:hover::before, a[href="#"]:hover::before, a:empty:hover::before, a img:not([alt]):only-child:hover::before, label:not([for]):hover::before,
 label[for=""]:hover::before, optgroup:not([label]):hover::before, iframe:not([title]):hover::before,
 iframe[title=""]:hover::before, form:not([action]):hover::before, [class=""]:hover::before, [id=""]:hover::before, html:not([lang]):hover::before, table[role="presentation"] th:hover::before,
 table[role="presentation"] thead:hover::before,
@@ -377,7 +377,7 @@ body[background]:hover::before, table[background]:hover::before, thead[backgroun
   transition: transform .3s ease-in                             !important; }
 
 a:not([href]),
-a[href=""], a[href^="javascript"], a[href="#"], a:empty, label:not([for]),
+a[href=""], a[href^="javascript"], a[href="#"], a:empty, a img:only-child:not([alt]), label:not([for]),
 label[for=""], optgroup:not([label]), iframe:not([title]),
 iframe[title=""], form:not([action]), [class=""], [id=""], html:not([lang]), table[role="presentation"] th,
 table[role="presentation"] thead,
@@ -411,7 +411,7 @@ table[role="presentation"] [colgroup], [onafterprint], [onbeforeprint], [onbefor
   outline-offset: -4px;
   counter-increment: error; }
   a:not([href])::before,
-  a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:empty::before, label:not([for])::before,
+  a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:empty::before, a img:not([alt]):only-child::before, label:not([for])::before,
   label[for=""]::before, optgroup:not([label])::before, iframe:not([title])::before,
   iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before, table[role="presentation"] th::before,
   table[role="presentation"] thead::before,
@@ -1045,6 +1045,9 @@ a[href="#"]::before {
 
 a:empty::before {
   content: "☠  Ce lien est vide. Vide…" !important; }
+
+a img:only-child:not([alt])::before {
+  content: "☠  Ce lien ne contient qu’une <img> sans [alt]. Je suis censé deviner ou il mène ?" !important; }
 
 img:not([alt])::before, img:not([alt]) ~ ::before,
 area:not([alt])::before,

@@ -96,6 +96,10 @@ $messages: (
       "fr": "Ce lien est vide. Vide…",
       "en": "Empty link. Empty…"
     ),
+    "empty-image-link": (
+      "fr": "Ce lien ne contient qu’une <img> sans [alt]. Je suis censé deviner ou il mène ?",
+      "en": "This link only contains an <img> missing its [alt]. Am I supposed to guess where it goes?"
+    ),
     "no-alt": (
       "fr": "Attribut [alt] manquant. Quelle hérésie.",
       "en": "Missing [alt] attribute. Sacrilege!"
