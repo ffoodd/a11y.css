@@ -11,11 +11,15 @@ tr > :not(td):not(th),
 tbody + tfoot,
 dt + :not(dd),
 dl > :not(dt):not(dd),
-:not(figure) > figcaption {
+:not(figure) > figcaption,
+:not(select) optgroup,
+:not(select) option {
   @include warning("invalid-nesting");
 }
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=140
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-6
+// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+// @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child) {
   @include warning("fieldset");
@@ -66,12 +70,8 @@ audio:not([controls]) {
   @include warning("controls");
 }
 
-// @see BP156 OpQuast
-[style] {
-  @include warning("style-attr");
-}
-
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=142
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-4
+// @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
 label + :not(input):not(select):not(textarea) {
   @include warning("label-field");
 }

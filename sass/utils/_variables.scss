@@ -113,8 +113,8 @@ $messages: (
       "en": "Missing [for] attribute. Still, this label must be here for some reason."
     ),
     "no-id": (
-      "fr": "Attribut [id] manquant ou vide.\A Tout le monde a droit à un nom, même les champs de formulaire.",
-      "en": "Missing or empty [id] attribute.\A Everybody has a name, even form fields."
+      "fr": "Ce champ est indescriptible. Vous avez pourtant le choix :\A [title], [id], [aria-label], [aria-labelledby].",
+      "en": "Thsi field is indescribable. However you got choices:\A [title], [id], [aria-label], [aria-labelledby]."
     ),
     "optgroup": (
       "fr": "Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options.\A Dommage…",
@@ -155,6 +155,14 @@ $messages: (
     "table-for-layout": (
       "fr": "Cet élément / attribut a une valeur sémantique, il n’a rien à faire dans un tableau de mise en page.\A C’est un crime dans plusieurs pays, faites gaffe.",
       "en": "This tag / attribute has a semantic value, it has nothing to do in a table used for layout.\A This is a crime in many countries, you should care."
+    ),
+    "style-attr": (
+      "fr": "Éléments supportant des styles en ligne.\A Les pauvres… Vous devriez avoir honte !",
+      "en": "Inline styles.\A You should be ashamed."
+    ),
+    "dimensions": (
+      "fr": "Sapristi ! Les attributs [width] et [height] ne sont autorisés que sur les <img> !",
+      "en": "By jove ! [width] & [height] attributes are forbidden on any tags but <img>!"
     ),
     "no-lang": (
       "fr": "Pas d’attribut lang / xml:lang sur la balise <html>.\A Vous parlez quelle langue, vous ?",
@@ -198,10 +206,6 @@ $messages: (
     "controls": (
       "fr": "Ce média temporel ne dispose pas des contrôles par défaut.\A Avez-vous implémenté des contrôles satisfaisants ?",
       "en": "This time-based media doesn't use native controls.\A Did you add satisfying controls on your own?"
-    ),
-    "style-attr": (
-      "fr": "Éléments supportant des styles en ligne.\A Les pauvres… Vous devriez avoir honte !",
-      "en": "Inline styles.\A You should be ashamed."
     ),
     "label-field": (
       "fr": "Un champ et son label devrait être accolés.\A Mais ce qui suit ce label ne ressemble pas à un champ…",
