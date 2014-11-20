@@ -2,7 +2,8 @@
 a:not([href])::before,
 a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:empty::before, a img:not([alt]):only-child::before, label:not([for])::before,
 label[for=""]::before, optgroup:not([label])::before, iframe:not([title])::before,
-iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before, table[role="presentation"] th::before,
+iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before,
+html[lang=""]::before, title:empty::before, table[role="presentation"] th::before,
 table[role="presentation"] thead::before,
 table[role="presentation"] tfoot::before,
 table[role="presentation"] caption::before,
@@ -61,8 +62,7 @@ span:empty::before,
 li:empty::before,
 p:empty::before,
 td:empty::before,
-th:empty::before,
-title:empty::before, table[role="presentation"]::before, table:not([role="presentation"])::before, th[scope]::before, th:not([scope])::before, th:not([id])::before, img[alt=""] ~ ::before,
+th:empty::before, table[role="presentation"]::before, table:not([role="presentation"])::before, th[scope]::before, th:not([scope])::before, th:not([id])::before, img[alt=""] ~ ::before,
 area[alt=""] ~ ::before,
 input[type="image"][alt=""] ~ ::before, nav::before, main:not(:first-of-type)::before, figcaption:not(:only-of-type)::before, figcaption:not(:last-child):not(:first-child)::before, [href^="mailto"]::before, [target$="blank"]::before, [href$=".pdf"]::before,
 [href$=".doc"]::before,
@@ -199,7 +199,8 @@ body[background]::before, table[background]::before, thead[background]::before, 
 a:not([href]):hover::before,
 a[href=""]:hover::before, a[href^="javascript"]:hover::before, a[href="#"]:hover::before, a:empty:hover::before, a img:not([alt]):only-child:hover::before, label:not([for]):hover::before,
 label[for=""]:hover::before, optgroup:not([label]):hover::before, iframe:not([title]):hover::before,
-iframe[title=""]:hover::before, form:not([action]):hover::before, [class=""]:hover::before, [id=""]:hover::before, html:not([lang]):hover::before, table[role="presentation"] th:hover::before,
+iframe[title=""]:hover::before, form:not([action]):hover::before, [class=""]:hover::before, [id=""]:hover::before, html:not([lang]):hover::before,
+html[lang=""]:hover::before, title:empty:hover::before, table[role="presentation"] th:hover::before,
 table[role="presentation"] thead:hover::before,
 table[role="presentation"] tfoot:hover::before,
 table[role="presentation"] caption:hover::before,
@@ -258,8 +259,7 @@ span:empty:hover::before,
 li:empty:hover::before,
 p:empty:hover::before,
 td:empty:hover::before,
-th:empty:hover::before,
-title:empty:hover::before, table[role="presentation"]:hover::before, table:not([role="presentation"]):hover::before, th[scope]:hover::before, th:not([scope]):hover::before, th:not([id]):hover::before, img[alt=""]:hover ~ ::before,
+th:empty:hover::before, table[role="presentation"]:hover::before, table:not([role="presentation"]):hover::before, th[scope]:hover::before, th:not([scope]):hover::before, th:not([id]):hover::before, img[alt=""]:hover ~ ::before,
 area[alt=""]:hover ~ ::before,
 input[type="image"][alt=""]:hover ~ ::before, nav:hover::before, main:not(:first-of-type):hover::before, figcaption:not(:only-of-type):hover::before, figcaption:not(:last-child):not(:first-child):hover::before, [href^="mailto"]:hover::before, [target$="blank"]:hover::before, [href$=".pdf"]:hover::before,
 [href$=".doc"]:hover::before,
@@ -379,7 +379,8 @@ body[background]:hover::before, table[background]:hover::before, thead[backgroun
 a:not([href]),
 a[href=""], a[href^="javascript"], a[href="#"], a:empty, a img:only-child:not([alt]), label:not([for]),
 label[for=""], optgroup:not([label]), iframe:not([title]),
-iframe[title=""], form:not([action]), [class=""], [id=""], html:not([lang]), table[role="presentation"] th,
+iframe[title=""], form:not([action]), [class=""], [id=""], html:not([lang]),
+html[lang=""], title:empty, table[role="presentation"] th,
 table[role="presentation"] thead,
 table[role="presentation"] tfoot,
 table[role="presentation"] caption,
@@ -413,7 +414,8 @@ table[role="presentation"] [colgroup], [onafterprint], [onbeforeprint], [onbefor
   a:not([href])::before,
   a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:empty::before, a img:not([alt]):only-child::before, label:not([for])::before,
   label[for=""]::before, optgroup:not([label])::before, iframe:not([title])::before,
-  iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before, table[role="presentation"] th::before,
+  iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before,
+  html[lang=""]::before, title:empty::before, table[role="presentation"] th::before,
   table[role="presentation"] thead::before,
   table[role="presentation"] tfoot::before,
   table[role="presentation"] caption::before,
@@ -1112,11 +1114,15 @@ form:not([action])::before {
 [id=""]::before {
   content: "☠  Empty [id] attribute. Does this look like a game to you?" !important; }
 
-html:not([lang])::before {
+html:not([lang])::before,
+html[lang=""]::before {
   content: "☠  No lang / xml:lang found on <html> tag. Which language is that?" !important; }
 
 meta[http-equiv="refresh"]::before, meta[http-equiv="refresh"] ~ ::before {
   content: '☠  <meta http-equiv="refresh"> should be removed. Forever.' !important; }
+
+title:empty::before {
+  content: "☠  The <title> tag is empty. Don't you know it's the most important tag in a web page?" !important; }
 
 table[role="presentation"] th::before,
 table[role="presentation"] thead::before,

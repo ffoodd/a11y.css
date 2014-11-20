@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-parses
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
 ul > :not(li),
 ol > :not(li),
 table > tr,
@@ -19,6 +22,8 @@ fieldset > legend:not(:first-child) {
 }
 
 // @see BP160 OpQuast
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-9-4
+// @see http://www.w3.org/TR/WCAG20/#meaning-located
 abbr:not([title]),
 abbr[title=""] {
   @include warning("empty-title");
