@@ -37,6 +37,10 @@ $messages: (
       "fr": "Le format et le poids d’un fichier téléchargeable devraient être indiqués — et il devrait être accessible.",
       "en": "Format and size from a downloadable file should be displayed, and accessible."
     ),
+    "duplicate-roles": (
+      "fr": "Bouh ! Les roles ARIA banner, main, contentinfo et search devraient être uniques.",
+      "en": "Bouh! ARIA roles banner, main, contentinfo and search should be unique."
+    ),
     "search": (
       "fr": "Vu ! Cet élément semble être la recherche.\A Mais alors, le rôle ARIA est là, non ?",
       "en": "Gotcha! This component seems to the search.\A Where is the ARIA role?"
@@ -121,8 +125,12 @@ $messages: (
       "en": "You have gathered options, but no label attribute introduces this options group.\A Too bad…"
     ),
     "no-value": (
-      "fr": "Attribut [value] manquant.\A Ça fait quoi alors, si je clique dessus ?",
-      "en": "Missing [value] attribute.\A What should happen when I click?"
+      "fr": "Ça fait quoi, si je clique dessus ?\A Avec [value], [title] ou [aria-label], j’aurais su.",
+      "en": "What should happen when I click?\A Too bad. [value], [title] or [aria-label] could have told me."
+    ),
+    "empty-button": (
+      "fr": "Ça fait quoi, si je clique dessus ?\A Il manque du contenu ou un intitulé via [aria-labelledby].",
+      "en": "What should happen when I click?\A It's missing a content or a title via [aria-labelledby]."
     ),
     "no-type": (
       "fr": "Attribut [type] manquant ou vide.\A On met quoi, dans ce champ ?",

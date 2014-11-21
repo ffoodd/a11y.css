@@ -67,12 +67,22 @@ textarea[id=""] {
   @include error("no-id", $self-closing: true);
 }
 
-input[type="submit"]:not([value]),
-input[type="button"]:not([value]),
-input[type="reset"]:not([value]) {
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
+input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
+input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
+input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) {
   @include error("no-value", $self-closing: true);
 }
 
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
+button:empty:not([aria-labelledby]) {
+  @include error("empty-button");
+}
+
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-11
+// @see http://www.w3.org/TR/WCAG20/#minimize-error-suggestions
 input:not([type]),
 input[type=""] {
   @include error("no-type", $self-closing: true);

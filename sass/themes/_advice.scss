@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=116
 nav {
   @include advice("nav");
 }
@@ -18,43 +17,70 @@ figcaption:not(:first-child):not(:last-child) {
   @include advice("figcaption-order");
 }
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=176
 [href^="mailto"] {
   @include advice("mailto");
 }
 
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-2
+// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
+// @see http://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context
 [target$="blank"] {
   @include advice("target-blank");
 }
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=172
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=171
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-6
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-7
+// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
+[download],
 [href$=".pdf"],
 [href$=".doc"],
-[href$=".docx"],
+[href$=".png"],
+[href$=".jpg"],
+[href$=".gif"],
+[href$=".mp3"],
+[href$=".mp4"],
+[href$=".mov"],
+[href$=".ogg"],
 [href$=".xls"],
-[href$=".txt"] {
+[href$=".txt"],
+[href$=".zip"],
+[href$=".rar"],
+[href$=".docx"] {
   @include advice("file-format");
 }
 
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-12-10
+// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip
+[role="main"] ~ [role="main"],
+[role="search"] ~ [role="search"],
+[role="banner"] ~ [role="banner"],
+[role="contentinfo"] ~ [role="contentinfo"] {
+  @include advice("duplicate-roles");
+}
+
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-12-10
+// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip
 .search:not([role="search"]),
 #search:not([role="search"]) {
   @include advice("search");
 }
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=137
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-10
+// @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
 [required],
 [aria-required] {
   @include advice("required");
 }
 
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-10
+// @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
 input[required],
 input[aria-required] {
   @include advice("required", $self-closing: true);
 }
 
-// @see http://www.accessiweb.org/forumhtml5/viewtopic.php?id=120
-// @note Tests 10.13.2 et 10.13.3
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-10-13
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
 [hidden]:not(:empty),
 [aria-hidden]:not(:empty) {
   @include advice("hidden");
