@@ -33,6 +33,14 @@ $messages: (
       "fr": "L’adresse mail est valide, pas vrai ?",
       "en": "This email is valid, isn’t it?"
     ),
+    "fake-button": (
+      "fr": "Ce « bouton » n’est pas un élément standard qui peut recevoir le :focus. On peut l’utiliser au clavier ?",
+      "en": "This \"button\" is not a standard focusable element. Can keyboard users focus on it?"
+    ),
+    "role-button": (
+      "fr": "Ce lien est déguisé en bouton. Un vrai <button> est si compliqué à utiliser ?",
+      "en": "This link is disguised as a button. Is a real <button> that much complicated to use?"
+    ),
     "file-format": (
       "fr": "Le format et le poids d’un fichier téléchargeable devraient être indiqués — et il devrait être accessible.",
       "en": "Format and size from a downloadable file should be displayed, and accessible."
@@ -84,6 +92,10 @@ $messages: (
   ),
 
   "error": (
+    "tab-order": (
+      "fr": "Ne perturbez pas l’ordre de tabulation naturel. C’est comme tuer des chatons.",
+      "en": "Do not disrupt the natural tab order. It's like killing kittens."
+    ),
     "no-href": (
       "fr": "Attribut [href] manquant. Un lien doit avoir une cible, non ?",
       "en": "Missing [href] attribute. A link must lead to somewhere, don’t you think?"
@@ -129,8 +141,16 @@ $messages: (
       "en": "What should happen when I click?\A Too bad. [value], [title] or [aria-label] could have told me."
     ),
     "empty-button": (
-      "fr": "Ça fait quoi, si je clique dessus ?\A Il manque du contenu ou un intitulé via [aria-labelledby].",
-      "en": "What should happen when I click?\A It's missing a content or a title via [aria-labelledby]."
+      "fr": "Ça fait quoi, si je clique dessus ?\A Il manque du contenu ou un intitulé via [aria-label] ou [aria-labelledby].",
+      "en": "What should happen when I click?\A It's missing a content or a title via [aria-label] or [aria-labelledby]."
+    ),
+    "form-button": (
+      "fr": "C’est quoi ce bouton ? Un submit, un reset, autre chose ? L’attribut [type] me l’aurait dit, lui.",
+      "en": "Is this a submit button, a reset button or just a button? The [type] attribute would have told me."
+    ),
+    "disabled-button": (
+      "fr": "Si ce bouton est désactivé, ajoutez-lui l’attribut [disabled] ou [readonly], s’il-vous-plaît.",
+      "en": "If it's disabled, please use a [disabled] or [readonly] attribute on this button."
     ),
     "no-type": (
       "fr": "Attribut [type] manquant ou vide.\A On met quoi, dans ce champ ?",
@@ -191,6 +211,30 @@ $messages: (
       "fr": "Imbrication inadéquate d’éléments.\A Ça peut heurter la sensibilité des plus jeunes, vous savez ?",
       "en": "Invalid nesting.\A Please be aware this may offend the viewer."
     ),
+    "invalid-list-nesting": (
+      "fr": "Seul <li> peut-être un enfant direct d’une liste <ul> ou <ol>.",
+      "en": "Only <li> can be a direct child of <ul> or <ol>."
+    ),
+    "invalid-def": (
+      "fr": "Une définition doit suivre un terme à définir. Plutôt logique, n’est-ce pas ?",
+      "en": "Definition must follow definition title. Pretty easy, isn't it?"
+    ),
+    "invalid-def-nesting": (
+      "fr": "Cet élément n’a rien à faire au premier niveau d’une liste de définitions.",
+      "en": "This element does not belong directly inside a definition list."
+    ),
+    "invalid-figcaption-nesting": (
+      "fr": "<figcaption> est perdu dans la vie, sans sa <figure> parente.",
+      "en": "Poor <figcaption> is totally lost without its parent <figure>."
+    ),
+    "misplaced-div": (
+      "fr": "Ne mettez pas une <div> dans un élément en ligne, c’est sale.",
+      "en": "Do not put <div> inside inline element. That's dirty."
+    ),
+    "sectioning-tags": (
+      "fr": "Les éléments sectionnants ne sont pas des conteneurs arbitraires. Utilisez des <div>.",
+      "en": "Sectioning tags are not arbitrary wrappers. Use <div> here."
+    ),
     "fieldset": (
       "fr": "Imbrication inadéquate d’éléments.\A Un fieldset doit enfanter d’une légende d’abord, sinon rien.",
       "en": "Invalid nesting.\A A fieldset should contain a <legend> before anything else."
@@ -237,15 +281,19 @@ $messages: (
     ),
     "th-scope": (
       "fr": "Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ?\A C’est ce que dit son [scope], en tout cas.",
-      "en": "This head cell applies to a full line/row, doesn’t it?\A ’Cause that’s what its [scope] says."
+      "en": "This head cell applies to a full line/row, doesn't it?\A ’Cause that's what its [scope] says."
     ),
     "th-no-scope": (
       "fr": "Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ?\A Si oui, pensez à [scope].",
-      "en": "This head cell doesn’t apply to a full line/row, or does it?\A If so, think of [scope]."
+      "en": "This head cell doesn't apply to a full line/row, or does it?\A If so, think of [scope]."
     ),
     "th-no-id": (
       "fr": "Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête.",
-      "en": "I’m pretty this head cell would love an [id]."
+      "en": "I'm pretty this head cell would love an [id]."
+    ),
+    "aria-pressed": (
+      "fr": "Si c’est (dé)pliable, vous devriez fournir l’attribut [aria-pressed]. Merci !",
+      "en": "If it is toggleable, you should supply an [aria-pressed] attribute. Thanks!"
     )
   ),
 

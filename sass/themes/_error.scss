@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337
+[tabindex]:not([tabindex="0"]):not([tabindex="-1"]) {
+  @include error("tab-order");
+}
+
 a:not([href]),
 a[href=""] {
   @include error("no-href");
@@ -17,7 +22,8 @@ a[href="#"] {
 // @see http://www.w3.org/TR/WCAG20/#text-equiv-all
 // @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
 // @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link
-a:empty {
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+a:empty:not([aria-label]):not([aria-labelledby]) {
   @include error("empty-link");
 }
 
@@ -25,7 +31,8 @@ a:empty {
 // @see http://www.w3.org/TR/WCAG20/#text-equiv-all
 // @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
 // @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link
-a img:only-child:not([alt]) {
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
   @include error("empty-image-link");
 }
 
@@ -77,8 +84,20 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9
 // @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
-button:empty:not([aria-labelledby]) {
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+button:empty:not([aria-label]):not([aria-labelledby]),
+button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
   @include error("empty-button");
+}
+
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189
+form button:not([type]) {
+  @include error("form-button");
+}
+
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L222
+button[class*="disabled"]:not([disabled]):not([readonly]) {
+  @include error("disabled-button");
 }
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-11
@@ -101,6 +120,7 @@ iframe[title=""] {
   @include error("no-title");
 }
 
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214
 form:not([action]) {
   @include error("no-action");
 }

@@ -3,24 +3,79 @@
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2
 // @see http://www.w3.org/TR/WCAG20/#ensure-compat-parses
 // @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313
 ul > :not(li),
-ol > :not(li),
+ol > :not(li) {
+  @include warning("invalid-list-nesting");
+}
+
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-parses
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312
+dt + :not(dd) {
+  @include warning("invalid-def");
+}
+
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-parses
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318
+dl > :not(dt):not(dd) {
+  @include warning("invalid-def-nesting");
+}
+
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-parses
+// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
+// @see http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element
+:not(figure) > figcaption {
+  @include warning("invalid-figcaption-nesting");
+}
+
 table > tr,
 table table,
 tr > :not(td):not(th),
 tbody + tfoot,
-dt + :not(dd),
-dl > :not(dt):not(dd),
-:not(figure) > figcaption,
 :not(select) optgroup,
 :not(select) option {
   @include warning("invalid-nesting");
 }
 
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326
+b div,
+i div,
+ q div,
+em div,
+abbr div,
+cite div,
+code div,
+span div,
+small div,
+label div,
+strong div {
+  @include warning("misplaced-div");
+}
+
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252
+// @see http://www.w3.org/TR/html5/dom.html#sectioning-content
+aside > aside:first-child,
+section > aside:first-child,
+article > aside:first-child,
+aside > article:first-child,
+aside > section:first-child,
+section > section:first-child,
+article > section:first-child,
+article > article:first-child,
+section > article:first-child {
+  @include warning("sectioning-tags");
+}
+
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-6
 // @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
 // @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
-fieldset > :not(legend):first-child,
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218
+fieldset > *:not(legend):first-child,
 fieldset > legend:not(:first-child) {
   @include warning("fieldset");
 }
@@ -76,13 +131,9 @@ label + :not(input):not(select):not(textarea) {
   @include warning("label-field");
 }
 
-div:empty,
-span:empty,
-li:empty,
-p:empty,
-td:empty,
-th:empty,
-title:empty {
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243
+// @see http://www.w3.org/TR/html-markup/syntax.html#void-element
+*:empty:not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
   @include warning("empty-nodes");
 }
 
@@ -114,4 +165,9 @@ th:not([scope]) {
 // @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
 th:not([id]) {
   @include warning("th-no-id");
+}
+
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L185
+[class*="toggle"]:not([aria-pressed]) {
+  @include warning("aria-pressed");
 }

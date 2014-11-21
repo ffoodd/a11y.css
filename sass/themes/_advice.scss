@@ -21,6 +21,18 @@ figcaption:not(:first-child):not(:last-child) {
   @include advice("mailto");
 }
 
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L169
+.btn:not(a):not(button):not(input):not([tabindex]),
+.bouton:not(a):not(button):not(input):not([tabindex]),
+.button:not(a):not(button):not(input):not([tabindex]) {
+  @include advice("fake-button");
+}
+
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174
+a[role="button"] {
+  @include advice("role-button");
+}
+
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-2
 // @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
 // @see http://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context

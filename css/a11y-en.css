@@ -1,7 +1,8 @@
 @charset "UTF-8";
-a:not([href])::before,
-a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:empty::before, a img:not([alt]):only-child::before, label:not([for])::before,
-label[for=""]::before, button:not([aria-labelledby]):empty::before, optgroup:not([label])::before, iframe:not([title])::before,
+[tabindex]:not([tabindex="-1"]):not([tabindex="0"])::before, a:not([href])::before,
+a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:not([aria-labelledby]):not([aria-label]):empty::before, a:not([aria-label]):not([aria-labelledby]) img:not([alt]):only-child::before, label:not([for])::before,
+label[for=""]::before, button:not([aria-labelledby]):not([aria-label]):empty::before,
+button:not([aria-label]):not([aria-labelledby]) img:not([alt]):only-child::before, form button:not([type])::before, button[class*="disabled"]:not([readonly]):not([disabled])::before, optgroup:not([label])::before, iframe:not([title])::before,
 iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before,
 html[lang=""]::before, title:empty::before, table[role="presentation"] th::before,
 table[role="presentation"] thead::before,
@@ -46,28 +47,39 @@ textarea[id=""] ~ ::before, input[type="reset"]:not([value]):not([title]):not([a
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::before,
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::before, input:not([type]) ~ ::before,
 input[type=""] ~ ::before, meta[http-equiv="refresh"] ~ ::before, ul > :not(li)::before,
-ol > :not(li)::before,
-table > tr::before,
+ol > :not(li)::before, dt + :not(dd)::before, dl > :not(dd):not(dt)::before, :not(figure) > figcaption::before, table > tr::before,
 table table::before,
 tr > :not(th):not(td)::before,
 tbody + tfoot::before,
-dt + :not(dd)::before,
-dl > :not(dd):not(dt)::before,
-:not(figure) > figcaption::before,
 :not(select) optgroup::before,
-:not(select) option::before, fieldset > :first-child:not(legend)::before,
+:not(select) option::before, b div::before,
+i div::before,
+q div::before,
+em div::before,
+abbr div::before,
+cite div::before,
+code div::before,
+span div::before,
+small div::before,
+label div::before,
+strong div::before, aside > aside:first-child::before,
+section > aside:first-child::before,
+article > aside:first-child::before,
+aside > article:first-child::before,
+aside > section:first-child::before,
+section > section:first-child::before,
+article > section:first-child::before,
+article > article:first-child::before,
+section > article:first-child::before, fieldset > :first-child:not(legend)::before,
 fieldset > legend:not(:first-child)::before, abbr:not([title])::before,
 abbr[title=""]::before, embed[type="image"][alt=""]::before,
 object[type="image"][alt=""]::before, svg:not([aria-label])::before, video[autoplay]::before,
 audio[autoplay]::before, video:not([controls])::before,
-audio:not([controls])::before, label + :not(textarea):not(select):not(input)::before, div:empty::before,
-span:empty::before,
-li:empty::before,
-p:empty::before,
-td:empty::before,
-th:empty::before, table[role="presentation"]::before, table:not([role="presentation"])::before, th[scope]::before, th:not([scope])::before, th:not([id])::before, img[alt=""] ~ ::before,
+audio:not([controls])::before, label + :not(textarea):not(select):not(input)::before, :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):empty::before, table[role="presentation"]::before, table:not([role="presentation"])::before, th[scope]::before, th:not([scope])::before, th:not([id])::before, [class*="toggle"]:not([aria-pressed])::before, img[alt=""] ~ ::before,
 area[alt=""] ~ ::before,
-input[type="image"][alt=""] ~ ::before, nav::before, main:not(:first-of-type)::before, figcaption:not(:only-of-type)::before, figcaption:not(:last-child):not(:first-child)::before, [href^="mailto"]::before, [target$="blank"]::before, [download]::before,
+input[type="image"][alt=""] ~ ::before, nav::before, main:not(:first-of-type)::before, figcaption:not(:only-of-type)::before, figcaption:not(:last-child):not(:first-child)::before, [href^="mailto"]::before, .btn:not([tabindex]):not(input):not(button):not(a)::before,
+.bouton:not([tabindex]):not(input):not(button):not(a)::before,
+.button:not([tabindex]):not(input):not(button):not(a)::before, a[role="button"]::before, [target$="blank"]::before, [download]::before,
 [href$=".pdf"]::before,
 [href$=".doc"]::before,
 [href$=".png"]::before,
@@ -212,9 +224,10 @@ body[background]::before, table[background]::before, thead[background]::before, 
   -webkit-transition: -webkit-transform .3s ease-in                     !important;
   transition: transform .3s ease-in                             !important; }
 
-a:not([href]):hover::before,
-a[href=""]:hover::before, a[href^="javascript"]:hover::before, a[href="#"]:hover::before, a:empty:hover::before, a img:not([alt]):only-child:hover::before, label:not([for]):hover::before,
-label[for=""]:hover::before, button:not([aria-labelledby]):empty:hover::before, optgroup:not([label]):hover::before, iframe:not([title]):hover::before,
+[tabindex]:not([tabindex="-1"]):not([tabindex="0"]):hover::before, a:not([href]):hover::before,
+a[href=""]:hover::before, a[href^="javascript"]:hover::before, a[href="#"]:hover::before, a:not([aria-labelledby]):not([aria-label]):empty:hover::before, a:not([aria-label]):not([aria-labelledby]) img:not([alt]):only-child:hover::before, label:not([for]):hover::before,
+label[for=""]:hover::before, button:not([aria-labelledby]):not([aria-label]):empty:hover::before,
+button:not([aria-label]):not([aria-labelledby]) img:not([alt]):only-child:hover::before, form button:not([type]):hover::before, button[class*="disabled"]:not([readonly]):not([disabled]):hover::before, optgroup:not([label]):hover::before, iframe:not([title]):hover::before,
 iframe[title=""]:hover::before, form:not([action]):hover::before, [class=""]:hover::before, [id=""]:hover::before, html:not([lang]):hover::before,
 html[lang=""]:hover::before, title:empty:hover::before, table[role="presentation"] th:hover::before,
 table[role="presentation"] thead:hover::before,
@@ -259,28 +272,39 @@ textarea[id=""]:hover ~ ::before, input[type="reset"]:hover:not([value]):not([ti
 input[type="submit"]:hover:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::before,
 input[type="button"]:hover:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::before, input:hover:not([type]) ~ ::before,
 input[type=""]:hover ~ ::before, meta[http-equiv="refresh"]:hover ~ ::before, ul > :not(li):hover::before,
-ol > :not(li):hover::before,
-table > tr:hover::before,
+ol > :not(li):hover::before, dt + :not(dd):hover::before, dl > :not(dd):not(dt):hover::before, :not(figure) > figcaption:hover::before, table > tr:hover::before,
 table table:hover::before,
 tr > :not(th):not(td):hover::before,
 tbody + tfoot:hover::before,
-dt + :not(dd):hover::before,
-dl > :not(dd):not(dt):hover::before,
-:not(figure) > figcaption:hover::before,
 :not(select) optgroup:hover::before,
-:not(select) option:hover::before, fieldset > :first-child:not(legend):hover::before,
+:not(select) option:hover::before, b div:hover::before,
+i div:hover::before,
+q div:hover::before,
+em div:hover::before,
+abbr div:hover::before,
+cite div:hover::before,
+code div:hover::before,
+span div:hover::before,
+small div:hover::before,
+label div:hover::before,
+strong div:hover::before, aside > aside:first-child:hover::before,
+section > aside:first-child:hover::before,
+article > aside:first-child:hover::before,
+aside > article:first-child:hover::before,
+aside > section:first-child:hover::before,
+section > section:first-child:hover::before,
+article > section:first-child:hover::before,
+article > article:first-child:hover::before,
+section > article:first-child:hover::before, fieldset > :first-child:not(legend):hover::before,
 fieldset > legend:not(:first-child):hover::before, abbr:not([title]):hover::before,
 abbr[title=""]:hover::before, embed[type="image"][alt=""]:hover::before,
 object[type="image"][alt=""]:hover::before, svg:not([aria-label]):hover::before, video[autoplay]:hover::before,
 audio[autoplay]:hover::before, video:not([controls]):hover::before,
-audio:not([controls]):hover::before, label + :not(textarea):not(select):not(input):hover::before, div:empty:hover::before,
-span:empty:hover::before,
-li:empty:hover::before,
-p:empty:hover::before,
-td:empty:hover::before,
-th:empty:hover::before, table[role="presentation"]:hover::before, table:not([role="presentation"]):hover::before, th[scope]:hover::before, th:not([scope]):hover::before, th:not([id]):hover::before, img[alt=""]:hover ~ ::before,
+audio:not([controls]):hover::before, label + :not(textarea):not(select):not(input):hover::before, :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):empty:hover::before, table[role="presentation"]:hover::before, table:not([role="presentation"]):hover::before, th[scope]:hover::before, th:not([scope]):hover::before, th:not([id]):hover::before, [class*="toggle"]:not([aria-pressed]):hover::before, img[alt=""]:hover ~ ::before,
 area[alt=""]:hover ~ ::before,
-input[type="image"][alt=""]:hover ~ ::before, nav:hover::before, main:not(:first-of-type):hover::before, figcaption:not(:only-of-type):hover::before, figcaption:not(:last-child):not(:first-child):hover::before, [href^="mailto"]:hover::before, [target$="blank"]:hover::before, [download]:hover::before,
+input[type="image"][alt=""]:hover ~ ::before, nav:hover::before, main:not(:first-of-type):hover::before, figcaption:not(:only-of-type):hover::before, figcaption:not(:last-child):not(:first-child):hover::before, [href^="mailto"]:hover::before, .btn:not([tabindex]):not(input):not(button):not(a):hover::before,
+.bouton:not([tabindex]):not(input):not(button):not(a):hover::before,
+.button:not([tabindex]):not(input):not(button):not(a):hover::before, a[role="button"]:hover::before, [target$="blank"]:hover::before, [download]:hover::before,
 [href$=".pdf"]:hover::before,
 [href$=".doc"]:hover::before,
 [href$=".png"]:hover::before,
@@ -408,9 +432,10 @@ body[background]:hover::before, table[background]:hover::before, thead[backgroun
   -webkit-transition: -webkit-transform .3s ease-out                    !important;
   transition: transform .3s ease-in                             !important; }
 
-a:not([href]),
-a[href=""], a[href^="javascript"], a[href="#"], a:empty, a img:only-child:not([alt]), label:not([for]),
-label[for=""], button:empty:not([aria-labelledby]), optgroup:not([label]), iframe:not([title]),
+[tabindex]:not([tabindex="0"]):not([tabindex="-1"]), a:not([href]),
+a[href=""], a[href^="javascript"], a[href="#"], a:empty:not([aria-label]):not([aria-labelledby]), a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]), label:not([for]),
+label[for=""], button:empty:not([aria-label]):not([aria-labelledby]),
+button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]), form button:not([type]), button[class*="disabled"]:not([disabled]):not([readonly]), optgroup:not([label]), iframe:not([title]),
 iframe[title=""], form:not([action]), [class=""], [id=""], html:not([lang]),
 html[lang=""], title:empty, table[role="presentation"] th,
 table[role="presentation"] thead,
@@ -444,9 +469,10 @@ table[role="presentation"] [colgroup], [style], [width]:not(img),
   outline: 4px solid rgba(153, 17, 17, 0.75) !important;
   outline-offset: -4px;
   counter-increment: error; }
-  a:not([href])::before,
-  a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:empty::before, a img:not([alt]):only-child::before, label:not([for])::before,
-  label[for=""]::before, button:not([aria-labelledby]):empty::before, optgroup:not([label])::before, iframe:not([title])::before,
+  [tabindex]:not([tabindex="-1"]):not([tabindex="0"])::before, a:not([href])::before,
+  a[href=""]::before, a[href^="javascript"]::before, a[href="#"]::before, a:not([aria-labelledby]):not([aria-label]):empty::before, a:not([aria-label]):not([aria-labelledby]) img:not([alt]):only-child::before, label:not([for])::before,
+  label[for=""]::before, button:not([aria-labelledby]):not([aria-label]):empty::before,
+  button:not([aria-label]):not([aria-labelledby]) img:not([alt]):only-child::before, form button:not([type])::before, button[class*="disabled"]:not([readonly]):not([disabled])::before, optgroup:not([label])::before, iframe:not([title])::before,
   iframe[title=""]::before, form:not([action])::before, [class=""]::before, [id=""]::before, html:not([lang])::before,
   html[lang=""]::before, title:empty::before, table[role="presentation"] th::before,
   table[role="presentation"] thead::before,
@@ -515,52 +541,68 @@ input[type=""], meta[http-equiv="refresh"] {
     z-index: 2147483647 !important; }
 
 ul > :not(li),
-ol > :not(li),
-table > tr,
+ol > :not(li), dt + :not(dd), dl > :not(dt):not(dd), :not(figure) > figcaption, table > tr,
 table table,
 tr > :not(td):not(th),
 tbody + tfoot,
-dt + :not(dd),
-dl > :not(dt):not(dd),
-:not(figure) > figcaption,
 :not(select) optgroup,
-:not(select) option, fieldset > :not(legend):first-child,
+:not(select) option, b div,
+i div,
+q div,
+em div,
+abbr div,
+cite div,
+code div,
+span div,
+small div,
+label div,
+strong div, aside > aside:first-child,
+section > aside:first-child,
+article > aside:first-child,
+aside > article:first-child,
+aside > section:first-child,
+section > section:first-child,
+article > section:first-child,
+article > article:first-child,
+section > article:first-child, fieldset > *:not(legend):first-child,
 fieldset > legend:not(:first-child), abbr:not([title]),
 abbr[title=""], embed[type="image"][alt=""],
 object[type="image"][alt=""], svg:not([aria-label]), video[autoplay],
 audio[autoplay], video:not([controls]),
-audio:not([controls]), label + :not(input):not(select):not(textarea), div:empty,
-span:empty,
-li:empty,
-p:empty,
-td:empty,
-th:empty,
-title:empty, table[role="presentation"], table:not([role="presentation"]), th[scope], th:not([scope]), th:not([id]) {
+audio:not([controls]), label + :not(input):not(select):not(textarea), *:empty:not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr), table[role="presentation"], table:not([role="presentation"]), th[scope], th:not([scope]), th:not([id]), [class*="toggle"]:not([aria-pressed]) {
   outline: 4px solid rgba(255, 215, 0, 0.75) !important;
   outline-offset: -4px;
   counter-increment: warning; }
   ul > :not(li)::before,
-  ol > :not(li)::before,
-  table > tr::before,
+  ol > :not(li)::before, dt + :not(dd)::before, dl > :not(dd):not(dt)::before, :not(figure) > figcaption::before, table > tr::before,
   table table::before,
   tr > :not(th):not(td)::before,
   tbody + tfoot::before,
-  dt + :not(dd)::before,
-  dl > :not(dd):not(dt)::before,
-  :not(figure) > figcaption::before,
   :not(select) optgroup::before,
-  :not(select) option::before, fieldset > :first-child:not(legend)::before,
+  :not(select) option::before, b div::before,
+  i div::before,
+  q div::before,
+  em div::before,
+  abbr div::before,
+  cite div::before,
+  code div::before,
+  span div::before,
+  small div::before,
+  label div::before,
+  strong div::before, aside > aside:first-child::before,
+  section > aside:first-child::before,
+  article > aside:first-child::before,
+  aside > article:first-child::before,
+  aside > section:first-child::before,
+  section > section:first-child::before,
+  article > section:first-child::before,
+  article > article:first-child::before,
+  section > article:first-child::before, fieldset > :first-child:not(legend)::before,
   fieldset > legend:not(:first-child)::before, abbr:not([title])::before,
   abbr[title=""]::before, embed[type="image"][alt=""]::before,
   object[type="image"][alt=""]::before, svg:not([aria-label])::before, video[autoplay]::before,
   audio[autoplay]::before, video:not([controls])::before,
-  audio:not([controls])::before, label + :not(textarea):not(select):not(input)::before, div:empty::before,
-  span:empty::before,
-  li:empty::before,
-  p:empty::before,
-  td:empty::before,
-  th:empty::before,
-  title:empty::before, table[role="presentation"]::before, table:not([role="presentation"])::before, th[scope]::before, th:not([scope])::before, th:not([id])::before {
+  audio:not([controls])::before, label + :not(textarea):not(select):not(input)::before, :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):empty::before, table[role="presentation"]::before, table:not([role="presentation"])::before, th[scope]::before, th:not([scope])::before, th:not([id])::before, [class*="toggle"]:not([aria-pressed])::before {
     z-index: 2147483646 !important; }
 
 img[alt=""],
@@ -574,7 +616,9 @@ input[type="image"][alt=""] {
   input[type="image"][alt=""] ~ ::before {
     z-index: 2147483646 !important; }
 
-nav, main:not(:first-of-type), figcaption:not(:only-of-type), figcaption:not(:first-child):not(:last-child), [href^="mailto"], [target$="blank"], [download],
+nav, main:not(:first-of-type), figcaption:not(:only-of-type), figcaption:not(:first-child):not(:last-child), [href^="mailto"], .btn:not(a):not(button):not(input):not([tabindex]),
+.bouton:not(a):not(button):not(input):not([tabindex]),
+.button:not(a):not(button):not(input):not([tabindex]), a[role="button"], [target$="blank"], [download],
 [href$=".pdf"],
 [href$=".doc"],
 [href$=".png"],
@@ -601,7 +645,9 @@ audio, :not(figure) svg,
   outline: 4px solid rgba(34, 139, 34, 0.75) !important;
   outline-offset: -4px;
   counter-increment: advice; }
-  nav::before, main:not(:first-of-type)::before, figcaption:not(:only-of-type)::before, figcaption:not(:last-child):not(:first-child)::before, [href^="mailto"]::before, [target$="blank"]::before, [download]::before,
+  nav::before, main:not(:first-of-type)::before, figcaption:not(:only-of-type)::before, figcaption:not(:last-child):not(:first-child)::before, [href^="mailto"]::before, .btn:not([tabindex]):not(input):not(button):not(a)::before,
+  .bouton:not([tabindex]):not(input):not(button):not(a)::before,
+  .button:not([tabindex]):not(input):not(button):not(a)::before, a[role="button"]::before, [target$="blank"]::before, [download]::before,
   [href$=".pdf"]::before,
   [href$=".doc"]::before,
   [href$=".png"]::before,
@@ -867,6 +913,14 @@ figcaption:not(:first-child):not(:last-child)::before {
 [href^="mailto"]::before {
   content: "♥  This email is valid, isn’t it?" !important; }
 
+.btn:not(a):not(button):not(input):not([tabindex])::before,
+.bouton:not(a):not(button):not(input):not([tabindex])::before,
+.button:not(a):not(button):not(input):not([tabindex])::before {
+  content: '♥  This "button" is not a standard focusable element. Can keyboard users focus on it?' !important; }
+
+a[role="button"]::before {
+  content: "♥  This link is disguised as a button. Is a real <button> that much complicated to use?" !important; }
+
 [target$="blank"]::before {
   content: "♥  User should be warned whenever a link is being opened in a new tab. But you know it already, right?" !important; }
 
@@ -1045,19 +1099,51 @@ body[background]::before, table[background]::before, thead[background]::before, 
   content: "✝  Obsolete element or attribute. Please make sure you know what you’re doing." !important; }
 
 ul > :not(li)::before,
-ol > :not(li)::before,
+ol > :not(li)::before {
+  content: "☢  Only <li> can be a direct child of <ul> or <ol>." !important; }
+
+dt + :not(dd)::before {
+  content: "☢  Definition must follow definition title. Pretty easy, isn't it?" !important; }
+
+dl > :not(dt):not(dd)::before {
+  content: "☢  This element does not belong directly inside a definition list." !important; }
+
+:not(figure) > figcaption::before {
+  content: "☢  Poor <figcaption> is totally lost without its parent <figure>." !important; }
+
 table > tr::before,
 table table::before,
 tr > :not(td):not(th)::before,
 tbody + tfoot::before,
-dt + :not(dd)::before,
-dl > :not(dt):not(dd)::before,
-:not(figure) > figcaption::before,
 :not(select) optgroup::before,
 :not(select) option::before {
   content: "☢  Invalid nesting. Please be aware this may offend the viewer." !important; }
 
-fieldset > :not(legend):first-child::before,
+b div::before,
+i div::before,
+q div::before,
+em div::before,
+abbr div::before,
+cite div::before,
+code div::before,
+span div::before,
+small div::before,
+label div::before,
+strong div::before {
+  content: "☢  Do not put <div> inside inline element. That's dirty." !important; }
+
+aside > aside:first-child::before,
+section > aside:first-child::before,
+article > aside:first-child::before,
+aside > article:first-child::before,
+aside > section:first-child::before,
+section > section:first-child::before,
+article > section:first-child::before,
+article > article:first-child::before,
+section > article:first-child::before {
+  content: "☢  Sectioning tags are not arbitrary wrappers. Use <div> here." !important; }
+
+fieldset > *:not(legend):first-child::before,
 fieldset > legend:not(:first-child)::before {
   content: "☢  Invalid nesting. A fieldset should contain a <legend> before anything else." !important; }
 
@@ -1090,13 +1176,7 @@ audio:not([controls])::before {
 label + :not(input):not(select):not(textarea)::before {
   content: "☢  A field and its label should be one next to each other. But the next node doesn’t look like a field…" !important; }
 
-div:empty::before,
-span:empty::before,
-li:empty::before,
-p:empty::before,
-td:empty::before,
-th:empty::before,
-title:empty::before {
+*:empty:not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr)::before {
   content: "☢  Empty element. Oh my." !important; }
 
 table[role="presentation"]::before {
@@ -1106,13 +1186,19 @@ table:not([role="presentation"])::before {
   content: "☢  A data table should have a <caption>. And that's not bluff!" !important; }
 
 th[scope]::before {
-  content: "☢  This head cell applies to a full line/row, doesn’t it? ’Cause that’s what its [scope] says." !important; }
+  content: "☢  This head cell applies to a full line/row, doesn't it? ’Cause that's what its [scope] says." !important; }
 
 th:not([scope])::before {
-  content: "☢  This head cell doesn’t apply to a full line/row, or does it? If so, think of [scope]." !important; }
+  content: "☢  This head cell doesn't apply to a full line/row, or does it? If so, think of [scope]." !important; }
 
 th:not([id])::before {
-  content: "☢  I’m pretty this head cell would love an [id]." !important; }
+  content: "☢  I'm pretty this head cell would love an [id]." !important; }
+
+[class*="toggle"]:not([aria-pressed])::before {
+  content: "☢  If it is toggleable, you should supply an [aria-pressed] attribute. Thanks!" !important; }
+
+[tabindex]:not([tabindex="0"]):not([tabindex="-1"])::before {
+  content: "☠  Do not disrupt the natural tab order. It's like killing kittens." !important; }
 
 a:not([href])::before,
 a[href=""]::before {
@@ -1124,10 +1210,10 @@ a[href^="javascript"]::before {
 a[href="#"]::before {
   content: '☠  [href="#"] attribute. Why? A <button> would be semantically better.' !important; }
 
-a:empty::before {
+a:empty:not([aria-label]):not([aria-labelledby])::before {
   content: "☠  Empty link. Empty…" !important; }
 
-a img:only-child:not([alt])::before {
+a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt])::before {
   content: "☠  This link only contains an <img> missing its [alt]. Am I supposed to guess where it goes?" !important; }
 
 img:not([alt])::before, img:not([alt]) ~ ::before,
@@ -1172,8 +1258,15 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::before {
   content: "☠  What should happen when I click? Too bad. [value], [title] or [aria-label] could have told me." !important; }
 
-button:empty:not([aria-labelledby])::before {
-  content: "☠  What should happen when I click? It's missing a content or a title via [aria-labelledby]." !important; }
+button:empty:not([aria-label]):not([aria-labelledby])::before,
+button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt])::before {
+  content: "☠  What should happen when I click? It's missing a content or a title via [aria-label] or [aria-labelledby]." !important; }
+
+form button:not([type])::before {
+  content: "☠  Is this a submit button, a reset button or just a button? The [type] attribute would have told me." !important; }
+
+button[class*="disabled"]:not([disabled]):not([readonly])::before {
+  content: "☠  If it's disabled, please use a [disabled] or [readonly] attribute on this button." !important; }
 
 input:not([type])::before, input:not([type]) ~ ::before,
 input[type=""]::before,

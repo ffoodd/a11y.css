@@ -14,7 +14,7 @@ From now on, CSS counters are incremented on each error/advice/warning and resul
 You can easily use the latest version of this stylesheet by adding this *bookmarklet* to your bookmarks:
 
 ```
-javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-fr.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();
+javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();
 ```
 
 You can also add it by going on [the dedicated page](http://ffoodd.github.io/a11y.css/) then dragging it to your bookmarks. Isn't it handy?
@@ -46,8 +46,8 @@ Many references helped me in the making of this stylesheet:
 * [http://meyerweb.com/eric/tools/css/diagnostics/](http://meyerweb.com/eric/tools/css/diagnostics/)
 * [http://accessites.org/site/2006/07/big-red-angry-text/](http://accessites.org/site/2006/07/big-red-angry-text/)
 * [https://code.google.com/p/qa-style-sheet/](https://code.google.com/p/qa-style-sheet/)
-* Mémento «Sites web — Les bonnes pratiques» aux éditions Eyrolles
-* «Intégration Web, les bonnes pratiques», pages 335/336
+* Mémento « Sites web — Les bonnes pratiques » aux éditions Eyrolles
+* « Intégration Web, les bonnes pratiques », pages 335/336
 
 Although let's keep in mind the idea has nothing new (there is an article from Marco Battilana from 2006, and a proposal by Eric Meyer himself from 2007). I only tried to push things further. I suggest you read [my article](http://www.ffoodd.fr/a11y-cssun-credo/) (in French) to learn more about the project.
 
