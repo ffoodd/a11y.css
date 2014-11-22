@@ -4,6 +4,7 @@
 // @see http://www.w3.org/TR/WCAG20/#ensure-compat-parses
 // @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
 // @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L433
 ul > :not(li),
 ol > :not(li) {
   @include warning("invalid-list-nesting");
@@ -21,6 +22,7 @@ dt + :not(dd) {
 // @see http://www.w3.org/TR/WCAG20/#ensure-compat-parses
 // @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
 // @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L439
 dl > :not(dt):not(dd) {
   @include warning("invalid-def-nesting");
 }
@@ -33,19 +35,20 @@ dl > :not(dt):not(dd) {
   @include warning("invalid-figcaption-nesting");
 }
 
-table > tr,
-table table,
-tr > :not(td):not(th),
-tbody + tfoot,
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L277
+:not(select) option,
 :not(select) optgroup,
-:not(select) option {
+:not(form) fieldset,
+:not(fieldset) legend,
+tr > :not(td):not(th),
+table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption) {
   @include warning("invalid-nesting");
 }
 
 // @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326
 b div,
 i div,
- q div,
+q div,
 em div,
 abbr div,
 cite div,
@@ -75,6 +78,7 @@ section > article:first-child {
 // @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
 // @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
 // @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L449
 fieldset > *:not(legend):first-child,
 fieldset > legend:not(:first-child) {
   @include warning("fieldset");
@@ -139,24 +143,47 @@ label + :not(input):not(select):not(textarea) {
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-3
 // @see http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence
-table[role="presentation"] {
-  @include warning("table-presentation");
+// @ee https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L331
+table:not([role="presentation"]) > tr:only-child,
+table:not([role="presentation"]) > tbody > tr:only-child {
+  @include warning("table-layout");
 }
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-4
 // @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
-table:not([role="presentation"]) {
+// @see http://www.w3.org/TR/html5/tabular-data.html#the-caption-element
+table:not([role="presentation"]) > caption:not(:first-child),
+table:not([role="presentation"]) > *:first-child:not(caption) {
   @include warning("table-caption");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-7
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
-th[scope] {
-  @include warning("th-scope");
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L292
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L297
+// @see http://www.w3.org/TR/html5/tabular-data.html#the-colgroup-element
+table:not([role="presentation"]) > colgroup ~ caption,
+table > thead ~ colgroup,
+table > tfoot ~ colgroup,
+table > tbody ~ colgroup {
+  @include warning("colgroup");
+}
+
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L316
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L321
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L326
+table > tfoot ~ thead,
+table > tbody ~ tfoot,
+table > tbody ~ thead {
+  @include warning("table-structure");
+}
+
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L311
+table > tbody:first-child {
+  @include warning("missing-thead");
 }
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-7
 // @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L282
 th:not([scope]) {
   @include warning("th-no-scope");
 }
@@ -167,7 +194,18 @@ th:not([id]) {
   @include warning("th-no-id");
 }
 
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L342
+// @see http://www.w3.org/TR/html5/tabular-data.html#the-colgroup-element
+colgroup:not([span]) *:not(col) {
+  @include warning("not-col");
+}
+
 // @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L185
 [class*="toggle"]:not([aria-pressed]) {
   @include warning("aria-pressed");
+}
+
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L381
+img[src*="spacer.gif"] {
+  @include warning("spacer-gif", $self-closing: true);
 }

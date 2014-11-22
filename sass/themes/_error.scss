@@ -5,15 +5,22 @@
   @include error("tab-order");
 }
 
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386
 a:not([href]),
 a[href=""] {
   @include error("no-href");
 }
 
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L392
 a[href^="javascript"] {
   @include error("href-js");
 }
 
+// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386
 a[href="#"] {
   @include error("empty-href");
 }
@@ -38,12 +45,15 @@ a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1
 // @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369
 img:not([alt]),
 area:not([alt]),
 input[type="image"]:not([alt]) {
   @include error("no-alt", $self-closing: true);
 }
 
+// @see http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374
 img:not([src]),
 img[src=""],
 img[src="#"],
@@ -115,6 +125,7 @@ optgroup:not([label]) {
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-2-1
 // @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454
 iframe:not([title]),
 iframe[title=""] {
   @include error("no-title");
@@ -203,4 +214,80 @@ table[role="presentation"] [colgroup] {
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
   @include error("js-events");
+}
+
+// @see http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar
+// @see http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/
+// @see http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L466
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L480
+[id^="1"],
+[id^="2"],
+[id^="3"],
+[id^="4"],
+[id^="5"],
+[id^="6"],
+[id^="7"],
+[id^="8"],
+[id^="9"],
+[id^="0"],
+[id*="\~"],
+[id*="\!"],
+[id*="\@"],
+[id*="\$"],
+[id*="\^"],
+[id*="\&"],
+[id*="\*"],
+[id*="\("],
+[id*="\)"],
+[id*="\="],
+[id*="\,"],
+[id*="\/"],
+[id*="\'"],
+[id*="\;"],
+[id*="\:"],
+[id*="\""],
+[id*="\?"],
+[id*="\>"],
+[id*="\<"],
+[id*="\["],
+[id*="\{"],
+[id*="\}"],
+[id*="\|"],
+[id*="\`"],
+[class^="1"],
+[class^="2"],
+[class^="3"],
+[class^="4"],
+[class^="5"],
+[class^="6"],
+[class^="7"],
+[class^="8"],
+[class^="9"],
+[class^="0"],
+[class*="\~"],
+[class*="\!"],
+[class*="\@"],
+[class*="\$"],
+[class*="\^"],
+[class*="\&"],
+[class*="\*"],
+[class*="\("],
+[class*="\)"],
+[class*="\="],
+[class*="\,"],
+[class*="\/"],
+[class*="\'"],
+[class*="\;"],
+[class*="\:"],
+[class*="\""],
+[class*="\?"],
+[class*="\>"],
+[class*="\<"],
+[class*="\["],
+[class*="\{"],
+[class*="\}"],
+[class*="\|"],
+[class*="\`"] {
+  @include error("namespace");
 }

@@ -88,6 +88,14 @@ $messages: (
     "meta-charset": (
       "fr": "Sommes-nous bien en utf-8 ?",
       "en": "Can you confirm this is UTF-8?"
+    ),
+    "th-scope": (
+      "fr": "Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ?\A C’est ce que dit son [scope], en tout cas.",
+      "en": "This head cell applies to a full line/row, doesn't it?\A ’Cause that's what its [scope] says."
+    ),
+    "table-presentation": (
+      "fr": "Un tableau de mise en forme ne doit pas avoir de résumé.\A Il doit également rester compréhensible une fois linéarisé.",
+      "en": "A presentional table should not contain a summary nor a caption.\A And it should be understandable once linearized."
     )
   ),
 
@@ -203,6 +211,10 @@ $messages: (
     "no-aria-describedby":  (
       "fr": "Si le champ est obligatoire, une indication doit exister :\A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !",
       "en": "If field is mandatory, it should be explicity told so.\A Map an indication to the field with [aria-describedby] and its [id]."
+    ),
+    "namespace":  (
+      "fr": "Les classes et identifiants doivent respecter une grammaire définie. Et ce truc-là, ça marche pas.",
+      "en": "Classes and IDs must follow a specific grammar. And this thing here doesn't."
     )
   ),
 
@@ -271,17 +283,25 @@ $messages: (
       "fr": "La balise <title> est vide. Vous brûlerez en enfer d’ici peu.",
       "en": "Empty <title> tag. Hell is full of people like you."
     ),
-    "table-presentation": (
-      "fr": "Un tableau de mise en forme ne doit pas avoir de résumé.\A Il doit également rester compréhensible une fois linéarisé.",
-      "en": "A presentional table should not contain a summary nor a caption.\A And it should be understandable once linearized."
+    "table-layout": (
+      "fr": "Allez… Avouez, c’est un tableau de mise en forme, ça, pas vrai ?\A Si c’et le cas, soyez honnête et indiquez-le avec le [role=\presentation\"].",
+      "en": "Come on… This is a table used for layout, isn't it?\A If so, just be honest and announce it with [role=\"presentation\"]."
     ),
     "table-caption": (
-      "fr": "Un tableau de données doit avoir un titre, sous forme de <caption>.\A Et c’est pas du bluff !",
-      "en": "A data table should have a <caption>.\A And that's not bluff!"
+      "fr": "Un tableau de données doit avoir un titre, sous forme de <caption> — et ce doit être le premier enfant direct.\A Et c’est pas du bluff !",
+      "en": "A data table should have a <caption> - and it must be the first direct child.\A And that's not bluff!"
     ),
-    "th-scope": (
-      "fr": "Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ?\A C’est ce que dit son [scope], en tout cas.",
-      "en": "This head cell applies to a full line/row, doesn't it?\A ’Cause that's what its [scope] says."
+    "colgroup": (
+      "fr": "<colgroup> doit être après <caption>, mais avant <thead>, <tfoot> or <tbody>.",
+      "en": "<colgroup> should be after <caption>, but before <thead>, <tfoot> or <tbody>."
+    ),
+    "table-structure": (
+      "fr": "Voilà dans quel ordre vous devriez les mettre : <thead>, <tfoot> puis <tbody>.",
+      "en": "Here is the right order for those tags: <thead>, <tfoot> then <tbody>."
+    ),
+    "missing-thead": (
+      "fr": "Ça ne manque pas d’un <thead> — voire même d’un <tfoot>, par hasard ?",
+      "en": "Don't you need at least <thead>, and maybe <tfoot> too?"
     ),
     "th-no-scope": (
       "fr": "Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ?\A Si oui, pensez à [scope].",
@@ -291,9 +311,17 @@ $messages: (
       "fr": "Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête.",
       "en": "I'm pretty this head cell would love an [id]."
     ),
+    "not-col": (
+      "fr": "Seul <col> est autorisé dans un <colgroup>. Ça paraît logique, n’est-ce pas ?",
+      "en": "Only <col> can be a child of <colgroup>. Pretty obviously, isn't it?"
+    ),
     "aria-pressed": (
       "fr": "Si c’est (dé)pliable, vous devriez fournir l’attribut [aria-pressed]. Merci !",
       "en": "If it is toggleable, you should supply an [aria-pressed] attribute. Thanks!"
+    ),
+    "spacer-gif": (
+      "fr": "Vous utilisez un \"spacer.gif\". Quel âge a votre site, déjà ?",
+      "en": "You're using \"spacer.gif\". How old is your website?"
     )
   ),
 
