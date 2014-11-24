@@ -149,15 +149,15 @@ In a not-so-distant future, I'd like to:
 ### Contributors
 
 They helped a lot:
-* @HugoGiraudel
-* @7studio
-* @Heydon
-* @kloh-fr
-* @GaetanBt
+* [@HugoGiraudel](https://twitter.com/HugoGiraudel)
+* [@7studio](https://twitter.com/7studio)
+* [@Heydon](https://twitter.com/heydonworks)
+* [@kloh-fr](https://twitter.com/klohFR)
+* [@GaetanBt](https://twitter.com/GaetanBt)
 
 And they took time to open a few issues:
-* @goetsu
-* @a5e
+* [@goetsu](https://twitter.com/goetsu)
+* [@a5e](https://github.com/a5e)
 
 Thank you all!
 
