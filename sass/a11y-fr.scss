@@ -2,5 +2,6 @@
 
 @import "utils/all";
 @include set-locale("fr");
+@include set-minimum-level("advice");
 @import "base/base";
 @import "themes/all";
