@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 /// Defines the language used by `a11y.css`. For now, only `fr` and `en` allowed.
+/// @access public
 /// @group languages
 /// @param {String} $language
 /// @output Nothing
@@ -18,8 +19,33 @@
 }
 
 
+/// Defines the minimum level used by `a11y.css`.
+/// Either:
+/// * `error` for errors only;
+/// * `warning` for errors and warnings;
+/// * `obsolete` for everything but advices;
+/// * `advice` for everything.
+/// @access public
+/// @param {String} $level
+/// @output Nothing
+/// @example scss - Defines the minimum level to `error`.
+///  @include set-minimum-level("error");
+/// @throw Throws an error if `$level` is not either `error`, `warning`, `obsolete` or `advice`.
+@mixin set-minimum-level($level) {
+  $level: to-lower-case($level);
+  $levels: map-keys($themes);
+
+  @if not index($levels, $level) {
+    @error "Level `#{$level}` is not supported. Please choose one of `#{$levels}`.";
+  }
+
+  $minimum-level: $level !global;
+}
+
+
 /// Get a message from the translation map based on the defined language.
 /// The message contains the icon associated to the message type.
+/// @access private
 /// @group languages
 /// @param {String} $theme - Theme name
 /// @param {String} $key - Key name
@@ -71,31 +97,20 @@
 }
 
 
-/// Defines an advice
-/// @access public
-/// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
-/// @requires {mixin} item
-/// @example scss - Define an advice
-/// .selector {
-///   @include advice("nav");
-/// }
-@mixin advice($key, $self-closing: false) {
-  @include item("advice", $key, $self-closing);
-}
-
-
 /// Defines an error
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
-/// @requires {mixin} item
+/// @require {mixin} item
+/// @require {function} is-level-enough
 /// @example scss - Define an error
 /// .selector {
 ///   @include error("no-src");
 /// }
 @mixin error($key, $self-closing: false) {
-  @include item("error", $key, $self-closing);
+  @if is-level-enough("error") {
+    @include item("error", $key, $self-closing);
+  }
 }
 
 
@@ -103,13 +118,16 @@
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
-/// @requires {mixin} item
+/// @require {mixin} item
+/// @require {function} is-level-enough
 /// @example scss - Define an warning
 /// .selector {
 ///   @include warning("abbr");
 /// }
 @mixin warning($key, $self-closing: false) {
-  @include item("warning", $key, $self-closing);
+  @if is-level-enough("warning") {
+    @include item("warning", $key, $self-closing);
+  }
 }
 
 
@@ -117,11 +135,30 @@
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
-/// @requires {mixin} item
+/// @require {mixin} item
+/// @require {function} is-level-enough
 /// @example scss - Define an obsolete
 /// .selector {
 ///   @include obsolete("any");
 /// }
 @mixin obsolete($key, $self-closing: false) {
-  @include item("obsolete", $key, $self-closing);
+  @if is-level-enough("obsolete") {
+    @include item("obsolete", $key, $self-closing);
+  }
+}
+
+/// Defines an advice
+/// @access public
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @require {mixin} item
+/// @require {function} is-level-enough
+/// @example scss - Define an advice
+/// .selector {
+///   @include advice("nav");
+/// }
+@mixin advice($key, $self-closing: false) {
+  @if is-level-enough("advice") {
+    @include item("advice", $key, $self-closing);
+  }
 }

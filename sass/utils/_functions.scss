@@ -52,3 +52,14 @@
 @function theme-conf($theme, $key) {
   @return map-deep-get($themes, $theme, $key);
 }
+
+
+/// Test whether `$level` is high enough to be displayed.
+/// @access private
+/// @param {String} $level
+/// @return {Boolean}
+@function is-level-enough($level) {
+  $levels: map-keys($themes);
+
+  @return index($levels, $level) <= index($levels, $minimum-level);
+}
