@@ -60,7 +60,7 @@ Although let's keep in mind the idea has nothing new (there is an article from M
 In concrete terms, errors, warnings and advices are outlined by a 4px colored border:
 
 * red for errors;
-* yellow for alerts;
+* yellow for warnings;
 * gray for obsolete stuff;
 * green for advices.
 
@@ -107,6 +107,18 @@ Here are affected self-closing tags:
 3. Along the same lines, tests on elements that are contained within `<head>` cannot be displayed (since `<head>` is a hidden element). I need to find a way to do this.
 
 4. To avoid cases when outline could be hidden, the property [outline-offset](https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset) is being used in order to display it inside the element (rather than outside). Thanks to [@7studio](https://twitter.com/7studio) in [#4](https://github.com/ffoodd/a11y.css/issues/4).
+
+## Building leveled file
+
+You are now able to customize the file output by targeting a severity treshold. You just have to personalize the single parameter in `set-minimum-level` mixin. Levels are cumulative, and reflect theme's names:
+* `error`: only errors;
+* `warning`: warnings and errors;
+* `obsolete`: obsolete stuff, warnings and errors;
+* `advice`: every messages.
+
+We are assuming that looking for advices means that you care about obsoletes, warnings and errors.
+
+Credits to @HugoGiraudel in [#69](https://github.com/ffoodd/a11y.css/issues/69).
 
 ## Building docs
 
