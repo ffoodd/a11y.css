@@ -2,7 +2,6 @@
 
 /// Defines the language used by `a11y.css`. For now, only `fr` and `en` allowed.
 /// @access public
-/// @group languages
 /// @param {String} $language
 /// @output Nothing
 /// @example scss - Defines the language to `fr`.
@@ -28,9 +27,8 @@
 /// @access public
 /// @param {String} $level
 /// @output Nothing
-/// @example scss - Defines the minimum level to `error`.
+/// @example scss - Defines the minimum level to `error` to display only errors.
 ///  @include set-minimum-level("error");
-/// @throw Throws an error if `$level` is not either `error`, `warning`, `obsolete` or `advice`.
 @mixin set-minimum-level($level) {
   $level: to-lower-case($level);
   $levels: map-keys($themes);
@@ -46,7 +44,7 @@
 /// Get a message from the translation map based on the defined language.
 /// The message contains the icon associated to the message type.
 /// @access private
-/// @group languages
+/// @group messages
 /// @param {String} $theme - Theme name
 /// @param {String} $key - Key name
 /// @require {function} message
@@ -71,8 +69,6 @@
 /// @param {String} $theme - Theme
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
-/// @requires %a11y-after
-/// @requires %a11y-hover
 /// @requires {mixin} message
 /// @requires {function} theme-conf
 @mixin item($theme, $key, $self-closing: false) {
@@ -98,6 +94,7 @@
 
 
 /// Defines an error
+/// @group messages
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
@@ -115,6 +112,7 @@
 
 
 /// Defines a warning
+/// @group messages
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
@@ -132,6 +130,7 @@
 
 
 /// Defines an obsolete thing
+/// @group messages
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
@@ -148,6 +147,7 @@
 }
 
 /// Defines an advice
+/// @group messages
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
