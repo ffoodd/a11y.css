@@ -8,7 +8,7 @@
   
   <meta charset="utf-8" />
 
-<title>A11y.css - v1.0.3</title>
+<title>A11y.css - v1.2.1</title>
 <link rel="stylesheet" href="assets/css/main.css" />
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
 <meta name="viewport" content="width=device-width">
@@ -26,7 +26,7 @@
   <div class="sidebar__header">
   <h1 class="sidebar__title">
     
-      <a href="http://ffoodd.github.io/a11y.css">A11y.css - v1.0.3</a>
+      <a href="http://ffoodd.github.io/a11y.css">A11y.css - v1.2.1</a>
     
   </h1>
 </div>
@@ -58,14 +58,28 @@
 
         
         
-        
-      
-        
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p>
 
-        
-        
-
-        
+          
+          
+            <ul class="list-unstyled">
+            <li class="sidebar__item  sassdoc__item" data-name="set-locale" data-type="mixin">
+              <a href="#mixin-set-locale">set-locale
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="set-minimum-level" data-type="mixin">
+              <a href="#mixin-set-minimum-level">set-minimum-level
+              
+              
+              </a>
+            </li>
+            </ul>
+          
         
         
       
@@ -94,7 +108,7 @@
       
 
     
-      <p class="sidebar__item  sidebar__item--heading" data-slug="languages"><a href="#languages">Translation</a></p>
+      <p class="sidebar__item  sidebar__item--heading" data-slug="messages"><a href="#messages">messages</a></p>
 
       
       
@@ -105,13 +119,13 @@
 
         
         
-          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="languages-mixin"><a href="#languages-mixin">mixins</a></p>
+          <p class="sidebar__item  sidebar__item--sub-heading" data-slug="messages-mixin"><a href="#messages-mixin">mixins</a></p>
 
           
           
             <ul class="list-unstyled">
-            <li class="sidebar__item  sassdoc__item" data-name="set-locale" data-type="mixin">
-              <a href="#mixin-set-locale">set-locale
+            <li class="sidebar__item  sassdoc__item" data-name="error" data-type="mixin">
+              <a href="#mixin-error">error
               
               
               </a>
@@ -119,8 +133,26 @@
             
           
             
-            <li class="sidebar__item  sassdoc__item" data-name="message" data-type="mixin">
-              <a href="#mixin-message">message
+            <li class="sidebar__item  sassdoc__item" data-name="warning" data-type="mixin">
+              <a href="#mixin-warning">warning
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="obsolete" data-type="mixin">
+              <a href="#mixin-obsolete">obsolete
+              
+              
+              </a>
+            </li>
+            
+          
+            
+            <li class="sidebar__item  sassdoc__item" data-name="advice" data-type="mixin">
+              <a href="#mixin-advice">advice
               
               
               </a>
@@ -188,12 +220,398 @@
 
           
           
+            <section class="main__sub-section" id="undefined-mixin">
+              <h2 class="main__heading--secondary">mixins</h2>
+
+              
+              
+                <section class="main__item  item" id="mixin-set-locale">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#mixin-set-locale">set-locale</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@mixin set-locale($language) { 
+  $supported-languages: &quot;fr&quot;, &quot;en&quot;;
+  $language: to-lower-case($language);
+
+  @if not index($supported-languages, $language) {
+    @error &quot;Language `#{$language}` is not supported. Pull request welcome!&quot;;
+  }
+
+  $language: $language !global;
+ }"
+    data-collapsed="@mixin set-locale($language) { ... }"><code>@mixin set-locale($language) { ... }</code></pre>
+
+  
+    <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L9-L18" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Defines the language used by <code>a11y.css</code>. For now, only <code>fr</code> and <code>en</code> allowed.</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$language</code></th>
+          <td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td>
+          <td data-label="type">
+          
+            String
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+
+  
+    
+    
+  <h3 class="item__sub-heading">Example</h3>
+
+  
+  <div class="item__example  example">
+    
+    <div class="example__description"><p>Defines the language to <code>fr</code>.</p>
+</div>
+    
+    <pre class="example__code"><code class="language-scss"> @include set-locale(&quot;fr&quot;);</code></pre>
+  </div>
+  
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Throws</h3>
+
+  <ul class="list-unstyled">
+    
+      <li><p>Language <code>#{$language}</code> is not supported. Pull request welcome!</p>
+</li>
+    
+  </ul>
+
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="mixin-set-minimum-level">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#mixin-set-minimum-level">set-minimum-level</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@mixin set-minimum-level($level) { 
+  $level: to-lower-case($level);
+  $levels: map-keys($themes);
+
+  @if not index($levels, $level) {
+    @error &quot;Level `#{$level}` is not supported. Please choose one of `#{$levels}`.&quot;;
+  }
+
+  $minimum-level: $level !global;
+ }"
+    data-collapsed="@mixin set-minimum-level($level) { ... }"><code>@mixin set-minimum-level($level) { ... }</code></pre>
+
+  
+    <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L32-L41" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Defines the minimum level used by <code>a11y.css</code>.
+Either:</p>
+<ul>
+<li><code>error</code> for errors only;</li>
+<li><code>warning</code> for errors and warnings;</li>
+<li><code>obsolete</code> for everything but advices;</li>
+<li><code>advice</code> for everything.</li>
+</ul>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$level</code></th>
+          <td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td>
+          <td data-label="type">
+          
+            String
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+
+  
+    
+    
+  <h3 class="item__sub-heading">Example</h3>
+
+  
+  <div class="item__example  example">
+    
+    <div class="example__description"><p>Defines the minimum level to <code>error</code> to display only errors.</p>
+</div>
+    
+    <pre class="example__code"><code class="language-scss"> @include set-minimum-level(&quot;error&quot;);</code></pre>
+  </div>
+  
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Throws</h3>
+
+  <ul class="list-unstyled">
+    
+      <li><p>Level <code>#{$level}</code> is not supported. Please choose one of <code>#{$levels}</code>.</p>
+</li>
+    
+  </ul>
+
+
+  
+    
+    
+
+
+  
+    
+      
+      <h3 class="item__sub-heading">Requires</h3>
+      <ul class="list-unstyled">
+    
+
+    
+      <li>
+        <a href="#variable-themes"><code>themes</code></a>
         
+      </li>
+    
+  
 
-          
-          
 
-          
+
+
+</ul>
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+            </section>
           
         
 
@@ -229,30 +647,46 @@
 
 <div class="relative  clear">
   <pre class="item__code  language-scss"><code>$themes: (
-  &#39;error&#39;: (
-    &#39;icon&#39;: \2620\00A0,
-    &#39;color&#39;: crimson,
-    &#39;index&#39;: ($max-z-index)
+  "error": (
+    "icon": "\2620\00A0",
+    "color": #911,
+    "index": ($max-z-index),
+    "name": (
+      "fr": "Erreurs",
+      "en": "Errors"
+    )
   ),
-  &#39;warning&#39;: (
-    &#39;icon&#39;: \2622\00A0,
-    &#39;color&#39;: gold,
-    &#39;index&#39;: ($max-z-index - 1)
+  "warning": (
+    "icon": "\2622\00A0",
+    "color": gold,
+    "index": ($max-z-index - 1),
+    "name": (
+      "fr": "Avertissements",
+      "en": "Warnings"
+    )
   ),
-  &#39;obsolete&#39;: (
-    &#39;icon&#39;: \271D\00A0,
-    &#39;color&#39;: gray,
-    &#39;index&#39;: ($max-z-index - 2)
+  "obsolete": (
+    "icon": "\271D\00A0",
+    "color": gray,
+    "index": ($max-z-index - 2),
+    "name": (
+      "fr": "Obsolètes",
+      "en": "Obsoletes"
+    )
   ),
-  &#39;advice&#39;: (
-    &#39;icon&#39;: \2665\00A0,
-    &#39;color&#39;: forestgreen,
-    &#39;index&#39;: ($max-z-index - 3)
+  "advice": (
+    "icon": "\2665\00A0",
+    "color": forestgreen,
+    "index": ($max-z-index - 3),
+    "name": (
+      "fr": "Conseils",
+      "en": "Advices"
+    )
   ),
 );</code></pre>
 
   
-    <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_variables.scss#L232-L253" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_variables.scss" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -383,13 +817,21 @@
 
   
 
+
+
+  
+
     
       
       <h3 class="item__sub-heading">Used by</h3>
       <ul class="list-unstyled  list-inline">
     
 
-    <li><a href="#mixin-message"><code>message</code></a></li>
+    <li><a href="#mixin-set-minimum-level"><code>set-minimum-level</code></a></li>
+  
+
+
+
   
 
 
@@ -433,7 +875,7 @@
       </section>
     
       <section class="main__section">
-        <h1 class="main__heading" id="languages">Translation</h1>
+        <h1 class="main__heading" id="messages">messages</h1>
 
         
         
@@ -443,17 +885,17 @@
 
           
           
-            <section class="main__sub-section" id="languages-mixin">
+            <section class="main__sub-section" id="messages-mixin">
               <h2 class="main__heading--secondary">mixins</h2>
 
               
               
-                <section class="main__item  item" id="mixin-set-locale">
+                <section class="main__item  item" id="mixin-error">
 
 <h3 class="item__heading">
   
 
-  <a class="item__name" href="#mixin-set-locale">set-locale</a>
+  <a class="item__name" href="#mixin-error">error</a>
 
   
 
@@ -480,24 +922,31 @@
     
   
 
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
 
 <div class="relative  clear  code--collapsed">
   <pre class="item__code  item__code--togglable  language-scss"
     data-current-state="collapsed"
-    data-expanded="@mixin set-locale($language) { 
-  $supported-languages: &#39;fr&#39;, &#39;en&#39;;
-  $language: to-lower-case($language);
-
-  @if not index($supported-languages, $language) {
-    @error &quot;Language `#{$language}` is not supported. Pull request welcome!&quot;;
+    data-expanded="@mixin error($key, $self-closing: false) { 
+  @if is-level-enough(&quot;error&quot;) {
+    @include item(&quot;error&quot;, $key, $self-closing);
   }
-
-  $language: $language !global;
  }"
-    data-collapsed="@mixin set-locale($language) { ... }"><code>@mixin set-locale($language) { ... }</code></pre>
+    data-collapsed="@mixin error($key, $self-closing: false) { ... }"><code>@mixin error($key, $self-closing: false) { ... }</code></pre>
 
   
-    <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L7-L16" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L107-L111" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -511,7 +960,7 @@
     
   <h3 class="item__sub-heading">Description</h3>
 
-  <div class="item__description"><p>Defines the language used by <code>a11y.css</code>. For now, only <code>fr</code> and <code>en</code> allowed.</p>
+  <div class="item__description"><p>Defines an error</p>
 </div>
 
 
@@ -533,8 +982,9 @@
     <tbody>
       
         <tr class="item__parameter">
-          <th scope="row" data-label="name"><code>$language</code></th>
-          <td data-label="desc">&mdash;<span class="visually-hidden"> none</span></td>
+          <th scope="row" data-label="name"><code>$key</code></th>
+          <td data-label="desc"><p>Key used to fetch message in <code>$messages</code> map</p>
+</td>
           <td data-label="type">
           
             String
@@ -543,6 +993,22 @@
           <td data-label="default">
           
             &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$self-closing</code></th>
+          <td data-label="desc"><p>Whether or not to use message on self or next node</p>
+</td>
+          <td data-label="type">
+          
+            Bool
+          
+          </td>
+          <td data-label="default">
+          
+            <code>false</code>
           
           </td>
         </tr>
@@ -564,10 +1030,12 @@
   
   <div class="item__example  example">
     
-    <div class="example__description"><p>Defines the language to <code>fr</code>.</p>
+    <div class="example__description"><p>Define an error</p>
 </div>
     
-    <pre class="example__code"><code class="language-scss"> @include set-locale(&#39;fr&#39;);</code></pre>
+    <pre class="example__code"><code class="language-scss">.selector {
+  @include error(&quot;no-src&quot;);
+}</code></pre>
   </div>
   
 
@@ -575,19 +1043,18 @@
   
     
     
-  <h3 class="item__sub-heading">Throws</h3>
-
-  <ul class="list-unstyled">
-    
-      <li><p>Language <code>#{$language}</code> is not supported. Pull request welcome!</p>
-</li>
-    
-  </ul>
-
 
   
     
     
+
+
+  
+
+
+
+  
+
 
 
 
@@ -628,12 +1095,12 @@
 
 </section>
               
-                <section class="main__item  item" id="mixin-message">
+                <section class="main__item  item" id="mixin-warning">
 
 <h3 class="item__heading">
   
 
-  <a class="item__name" href="#mixin-message">message</a>
+  <a class="item__name" href="#mixin-warning">warning</a>
 
   
 
@@ -663,6 +1130,8 @@
   
 
   
+    
+  
 
   
 
@@ -674,13 +1143,15 @@
 <div class="relative  clear  code--collapsed">
   <pre class="item__code  item__code--togglable  language-scss"
     data-current-state="collapsed"
-    data-expanded="@mixin message($theme, $key) { 
-  content: quote(theme-conf($theme, &#39;icon&#39;) #{message($theme, $key)}) !important;
+    data-expanded="@mixin warning($key, $self-closing: false) { 
+  @if is-level-enough(&quot;warning&quot;) {
+    @include item(&quot;warning&quot;, $key, $self-closing);
+  }
  }"
-    data-collapsed="@mixin message($theme, $key) { ... }"><code>@mixin message($theme, $key) { ... }</code></pre>
+    data-collapsed="@mixin warning($key, $self-closing: false) { ... }"><code>@mixin warning($key, $self-closing: false) { ... }</code></pre>
 
   
-    <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L51-L53" class="item__source-link" target="_blank">View source</a>
+    <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L125-L129" class="item__source-link" target="_blank">View source</a>
   
 </div>
 
@@ -694,8 +1165,7 @@
     
   <h3 class="item__sub-heading">Description</h3>
 
-  <div class="item__description"><p>Get a message from the translation map based on the defined language.
-The message contains the icon associated to the message type.</p>
+  <div class="item__description"><p>Defines a warning</p>
 </div>
 
 
@@ -717,8 +1187,8 @@ The message contains the icon associated to the message type.</p>
     <tbody>
       
         <tr class="item__parameter">
-          <th scope="row" data-label="name"><code>$theme</code></th>
-          <td data-label="desc"><p>Theme name</p>
+          <th scope="row" data-label="name"><code>$key</code></th>
+          <td data-label="desc"><p>Key used to fetch message in <code>$messages</code> map</p>
 </td>
           <td data-label="type">
           
@@ -733,17 +1203,17 @@ The message contains the icon associated to the message type.</p>
         </tr>
       
         <tr class="item__parameter">
-          <th scope="row" data-label="name"><code>$key</code></th>
-          <td data-label="desc"><p>Key name</p>
+          <th scope="row" data-label="name"><code>$self-closing</code></th>
+          <td data-label="desc"><p>Whether or not to use message on self or next node</p>
 </td>
           <td data-label="type">
           
-            String
+            Bool
           
           </td>
           <td data-label="default">
           
-            &mdash;<span class="visually-hidden"> none</span>
+            <code>false</code>
           
           </td>
         </tr>
@@ -765,21 +1235,216 @@ The message contains the icon associated to the message type.</p>
   
   <div class="item__example  example">
     
-    <div class="example__description"><p>Get message for <code>nav</code> from <code>advice</code> category when language is set to <code>en</code></p>
+    <div class="example__description"><p>Define an warning</p>
 </div>
     
     <pre class="example__code"><code class="language-scss">.selector {
-  @include message(&#39;advice&#39;, &#39;nav&#39;);
+  @include warning(&quot;abbr&quot;);
 }</code></pre>
   </div>
+  
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+  
+
+
+
+  
+
+
+
+
+
+  
+    
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="mixin-obsolete">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#mixin-obsolete">obsolete</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@mixin obsolete($key, $self-closing: false) { 
+  @if is-level-enough(&quot;obsolete&quot;) {
+    @include item(&quot;obsolete&quot;, $key, $self-closing);
+  }
+ }"
+    data-collapsed="@mixin obsolete($key, $self-closing: false) { ... }"><code>@mixin obsolete($key, $self-closing: false) { ... }</code></pre>
+
+  
+    <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L143-L147" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Defines an obsolete thing</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$key</code></th>
+          <td data-label="desc"><p>Key used to fetch message in <code>$messages</code> map</p>
+</td>
+          <td data-label="type">
+          
+            String
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$self-closing</code></th>
+          <td data-label="desc"><p>Whether or not to use message on self or next node</p>
+</td>
+          <td data-label="type">
+          
+            Bool
+          
+          </td>
+          <td data-label="default">
+          
+            <code>false</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
+    
+
+  
+    
+    
+  <h3 class="item__sub-heading">Example</h3>
+
   
   <div class="item__example  example">
     
-    <div class="example__description"><p>Resulting CSS</p>
+    <div class="example__description"><p>Define an obsolete</p>
 </div>
     
-    <pre class="example__code"><code class="language-css">.selector {
-  content: &#39;\2665\00A0 Did you know the &lt;nav&gt; tag is exclusively restricted to primary and secondary navigation area?&#39;;
+    <pre class="example__code"><code class="language-scss">.selector {
+  @include obsolete(&quot;any&quot;);
 }</code></pre>
   </div>
   
@@ -802,25 +1467,211 @@ The message contains the icon associated to the message type.</p>
 
 
 
+
+
   
     
+    
+
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+
+
+
+
+  
+    
+    
+
+  
+    
+    
+  
+    
+    
+
+  
+
+
+
+</section>
+              
+                <section class="main__item  item" id="mixin-advice">
+
+<h3 class="item__heading">
+  
+
+  <a class="item__name" href="#mixin-advice">advice</a>
+
+  
+
+  
+</h3>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+<div class="relative  clear  code--collapsed">
+  <pre class="item__code  item__code--togglable  language-scss"
+    data-current-state="collapsed"
+    data-expanded="@mixin advice($key, $self-closing: false) { 
+  @if is-level-enough(&quot;advice&quot;) {
+    @include item(&quot;advice&quot;, $key, $self-closing);
+  }
+ }"
+    data-collapsed="@mixin advice($key, $self-closing: false) { ... }"><code>@mixin advice($key, $self-closing: false) { ... }</code></pre>
+
+  
+    <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L160-L164" class="item__source-link" target="_blank">View source</a>
+  
+</div>
+
+
+
+
+
+
+  
+    
+    
+  <h3 class="item__sub-heading">Description</h3>
+
+  <div class="item__description"><p>Defines an advice</p>
+</div>
+
+
+  
+    
+    <h3 class="item__sub-heading">Parameters</h3>
+
+
+
+  <table class="item__parameters">
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
       
-      <h3 class="item__sub-heading">Requires</h3>
-      <ul class="list-unstyled">
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$key</code></th>
+          <td data-label="desc"><p>Key used to fetch message in <code>$messages</code> map</p>
+</td>
+          <td data-label="type">
+          
+            String
+          
+          </td>
+          <td data-label="default">
+          
+            &mdash;<span class="visually-hidden"> none</span>
+          
+          </td>
+        </tr>
+      
+        <tr class="item__parameter">
+          <th scope="row" data-label="name"><code>$self-closing</code></th>
+          <td data-label="desc"><p>Whether or not to use message on self or next node</p>
+</td>
+          <td data-label="type">
+          
+            Bool
+          
+          </td>
+          <td data-label="default">
+          
+            <code>false</code>
+          
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+
+  
+    
     
 
+  
     
-      <li>
-        <a href="#variable-themes"><code>themes</code></a>
-        
-      </li>
     
+  <h3 class="item__sub-heading">Example</h3>
+
+  
+  <div class="item__example  example">
+    
+    <div class="example__description"><p>Define an advice</p>
+</div>
+    
+    <pre class="example__code"><code class="language-scss">.selector {
+  @include advice(&quot;nav&quot;);
+}</code></pre>
+  </div>
+  
+
+
+  
+    
+    
+
+  
+    
+    
+
+
   
 
 
 
+  
 
-</ul>
+
+
 
 
   
@@ -883,7 +1734,7 @@ The message contains the icon associated to the message type.</p>
           
 
           <!-- Version -->
-          <span class="project-info__version"> - v1.0.3</span>
+          <span class="project-info__version"> - v1.2.1</span>
 
           <!-- License -->
           
