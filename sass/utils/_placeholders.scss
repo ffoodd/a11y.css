@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-/// a11y-before
-/// @access private
 %a11y-before {
   width: 100%                                                           !important;
   height: auto                                                          !important;
@@ -34,8 +32,6 @@
   // @see issue #7, solution from @7studio
 }
 
-/// a11y-hover
-/// @access private
 %a11y-hover {
   opacity: 1;
   -webkit-transform:  translateY( 0 ) translateZ( 0 )                   !important;
@@ -47,8 +43,6 @@
 
 // Dynamically generating a placeholder for each theme
 @each $theme in "error" "warning" "advice" "obsolete" {
-  /// a11y-#{$theme}
-  /// @access private
   %a11y-#{$theme} {
     outline: 4px solid transparentize(theme-conf($theme, "color"), .25) !important;
     outline-offset: -4px;
@@ -64,8 +58,6 @@
     }
   }
 
-  /// a11y-#{$theme}-self-closing
-  /// @access private
   %a11y-#{$theme}-self-closing {
     outline: 4px solid transparentize(theme-conf($theme, "color"), .25) !important;
     outline-offset: -4px;
