@@ -781,7 +781,7 @@ table[role="presentation"] [colgroup], [style], [width]:not(img),
   [class*="\|"]::before,
   [class*="\`"]::before {
     background: #fce9e9 !important;
-    border-color: #df9f9f !important;
+    border-color: #bf4040 !important;
     color: #602020 !important;
     z-index: 2147483647 !important; }
 
@@ -815,7 +815,7 @@ input[type=""], meta[http-equiv="refresh"] {
   input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::before, input:not([type]) ~ ::before,
   input[type=""] ~ ::before, meta[http-equiv="refresh"] ~ ::before {
     background: #fce9e9 !important;
-    border-color: #df9f9f !important;
+    border-color: #bf4040 !important;
     color: #602020 !important;
     z-index: 2147483647 !important; }
 
@@ -897,7 +897,7 @@ table > tbody ~ thead, table > tbody:first-child, th:not([scope]), th:not([id]),
   table > tbody ~ tfoot::before,
   table > tbody ~ thead::before, table > tbody:first-child::before, th:not([scope])::before, th:not([id])::before, colgroup:not([span]) :not(col)::before, [class*="toggle"]:not([aria-pressed])::before {
     background: #fcf9e9 !important;
-    border-color: #dfd59f !important;
+    border-color: #bfab40 !important;
     color: #605620 !important;
     z-index: 2147483646 !important; }
 
@@ -911,7 +911,7 @@ input[type="image"][alt=""], img[src*="spacer.gif"] {
   area[alt=""] ~ ::before,
   input[type="image"][alt=""] ~ ::before, img[src*="spacer.gif"] ~ ::before {
     background: #fcf9e9 !important;
-    border-color: #dfd59f !important;
+    border-color: #bfab40 !important;
     color: #605620 !important;
     z-index: 2147483646 !important; }
 
@@ -971,7 +971,7 @@ audio, :not(figure) svg,
   :not(figure) canvas::before, svg[aria-label][title]::before, time::before,
   [datetime]::before, th[scope]::before, table[role="presentation"]::before {
     background: #f6fce9 !important;
-    border-color: #cadf9f !important;
+    border-color: #96bf40 !important;
     color: #4b6020 !important;
     z-index: 2147483644 !important; }
 
@@ -987,7 +987,7 @@ area[alt][title], meta[charset] {
   :not(figure) object ~ ::before, img[alt][title] ~ ::before,
   area[alt][title] ~ ::before, meta[charset] ~ ::before {
     background: #f6fce9 !important;
-    border-color: #cadf9f !important;
+    border-color: #96bf40 !important;
     color: #4b6020 !important;
     z-index: 2147483644 !important; }
 
@@ -1185,7 +1185,7 @@ body[background], table[background], thead[background], tbody[background], tfoot
   td[nowrap]::before, th[nowrap]::before,
   body[background]::before, table[background]::before, thead[background]::before, tbody[background]::before, tfoot[background]::before, tr[background]::before, td[background]::before, th[background]::before {
     background: #e9edfc !important;
-    border-color: #9fafdf !important;
+    border-color: #4060bf !important;
     color: #203060 !important;
     z-index: 2147483645 !important; }
 
