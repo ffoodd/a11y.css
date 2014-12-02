@@ -1,59 +1,176 @@
 @charset "UTF-8";
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337
+/*doc
+---
+title: Tabindex > 0
+name: tabindex
+category: Errors
+---
+
+The `[tabindex]` attribute should never be greater than 0.
+
+* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337
+
+```html_example
+<button tabindex="1">Positive tabindex is bad</button>
+```
+*/
 [tabindex]:not([tabindex="0"]):not([tabindex="-1"]) {
   @include error("tab-order");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386
+/*doc
+---
+title: No href
+name: no-href
+category: Errors
+---
+
+The `[href]` attribute should never be empty. A link *to* something, right?
+
+* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161
+* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
+* @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386
+
+```html_example
+<a>Who am I? Where do I link?</a>
+```
+*/
 a:not([href]),
 a[href=""] {
   @include error("no-href");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L392
+/*doc
+---
+title: JS href
+name: href-js
+category: Errors
+---
+
+The `[href]` attribute should not start with "javascript".
+Should probably be a `<button>`, don't you think?
+
+* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
+* @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L392
+
+```html_example
+<a>Who am I? Where do I link?</a>
+```
+*/
 a[href^="javascript"] {
   @include error("href-js");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386
+/*doc
+---
+title: # href
+name: empty-href
+category: Errors
+---
+
+The `[href]` attribute is only containing `#`.
+Should probably be a `<button>` again, don't you think?
+
+* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
+* @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386
+
+```html_example
+<a href="#">Oh boy, I don't mean anything</a>
+```
+*/
 a[href="#"] {
   @include error("empty-href");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5
-// @see http://www.w3.org/TR/WCAG20/#text-equiv-all
-// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
-// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+/*doc
+---
+title: Empty link
+name: empty-link
+category: Errors
+---
+
+An empty link should have a label, within `[aria-label]` or targeted by `[aria-labelledby]`.
+By the way, why would you use an empty link?
+
+* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5
+* @see http://www.w3.org/TR/WCAG20/#text-equiv-all
+* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
+* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link
+* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+
+```html_example
+<a href="/"></a>
+```
+*/
 a:empty:not([aria-label]):not([aria-labelledby]) {
   @include error("empty-link");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5
-// @see http://www.w3.org/TR/WCAG20/#text-equiv-all
-// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
-// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+/*doc
+---
+title: Empty image link
+name: empty-image-link
+category: Errors
+---
+
+When an `<img>` is a link only child, it must have an `[alt]`.
+
+* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5
+* @see http://www.w3.org/TR/WCAG20/#text-equiv-all
+* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
+* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link
+* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+
+```html_example
+<a href="/"><img src="" /></a>
+```
+*/
 a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
   @include error("empty-image-link");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1
-// @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369
+/*doc
+---
+title: Missing alternative for `<img>`
+name: no-alt
+category: Errors
+---
+
+An `<img>` must have an `[alt]`. Always.
+
+* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1
+* @see http://www.w3.org/TR/WCAG20/#text-equiv-all
+* @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369
+
+```html_example
+<img src="/" /><p></p>
+<input type="image" src="/" /><p></p>
+```
+*/
 img:not([alt]),
 area:not([alt]),
 input[type="image"]:not([alt]) {
   @include error("no-alt", $self-closing: true);
 }
 
-// @see http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374
+/*doc
+---
+title: Missing source for `<img>`
+name: no-src
+category: Errors
+---
+
+An `<img>` must have an `[src]`. Obviously.
+
+* @see http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src
+* @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374
+
+```html_example
+<img alt="No source" /><p></p>
+<input type="image"  alt="No source" /><p></p>
+```
+*/
 img:not([src]),
 img[src=""],
 img[src="#"],
@@ -63,51 +180,147 @@ input[type="image"][src="#"] {
   @include error("no-src", $self-closing: true);
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1
-// @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
-// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+/*doc
+---
+title: `<label>` without a `[for]` attribute.
+name: no-for
+category: Errors
+---
+
+A `<label>` is labelling something, in theory.
+
+* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1
+* @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
+* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive
+* @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+
+```html_example
+<label>Guess what?</label>
+```
+*/
 label:not([for]),
 label[for=""] {
   @include error("no-for");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1
-// @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
-// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+/*doc
+---
+title: Missing some kind of label
+name: no-id
+category: Errors
+---
+
+How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
+
+* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1
+* @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
+* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive
+* @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+
+```html_example
+<input type="text" /><p></p>
+<select><option>Where</option><option>is</option><option>my</option><option>label?</option></select><p></p>
+<textarea>Where's my label?</textarea><p></p>
+```
+*/
 input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
 select:not([id]):not([aria-label]):not([aria-labelledby]),
 textarea:not([id]):not([aria-label]):not([aria-labelledby]) {
   @include error("no-id", $self-closing: true);
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9
-// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
+
+/*doc
+---
+title: Missing a value
+name: no-value
+category: Errors
+---
+
+How to label a `[reset]`, `[submit]` or `[button]` type input?
+You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
+
+* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9
+* @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
+
+```html_example
+<input type="reset" /><p></p>
+<input type="submit" /><p></p>
+<input type="button" /><p></p>
+```
+*/
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) {
   @include error("no-value", $self-closing: true);
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9
-// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+/*doc
+---
+title: Empty button
+name: empty-button
+category: Errors
+---
+
+A `<button>` should either have content or an `[aria-label]` or `[aria-labelledby]`.
+
+* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9
+* @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
+* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+
+```html_example
+<button></button>
+<button><img src=""/></button>
+```
+*/
 button:empty:not([aria-label]):not([aria-labelledby]),
 button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
   @include error("empty-button");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189
+/*doc
+---
+title: Form button
+name: form-button
+category: Errors
+---
+
+A `<button>` in a `<form>` is probably intended to do something.
+Either use `[reset]`, `[submit]` or `[button]` type.
+
+* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189
+
+```html_example
+<form action="GET">
+  <button>I just don't know what todo with myself</button>
+</form>
+```
+*/
 form button:not([type]) {
   @include error("form-button");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L222
+/*doc
+---
+title: Disabled button
+name: disabled-button
+category: Errors
+---
+
+A `<button>` styled to be disabled should be disabled *for real*.
+Use `[disabled]` and `[readonly]`.
+
+* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122
+
+```html_example
+<button class="is-disabled">To be or not to be (disabled)?</button>
+```
+*/
 button[class*="disabled"]:not([disabled]):not([readonly]) {
   @include error("disabled-button");
 }
 
+`
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-11
 // @see http://www.w3.org/TR/WCAG20/#minimize-error-suggestions
 input:not([type]),
