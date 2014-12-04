@@ -9,7 +9,7 @@ category: Errors
 
 The `[tabindex]` attribute should never be greater than 0.
 
-* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
 
 ```html_example
 <button tabindex="1">Positive tabindex is bad</button>
@@ -28,9 +28,9 @@ category: Errors
 
 The `[href]` attribute should never be empty. A link *to* something, right?
 
-* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161
-* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
-* @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386>
 
 ```html_example
 <a>Who am I? Where do I link?</a>
@@ -51,8 +51,8 @@ category: Errors
 The `[href]` attribute should not start with "javascript".
 Should probably be a `<button>`, don't you think?
 
-* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
-* @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L392
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L392>
 
 ```html_example
 <a>Who am I? Where do I link?</a>
@@ -72,8 +72,8 @@ category: Errors
 The `[href]` attribute is only containing `#`.
 Should probably be a `<button>` again, don't you think?
 
-* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165
-* @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386>
 
 ```html_example
 <a href="#">Oh boy, I don't mean anything</a>
@@ -93,11 +93,11 @@ category: Errors
 An empty link should have a label, within `[aria-label]` or targeted by `[aria-labelledby]`.
 By the way, why would you use an empty link?
 
-* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5
-* @see http://www.w3.org/TR/WCAG20/#text-equiv-all
-* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
-* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link
-* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5>
+* <http://www.w3.org/TR/WCAG20/#text-equiv-all>
+* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
+* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ```html_example
 <a href="/"></a>
@@ -116,11 +116,11 @@ category: Errors
 
 When an `<img>` is a link only child, it must have an `[alt]`.
 
-* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5
-* @see http://www.w3.org/TR/WCAG20/#text-equiv-all
-* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
-* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link
-* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5>
+* <http://www.w3.org/TR/WCAG20/#text-equiv-all>
+* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
+* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ```html_example
 <a href="/"><img src="" /></a>
@@ -139,9 +139,9 @@ category: Errors
 
 An `<img>` must have an `[alt]`. Always.
 
-* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1
-* @see http://www.w3.org/TR/WCAG20/#text-equiv-all
-* @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1>
+* <http://www.w3.org/TR/WCAG20/#text-equiv-all>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369>
 
 ```html_example
 <img src="/" /><p></p>
@@ -163,8 +163,8 @@ category: Errors
 
 An `<img>` must have an `[src]`. Obviously.
 
-* @see http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src
-* @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374
+* <http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374>
 
 ```html_example
 <img alt="No source" /><p></p>
@@ -182,17 +182,17 @@ input[type="image"][src="#"] {
 
 /*doc
 ---
-title: `<label>` without a `[for]` attribute.
+title: a `<label>` without a `[for]` attribute.
 name: no-for
 category: Errors
 ---
 
 A `<label>` is labelling something, in theory.
 
-* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1
-* @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
-* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive
-* @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1>
+* <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 
 ```html_example
 <label>Guess what?</label>
@@ -212,10 +212,10 @@ category: Errors
 
 How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
-* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1
-* @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
-* @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive
-* @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1>
+* <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 
 ```html_example
 <input type="text" /><p></p>
@@ -240,8 +240,8 @@ category: Errors
 How to label a `[reset]`, `[submit]` or `[button]` type input?
 You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
-* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9
-* @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
 ```html_example
 <input type="reset" /><p></p>
@@ -264,9 +264,9 @@ category: Errors
 
 A `<button>` should either have content or an `[aria-label]` or `[aria-labelledby]`.
 
-* @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9
-* @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
-* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ```html_example
 <button></button>
@@ -288,7 +288,7 @@ category: Errors
 A `<button>` in a `<form>` is probably intended to do something.
 Either use `[reset]`, `[submit]` or `[button]` type.
 
-* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189>
 
 ```html_example
 <form action="GET">
@@ -310,7 +310,7 @@ category: Errors
 A `<button>` styled to be disabled should be disabled *for real*.
 Use `[disabled]` and `[readonly]`.
 
-* @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122>
 
 ```html_example
 <button class="is-disabled">To be or not to be (disabled)?</button>
