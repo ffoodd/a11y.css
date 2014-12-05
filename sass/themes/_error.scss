@@ -320,8 +320,22 @@ button[class*="disabled"]:not([disabled]):not([readonly]) {
   @include error("disabled-button");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-11
-// @see http://www.w3.org/TR/WCAG20/#minimize-error-suggestions
+/*doc
+---
+title: Input without type
+name: no-type
+category: Errors
+---
+
+`<input>` needs a `[type]` in order to tell the user what kind of data is wanted.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-11>
+* <http://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
+
+```html_example
+<input value="Whatever you want" />
+```
+*/
 input:not([type]),
 input[type=""] {
   @include error("no-type", $self-closing: true);
