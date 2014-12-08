@@ -304,12 +304,8 @@ $messages: (
       "en": "Don't you need at least <thead>, and maybe <tfoot> too?"
     ),
     "th-no-scope": (
-      "fr": "Cette cellule d’en-tête ne s’applique pas à la totalité de la ligne / colonne, si ?\A Si oui, pensez à [scope].",
-      "en": "This head cell doesn't apply to a full line/row, or does it?\A If so, think of [scope]."
-    ),
-    "th-no-id": (
-      "fr": "Je suis sûr qu’un identifiant ferait plaisir à cette cellule d’en-tête.",
-      "en": "I'm pretty this head cell would love an [id]."
+      "fr": "À quoi s’applique cette cellule d’en-tête ? La totalité de la ligne / colonne ?\A Si oui, pensez à [scope]. Sinon, il faut probablement un [id] et des [headers].",
+      "en": "Does this head cell apply to a full line/row, or not?\A If so, think of [scope]. If not, use an [id] with [headers]."
     ),
     "not-col": (
       "fr": "Seul <col> est autorisé dans un <colgroup>. Ça paraît logique, n’est-ce pas ?",

@@ -183,15 +183,10 @@ table > tbody:first-child {
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-7
 // @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+// @see http://www.w3.org/TR/WCAG20-TECHS/H43.html
 // @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L282
-th:not([scope]) {
+th:not([scope]):not([id]) {
   @include warning("th-no-scope");
-}
-
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-7
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
-th:not([id]) {
-  @include warning("th-no-id");
 }
 
 // @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L342
