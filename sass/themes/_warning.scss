@@ -143,7 +143,7 @@ label + :not(input):not(select):not(textarea) {
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-3
 // @see http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence
-// @ee https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L331
+// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L331
 table:not([role="presentation"]) > tr:only-child,
 table:not([role="presentation"]) > tbody > tr:only-child {
   @include warning("table-layout");
