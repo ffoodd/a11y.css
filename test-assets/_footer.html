@@ -5,20 +5,6 @@
 <script>
 $(document).ready(function() {
 
-  // build simple sidebar navigation
-  var $headers = $('.main > h1');
-  var $componentList = $('.componentList');
-
-  $headers.each(function() {
-    var $this = $(this),
-        headerText = $this.text(),
-        headerId = $this.attr('id');
-
-    $componentList.append(
-      '<li><a href="' + headerId + '">' + headerText + '</a></li>'
-    );
-  });
-
   // set the active tab
   var currentHref = document.location.pathname.substr(1);
   if (currentHref)
