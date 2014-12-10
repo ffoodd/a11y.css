@@ -9,6 +9,14 @@
 /// @prop {Map} theme.key.en - English version of the message
 $messages: (
   "advice": (
+    "empty-class": (
+      "fr": "Attribut [class] vide.\A Pourquoi tant de haine ?",
+      "en": "Missing [class] attribute.\A Why so much hatred?"
+    ),
+    "empty-id": (
+      "fr": "Attribut [id] vide.\A Sérieusement ?",
+      "en": "Empty [id] attribute.\A Does this look like a game to you?"
+    ),
     "nav": (
       "fr": "La balise <nav> est réservée à la structuration des zones de navigations principales et secondaires. Vous le saviez ?",
       "en": "Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?"
@@ -171,14 +179,6 @@ $messages: (
     "no-action": (
       "fr": "Attribut [action] manquant.\A Et après, il se passe quoi ?",
       "en": "Missing [action] attribute.\A What now?"
-    ),
-    "empty-class": (
-      "fr": "Attribut [class] vide.\A Pourquoi tant de haine ?",
-      "en": "Missing [class] attribute.\A Why so much hatred?"
-    ),
-    "empty-id": (
-      "fr": "Attribut [id] vide.\A Sérieusement ?",
-      "en": "Empty [id] attribute.\A Does this look like a game to you?"
     ),
     "meta-refresh": (
       "fr": "<meta http-equiv=\"refresh\"> devrait être supprimé.\A Définitivement.",

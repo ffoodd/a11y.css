@@ -1,5 +1,42 @@
 @charset "UTF-8";
 
+
+/*doc
+---
+title: Empty class attribute
+name: empty-class
+category: Advices
+---
+
+`[class]` shouldn't be present if empty. Something to improve, right?
+
+```html_example
+<b class="">Why is there a class here?</b>
+```
+*/
+[class=""] {
+  @include advice("empty-class");
+}
+
+
+
+/*doc
+---
+title: Empty ID attribute
+name: empty-id
+category: Advices
+---
+
+`[id]` shouldn't be present if empty. You'll thank me later.
+
+```html_example
+<i id="">Wait. Why is this ID empty?</i>
+```
+*/
+[id=""] {
+  @include advice("empty-id");
+}
+
 nav {
   @include advice("nav");
 }

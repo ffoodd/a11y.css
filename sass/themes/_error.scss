@@ -19,6 +19,7 @@ The `[tabindex]` attribute should never be greater than 0.
   @include error("tab-order");
 }
 
+
 /*doc
 ---
 title: No href
@@ -41,6 +42,7 @@ a[href=""] {
   @include error("no-href");
 }
 
+
 /*doc
 ---
 title: JS href
@@ -62,6 +64,7 @@ a[href^="javascript"] {
   @include error("href-js");
 }
 
+
 /*doc
 ---
 title: # href
@@ -82,6 +85,7 @@ Should probably be a `<button>` again, don't you think?
 a[href="#"] {
   @include error("empty-href");
 }
+
 
 /*doc
 ---
@@ -107,6 +111,7 @@ a:empty:not([aria-label]):not([aria-labelledby]) {
   @include error("empty-link");
 }
 
+
 /*doc
 ---
 title: Empty image link
@@ -129,6 +134,7 @@ When an `<img>` is a link only child, it must have an `[alt]`.
 a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
   @include error("empty-image-link");
 }
+
 
 /*doc
 ---
@@ -153,6 +159,7 @@ area:not([alt]),
 input[type="image"]:not([alt]) {
   @include error("no-alt", $self-closing: true);
 }
+
 
 /*doc
 ---
@@ -180,6 +187,7 @@ input[type="image"][src="#"] {
   @include error("no-src", $self-closing: true);
 }
 
+
 /*doc
 ---
 title: a `<label>` without a `[for]` attribute.
@@ -202,6 +210,7 @@ label:not([for]),
 label[for=""] {
   @include error("no-for");
 }
+
 
 /*doc
 ---
@@ -255,6 +264,7 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
   @include error("no-value", $self-closing: true);
 }
 
+
 /*doc
 ---
 title: Empty button
@@ -278,6 +288,7 @@ button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
   @include error("empty-button");
 }
 
+
 /*doc
 ---
 title: Form button
@@ -300,6 +311,7 @@ form button:not([type]) {
   @include error("form-button");
 }
 
+
 /*doc
 ---
 title: Disabled button
@@ -319,6 +331,7 @@ Use `[disabled]` and `[readonly]`.
 button[class*="disabled"]:not([disabled]):not([readonly]) {
   @include error("disabled-button");
 }
+
 
 /*doc
 ---
@@ -341,32 +354,87 @@ input[type=""] {
   @include error("no-type", $self-closing: true);
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-8
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+
+/*doc
+---
+title: Optgroup without label
+name: optgroup
+category: Errors
+---
+
+`<optgroup>` needs a `[label]` to explain what's inside the group.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-8>
+* <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
+
+```html_example
+<form action="/">
+    <label for="optgroup">Oh, hey</label>
+    <select id="optgroup">
+      <optgroup label="I'm a group">
+        <option value="1">I'm an option</option>
+        <option value="2">I'm another option</option>
+      </optgroup>
+      <optgroup label="I'm another group">
+        <option value="3">I'm an option, but from another group</option>
+        <option value="4">I'm another option, still from another group</option>
+     </optgroup>
+   </select>
+</form>
+```
+*/
 optgroup:not([label]) {
   @include error("optgroup");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-2-1
-// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454
+
+/*doc
+---
+title: Iframe without title
+name: no-title
+category: Errors
+---
+
+`<iframe>` needs a `[title]` in order to tell the user what to expect inside the iframe.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-2-1>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454>
+
+```html_example
+<iframe height="500" width="500" src="http://google.com"></iframe>
+```
+*/
 iframe:not([title]),
 iframe[title=""] {
   @include error("no-title");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214
+
+/*doc
+---
+title: Form missing an action
+name: no-action
+category: Errors
+---
+
+`<form>` should do something, isnt'it? Well, `[action]` is meant to define what.
+
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214>
+
+```html_example
+<form action="/">
+  <label for="input">Guess what do we do with your datas?</label>
+  <input id="input" type="text" />
+
+  <input type="submit" value="No idea, huh?"/>
+</form>
+```
+*/
 form:not([action]) {
   @include error("no-action");
 }
 
-[class=""] {
-  @include error("empty-class");
-}
-
-[id=""] {
-  @include error("empty-id");
-}
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-3
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-4
