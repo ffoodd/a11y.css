@@ -2,7 +2,7 @@
 
 /*doc
 ---
-title: Tabindex > 0
+title: 'Tabindex > 0'
 name: tabindex
 category: Errors
 ---
@@ -22,7 +22,7 @@ The `[tabindex]` attribute should never be greater than 0.
 
 /*doc
 ---
-title: No href
+title: 'No href'
 name: no-href
 category: Errors
 ---
@@ -45,7 +45,7 @@ a[href=""] {
 
 /*doc
 ---
-title: JS href
+title: 'JS href'
 name: href-js
 category: Errors
 ---
@@ -89,7 +89,7 @@ a[href="#"] {
 
 /*doc
 ---
-title: Empty link
+title: 'Empty link'
 name: empty-link
 category: Errors
 ---
@@ -114,7 +114,7 @@ a:empty:not([aria-label]):not([aria-labelledby]) {
 
 /*doc
 ---
-title: Empty image link
+title: 'Empty image link'
 name: empty-image-link
 category: Errors
 ---
@@ -138,7 +138,7 @@ a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
 
 /*doc
 ---
-title: Missing alternative for `<img>`
+title: 'Missing alternative for `<img>`'
 name: no-alt
 category: Errors
 ---
@@ -163,7 +163,7 @@ input[type="image"]:not([alt]) {
 
 /*doc
 ---
-title: Missing source for `<img>`
+title: 'Missing source for `<img>`'
 name: no-src
 category: Errors
 ---
@@ -190,7 +190,7 @@ input[type="image"][src="#"] {
 
 /*doc
 ---
-title: a `<label>` without a `[for]` attribute.
+title: 'A `<label>` without a `[for]` attribute'
 name: no-for
 category: Errors
 ---
@@ -214,7 +214,7 @@ label[for=""] {
 
 /*doc
 ---
-title: Missing some kind of label
+title: 'Missing some kind of label'
 name: no-id
 category: Errors
 ---
@@ -241,7 +241,7 @@ textarea:not([id]):not([aria-label]):not([aria-labelledby]) {
 
 /*doc
 ---
-title: Missing a value
+title: 'Missing a value'
 name: no-value
 category: Errors
 ---
@@ -267,7 +267,7 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 
 /*doc
 ---
-title: Empty button
+title: 'Empty button'
 name: empty-button
 category: Errors
 ---
@@ -291,7 +291,7 @@ button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
 
 /*doc
 ---
-title: Form button
+title: 'Form button'
 name: form-button
 category: Errors
 ---
@@ -314,7 +314,7 @@ form button:not([type]) {
 
 /*doc
 ---
-title: Disabled button
+title: 'Disabled button'
 name: disabled-button
 category: Errors
 ---
@@ -335,7 +335,7 @@ button[class*="disabled"]:not([disabled]):not([readonly]) {
 
 /*doc
 ---
-title: Input without type
+title: 'Input without type'
 name: no-type
 category: Errors
 ---
@@ -357,7 +357,7 @@ input[type=""] {
 
 /*doc
 ---
-title: Optgroup without label
+title: 'Optgroup without label'
 name: optgroup
 category: Errors
 ---
@@ -390,7 +390,7 @@ optgroup:not([label]) {
 
 /*doc
 ---
-title: Iframe without title
+title: 'Iframe without title'
 name: no-title
 category: Errors
 ---
@@ -413,7 +413,7 @@ iframe[title=""] {
 
 /*doc
 ---
-title: Form missing an action
+title: 'Form missing an action'
 name: no-action
 category: Errors
 ---
