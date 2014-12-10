@@ -10,11 +10,12 @@ $(document).ready(function() {
   var $componentList = $('.componentList');
 
   $headers.each(function() {
-    var headerText = $(this).text();
-    $(this).attr('id', headerText);
+    var $this = $(this),
+        headerText = $this.text(),
+        headerId = $this.attr('id');
 
     $componentList.append(
-      '<li><a href="#' + headerText + '">' + headerText + '</a></li>'
+      '<li><a href="' + headerId + '">' + headerText + '</a></li>'
     );
   });
 
