@@ -300,8 +300,8 @@ $messages: (
       "en": "Here is the right order for those tags: <thead>, <tfoot> then <tbody>."
     ),
     "missing-thead": (
-      "fr": "Ça ne manque pas d’un <thead> — voire même d’un <tfoot>, par hasard ?",
-      "en": "Don't you need at least <thead>, and maybe <tfoot> too?"
+      "fr": "Soit il manque un <thead> — voire même un <tfoot> — soit vous devriez retirer ce <tbody>.\A <tbody> structure des données, et ne doit pas être utilisé dans un tableau de mise en forme.",
+      "en": "Either you're missing a <thead> (even <tfoot>, maybe) or you should remove this <tbody>.\1 <tbody> is meant to organize datas, and must not be used in a layout table."
     ),
     "th-no-scope": (
       "fr": "À quoi s’applique cette cellule d’en-tête ? La totalité de la ligne / colonne ?\A Si oui, pensez à [scope]. Sinon, il faut probablement un [id] et des [headers].",

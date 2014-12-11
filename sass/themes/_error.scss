@@ -456,14 +456,17 @@ title:empty {
 }
 
 // @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-8
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
+// @see http://www.w3.org/TR/WCAG-TECHS/F46.html
+// @see hhttp://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49
 table[role="presentation"] th,
 table[role="presentation"] thead,
 table[role="presentation"] tfoot,
+table[role="presentation"] tbody,
 table[role="presentation"] caption,
 table[role="presentation"] [axis],
 table[role="presentation"] [scope],
 table[role="presentation"] [headers],
+table[role="presentation"] [summary],
 table[role="presentation"] [colgroup] {
   @include error("table-for-layout");
 }
