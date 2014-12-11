@@ -158,6 +158,7 @@ They helped a lot:
 And they took time to open a few issues:
 * [@goetsu](https://twitter.com/goetsu)
 * [@a5e](https://github.com/a5e)
+* [@olamedia](https://github.com/olamedia)
 
 Thank you all!
 

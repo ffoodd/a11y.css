@@ -177,7 +177,7 @@ table > tbody ~ thead {
 }
 
 // @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L311
-table > tbody:first-child {
+table:not([role="presentation"]) > tbody:first-child {
   @include warning("missing-thead");
 }
 
