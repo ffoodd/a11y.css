@@ -436,28 +436,87 @@ form:not([action]) {
 }
 
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-3
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-4
-// @see http://www.w3.org/TR/WCAG20/#meaning-doc-lang-id
+/*doc
+---
+title: 'No language defined'
+name: no-lang
+category: Errors
+---
+
+`<html>` must indicate to User Agents the human language used in the document.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-3>
+* <http://www.accessiweb.org/index.php/glossaire-du-referentiel-accessiweb-html5aria.html#mLangueDefaut>
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-4>
+* <http://www.w3.org/TR/WCAG20/#meaning-doc-lang-id>
+* <http://www.w3.org/TR/WCAG-TECHS/H57.html>
+
+```html_example
+<html>
+  <head>
+    <title>Je ne parle pas Français</title>
+  </head>
+  <body>
+    <ul>
+      <li>Speak French?</li>
+      <li>Habla usted francés?</li>
+      <li>Sprechen Sie Französisch?</li>
+    </ul>
+  </body>
+</html>
+```
+*/
 html:not([lang]),
 html[lang=""] {
   @include error("no-lang");
 }
 
-meta[http-equiv="refresh"] {
-  @include error("meta-refresh", $self-closing: true);
-}
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-5
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-6
-// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-title
-title:empty {
-  @include error("no-page-title");
-}
+/*doc
+---
+title: 'Table used for layout'
+name: table-for-layout
+category: Errors
+---
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-8
-// @see http://www.w3.org/TR/WCAG-TECHS/F46.html
-// @see hhttp://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49
+`<table>` may be used for layout if a [role="presentation"] is added.
+However, semantics tags and attributes aiming to organize datas mustn't be used. Here's a list:
+* `<th>`;
+* `<thead>`;
+* `<tfoot>`;
+* `<caption>`;
+* `[axis]`;
+* `[scope]`;
+* `[headers]`;
+* `[colgroup]`;
+* `[summary]` (should be empty or shouldn't be);
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-8>
+* <http://www.w3.org/TR/WCAG-TECHS/F46.html>
+* <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
+
+```html_example
+<table role="presentation" summary="I do not mean anything!">
+  <caption>I do not mean anything!</caption>
+  <thead>
+    <tr>
+      <th scope="col" id="col">Nope</th>
+      <th>Just sayin'</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="2" headers="col">Hello world</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td colspan="2">It works</td>
+    </tr>
+  </tbody>
+<table>
+```
+*/
 table[role="presentation"] th,
 table[role="presentation"] thead,
 table[role="presentation"] tfoot,
@@ -470,22 +529,52 @@ table[role="presentation"] [colgroup] {
   @include error("table-for-layout");
 }
 
-// @see BP156 OpQuast
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-10-1
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence
-[style] {
-  @include error("style-attr");
-}
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-10-1
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence
+/*doc
+---
+title: 'width & height attributes'
+name: dimensions
+category: Errors
+---
+
+`[width]` and `[height]` are presentation informations.
+Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-10-1>
+* <http://www.accessiweb.org/index.php/glossaire-du-referentiel-accessiweb-html5aria.html#mPresInfo>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+
+```html_example
+<form action="/">
+  <label for="width">Isn't this textarea too large?</label>
+  <textarea width="500" id="width"></textarea>
+</form>
+```
+*/
 :not(img)[width],
 :not(img)[height] {
   @include error("dimensions");
 }
 
+
+/*doc
+---
+title: 'Javascript events attributes'
+name: js-events
+category: Errors
+---
+
+Javascript event attributes (such as `[onmouseover]`) should not be used.
+Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS event listeners.
+
+* <https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes>
+* <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener>
+
+```html_example
+<span onmouseover="alert('You clicked!');">Click click click</span>
+```
+*/
 [onafterprint], [onbeforeprint], [onbeforeunload],
 [onerror], [onhaschange], [onload], [onmessage],
 [onoffline], [ononline], [onpagehide], [onpageshow],
@@ -510,11 +599,27 @@ table[role="presentation"] [colgroup] {
   @include error("js-events");
 }
 
-// @see http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar
-// @see http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/
-// @see http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L466
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L480
+
+/*doc
+---
+title: 'Namespaces'
+name: namespace
+category: Errors
+---
+
+Did you know that some characters should be avoided in class names and identifiers?
+Yep. Numbers and special chars.
+
+* <http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar>
+* <http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/>
+* <http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L466>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L480>
+
+```html_example
+<div id="2">Hello! My ID is 2.</div>
+```
+*/
 [id^="1"],
 [id^="2"],
 [id^="3"],
@@ -584,4 +689,39 @@ table[role="presentation"] [colgroup] {
 [class*="\|"],
 [class*="\`"] {
   @include error("namespace");
+}
+
+
+/*doc
+---
+title: 'style attribute'
+name: style-attr
+category: Errors
+---
+
+Your styles should be driven by a CSS file. That's it.
+And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-10-1>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+
+```html_example
+<div style="color: red;">I'm red. I really feel dirty.</div>
+```
+*/
+[style] {
+  @include error("style-attr");
+}
+
+
+meta[http-equiv="refresh"] {
+  @include error("meta-refresh", $self-closing: true);
+}
+
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-5
+// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-6
+// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-title
+title:empty {
+  @include error("no-page-title");
 }
