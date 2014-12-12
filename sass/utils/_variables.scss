@@ -224,16 +224,16 @@ $messages: (
       "en": "Invalid nesting.\A Please be aware this may offend the viewer."
     ),
     "invalid-list-nesting": (
-      "fr": "Seul <li> peut-être un enfant direct d’une liste <ul> ou <ol>.",
-      "en": "Only <li> can be a direct child of <ul> or <ol>."
+      "fr": "<li> doit être un enfant direct d’une liste <ul> ou <ol>.",
+      "en": "<li> must be a direct child of <ul> or <ol>."
     ),
     "invalid-def": (
       "fr": "Une définition doit suivre un terme à définir. Plutôt logique, n’est-ce pas ?",
       "en": "Definition must follow definition title. Pretty easy, isn't it?"
     ),
     "invalid-def-nesting": (
-      "fr": "Cet élément n’a rien à faire au premier niveau d’une liste de définitions.",
-      "en": "This element does not belong directly inside a definition list."
+      "fr": "<dl> contient un ou plusieurs groupe(s) de <dt> et <dd>.\A Aucun autre usage des ces balises n’est permis.",
+      "en": "<dl> contains one or more groups of <dt> and <dd>. \A Any other use of those tags is forbidden."
     ),
     "invalid-figcaption-nesting": (
       "fr": "<figcaption> est perdu dans la vie, sans sa <figure> parente.",

@@ -1,28 +1,105 @@
 @charset "UTF-8";
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2
-// @see http://www.w3.org/TR/WCAG20/#ensure-compat-parses
-// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L433
+
+/*doc
+---
+title: 'Invalid nesting in a list'
+name: invalid-list-nesting
+category: Warnings
+---
+
+The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also true.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L433>
+* <http://www.w3.org/TR/html5/grouping-content.html#the-li-element>
+
+```html_example
+<ul>
+  <p>I feel like I'm lost.</p>
+</ul>
+
+<li>Mom? Where are you, Mom?</li>
+```
+*/
 ul > :not(li),
-ol > :not(li) {
+ol > :not(li),
+:not(ul) > li,
+:not(ol) > li {
   @include warning("invalid-list-nesting");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2
-// @see http://www.w3.org/TR/WCAG20/#ensure-compat-parses
-// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312
-dt + :not(dd) {
+
+/*doc
+---
+title: 'Invalid sibling in a definition list'
+name: invalid-def
+category: Warnings
+---
+
+`<dt>` and `<dd>` should be direct adjacent sibilings, and nothing else.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
+* <http://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
+
+```html_example
+<dl>
+  <li>I'm a list item.</li>
+  <dd>What do I define?</dd>
+</dl>
+
+<dl>
+  <dt>I need a definition, don't you think?</dt>
+  <li>I'm a list item.</li>
+</dl>
+```
+*/
+dt + :not(dd),
+:not(dt) + dd {
   @include warning("invalid-def");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2
-// @see http://www.w3.org/TR/WCAG20/#ensure-compat-parses
-// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L439
+
+/*doc
+---
+title: 'Invalid nesting in a definition list'
+name: invalid-def-nesting
+category: Warnings
+---
+
+`<dt>` and `<dd>` should be direct children of `<dl>`.
+Any other imbrication may be a crime somewhere.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L439>
+* <http://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
+
+```html_example
+<dl>
+  <li>I'm a list item.</li>
+  <li>I'm another list item.</li>
+</dl>
+
+<dd>Look, Ma! No context for my definition!</dd>
+
+<dl>
+  <li>I'm a list item.</li>
+</dl>
+
+<dt>I'm a lost term.</dt>
+```
+*/
+:not(dl) > dt,
+:not(dl) > dd,
 dl > :not(dt):not(dd) {
   @include warning("invalid-def-nesting");
 }
