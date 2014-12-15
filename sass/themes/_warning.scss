@@ -201,7 +201,7 @@ name: sectioning-tags
 category: Warnings
 ---
 
-<section>, <aside>, <article> are sectioning tags.
+`<section>`, `<aside>`, `<article>` are sectioning tags.
 They must not be used as wrappers!
 
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252>
@@ -225,11 +225,30 @@ section > article:first-child {
   @include warning("sectioning-tags");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-6
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
-// @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L449
+
+/*doc
+---
+title: 'legend should be fieldset's first child'
+name: fieldset
+category: Warnings
+---
+
+`<legend>` must be a `<fieldset>`'s`:first-child`.
+Always.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-6>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L449>
+
+```html_example
+<fieldset>
+  <label>I'm not a legend.</label>
+  <legend>I am legend.</legend>
+</fieldset>
+```
+*/
 fieldset > *:not(legend):first-child,
 fieldset > legend:not(:first-child) {
   @include warning("fieldset");
