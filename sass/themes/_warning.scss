@@ -205,12 +205,6 @@ audio:not([controls]) {
   @include warning("controls");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-4
-// @see http://www.w3.org/TR/WCAG20/#minimize-error-cues
-label + :not(input):not(select):not(textarea) {
-  @include warning("label-field");
-}
-
 // @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243
 // @see http://www.w3.org/TR/html-markup/syntax.html#void-element
 *:empty:not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
