@@ -27,7 +27,7 @@ The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also
 */
 ul > :not(li),
 ol > :not(li),
-:not(ul, ol) > li {
+:not(ul):not(ol) > li {
   @include warning("invalid-list-nesting");
 }
 
@@ -103,15 +103,56 @@ dl > :not(dt):not(dd) {
   @include warning("invalid-def-nesting");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2
-// @see http://www.w3.org/TR/WCAG20/#ensure-compat-parses
-// @see http://www.w3.org/TR/WCAG20/#ensure-compat-rsv
-// @see http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element
+
+/*doc
+---
+title: 'figcaption outside a figure'
+name: invalid-figcaption-nesting
+category: Warnings
+---
+
+`<figcaption>` doesn't make sense outside a `<figure>`.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element>
+
+```html_example
+<figcaption>I'm captionning something, isn't it?</figcaption>
+```
+*/
 :not(figure) > figcaption {
   @include warning("invalid-figcaption-nesting");
 }
 
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L277
+
+/*doc
+---
+title: 'Invalid nesting'
+name: invalid-nesting
+category: Warnings
+---
+
+Some nestings are forbidden, and do not have their own test case for now:
+* `<option>` and `<optgroup>` outside a `<select>`;
+* `<fieldset>` outside a `<form>`;
+* `<legend>` outside a `<fieldset>`;
+* `<td>` or `<th>` outside a `<tr>`;
+* direct children of a `<table>`.
+
+Maybe other invalid nestings to test. Stay tuned.
+
+
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L277>
+
+```html_example
+<option>I'm an option. Am I?</option>
+<legend>I'm an legend. Am I?</legend>
+```
+*/
+select > :not(option):not(optgroup),
+optgroup > :not(option),
 :not(select) > option,
 :not(select) > optgroup,
 :not(form) > fieldset,
@@ -121,7 +162,23 @@ table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption) {
   @include warning("invalid-nesting");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326
+
+/*doc
+---
+title: 'Misplaced division'
+name: misplaced-div
+category: Warnings
+---
+
+Did you know that you shouldn't add a `<div>` inside any inline element?
+You could use a `<span>` instead.
+
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326>
+
+```html_example
+<b><div>Hey ya!</div></b>
+```
+*/
 b div,
 i div,
 q div,
@@ -136,8 +193,26 @@ strong div {
   @include warning("misplaced-div");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252
-// @see http://www.w3.org/TR/html5/dom.html#sectioning-content
+
+/*doc
+---
+title: 'Misused sectioning tags'
+name: sectioning-tags
+category: Warnings
+---
+
+<section>, <aside>, <article> are sectioning tags.
+They must not be used as wrappers!
+
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252>
+* <http://www.w3.org/TR/html5/dom.html#sectioning-content>
+
+```html_example
+<aside>
+  <section>I'm wrapping, you know.</section>
+</aside>
+```
+*/
 aside > aside:first-child,
 section > aside:first-child,
 article > aside:first-child,
