@@ -27,8 +27,7 @@ The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also
 */
 ul > :not(li),
 ol > :not(li),
-:not(ul) > li,
-:not(ol) > li {
+:not(ul, ol) > li {
   @include warning("invalid-list-nesting");
 }
 
