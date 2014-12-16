@@ -61,7 +61,7 @@ In concrete terms, errors, warnings and advices are outlined by a 4px colored bo
 
 * red for errors;
 * yellow for warnings;
-* gray for obsolete stuff;
+* blue for obsolete stuff;
 * green for advices.
 
 Those colors are obviously customisable through [the configuration file](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L230). When hovering marked elements, a little banner should appear on top of your browser displaying what's going on.
