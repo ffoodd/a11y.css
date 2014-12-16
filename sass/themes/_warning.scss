@@ -226,7 +226,7 @@ article > article:first-child {
 
 /*doc
 ---
-title: 'legend should be fieldset's first child'
+title: "legend should be fieldset's first child"
 name: fieldset
 category: Warnings
 ---
@@ -299,7 +299,7 @@ audio:not([controls]) {
 
 // @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243
 // @see http://www.w3.org/TR/html-markup/syntax.html#void-element
-*:empty:not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
+*:empty:not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
   @include warning("empty-nodes");
 }
 
