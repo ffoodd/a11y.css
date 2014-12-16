@@ -101,6 +101,8 @@ By the way, why would you use an empty link?
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
+* <http://www.w3.org/TR/WCAG-TECHS/H30.html>
+* <http://www.w3.org/TR/WCAG-TECHS/G91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ```html_example
@@ -125,6 +127,8 @@ When an `<img>` is a link only child, it must have an `[alt]`.
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
+* <http://www.w3.org/TR/WCAG-TECHS/G91.html>
+* <http://www.w3.org/TR/WCAG-TECHS/H30.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ```html_example
@@ -147,6 +151,10 @@ An `<img>` must have an `[alt]`. Always.
 
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1>
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
+* <http://www.w3.org/TR/WCAG-TECHS/H36.html>
+* <http://www.w3.org/TR/WCAG-TECHS/H37.html>
+* <http://www.w3.org/TR/WCAG-TECHS/H24.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369>
 
 ```html_example
@@ -201,6 +209,7 @@ A `<label>` is labelling something, in theory.
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <http://www.w3.org/TR/WCAG-TECHS/H44.html>
 
 ```html_example
 <label>Guess what?</label>
@@ -225,6 +234,7 @@ How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` 
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <http://www.w3.org/TR/WCAG-TECHS/H44.html>
 
 ```html_example
 <input type="text" /><p></p>
@@ -251,6 +261,7 @@ You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-la
 
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 
 ```html_example
 <input type="reset" /><p></p>
@@ -276,6 +287,7 @@ A `<button>` should either have content or an `[aria-label]` or `[aria-labelledb
 
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ```html_example
@@ -365,6 +377,7 @@ category: Errors
 `<optgroup>` needs a `[label]` to explain what's inside the group.
 
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-8>
+* <http://www.w3.org/TR/WCAG-TECHS/H85.html>
 * <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
 ```html_example
@@ -399,6 +412,7 @@ category: Errors
 
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-2-1>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <http://www.w3.org/TR/WCAG-TECHS/H64.html>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454>
 
 ```html_example

@@ -226,7 +226,7 @@ article > article:first-child {
 
 /*doc
 ---
-title: "legend should be fieldset's first child"
+title: "`<legend>` must be a `<fieldset>`'s`:first-child`"
 name: fieldset
 category: Warnings
 ---
@@ -252,32 +252,89 @@ fieldset > legend:not(:first-child) {
   @include warning("fieldset");
 }
 
-// @see BP160 OpQuast
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-9-4
-// @see http://www.w3.org/TR/WCAG20/#meaning-located
+
+/*doc
+---
+title: "`<abbr>` should have a `[title]`"
+name: empty-title
+category: Warnings
+---
+
+Any abbreviation should give an explanation about its meaning, at least on its first occurrence.
+
+* BP160 OpQuast
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-9-4>
+* <http://www.w3.org/TR/WCAG20/#meaning-located>
+* <http://www.w3.org/TR/WCAG-TECHS/G70.html>
+* <http://www.w3.org/TR/WCAG-TECHS/G97.html>
+* <http://www.w3.org/TR/WCAG-TECHS/G102.html>
+* <http://www.w3.org/TR/WCAG-TECHS/H28.html>
+
+```html_example
+<p>Do you know about <abbr>W3C</abbr>?</p>
+```
+*/
 abbr:not([title]),
 abbr[title=""] {
   @include warning("empty-title");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-2
-// @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all
-img[alt=""],
-area[alt=""],
-input[type="image"][alt=""] {
+
+/*doc
+---
+title: "`[alt]` can be empty but has to be checked"
+name: empty-alt
+category: Warnings
+---
+
+An alternative has to be empty when image is decorative only. In any other case, `[alt]` must be defined.
+That should be double-checked.
+
+* BP160 OpQuast
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-2>
+* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <http://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F38.html>
+
+```html_example
+<img alt="" src="/" />
+```
+*/
+img:not([role="presentation"])[alt=""],
+area:not([role="presentation"])[alt=""],
+input[type="image"]:not([role="presentation"])[alt=""] {
   @include warning("empty-alt", $self-closing: true);
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-2
-// @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all
-embed[type="image"][alt=""],
-object[type="image"][alt=""] {
+embed[type="image"]:not([role="presentation"])[alt=""],
+object[type="image"]:not([role="presentation"])[alt=""] {
   @include warning("empty-alt");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1
-// @see http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all
-svg:not([aria-label]) {
+
+/*doc
+---
+title: "`[aria-label]` or `<desc>` is needed for `<svg>`"
+name: no-aria-label
+category: Warnings
+---
+
+Any informative `<svg>` should either have a `[aria-label]` or a `<desc>`.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#test-1-1-4>
+* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
+
+```html_example
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg>
+```
+*/
+svg:not([role="presentation"]):not([aria-label]) {
   @include warning("no-aria-label");
 }
 
