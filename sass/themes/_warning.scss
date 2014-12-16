@@ -214,14 +214,12 @@ They must not be used as wrappers!
 ```
 */
 aside > aside:first-child,
-section > aside:first-child,
 article > aside:first-child,
 aside > article:first-child,
 aside > section:first-child,
 section > section:first-child,
 article > section:first-child,
-article > article:first-child,
-section > article:first-child {
+article > article:first-child {
   @include warning("sectioning-tags");
 }
 

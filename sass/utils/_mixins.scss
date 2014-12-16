@@ -78,7 +78,7 @@
     @extend %a11y-#{$theme}-self-closing;
 
     &::before,
-    & ~ ::before {
+    & ~ ::after {
       @include message($theme, $key);
     }
   }

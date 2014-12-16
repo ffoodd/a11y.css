@@ -80,7 +80,7 @@
     outline-offset: -4px;
     counter-increment: unquote($theme);
 
-    & ~ ::before {
+    & ~ ::after {
       @extend %a11y-before;
 
       background:   change_color(theme-conf($theme, "color"), $saturation: 75%, $lightness: 95%) !important;
@@ -90,7 +90,7 @@
       z-index: theme-conf($theme, "index") !important;
     }
 
-    &:hover ~ ::before {
+    &:hover ~ ::after {
       @extend %a11y-hover;
     }
   }
