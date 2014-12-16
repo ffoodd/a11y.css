@@ -338,24 +338,73 @@ svg:not([role="presentation"]):not([aria-label]) {
   @include warning("no-aria-label");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-18
-// @see http://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio
+
+/*doc
+---
+title: "`[autoplay]` should probably not be used"
+name: autoplay
+category: Warnings
+---
+
+A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because it can be quite surprising for the user.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-18>
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-17>
+* <http://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
+* <http://www.punkchip.com/autoplay-is-bad-for-all-users/>
+
+```html_example
+<video autoplay controls src=""></video>
+```
+*/
 video[autoplay],
 audio[autoplay] {
   @include warning("autoplay");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-20
-// @see http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc
-// @see http://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable
-// @see http://www.w3.org/TR/WCAG20/#keyboard-operation-trapping
+
+/*doc
+---
+title: "`[controls]` would be helpful"
+name: controls
+category: Warnings
+---
+
+A time-based media like `<audio>` or `<video>` would be easier to use if `[controls]` are activated for the user.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-20>
+* <http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
+* <http://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
+* <http://www.w3.org/TR/WCAG20/#keyboard-operation-trapping>
+* <http://www.w3.org/TR/WCAG-TECHS/G4.html>
+
+```html_example
+<video src=""></video>
+```
+*/
 video:not([controls]),
 audio:not([controls]) {
   @include warning("controls");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243
-// @see http://www.w3.org/TR/html-markup/syntax.html#void-element
+
+/*doc
+---
+title: "Most of DOM nodes shouldn't be `:empty`"
+name: empty-nodes
+category: Warnings
+---
+
+Obviously void elements are empty, as well as `<iframe>` and `<textarea>` that could be `:empty`.
+Any other empty tag is probably useless, and should be deleted.
+
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
+* <http://www.w3.org/TR/html-markup/syntax.html#void-element>
+
+```html_example
+<p></p>
+```
+*/
 *:empty:not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
   @include warning("empty-nodes");
 }
