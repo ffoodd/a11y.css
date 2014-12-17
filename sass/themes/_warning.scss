@@ -395,7 +395,7 @@ name: empty-nodes
 category: Warnings
 ---
 
-Obviously void elements are empty, as well as `<iframe>` and `<textarea>` that could be `:empty`.
+Obviously void elements are empty, as well as `<iframe>` and `<textarea>` could be `:empty`.
 Any other empty tag is probably useless, and should be deleted.
 
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
@@ -409,17 +409,63 @@ Any other empty tag is probably useless, and should be deleted.
   @include warning("empty-nodes");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-3
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L331
+
+/*doc
+---
+title: "A single line `<table>` may be used for layout"
+name: table-layout
+category: Warnings
+---
+
+A lonely `<tr>` can be a symptom of a table used for layout.
+Should be double checked!
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-3>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L331>
+
+```html_example
+<table>
+  <caption>I'm a caption :3</caption>
+  <tr>
+    <td>I'm a poor lonesone table-roooow!</td>
+  </tr>
+</table>
+```
+*/
 table:not([role="presentation"]) > tr:only-child,
 table:not([role="presentation"]) > tbody > tr:only-child {
   @include warning("table-layout");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-4
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
-// @see http://www.w3.org/TR/html5/tabular-data.html#the-caption-element
+
+/*doc
+---
+title: "Every data `<table>` must have a `<caption>`"
+name: table-caption
+category: Warnings
+---
+
+`<caption>` is needed for data `<table>`.
+And it must be the `:first-child`, by the way.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-4>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <http://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
+* <http://www.w3.org/TR/WCAG-TECHS/H39.html>
+
+```html_example
+<table>
+  <tr>
+    <td>I'm a table without a caption!</td>
+    <td>I'm a table without a caption!</td>
+  </tr>
+  <tr>
+    <td colspan="2">I'm a table without a caption!</td>
+  </tr>
+</table>
+```
+*/
 table:not([role="presentation"]) > caption:not(:first-child),
 table:not([role="presentation"]) > *:first-child:not(caption) {
   @include warning("table-caption");
