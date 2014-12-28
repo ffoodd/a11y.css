@@ -3,7 +3,7 @@
 
 /*doc
 ---
-title: 'Empty class attribute'
+title: 'Empty [class] attribute'
 name: empty-class
 category: Advices
 ---
@@ -22,7 +22,7 @@ category: Advices
 
 /*doc
 ---
-title: 'Empty ID attribute'
+title: 'Empty [id] attribute'
 name: empty-id
 category: Advices
 ---
@@ -37,49 +37,198 @@ category: Advices
   @include advice("empty-id");
 }
 
+
+/*doc
+---
+title: 'nav semantic tag'
+name: nav
+category: Advices
+---
+
+`<nav>` has a semantic value. Some may not know.
+
+```html_example
+<nav>Where do we go?</nav>
+```
+*/
 nav {
   @include advice("nav");
 }
 
+
+/*doc
+---
+title: 'A second main tag'
+name: main
+category: Advices
+---
+
+`<main>` should be unique. Isn't that obvious?
+
+```html_example
+<main>I'm the main content!</main>
+<main>No, It's me!</main>
+```
+*/
 main:not(:first-of-type) {
   @include advice("main");
 }
 
-// @see http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element
+
+/*doc
+---
+title: 'A second figaption tag'
+name: figcaption
+category: Advices
+---
+
+`<figcaption>` should be single inside its parent. Check the spec!
+
+* <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
+
+```html_example
+<figure role="group">
+  <figcaption>I'm the caction.</figcaption>
+  <img src="/" alt="Needed" />
+  <figcaption>I'm the caction too.</figcaption>
+</figure>
+```
+*/
 figcaption:not(:only-of-type) {
   @include advice("figcaption");
 }
 
+
+/*doc
+---
+title: 'figaption order'
+name: figcaption-order
+category: Advices
+---
+
+`<figcaption>` should be first or last child. Nothing else.
+
+* <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
+
+```html_example
+<figure role="group">
+  <img src="/" alt="Needed" />
+  <figcaption>I'm the caction.</figcaption>
+  <p>I'm something else. Oh, wait.</p>
+</figure>
+```
+*/
 figcaption:not(:first-child):not(:last-child) {
   @include advice("figcaption-order");
 }
 
+
+/*doc
+---
+title: 'An email link should be valid'
+name: mailto
+category: Advices
+---
+
+A `<href="mailto:">` should contain a valid email.
+Otherwise you may annoy your users.
+
+```html_example
+<a href="mailto:myself">Surpri-ise!</a>
+```
+*/
 [href^="mailto"] {
   @include advice("mailto");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L169
-.btn:not(a):not(button):not(input):not([tabindex]),
-.bouton:not(a):not(button):not(input):not([tabindex]),
-.button:not(a):not(button):not(input):not([tabindex]) {
+
+/*doc
+---
+title: 'Any non-interactive [class="button"]'
+name: fake-button
+category: Advices
+---
+
+A `[class]` containing any button-like thing on a non-interactive tag is probably a mistake.
+Don't you think?
+
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L169>
+
+```html_example
+<p class="button--primary">Click me!</p>
+```
+*/
+[class*="btn"]:not(a):not(button):not(input):not([tabindex]),
+[class*="bouton"]:not(a):not(button):not(input):not([tabindex]),
+[class*="button"]:not(a):not(button):not(input):not([tabindex]) {
   @include advice("fake-button");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174
+
+/*doc
+---
+title: 'A [role="button"] on a link'
+name: role-button
+category: Advices
+---
+
+Obviously, a button role on a link is probably not so hard to move to an authentic button tag, isn't it?
+
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174>
+
+```html_example
+<a href="/" role="button">Submit</a>
+```
+*/
 a[role="button"] {
   @include advice("role-button");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-2
-// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
-// @see http://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context
+
+/*doc
+---
+title: 'A link opening new tab or window'
+name: target-blank
+category: Advices
+---
+
+A link opening new tab or window should warn user about its behaviour.
+You could use a `[title]`, for example.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-2>
+* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
+* <http://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context>
+* <http://www.w3.org/TR/WCAG-TECHS/H33.html>
+* <http://www.w3.org/TR/WCAG-TECHS/H83.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F22.html>
+
+```html_example
+<a href="/" target="_blank">New tab</a>
+```
+*/
 [target$="blank"] {
   @include advice("target-blank");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-6
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-7
-// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs
+
+/*doc
+---
+title: 'Linking to a file'
+name: file-format
+category: Advices
+---
+
+A link to a file should indicate the file format, the file size and if different from the main document, the file language.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-6>
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-7>
+* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
+* <http://www.w3.org/TR/WCAG-TECHS/H33.html>
+
+```html_example
+<a href="/file.png">Wanna file?</a>
+```
+*/
 [download],
 [href$=".pdf"],
 [href$=".doc"],
@@ -98,8 +247,28 @@ a[role="button"] {
   @include advice("file-format");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-12-10
-// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip
+
+/*doc
+---
+title: 'Duplicated roles'
+name: duplicate-roles
+category: Advices
+---
+
+Some ARIA roles should be unique:
+* main
+* search
+* banner
+* contentinfo
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-12-10>
+* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
+
+```html_example
+<main role="main"><br /></main>
+<div role="main"><br /></div>
+```
+*/
 [role="main"] ~ [role="main"],
 [role="search"] ~ [role="search"],
 [role="banner"] ~ [role="banner"],

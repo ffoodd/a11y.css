@@ -1,6 +1,20 @@
 @charset "UTF-8";
 
-// @see http://www.w3.org/TR/html5/obsolete.html#obsolete
+/*doc
+---
+title: 'Old school things'
+name: any
+category: Obsolete
+---
+
+Many, many things are obsolete in HTML5. You should care!
+
+* <http://www.w3.org/TR/html5/obsolete.html#obsolete>
+
+```html_example
+<acronym title="World Wide Web Consortium">W3C</acronym>
+```
+*/
 applet,
 acronym,
 bgsound,
@@ -26,8 +40,6 @@ multicol,
 nobr,
 spacer,
 tt,
-
-// @see http://www.w3.org/TR/html5/obsolete.html#obsolete
 a[charset], link[charset],
 a[coords],
 a[shape],

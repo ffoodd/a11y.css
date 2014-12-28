@@ -2,8 +2,8 @@
 
 /*doc
 ---
-title: 'Tabindex > 0'
-name: tabindex
+title: '[tabindex] > 0'
+name: tab-order
 category: Errors
 ---
 
@@ -22,7 +22,7 @@ The `[tabindex]` attribute should never be greater than 0.
 
 /*doc
 ---
-title: 'No href'
+title: 'No [href]'
 name: no-href
 category: Errors
 ---
@@ -45,7 +45,7 @@ a[href=""] {
 
 /*doc
 ---
-title: 'JS href'
+title: 'JS [href]'
 name: href-js
 category: Errors
 ---
@@ -67,7 +67,7 @@ a[href^="javascript"] {
 
 /*doc
 ---
-title: '# href'
+title: '# [href]'
 name: empty-href
 category: Errors
 ---
@@ -116,7 +116,7 @@ a:empty:not([aria-label]):not([aria-labelledby]) {
 
 /*doc
 ---
-title: 'Empty image link'
+title: 'Empty img link'
 name: empty-image-link
 category: Errors
 ---
@@ -142,7 +142,7 @@ a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
 
 /*doc
 ---
-title: 'Missing alternative for `<img>`'
+title: 'Missing alternative for img'
 name: no-alt
 category: Errors
 ---
@@ -171,7 +171,7 @@ input[type="image"]:not([alt]) {
 
 /*doc
 ---
-title: 'Missing source for `<img>`'
+title: 'Missing source for img'
 name: no-src
 category: Errors
 ---
@@ -198,7 +198,7 @@ input[type="image"][src="#"] {
 
 /*doc
 ---
-title: 'A `<label>` without a `[for]` attribute'
+title: 'A label without a [for] attribute'
 name: no-for
 category: Errors
 ---
@@ -347,7 +347,7 @@ button[class*="disabled"]:not([disabled]):not([readonly]) {
 
 /*doc
 ---
-title: 'Input without type'
+title: 'input without [type]'
 name: no-type
 category: Errors
 ---
@@ -369,7 +369,7 @@ input[type=""] {
 
 /*doc
 ---
-title: 'Optgroup without label'
+title: 'optgroup without label'
 name: optgroup
 category: Errors
 ---
@@ -403,7 +403,7 @@ optgroup:not([label]) {
 
 /*doc
 ---
-title: 'Iframe without title'
+title: 'iframe without [title]'
 name: no-title
 category: Errors
 ---
@@ -427,7 +427,7 @@ iframe[title=""] {
 
 /*doc
 ---
-title: 'Form missing an action'
+title: 'form missing an [action]'
 name: no-action
 category: Errors
 ---
@@ -488,7 +488,7 @@ html[lang=""] {
 
 /*doc
 ---
-title: 'Table used for layout'
+title: 'table used for layout'
 name: table-for-layout
 category: Errors
 ---
@@ -546,7 +546,7 @@ table[role="presentation"] [colgroup] {
 
 /*doc
 ---
-title: 'width & height attributes'
+title: '[width] & [height] attributes'
 name: dimensions
 category: Errors
 ---
@@ -708,7 +708,7 @@ Yep. Numbers and special chars.
 
 /*doc
 ---
-title: 'style attribute'
+title: '[style] attribute'
 name: style-attr
 category: Errors
 ---

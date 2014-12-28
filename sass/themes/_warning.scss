@@ -165,7 +165,7 @@ table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption) {
 
 /*doc
 ---
-title: 'Misplaced division'
+title: 'Misplaced div'
 name: misplaced-div
 category: Warnings
 ---
@@ -226,7 +226,7 @@ article > article:first-child {
 
 /*doc
 ---
-title: "`<legend>` must be a `<fieldset>`'s`:first-child`"
+title: "legend must be a fieldset's:first-child"
 name: fieldset
 category: Warnings
 ---
@@ -255,7 +255,7 @@ fieldset > legend:not(:first-child) {
 
 /*doc
 ---
-title: "`<abbr>` should have a `[title]`"
+title: "abbr should have a [title]"
 name: empty-title
 category: Warnings
 ---
@@ -282,7 +282,7 @@ abbr[title=""] {
 
 /*doc
 ---
-title: "`[alt]` can be empty but has to be checked"
+title: "[alt] can be empty but has to be checked"
 name: empty-alt
 category: Warnings
 ---
@@ -315,7 +315,7 @@ object[type="image"]:not([role="presentation"])[alt=""] {
 
 /*doc
 ---
-title: "`[aria-label]` or `<desc>` is needed for `<svg>`"
+title: "[aria-label] or desc is needed for svg"
 name: no-aria-label
 category: Warnings
 ---
@@ -341,7 +341,7 @@ svg:not([role="presentation"]):not([aria-label]) {
 
 /*doc
 ---
-title: "`[autoplay]` should probably not be used"
+title: "[autoplay] should probably not be used"
 name: autoplay
 category: Warnings
 ---
@@ -365,7 +365,7 @@ audio[autoplay] {
 
 /*doc
 ---
-title: "`[controls]` would be helpful"
+title: "[controls] would be helpful"
 name: controls
 category: Warnings
 ---
@@ -390,7 +390,7 @@ audio:not([controls]) {
 
 /*doc
 ---
-title: "Most of DOM nodes shouldn't be `:empty`"
+title: "Most of DOM nodes shouldn't be :empty"
 name: empty-nodes
 category: Warnings
 ---
@@ -412,7 +412,7 @@ Any other empty tag is probably useless, and should be deleted.
 
 /*doc
 ---
-title: "A single line `<table>` may be used for layout"
+title: "A single line table may be used for layout"
 name: table-layout
 category: Warnings
 ---
@@ -441,7 +441,7 @@ table:not([role="presentation"]) > tbody > tr:only-child {
 
 /*doc
 ---
-title: "Every data `<table>` must have a `<caption>`"
+title: "Every data table must have a caption"
 name: table-caption
 category: Warnings
 ---
@@ -471,9 +471,40 @@ table:not([role="presentation"]) > *:first-child:not(caption) {
   @include warning("table-caption");
 }
 
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L292
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L297
-// @see http://www.w3.org/TR/html5/tabular-data.html#the-colgroup-element
+
+/*doc
+---
+title: "Invalid colgroup position"
+name: colgroup
+category: Warnings
+---
+
+`<colgroup>` must be right after `<caption>` and always before `<thead>`, `<tfoot>` and `<tbody>`.
+
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L292>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L297>
+* <http://www.w3.org/TR/html5/tabular-data.html#the-colgroup-element>
+
+```html_example
+<table>
+  <caption>I'm a caption</caption>
+  <tbody>
+    <tr>
+      <td>I'm a table with cols done wrong.</td>
+      <td>I'm a table with cols done wrong.</td>
+    </tr>
+    <tr>
+      <td>I'm a table with cols done wrong.</td>
+      <td>I'm a table with cols done wrong.</td>
+    </tr>
+  <tbody>
+  <colgroup>
+    <col></col>
+    <col></col>
+  </colgroup>
+</table>
+```
+*/
 table:not([role="presentation"]) > colgroup ~ caption,
 table > thead ~ colgroup,
 table > tfoot ~ colgroup,
@@ -481,40 +512,181 @@ table > tbody ~ colgroup {
   @include warning("colgroup");
 }
 
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L316
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L321
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L326
+
+/*doc
+---
+title: "Invalid table structure"
+name: table-structure
+category: Warnings
+---
+
+`<thead>`, `<tfoot>` and `<tbody>` must be in this order.
+
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L316>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L321>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L326>
+
+```html_example
+<table>
+  <caption>I'm a caption</caption>
+  <tbody>
+    <tr>
+      <td>I'm a table with tfoot done wrong.</td>
+      <td>I'm a table with tfoot done wrong.</td>
+    </tr>
+    <tr>
+      <td>I'm a table with tfoot done wrong.</td>
+      <td>I'm a table with tfoot done wrong.</td>
+    </tr>
+  <tbody>
+  <tfoot>
+    <th>I'm a table with tfoot done wrong.</th>
+    <th>I'm a table with tfoot done wrong.</th>
+  </tfoot>
+</table>
+```
+*/
 table > tfoot ~ thead,
 table > tbody ~ tfoot,
 table > tbody ~ thead {
   @include warning("table-structure");
 }
 
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L311
+
+/*doc
+---
+title: "Missing head for data table"
+name: missing-thead
+category: Warnings
+---
+
+`<thead>` is strongly needed if `<tbody>` is present.
+
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L311>
+
+```html_example
+<table>
+  <tbody>
+    <tr>
+      <td>I'm a table without thead.</td>
+      <td>I'm a table without thead.</td>
+    </tr>
+    <tr>
+      <td>I'm a table without thead.</td>
+      <td>I'm a table without thead.</td>
+    </tr>
+  <tbody>
+</table>
+```
+*/
 table:not([role="presentation"]) > tbody:first-child {
   @include warning("missing-thead");
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-7
-// @see http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic
-// @see http://www.w3.org/TR/WCAG20-TECHS/H43.html
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L282
+
+/*doc
+---
+title: "th without [scope] or [id]"
+name: th-no-scope
+category: Warnings
+---
+
+`<th>` strongly needs an `[id]` or a `[scope]`.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-7>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <http://www.w3.org/TR/WCAG20-TECHS/H43.html>
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L282>
+
+```html_example
+<table>
+  <caption>Need for a [scope] or [id]</caption>
+  <tr>
+    <th>I'm a th without [scope] or [id].</th>
+    <th>I'm a th without [scope] or [id].</th>
+  </tr>
+  <tr>
+    <td>I'm a td missing something.</td>
+    <td>I'm a td missing something.</td>
+  </tr>
+</table>
+```
+*/
 th:not([scope]):not([id]) {
   @include warning("th-no-scope");
 }
 
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L342
-// @see http://www.w3.org/TR/html5/tabular-data.html#the-colgroup-element
+
+/*doc
+---
+title: "Unothaurized colgroup child"
+name: not-col
+category: Warnings
+---
+
+Anything but `<col>` is forbidden inside a `<colgroup>`.
+
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L342>
+* <http://www.w3.org/TR/html5/tabular-data.html#the-colgroup-element>
+
+```html_example
+<table>
+  <caption>Invalid colgroup child</caption>
+  <colgroup>
+    <td>Invalid colgroup child.</td>
+    <td>Invalid colgroup child.</td>
+  </colgroup>
+  <tr>
+    <th>Invalid colgroup child.</th>
+    <th>Invalid colgroup child.</th>
+  </tr>
+  <tr>
+    <td>Invalid colgroup child.</td>
+    <td>Invalid colgroup child.</td>
+  </tr>
+</table>
+```
+*/
 colgroup:not([span]) *:not(col) {
   @include warning("not-col");
 }
 
-// @see https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L185
+
+/*doc
+---
+title: "toggle [class] without [aria-pressed]"
+name: aria-pressed
+category: Warnings
+---
+
+Anything with a `[class]` containing "toggle" probably needs some ARIA flavour, isn't it?
+
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L185>
+
+```html_example
+<a class="toggle-machin" href="/">Do I toggle anything?</a>
+```
+*/
 [class*="toggle"]:not([aria-pressed]) {
   @include warning("aria-pressed");
 }
 
-// @see https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L381
+
+/*doc
+---
+title: "spacer.gif used"
+name: spacer-gif
+category: Warnings
+---
+
+Believe me, this still have to be tested.
+
+* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L381>
+
+```html_example
+<img src="spacer.gif" alt="" width="1" height="1"/><p></p>
+```
+*/
 img[src*="spacer.gif"] {
   @include warning("spacer-gif", $self-closing: true);
 }
