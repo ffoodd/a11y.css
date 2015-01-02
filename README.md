@@ -3,34 +3,6 @@ a11y.css
 
 Pronounced « Alix ». Because it's fun.
 
-## News
-
-From now on, CSS counters are incremented on each error/advice/warning and results are displayed with `html::after`. Since it is added through CSS, it is basically fake-content which is good since it is no more than visual indication for the user to see what's going on.
-
-*Note: this counter takes into account possible issues with elements within `<head>` tag. Related messages are not displayed, but they do increment the counter correctly, as any other issues.*
-
-## Bookmarklet
-
-You can easily use the latest version of this stylesheet by adding this *bookmarklet* to your bookmarks:
-
-```
-javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();
-```
-
-You can also add it by going on [the dedicated page](http://ffoodd.github.io/a11y.css/) then dragging it to your bookmarks. Isn't it handy?
-
-## About languages
-
-a11y.css currently exists in both English and French: you'll find both files in the [css](https://github.com/ffoodd/a11y.css/tree/master/css) folder. If you want to contribute and add a new language, it is very easy to do:
-
-1. Add the name of the language in [this list](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_mixins.scss#L10);
-1. Copy [`_a11y-en.scss`](https://github.com/ffoodd/a11y.css/blob/master/sass/a11y-en.scss), rename it `_a11y-<your-language>.scss` and change the value passed to the `set-locale` mixin;
-1. Update [this map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L10) with your translations.
-1. Update [this map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L241) to translate theme names.
-1. Run `sass --update sass:css --style=compressed` to generate the new CSS file.
-
-Done!
-
 ## Introduction
 
 This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.
@@ -76,6 +48,39 @@ Given the very long list of selectors to test, [they are splitted across several
 
 Each test has its own message, trying to explain and guide you as much as possible. All messages are [gathered in a Sass map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L1), in both English and French. It should be quite easy for you to update the messages for internal use if you don't like them.
 
+## Test cases and documentation
+
+A full documentation with all test cases is now available on [the dedicated site](http://ffoodd.github.io/a11y.css/). This is made using [Hologram](https://github.com/trulia/hologram) and [sseeeedd](https://github.com/ffoodd/sseeeedd).
+
+## Counters
+
+From now on, CSS counters are incremented on each error/advice/warning and results are displayed with `html::after`. Since it is added through CSS, it is basically fake-content which is good since it is no more than visual indication for the user to see what's going on.
+
+*Note: this counter takes into account possible issues with elements within `<head>` tag. Related messages are not displayed, but they do increment the counter correctly, as any other issues.*
+
+## Bookmarklet
+
+You can easily use the latest version of this stylesheet by adding this *bookmarklet* to your bookmarks:
+
+```
+javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();
+```
+
+*New*
+You can also generate your own bookmarklet (choosing language and minimum level) on [the dedicated page](http://ffoodd.github.io/a11y.css/) then directly drag it to your bookmarks. Isn't it handy?
+
+## About languages
+
+a11y.css currently exists in both English and French: you'll find both files in the [css](https://github.com/ffoodd/a11y.css/tree/master/css) folder. If you want to contribute and add a new language, it is very easy to do:
+
+1. Add the name of the language in [this list](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_mixins.scss#L10);
+1. Copy [`_a11y-en.scss`](https://github.com/ffoodd/a11y.css/blob/master/sass/a11y-en.scss), rename it `_a11y-<your-language>.scss` and change the value passed to the `set-locale` mixin;
+1. Update [this map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L10) with your translations.
+1. Update [this map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L241) to translate theme names.
+1. Run `sass --update sass:css --style=compressed` to generate the new CSS file.
+
+Done!
+
 ## Edge cases and known issues
 
 1. Self-closing tags (a.k.a. void elements) do not allow generated content through pseudo-elements. Thus, errors or whatever will correctly be displayed, but not the message on hover. That being said, it should be available for consultation with any DOM reader (DevTools, Firebug or whatever).
@@ -105,6 +110,8 @@ Here are affected self-closing tags:
 * [What no one told you about z-index](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) ([translated in French by @iamvdo](http://blog.iamvdo.me/post/41094013194/comprendre-z-index-et-les-contextes-dempilement))
 
 3. Along the same lines, tests on elements that are contained within `<head>` cannot be displayed (since `<head>` is a hidden element). I need to find a way to do this.
+
+*Issue [#66](https://github.com/ffoodd/a11y.css/issues/66) opened by [@7studio](https://twitter.com/7studio) (again) helped with this point, thanks to [an idea](https://mathiasbynens.be/notes/css-hidden-elements) from [Mathias Bynens](https://twitter.com/mathias).
 
 4. To avoid cases when outline could be hidden, the property [outline-offset](https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset) is being used in order to display it inside the element (rather than outside). Thanks to [@7studio](https://twitter.com/7studio) in [#4](https://github.com/ffoodd/a11y.css/issues/4).
 
@@ -136,14 +143,6 @@ $ npm install
 $ node_modules/sassdoc/bin/sassdoc sass/ docs/ --verbose --config .sassdocrc
 ```
 
-## Improvements to come
-
-In a not-so-distant future, I'd like to:
-
-* [ ] find a way to display messages from `<head>` contained elements (see #66);
-* [x] add a new *advice* role. While not critical, some things (like ARIA roles) can be tested through CSS, let's do this!
-* [ ] a demo/test page (see #55)
-
 ## Credits and Acknowledgements
 
 ### Contributors
@@ -154,10 +153,10 @@ They helped a lot:
 * [@Heydon](https://twitter.com/heydonworks)
 * [@kloh-fr](https://twitter.com/klohFR)
 * [@GaetanBt](https://twitter.com/GaetanBt)
+* [@a5e](https://github.com/a5e)
 
 And they took time to open a few issues:
 * [@goetsu](https://twitter.com/goetsu)
-* [@a5e](https://github.com/a5e)
 * [@olamedia](https://github.com/olamedia)
 
 Thank you all!

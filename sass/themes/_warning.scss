@@ -3,7 +3,7 @@
 
 /*doc
 ---
-title: 'Invalid nesting in a list'
+title: "Invalid nesting in a list"
 name: invalid-list-nesting
 category: Warnings
 ---
@@ -34,7 +34,7 @@ ol > :not(li),
 
 /*doc
 ---
-title: 'Invalid sibling in a definition list'
+title: "Invalid sibling in a definition list"
 name: invalid-def
 category: Warnings
 ---
@@ -67,7 +67,7 @@ dt + :not(dd),
 
 /*doc
 ---
-title: 'Invalid nesting in a definition list'
+title: "Invalid nesting in a definition list"
 name: invalid-def-nesting
 category: Warnings
 ---
@@ -106,7 +106,7 @@ dl > :not(dt):not(dd) {
 
 /*doc
 ---
-title: 'figcaption outside a figure'
+title: "figcaption outside a figure"
 name: invalid-figcaption-nesting
 category: Warnings
 ---
@@ -129,7 +129,7 @@ category: Warnings
 
 /*doc
 ---
-title: 'Invalid nesting'
+title: "Invalid nesting"
 name: invalid-nesting
 category: Warnings
 ---
@@ -165,7 +165,7 @@ table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption) {
 
 /*doc
 ---
-title: 'Misplaced div'
+title: "Misplaced div"
 name: misplaced-div
 category: Warnings
 ---
@@ -196,7 +196,7 @@ strong div {
 
 /*doc
 ---
-title: 'Misused sectioning tags'
+title: "Misused sectioning tags"
 name: sectioning-tags
 category: Warnings
 ---
@@ -298,7 +298,7 @@ That should be double-checked.
 * <http://www.w3.org/TR/WCAG-TECHS/F38.html>
 
 ```html_example
-<img alt="" src="/" />
+<img alt="" src="static/ffoodd.png" /><i> </i>
 ```
 */
 img:not([role="presentation"])[alt=""],
@@ -684,9 +684,32 @@ Believe me, this still have to be tested.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L381>
 
 ```html_example
-<img src="spacer.gif" alt="" width="1" height="1"/><p></p>
+<img src="spacer.gif" alt="" width="1" height="1"/><i> </i>
 ```
 */
 img[src*="spacer.gif"] {
   @include warning("spacer-gif", $self-closing: true);
+}
+
+
+/*doc
+---
+title: "Bad computed value"
+name: null-undefined
+category: Warnings
+---
+
+Don't laugh, shit happens.
+
+```html_example
+<p class="undefined">Oups, something went wrong.</p>
+```
+*/
+[id*="NaN"],
+[id*="null"],
+[class*="NaN"],
+[class*="null"],
+[id*="undefined"],
+[class*="undefined"] {
+  @include warning("undefined");
 }

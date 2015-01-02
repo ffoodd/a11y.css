@@ -2,7 +2,7 @@
 
 /*doc
 ---
-title: '[tabindex] > 0'
+title: "[tabindex] > 0"
 name: tab-order
 category: Errors
 ---
@@ -22,7 +22,7 @@ The `[tabindex]` attribute should never be greater than 0.
 
 /*doc
 ---
-title: 'No [href]'
+title: "No [href]"
 name: no-href
 category: Errors
 ---
@@ -45,7 +45,7 @@ a[href=""] {
 
 /*doc
 ---
-title: 'JS [href]'
+title: "JS [href]"
 name: href-js
 category: Errors
 ---
@@ -67,7 +67,7 @@ a[href^="javascript"] {
 
 /*doc
 ---
-title: '# [href]'
+title: "# [href]"
 name: empty-href
 category: Errors
 ---
@@ -89,7 +89,7 @@ a[href="#"] {
 
 /*doc
 ---
-title: 'Empty link'
+title: "Empty link"
 name: empty-link
 category: Errors
 ---
@@ -116,7 +116,7 @@ a:empty:not([aria-label]):not([aria-labelledby]) {
 
 /*doc
 ---
-title: 'Empty img link'
+title: "Empty img link"
 name: empty-image-link
 category: Errors
 ---
@@ -132,7 +132,7 @@ When an `<img>` is a link only child, it must have an `[alt]`.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ```html_example
-<a href="/"><img src="" /></a>
+<a href="/"><img src="static/ffoodd.png" /></a>
 ```
 */
 a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
@@ -142,7 +142,7 @@ a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
 
 /*doc
 ---
-title: 'Missing alternative for img'
+title: "Missing alternative for img"
 name: no-alt
 category: Errors
 ---
@@ -158,8 +158,8 @@ An `<img>` must have an `[alt]`. Always.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369>
 
 ```html_example
-<img src="/" /><p></p>
-<input type="image" src="/" /><p></p>
+<img src="static/ffoodd.png" /><i> </i>
+<input type="image" src="static/ffoodd.png" /><i> </i>
 ```
 */
 img:not([alt]),
@@ -171,7 +171,7 @@ input[type="image"]:not([alt]) {
 
 /*doc
 ---
-title: 'Missing source for img'
+title: "Missing source for img"
 name: no-src
 category: Errors
 ---
@@ -182,8 +182,8 @@ An `<img>` must have an `[src]`. Obviously.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374>
 
 ```html_example
-<img alt="No source" /><p></p>
-<input type="image"  alt="No source" /><p></p>
+<img alt="No source" /><i> </i>
+<input type="image" alt="No source" /><i> </i>
 ```
 */
 img:not([src]),
@@ -198,7 +198,7 @@ input[type="image"][src="#"] {
 
 /*doc
 ---
-title: 'A label without a [for] attribute'
+title: "A label without a [for] attribute"
 name: no-for
 category: Errors
 ---
@@ -223,7 +223,7 @@ label[for=""] {
 
 /*doc
 ---
-title: 'Missing some kind of label'
+title: "Missing some kind of label"
 name: no-id
 category: Errors
 ---
@@ -237,21 +237,23 @@ How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` 
 * <http://www.w3.org/TR/WCAG-TECHS/H44.html>
 
 ```html_example
-<input type="text" /><p></p>
-<select><option>Where</option><option>is</option><option>my</option><option>label?</option></select><p></p>
-<textarea>Where's my label?</textarea><p></p>
+<input type="text" /><i> </i>
+<select><option>Where</option><option>is</option><option>my</option><option>label?</option></select>
+<textarea>Where's my label?</textarea>
 ```
 */
-input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
-select:not([id]):not([aria-label]):not([aria-labelledby]),
-textarea:not([id]):not([aria-label]):not([aria-labelledby]) {
+input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]) {
   @include error("no-id", $self-closing: true);
 }
 
+select:not([id]):not([aria-label]):not([aria-labelledby]),
+textarea:not([id]):not([aria-label]):not([aria-labelledby]) {
+  @include error("no-id");
+}
 
 /*doc
 ---
-title: 'Missing a value'
+title: "Missing a value"
 name: no-value
 category: Errors
 ---
@@ -264,9 +266,9 @@ You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-la
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 
 ```html_example
-<input type="reset" /><p></p>
-<input type="submit" /><p></p>
-<input type="button" /><p></p>
+<input type="reset" /><i> </i>
+<input type="submit" /><i> </i>
+<input type="button" /><i> </i>
 ```
 */
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
@@ -278,7 +280,7 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 
 /*doc
 ---
-title: 'Empty button'
+title: "Empty button"
 name: empty-button
 category: Errors
 ---
@@ -292,18 +294,22 @@ A `<button>` should either have content or an `[aria-label]` or `[aria-labelledb
 
 ```html_example
 <button></button>
-<button><img src=""/></button>
+<button><img src="static/ffoodd.png"/><i> </i></button>
 ```
 */
-button:empty:not([aria-label]):not([aria-labelledby]),
-button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
+button:empty:not([aria-label]):not([aria-labelledby]) {
   @include error("empty-button");
 }
+
+button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
+  @include error("empty-button", $self-closing: true );
+}
+
 
 
 /*doc
 ---
-title: 'Form button'
+title: "Form button"
 name: form-button
 category: Errors
 ---
@@ -314,7 +320,7 @@ Either use `[reset]`, `[submit]` or `[button]` type.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189>
 
 ```html_example
-<form action="GET">
+<form action="/">
   <button>I just don't know what todo with myself</button>
 </form>
 ```
@@ -326,7 +332,7 @@ form button:not([type]) {
 
 /*doc
 ---
-title: 'Disabled button'
+title: "Disabled button"
 name: disabled-button
 category: Errors
 ---
@@ -347,7 +353,7 @@ button[class*="disabled"]:not([disabled]):not([readonly]) {
 
 /*doc
 ---
-title: 'input without [type]'
+title: "input without [type]"
 name: no-type
 category: Errors
 ---
@@ -358,7 +364,7 @@ category: Errors
 * <http://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
 
 ```html_example
-<input value="Whatever you want" />
+<input value="Whatever you want" /><i> </i>
 ```
 */
 input:not([type]),
@@ -369,7 +375,7 @@ input[type=""] {
 
 /*doc
 ---
-title: 'optgroup without label'
+title: "optgroup without label"
 name: optgroup
 category: Errors
 ---
@@ -403,7 +409,7 @@ optgroup:not([label]) {
 
 /*doc
 ---
-title: 'iframe without [title]'
+title: "iframe without [title]"
 name: no-title
 category: Errors
 ---
@@ -416,7 +422,7 @@ category: Errors
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454>
 
 ```html_example
-<iframe height="500" width="500" src="http://google.com"></iframe>
+<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe>
 ```
 */
 iframe:not([title]),
@@ -427,7 +433,7 @@ iframe[title=""] {
 
 /*doc
 ---
-title: 'form missing an [action]'
+title: "form missing an [action]"
 name: no-action
 category: Errors
 ---
@@ -437,7 +443,7 @@ category: Errors
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214>
 
 ```html_example
-<form action="/">
+<form>
   <label for="input">Guess what do we do with your datas?</label>
   <input id="input" type="text" />
 
@@ -452,7 +458,7 @@ form:not([action]) {
 
 /*doc
 ---
-title: 'No language defined'
+title: "No language defined"
 name: no-lang
 category: Errors
 ---
@@ -488,7 +494,7 @@ html[lang=""] {
 
 /*doc
 ---
-title: 'table used for layout'
+title: "table used for layout"
 name: table-for-layout
 category: Errors
 ---
@@ -502,15 +508,14 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 * `[axis]`;
 * `[scope]`;
 * `[headers]`;
-* `[colgroup]`;
-* `[summary]` (should be empty or shouldn't be);
+* `[colgroup]`.
 
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-8>
 * <http://www.w3.org/TR/WCAG-TECHS/F46.html>
 * <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
 
 ```html_example
-<table role="presentation" summary="I do not mean anything!">
+<table role="presentation">
   <caption>I do not mean anything!</caption>
   <thead>
     <tr>
@@ -528,7 +533,7 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
       <td colspan="2">It works</td>
     </tr>
   </tbody>
-<table>
+</table>
 ```
 */
 table[role="presentation"] th,
@@ -538,7 +543,6 @@ table[role="presentation"] caption,
 table[role="presentation"] [axis],
 table[role="presentation"] [scope],
 table[role="presentation"] [headers],
-table[role="presentation"] [summary],
 table[role="presentation"] [colgroup] {
   @include error("table-for-layout");
 }
@@ -546,7 +550,7 @@ table[role="presentation"] [colgroup] {
 
 /*doc
 ---
-title: '[width] & [height] attributes'
+title: "[width] & [height] attributes"
 name: dimensions
 category: Errors
 ---
@@ -574,7 +578,7 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 /*doc
 ---
-title: 'Javascript events attributes'
+title: "Javascript events attributes"
 name: js-events
 category: Errors
 ---
@@ -616,7 +620,7 @@ Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS eve
 
 /*doc
 ---
-title: 'Namespaces'
+title: "Namespaces"
 name: namespace
 category: Errors
 ---
@@ -708,7 +712,7 @@ Yep. Numbers and special chars.
 
 /*doc
 ---
-title: '[style] attribute'
+title: "[style] attribute"
 name: style-attr
 category: Errors
 ---
@@ -731,11 +735,42 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 
 meta[http-equiv="refresh"] {
   @include error("meta-refresh", $self-closing: true);
+
+  // Because it's in the <head>
+  display: block !important;
+  &::after {
+    content: "<meta http-equiv=" attr(http-equiv) ">";
+  }
 }
 
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-5
-// @see http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-6
-// @see http://www.w3.org/TR/WCAG20/#navigation-mechanisms-title
-title:empty {
+
+/*doc
+---
+title: "Empty title"
+name: no-page-title
+category: Errors
+---
+
+Your styles should be driven by a CSS file. That's it.
+And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-5>
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-6>
+* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-title>
+* <http://www.w3.org/TR/WCAG-TECHS/G88.html>
+* <http://www.w3.org/TR/WCAG-TECHS/H25.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F25.html>
+
+```html_example
+<title></title>
+```
+*/
+head title:empty:not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
   @include error("no-page-title");
+
+  // Because it's in the <head>
+  display: block !important;
+  &::after {
+    content: "<title></title>";
+  }
 }

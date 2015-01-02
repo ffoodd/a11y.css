@@ -1,23 +1,30 @@
       </div>
-    </div>
-  </section>
-</div>
-<script>
-$(document).ready(function() {
+    </main>
 
-  // set the active tab
-  var currentHref = document.location.pathname.substr(1);
-  if (currentHref)
-  {
-    $('.docNav').find('a[href^="' + currentHref + '"]').addClass('activeNavElem typeEmphasize');
-  }
-  else
-  {
-    $('.docNav').find('a').eq(0).addClass('activeNavElem typeEmphasize');
-  }
+    <footer role="contentinfo" class="grid-1-2 mw--site center">
+      <p class="txtright"><strong>® 2014 Gaël Poupard</strong></p>
+      <p>This project is distributed under license <a href="http://opensource.org/licenses/MIT" title="The MIT licence">MIT</a> and <a href="http://creativecommons.org/licenses/by/3.0/fr/" hreflang="fr" title="Explications de la licence">CC BY 3.0 FR</a>. <a class="end" href="#top">Back to top &uarr;</a></p>
+    </footer>
+    <script src="static/jquery-2.1.3.min.js"></script>
+    <script>
+      $("#bookmarklet").on("submit", function (event) {
+        event.preventDefault();
 
+        var $minimum_level = $("#minimum-level").val();
+        var $language = $("#language").val();
 
-});
-</script>
-</body>
+        var $hrefstart = 'javascript:(function(){a11ycss=document.createElement("LINK");a11ycss.href="https://rawgit.com/ffoodd/a11y.css/master/css/a11y-';
+        var $hreflang = $language;
+        var $hreflevel = '';
+        if( $minimum_level !== "advice" ) {
+          $hreflevel = '_' + $minimum_level;
+        }
+        var $hrefend = '.css";a11ycss.rel="stylesheet";a11ycss.media="all";document.body.appendChild(a11ycss);})();';
+
+        var $href = $hrefstart + $hreflang + $hreflevel + $hrefend;
+
+        $(".bookmarklet").attr("href", $href);
+      });
+    </script>
+  </body>
 </html>
