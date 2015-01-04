@@ -422,15 +422,12 @@ A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
 
 ```html_example
-<svg aria-label="I'm a label!" title="I'm a title!"></svg>
+<svg aria-label="I'm a label!" title="I'm a title!"></svg><i> </i>
 ```
 */
-svg[aria-label][title] {
-  @include advice("title");
-}
-
 img[alt][title],
-area[alt][title] {
+area[alt][title],
+svg[aria-label][title] {
   @include advice("title", $self-closing: true);
 }
 

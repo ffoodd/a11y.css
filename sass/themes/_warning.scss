@@ -331,11 +331,11 @@ Any informative `<svg>` should either have a `[aria-label]` or a `<desc>`.
      xmlns="http://www.w3.org/2000/svg" version="1.1">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
-</svg>
+</svg><i> </i>
 ```
 */
 svg:not([role="presentation"]):not([aria-label]) {
-  @include warning("no-aria-label");
+  @include warning("no-aria-label", $self-closing: true);
 }
 
 
