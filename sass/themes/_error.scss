@@ -242,12 +242,12 @@ How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` 
 <textarea>Where's my label?</textarea>
 ```
 */
-input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]) {
+input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
+textarea:not([id]):not([aria-label]):not([aria-labelledby]) {
   @include error("no-id", $self-closing: true);
 }
 
-select:not([id]):not([aria-label]):not([aria-labelledby]),
-textarea:not([id]):not([aria-label]):not([aria-labelledby]) {
+select:not([id]):not([aria-label]):not([aria-labelledby]) {
   @include error("no-id");
 }
 
@@ -564,10 +564,7 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ```html_example
-<form action="/">
-  <label for="width">Isn't this textarea too large?</label>
-  <textarea width="500" id="width"></textarea>
-</form>
+<p width="20">Damned! I feel sooo strait :(</p>
 ```
 */
 :not(img)[width],
