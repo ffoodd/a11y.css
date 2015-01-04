@@ -302,13 +302,13 @@ A `[required]` or `[aria-required]` should be visually understandable.
 ```html_example
 <form action="">
   <label for="field">Fied</label>
-  <textarea id="field" required></textarea>
+  <textarea id="field" required></textarea><i> </i>
 </form>
 ```
 */
 [required],
 [aria-required] {
-  @include advice("required");
+  @include advice("required", $self-closing: true);
 }
 
 input[required],
@@ -353,15 +353,10 @@ category: Advices
 A `[placeholder]` is not a label, isn't it?
 
 ```html_example
-<textarea placeholder="Look Ma, no label!" id="test"></textarea>
+<input type="text" placeholder="Look Ma, no label!" id="test"><i> </i>
 ```
 */
-:not(label) + [placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include advice("placeholder");
-}
-
-:not(label) + input[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]),
-:not(label) + textarea[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
+[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
   @include advice("placeholder", $self-closing: true);
 }
 
