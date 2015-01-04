@@ -71,7 +71,7 @@ category: Advices
 ```html_example
 <figure role="group">
   <figcaption>I'm the caption.</figcaption>
-  <img src="static/ffoodd.png" alt="Needed" />
+  <img src="static/ffoodd.png" alt="Needed" width="144" height="144" />
   <figcaption>I'm the caption too.</figcaption>
 </figure>
 ```
@@ -94,7 +94,7 @@ category: Advices
 
 ```html_example
 <figure role="group">
-  <img src="static/ffoodd.png" alt="Needed" />
+  <img src="static/ffoodd.png" alt="Needed" width="144" height="144" />
   <figcaption>I'm the caption.</figcaption>
   <p>I'm something else. Oh, wait.</p>
 </figure>

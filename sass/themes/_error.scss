@@ -132,7 +132,7 @@ When an `<img>` is a link only child, it must have an `[alt]`.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ```html_example
-<a href="/"><img src="static/ffoodd.png" /></a>
+<a href="/"><img src="static/ffoodd.png" width="144" height="144" /><i> </i></a>
 ```
 */
 a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
@@ -158,7 +158,7 @@ An `<img>` must have an `[alt]`. Always.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369>
 
 ```html_example
-<img src="static/ffoodd.png" /><i> </i>
+<img src="static/ffoodd.png" width="144" height="144" /><i> </i>
 <input type="image" src="static/ffoodd.png" /><i> </i>
 ```
 */
@@ -294,7 +294,7 @@ A `<button>` should either have content or an `[aria-label]` or `[aria-labelledb
 
 ```html_example
 <button></button>
-<button><img src="static/ffoodd.png"/><i> </i></button>
+<button><img src="static/ffoodd.png" width="144" height="144" /><i> </i></button>
 ```
 */
 button:empty:not([aria-label]):not([aria-labelledby]) {

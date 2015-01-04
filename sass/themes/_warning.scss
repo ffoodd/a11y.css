@@ -298,7 +298,7 @@ That should be double-checked.
 * <http://www.w3.org/TR/WCAG-TECHS/F38.html>
 
 ```html_example
-<img alt="" src="static/ffoodd.png" /><i> </i>
+<img alt="" src="static/ffoodd.png" width="144" height="144" /><i> </i>
 ```
 */
 img:not([role="presentation"])[alt=""],
