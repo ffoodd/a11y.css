@@ -431,12 +431,12 @@ category: Errors
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454>
 
 ```html_example
-<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe>
+<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe><i> </i>
 ```
 */
 iframe:not([title]),
 iframe[title=""] {
-  @include error("no-title");
+  @include error("no-title", $self-closing: true);
 }
 
 
