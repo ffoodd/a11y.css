@@ -745,7 +745,7 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 <title class="inbl w-20" id="empty-title_code"></title>
 ```
 */
-head title:empty:not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
+title:empty:not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
   @include error("no-page-title");
 
   // Because it's in the <head>
