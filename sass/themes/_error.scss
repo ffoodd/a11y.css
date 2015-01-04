@@ -106,7 +106,7 @@ By the way, why would you use an empty link?
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ```html_example
-<a href="/"></a>
+<a href="/" class="inbl w-20" id="empty-link_code"></a>
 ```
 */
 a:empty:not([aria-label]):not([aria-labelledby]) {
@@ -132,7 +132,10 @@ When an `<img>` is a link only child, it must have an `[alt]`.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ```html_example
-<a href="/"><img src="static/ffoodd.png" width="144" height="144" /><i> </i></a>
+<a href="/">
+  <img src="static/ffoodd.png" width="144" height="144" />
+  <i> </i>
+</a>
 ```
 */
 a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
@@ -238,7 +241,12 @@ How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` 
 
 ```html_example
 <input type="text" /><i> </i>
-<select><option>Where</option><option>is</option><option>my</option><option>label?</option></select>
+<select>
+  <option>Where</option>
+  <option>is</option>
+  <option>my</option>
+  <option>label?</option>
+</select>
 <textarea>Where's my label?</textarea>
 ```
 */
@@ -294,7 +302,10 @@ A `<button>` should either have content or an `[aria-label]` or `[aria-labelledb
 
 ```html_example
 <button></button>
-<button><img src="static/ffoodd.png" width="144" height="144" /><i> </i></button>
+<button>
+  <img src="static/ffoodd.png" width="144" height="144" />
+  <i> </i>
+</button>
 ```
 */
 button:empty:not([aria-label]):not([aria-labelledby]) {
@@ -560,15 +571,15 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-10-1>
 * <http://www.accessiweb.org/index.php/glossaire-du-referentiel-accessiweb-html5aria.html#mPresInfo>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <http://www.w3.org/TR/WCAG20/#content-structure-sepffoodd.pngaration-programmatic>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ```html_example
 <p width="20">Damned! I feel sooo strait :(</p>
 ```
 */
-:not(img)[width],
-:not(img)[height] {
+:not(img):not(iframe)[width],
+:not(img):not(iframe)[height] {
   @include error("dimensions");
 }
 

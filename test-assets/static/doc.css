@@ -116,3 +116,7 @@ a[target$="blank"]::after {
 .s { color: #07a } /* Literal.String */
 .na { color: #690 } /* Name.Attribute */
 .nt { color: #905 } /* Name.Tag */
+
+#empty-link_code {
+  min-height: 1em;
+}
