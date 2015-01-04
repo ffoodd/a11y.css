@@ -313,6 +313,8 @@ A `[required]` or `[aria-required]` should be visually understandable.
 
 input[required],
 input[aria-required],
+select[required],
+select[aria-required],
 textarea[required],
 textarea[aria-required] {
   @include advice("required", $self-closing: true);

@@ -246,18 +246,16 @@ How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` 
   <option>is</option>
   <option>my</option>
   <option>label?</option>
-</select>
-<textarea>Where's my label?</textarea>
+</select><i> </i>
+<textarea>Where's my label?</textarea><i> </i>
 ```
 */
 input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
+select:not([id]):not([aria-label]):not([aria-labelledby]),
 textarea:not([id]):not([aria-label]):not([aria-labelledby]) {
   @include error("no-id", $self-closing: true);
 }
 
-select:not([id]):not([aria-label]):not([aria-labelledby]) {
-  @include error("no-id");
-}
 
 /*doc
 ---
@@ -414,7 +412,7 @@ category: Errors
 ```
 */
 optgroup:not([label]) {
-  @include error("optgroup");
+  @include error("optgroup", $self-closing: true);
 }
 
 

@@ -102,7 +102,7 @@ Here are affected self-closing tags:
  * `<source />`
  * `<track />`
  * `<wbr />`
- * `<textarea>` isn't a void tag but can only contain text, thus can't contain pseudo-elements.
+ * `<textarea>` and `<select>` aren't void tags but can only contain text, thus can't contain pseudo-elements.
 
  *Issue [#7](https://github.com/ffoodd/a11y.css/issues/7) opened by [@7studio](https://twitter.com/7studio) suggested a decent work-around to display messages for those tags, as long as they are followed by a non-self-closing element. Still better than nothing.*
 
