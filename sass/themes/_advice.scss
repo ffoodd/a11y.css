@@ -469,6 +469,7 @@ A `[scope]` can be col or row (and nothing else) and it has to be relevant.
 
 ```html_example
 <table>
+  <caption>I'm a caption</caption>
   <thead>
     <tr>
       <th scope="col">First column</th>
@@ -476,6 +477,10 @@ A `[scope]` can be col or row (and nothing else) and it has to be relevant.
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>First cell</td>
+      <td>Second cell</td>
+    </tr>
     <tr>
       <td>First cell</td>
       <td>Second cell</td>
