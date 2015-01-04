@@ -57,7 +57,7 @@ Should probably be a `<button>`, don't you think?
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L392>
 
 ```html_example
-<a>Who am I? Where do I link?</a>
+<a href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">Please use my bookmarklet ;)</a>
 ```
 */
 a[href^="javascript"] {
