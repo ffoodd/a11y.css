@@ -118,6 +118,7 @@ a[target$="blank"]::after {
 .nt { color: #905 } /* Name.Tag */
 
 #empty-link_code,
-#empty-title_code {
+#empty-title_code,
+#empty-node_code {
   min-height: 1em;
 }
