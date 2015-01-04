@@ -684,10 +684,10 @@ Believe me, this still have to be tested.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L381>
 
 ```html_example
-<img src="spacer.gif" alt="" width="1" height="1"/><i> </i>
+<img src="spacer.gif" alt="Spacer.gif" width="100" height="100"/><i> </i>
 ```
 */
-img[src*="spacer.gif"] {
+img[src*="spacer.gif"]:not([role="presentation"]) {
   @include warning("spacer-gif", $self-closing: true);
 }
 
