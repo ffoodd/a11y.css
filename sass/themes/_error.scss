@@ -241,13 +241,6 @@ How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` 
 
 ```html_example
 <input type="text" /><i> </i>
-<select>
-  <option>Where</option>
-  <option>is</option>
-  <option>my</option>
-  <option>label?</option>
-</select><i> </i>
-<textarea>Where's my label?</textarea><i> </i>
 ```
 */
 input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
