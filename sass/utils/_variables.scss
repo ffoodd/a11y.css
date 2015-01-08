@@ -304,8 +304,8 @@ $messages: (
       "en": "You're using \"spacer.gif\". How old is your website?"
     ),
     "undefined": (
-      "fr": "Vous n’essayeriez pas de calculer une [class] ou un [id] dynamiquement, vous ?",
-      "en": "Don't you try to dynamically compute an [id] or a [class]?"
+      "fr": "Vous n’essayeriez pas de calculer une [class] ou un [id] dynamiquement, vous ? \A PArce que là, je vois null ou undefined.",
+      "en": "Don't you try to dynamically compute an [id] or a [class]? \A Because I see null or undefined, here."
     )
   ),
 
