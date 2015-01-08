@@ -354,12 +354,12 @@ A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because 
 * <http://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
 ```html_example
-<video autoplay controls src=""></video>
+<video autoplay controls src=""></video><i> </i>
 ```
 */
 video[autoplay],
 audio[autoplay] {
-  @include warning("autoplay");
+  @include warning("autoplay", $self-closing: true);
 }
 
 
@@ -379,12 +379,12 @@ A time-based media like `<audio>` or `<video>` would be easier to use if `[contr
 * <http://www.w3.org/TR/WCAG-TECHS/G4.html>
 
 ```html_example
-<video src=""></video>
+<video src=""></video><i> </i>
 ```
 */
 video:not([controls]),
 audio:not([controls]) {
-  @include warning("controls");
+  @include warning("controls", $self-closing: true);
 }
 
 

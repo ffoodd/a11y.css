@@ -377,12 +377,12 @@ A `<video>` or `<audio>` needs a few things to be accessible, like a transcript,
 * <http://www.w3.org/TR/WCAG20/#media-equiv-text-doc>
 
 ```html_example
-<video src="/" controls></video>
+<video src="/" controls></video><i> </i>
 ```
 */
 video,
 audio {
-  @include advice("video-audio");
+  @include advice("video-audio", $self-closing: true);
 }
 
 
