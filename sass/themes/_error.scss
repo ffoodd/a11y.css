@@ -366,7 +366,8 @@ category: Errors
 * <http://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
 
 ```html_example
-<input value="Whatever you want" /><i> </i>
+<label for="No-type">No type</label>
+<input value="Whatever you want" id="No-type"/><i> </i>
 ```
 */
 input:not([type]),
