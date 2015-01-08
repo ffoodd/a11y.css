@@ -296,8 +296,8 @@ $messages: (
       "en": "Only <col> can be a child of <colgroup>. Pretty obviously, isn't it?"
     ),
     "aria-pressed": (
-      "fr": "Si c’est (dé)pliable, vous devriez fournir l’attribut [aria-pressed]. Merci !",
-      "en": "If it is toggleable, you should supply an [aria-pressed] attribute. Thanks!"
+      "fr": "Si c’est (dé)pliable, vous devriez fournir l’attribut [aria-expanded] ou [aria-haspopup]. Merci !",
+      "en": "If it is toggleable, you should supply an [aria-expanded] or [aria-haspopup] attribute. Thanks!"
     ),
     "spacer-gif": (
       "fr": "Vous utilisez un \"spacer.gif\". Quel âge a votre site, déjà ?",

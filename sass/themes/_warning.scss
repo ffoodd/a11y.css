@@ -658,7 +658,7 @@ colgroup:not([span]) *:not(col) {
 
 /*doc
 ---
-title: "toggle [class] without [aria-pressed]"
+title: "toggle [class] without [aria-*]"
 name: aria-pressed
 category: Warnings
 ---
@@ -671,7 +671,7 @@ Anything with a `[class]` containing "toggle" probably needs some ARIA flavour, 
 <a class="toggle-machin" href="/">Do I toggle anything?</a>
 ```
 */
-[class*="toggle"]:not([aria-pressed]) {
+[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) {
   @include warning("aria-pressed");
 }
 
