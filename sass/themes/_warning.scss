@@ -456,13 +456,17 @@ And it must be the `:first-child`, by the way.
 
 ```html_example
 <table>
-  <tr>
-    <td>I'm a table without a caption!</td>
-    <td>I'm a table without a caption!</td>
-  </tr>
-  <tr>
-    <td colspan="2">I'm a table without a caption!</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>I'm a table without a caption!</th>
+      <th>I'm a table without a caption!</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2">I'm a table without a caption!</td>
+    </tr>
+  </tbody>
 </table>
 ```
 */
