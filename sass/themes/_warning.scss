@@ -129,6 +129,29 @@ category: Warnings
 
 /*doc
 ---
+title: "figure without the group ARIA role"
+name: figure-role
+category: Warnings
+---
+
+`<figure>` needs `[role="group"]` for accessibility reason.
+
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#test-1-10-1>
+* <http://www.w3.org/TR/html-alt-techniques/#m6>
+
+```html_example
+<figure>
+  <img src="static/ffoodd.png" width="144" height="144" />
+  <figcaption>I'm a figcaption</figcaption>
+</figure>
+```
+*/
+figure:not([role="group"]) {
+  @include warning("figure-role");
+}
+
+/*doc
+---
 title: "Invalid nesting"
 name: invalid-nesting
 category: Warnings

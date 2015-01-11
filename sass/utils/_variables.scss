@@ -227,6 +227,10 @@ $messages: (
       "fr": "<figcaption> est perdu dans la vie, sans sa <figure> parente.",
       "en": "Poor <figcaption> is totally lost without its parent <figure>."
     ),
+    "figure-role": (
+      "fr": "<figure> a besoin du [role='group'] pour une meilleure accessibilité.",
+      "en": "<figure> needs [role='group'] to improve its accessibility."
+    ),
     "misplaced-div": (
       "fr": "Ne mettez pas une <div> dans un élément en ligne, c’est sale.",
       "en": "Do not put <div> inside inline element. That's dirty."
