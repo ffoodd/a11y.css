@@ -475,18 +475,11 @@ category: Errors
 * <http://www.w3.org/TR/WCAG-TECHS/H57.html>
 
 ```html_example
-<html>
-  <head>
-    <title>Je ne parle pas Français</title>
-  </head>
-  <body>
-    <ul>
-      <li>Speak French?</li>
-      <li>Habla usted francés?</li>
-      <li>Sprechen Sie Französisch?</li>
-    </ul>
-  </body>
-</html>
+<iframe title="No language defined a11y.css test-case"
+        src="static/no-lang.html"
+        width="650"
+        height="200"
+        class="b-reset">
 ```
 */
 html:not([lang]),
