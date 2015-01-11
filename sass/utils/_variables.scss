@@ -279,10 +279,6 @@ $messages: (
       "fr": "Un tableau de données doit avoir un titre, sous forme de <caption> — et ce doit être le premier enfant direct. \A Et c’est pas du bluff !",
       "en": "A data table should have a <caption> - and it must be the first direct child. \A And that's not bluff!"
     ),
-    "colgroup": (
-      "fr": "<colgroup> doit être après <caption>, mais avant <thead>, <tfoot> or <tbody>.",
-      "en": "<colgroup> should be after <caption>, but before <thead>, <tfoot> or <tbody>."
-    ),
     "table-structure": (
       "fr": "Voilà dans quel ordre vous devriez les mettre : <thead>, <tfoot> puis <tbody>.",
       "en": "Here is the right order for those tags: <thead>, <tfoot> then <tbody>."

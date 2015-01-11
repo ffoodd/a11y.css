@@ -504,47 +504,6 @@ table:not([role="presentation"]) > *:first-child:not(caption) {
 
 /*doc
 ---
-title: "Invalid colgroup position"
-name: colgroup
-category: Warnings
----
-
-`<colgroup>` must be right after `<caption>` and always before `<thead>`, `<tfoot>` and `<tbody>`.
-
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L292>
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L297>
-* <http://www.w3.org/TR/html5/tabular-data.html#the-colgroup-element>
-
-```html_example
-<table>
-  <caption>I'm a caption</caption>
-  <tbody>
-    <tr>
-      <td>I'm a table with cols done wrong.</td>
-      <td>I'm a table with cols done wrong.</td>
-    </tr>
-    <tr>
-      <td>I'm a table with cols done wrong.</td>
-      <td>I'm a table with cols done wrong.</td>
-    </tr>
-  </tbody>
-  <colgroup>
-    <col></col>
-    <col></col>
-  </colgroup>
-</table>
-```
-*/
-table:not([role="presentation"]) > colgroup ~ caption,
-table > thead ~ colgroup,
-table > tfoot ~ colgroup,
-table > tbody ~ colgroup {
-  @include warning("colgroup");
-}
-
-
-/*doc
----
 title: "Invalid table structure"
 name: table-structure
 category: Warnings
