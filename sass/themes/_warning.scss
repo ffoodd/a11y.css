@@ -504,7 +504,7 @@ category: Warnings
       <td>I'm a table with cols done wrong.</td>
       <td>I'm a table with cols done wrong.</td>
     </tr>
-  <tbody>
+  </tbody>
   <colgroup>
     <col></col>
     <col></col>
@@ -573,6 +573,7 @@ category: Warnings
 
 ```html_example
 <table>
+  <caption>issing thead</caption>
   <tbody>
     <tr>
       <td>I'm a table without thead.</td>
@@ -582,7 +583,7 @@ category: Warnings
       <td>I'm a table without thead.</td>
       <td>I'm a table without thead.</td>
     </tr>
-  <tbody>
+  </tbody>
 </table>
 ```
 */

@@ -10,28 +10,28 @@
 $messages: (
   "advice": (
     "empty-class": (
-      "fr": "Attribut [class] vide.\A Pourquoi tant de haine ?",
-      "en": "Empty [class] attribute.\A Why so much hatred?"
+      "fr": "Attribut [class] vide. \A Pourquoi tant de haine ?",
+      "en": "Empty [class] attribute. \A Why so much hatred?"
     ),
     "empty-id": (
-      "fr": "Attribut [id] vide.\A Sérieusement ?",
-      "en": "Empty [id] attribute.\A Does this look like a game to you?"
+      "fr": "Attribut [id] vide. \A Sérieusement ?",
+      "en": "Empty [id] attribute. \A Does this look like a game to you?"
     ),
     "main": (
-      "fr": "<main> est réservée à la zone de contenu principal, et doit donc être unique.\A Repentez-vous et tout ira bien :) .",
-      "en": "The <main> tag is exclusively restricted to the main content area, thus should be unique.\A Repent yourself now."
+      "fr": "<main> est réservée à la zone de contenu principal, et doit donc être unique. \A Repentez-vous et tout ira bien :) .",
+      "en": "The <main> tag is exclusively restricted to the main content area, thus should be unique. \A Repent yourself now."
     ),
     "figcaption": (
-      "fr": "<figcaption> décrit le contenu d’une <figure> et doit donc être unique dans cette <figure>.\A Oups :) .",
-      "en": "The <figcaption> tag describes a <figure> content, thus should be unique in these <figure>.\A Oups!"
+      "fr": "<figcaption> décrit le contenu d’une <figure> et doit donc être unique dans cette <figure>. \A Oups :) .",
+      "en": "The <figcaption> tag describes a <figure> content, thus should be unique in these <figure>. \A Oups!"
     ),
     "figcaption-order": (
-      "fr": "<figcaption> est censé être le premier ou le dernier enfant d’une <figure>.\A On en apprend tous les jours !",
-      "en": "The <figcaption> tag is supposed to be <figure>'s first or last child.\A You learn something every day!"
+      "fr": "<figcaption> est censé être le premier ou le dernier enfant d’une <figure>. \A On en apprend tous les jours !",
+      "en": "The <figcaption> tag is supposed to be <figure>'s first or last child. \A You learn something every day!"
     ),
     "target-blank": (
-      "fr": "L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre.\A Mais vous y avez pensé, non :) ?",
-      "en": "User should be warned whenever a link is being opened in a new tab.\A But you know it already, right?"
+      "fr": "L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre. \A Mais vous y avez pensé, non :) ?",
+      "en": "User should be warned whenever a link is being opened in a new tab. \A But you know it already, right?"
     ),
     "mailto": (
       "fr": "L’adresse mail est valide, pas vrai ?",
@@ -54,8 +54,8 @@ $messages: (
       "en": "ARIA roles banner, main, contentinfo and search should be unique."
     ),
     "search": (
-      "fr": "Vu ! Cet élément semble être la recherche.\A Mais alors, le rôle ARIA est là, non ?",
-      "en": "Gotcha! This component seems to be the search.\A Where is the ARIA role?"
+      "fr": "Vu ! Cet élément semble être la recherche. \A Mais alors, le rôle ARIA est là, non ?",
+      "en": "Gotcha! This component seems to be the search. \A Where is the ARIA role?"
     ),
     "required": (
       "fr": "Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur.",
@@ -66,7 +66,7 @@ $messages: (
       "en": "Are you plain sure this element should be hidden to accessibility helpers?"
     ),
     "placeholder": (
-      "fr": "Ce placeholder ne remplace pas un <label>, j’espère ?\A Y’en a qui ont essayé…",
+      "fr": "Ce placeholder ne remplace pas un <label>, j’espère ? \A Y’en a qui ont essayé…",
       "en": "I hope you don’t use this placeholder in place of a <label>."
     ),
     "video-audio": (
@@ -74,24 +74,24 @@ $messages: (
       "en": "Time-based medias should have an alternate version, like a transcript or subtitles (<track>), and have their duration displayed."
     ),
     "track": (
-      "fr": "Vous utilisez <track>, c’est bon signe !\A Mais l’attribut [kind] vous intéressera sûrement aussi :) .",
+      "fr": "Vous utilisez <track>, c’est bon signe ! \A Mais l’attribut [kind] vous intéressera sûrement aussi :) .",
       "en": "You use <track> which is good, but the [kind] attribute would make things even better!"
     ),
     "title": (
-      "fr": "L’attribut [title], s’il est présent, doit être identique à l’alternative renseignée.\A À vous de jouer ;-) .",
-      "en": "[title] attribute, if present, should be identical to the given alternative.\A Your move!"
+      "fr": "L’attribut [title], s’il est présent, doit être identique à l’alternative renseignée. \A À vous de jouer ;-) .",
+      "en": "[title] attribute, if present, should be identical to the given alternative. \A Your move!"
     ),
     "time": (
       "fr": "Le format de date est-il compréhensible ?",
       "en": "Is this is a valid date format?"
     ),
     "th-scope": (
-      "fr": "Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ?\A C’est ce que dit son [scope], en tout cas.",
-      "en": "This head cell applies to a full col or row, doesn't it?\A That's what its [scope] says."
+      "fr": "Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? \A C’est ce que dit son [scope], en tout cas.",
+      "en": "This head cell applies to a full col or row, doesn't it? \A That's what its [scope] says."
     ),
     "table-presentation": (
-      "fr": "Un tableau de mise en forme ne doit pas avoir de résumé.\A Il doit également rester compréhensible une fois linéarisé.",
-      "en": "A presentional table should not contain a summary nor a caption.\A And it should be understandable once linearized."
+      "fr": "Un tableau de mise en forme ne doit pas avoir de résumé. \A Il doit également rester compréhensible une fois linéarisé.",
+      "en": "A presentional table should not contain a summary nor a caption. \A And it should be understandable once linearized."
     )
   ),
 
@@ -133,20 +133,20 @@ $messages: (
       "en": "Missing [for] attribute. Still, this label must be here for some reason."
     ),
     "no-id": (
-      "fr": "Ce champ est indescriptible. Vous avez pourtant le choix :\A [title], [id], [aria-label], [aria-labelledby].",
-      "en": "This field is indescribable. However you got choices:\A [title], [id], [aria-label], [aria-labelledby]."
+      "fr": "Ce champ est indescriptible. Vous avez pourtant le choix : \A [title], [id], [aria-label], [aria-labelledby].",
+      "en": "This field is indescribable. However you got choices: \A [title], [id], [aria-label], [aria-labelledby]."
     ),
     "optgroup": (
-      "fr": "Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options.\A Dommage…",
-      "en": "You have gathered options, but no label attribute introduces this options group.\A Too bad…"
+      "fr": "Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. \A Dommage…",
+      "en": "You have gathered options, but no label attribute introduces this options group. \A Too bad…"
     ),
     "no-value": (
-      "fr": "Ça fait quoi, si je clique dessus ?\A Avec [value], [title] ou [aria-label], j’aurais su.",
-      "en": "What should happen when I click?\A Too bad. [value], [title] or [aria-label] could have told me."
+      "fr": "Ça fait quoi, si je clique dessus ? \A Avec [value], [title] ou [aria-label], j’aurais su.",
+      "en": "What should happen when I click? \A Too bad. [value], [title] or [aria-label] could have told me."
     ),
     "empty-button": (
-      "fr": "Ça fait quoi, si je clique dessus ?\A Il manque du contenu ou un intitulé via [aria-label] ou [aria-labelledby].",
-      "en": "What should happen when I click?\A It's missing a content or a title via [aria-label] or [aria-labelledby]."
+      "fr": "Ça fait quoi, si je clique dessus ? \A Il manque du contenu ou un intitulé via [aria-label] ou [aria-labelledby].",
+      "en": "What should happen when I click? \A It's missing a content or a title via [aria-label] or [aria-labelledby]."
     ),
     "form-button": (
       "fr": "C’est quoi ce bouton ? Un submit, un reset, autre chose ? L’attribut [type] me l’aurait dit, lui.",
@@ -157,48 +157,48 @@ $messages: (
       "en": "If it's disabled, please use a [disabled] or [readonly] attribute on this button."
     ),
     "no-type": (
-      "fr": "Attribut [type] manquant ou vide.\A On met quoi, dans ce champ ?",
-      "en": "Missing or empty [type] attribute.\A What is the field for then?"
+      "fr": "Attribut [type] manquant ou vide. \A On met quoi, dans ce champ ?",
+      "en": "Missing or empty [type] attribute. \A What is the field for then?"
     ),
     "no-title": (
-      "fr": "Attribut [title] manquant ou vide.\A Dieu seul sait ce que contient cette <iframe>.",
-      "en": "Missing or empty [title].\A Only God knows what is this <iframe>."
+      "fr": "Attribut [title] manquant ou vide. \A Dieu seul sait ce que contient cette <iframe>.",
+      "en": "Missing or empty [title]. \A Only God knows what is this <iframe>."
     ),
     "no-action": (
-      "fr": "Attribut [action] manquant.\A Et après, il se passe quoi ?",
-      "en": "Missing [action] attribute.\A What now?"
+      "fr": "Attribut [action] manquant. \A Et après, il se passe quoi ?",
+      "en": "Missing [action] attribute. \A What now?"
     ),
     "meta-refresh": (
-      "fr": "<meta http-equiv=\"refresh\"> devrait être supprimé.\A Définitivement.",
-      "en": "<meta http-equiv=\"refresh\"> should be removed.\A Forever."
+      "fr": "<meta http-equiv=\"refresh\"> devrait être supprimé. \A Définitivement.",
+      "en": "<meta http-equiv=\"refresh\"> should be removed. \A Forever."
     ),
     "no-page-title": (
       "fr": "La balise <title> est vide. C’est l’élément le plus important d’une page web, vous savez ?",
       "en": "The <title> tag is empty. Don't you know it's the most important tag in a web page?"
     ),
     "table-for-layout": (
-      "fr": "Cet élément / attribut a une valeur sémantique, il n’a rien à faire dans un tableau de mise en page.\A C’est un crime dans plusieurs pays, faites gaffe.",
-      "en": "This tag / attribute has a semantic value, it has nothing to do in a table used for layout.\A This is a crime in many countries, you should care."
+      "fr": "Cet élément / attribut a une valeur sémantique, il n’a rien à faire dans un tableau de mise en page. \A C’est un crime dans plusieurs pays, faites gaffe.",
+      "en": "This tag / attribute has a semantic value, it has nothing to do in a table used for layout. \A This is a crime in many countries, you should care."
     ),
     "style-attr": (
-      "fr": "Éléments supportant des styles en ligne.\A Les pauvres… Vous devriez avoir honte !",
-      "en": "Inline styles.\A You should be ashamed."
+      "fr": "Éléments supportant des styles en ligne. \A Les pauvres… Vous devriez avoir honte !",
+      "en": "Inline styles. \A You should be ashamed."
     ),
     "dimensions": (
       "fr": "Sapristi ! Les attributs [width] et [height] ne sont autorisés que sur les <img> !",
       "en": "By jove ! [width] & [height] attributes are forbidden on any tags but <img>!"
     ),
     "no-lang": (
-      "fr": "Pas d’attribut lang / xml:lang sur la balise <html>.\A Vous parlez quelle langue, vous ?",
-      "en": "No lang / xml:lang found on <html> tag.\A Which language is that?"
+      "fr": "Pas d’attribut lang / xml:lang sur la balise <html>. \A Vous parlez quelle langue, vous ?",
+      "en": "No lang / xml:lang found on <html> tag. \A Which language is that?"
     ),
     "js-events": (
       "fr": "Attribut d’événements javascript. Vous êtes sûr de ce que vous faites ?",
       "en": "JavaScript event attributes. You sure?"
     ),
     "no-aria-describedby":  (
-      "fr": "Si le champ est obligatoire, une indication doit exister :\A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !",
-      "en": "If field is mandatory, it should be explicity told so.\A Map an indication to the field with [aria-describedby] and its [id]."
+      "fr": "Si le champ est obligatoire, une indication doit exister : \A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !",
+      "en": "If field is mandatory, it should be explicity told so. \A Map an indication to the field with [aria-describedby] and its [id]."
     ),
     "namespace":  (
       "fr": "Les classes et identifiants doivent respecter une grammaire définie. Et ce truc-là, ça marche pas.",
@@ -208,8 +208,8 @@ $messages: (
 
   "warning": (
     "invalid-nesting": (
-      "fr": "Imbrication inadéquate d’éléments.\A Ça peut heurter la sensibilité des plus jeunes, vous savez ?",
-      "en": "Invalid nesting.\A Please be aware this may offend the viewer."
+      "fr": "Imbrication inadéquate d’éléments. \A Ça peut heurter la sensibilité des plus jeunes, vous savez ?",
+      "en": "Invalid nesting. \A Please be aware this may offend the viewer."
     ),
     "invalid-list-nesting": (
       "fr": "<li> doit être un enfant direct d’une liste <ul> ou <ol>.",
@@ -220,7 +220,7 @@ $messages: (
       "en": "Definition must follow definition title. Pretty easy, isn't it?"
     ),
     "invalid-def-nesting": (
-      "fr": "<dl> contient un ou plusieurs groupe(s) de <dt> et <dd>.\A Aucun autre usage des ces balises n’est permis.",
+      "fr": "<dl> contient un ou plusieurs groupe(s) de <dt> et <dd>. \A Aucun autre usage des ces balises n’est permis.",
       "en": "<dl> contains one or more groups of <dt> and <dd>. \A Any other use of those tags is forbidden."
     ),
     "invalid-figcaption-nesting": (
@@ -236,28 +236,28 @@ $messages: (
       "en": "Sectioning tags are not arbitrary wrappers. Use <div> here."
     ),
     "fieldset": (
-      "fr": "Imbrication inadéquate d’éléments.\A Un fieldset doit enfanter d’une légende d’abord, sinon rien.",
-      "en": "Invalid nesting.\A A fieldset should contain a <legend> before anything else."
+      "fr": "Imbrication inadéquate d’éléments. \A Un fieldset doit enfanter d’une légende d’abord, sinon rien.",
+      "en": "Invalid nesting. \A A fieldset should contain a <legend> before anything else."
     ),
     "abbr": (
-      "fr": "Attribut [title] vide ou manquant.\A Jetez un œil à la BP 160 d’OpQuast ;-) ",
-      "en": "Missing or empty [title].\A Have a look at at BP 16 from OpQuast!"
+      "fr": "Attribut [title] vide ou manquant. \A Jetez un œil à la BP 160 d’OpQuast ;-) ",
+      "en": "Missing or empty [title]. \A Have a look at at BP 16 from OpQuast!"
     ),
     "empty-alt": (
-      "fr": "Attribut [alt] vide.\A C’est toléré pour les images de décoration uniquement. Est-ce le cas ?",
-      "en": "Empty [alt] attribute.\A This is only okay for decorative images. Is it a decorative image?"
+      "fr": "Attribut [alt] vide. \A C’est toléré pour les images de décoration uniquement. Est-ce le cas ?",
+      "en": "Empty [alt] attribute. \A This is only okay for decorative images. Is it a decorative image?"
     ),
     "no-aria-label": (
-      "fr": "Ce svg n’a pas d’attribut [aria-label].\A Si ce n’est pas décoratif, un élément <desc> devrait être présent. Il y en a un ?",
-      "en": "No [aria-label] attribute for this SVG.\A If it's not decorative, it's only okay if a <desc> tag is included. Is this ok?"
+      "fr": "Ce svg n’a pas d’attribut [aria-label]. \A Si ce n’est pas décoratif, un élément <desc> devrait être présent. Il y en a un ?",
+      "en": "No [aria-label] attribute for this SVG. \A If it's not decorative, it's only okay if a <desc> tag is included. Is this ok?"
     ),
     "autoplay": (
       "fr": "Ce média temporel se déclenche automatiquement. Existe-t-il un moyen de l’arrêter ?",
       "en": "This time-based media plays automatically. Is there a way to sopt it?"
     ),
     "controls": (
-      "fr": "Ce média temporel ne dispose pas des contrôles par défaut.\A Avez-vous implémenté des contrôles satisfaisants ?",
-      "en": "This time-based media doesn't use native controls.\A Did you add satisfying controls on your own?"
+      "fr": "Ce média temporel ne dispose pas des contrôles par défaut. \A Avez-vous implémenté des contrôles satisfaisants ?",
+      "en": "This time-based media doesn't use native controls. \A Did you add satisfying controls on your own?"
     ),
     "empty-nodes": (
       "fr": "Élément vide. Diantre.",
@@ -268,12 +268,12 @@ $messages: (
       "en": "Empty [title] atribute. What does this abbreviation mean?"
     ),
     "table-layout": (
-      "fr": "Une seule ligne ? Allez… Avouez, c’est un tableau de mise en forme, ça, pas vrai ?\A Si c’est le cas, soyez honnête et indiquez-le avec le [role=\presentation\"].",
-      "en": "A single row ? Come on… This is a table used for layout, isn't it?\A If so, just be honest and announce it with [role=\"presentation\"]."
+      "fr": "Une seule ligne ? Allez… Avouez, c’est un tableau de mise en forme, ça, pas vrai ? \A Si c’est le cas, soyez honnête et indiquez-le avec le [role=\presentation\"].",
+      "en": "A single row ? Come on… This is a table used for layout, isn't it? \A If so, just be honest and announce it with [role=\"presentation\"]."
     ),
     "table-caption": (
-      "fr": "Un tableau de données doit avoir un titre, sous forme de <caption> — et ce doit être le premier enfant direct.\A Et c’est pas du bluff !",
-      "en": "A data table should have a <caption> - and it must be the first direct child.\A And that's not bluff!"
+      "fr": "Un tableau de données doit avoir un titre, sous forme de <caption> — et ce doit être le premier enfant direct. \A Et c’est pas du bluff !",
+      "en": "A data table should have a <caption> - and it must be the first direct child. \A And that's not bluff!"
     ),
     "colgroup": (
       "fr": "<colgroup> doit être après <caption>, mais avant <thead>, <tfoot> or <tbody>.",
@@ -284,12 +284,12 @@ $messages: (
       "en": "Here is the right order for those tags: <thead>, <tfoot> then <tbody>."
     ),
     "missing-thead": (
-      "fr": "Soit il manque un <thead> — voire même un <tfoot> — dans ce tableau de données,\A soit vous devriez ajouter un [role=\"presentation\"], s’il s’agit d’un tableau de mise en forme.",
-      "en": "Either you're missing a <thead> (even <tfoot>, maybe) in this data table,\A or you should add a [role=\"presentation\"], if this a layout table."
+      "fr": "Soit il manque un <thead> — voire même un <tfoot> — dans ce tableau de données, \A soit vous devriez ajouter un [role=\"presentation\"], s’il s’agit d’un tableau de mise en forme.",
+      "en": "Either you're missing a <thead> (even <tfoot>, maybe) in this data table, \A or you should add a [role=\"presentation\"], if this a layout table."
     ),
     "th-no-scope": (
-      "fr": "À quoi s’applique cette cellule d’en-tête ? La totalité de la ligne / colonne ?\A Si oui, pensez à [scope]. Sinon, il faut probablement un [id] et des [headers].",
-      "en": "Does this head cell apply to a full line/row, or not?\A If so, think of [scope]. If not, use an [id] with [headers]."
+      "fr": "À quoi s’applique cette cellule d’en-tête ? La totalité de la ligne / colonne ? \A Si oui, pensez à [scope]. Sinon, il faut probablement un [id] et des [headers].",
+      "en": "Does this head cell apply to a full line/row, or not? \A If so, think of [scope]. If not, use an [id] with [headers]."
     ),
     "not-col": (
       "fr": "Seul <col> est autorisé dans un <colgroup>. Ça paraît logique, n’est-ce pas ?",
