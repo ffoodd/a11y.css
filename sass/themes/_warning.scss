@@ -545,10 +545,10 @@ category: Warnings
       <td>I'm a table with tfoot done wrong.</td>
       <td>I'm a table with tfoot done wrong.</td>
     </tr>
-  <tbody>
+  </tbody>
   <tfoot>
-    <th>I'm a table with tfoot done wrong.</th>
-    <th>I'm a table with tfoot done wrong.</th>
+    <th id="th-1">I'm a table with tfoot done wrong.</th>
+    <th id="th-2">I'm a table with tfoot done wrong.</th>
   </tfoot>
 </table>
 ```
