@@ -152,8 +152,8 @@ Maybe other invalid nestings to test. Stay tuned.
 ```
 */
 select > :not(option):not(optgroup),
+:not(select):not(optgroup) > option,
 optgroup > :not(option),
-:not(select) > option,
 :not(select) > optgroup,
 :not(form) > fieldset,
 :not(fieldset) > legend,
