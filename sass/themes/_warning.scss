@@ -458,16 +458,16 @@ And it must be the `:first-child`, by the way.
 <table>
   <thead>
     <tr>
-      <th>I'm a table without a caption!</th>
-      <th>I'm a table without a caption!</th>
+      <th id="th-one">I'm a table without a caption!</th>
+      <th id="th-two">I'm a table without a caption!</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td colspan="2">I'm a table without a caption!</td>
+      <td colspan="2" headers="th-one th-two">I'm a table without a caption!</td>
     </tr>
     <tr>
-      <td colspan="2">I'm a table without a caption!</td>
+      <td colspan="2" headers="th-one th-two">I'm a table without a caption!</td>
     </tr>
   </tbody>
 </table>
