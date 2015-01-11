@@ -590,7 +590,7 @@ Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS eve
 * <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener>
 
 ```html_example
-<span onmouseover="alert('You clicked!');">Click click click</span>
+<span onclick="alert('You clicked!');">Click click click</span>
 ```
 */
 [onafterprint], [onbeforeprint], [onbeforeunload],
