@@ -126,7 +126,24 @@ You are now able to customize the file output by targeting a severity treshold. 
 
 We are assuming that looking for advices means that you care about obsoletes, warnings and errors.
 
-Credits to @HugoGiraudel in [#69](https://github.com/ffoodd/a11y.css/issues/69).
+Credits to [@HugoGiraudel](https://twitter.com/HugoGiraudel) in [#69](https://github.com/ffoodd/a11y.css/issues/69).
+
+## Disabling tests
+
+It is possible to disable some specific tests if you build your own `a11y.css` file. USe the following mixins:
+
+* `disable-errors($keys...)`
+* `disable-advices($keys...)`
+* `disable-warnings($keys...)`
+* `disable-obsoletes($keys...)`
+
+For instance, if you want to disable the error about messing with tabindex, you can do:
+
+```scss
+@include disable-errors("tab-order");
+```
+
+Credits to [@HugoGiraudel](https://twitter.com/HugoGiraudel) in [#69](https://github.com/ffoodd/a11y.css/issues/113).
 
 ## Building docs
 
