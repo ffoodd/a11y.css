@@ -185,7 +185,7 @@
 ///  @include disable-errors("tab-order")
 @mixin disable-errors($keys...) {
   @each $key in $keys {
-    $disabled-tests: map-merge($disabled-tests, append(map-get($disabled-tests, "error"), $key)) !global;
+    $disabled-tests: map-merge($disabled-tests, ("error": append(map-get($disabled-tests, "error"), $key))) !global;
   }
 }
 
@@ -198,7 +198,7 @@
 ///  @include disable-advices("fake-button")
 @mixin disable-advices($keys...) {
   @each $key in $keys {
-    $disabled-tests: map-merge($disabled-tests, append(map-get($disabled-tests, "advice"), $key)) !global;
+    $disabled-tests: map-merge($disabled-tests, ("advice": append(map-get($disabled-tests, "advice"), $key))) !global;
   }
 }
 
@@ -211,7 +211,7 @@
 ///  @include disable-warnings("figure-role")
 @mixin disable-warnings($keys...) {
   @each $key in $keys {
-    $disabled-tests: map-merge($disabled-tests, append(map-get($disabled-tests, "warning"), $key)) !global;
+    $disabled-tests: map-merge($disabled-tests, ("warning": append(map-get($disabled-tests, "warning"), $key))) !global;
   }
 }
 
@@ -224,6 +224,6 @@
 ///  @include disable-obsolete("any")
 @mixin disable-obsoletes($keys...) {
   @each $key in $keys {
-    $disabled-tests: map-merge($disabled-tests, append(map-get($disabled-tests, "obsolete"), $key)) !global;
+    $disabled-tests: map-merge($disabled-tests, ("obsolete": append(map-get($disabled-tests, "obsolete"), $key))) !global;
   }
 }
