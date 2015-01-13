@@ -137,10 +137,10 @@ It is possible to disable some specific tests if you build your own `a11y.css` f
 * `disable-warnings($keys...)`
 * `disable-obsoletes($keys...)`
 
-For instance, if you want to disable the error about messing with tabindex, you can do:
+For instance, if you want to disable the errors about messing with tabindex and missing href, you can do:
 
 ```scss
-@include disable-errors("tab-order");
+@include disable-errors("tab-order, no-href");
 ```
 
 Credits to [@HugoGiraudel](https://twitter.com/HugoGiraudel) in [#69](https://github.com/ffoodd/a11y.css/issues/113).
