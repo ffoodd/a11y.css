@@ -388,29 +388,6 @@ audio {
 
 /*doc
 ---
-title: "What kind of track?"
-name: track
-category: Advices
----
-
-A `<track>` needs a `[kind]` to indicate, well, its kind.
-
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-3>
-* <http://www.w3.org/TR/WCAG20/#media-equiv-captions>
-
-```html_example
-<audio src="/" controls>
-  <track><i> </i>
-</audio>
-```
-*/
-track:not([kind]) {
-  @include advice("track", $self-closing: true);
-}
-
-
-/*doc
----
 title: "[title] should be equal to alternative"
 name: title
 category: Advices
