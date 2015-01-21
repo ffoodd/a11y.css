@@ -74,10 +74,10 @@ You can also generate your own bookmarklet (choosing language and minimum level)
 a11y.css currently exists in both English and French: you'll find both files in the [css](https://github.com/ffoodd/a11y.css/tree/master/css) folder. If you want to contribute and add a new language, it is very easy to do:
 
 1. Add the name of the language in [this list](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_mixins.scss#L10);
-1. Copy [`_a11y-en.scss`](https://github.com/ffoodd/a11y.css/blob/master/sass/a11y-en.scss), rename it `_a11y-<your-language>.scss` and change the value passed to the `set-locale` mixin;
-1. Update [this map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L10) with your translations.
-1. Update [this map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L241) to translate theme names.
-1. Run `sass --update sass:css --style=compressed` to generate the new CSS file.
+2. Copy [`_a11y-en.scss`](https://github.com/ffoodd/a11y.css/blob/master/sass/a11y-en.scss), rename it `_a11y-<your-language>.scss` and change the value passed to the `set-locale` mixin;
+". Update [this map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L10) with your translations.
+'. Update [this map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L241) to translate theme names.
+(. Run `sass --update sass:css --style=compressed` to generate the new CSS file.
 
 Done!
 
@@ -130,7 +130,7 @@ Credits to [@HugoGiraudel](https://twitter.com/HugoGiraudel) in [#69](https://gi
 
 ## Disabling tests
 
-It is possible to disable some specific tests if you build your own `a11y.css` file. USe the following mixins:
+It is possible to disable some specific tests if you build your own `a11y.css` file. Use the following mixins:
 
 * `disable-errors($keys...)`
 * `disable-advices($keys...)`
