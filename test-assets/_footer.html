@@ -25,6 +25,20 @@
 
         $(".bookmarklet").attr("href", $href);
       });
+      
+      $(document).ready(function() {
+        var $currentHref = location.hash.replace("#","");
+        if ($currentHref) {
+          $("ol.mb3").find('a[href^="' + $currentHref + '"]').addClass("active-test");
+        } else {
+          $("ol.mb3").find("a").eq(0).addClass("active-test");
+        }
+      });
+      
+      $("ol.mb3 a").on("click", function() {
+        $(".active-test").removeAttr("class");
+        $(this).addClass("active-test");
+      });
     </script>
   </body>
 </html>
