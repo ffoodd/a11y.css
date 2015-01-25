@@ -127,6 +127,11 @@ a[target$="blank"]::after {
   content: "fr";
 }
 
+.bookmarklet.done {
+  background-color: #164d16;
+  background-image: linear-gradient( to bottom, #3ec83e 0%, #164d16 100% );
+}
+
 .s { color: #07a } /* Literal.String */
 .na { color: #690 } /* Name.Attribute */
 .nt { color: #905 } /* Name.Tag */
