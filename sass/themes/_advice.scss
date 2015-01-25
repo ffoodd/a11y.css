@@ -126,29 +126,6 @@ Otherwise you may annoy your users.
 
 /*doc
 ---
-title: "Any non-interactive tag with a button [class]"
-name: fake-button
-category: Advices
----
-
-A `[class]` containing any button-like thing on a non-interactive tag is probably a mistake.
-Don't you think?
-
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L169>
-
-```html_example
-<p class="button--primary">Click me!</p>
-```
-*/
-[class*="btn"]:not(a):not(button):not(input):not([tabindex]),
-[class*="bouton"]:not(a):not(button):not(input):not([tabindex]),
-[class*="button"]:not(a):not(button):not(input):not([tabindex]) {
-  @include advice("fake-button");
-}
-
-
-/*doc
----
 title: "button [role] on a link"
 name: role-button
 category: Advices
