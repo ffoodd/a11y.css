@@ -327,22 +327,13 @@ $max-z-index: 2147483647;
 /// @prop {Color} theme.color  - Theme color
 /// @prop {Number} theme.index - Theme z-index
 $themes: (
-  "advice": (
-    "icon": "\2665\00A0",
-    "color": OliveDrab,
-    "index": ($max-z-index - 3),
+  "error": (
+    "icon": "\2620\00A0",
+    "color": #911,
+    "index": ($max-z-index),
     "name": (
-      "fr": "Conseils",
-      "en": "Advices"
-    )
-  ),
-  "obsolete": (
-    "icon": "\271D\00A0",
-    "color": RoyalBlue,
-    "index": ($max-z-index - 2),
-    "name": (
-      "fr": "Obsolètes",
-      "en": "Obsoletes"
+      "fr": "Erreurs",
+      "en": "Errors"
     )
   ),
   "warning": (
@@ -354,13 +345,22 @@ $themes: (
       "en": "Warnings"
     )
   ),
-  "error": (
-    "icon": "\2620\00A0",
-    "color": #911,
-    "index": ($max-z-index),
+  "obsolete": (
+    "icon": "\271D\00A0",
+    "color": RoyalBlue,
+    "index": ($max-z-index - 2),
     "name": (
-      "fr": "Erreurs",
-      "en": "Errors"
+      "fr": "Obsolètes",
+      "en": "Obsoletes"
+    )
+  ),
+  "advice": (
+    "icon": "\2665\00A0",
+    "color": OliveDrab,
+    "index": ($max-z-index - 3),
+    "name": (
+      "fr": "Conseils",
+      "en": "Advices"
     )
   ),
 );
