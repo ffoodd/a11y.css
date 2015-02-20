@@ -17,6 +17,7 @@ De nombreuses références m’ont inspiré et aidé pour élaborer cette feuill
 * [https://github.com/karlgroves/diagnostic.css](https://github.com/karlgroves/diagnostic.css)
 * [http://www.w3.org/TR/html5/obsolete.html#obsolete](http://www.w3.org/TR/html5/obsolete.html#obsolete)
 * [https://github.com/nternetinspired/debug-css](https://github.com/nternetinspired/debug-css)
+* [https://yahoo.github.io/debugCSS/](https://yahoo.github.io/debugCSS/)
 * [http://meyerweb.com/eric/tools/css/diagnostics/](http://meyerweb.com/eric/tools/css/diagnostics/)
 * [http://accessites.org/site/2006/07/big-red-angry-text/](http://accessites.org/site/2006/07/big-red-angry-text/)
 * [http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html](http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html)
