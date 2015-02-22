@@ -60,7 +60,7 @@ category: Warnings
 ```
 */
 dt + :not(dd),
-:not(dt) + dd {
+:not(dt):not(dd) + dd {
   @include warning("invalid-def");
 }
 
