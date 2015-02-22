@@ -39,7 +39,7 @@ name: invalid-def
 category: Warnings
 ---
 
-`<dt>` and `<dd>` should be direct adjacent sibilings, and nothing else.
+`<dt>` and `<dd>` should be direct adjacent siblings, and nothing else. Although multiple `<dd>` may follow a single `<dt>`.
 
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
