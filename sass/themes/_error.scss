@@ -172,6 +172,7 @@ input[type="image"]:not([alt]) {
 }
 
 
+
 /*doc
 ---
 title: "Missing source for img"
@@ -185,8 +186,8 @@ An `<img>` must have an `[src]`. Obviously.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374>
 
 ```html_example
-<img alt="No source" /><i> </i>
-<input type="image" alt="No source" /><i> </i>
+<img alt="Missing src" width="144" height="144" /><i> </i>
+<input type="image" alt="Missing src" /><i> </i>
 ```
 */
 img:not([src]),
@@ -425,7 +426,7 @@ category: Errors
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454>
 
 ```html_example
-<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe><i> </i>
+<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe>
 ```
 */
 iframe:not([title]),
@@ -475,11 +476,7 @@ category: Errors
 * <http://www.w3.org/TR/WCAG-TECHS/H57.html>
 
 ```html_example
-<iframe title="No language defined a11y.css test-case"
-        src="static/no-lang.html"
-        width="650"
-        height="200"
-        class="b-reset">
+<iframe title="No language defined a11y.css test-case" src="static/no-lang.html" width="650" height="200" class="b-reset"></iframe>
 ```
 */
 html:not([lang]),
@@ -516,7 +513,7 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
   <thead>
     <tr>
       <th scope="col" id="col">Nope</th>
-      <th>Just sayin'</th>
+      <th scope="col">Just sayin'</th>
     </tr>
   </thead>
   <tfoot>
@@ -710,29 +707,7 @@ meta[http-equiv="refresh"] {
   }
 }
 
-
-/*doc
----
-title: "Empty title"
-name: no-page-title
-category: Errors
----
-
-Your styles should be driven by a CSS file. That's it.
-And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
-
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-5>
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-6>
-* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-title>
-* <http://www.w3.org/TR/WCAG-TECHS/G88.html>
-* <http://www.w3.org/TR/WCAG-TECHS/H25.html>
-* <http://www.w3.org/TR/WCAG-TECHS/F25.html>
-
-```html_example
-<title class="inbl w-20" id="empty-title_code"></title>
-```
-*/
-title:empty:not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
+title:empty {
   @include error("no-page-title");
 
   // Because it's in the <head>
