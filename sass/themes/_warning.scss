@@ -428,7 +428,7 @@ Any other empty tag is probably useless, and should be deleted.
 <p id="empty-node_code"></p>
 ```
 */
-*:empty:not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
+*:empty:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
   @include warning("empty-nodes");
 }
 
