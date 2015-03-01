@@ -177,6 +177,7 @@ They helped a lot:
 And they took time to open a few issues:
 * [@goetsu](https://twitter.com/goetsu)
 * [@olamedia](https://github.com/olamedia)
+* [@bartveneman](http://bveneman.nl/)
 
 Thank you all!
 

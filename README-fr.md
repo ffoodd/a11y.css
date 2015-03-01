@@ -174,6 +174,7 @@ Ils ont beaucoup aidé :
 Et ils ont pris le temps d’ouvrir des issues :
 * [@goetsu](https://twitter.com/goetsu)
 * [@olamedia](https://github.com/olamedia)
+* [@bartveneman](http://bveneman.nl/)
 
 Merci à tous !
 
