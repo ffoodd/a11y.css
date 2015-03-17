@@ -100,7 +100,7 @@ Et voilà !
  * `<source />`
  * `<track />`
  * `<wbr />`
- * `<textarea>`, `<select>`, `<svg>`, `<audio>`, `<video>`, `<track>` et `<iframe>` ne sont pas des balises auto-fermantes mais ne euvent malgré tout contenir de pseudo-éléments.
+ * `<textarea>`, `<select>`, `<svg>`, `<audio>`, `<video>`, `<track>` et `<iframe>` ne sont pas des balises auto-fermantes mais ne peuvent pas contenir de pseudo-éléments non plus, car ce sont des éléments remplacés. Je vous conseille la lecture de [Qu’est-ce qu’un élément remplacé ?](http://la-cascade.ghost.io/quest-ce-quun-element-remplace/), traduction en français sur La Cascade de [What The Heck Is A Replaced Element?](https://demosthenes.info/blog/461/What-The-Heck-Is-A-Replaced-Element#) écrit par @dudleystorey.
 
 *L’issue #7 ouverte par @7studio a permis d’ajouter une astuce qui permettra d’afficher ces messages, à condition que la balise auto-fermante signalée dispose d’un élément adjacent qui ne soit pas auto-fermant.*
 
