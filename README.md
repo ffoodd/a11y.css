@@ -103,7 +103,7 @@ Here are affected self-closing tags:
  * `<source />`
  * `<track />`
  * `<wbr />`
- * `<textarea>`, `<select>`, `<svg>`, `<audio>`, `<video>`, `<track>` and `<iframe>` aren't void tags but can't contain pseudo-elements.
+ * `<textarea>`, `<select>`, `<svg>`, `<audio>`, `<video>`, `<track>` and `<iframe>` aren't void tags but can't contain pseudo-elements as they are replaced elements. Take a look at [What The Heck Is A Replaced Element?](https://demosthenes.info/blog/461/What-The-Heck-Is-A-Replaced-Element#) by @dudleystorey.
 
  *Issue [#7](https://github.com/ffoodd/a11y.css/issues/7) opened by [@7studio](https://twitter.com/7studio) suggested a decent work-around to display messages for those tags, as long as they are followed by a non-self-closing element. Still better than nothing.*
 
