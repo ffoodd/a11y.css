@@ -35,6 +35,7 @@
   text-transform: none                                                  !important;
   white-space: pre;
 
+  will-change: opacity, transform                                       !important;
   -webkit-transform:  translateY( -100% ) translateZ( 0 )               !important;
   -ms-transform:      translateY( -100% ) translateZ( 0 )               !important;
   transform:          translateY( -100% ) translateZ( 0 )               !important;
