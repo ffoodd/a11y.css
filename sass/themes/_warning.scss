@@ -431,7 +431,7 @@ category: Warnings
 ---
 
 Obviously void elements are empty, as well as `<iframe>` and `<textarea>` could be `:empty`.
-Any other `:empty` or `:blank` tag that is not hidden is probably useless, and should be deleted.
+Any other `:empty` tag that is not hidden is probably useless, and should be deleted.
 
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
 * <http://www.w3.org/TR/html-markup/syntax.html#void-element>
@@ -442,8 +442,6 @@ Any other `:empty` or `:blank` tag that is not hidden is probably useless, and s
 <p id="empty-node_code"></p>
 ```
 */
-*:blank:not([hidden]):not([aria-hidden]),
-*:-moz-whitespace-only:not([hidden]):not([aria-hidden]),
 *:empty:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
   @include warning("empty-nodes");
 }
