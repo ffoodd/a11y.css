@@ -248,8 +248,8 @@ $messages: (
       "en": "Empty [alt] attribute. \A This is only okay for decorative images. Is it a decorative image?"
     ),
     "no-aria-label": (
-      "fr": "Ce svg n’a pas d’attribut [aria-label]. \A Si ce n’est pas décoratif, un élément <desc> devrait être présent. Il y en a un ?",
-      "en": "No [aria-label] attribute for this SVG. \A If it's not decorative, it's only okay if a <desc> tag is included. Is this ok?"
+      "fr": "Ce svg n’a pas d’attribut [role], [aria-label] ou [aria-labelledby]. \A Si ce n’est pas décoratif, un élément <desc> devrait être présent. Il y en a un ?",
+      "en": "No [role]/[aria-label]/[aria-labelledby] attribute for this SVG. \A If it's not decorative, it's only okay if a <desc> tag is included. Is this ok?"
     ),
     "autoplay": (
       "fr": "Ce média temporel se déclenche automatiquement. Existe-t-il un moyen de l’arrêter ?",

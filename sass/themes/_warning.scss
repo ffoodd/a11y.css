@@ -338,14 +338,24 @@ object[type="image"]:not([role="presentation"])[alt=""] {
 
 /*doc
 ---
-title: "[aria-label] or desc is needed for svg"
+title: "A label is needed for svg"
 name: no-aria-label
 category: Warnings
 ---
 
-Any informative `<svg>` should either have a `[aria-label]` or a `<desc>`.
+Any informative `<svg>` should either have a `[aria-label]`, `[aria-labelledby]` or a `<desc>` AND have a `[role="img"]`.
+
+Otherwise it should have a `[role="presentation"]`, and should not have any of those:
+* `[title]`;
+* `[aria-label]`;
+* `[aria-labelledby]`;
+* `[aria-describedby]`;
+* a `<title>` child;
+* or a `<desc>`.
 
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#test-1-1-4>
+* <http://references.modernisation.gouv.fr/sites/default/files/RGAA3/note_technique.htm#nT1-1>
+* <http://references.modernisation.gouv.fr/sites/default/files/RGAA3/note_technique.htm#nT1-6>
 * <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG-TECHS/F65.html>
 
@@ -357,7 +367,7 @@ Any informative `<svg>` should either have a `[aria-label]` or a `<desc>`.
 </svg><i> </i>
 ```
 */
-svg:not([role="presentation"]):not([aria-label]) {
+svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) {
   @include warning("no-aria-label", $self-closing: true);
 }
 
