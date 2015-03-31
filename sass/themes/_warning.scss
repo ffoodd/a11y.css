@@ -178,7 +178,7 @@ select > :not(option):not(optgroup),
 :not(select):not(optgroup) > option,
 optgroup > :not(option),
 :not(select) > optgroup,
-:not(form) > fieldset,
+:not(form) fieldset,
 :not(fieldset) > legend,
 tr > :not(td):not(th),
 table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption) {
