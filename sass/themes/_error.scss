@@ -313,25 +313,57 @@ button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
 /*doc
 ---
 title: "Form button"
-name: form-button
+name: not-form-button
 category: Errors
 ---
 
-A `<button>` in a `<form>` is probably intended to do something.
-Either use `[reset]`, `[submit]` or `[button]` type.
+A `<button>`has a defaut `[type]` value of `"submit"`, in order to send a `<form>`.
 
+However outside a form, if it's intended to send a form it should mention it with one of those attributes: `[form]`, `[formaction]`, `[formtarget]`.
+
+If it doesn't submit anything, it should have the `[type="button"]`.
+
+* <www.w3.org/TR/html5/forms.html#the-button-element>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189>
 
 ```html_example
-<form action="/">
-  <button>I just don't know what todo with myself</button>
-</form>
+<button>I just don't know what todo with myself</button>
 ```
 */
-form button:not([type]) {
-  @include error("form-button");
+:not(form) button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+  @include error("not-form-button");
 }
 
+/*doc
+---
+title: "Button not submitting"
+name: not-submit-button
+category: Errors
+---
+
+If a `<button>`'s`[type]` is either `"reset"` or `"button"`, it should not use the following attributes:
+* `[formmethod]`;
+* `[formaction]`;
+* `[formtarget]`;
+* `[formenctype]`;
+* `[formnovalidate]`.
+
+* <www.w3.org/TR/html5/forms.html#the-button-element>
+
+```html_example
+<button type="button" formmethod="GET">I do have a method, but I'm not a submit button!</button>
+```
+*/
+button[type="reset"],
+button[type="button"] {
+  &[formmethod],
+  &[formaction],
+  &[formtarget],
+  &[formenctype],
+  &[formnovalidate] {
+    @include error("not-submit-button");
+  }
+}
 
 /*doc
 ---

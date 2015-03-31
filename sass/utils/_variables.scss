@@ -140,9 +140,13 @@ $messages: (
       "fr": "Ça fait quoi, si je clique dessus ? \A Il manque du contenu ou un intitulé via [aria-label] ou [aria-labelledby].",
       "en": "What should happen when I click? \A It's missing a content or a title via [aria-label] or [aria-labelledby]."
     ),
-    "form-button": (
-      "fr": "C’est quoi ce bouton ? Un submit, un reset, autre chose ? L’attribut [type] me l’aurait dit, lui.",
-      "en": "Is this a submit button, a reset button or just a button? The [type] attribute would have told me."
+    "not-form-button": (
+      "fr": "Par défaut, un bouton est un [type=submit], mais celui-ci n’est pas dans un formulaire… Qu’est-il censé faire ?",
+      "en": "A button is [type=submit] if it misses a type. But this one isn't in a form, so what is it supposed to do?"
+    ),
+    "not-submit-button": (
+      "fr": "Un bouton de type [reset] ou [button] ne devrait pas porter des attributs de soumission de formulaire.",
+      "en": "A button is wth a type of [reset] or [button] shouldn't have any form submission attributes."
     ),
     "disabled-button": (
       "fr": "Si ce bouton est désactivé, ajoutez-lui l’attribut [disabled] ou [readonly], s’il-vous-plaît.",
