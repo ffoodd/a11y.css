@@ -430,11 +430,11 @@ That should be double-checked.
 
 ##Selector
 ```
-img:not([role="presentation"])[alt=""],
-area:not([role="presentation"])[alt=""],
-input[type="image"]:not([role="presentation"])[alt=""],
-embed[type="image"]:not([role="presentation"])[alt=""],
-object[type="image"]:not([role="presentation"])[alt=""]
+img[alt=""],
+area[alt=""],
+input[type="image"][alt=""],
+embed[type="image"][alt=""],
+object[type="image"][alt=""]
 ```
 
 ##Test
@@ -442,14 +442,14 @@ object[type="image"]:not([role="presentation"])[alt=""]
 <img alt="" src="static/ffoodd.png" width="144" height="144" /><i> </i>
 ```
 */
-img:not([role="presentation"])[alt=""],
-area:not([role="presentation"])[alt=""],
-input[type="image"]:not([role="presentation"])[alt=""] {
+img[alt=""],
+area[alt=""],
+input[type="image"][alt=""] {
   @include warning("empty-alt", $self-closing: true);
 }
 
-embed[type="image"]:not([role="presentation"])[alt=""],
-object[type="image"]:not([role="presentation"])[alt=""] {
+embed[type="image"][alt=""],
+object[type="image"][alt=""] {
   @include warning("empty-alt");
 }
 
