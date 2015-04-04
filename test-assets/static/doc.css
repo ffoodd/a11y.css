@@ -6,10 +6,15 @@ pre {
   font-size: small;
   -moz-hyphens: none;
   -moz-tab-size: 2;
+  overflow-x: auto;
   text-align: left;
   text-shadow: 0px 1px #fff;
   white-space: pre;
   word-spacing: normal;
+}
+
+p code {
+  white-space: nowrap;
 }
 
 nav a,
