@@ -7,10 +7,18 @@ name: tab-order
 category: Errors
 ---
 
+##Description
 The `[tabindex]` attribute should never be greater than 0.
 
+#Reference
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
 
+##Selector
+```
+[tabindex]:not([tabindex="0"]):not([tabindex="-1"])
+```
+
+##Test
 ```html_example
 <button tabindex="1">Positive tabindex is bad</button>
 ```
@@ -27,12 +35,21 @@ name: no-href
 category: Errors
 ---
 
+##Description
 The `[href]` attribute should never be empty. A link *to* something, right?
 
+##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386>
 
+##Selector
+```
+a:not([href]),
+a[href=""]
+```
+
+##Test
 ```html_example
 <a>Who am I? Where do I link?</a>
 ```
@@ -50,12 +67,20 @@ name: href-js
 category: Errors
 ---
 
+##Description
 The `[href]` attribute should not start with "javascript".
 Should probably be a `<button>`, don't you think?
 
+##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L392>
 
+##Selector
+```
+a[href^="javascript"]
+```
+
+##Test
 ```html_example
 <a href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">Please use my bookmarklet ;)</a>
 ```
@@ -72,12 +97,20 @@ name: empty-href
 category: Errors
 ---
 
+##Description
 The `[href]` attribute is only containing `#`.
 Should probably be a `<button>` again, don't you think?
 
+##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386>
 
+##Selector
+```
+a[href="#"]
+```
+
+##Test
 ```html_example
 <a href="#">Oh boy, I don't mean anything</a>
 ```
@@ -94,9 +127,11 @@ name: empty-link
 category: Errors
 ---
 
+##Description
 An empty link should have a label, within `[aria-label]` or targeted by `[aria-labelledby]`.
 By the way, why would you use an empty link?
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5>
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
@@ -105,6 +140,12 @@ By the way, why would you use an empty link?
 * <http://www.w3.org/TR/WCAG-TECHS/G91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
+##Selector
+```
+a:empty:not([aria-label]):not([aria-labelledby])
+```
+
+##Test
 ```html_example
 <a href="/" class="inbl w-20" id="empty-link_code"></a>
 ```
@@ -121,8 +162,10 @@ name: empty-image-link
 category: Errors
 ---
 
+##Description
 When an `<img>` is a link only child, it must have an `[alt]`.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5>
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
@@ -131,6 +174,12 @@ When an `<img>` is a link only child, it must have an `[alt]`.
 * <http://www.w3.org/TR/WCAG-TECHS/H30.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
+##Selector
+```
+a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt])
+```
+
+##Test
 ```html_example
 <a href="/">
   <img src="static/ffoodd.png" width="144" height="144" />
@@ -150,8 +199,10 @@ name: no-alt
 category: Errors
 ---
 
+##Description
 An `<img>` must have an `[alt]`. Always.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1>
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG-TECHS/H36.html>
@@ -160,6 +211,14 @@ An `<img>` must have an `[alt]`. Always.
 * <http://www.w3.org/TR/WCAG-TECHS/F65.html>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369>
 
+##Selector
+```
+img:not([alt]),
+area:not([alt]),
+input[type="image"]:not([alt])
+```
+
+##Test
 ```html_example
 <img src="static/ffoodd.png" width="144" height="144" /><i> </i>
 <input type="image" src="static/ffoodd.png" /><i> </i>
@@ -172,7 +231,6 @@ input[type="image"]:not([alt]) {
 }
 
 
-
 /*doc
 ---
 title: "Missing source for img"
@@ -180,11 +238,24 @@ name: no-src
 category: Errors
 ---
 
+##Description
 An `<img>` must have an `[src]`. Obviously.
 
+##References
 * <http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374>
 
+##Selector
+```
+img:not([src]),
+img[src=""],
+img[src="#"],
+input[type="image"]:not([src]),
+input[type="image"][src=""],
+input[type="image"][src="#"]
+```
+
+##Test
 ```html_example
 <img alt="Missing src" width="144" height="144" /><i> </i>
 <input type="image" alt="Missing src" /><i> </i>
@@ -207,14 +278,23 @@ name: no-for
 category: Errors
 ---
 
+##Description
 A `<label>` is labelling something, in theory.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG-TECHS/H44.html>
 
+##Selector
+```
+label:not([for]),
+label[for=""]
+```
+
+##Test
 ```html_example
 <label>Guess what?</label>
 ```
@@ -232,14 +312,24 @@ name: no-id
 category: Errors
 ---
 
+##Description
 How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG-TECHS/H44.html>
 
+##Selector
+```
+input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
+textarea:not([id]):not([aria-label]):not([aria-labelledby]),
+select:not([id]):not([aria-label]):not([aria-labelledby])
+```
+
+##Test
 ```html_example
 <input type="text" /><i> </i>
 ```
@@ -258,13 +348,23 @@ name: no-value
 category: Errors
 ---
 
+##Description
 How to label a `[reset]`, `[submit]` or `[button]` type input?
 You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 
+##Selector
+```
+input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
+input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
+input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])
+```
+
+##Test
 ```html_example
 <input type="reset" /><i> </i>
 <input type="submit" /><i> </i>
@@ -285,13 +385,22 @@ name: empty-button
 category: Errors
 ---
 
+##Description
 A `<button>` should either have content or an `[aria-label]` or `[aria-labelledby]`.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
+##Selector
+```
+button:empty:not([aria-label]):not([aria-labelledby]),
+button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt])
+```
+
+##Test
 ```html_example
 <button></button>
 <button>
@@ -317,15 +426,23 @@ name: not-form-button
 category: Errors
 ---
 
+##Description
 A `<button>` has a defaut `[type]` value of `"submit"`, in order to send a `<form>`.
 
 However outside a form, if it's intended to send a form it should mention it with one of those attributes: `[form]`, `[formaction]`, `[formtarget]`.
 
 If it doesn't submit anything, it should have the `[type="button"]`.
 
+##References
 * <http://www.w3.org/TR/html5/forms.html#the-button-element>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189>
 
+##Selector
+```
+:not(form) button:not([type]):not([form]):not([formaction]):not([formtarget])
+```
+
+##Test
 ```html_example
 <button>I just don't know what todo with myself</button>
 ```
@@ -341,6 +458,7 @@ name: not-submit-button
 category: Errors
 ---
 
+##Description
 If a `<button>`'s`[type]` is either `"reset"` or `"button"`, it should not use the following attributes:
 * `[formmethod]`;
 * `[formaction]`;
@@ -348,8 +466,24 @@ If a `<button>`'s`[type]` is either `"reset"` or `"button"`, it should not use t
 * `[formenctype]`;
 * `[formnovalidate]`.
 
+##References
 * <http://www.w3.org/TR/html5/forms.html#the-button-element>
 
+##Selector
+```
+button[type="reset"][formmethod],
+button[type="reset"][formaction],
+button[type="reset"][formtarget],
+button[type="reset"][formenctype],
+button[type="reset"][formnovalidate],
+button[type="button"][formmethod],
+button[type="button"][formaction],
+button[type="button"][formtarget],
+button[type="button"][formenctype],
+button[type="button"][formnovalidate]
+```
+
+##Test
 ```html_example
 <button type="button" formmethod="GET">I do have a method, but I'm not a submit button!</button>
 ```
@@ -372,11 +506,19 @@ name: disabled-button
 category: Errors
 ---
 
+##Description
 A `<button>` styled to be disabled should be disabled *for real*.
 Use `[disabled]` and `[readonly]`.
 
+##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122>
 
+##Selector
+```
+button[class*="disabled"]:not([disabled]):not([readonly])
+```
+
+##Test
 ```html_example
 <button class="is-disabled">To be or not to be (disabled)?</button>
 ```
@@ -393,11 +535,20 @@ name: no-type
 category: Errors
 ---
 
+##Description
 `<input>` needs a `[type]` in order to tell the user what kind of data is wanted.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-11>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
 
+##Selector
+```
+input:not([type]),
+input[type=""]
+```
+
+##Test
 ```html_example
 <label for="No-type">No type</label>
 <input value="Whatever you want" id="No-type"/><i> </i>
@@ -416,12 +567,20 @@ name: optgroup
 category: Errors
 ---
 
+##Description
 `<optgroup>` needs a `[label]` to explain what's inside the group.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-8>
 * <http://www.w3.org/TR/WCAG-TECHS/H85.html>
 * <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
+##Selector
+```
+optgroup:not([label])
+```
+
+##Test
 ```html_example
 <form action="/">
     <label for="optgroup">Oh, hey</label>
@@ -450,13 +609,22 @@ name: no-title
 category: Errors
 ---
 
+##Description
 `<iframe>` needs a `[title]` in order to tell the user what to expect inside the iframe.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-2-1>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H64.html>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454>
 
+##Selector
+```
+iframe:not([title]),
+iframe[title=""]
+```
+
+##Test
 ```html_example
 <iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe>
 ```
@@ -474,10 +642,18 @@ name: no-action
 category: Errors
 ---
 
+##Description
 `<form>` should do something, isnt'it? Well, `[action]` is meant to define what.
 
+##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214>
 
+##Selector
+```
+form:not([action])
+```
+
+##Test
 ```html_example
 <form>
   <label for="input">Guess what do we do with your datas?</label>
@@ -499,14 +675,23 @@ name: no-lang
 category: Errors
 ---
 
+##Description
 `<html>` must indicate to User Agents the human language used in the document.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-3>
 * <http://www.accessiweb.org/index.php/glossaire-du-referentiel-accessiweb-html5aria.html#mLangueDefaut>
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-4>
 * <http://www.w3.org/TR/WCAG20/#meaning-doc-lang-id>
 * <http://www.w3.org/TR/WCAG-TECHS/H57.html>
 
+##Selector
+```
+html:not([lang]),
+html[lang=""]
+```
+
+##Test
 ```html_example
 <iframe title="No language defined a11y.css test-case" src="static/no-lang.html" width="650" height="200" class="b-reset"></iframe>
 ```
@@ -524,6 +709,7 @@ name: table-for-layout
 category: Errors
 ---
 
+##Description
 `<table>` may be used for layout if a [role="presentation"] is added.
 However, semantics tags and attributes aiming to organize datas mustn't be used. Here's a list:
 * `<th>`;
@@ -535,10 +721,24 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 * `[headers]`;
 * `[colgroup]`.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-8>
 * <http://www.w3.org/TR/WCAG-TECHS/F46.html>
 * <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
 
+##Selector
+```
+table[role="presentation"] th,
+table[role="presentation"] thead,
+table[role="presentation"] tfoot,
+table[role="presentation"] caption,
+table[role="presentation"] [axis],
+table[role="presentation"] [scope],
+table[role="presentation"] [headers],
+table[role="presentation"] [colgroup]
+```
+
+##Test
 ```html_example
 <table role="presentation">
   <caption>I do not mean anything!</caption>
@@ -580,14 +780,23 @@ name: dimensions
 category: Errors
 ---
 
+##Description
 `[width]` and `[height]` are presentation informations.
 Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-10-1>
 * <http://www.accessiweb.org/index.php/glossaire-du-referentiel-accessiweb-html5aria.html#mPresInfo>
 * <http://www.w3.org/TR/WCAG20/#content-structure-sepffoodd.pngaration-programmatic>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
+##Selector
+```
+:not(img):not(iframe)[width],
+:not(img):not(iframe)[height]
+```
+
+##Test
 ```html_example
 <p width="20">Damned! I feel sooo strait :(</p>
 ```
@@ -605,12 +814,40 @@ name: js-events
 category: Errors
 ---
 
+##Description
 Javascript event attributes (such as `[onmouseover]`) should not be used.
 Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS event listeners.
 
+##References
 * <https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes>
 * <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener>
 
+##Selector
+```
+[onafterprint], [onbeforeprint], [onbeforeunload],
+[onerror], [onhaschange], [onload], [onmessage],
+[onoffline], [ononline], [onpagehide], [onpageshow],
+[onpopstate], [onredo], [onresize], [onstorage],
+[onundo], [onunload],
+[onblur], [onchage], [oncontextmenu], [onfocus],
+[onformchange], [onforminput], [oninput], [oninvalid],
+[onreset], [onselect], [onsubmit],
+[onkeydown], [onkeypress], [onkeyup],
+[onclick], [ondblclick], [ondrag], [ondragend],
+[ondragenter], [ondragleave], [ondragover],
+[ondragstart], [ondrop], [onmousedown], [onmousemove],
+[onmouseout], [onmouseover], [onmouseup], [onmousewheel],
+[onscroll],
+[onabort], [oncanplay], [oncanplaythrough],
+[ondurationchange], [onemptied], [onended], [onerror],
+[onloadeddata], [onloadedmetadata], [onloadstart],
+[onpause], [onplay], [onplaying], [onprogress],
+[onratechange], [onreadystatechange], [onseeked],
+[onseeking], [onstalled], [onsuspend], [ontimeupdate],
+[onvolumechange], [onwaiting]
+```
+
+##Test
 ```html_example
 <span onclick="alert('You clicked!');">Click click click</span>
 ```
@@ -647,15 +884,64 @@ name: namespace
 category: Errors
 ---
 
+##Description
 Did you know that some characters should be avoided as first characters in class names and identifiers?
 Yep. Digits, two hyphens, or hyphen followed by a digit.
 
+##References
 * <http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar>
 * <http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/>
 * <http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L466>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L480>
 
+##Selector
+```
+[id^="1"],
+[id^="2"],
+[id^="3"],
+[id^="4"],
+[id^="5"],
+[id^="6"],
+[id^="7"],
+[id^="8"],
+[id^="9"],
+[id^="0"],
+[id^="--"],
+[id^="-1"],
+[id^="-2"],
+[id^="-3"],
+[id^="-4"],
+[id^="-5"],
+[id^="-6"],
+[id^="-7"],
+[id^="-8"],
+[id^="-9"],
+[id^="-0"],
+[class^="1"],
+[class^="2"],
+[class^="3"],
+[class^="4"],
+[class^="5"],
+[class^="6"],
+[class^="7"],
+[class^="8"],
+[class^="9"],
+[class^="0"],
+[class^="--"],
+[class^="-1"],
+[class^="-2"],
+[class^="-3"],
+[class^="-4"],
+[class^="-5"],
+[class^="-6"],
+[class^="-7"],
+[class^="-8"],
+[class^="-9"],
+[class^="-0"]
+```
+
+##Test
 ```html_example
 <div id="2">Hello! My ID is 2.</div>
 ```
@@ -713,13 +999,21 @@ name: style-attr
 category: Errors
 ---
 
+##Description
 Your styles should be driven by a CSS file. That's it.
 And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-10-1>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
+##Selector
+```
+[style]
+```
+
+##Test
 ```html_example
 <div style="color: red;">I'm red. I really feel dirty.</div>
 ```

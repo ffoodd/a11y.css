@@ -93,11 +93,37 @@ header h1::before {
   width: 32%;
 }
 
+main {
+  counter-reset: titles;
+}
+
 /* .h3-like from sseeeedd.css */
 main h1 {
+  counter-increment: titles;
   font-size: 2.625em;
   line-height: 1.14286;
-  margin: 1.14286em 0px 0.57143em;
+  margin: 1.14286em 0 .57143em -1.15em;
+}
+
+main h1::before {
+  content: counter(titles);
+  background: #f2f2e2;
+  border: 1px dotted #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: .75em;
+  height: 1.5em;
+  line-height: 1.4;
+  margin-right: .25em;
+  text-align: center;
+  vertical-align: middle;
+  width: 1.5em;
+}
+
+/* .h5-like from sseeeedd.css */
+main h2 {
+  font-size: 1.5em;
+  margin: 1em 0;
 }
 
 form label {
@@ -106,6 +132,11 @@ form label {
 
 aside small {
   line-height: 1.25;
+}
+
+main > div {
+  border-left: 1px dotted #ccc;
+  padding-left: 1.5rem;
 }
 
 a[target$="blank"]::after {

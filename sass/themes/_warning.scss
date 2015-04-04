@@ -8,8 +8,10 @@ name: invalid-list-nesting
 category: Warnings
 ---
 
+##Description
 The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also true.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
@@ -17,6 +19,14 @@ The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L433>
 * <http://www.w3.org/TR/html5/grouping-content.html#the-li-element>
 
+##Selector
+```
+ul > :not(li),
+ol > :not(li),
+:not(ul):not(ol) > li
+```
+
+##Test
 ```html_example
 <ul>
   <p>I feel like I'm lost.</p>
@@ -39,14 +49,23 @@ name: invalid-def
 category: Warnings
 ---
 
+##Description
 `<dt>` and `<dd>` should be direct adjacent siblings, and nothing else. Although multiple `<dd>` may follow a single `<dt>`.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
 * <http://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
+##Selector
+```
+dt + :not(dd),
+:not(dt):not(dd) + dd
+```
+
+##Test
 ```html_example
 <dl>
   <li>I'm a list item.</li>
@@ -72,9 +91,11 @@ name: invalid-def-nesting
 category: Warnings
 ---
 
+##Description
 `<dt>` and `<dd>` should be direct children of `<dl>`.
 Any other imbrication may be a crime somewhere.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
@@ -82,6 +103,14 @@ Any other imbrication may be a crime somewhere.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L439>
 * <http://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
+##Selector
+```
+:not(dl) > dt,
+:not(dl) > dd,
+dl > :not(dt):not(dd)
+```
+
+##Test
 ```html_example
 <dl>
   <li>I'm a list item.</li>
@@ -111,13 +140,21 @@ name: invalid-figcaption-nesting
 category: Warnings
 ---
 
+##Description
 `<figcaption>` doesn't make sense outside a `<figure>`.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element>
 
+##Selector
+```
+:not(figure) > figcaption
+```
+
+##Test
 ```html_example
 <figcaption>I'm captionning something, isn't it?</figcaption>
 ```
@@ -134,11 +171,19 @@ name: figure-role
 category: Warnings
 ---
 
+##Description
 `<figure>` needs `[role="group"]` for accessibility reason.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#test-1-10-1>
 * <http://www.w3.org/TR/html-alt-techniques/#m6>
 
+##Selector
+```
+figure:not([role="group"])
+```
+
+##Test
 ```html_example
 <figure>
   <img src="static/ffoodd.png" width="144" height="144" alt="Figcaption test"/>
@@ -157,6 +202,7 @@ name: invalid-nesting
 category: Warnings
 ---
 
+##Description
 Some nestings are forbidden, and do not have their own test case for now:
 * `<option>` and `<optgroup>` outside a `<select>`;
 * `<legend>` outside a `<fieldset>`;
@@ -165,9 +211,21 @@ Some nestings are forbidden, and do not have their own test case for now:
 
 Maybe other invalid nestings to test. Stay tuned.
 
-
+##References
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L277>
 
+##Selector
+```
+select > :not(option):not(optgroup),
+:not(select):not(optgroup) > option,
+optgroup > :not(option),
+:not(select) > optgroup,
+:not(fieldset) > legend,
+tr > :not(td):not(th),
+table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption)
+```
+
+##Test
 ```html_example
 <option>I'm an option. Am I?</option>
 <legend>I'm an legend. Am I?</legend>
@@ -191,11 +249,29 @@ name: misplaced-div
 category: Warnings
 ---
 
+##Description
 Did you know that you shouldn't add a `<div>` inside any inline element?
 You could use a `<span>` instead.
 
+##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326>
 
+##Selector
+```
+b div,
+i div,
+q div,
+em div,
+abbr div,
+cite div,
+code div,
+span div,
+small div,
+label div,
+strong div
+```
+
+##Test
 ```html_example
 <b><div>Hey ya!</div></b>
 ```
@@ -222,12 +298,26 @@ name: sectioning-tags
 category: Warnings
 ---
 
+##Description
 `<section>`, `<aside>`, `<article>` are sectioning tags.
 They must not be used as wrappers!
 
+##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252>
 * <http://www.w3.org/TR/html5/dom.html#sectioning-content>
 
+##Selector
+```
+aside > aside:first-child,
+article > aside:first-child,
+aside > article:first-child,
+aside > section:first-child,
+section > section:first-child,
+article > section:first-child,
+article > article:first-child
+```
+
+##Test
 ```html_example
 <aside>
   <section>I'm wrapping, you know.</section>
@@ -252,15 +342,24 @@ name: fieldset
 category: Warnings
 ---
 
+##Description
 `<legend>` must be a `<fieldset>`'s`:first-child`.
 Always.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-6>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L449>
 
+##Selector
+```
+fieldset > *:not(legend):first-child,
+fieldset > legend:not(:first-child)
+```
+
+##Test
 ```html_example
 <fieldset>
   <label>I'm not a legend.</label>
@@ -281,8 +380,10 @@ name: empty-title
 category: Warnings
 ---
 
+##Description
 Any abbreviation should give an explanation about its meaning, at least on its first occurrence.
 
+##References
 * BP160 OpQuast
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-9-4>
 * <http://www.w3.org/TR/WCAG20/#meaning-located>
@@ -291,6 +392,13 @@ Any abbreviation should give an explanation about its meaning, at least on its f
 * <http://www.w3.org/TR/WCAG-TECHS/G102.html>
 * <http://www.w3.org/TR/WCAG-TECHS/H28.html>
 
+##Selector
+```
+abbr:not([title]),
+abbr[title=""]
+```
+
+##Test
 ```html_example
 <p>Do you know about <abbr>W3C</abbr>?</p>
 ```
@@ -308,9 +416,11 @@ name: empty-alt
 category: Warnings
 ---
 
+##Description
 An alternative has to be empty when image is decorative only. In any other case, `[alt]` must be defined.
 That should be double-checked.
 
+##References
 * BP160 OpQuast
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-2>
 * <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
@@ -318,6 +428,16 @@ That should be double-checked.
 * <http://www.w3.org/TR/WCAG-TECHS/F39.html>
 * <http://www.w3.org/TR/WCAG-TECHS/F38.html>
 
+##Selector
+```
+img:not([role="presentation"])[alt=""],
+area:not([role="presentation"])[alt=""],
+input[type="image"]:not([role="presentation"])[alt=""],
+embed[type="image"]:not([role="presentation"])[alt=""],
+object[type="image"]:not([role="presentation"])[alt=""]
+```
+
+##Test
 ```html_example
 <img alt="" src="static/ffoodd.png" width="144" height="144" /><i> </i>
 ```
@@ -341,6 +461,7 @@ name: no-aria-label
 category: Warnings
 ---
 
+##Description
 Any informative `<svg>` should either have a `[aria-label]`, `[aria-labelledby]` or a `<desc>` AND have a `[role="img"]`.
 
 Otherwise it should have a `[role="presentation"]`, and should not have any of those:
@@ -351,12 +472,19 @@ Otherwise it should have a `[role="presentation"]`, and should not have any of t
 * a `<title>` child;
 * or a `<desc>`.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#test-1-1-4>
 * <http://references.modernisation.gouv.fr/sites/default/files/RGAA3/note_technique.htm#nT1-1>
 * <http://references.modernisation.gouv.fr/sites/default/files/RGAA3/note_technique.htm#nT1-6>
 * <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG-TECHS/F65.html>
 
+##Selector
+```
+svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby])
+```
+
+##Test
 ```html_example
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -377,13 +505,22 @@ name: autoplay
 category: Warnings
 ---
 
+##Description
 A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because it can be quite surprising for the user.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-18>
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-17>
 * <http://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
 * <http://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
+##Selector
+```
+video[autoplay],
+audio[autoplay]
+```
+
+##Test
 ```html_example
 <video autoplay controls src=""></video><i> </i>
 ```
@@ -401,14 +538,23 @@ name: controls
 category: Warnings
 ---
 
+##Description
 A time-based media like `<audio>` or `<video>` would be easier to use if `[controls]` are activated for the user.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-20>
 * <http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
 * <http://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
 * <http://www.w3.org/TR/WCAG20/#keyboard-operation-trapping>
 * <http://www.w3.org/TR/WCAG-TECHS/G4.html>
 
+##Selector
+```
+video:not([controls]),
+audio:not([controls])
+```
+
+##Test
 ```html_example
 <video src=""></video><i> </i>
 ```
@@ -426,14 +572,24 @@ name: empty-nodes
 category: Warnings
 ---
 
+##Description
 Obviously void elements are empty, as well as `<iframe>` and `<textarea>` could be `:empty`.
 Any other `:empty` tag that is not hidden is probably useless, and should be deleted.
 
+One day we could use the `:blank` pseudo-class, but at this time its support is very poor and causes browser to not understand a11y.css'selectors.
+
+##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
 * <http://www.w3.org/TR/html-markup/syntax.html#void-element>
 * <http://dev.w3.org/csswg/selectors-4/#the-blank-pseudo>
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
+##Selector
+```
+*:empty:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr)
+```
+
+##Test
 ```html_example
 <p id="empty-node_code"></p>
 ```
@@ -450,13 +606,22 @@ name: table-layout
 category: Warnings
 ---
 
+##Description
 A lonely `<tr>` can be a symptom of a table used for layout.
 Should be double checked!
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-3>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L331>
 
+##Selector
+```
+table:not([role="presentation"]) > tr:only-child,
+table:not([role="presentation"]) > tbody > tr:only-child
+```
+
+##Test
 ```html_example
 <table>
   <caption>I'm a caption :3</caption>
@@ -479,14 +644,23 @@ name: table-caption
 category: Warnings
 ---
 
+##Description
 `<caption>` is needed for data `<table>`.
 And it must be the `:first-child`, by the way.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-4>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
 * <http://www.w3.org/TR/WCAG-TECHS/H39.html>
 
+##Selector
+```
+table:not([role="presentation"]) > caption:not(:first-child),
+table:not([role="presentation"]) > *:first-child:not(caption)
+```
+
+##Test
 ```html_example
 <table>
   <thead>
@@ -519,12 +693,22 @@ name: table-structure
 category: Warnings
 ---
 
+##Description
 `<thead>`, `<tfoot>` and `<tbody>` must be in this order.
 
+##References
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L316>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L321>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L326>
 
+##Selector
+```
+table > tfoot ~ thead,
+table > tbody ~ tfoot,
+table > tbody ~ thead
+```
+
+##Test
 ```html_example
 <table>
   <caption>I'm a caption</caption>
@@ -559,10 +743,18 @@ name: missing-thead
 category: Warnings
 ---
 
+##Description
 `<thead>` is strongly needed if `<tbody>` is present.
 
+##References
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L311>
 
+##Selector
+```
+table:not([role="presentation"]) > tbody:first-child
+```
+
+##Test
 ```html_example
 <table>
   <caption>issing thead</caption>
@@ -591,13 +783,21 @@ name: th-no-scope
 category: Warnings
 ---
 
+##Description
 `<th>` strongly needs an `[id]` or a `[scope]`.
 
+##References
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-7>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20-TECHS/H43.html>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L282>
 
+##Selector
+```
+th:not([scope]):not([id])
+```
+
+##Test
 ```html_example
 <table>
   <caption>Need for a [scope] or [id]</caption>
@@ -624,11 +824,19 @@ name: not-col
 category: Warnings
 ---
 
+##Description
 Anything but `<col>` is forbidden inside a `<colgroup>`.
 
+##References
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L342>
 * <http://www.w3.org/TR/html5/tabular-data.html#the-colgroup-element>
 
+##Selector
+```
+colgroup:not([span]) *:not(col)
+```
+
+##Test
 ```html_example
 <table>
   <caption>Invalid colgroup child</caption>
@@ -659,10 +867,18 @@ name: aria-pressed
 category: Warnings
 ---
 
+##Description
 Anything with a `[class]` containing "toggle" probably needs some ARIA flavour, isn't it?
 
+##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L185>
 
+##Selector
+```
+[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])
+```
+
+##Test
 ```html_example
 <a class="toggle-machin" href="/">Do I toggle anything?</a>
 ```
@@ -679,10 +895,18 @@ name: spacer-gif
 category: Warnings
 ---
 
+##Description
 Believe me, this still have to be tested.
 
+##References
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L381>
 
+##Selector
+```
+img[src*="spacer.gif"]:not([role="presentation"])
+```
+
+##Test
 ```html_example
 <img src="spacer.gif" alt="Spacer.gif" width="100" height="100"/><i> </i>
 ```
@@ -699,8 +923,20 @@ name: null-undefined
 category: Warnings
 ---
 
+##Description
 Don't laugh, shit happens.
 
+##Selector
+```
+[id*="NaN"],
+[id*="null"],
+[class*="NaN"],
+[class*="null"],
+[id*="undefined"],
+[class*="undefined"]
+```
+
+##Test
 ```html_example
 <p class="undefined">Oups, something went wrong.</p>
 ```
