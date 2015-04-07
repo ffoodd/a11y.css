@@ -785,6 +785,7 @@ category: Errors
 Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 ##References
+* <http://references.modernisation.gouv.fr/sites/default/files/RGAA3_RC2-1/glossaire.html#PresInfo>
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-10-1>
 * <http://www.accessiweb.org/index.php/glossaire-du-referentiel-accessiweb-html5aria.html#mPresInfo>
 * <http://www.w3.org/TR/WCAG20/#content-structure-sepffoodd.pngaration-programmatic>
@@ -792,8 +793,8 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 ##Selector
 ```
-:not(img):not(iframe)[width],
-:not(img):not(iframe)[height]
+:not(img):not(object):not(embed):not(svg):not(canvas)[width],
+:not(img):not(object):not(embed):not(svg):not(canvas)[height]
 ```
 
 ##Test
@@ -801,8 +802,8 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 <p width="20">Damned! I feel sooo strait :(</p>
 ```
 */
-:not(img):not(iframe)[width],
-:not(img):not(iframe)[height] {
+:not(img):not(object):not(embed):not(svg):not(canvas)[width],
+:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
   @include error("dimensions");
 }
 
