@@ -36,7 +36,9 @@ category: Errors
 ---
 
 ##Description
-The `[href]` attribute should never be empty. A link *to* something, right?
+The `[href]` attribute, if present, should not be empty. A link *to* something, right?
+However a link may be an anchor, using `[name]` or `[id]`.
+
 
 ##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
@@ -45,8 +47,13 @@ The `[href]` attribute should never be empty. A link *to* something, right?
 
 ##Selector
 ```
-a:not([href]),
-a[href=""]
+a[name=""][id=""][href=""],
+a:not([name])[id=""][href=""],
+a[name=""]:not([id])[href=""],
+a:not([name])[id=""]:not([href]),
+a[name=""]:not([id]):not([href]),
+a:not([name]):not([id])[href=""],
+a:not([name]):not([id]):not([href])
 ```
 
 ##Test
@@ -54,8 +61,13 @@ a[href=""]
 <a>Who am I? Where do I link?</a>
 ```
 */
-a:not([href]),
-a[href=""] {
+a[name=""][id=""][href=""],
+a:not([name])[id=""][href=""],
+a[name=""]:not([id])[href=""],
+a:not([name])[id=""]:not([href]),
+a[name=""]:not([id]):not([href]),
+a:not([name]):not([id])[href=""],
+a:not([name]):not([id]):not([href]) {
   @include error("no-href");
 }
 
