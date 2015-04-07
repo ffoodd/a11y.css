@@ -96,14 +96,6 @@ $messages: (
       "fr": "Attribut [href] manquant. Un lien doit avoir une cible, non ?",
       "en": "Missing [href] attribute. A link must lead to somewhere, don’t you think?"
     ),
-    "empty-href": (
-      "fr": "Attribut [href=\"#\"]. Pourquoi ? Un <button> semble plus indiqué.",
-      "en": "[href=\"#\"] attribute. Why? A <button> would be semantically better."
-    ),
-    "href-js": (
-      "fr": "Attribut [href] débutant par javascript. Ça n’augure rien de bon…",
-      "en": "[href] attribute starting with `javascript:`. Doesn`t sound good…"
-    ),
     "empty-link": (
       "fr": "Ce lien est vide. Vide…",
       "en": "Empty link. Empty…"
@@ -306,6 +298,14 @@ $messages: (
     "undefined": (
       "fr": "Vous n’essayeriez pas de calculer une [class] ou un [id] dynamiquement, vous ? \A PArce que là, je vois null ou undefined.",
       "en": "Don't you try to dynamically compute an [id] or a [class]? \A Because I see null or undefined, here."
+    ),
+    "empty-href": (
+      "fr": "Attribut [href=\"#\"]. Pourquoi ? Un <button> semble plus indiqué.",
+      "en": "[href=\"#\"] attribute. Why? A <button> would be semantically better."
+    ),
+    "href-js": (
+      "fr": "Attribut [href] débutant par javascript. Ça n’augure rien de bon…",
+      "en": "[href] attribute starting with `javascript:`. Doesn`t sound good…"
     )
   ),
 
