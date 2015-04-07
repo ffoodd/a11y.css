@@ -137,8 +137,12 @@ $messages: (
       "en": "What should happen when I click? \A Too bad. [value], [title] or [aria-label] could have told me."
     ),
     "empty-button": (
-      "fr": "Ça fait quoi, si je clique dessus ? \A Il manque du contenu ou un intitulé via [aria-label] ou [aria-labelledby].",
-      "en": "What should happen when I click? \A It's missing a content or a title via [aria-label] or [aria-labelledby]."
+      "fr": "Ça fait quoi, si je clique dessus ? \A Il manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title].",
+      "en": "What should happen when I click? \A It's missing a content or a title via [aria-label], [aria-labelledby] or [title]."
+    ),
+    "empty-button-attr": (
+      "fr": "[aria-label], [aria-labelledby] ou [title] sur un <button> ne doivent pas être vides. C’est gênant !",
+      "en": "[aria-label], [aria-labelledby] or [title] on a <button> must not be empty. That's awkward!"
     ),
     "not-form-button": (
       "fr": "Par défaut, un bouton est un [type=submit], mais celui-ci n’est pas dans un formulaire… Qu’est-il censé faire ?",

@@ -386,9 +386,10 @@ category: Errors
 ---
 
 ##Description
-A `<button>` should either have content or an `[aria-label]` or `[aria-labelledby]`.
+A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]` or `[title]`. Those attributes, if present, should not be empty.
 
 ##References
+* <http://references.modernisation.gouv.fr/sites/default/files/RGAA3_RC2-1/referentiel_technique.htm#formulaire>
 * <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
@@ -396,8 +397,17 @@ A `<button>` should either have content or an `[aria-label]` or `[aria-labelledb
 
 ##Selector
 ```
-button:empty:not([aria-label]):not([aria-labelledby]),
-button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt])
+button[title=""],
+button[aria-label=""],
+button[aria-labelledby=""],
+button[title=""] img:only-child[alt=""],
+button[title=""] img:only-child:not([alt]),
+button[aria-label=""] img:only-child[alt=""],
+button[aria-label=""] img:only-child:not([alt]),
+button[aria-labelledby=""] img:only-child[alt=""],
+button[aria-labelledby=""] img:only-child:not([alt]),
+button:not([aria-label]):not([aria-labelledby]):not([title]) img:only-child[alt=""],
+button:not([aria-label]):not([aria-labelledby]):not([title]) img:only-child:not([alt])
 ```
 
 ##Test
@@ -409,14 +419,78 @@ button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt])
 </button>
 ```
 */
-button:empty:not([aria-label]):not([aria-labelledby]) {
+button[title=""],
+button[aria-label=""],
+button[aria-labelledby=""],
+button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
   @include error("empty-button");
 }
 
-button:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
+button[title=""] img:only-child[alt=""],
+button[title=""] img:only-child:not([alt]),
+button[aria-label=""] img:only-child[alt=""],
+button[aria-label=""] img:only-child:not([alt]),
+button[aria-labelledby=""] img:only-child[alt=""],
+button[aria-labelledby=""] img:only-child:not([alt]),
+button:not([aria-label]):not([aria-labelledby]):not([title]) img:only-child[alt=""],
+button:not([aria-label]):not([aria-labelledby]):not([title]) img:only-child:not([alt]) {
   @include error("empty-button", $self-closing: true );
 }
 
+
+/*doc
+---
+title: "Empty button attribute"
+name: empty-button-attr
+category: Errors
+---
+
+##Description
+`[aria-label]`, `[aria-labelledby]` or `[title]` on a `<button>` must not be empty.
+
+##References
+* <http://references.modernisation.gouv.fr/sites/default/files/RGAA3_RC2-1/referentiel_technique.htm#formulaire>
+* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <http://www.w3.org/TR/WCAG-TECHS/H91.html>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
+
+##Selector
+```
+button[title=""],
+button[aria-label=""],
+button[aria-labelledby=""],
+button[title=""] img:only-child[alt=""],
+button[title=""] img:only-child:not([alt]),
+button[aria-label=""] img:only-child[alt=""],
+button[aria-label=""] img:only-child:not([alt]),
+button[aria-labelledby=""] img:only-child[alt=""],
+button[aria-labelledby=""] img:only-child:not([alt])
+```
+
+##Test
+```html_example
+<button ttle=""></button>
+<button aria-label="">
+  <img src="static/ffoodd.png" width="144" height="144" />
+  <i> </i>
+</button>
+```
+*/
+button[title=""],
+button[aria-label=""],
+button[aria-labelledby=""] {
+  @include error("empty-button-attr");
+}
+
+button[title=""] img:only-child[alt=""],
+button[title=""] img:only-child:not([alt]),
+button[aria-label=""] img:only-child[alt=""],
+button[aria-label=""] img:only-child:not([alt]),
+button[aria-labelledby=""] img:only-child[alt=""],
+button[aria-labelledby=""] img:only-child:not([alt]) {
+  @include error("empty-button-attr", $self-closing: true );
+}
 
 
 /*doc
