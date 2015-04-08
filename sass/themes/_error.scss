@@ -318,20 +318,14 @@ A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]
 
 ##Selector
 ```
-button[title=""],
-button[aria-label=""],
-button[aria-labelledby=""],
 button:empty:not([aria-label]):not([aria-labelledby]):not([title])
 ```
 
 ##Test
 ```html_example
-<button></button>
+<button type="button"></button>
 ```
 */
-button[title=""],
-button[aria-label=""],
-button[aria-labelledby=""],
 button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
   @include error("empty-button");
 }
@@ -363,7 +357,7 @@ button[aria-labelledby=""]
 
 ##Test
 ```html_example
-<button title=""></button>
+<button title="" type="button"></button>
 ```
 */
 button[title=""],
