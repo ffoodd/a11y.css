@@ -115,43 +115,6 @@ a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
 
 /*doc
 ---
-title: "Empty img link"
-name: empty-image-link
-category: Errors
----
-
-##Description
-When an `<img>` is a link only child, it must have an `[alt]`.
-
-##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5>
-* <http://www.w3.org/TR/WCAG20/#text-equiv-all>
-* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
-* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
-* <http://www.w3.org/TR/WCAG-TECHS/G91.html>
-* <http://www.w3.org/TR/WCAG-TECHS/H30.html>
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
-
-##Selector
-```
-a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt])
-```
-
-##Test
-```html_example
-<a href="/">
-  <img src="static/ffoodd.png" width="144" height="144" />
-  <i> </i>
-</a>
-```
-*/
-a:not([aria-label]):not([aria-labelledby]) img:only-child:not([alt]) {
-  @include error("empty-image-link");
-}
-
-
-/*doc
----
 title: "Missing alternative for img"
 name: no-alt
 category: Errors

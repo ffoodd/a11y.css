@@ -97,12 +97,8 @@ $messages: (
       "en": "Missing [href], [id] or [name] attribute. A link must be/have a target, don’t you think?"
     ),
     "empty-link": (
-      "fr": "Ce lien est vide. Vide…",
-      "en": "Empty link. Empty…"
-    ),
-    "empty-image-link": (
-      "fr": "Ce lien ne contient qu’une <img> sans [alt]. Je suis censé deviner ou il mène ?",
-      "en": "This link only contains an <img> missing its [alt]. Am I supposed to guess where it goes?"
+      "fr": "Ce lien est vide et n’a aucun intitulé. Dommage…",
+      "en": "Empty link without any kind of label. Empty link…"
     ),
     "no-alt": (
       "fr": "Attribut [alt] manquant. Quelle hérésie.",
