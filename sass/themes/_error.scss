@@ -80,7 +80,7 @@ category: Errors
 ---
 
 ##Description
-An empty link should have a label, within `[aria-label]` or targeted by `[aria-labelledby]`.
+An empty link should have a label, within `[title]`, `[aria-label]` or targeted by `[aria-labelledby]`.
 By the way, why would you use an empty link?
 
 ##References
@@ -94,7 +94,10 @@ By the way, why would you use an empty link?
 
 ##Selector
 ```
-a:empty:not([aria-label]):not([aria-labelledby])
+a:empty[title=""],
+a:empty[aria-label=""],
+a:empty[aria-labelledby=""],
+a:empty:not([title]):not([aria-label]):not([aria-labelledby])
 ```
 
 ##Test
@@ -102,7 +105,10 @@ a:empty:not([aria-label]):not([aria-labelledby])
 <a href="/" class="inbl w-20" id="empty-link_code"></a>
 ```
 */
-a:empty:not([aria-label]):not([aria-labelledby]) {
+a:empty[title=""],
+a:empty[aria-label=""],
+a:empty[aria-labelledby=""],
+a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
   @include error("empty-link");
 }
 

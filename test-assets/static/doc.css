@@ -112,7 +112,7 @@ main h1 {
 
 main h1::before {
   content: counter(titles);
-  background: #f2f2e2;
+  background: #f9f9f9;
   border: 1px dotted #ccc;
   border-radius: 50%;
   display: inline-block;
