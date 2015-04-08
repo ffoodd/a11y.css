@@ -321,23 +321,12 @@ A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]
 button[title=""],
 button[aria-label=""],
 button[aria-labelledby=""],
-button[title=""] img:only-child[alt=""],
-button[title=""] img:only-child:not([alt]),
-button[aria-label=""] img:only-child[alt=""],
-button[aria-label=""] img:only-child:not([alt]),
-button[aria-labelledby=""] img:only-child[alt=""],
-button[aria-labelledby=""] img:only-child:not([alt]),
-button:not([aria-label]):not([aria-labelledby]):not([title]) img:only-child[alt=""],
-button:not([aria-label]):not([aria-labelledby]):not([title]) img:only-child:not([alt])
+button:empty:not([aria-label]):not([aria-labelledby]):not([title])
 ```
 
 ##Test
 ```html_example
 <button></button>
-<button>
-  <img src="static/ffoodd.png" width="144" height="144" />
-  <i> </i>
-</button>
 ```
 */
 button[title=""],
@@ -345,17 +334,6 @@ button[aria-label=""],
 button[aria-labelledby=""],
 button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
   @include error("empty-button");
-}
-
-button[title=""] img:only-child[alt=""],
-button[title=""] img:only-child:not([alt]),
-button[aria-label=""] img:only-child[alt=""],
-button[aria-label=""] img:only-child:not([alt]),
-button[aria-labelledby=""] img:only-child[alt=""],
-button[aria-labelledby=""] img:only-child:not([alt]),
-button:not([aria-label]):not([aria-labelledby]):not([title]) img:only-child[alt=""],
-button:not([aria-label]):not([aria-labelledby]):not([title]) img:only-child:not([alt]) {
-  @include error("empty-button", $self-closing: true );
 }
 
 
@@ -380,37 +358,18 @@ category: Errors
 ```
 button[title=""],
 button[aria-label=""],
-button[aria-labelledby=""],
-button[title=""] img:only-child[alt=""],
-button[title=""] img:only-child:not([alt]),
-button[aria-label=""] img:only-child[alt=""],
-button[aria-label=""] img:only-child:not([alt]),
-button[aria-labelledby=""] img:only-child[alt=""],
-button[aria-labelledby=""] img:only-child:not([alt])
+button[aria-labelledby=""]
 ```
 
 ##Test
 ```html_example
-<button ttle=""></button>
-<button aria-label="">
-  <img src="static/ffoodd.png" width="144" height="144" />
-  <i> </i>
-</button>
+<button title=""></button>
 ```
 */
 button[title=""],
 button[aria-label=""],
 button[aria-labelledby=""] {
   @include error("empty-button-attr");
-}
-
-button[title=""] img:only-child[alt=""],
-button[title=""] img:only-child:not([alt]),
-button[aria-label=""] img:only-child[alt=""],
-button[aria-label=""] img:only-child:not([alt]),
-button[aria-labelledby=""] img:only-child[alt=""],
-button[aria-labelledby=""] img:only-child:not([alt]) {
-  @include error("empty-button-attr", $self-closing: true );
 }
 
 
