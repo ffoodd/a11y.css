@@ -751,13 +751,14 @@ category: Warnings
 
 ##Selector
 ```
+table:not([role="presentation"]) > caption + tbody,
 table:not([role="presentation"]) > tbody:first-child
 ```
 
 ##Test
 ```html_example
 <table>
-  <caption>issing thead</caption>
+  <caption>Missing thead</caption>
   <tbody>
     <tr>
       <td>I'm a table without thead.</td>
@@ -771,6 +772,7 @@ table:not([role="presentation"]) > tbody:first-child
 </table>
 ```
 */
+table:not([role="presentation"]) > caption + tbody,
 table:not([role="presentation"]) > tbody:first-child {
   @include warning("missing-thead");
 }
@@ -819,49 +821,6 @@ th:not([scope]):not([id]) {
 
 /*doc
 ---
-title: "Unothaurized colgroup child"
-name: not-col
-category: Warnings
----
-
-##Description
-Anything but `<col>` is forbidden inside a `<colgroup>`.
-
-##References
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L342>
-* <http://www.w3.org/TR/html5/tabular-data.html#the-colgroup-element>
-
-##Selector
-```
-colgroup:not([span]) *:not(col)
-```
-
-##Test
-```html_example
-<table>
-  <caption>Invalid colgroup child</caption>
-  <colgroup>
-    <td>Invalid colgroup child.</td>
-    <td>Invalid colgroup child.</td>
-  </colgroup>
-  <tr>
-    <th>Invalid colgroup child.</th>
-    <th>Invalid colgroup child.</th>
-  </tr>
-  <tr>
-    <td>Invalid colgroup child.</td>
-    <td>Invalid colgroup child.</td>
-  </tr>
-</table>
-```
-*/
-colgroup:not([span]) *:not(col) {
-  @include warning("not-col");
-}
-
-
-/*doc
----
 title: "toggle [class] without [aria-*]"
 name: aria-pressed
 category: Warnings
@@ -900,10 +859,17 @@ Believe me, this still have to be tested.
 
 ##References
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L381>
+* <http://www.la-grange.net/2015/03/11/visible>
 
 ##Selector
 ```
-img[src*="spacer.gif"]:not([role="presentation"])
+img[src*="1px.gif"]:not([role="presentation"]),
+img[src*="1x1.gif"]:not([role="presentation"]),
+img[src*="clear.gif"]:not([role="presentation"]),
+img[src*="spacer.gif"]:not([role="presentation"]),
+img[src*="dotclear.gif"]:not([role="presentation"]),
+img[src*="transparent.gif"]:not([role="presentation"]),
+img[src*="pixel-1x1-clear.gif"]:not([role="presentation"])
 ```
 
 ##Test
@@ -911,7 +877,13 @@ img[src*="spacer.gif"]:not([role="presentation"])
 <img src="spacer.gif" alt="Spacer.gif" width="100" height="100"/><i> </i>
 ```
 */
-img[src*="spacer.gif"]:not([role="presentation"]) {
+img[src*="1px.gif"]:not([role="presentation"]),
+img[src*="1x1.gif"]:not([role="presentation"]),
+img[src*="clear.gif"]:not([role="presentation"]),
+img[src*="spacer.gif"]:not([role="presentation"]),
+img[src*="dotclear.gif"]:not([role="presentation"]),
+img[src*="transparent.gif"]:not([role="presentation"]),
+img[src*="pixel-1x1-clear.gif"]:not([role="presentation"]) {
   @include warning("spacer-gif", $self-closing: true);
 }
 

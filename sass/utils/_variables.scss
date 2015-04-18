@@ -10,16 +10,16 @@
 $messages: (
   "advice": (
     "empty-class": (
-      "fr": "Attribut [class] vide. \A Pourquoi tant de haine ?",
-      "en": "Empty [class] attribute. \A Why so much hatred?"
+      "fr": "Sacrebleu ! Attribut [class] vide.",
+      "en": "Empty [class] attribute."
     ),
     "empty-id": (
-      "fr": "Attribut [id] vide. \A Sérieusement ?",
-      "en": "Empty [id] attribute. \A Does this look like a game to you?"
+      "fr": "Tiens ? Un attribut [id] vide ?",
+      "en": "Empty [id] attribute."
     ),
     "main": (
       "fr": "<main> est réservée à la zone de contenu principal, et doit donc être unique. \A Repentez-vous et tout ira bien :) .",
-      "en": "The <main> tag is exclusively restricted to the main content area, thus should be unique. \A Repent yourself now."
+      "en": "The <main> tag is exclusively restricted to the main content area, thus should be unique. \A Repent yourself now and we'll be good :)."
     ),
     "figcaption": (
       "fr": "<figcaption> décrit le contenu d’une <figure> et doit donc être unique dans cette <figure>. \A Oups :) .",
@@ -31,7 +31,7 @@ $messages: (
     ),
     "target-blank": (
       "fr": "L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre. \A Mais vous y avez pensé, non :) ?",
-      "en": "User should be warned whenever a link is being opened in a new tab. \A But you know it already, right?"
+      "en": "User should be warned whenever a link is being opened in a new tab. \A Is that OK?"
     ),
     "mailto": (
       "fr": "L’adresse mail est valide, pas vrai ?",
@@ -62,8 +62,8 @@ $messages: (
       "en": "Are you plain sure this element should be hidden to accessibility helpers?"
     ),
     "placeholder": (
-      "fr": "Ce placeholder ne remplace pas un <label>, j’espère ? \A Y’en a qui ont essayé…",
-      "en": "I hope you don’t use this placeholder in place of a <label>."
+      "fr": "Saviez-vous qu’un placeholder ne peut pas remplacer un <label> ?",
+      "en": "Do you know that a placeholder can't replace a <label>?"
     ),
     "video-audio": (
       "fr": "Les médias temporels doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée.",
@@ -138,7 +138,7 @@ $messages: (
     ),
     "not-submit-button": (
       "fr": "Un bouton de type [reset] ou [button] ne devrait pas porter des attributs de soumission de formulaire.",
-      "en": "A button is wth a type of [reset] or [button] shouldn't have any form submission attributes."
+      "en": "A button with a type of [reset] or [button] shouldn't have any form submission attributes."
     ),
     "disabled-button": (
       "fr": "Si ce bouton est désactivé, ajoutez-lui l’attribut [disabled] ou [readonly], s’il-vous-plaît.",
@@ -165,24 +165,24 @@ $messages: (
       "en": "The <title> tag is empty. Don't you know it's the most important tag in a web page?"
     ),
     "table-for-layout": (
-      "fr": "Cet élément / attribut a une valeur sémantique, il n’a rien à faire dans un tableau de mise en page. \A C’est un crime dans plusieurs pays, faites gaffe.",
-      "en": "This tag / attribute has a semantic value, it has nothing to do in a table used for layout. \A This is a crime in many countries, you should care."
+      "fr": "Un élément/attribut avec une valeur sémantique n’a rien à faire dans un tableau de mise en page.",
+      "en": "A tag/attribute with a semantic value has nothing to do in a table used for layout."
     ),
     "style-attr": (
-      "fr": "Éléments supportant des styles en ligne. \A Les pauvres… Vous devriez avoir honte !",
-      "en": "Inline styles. \A You should be ashamed."
+      "fr": "Éléments supportant des styles en ligne. \A Préférez utiliser des classes ou IDs.",
+      "en": "Inline styles. \A You'd better use classes or IDs."
     ),
     "dimensions": (
-      "fr": "Sapristi ! Les attributs [width] et [height] ne sont autorisés que sur les <img> !",
-      "en": "By jove ! [width] & [height] attributes are forbidden on any tags but <img>!"
+      "fr": "Sapristi ! Les attributs [width] et [height] ne sont autorisés que sur les <img>, <object>, <embed>, <svg> et <canvas> !",
+      "en": "By jove! [width] & [height] attributes are forbidden on any tags but , <object>, <embed>, <svg> and <canvas>!"
     ),
     "no-lang": (
-      "fr": "Pas d’attribut lang / xml:lang sur la balise <html>. \A Vous parlez quelle langue, vous ?",
-      "en": "No lang / xml:lang found on <html> tag. \A Which language is that?"
+      "fr": "Pas d’attribut lang/xml:lang sur la balise <html>. \A JAWS va avoir un accent chelou.",
+      "en": "No lang/xml:lang found on <html> tag. \A JAWS will have a weird accent!"
     ),
     "js-events": (
-      "fr": "Attribut d’événements javascript. Vous êtes sûr de ce que vous faites ?",
-      "en": "JavaScript event attributes. You sure?"
+      "fr": "Attribut d’événements javascript. Un fichier JS externe serait préférable :)",
+      "en": "JavaScript event attributes. An externa JS file would be better :)"
     ),
     "no-aria-describedby":  (
       "fr": "Si le champ est obligatoire, une indication doit exister : \A liez-la au champ à l’aide de aria-describedby et de son ID. Merci !",
@@ -245,7 +245,7 @@ $messages: (
     ),
     "autoplay": (
       "fr": "Ce média temporel se déclenche automatiquement. Existe-t-il un moyen de l’arrêter ?",
-      "en": "This time-based media plays automatically. Is there a way to sopt it?"
+      "en": "This time-based media plays automatically. Is there a way to stop it?"
     ),
     "controls": (
       "fr": "Ce média temporel ne dispose pas des contrôles par défaut. \A Avez-vous implémenté des contrôles satisfaisants ?",
@@ -260,12 +260,12 @@ $messages: (
       "en": "Empty [title] atribute. What does this abbreviation mean?"
     ),
     "table-layout": (
-      "fr": "Une seule ligne ? Allez… Avouez, c’est un tableau de mise en forme, ça, pas vrai ? \A Si c’est le cas, soyez honnête et indiquez-le avec le [role=\presentation\"].",
-      "en": "A single row ? Come on… This is a table used for layout, isn't it? \A If so, just be honest and announce it with [role=\"presentation\"]."
+      "fr": "Une seule ligne ? Est-ce vraiment là une donnée tabulaire ?",
+      "en": "A single row ? Is this really tabular data?"
     ),
     "table-caption": (
-      "fr": "Un tableau de données doit avoir un titre, sous forme de <caption> — et ce doit être le premier enfant direct. \A Et c’est pas du bluff !",
-      "en": "A data table should have a <caption> - and it must be the first direct child. \A And that's not bluff!"
+      "fr": "Un tableau de données doit avoir un titre, sous forme de <caption> — et ce doit être le premier enfant direct.",
+      "en": "A data table should have a <caption> - and it must be the first direct child."
     ),
     "table-structure": (
       "fr": "Voilà dans quel ordre vous devriez les mettre : <thead>, <tfoot> puis <tbody>.",
@@ -278,10 +278,6 @@ $messages: (
     "th-no-scope": (
       "fr": "À quoi s’applique cette cellule d’en-tête ? La totalité de la ligne / colonne ? \A Si oui, pensez à [scope]. Sinon, il faut probablement un [id] et des [headers].",
       "en": "Does this head cell apply to a full line/row, or not? \A If so, think of [scope]. If not, use an [id] with [headers]."
-    ),
-    "not-col": (
-      "fr": "Seul <col> est autorisé dans un <colgroup>. Ça paraît logique, n’est-ce pas ?",
-      "en": "Only <col> can be a child of <colgroup>. Pretty obviously, isn't it?"
     ),
     "aria-pressed": (
       "fr": "Si c’est (dé)pliable, vous devriez fournir l’attribut [aria-expanded] ou [aria-haspopup]. Merci !",

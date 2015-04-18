@@ -521,7 +521,7 @@ svg[aria-label][title]
 
 ##Test
 ```html_example
-<svg aria-label="I'm a label!" title="I'm a title!"></svg><i> </i>
+<svg aria-label="I'm a label!" title="I'm a title!"> </svg><i> </i>
 ```
 */
 img[alt][title],

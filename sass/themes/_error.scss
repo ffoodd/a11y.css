@@ -10,7 +10,7 @@ category: Errors
 ##Description
 The `[tabindex]` attribute should never be greater than 0.
 
-#Reference
+##Reference
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
 
 ##Selector
@@ -20,7 +20,7 @@ The `[tabindex]` attribute should never be greater than 0.
 
 ##Test
 ```html_example
-<button tabindex="1">Positive tabindex is bad</button>
+<button tabindex="1" type="button">Positive tabindex is bad</button>
 ```
 */
 [tabindex]:not([tabindex="0"]):not([tabindex="-1"]) {
@@ -468,7 +468,7 @@ button[class*="disabled"]:not([disabled]):not([readonly])
 
 ##Test
 ```html_example
-<button class="is-disabled">To be or not to be (disabled)?</button>
+<button class="is-disabled" type="button">To be or not to be (disabled)?</button>
 ```
 */
 button[class*="disabled"]:not([disabled]):not([readonly]) {
@@ -574,7 +574,7 @@ iframe[title=""]
 
 ##Test
 ```html_example
-<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe>
+<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe><i> </i>
 ```
 */
 iframe:not([title]),
