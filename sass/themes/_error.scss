@@ -160,20 +160,25 @@ category: Errors
 ---
 
 ##Description
-An `<img>` must have an `[src]`. Obviously.
+An `<img>` must have an `[src]` or an `[srcset]`. Obviously.
 
 ##References
 * <http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374>
+* <http://scottjehl.github.io/picturefill/>
 
 ##Selector
 ```
-img:not([src]),
+img:not([src]):not([srcset]),
 img[src=""],
 img[src="#"],
-input[type="image"]:not([src]),
+img[srcset=""],
+img[srcset="#"],
+input[type="image"]:not([src]):not([srcset]),
 input[type="image"][src=""],
-input[type="image"][src="#"]
+input[type="image"][src="#"],
+input[type="image"][srcset=""],
+input[type="image"][srcset="#"]
 ```
 
 ##Test
@@ -182,12 +187,16 @@ input[type="image"][src="#"]
 <input type="image" alt="Missing src" /><i> </i>
 ```
 */
-img:not([src]),
+img:not([src]):not([srcset]),
 img[src=""],
 img[src="#"],
-input[type="image"]:not([src]),
+img[srcset=""],
+img[srcset="#"],
+input[type="image"]:not([src]):not([srcset]),
 input[type="image"][src=""],
-input[type="image"][src="#"] {
+input[type="image"][src="#"],
+input[type="image"][srcset=""],
+input[type="image"][srcset="#"] {
   @include error("no-src", $self-closing: true);
 }
 
