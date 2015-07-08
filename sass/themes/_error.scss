@@ -84,7 +84,7 @@ An empty link should have a label, within `[title]`, `[aria-label]` or targeted 
 By the way, why would you use an empty link?
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-6-5>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-6-5>
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
@@ -124,7 +124,7 @@ category: Errors
 An `<img>` must have an `[alt]`. Always.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-1-1>
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG-TECHS/H36.html>
 * <http://www.w3.org/TR/WCAG-TECHS/H37.html>
@@ -203,7 +203,7 @@ category: Errors
 A `<label>` is labelling something, in theory.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-1>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
@@ -237,7 +237,7 @@ category: Errors
 How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-1>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
@@ -274,7 +274,7 @@ How to label a `[reset]`, `[submit]` or `[button]` type input?
 You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-9>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 
@@ -310,8 +310,8 @@ category: Errors
 A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]` or `[title]`. Those attributes, if present, should not be empty.
 
 ##References
-* <http://references.modernisation.gouv.fr/sites/default/files/RGAA3_RC2-1/referentiel_technique.htm#formulaire>
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-1211-formulaires>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-9>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
@@ -342,8 +342,8 @@ category: Errors
 `[aria-label]`, `[aria-labelledby]` or `[title]` on a `<button>` must not be empty.
 
 ##References
-* <http://references.modernisation.gouv.fr/sites/default/files/RGAA3_RC2-1/referentiel_technique.htm#formulaire>
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-9>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-1211-formulaires>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-9>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
@@ -487,7 +487,7 @@ category: Errors
 `<input>` needs a `[type]` in order to tell the user what kind of data is wanted.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-11>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-11>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
 
 ##Selector
@@ -519,7 +519,7 @@ category: Errors
 `<optgroup>` needs a `[label]` to explain what's inside the group.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-8>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-8>
 * <http://www.w3.org/TR/WCAG-TECHS/H85.html>
 * <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
@@ -561,7 +561,7 @@ category: Errors
 `<iframe>` needs a `[title]` in order to tell the user what to expect inside the iframe.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-2-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-2-1>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H64.html>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454>
@@ -627,9 +627,9 @@ category: Errors
 `<html>` must indicate to User Agents the human language used in the document.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-3>
-* <http://www.accessiweb.org/index.php/glossaire-du-referentiel-accessiweb-html5aria.html#mLangueDefaut>
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-4>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-8-3>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-langue-par-dfaut>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-8-4>
 * <http://www.w3.org/TR/WCAG20/#meaning-doc-lang-id>
 * <http://www.w3.org/TR/WCAG-TECHS/H57.html>
 
@@ -670,7 +670,7 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 * `[colgroup]`.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-8>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-5-8>
 * <http://www.w3.org/TR/WCAG-TECHS/F46.html>
 * <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
 
@@ -733,9 +733,8 @@ category: Errors
 Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 ##References
-* <http://references.modernisation.gouv.fr/sites/default/files/RGAA3_RC2-1/glossaire.html#PresInfo>
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-10-1>
-* <http://www.accessiweb.org/index.php/glossaire-du-referentiel-accessiweb-html5aria.html#mPresInfo>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-prsentation-de-linformation>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-10-1>
 * <http://www.w3.org/TR/WCAG20/#content-structure-sepffoodd.pngaration-programmatic>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
@@ -953,7 +952,7 @@ Your styles should be driven by a CSS file. That's it.
 And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-10-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-10-1>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 

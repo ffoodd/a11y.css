@@ -12,7 +12,7 @@ category: Warnings
 The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also true.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
@@ -53,7 +53,7 @@ category: Warnings
 `<dt>` and `<dd>` should be direct adjacent siblings, and nothing else. Although multiple `<dd>` may follow a single `<dt>`.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
@@ -96,7 +96,7 @@ category: Warnings
 Any other imbrication may be a crime somewhere.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318>
@@ -144,7 +144,7 @@ category: Warnings
 `<figcaption>` doesn't make sense outside a `<figure>`.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-8-2>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element>
@@ -175,7 +175,7 @@ category: Warnings
 `<figure>` needs `[role="group"]` for accessibility reason.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#test-1-10-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-1-10>
 * <http://www.w3.org/TR/html-alt-techniques/#m6>
 
 ##Selector
@@ -347,7 +347,7 @@ category: Warnings
 Always.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-11-6>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-6>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
@@ -385,7 +385,7 @@ Any abbreviation should give an explanation about its meaning, at least on its f
 
 ##References
 * BP160 OpQuast
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-9-4>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-9-4>
 * <http://www.w3.org/TR/WCAG20/#meaning-located>
 * <http://www.w3.org/TR/WCAG-TECHS/G70.html>
 * <http://www.w3.org/TR/WCAG-TECHS/G97.html>
@@ -422,7 +422,7 @@ That should be double-checked.
 
 ##References
 * BP160 OpQuast
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-1-2>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-1-2>
 * <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG-TECHS/H67.html>
 * <http://www.w3.org/TR/WCAG-TECHS/F39.html>
@@ -473,9 +473,9 @@ Otherwise it should have a `[role="presentation"]`, and should not have any of t
 * or a `<desc>`.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#test-1-1-4>
-* <http://references.modernisation.gouv.fr/sites/default/files/RGAA3/note_technique.htm#nT1-1>
-* <http://references.modernisation.gouv.fr/sites/default/files/RGAA3/note_technique.htm#nT1-6>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-1-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-11-a>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-16-a>
 * <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG-TECHS/F65.html>
 
@@ -509,8 +509,8 @@ category: Warnings
 A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because it can be quite surprising for the user.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-18>
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-13-17>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-4-18>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-13-17>
 * <http://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
 * <http://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
@@ -542,7 +542,7 @@ category: Warnings
 A time-based media like `<audio>` or `<video>` would be easier to use if `[controls]` are activated for the user.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-4-20>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-4-20>
 * <http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
 * <http://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
 * <http://www.w3.org/TR/WCAG20/#keyboard-operation-trapping>
@@ -611,7 +611,7 @@ A lonely `<tr>` can be a symptom of a table used for layout.
 Should be double checked!
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-3>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-5-3>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L331>
 
@@ -649,7 +649,7 @@ category: Warnings
 And it must be the `:first-child`, by the way.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-4>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-5-4>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
 * <http://www.w3.org/TR/WCAG-TECHS/H39.html>
@@ -789,7 +789,7 @@ category: Warnings
 `<th>` strongly needs an `[id]` or a `[scope]`.
 
 ##References
-* <http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html#crit-5-7>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-5-7>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20-TECHS/H43.html>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L282>
