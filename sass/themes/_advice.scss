@@ -355,12 +355,12 @@ A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 */
 [id*="search"]:not([role="search"]),
 [class*="search"]:not([role="search"]) {
-  @include advice("search");
+  @include advice("missing-role");
 }
 
 input[id*="search"]:not([role="search"]),
 input[class*="search"]:not([role="search"]) {
-  @include advice("search", $self-closing: true);
+  @include advice("missing-role", $self-closing: true);
 }
 
 
