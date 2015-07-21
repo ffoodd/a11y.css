@@ -41,8 +41,6 @@
   transform:          translateY( -100% ) translateZ( 0 )               !important;
   -webkit-transition: -webkit-transform .3s ease-in                     !important;
   transition:         transform .3s ease-in                             !important;
-  // @note Line breaks can be triggered by «\A» within the message content.
-  // @see issue #7, solution from @7studio
 }
 
 %a11y-hover {

@@ -4,6 +4,8 @@ html {
   counter-reset: error warning obsolete advice;
 
   &::after {
+    // @note Line breaks can be triggered by «\A» within the message content.
+    // @see issue #7, solution from @7studio
     content:
       map-get(theme-conf("error",    "name"), $language) ": " #{counter(error)}    "\A "
       map-get(theme-conf("warning",  "name"), $language) ": " #{counter(warning)}  "\A "
@@ -28,4 +30,16 @@ html {
     white-space: pre;
     z-index: $max-z-index;
   }
+}
+
+// In order to display messages in <head>
+// @thanks to Xavier Zalawa a.k.a. @7studio
+// Based on an idea from Mathias Bynens
+// @see https://mathiasbynens.be/notes/css-hidden-elements
+head {
+  display: block;
+}
+
+head * {
+  display: none;
 }

@@ -1,17 +1,5 @@
 @charset "UTF-8";
 
-// In order to display messages in <head>
-// @thanks to Xavier Zalawa a.k.a. @7studio
-// Based on an idea from Mathias Bynens
-// @see https://mathiasbynens.be/notes/css-hidden-elements
-head {
-  display: block;
-}
-
-head * {
-  display: none;
-}
-
 @import "advice";
 @import "obsolete";
 @import "warning";
