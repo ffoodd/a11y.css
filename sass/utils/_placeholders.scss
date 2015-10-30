@@ -75,7 +75,7 @@
   }
 
   %a11y-#{$theme}-self-closing {
-    background-color: transparentize(theme-conf($theme, "color"), .25) !important;
+    background-color: transparentize(theme-conf($theme, "color"), .75) !important;
     counter-increment: unquote($theme);
     outline: 4px solid theme-conf($theme, "color") !important;
     outline-offset: -4px;
