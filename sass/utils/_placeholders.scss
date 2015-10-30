@@ -75,9 +75,10 @@
   }
 
   %a11y-#{$theme}-self-closing {
+    background-color: theme-conf($theme, "color") !important;
+    counter-increment: unquote($theme);
     outline: 4px solid theme-conf($theme, "color") !important;
     outline-offset: -4px;
-    counter-increment: unquote($theme);
 
     & ~ ::after {
       @extend %a11y-before;
