@@ -170,6 +170,32 @@ Otherwise you may annoy your users.
 
 /*doc
 ---
+title: "A phone link should call a real number"
+name: tel
+category: Advices
+---
+
+##Description
+A `<href="tel:">` should contain a valid phone number.
+Otherwise you may make your users to call anubody.
+
+##Selector
+```
+[href^="tel"]
+```
+
+##Test
+```html_example
+<a href="tel:012345678">Who will I call?</a>
+```
+*/
+[href^="tel"] {
+  @include advice("tel");
+}
+
+
+/*doc
+---
 title: "button [role] on a link"
 name: role-button
 category: Advices
