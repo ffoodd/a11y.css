@@ -45,9 +45,13 @@ Given the very long list of selectors to test, [they are splitted across several
 
 *Please notice that you can build a single level file* (obsolete stuff only, for example), and adjust it to your very own issues. You may want to fix errors, or to learn from few advices.
 
+*New* : When the `:not()` selector cannot be precise enough, you may add a second selector to extend the `%a11y-reset` placeholder, which tries to cancel the test in your second case. However a few styles from the original page will still be overrided.
+
 ### About messages
 
 Each test has its own message, trying to explain and guide you as much as possible. All messages are [gathered in a Sass map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L1), in both English and French. It should be quite easy for you to update the messages for internal use if you don't like them.
+
+*New* : You are now able to use the `attr()` CSS function in messages to show the real value of an attribute.
 
 ## Test cases and documentation
 

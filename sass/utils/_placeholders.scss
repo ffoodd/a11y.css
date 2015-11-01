@@ -55,9 +55,9 @@
 // Dynamically generating a placeholder for each theme
 @each $theme in "advice" "obsolete" "warning" "error" {
   %a11y-#{$theme} {
+    counter-increment: unquote($theme);
     outline: 4px solid theme-conf($theme, "color") !important;
     outline-offset: -4px;
-    counter-increment: unquote($theme);
 
     &::before {
       @extend %a11y-before;
@@ -92,6 +92,21 @@
 
     &:hover ~ ::after {
       @extend %a11y-hover;
+    }
+  }
+}
+
+// Provides a way to cancel a message
+%a11y-reset {
+  &,
+  &:hover {
+    counter-increment: none !important;
+    outline: none !important;
+    outline-offset: 0 !important;
+
+    &::before,
+    & ~ ::after {
+      content: "" !important;
     }
   }
 }

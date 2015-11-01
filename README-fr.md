@@ -40,13 +40,17 @@ Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ai
 
 ### Gestion des sélecteurs
 
-Étant donné la longue liste de sélecteurs à tester, je les ai «externalisés» dans des fichiers partiels, qui étendent les placeholders dans le fichier principal.
+Étant donné la longue liste de sélecteurs à tester, je les ai « externalisés » dans des fichiers partiels, qui étendent les placeholders dans le fichier principal.
 
 Ça n’est pas forcément une bonne solution, mais j’ai préféré la facilité de lecture et de maintenance de chaque degré de gravité à l’homogénéité du résultat: ce fichier n’est — encore une fois — destiné qu’aux phases de développement. Ses performances n’ont donc pas d’intérêt, tout comme sa compatibilité navigateur.
+
+*Nouveauté* : Quand le sélecteur de négation ne permet pas un ciblage suffisamment précis, vous pouvez ajouter un second sélecteur après le premier qui étendra le placeholder `%a11y-reset` et annulera (au mieux) le premier sélecteur dans certains cas. Malheureusement certains styles de la page originelle seront malgré tout écrasés.
 
 ### Gestion des messages
 
 Chaque test dispose de son propre message, afin d’informer et guider au maximum l’intégrateur en quête d’amélioration. Ils sont eux aussi dans des fichiers partiels, pour en faciliter la lecture et la rédaction. Une personnalisation sera bien plus simple de cette façon (tout le monde n’aimera mes touches d’humour ;-) ).
+
+*Nouveauté* : il est désormais possible d’utiliser le fonction CSS `attr()` dans les messages afin de remonter la valeur réelle d’un attribut.
 
 ## Documentation et cas de test
 

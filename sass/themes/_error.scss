@@ -396,7 +396,7 @@ If it doesn't submit anything, it should have the `[type="button"]`.
 
 ##Selector
 ```
-:not(form) button:not([type]):not([form]):not([formaction]):not([formtarget])
+button:not([type]):not([form]):not([formaction]):not([formtarget])
 ```
 
 ##Test
@@ -404,8 +404,12 @@ If it doesn't submit anything, it should have the `[type="button"]`.
 <button>I just don't know what todo with myself</button>
 ```
 */
-:not(form) button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+button:not([type]):not([form]):not([formaction]):not([formtarget]) {
   @include error("not-form-button");
+}
+
+form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+  @extend %a11y-reset;
 }
 
 /*doc
