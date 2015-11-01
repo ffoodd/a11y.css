@@ -2,13 +2,13 @@
 
 /*doc
 ---
-title: "Old school things"
-name: any
+title: "Old school tags"
+name: tags
 category: Obsolete
 ---
 
 ##Description
-Many, many things are obsolete in HTML5. You should care!
+Many, many tags are obsolete in HTML5. You should care!
 
 ##Reference
 * <http://www.w3.org/TR/html5/obsolete.html#obsolete>
@@ -39,7 +39,58 @@ marquee,
 multicol,
 nobr,
 spacer,
-tt,
+tt
+```
+
+##Test
+```html_example
+<acronym title="World Wide Web Consortium">W3C</acronym>
+```
+*/
+applet,
+acronym,
+bgsound,
+dir,
+frame,
+frameset,
+hgroup,
+isindex,
+listing,
+nextid,
+noembed,
+plaintext,
+rb,
+strike,
+xmp,
+basefont,
+big,
+blink,
+center,
+font,
+marquee,
+multicol,
+nobr,
+spacer,
+tt {
+  @include obsolete("tags");
+}
+
+
+/*doc
+---
+title: "Old school attributes"
+name: attributes
+category: Obsolete
+---
+
+##Description
+Many, many attributes are obsolete in HTML5. You should care!
+
+##Reference
+* <http://www.w3.org/TR/html5/obsolete.html#obsolete>
+
+##Selector
+```
 a[charset], link[charset],
 a[coords],
 a[shape],
@@ -114,34 +165,9 @@ body[background], table[background], thead[background], tbody[background], tfoot
 
 ##Test
 ```html_example
-<acronym title="World Wide Web Consortium">W3C</acronym>
+<h3 align="right">I'm using [align]!</h3>
 ```
 */
-applet,
-acronym,
-bgsound,
-dir,
-frame,
-frameset,
-hgroup,
-isindex,
-listing,
-nextid,
-noembed,
-plaintext,
-rb,
-strike,
-xmp,
-basefont,
-big,
-blink,
-center,
-font,
-marquee,
-multicol,
-nobr,
-spacer,
-tt,
 a[charset], link[charset],
 a[coords],
 a[shape],
@@ -212,5 +238,5 @@ table[rules],
 td[height], th[height],
 td[nowrap], th[nowrap],
 body[background], table[background], thead[background], tbody[background], tfoot[background], tr[background], td[background], th[background] {
-  @include obsolete("any");
+  @include obsolete("attributes");
 }

@@ -63,3 +63,42 @@
 
   @return index($levels, $level) <= index($levels, $minimum-level);
 }
+
+
+/// Escaping CSS attr() function
+/// @access private
+/// @param {String} $message
+/// @return {String}
+/// @example scss - Call message
+/// .selector {
+///   content: replace-attr("th-scope");
+/// }
+/// @example css - Escaped message
+/// .selector {
+///   content: " ";
+/// }
+@function replace-attr($message) {
+  $has-attr: str-index($message, "attr(");
+  $first-paren: str-index($message, ")");
+
+  @if not $has-attr {
+    @return $message;
+  }
+
+  $first-chunk: str-slice($message, 1, $has-attr - 1);
+  $last-chunk: str-slice($message, $first-paren + 1);
+
+  $result: ();
+
+  @if str-length($first-chunk) > 0 {
+    $result: append($result, $first-chunk);
+  }
+
+  $result: append($result, unquote(str-slice($message, $has-attr, $first-paren)));
+
+  @if str-length($last-chunk) > 0 {
+    $result: append($result, replace-attr($last-chunk));
+  }
+
+  @return $result;
+}

@@ -18,8 +18,8 @@ $messages: (
       "en": "Empty [id] attribute."
     ),
     "main": (
-      "fr": "<main> est réservée à la zone de contenu principal, et doit donc être unique. \A Repentez-vous et tout ira bien :) .",
-      "en": "The <main> tag is exclusively restricted to the main content area, thus should be unique. \A Repent yourself now and we'll be good :)."
+      "fr": "<main> est réservée à la zone de contenu principal, et doit donc être unique :) .",
+      "en": "The <main> tag is exclusively restricted to the main content area, thus should be unique :)."
     ),
     "figcaption": (
       "fr": "<figcaption> décrit le contenu d’une <figure> et doit donc être unique dans cette <figure>. \A Oups :) .",
@@ -42,16 +42,16 @@ $messages: (
             "en": "Will I call a real phone number?"
     ),
     "role-button": (
-      "fr": "Ce lien est déguisé en bouton. Un vrai <button> est si compliqué à utiliser ?",
-      "en": "This link is disguised as a button. Is a real <button> that much complicated to use?"
+      "fr": "Ce lien est déguisé en bouton. Un vrai <button> serait probablement mieux :)",
+      "en": "This link is disguised as a button. A real <button> would be better :)"
     ),
     "file-format": (
       "fr": "Le format et le poids d’un fichier téléchargeable devraient être indiqués — et il devrait être accessible.",
       "en": "Format and size from a downloadable file should be displayed, and accessible."
     ),
     "duplicate-roles": (
-      "fr": "Bouh ! Les rôles ARIA banner, main, contentinfo et search devraient être uniques.",
-      "en": "ARIA roles banner, main, contentinfo and search should be unique."
+      "fr": "Le rôle ARIA attr(role) devrait être uniques, mais celui-ci est le deuxième dans la page !",
+      "en": "ARIA role attr(role) should be unique, but this one is the second!"
     ),
     "missing-role": (
       "fr": "Vu ! Cet élément semble être la recherche. \A Mais alors, le rôle ARIA est là, non ?",
@@ -67,7 +67,7 @@ $messages: (
     ),
     "placeholder": (
       "fr": "Saviez-vous qu’un placeholder ne peut pas remplacer un <label> ?",
-      "en": "Do you know that a placeholder can't replace a <label>?"
+      "en": "Are you aware that a placeholder can't replace a <label>?"
     ),
     "video-audio": (
       "fr": "Les médias temporels doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée.",
@@ -82,8 +82,8 @@ $messages: (
       "en": "Is this is a valid date format?"
     ),
     "th-scope": (
-      "fr": "Cette cellule d’en-tête s’applique à la totalité de la ligne / colonne, vrai ou pas ? \A C’est ce que dit son [scope], en tout cas.",
-      "en": "This head cell applies to a full col or row, doesn't it? \A That's what its [scope] says."
+      "fr": "Cette cellule d’en-tête s’applique à la totalité de la attr(scope), vrai ou pas ? \A C’est ce que dit son [scope], en tout cas.",
+      "en": "This head cell applies to a attr(scope), doesn't it? \A That's what its [scope] says."
     ),
     "table-presentation": (
       "fr": "Un tableau de mise en forme ne doit pas avoir de résumé. \A Il doit également rester compréhensible une fois linéarisé.",
@@ -125,8 +125,8 @@ $messages: (
       "en": "You have gathered options, but no label attribute introduces this options group. \A Too bad…"
     ),
     "no-value": (
-      "fr": "Ça fait quoi, si je clique dessus ? \A Avec [value], [title] ou [aria-label], j’aurais su.",
-      "en": "What should happen when I click? \A Too bad. [value], [title] or [aria-label] could have told me."
+      "fr": "Ça fait quoi, si je clique dessus ? \A Avec [value], [title] ou [aria-label], j’aurais su :)",
+      "en": "What should happen when I click? \A Too bad. [value], [title] or [aria-label] could have told me :)"
     ),
     "empty-button": (
       "fr": "Ça fait quoi, si je clique dessus ? \A Il manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title].",
@@ -141,8 +141,8 @@ $messages: (
       "en": "A button is [type=submit] if it misses a type. But this one isn't in a form, so what is it supposed to do?"
     ),
     "not-submit-button": (
-      "fr": "Un bouton de type [reset] ou [button] ne devrait pas porter des attributs de soumission de formulaire.",
-      "en": "A button with a type of [reset] or [button] shouldn't have any form submission attributes."
+      "fr": "Un bouton de type attr(type) ne devrait pas porter des attributs de soumission de formulaire.",
+      "en": "A button with a type of attr(type) shouldn't have any form submission attributes."
     ),
     "disabled-button": (
       "fr": "Si ce bouton est désactivé, ajoutez-lui l’attribut [disabled] ou [readonly], s’il-vous-plaît.",
@@ -296,8 +296,8 @@ $messages: (
       "en": "Don't you try to dynamically compute an [id] or a [class]? \A Because I see null or undefined, here."
     ),
     "empty-href": (
-      "fr": "Attribut [href=\"#\"]. Pourquoi ? Un <button> semble plus indiqué.",
-      "en": "[href=\"#\"] attribute. Why? A <button> would be semantically better."
+      "fr": "Attribut [href=attr(href)]. Pourquoi ? Un <button> semble plus indiqué.",
+      "en": "[href=attr(href)] attribute. Why? A <button> would be semantically better."
     ),
     "href-js": (
       "fr": "Attribut [href] débutant par javascript. Ça n’augure rien de bon…",
@@ -306,9 +306,13 @@ $messages: (
   ),
 
   "obsolete": (
-    "any": (
-      "fr": "Élément ou attribut(s) obsolète(s). Merci de bien vouloir vous renseigner avant de faire ce genre de choses.",
-      "en": "Obsolete element or attribute. Please make sure you know what you’re doing."
+    "tags": (
+      "fr": "Élément obsolète. Ça fait un peu daté :D.",
+      "en": "Obsolete element. This is kinda old school :D"
+    ),
+    "attributes": (
+      "fr": "Attribut(s) obsolète(s). Ça fait un peu daté :D.",
+      "en": "Obsolete attribute. This is kinda old school :D"
     )
   )
 );
