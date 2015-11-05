@@ -173,7 +173,9 @@ a[target$="blank"]::after {
 .nt { color: #905 } /* Name.Tag */
 
 #empty-link_code,
+#empty-link_code-moz,
 #empty-title_code,
-#empty-node_code {
+#empty-node_code,
+#-moz-only-whitespace {
   min-height: 1em;
 }

@@ -91,6 +91,9 @@ By the way, why would you use an empty link?
 * <http://www.w3.org/TR/WCAG-TECHS/H30.html>
 * <http://www.w3.org/TR/WCAG-TECHS/G91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
+* <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
+* <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
+* <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ##Selector
 ```
@@ -98,11 +101,23 @@ a:empty[title=""],
 a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
 a:empty:not([title]):not([aria-label]):not([aria-labelledby])
+
+a:blank[title=""],
+a:blank[aria-label=""],
+a:blank[aria-labelledby=""],
+a:blank:not([title]):not([aria-label]):not([aria-labelledby])
+
+a:-moz-only-whitespace[title=""],
+a:-moz-only-whitespace[aria-label=""],
+a:-moz-only-whitespace[aria-labelledby=""],
+a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby])
 ```
 
 ##Test
 ```html_example
 <a href="/" class="inbl w-20" id="empty-link_code"></a>
+
+<a href="/" class="inbl w-20" id="empty-link_code-moz"> </a>
 ```
 */
 a:empty[title=""],
@@ -110,6 +125,20 @@ a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
 a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
   @include error("empty-link");
+}
+
+a:blank[title=""],
+a:blank[aria-label=""],
+a:blank[aria-labelledby=""],
+a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
+  @include error("empty-link", $self-closing: false, $quarantine: true);
+}
+
+a:-moz-only-whitespace[title=""],
+a:-moz-only-whitespace[aria-label=""],
+a:-moz-only-whitespace[aria-labelledby=""],
+a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
+  @include error("empty-link", $self-closing: false, $quarantine: true);
 }
 
 
@@ -324,19 +353,36 @@ A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
+* <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
+* <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
+* <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ##Selector
 ```
 button:empty:not([aria-label]):not([aria-labelledby]):not([title])
+
+button:blank:not([aria-label]):not([aria-labelledby]):not([title])
+
+button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title])
 ```
 
 ##Test
 ```html_example
 <button type="button"></button>
+
+<button type="button"> </button>
 ```
 */
 button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
   @include error("empty-button");
+}
+
+button:blank:not([aria-label]):not([aria-labelledby]):not([title]) {
+  @include error("empty-button", $self-closing: false, $quarantine: true);
+}
+
+button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]) {
+  @include error("empty-button", $self-closing: false, $quarantine: true);
 }
 
 
@@ -998,6 +1044,22 @@ title:empty {
   @include error("no-page-title");
 
   // Because it's in the <head>
+  display: block !important;
+  &::after {
+    content: "<title></title>";
+  }
+}
+
+title:blank {
+  @include error("no-page-title", $self-closing: false, $quarantine: true);
+  display: block !important;
+  &::after {
+    content: "<title></title>";
+  }
+}
+
+title:-moz-only-whitespace {
+  @include error("no-page-title", $self-closing: false, $quarantine: true);
   display: block !important;
   &::after {
     content: "<title></title>";

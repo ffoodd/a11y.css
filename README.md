@@ -45,7 +45,15 @@ Given the very long list of selectors to test, [they are splitted across several
 
 *Please notice that you can build a single level file* (obsolete stuff only, for example), and adjust it to your very own issues. You may want to fix errors, or to learn from few advices.
 
-*New* : When the `:not()` selector cannot be precise enough, you may add a second selector to extend the `%a11y-reset` placeholder, which tries to cancel the test in your second case. However a few styles from the original page will still be overrided.
+#### Cancel a selector
+
+When the `:not()` selector cannot be precise enough, you may add a second selector to extend the `%a11y-reset` placeholder, which tries to cancel the test in your second case. However a few styles from the original page will still be overrided.
+
+### Quarantine
+
+When a selector is not cross-browser, you may send it to quarantine as it won't invalidate other selectors.
+
+Just switch the boolean argument `$quarantine: true`.
 
 ### About messages
 

@@ -576,27 +576,44 @@ category: Warnings
 Obviously void elements are empty, as well as `<iframe>` and `<textarea>` could be `:empty`.
 Any other `:empty` tag that is not hidden is probably useless, and should be deleted.
 
-One day we could use the `:blank` pseudo-class, but at this time its support is very poor and causes browser to not understand a11y.css'selectors.
+We also use the `:blank` pseudo-class, but at this time its support is very poor.
+We also use the `:-moz-only-whitespace` pseudo-class, which is an alias of `:blank`.
 
 ##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
 * <http://www.w3.org/TR/html-markup/syntax.html#void-element>
-* <http://dev.w3.org/csswg/selectors-4/#the-blank-pseudo>
+* <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
+* <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ##Selector
 ```
 *:empty:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr)
+
+*:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr)
+
+*:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr)
 ```
 
 ##Test
 ```html_example
 <p id="empty-node_code"></p>
+
+<p id="-moz-only-whitespace"> </p>
 ```
 */
 *:empty:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
   @include warning("empty-nodes");
 }
+
+*:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
+  @include warning("empty-nodes", $self-closing: false, $quarantine: true);
+}
+
+*:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
+  @include warning("empty-nodes", $self-closing: false, $quarantine: true);
+}
+
 
 
 /*doc

@@ -44,7 +44,15 @@ Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ai
 
 Ça n’est pas forcément une bonne solution, mais j’ai préféré la facilité de lecture et de maintenance de chaque degré de gravité à l’homogénéité du résultat: ce fichier n’est — encore une fois — destiné qu’aux phases de développement. Ses performances n’ont donc pas d’intérêt, tout comme sa compatibilité navigateur.
 
-*Nouveauté* : Quand le sélecteur de négation ne permet pas un ciblage suffisamment précis, vous pouvez ajouter un second sélecteur après le premier qui étendra le placeholder `%a11y-reset` et annulera (au mieux) le premier sélecteur dans certains cas. Malheureusement certains styles de la page originelle seront malgré tout écrasés.
+#### Annuler un sélecteur
+
+Quand le sélecteur de négation ne permet pas un ciblage suffisamment précis, vous pouvez ajouter un second sélecteur après le premier qui étendra le placeholder `%a11y-reset` et annulera (au mieux) le premier sélecteur dans certains cas. Malheureusement certains styles de la page originelle seront malgré tout écrasés.
+
+### Sélecteur en quarantaine
+
+Quand un sélecteur n’est pas supporté par certains navigateurs, il est possible de le mettre en quarantaine afin qu’il n’invalide pas les autres sélecteurs.
+
+Activez simplement l’argument booléen `$quarantine: true`.
 
 ### Gestion des messages
 
