@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+@mixin quarantine-before {
+  border-style: solid                                                   !important;
+  border-width: 0 0 1px                                                 !important;
+  border-radius: 0                                                      !important;
+  display: block                                                        !important;
+  height: auto                                                          !important;
+  width: 100%                                                           !important;
+  padding: 1em 0;
+
+  position: fixed                                                       !important;
+  bottom: auto                                                          !important;
+  left: 0                                                               !important;
+  right: 0                                                              !important;
+  top: 0                                                                !important;
+
+  pointer-events: none                                                  !important;
+  opacity: 0;
+
+  font: 400
+  normal
+  1rem/1.5
+  "Source Code Pro",
+  "SourceCodePro-Medium",
+  "Fira Mono",
+  "Droid Sans Mono",
+  "Ubuntu Mono",
+  "Consolas",
+  "Monaco",
+  "Andale Mono",
+  monospace                                                       !important;
+  text-align: center                                                    !important;
+  text-decoration: none                                                 !important;
+  text-shadow: 0 1px 0 rgba( 255, 255, 255, .2 )                        !important;
+  text-transform: none                                                  !important;
+  white-space: pre;
+
+  -webkit-transform:  translateY( -100% ) translateZ( 0 )               !important;
+  -ms-transform:      translateY( -100% ) translateZ( 0 )               !important;
+  transform:          translateY( -100% ) translateZ( 0 )               !important;
+  -webkit-transition: -webkit-transform .3s ease-in                     !important;
+  transition:         transform .3s ease-in                             !important;
+}
+
+@mixin quarantine-hover {
+  opacity: 1;
+  -webkit-transform:  translateY( 0 ) translateZ( 0 )                   !important;
+  -ms-transform:      translateY( 0 ) translateZ( 0 )                   !important;
+  transform:          translateY( 0 ) translateZ( 0 )                   !important;
+  -webkit-transition: -webkit-transform .3s ease-out                    !important;
+  transition:         transform .3s ease-in                             !important;
+}
+
+/// Dissociate specific tests
+/// @group messages
+/// @access public
+/// @param {String} $theme - Theme
+/// @requires {mixin} quarantine-before
+/// @requires {mixin} quarantine-hover
+/// @requires {function} theme-conf
+/// @example scss - Dissociate a specific test
+/// .selector {
+///   @include quarantine("advice");
+/// }
+@mixin quarantine($theme) {
+  counter-increment: unquote($theme);
+  outline: 4px solid theme-conf($theme, "color") !important;
+  outline-offset: -4px;
+
+  &::before {
+    @include quarantine-before;
+
+    background:   change_color(theme-conf($theme, "color"), $saturation: 75%, $lightness: 95%) !important;
+    border-color: change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 50%) !important;
+    color:        change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 25%) !important;
+
+    z-index: theme-conf($theme, "index") !important;
+  }
+
+  &:hover::before {
+    @include quarantine-hover;
+  }
+}
+
+/// Dissociate specific tests (self-closing version)
+/// @group messages
+/// @access public
+/// @param {String} $theme - Theme
+/// @requires {mixin} quarantine-before
+/// @requires {mixin} quarantine-hover
+/// @requires {function} theme-conf
+/// @example scss - Dissociate a specific test
+/// .selector {
+///   @include quarantine-self-closing("advice");
+/// }
+@mixin quarantine-self-closing($theme) {
+  background-color: transparentize(theme-conf($theme, "color"), .75) !important;
+  counter-increment: unquote($theme);
+  outline: 4px solid theme-conf($theme, "color") !important;
+  outline-offset: -4px;
+
+  & ~ ::after {
+    @include quarantine-before;
+
+    background:   change_color(theme-conf($theme, "color"), $saturation: 75%, $lightness: 95%) !important;
+    border-color: change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 50%) !important;
+    color:        change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 25%) !important;
+
+    z-index: theme-conf($theme, "index") !important;
+  }
+
+  &:hover ~ ::after {
+    @include quarantine-hover;
+  }
+}
