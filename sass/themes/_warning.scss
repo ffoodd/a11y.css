@@ -195,6 +195,7 @@ figure:not([role="group"]) {
   @include warning("figure-role");
 }
 
+
 /*doc
 ---
 title: "Invalid nesting"
@@ -615,7 +616,6 @@ We also use the `:-moz-only-whitespace` pseudo-class, which is an alias of `:bla
 }
 
 
-
 /*doc
 ---
 title: "A single line table may be used for layout"
@@ -863,6 +863,12 @@ Anything with a `[class]` containing "toggle" probably needs some ARIA flavour, 
   @include warning("aria-pressed");
 }
 
+@include void-tags {
+  &[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) {
+    @include warning("aria-pressed", $self-closing: true);
+  }
+}
+
 
 /*doc
 ---
@@ -937,6 +943,17 @@ Don't laugh, shit happens.
 [id*="undefined"],
 [class*="undefined"] {
   @include warning("undefined");
+}
+
+@include void-tags {
+  &[id*="NaN"],
+  &[id*="null"],
+  &[class*="NaN"],
+  &[class*="null"],
+  &[id*="undefined"],
+  &[class*="undefined"] {
+    @include warning("undefined", $self-closing: true);
+  }
 }
 
 

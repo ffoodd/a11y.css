@@ -49,6 +49,10 @@ Given the very long list of selectors to test, [they are splitted across several
 
 When the `:not()` selector cannot be precise enough, you may add a second selector to extend the `%a11y-reset` placeholder, which tries to cancel the test in your second case. However a few styles from the original page will still be overrided.
 
+#### Extend a selector to target self-closing tags and replaced elements
+
+Generic selector like `[class]` may targetself-closing tags and replaced elements (see "Edge cases and known issues" section). Some selectors are now extended with `@void-tags` mixin, that improve selector to target those weird tags, and repeat the associated message (adding `$self-closing: true`).
+
 ### Quarantine
 
 When a selector is not cross-browser, you may send it to quarantine as it won't invalidate other selectors.

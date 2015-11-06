@@ -385,3 +385,11 @@ $disabled-tests: (
   "obsolete": (),
   "advice": (),
 );
+
+/// List of self-closing tags & replaced elements
+/// @access private
+/// Every HTMl tag that do not allow generated content through pseudo-elements.
+/// @type List
+/// @link http://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element
+/// @link https://la-cascade.io/quest-ce-quun-element-remplace/
+$void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, textarea, select, svg, audio, video, iframe;

@@ -27,6 +27,12 @@ The `[tabindex]` attribute should never be greater than 0.
   @include error("tab-order");
 }
 
+@include void-tags {
+  &[tabindex]:not([tabindex="0"]):not([tabindex="-1"]) {
+    @include error("tab-order", $self-closing: true);
+  }
+}
+
 
 /*doc
 ---
@@ -813,6 +819,13 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
   @include error("dimensions");
 }
 
+@include void-tags {
+  &:not(img):not(object):not(embed):not(svg):not(canvas)[width],
+  &:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+    @include error("dimensions", $self-closing: true);
+  }
+}
+
 
 /*doc
 ---
@@ -881,6 +894,32 @@ Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS eve
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
   @include error("js-events");
+}
+
+@include void-tags {
+  &[onafterprint], &[onbeforeprint], &[onbeforeunload],
+  &[onerror], &[onhaschange], &[onload], &[onmessage],
+  &[onoffline], &[ononline], &[onpagehide], &[onpageshow],
+  &[onpopstate], &[onredo], &[onresize], &[onstorage],
+  &[onundo], &[onunload],
+  &[onblur], &[onchage], &[oncontextmenu], &[onfocus],
+  &[onformchange], &[onforminput], &[oninput], &[oninvalid],
+  &[onreset], &[onselect], &[onsubmit],
+  &[onkeydown], &[onkeypress], &[onkeyup],
+  &[onclick], &[ondblclick], &[ondrag], &[ondragend],
+  &[ondragenter], &[ondragleave], &[ondragover],
+  &[ondragstart], &[ondrop], &[onmousedown], &[onmousemove],
+  &[onmouseout], &[onmouseover], &[onmouseup], &[onmousewheel],
+  &[onscroll],
+  &[onabort], &[oncanplay], &[oncanplaythrough],
+  &[ondurationchange], &[onemptied], &[onended], &[onerror],
+  &[onloadeddata], &[onloadedmetadata], &[onloadstart],
+  &[onpause], &[onplay], &[onplaying], &[onprogress],
+  &[onratechange], &[onreadystatechange], &[onseeked],
+  &[onseeking], &[onstalled], &[onsuspend], &[ontimeupdate],
+  &[onvolumechange], &[onwaiting] {
+    @include error("js-events", $self-closing: true);
+  }
 }
 
 
@@ -998,6 +1037,53 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
   @include error("namespace");
 }
 
+@include void-tags {
+  &[id^="1"],
+  &[id^="2"],
+  &[id^="3"],
+  &[id^="4"],
+  &[id^="5"],
+  &[id^="6"],
+  &[id^="7"],
+  &[id^="8"],
+  &[id^="9"],
+  &[id^="0"],
+  &[id^="--"],
+  &[id^="-1"],
+  &[id^="-2"],
+  &[id^="-3"],
+  &[id^="-4"],
+  &[id^="-5"],
+  &[id^="-6"],
+  &[id^="-7"],
+  &[id^="-8"],
+  &[id^="-9"],
+  &[id^="-0"],
+  &[class^="1"],
+  &[class^="2"],
+  &[class^="3"],
+  &[class^="4"],
+  &[class^="5"],
+  &[class^="6"],
+  &[class^="7"],
+  &[class^="8"],
+  &[class^="9"],
+  &[class^="0"],
+  &[class^="--"],
+  &[class^="-1"],
+  &[class^="-2"],
+  &[class^="-3"],
+  &[class^="-4"],
+  &[class^="-5"],
+  &[class^="-6"],
+  &[class^="-7"],
+  &[class^="-8"],
+  &[class^="-9"],
+  &[class^="-0"] {
+    @include error("namespace", $self-closing: true);
+  }
+}
+
 
 /*doc
 ---
@@ -1027,6 +1113,12 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 */
 [style] {
   @include error("style-attr");
+}
+
+@include void-tags {
+  &[style] {
+    @include error("style-attr", $self-closing: true);
+  }
 }
 
 

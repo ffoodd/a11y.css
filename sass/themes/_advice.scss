@@ -25,6 +25,12 @@ category: Advices
   @include advice("empty-class");
 }
 
+@include void-tags {
+  &[class=""] {
+    @include advice("empty-class", $self-closing: true);
+  }
+}
+
 
 
 /*doc
@@ -50,6 +56,13 @@ category: Advices
 [id=""] {
   @include advice("empty-id");
 }
+
+@include void-tags {
+  &[id=""] {
+    @include advice("empty-id", $self-closing: true);
+  }
+}
+
 
 
 /*doc
@@ -461,6 +474,13 @@ A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 [hidden]:not(:empty),
 [aria-hidden="true"]:not(:empty) {
   @include advice("hidden");
+}
+
+@include void-tags {
+  &[hidden]:not(:empty),
+  &[aria-hidden="true"]:not(:empty) {
+    @include advice("hidden", $self-closing: true);
+  }
 }
 
 

@@ -48,6 +48,10 @@ Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ai
 
 Quand le sélecteur de négation ne permet pas un ciblage suffisamment précis, vous pouvez ajouter un second sélecteur après le premier qui étendra le placeholder `%a11y-reset` et annulera (au mieux) le premier sélecteur dans certains cas. Malheureusement certains styles de la page originelle seront malgré tout écrasés.
 
+#### Étendre un sélecteur pour cibler les balises auto-fermantes et éléments remplacés
+
+Les sélecteurs génériques comme `[class]` peuvent également cibler des éléments remplacés et des balises auto-fermantes (voir la section « Cas particuliers et problèmes connus »). Certains sélecteurs sont étendus grâce au mixin `@void-tags`, qui reprend le sélecteur en ciblant plus particulièrement les éléments incongrus, et répète le message en y ajoutant l’argument `$self-closing: true`.
+
 ### Sélecteur en quarantaine
 
 Quand un sélecteur n’est pas supporté par certains navigateurs, il est possible de le mettre en quarantaine afin qu’il n’invalide pas les autres sélecteurs.
