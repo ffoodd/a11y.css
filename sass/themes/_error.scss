@@ -90,7 +90,7 @@ An empty link should have a label, within `[title]`, `[aria-label]` or targeted 
 By the way, why would you use an empty link?
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-6-5>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-65-a-dans-chaque-page-web-chaque-lien-lexception-des-ancres-a-t-il-un-intitul->
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
@@ -159,7 +159,9 @@ category: Errors
 An `<img>` must have an `[alt]`. Always.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-1-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-11-a-chaque-image-a-t-elle-une-alternative-textuelle->
+* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <http://www.w3.org/TR/html51/semantics.html#alt>
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG-TECHS/H36.html>
 * <http://www.w3.org/TR/WCAG-TECHS/H37.html>
@@ -247,7 +249,7 @@ category: Errors
 A `<label>` is labelling something, in theory.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-111-a-chaque-champ-de-formulaire-a-t-il-une-tiquette->
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
@@ -281,7 +283,7 @@ category: Errors
 How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-111-a-chaque-champ-de-formulaire-a-t-il-une-tiquette->
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
@@ -318,7 +320,7 @@ How to label a `[reset]`, `[submit]` or `[button]` type input?
 You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-9>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-119-a-dans-chaque-formulaire-lintitul-de-chaque-bouton-est-il-pertinent->
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 
@@ -355,7 +357,7 @@ A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]
 
 ##References
 * <http://references.modernisation.gouv.fr/referentiel-technique-0#title-1211-formulaires>
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-9>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-119-a-dans-chaque-formulaire-lintitul-de-chaque-bouton-est-il-pertinent->
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
@@ -404,7 +406,7 @@ category: Errors
 
 ##References
 * <http://references.modernisation.gouv.fr/referentiel-technique-0#title-1211-formulaires>
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-9>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-119-a-dans-chaque-formulaire-lintitul-de-chaque-bouton-est-il-pertinent->
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
@@ -552,7 +554,7 @@ category: Errors
 `<input>` needs a `[type]` in order to tell the user what kind of data is wanted.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-11>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-1111-aa-dans-chaque-formulaire-le-contrle-de-saisie-est-il-accompagn-si-ncessaire-de-suggestions-facilitant-la-correction-des-erreurs-de-saisie->
 * <http://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
 
 ##Selector
@@ -584,7 +586,7 @@ category: Errors
 `<optgroup>` needs a `[label]` to explain what's inside the group.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-11-8>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-118-a-dans-chaque-formulaire-chaque-liste-de-choix-est-elle-structure-de-manire-pertinente->
 * <http://www.w3.org/TR/WCAG-TECHS/H85.html>
 * <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
@@ -626,7 +628,7 @@ category: Errors
 `<iframe>` needs a `[title]` in order to tell the user what to expect inside the iframe.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-2-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-21-a-chaque-cadre-en-ligne-a-t-il-un-titre-de-cadre->
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/TR/WCAG-TECHS/H64.html>
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454>
@@ -692,9 +694,9 @@ category: Errors
 `<html>` must indicate to User Agents the human language used in the document.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-8-3>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-83-a-dans-chaque-page-web-la-langue-par-dfaut-est-elle-prsente->
 * <http://references.modernisation.gouv.fr/referentiel-technique-0#title-langue-par-dfaut>
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-8-4>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-84-a-pour-chaque-page-web-ayant-une-langue-par-dfaut-le-code-de-langue-est-il-pertinent->
 * <http://www.w3.org/TR/WCAG20/#meaning-doc-lang-id>
 * <http://www.w3.org/TR/WCAG-TECHS/H57.html>
 
@@ -735,7 +737,7 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 * `[colgroup]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-5-8>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-58-a-chaque-tableau-de-mise-en-forme-ne-doit-pas-utiliser-dlments-propres-aux-tableaux-de-donnes-cette-rgle-est-elle-respecte->
 * <http://www.w3.org/TR/WCAG-TECHS/F46.html>
 * <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
 
@@ -799,8 +801,8 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 ##References
 * <http://references.modernisation.gouv.fr/referentiel-technique-0#title-prsentation-de-linformation>
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-10-1>
-* <http://www.w3.org/TR/WCAG20/#content-structure-sepffoodd.pngaration-programmatic>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-101-a-dans-le-site-web-des-feuilles-de-styles-sont-elles-utilises-pour-contrler-la-prsentation-de-linformation->
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ##Selector
@@ -1097,7 +1099,7 @@ Your styles should be driven by a CSS file. That's it.
 And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#crit-10-1>
+* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-101-a-dans-le-site-web-des-feuilles-de-styles-sont-elles-utilises-pour-contrler-la-prsentation-de-linformation->
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
