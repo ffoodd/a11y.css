@@ -271,3 +271,57 @@
     $disabled-tests: map-merge($disabled-tests, ("obsolete": append(map-get($disabled-tests, "obsolete"), $key))) !global;
   }
 }
+
+
+/// Display messages on <head>'s tags
+/// @group messages
+/// @access public
+/// @param {Arglist} $tag - Text to display, recommended: tag name
+/// @param {Arglist} $theme - Message's level
+/// @require {variable} $theme
+/// @require {function} theme-conf
+/// @example scss - Display messages on <head>'s tags
+///  @include a11y-head("title", error)
+@mixin a11y-head($tag, $theme) {
+  // Because it's in the <head>
+  display: block !important;
+
+  &::after {
+    content: $tag;
+
+    background:   change_color(theme-conf($theme, "color"), $saturation: 75%, $lightness: 95%) !important;
+    border-color: change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 50%) !important;
+    color:        change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 25%) !important;
+
+    border-style: solid                                                   !important;
+    border-width: 0 0 0 1px                                               !important;
+    border-radius: 0                                                      !important;
+    cursor: pointer;
+    display: inline-block                                                 !important;
+    padding: .5em 1em;
+
+    position: fixed                                                       !important;
+    bottom: auto                                                          !important;
+    left: 1em                                                             !important;
+    right: auto                                                           !important;
+    top: 5em                                                              !important;
+
+    font: 400
+          normal
+          1rem/1.5
+          "Source Code Pro",
+          "SourceCodePro-Medium",
+          "Fira Mono",
+          "Droid Sans Mono",
+          "Ubuntu Mono",
+          "Consolas",
+          "Monaco",
+          "Andale Mono",
+          monospace                                                       !important;
+    text-align: left                                                      !important;
+    text-decoration: none                                                 !important;
+    text-shadow: 0 1px 0 rgba( 255, 255, 255, .2 )                        !important;
+    text-transform: none                                                  !important;
+    white-space: pre;
+  }
+}
