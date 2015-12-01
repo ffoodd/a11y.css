@@ -90,8 +90,8 @@
 /// @access private
 /// @param {String} $theme - Theme
 /// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
-/// @param {Bool} $quarantine (false) - Whether or not to compile this single selector apart
+/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
+/// @param {Bool} $quarantine [false] - Whether or not to compile this single selector apart
 /// @requires {mixin} message
 /// @requires {function} theme-conf
 @mixin item($theme, $key, $self-closing: false, $quarantine: false) {
@@ -141,7 +141,7 @@
 /// @group messages
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 /// @require {mixin} item
 /// @require {variable} disabled-tests
 /// @require {function} is-level-enough
@@ -162,7 +162,7 @@
 /// @group messages
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 /// @require {mixin} item
 /// @require {variable} disabled-tests
 /// @require {function} is-level-enough
@@ -183,7 +183,7 @@
 /// @group messages
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 /// @require {mixin} item
 /// @require {variable} disabled-tests
 /// @require {function} is-level-enough
@@ -203,7 +203,7 @@
 /// @group messages
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing (false) - Whether or not to use message on self or next node
+/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 /// @require {mixin} item
 /// @require {variable} disabled-tests
 /// @require {function} is-level-enough

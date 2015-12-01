@@ -168,14 +168,14 @@ With global SassDoc install:
 
 ```sh
 $ npm install sassdoc -g
-$ sassdoc sass/ docs/ --verbose --config .sassdocrc
+$ sassdoc sass/ --dest docs/ --verbose --config .sassdocrc
 ```
 
 With local SassDoc install:
 
 ```sh
 $ npm install
-$ node_modules/sassdoc/bin/sassdoc sass/ docs/ --verbose --config .sassdocrc
+$ node_modules/sassdoc/bin/sassdoc sass/ --dest docs/ --verbose --config .sassdocrc
 ```
 
 ## Credits and Acknowledgements

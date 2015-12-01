@@ -2,11 +2,11 @@
     "title": "A11y.css",
     "name": "a11y.css",
     "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
-    "version": "2.1.3",
+    "version": "2.2",
     "license": "MIT",
     "homepage": "http://ffoodd.github.io/a11y.css",
     "repository": "https://github.com/ffoodd/a11y.css",
     "devDependencies": {
-        "sassdoc": "^1.10.3"
+        "sassdoc": "^2.1.16"
     }
 }

@@ -165,14 +165,14 @@ Avec une installation globale SassDoc :
 
 ```sh
 $ npm install sassdoc -g
-$ sassdoc sass/ docs/ --verbose --config .sassdocrc
+$ sassdoc sass/ --dest docs/ --verbose --config .sassdocrc
 ```
 
 Avec une installation locale SassDoc :
 
 ```sh
 $ npm install
-$ node_modules/sassdoc/bin/sassdoc sass/ docs/ --verbose --config .sassdocrc
+$ node_modules/sassdoc/bin/sassdoc sass/ --dest docs/ --verbose --config .sassdocrc
 ```
 
 ## Crédits et remerciements
