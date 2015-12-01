@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+/// Equivalent to %a11y-before, for quarantine context
+/// @group messages
+/// @access public
+/// @output CSS
+/// @example scss - Equivalent to %a11y-before, for quarantine context
+///  @include quarantine-before();
 @mixin quarantine-before {
   border-style: solid                                                   !important;
   border-width: 0 0 1px                                                 !important;
@@ -43,6 +49,12 @@
   transition:         transform .3s ease-in                             !important;
 }
 
+/// Equivalent to %a11y-before, for quarantine context
+/// @group messages
+/// @access public
+/// @output CSS
+/// @example scss - Equivalent to %a11y-before, for quarantine context
+///  @include quarantine-before();
 @mixin quarantine-hover {
   opacity: 1;
   -webkit-transform:  translateY( 0 ) translateZ( 0 )                   !important;

@@ -63,21 +63,21 @@
 }
 
 
-/// Mixin that extends selector with self-closing tags & replaced elements
+/// Extends selector with self-closing tags & replaced elements
 /// Notice the `&` before the selector, and `$self-closing: true` argument.
 /// @access private
 /// @require {variable} void-tags
 /// @output `selectors` extended with void tags
 /// @example scss - Apply a test to void tags
-/// @mixin void-tags {
-///   &.selector {
-///     @include advice"("nav", $self-closing: true);
-///   }
-/// }
+///  @mixin void-tags {
+///    &.selector {
+///      @include advice"("nav", $self-closing: true);
+///    }
+///  }
 /// @example css - `.selector` extended
-/// area .selector, base .selector, br .selector, col .selector, command .selector, embed .selector, hr .selector, img .selector, input .selector, keygen .selector, link .selector, meta .selector, param .selector, source .selector, track .selector, wbr .selector, textarea .selector, select .selector, svg .selector, audio .selector, video .selector, iframe .selector {
-///   content: "\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
-/// }
+///  area .selector, base .selector, br .selector, col .selector, command .selector, embed .selector, hr .selector, img .selector, input .selector, keygen .selector, link .selector, meta .selector, param .selector, source .selector, track .selector, wbr .selector, textarea .selector, select .selector, svg .selector, audio .selector, video .selector, iframe .selector {
+///    content: "\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
+///  }
 @mixin void-tags {
   #{$void-tags} {
     @content;
@@ -278,7 +278,6 @@
 /// @access public
 /// @param {Arglist} $tag - Text to display, recommended: tag name
 /// @param {Arglist} $theme - Message's level
-/// @require {variable} $theme
 /// @require {function} theme-conf
 /// @example scss - Display messages on <head>'s tags
 ///  @include a11y-head("title", error)
