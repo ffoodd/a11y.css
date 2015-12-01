@@ -1,4 +1,6 @@
 {
+    "dest": ./docs,
+    "package": ./package.json,
     "display": {
         "access": ["public"],
         "alias": false,

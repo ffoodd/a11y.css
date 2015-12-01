@@ -1,5 +1,5 @@
 {
-    "title": "A11y.css",
+    "title": "a11y.css",
     "name": "a11y.css",
     "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
     "version": "2.2",
