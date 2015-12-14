@@ -5,13 +5,12 @@
       <p class="txtright"><strong>® 2014 Gaël Poupard</strong></p>
       <p>This project is distributed under license <a href="http://opensource.org/licenses/MIT" title="The MIT licence">MIT</a> and <a href="http://creativecommons.org/licenses/by/3.0/fr/" hreflang="fr" title="Explications de la licence">CC BY 3.0 FR</a>. <a class="end" href="#top">Back to top &uarr;</a></p>
     </footer>
-    <script src="static/jquery-2.1.3.min.js"></script>
     <script>
-      $("#bookmarklet").on("submit", function (event) {
-        event.preventDefault();
+      document.getElementById("bookmarklet").addEventListener("submit", function (e) {
+        e.preventDefault();
 
-        var $minimum_level = $("#minimum-level").val();
-        var $language = $("#language").val();
+        var $minimum_level = document.getElementById("minimum-level").value;
+        var $language = document.getElementById("language").value;
 
         var $hrefstart = 'javascript:(function(){a11ycss=document.createElement("LINK");a11ycss.href="https://rawgit.com/ffoodd/a11y.css/master/css/a11y-';
         var $hreflang = $language;
@@ -19,30 +18,43 @@
         if( $minimum_level !== "advice" ) {
           $hreflevel = '_' + $minimum_level;
         }
-        var $hrefend = '.css";a11ycss.rel="stylesheet";a11ycss.media="all";document.body.appendChild(a11ycss);})();';
+        var $hrefend = '.css";a11ycss.rel="stylesheet";a11ycss.media="(max-width: 800px)";document.body.appendChild(a11ycss);})();';
 
         var $href = $hrefstart + $hreflang + $hreflevel + $hrefend;
 
-        $(".bookmarklet").attr("href", $href);
-        $(".bookmarklet").addClass("done");
+        document.getElementById("bookmarklet--link").setAttribute("href", $href);
+        document.getElementById("bookmarklet--link").classList.add("done");
       });
-      
-      $(document).ready(function() {
-        var $currentHref = location.hash.replace("#","");
-        if ($currentHref) {
-          $("ol.mb3").find('a[href^="' + $currentHref + '"]').addClass("active-test");
-        } else {
-          $("ol.mb3").find("a").eq(0).addClass("active-test");
+
+      document.getElementById("bookmarklet").addEventListener("change", function() {
+        document.getElementById("bookmarklet--link").classList.remove("done");
+      });
+
+
+      function activeAnchor() {
+        $currentHref = document.getElementById("toc").getElementsByTagName("a");
+        for(i=0;i<$currentHref.length;i++) {
+          if(document.location.href.indexOf($currentHref[i].href)>=0) {
+            $currentHref[i].classList.add("active-test");
+          }
         }
-      });
-      
-      $("ol.mb3 a").on("click", function() {
-        $(".active-test").removeAttr("class");
-        $(this).addClass("active-test");
-      });
-      
-      $("#bookmarklet *").on("focus", function() {
-        $(".bookmarklet").removeClass("done");
+      }
+
+      if (document.readyState != "loading") {
+        activeAnchor();
+      } else {
+        document.addEventListener("DOMContentLoaded", activeAnchor);
+      }
+
+      document.getElementById("toc").addEventListener("click", function(e) {
+        var $link = e.target;
+        var $active = document.querySelector(".active-test");
+
+        if( $active ) {
+          $active.removeAttribute("class");
+        }
+
+        $link.classList.add("active-test");
       });
     </script>
   </body>

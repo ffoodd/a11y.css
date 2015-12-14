@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://rawgit.com/ffoodd/sseeeedd/master/css/sseeeedd.css">
     <link rel="stylesheet" href="static/doc.css">
     <!-- CSS to be documented -->
-    <link rel="stylesheet" href="css/a11y-en.css">
+    <link rel="stylesheet" href="css/a11y-en.css" media="(min-width: 800px)">
   </head>
   <body>
 
@@ -44,7 +44,7 @@
     <main role="main" class="grid-1-2 mw--site center mt2">
       <aside role="complementary" class="pr1">
         <h2 class="h4-like"><%= title %></h2>
-        <ol class="mb3">
+        <ol id="toc" class="mb3">
           <% @blocks.each do |block| %>
             <li>
               <a href="#<%= block[:name] %>"><%= block[:title] %></a>
@@ -78,7 +78,7 @@
 
         <p class="clear grid-2">
           <small class="txtright pr1">Just drag this to your bookmarks, and you'll be able to use <b>a11y.css</b> on any page:</small>
-          <a href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();" class="pa1 txtcenter action--extra bookmarklet">a11y.css</a>
+          <a id="bookmarklet--link" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='(max-width: 800px)';document.body.appendChild(a11ycss);})();" class="pa1 txtcenter action--extra bookmarklet">a11y.css</a>
         </p>
       </aside>
           
