@@ -17,6 +17,12 @@ p code {
   white-space: nowrap;
 }
 
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
 nav a,
 nav a:hover,
 nav a:focus,
@@ -67,8 +73,11 @@ nav:not(.Errors):not(.Warnings):not(.Obsolete):not(.Advices) .index::before {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin: 1em 0;
+  position: relative;
+  z-index: 1;
 }
 
+.cssExample::before,
 .codeExample::before {
   background: #f9f9f9;
   border: 1px solid #ccc;
@@ -81,13 +90,8 @@ nav:not(.Errors):not(.Warnings):not(.Obsolete):not(.Advices) .index::before {
 }
 
 .cssExample::before {
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 4px 0 4px 0;
   content: "CSS";
-  display: block;
   margin-bottom: -1em;
-  padding: .33em;
   transform: translate( calc( -1em - 1px ),  calc( -1em - 1px ));
   width: 3em;
 }
