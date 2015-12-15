@@ -62,7 +62,8 @@ nav:not(.Errors):not(.Warnings):not(.Obsolete):not(.Advices) .index::before {
   top: calc(50% - .5em);
 }
 
-.codeExample {
+.codeExample,
+.codeBlock.cssExample {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin: 1em 0;
@@ -77,6 +78,18 @@ nav:not(.Errors):not(.Warnings):not(.Obsolete):not(.Advices) .index::before {
   padding: .33em;
   transform: translate(-1px, -1px);
   width: 5em;
+}
+
+.cssExample::before {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 4px 0;
+  content: "CSS";
+  display: block;
+  margin-bottom: -1em;
+  padding: .33em;
+  transform: translate( calc( -1em - 1px ),  calc( -1em - 1px ));
+  width: 3em;
 }
 
 .codeBlock,
@@ -168,9 +181,10 @@ a[target$="blank"]::after {
   background-image: linear-gradient( to bottom, #3ec83e 0%, #164d16 100% );
 }
 
-.s { color: #07a } /* Literal.String */
-.na { color: #690 } /* Name.Attribute */
-.nt { color: #905 } /* Name.Tag */
+.s, .nd { color: #07a }
+.na, .cssExample .nt { color: #690 }
+.nt, .cssExample .err + .nt { color: #905 }
+.o, .err { color: #999 }
 
 #empty-link_code,
 #empty-link_code-moz,

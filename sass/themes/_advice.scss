@@ -12,7 +12,7 @@ category: Advices
 `[class]` shouldn't be present if empty. Something to improve, right?
 
 ##Selector
-```
+```css_example
 [class=""]
 ```
 
@@ -44,7 +44,7 @@ category: Advices
 `[id]` shouldn't be present if empty. You'll thank me later.
 
 ##Selector
-```
+```css_example
 [id=""]
 ```
 
@@ -76,7 +76,7 @@ category: Advices
 `<main>` should be unique. Isn't that obvious?
 
 ##Selector
-```
+```css_example
 main:not(:first-of-type)
 ```
 
@@ -105,7 +105,7 @@ category: Advices
 * <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
 ##Selector
-```
+```css_example
 figcaption:not(:only-of-type)
 ```
 
@@ -137,7 +137,7 @@ category: Advices
 * <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
 ##Selector
-```
+```css_example
 figcaption:not(:first-child):not(:last-child)
 ```
 
@@ -167,7 +167,7 @@ A `<href="mailto:">` should contain a valid email.
 Otherwise you may annoy your users.
 
 ##Selector
-```
+```css_example
 [href^="mailto"]
 ```
 
@@ -193,7 +193,7 @@ A `<href="tel:">` should contain a valid phone number.
 Otherwise you may make your users to call anubody.
 
 ##Selector
-```
+```css_example
 [href^="tel"]
 ```
 
@@ -221,7 +221,7 @@ Obviously, a button role on a link is probably not so hard to move to an authent
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174>
 
 ##Selector
-```
+```css_example
 a[role="button"]
 ```
 
@@ -255,7 +255,7 @@ You could use a `[title]`, for example.
 * <http://www.w3.org/TR/WCAG-TECHS/F22.html>
 
 ##Selector
-```
+```css_example
 [target$="blank"]
 ```
 
@@ -286,7 +286,7 @@ A link to a file should indicate the file format, the file size and if different
 * <http://www.w3.org/TR/WCAG-TECHS/H33.html>
 
 ##Selector
-```
+```css_example
 [download],
 [href$=".pdf"],
 [href$=".doc"],
@@ -343,7 +343,7 @@ Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[c
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
 ##Selector
-```
+```css_example
 [role="main"] ~ [role="main"],
 [role="search"] ~ [role="search"],
 [role="banner"] ~ [role="banner"],
@@ -379,7 +379,7 @@ A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
 ##Selector
-```
+```css_example
 [id*="search"]:not([role="search"]),
 [class*="search"]:not([role="search"])
 ```
@@ -418,7 +418,7 @@ A `[required]` or `[aria-required]` should be visually understandable.
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 
 ##Selector
-```
+```css_example
 [required],
 [aria-required]
 ```
@@ -461,7 +461,7 @@ A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
 ##Selector
-```
+```css_example
 [hidden]:not(:empty),
 [aria-hidden="true"]:not(:empty)
 ```
@@ -495,7 +495,7 @@ category: Advices
 A `[placeholder]` is not a label, isn't it?
 
 ##Selector
-```
+```css_example
 [placeholder]:not([title]):not([aria-label]):not([aria-labelledby])
 ```
 
@@ -527,7 +527,7 @@ A `<video>` or `<audio>` needs a few things to be accessible, like a transcript,
 * <http://www.w3.org/TR/WCAG20/#media-equiv-text-doc>
 
 ##Selector
-```
+```css_example
 video,
 audio
 ```
@@ -560,7 +560,7 @@ A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
 * <http://www.w3.org/TR/html51/semantics.html#alt>
 
 ##Selector
-```
+```css_example
 img[alt][title],
 area[alt][title],
 svg[aria-label][title]
@@ -589,7 +589,7 @@ category: Advices
 A `<time>` or `[datetime]` content should be an understandable and well formated date.
 
 ##Selector
-```
+```css_example
 time,
 [datetime]
 ```
@@ -621,7 +621,7 @@ A `[scope]` can be col or row (and nothing else) and it has to be relevant.
 * <http://www.w3.org/TR/WCAG-TECHS/H63.html>
 
 ##Selector
-```
+```css_example
 th[scope]
 ```
 
@@ -668,7 +668,7 @@ A `[role="presentation"]` is a good idea for any `<table>` used for layout, but 
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ##Selector
-```
+```css_example
 table[role="presentation"]
 ```
 

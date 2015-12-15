@@ -14,7 +14,7 @@ The `[tabindex]` attribute should never be greater than 0.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
 
 ##Selector
-```
+```css_example
 [tabindex]:not([tabindex="0"]):not([tabindex="-1"])
 ```
 
@@ -52,7 +52,7 @@ However a link may be an anchor, using `[name]` or `[id]`.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386>
 
 ##Selector
-```
+```css_example
 a[name=""][id=""][href=""],
 a:not([name])[id=""][href=""],
 a[name=""]:not([id])[href=""],
@@ -102,7 +102,7 @@ By the way, why would you use an empty link?
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ##Selector
-```
+```css_example
 a:empty[title=""],
 a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
@@ -170,7 +170,7 @@ An `<img>` must have an `[alt]`. Always.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369>
 
 ##Selector
-```
+```css_example
 img:not([alt]),
 area:not([alt]),
 input[type="image"]:not([alt])
@@ -205,7 +205,7 @@ An `<img>` must have an `[src]` or an `[srcset]`. Obviously.
 * <http://scottjehl.github.io/picturefill/>
 
 ##Selector
-```
+```css_example
 img:not([src]):not([srcset]),
 img[src=""],
 img[src="#"],
@@ -256,7 +256,7 @@ A `<label>` is labelling something, in theory.
 * <http://www.w3.org/TR/WCAG-TECHS/H44.html>
 
 ##Selector
-```
+```css_example
 label:not([for]),
 label[for=""]
 ```
@@ -290,7 +290,7 @@ How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` 
 * <http://www.w3.org/TR/WCAG-TECHS/H44.html>
 
 ##Selector
-```
+```css_example
 input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
 textarea:not([id]):not([aria-label]):not([aria-labelledby]),
 select:not([id]):not([aria-label]):not([aria-labelledby])
@@ -325,7 +325,7 @@ You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-la
 * <http://www.w3.org/TR/WCAG-TECHS/H91.html>
 
 ##Selector
-```
+```css_example
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])
@@ -366,7 +366,7 @@ A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ##Selector
-```
+```css_example
 button:empty:not([aria-label]):not([aria-labelledby]):not([title])
 
 button:blank:not([aria-label]):not([aria-labelledby]):not([title])
@@ -412,7 +412,7 @@ category: Errors
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ##Selector
-```
+```css_example
 button[title=""],
 button[aria-label=""],
 button[aria-labelledby=""]
@@ -449,7 +449,7 @@ If it doesn't submit anything, it should have the `[type="button"]`.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189>
 
 ##Selector
-```
+```css_example
 button:not([type]):not([form]):not([formaction]):not([formtarget])
 ```
 
@@ -485,7 +485,7 @@ If a `<button>`'s`[type]` is either `"reset"` or `"button"`, it should not use t
 * <http://www.w3.org/TR/html5/forms.html#the-button-element>
 
 ##Selector
-```
+```css_example
 button[type="reset"][formmethod],
 button[type="reset"][formaction],
 button[type="reset"][formtarget],
@@ -529,7 +529,7 @@ Use `[disabled]` and `[readonly]`.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122>
 
 ##Selector
-```
+```css_example
 button[class*="disabled"]:not([disabled]):not([readonly])
 ```
 
@@ -558,7 +558,7 @@ category: Errors
 * <http://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
 
 ##Selector
-```
+```css_example
 input:not([type]),
 input[type=""]
 ```
@@ -591,7 +591,7 @@ category: Errors
 * <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
 ##Selector
-```
+```css_example
 optgroup:not([label])
 ```
 
@@ -634,7 +634,7 @@ category: Errors
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454>
 
 ##Selector
-```
+```css_example
 iframe:not([title]),
 iframe[title=""]
 ```
@@ -664,7 +664,7 @@ category: Errors
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214>
 
 ##Selector
-```
+```css_example
 form:not([action])
 ```
 
@@ -701,7 +701,7 @@ category: Errors
 * <http://www.w3.org/TR/WCAG-TECHS/H57.html>
 
 ##Selector
-```
+```css_example
 html:not([lang]),
 html[lang=""]
 ```
@@ -742,7 +742,7 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 * <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
 
 ##Selector
-```
+```css_example
 table[role="presentation"] th,
 table[role="presentation"] thead,
 table[role="presentation"] tfoot,
@@ -806,7 +806,7 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ##Selector
-```
+```css_example
 :not(img):not(object):not(embed):not(svg):not(canvas)[width],
 :not(img):not(object):not(embed):not(svg):not(canvas)[height]
 ```
@@ -845,7 +845,7 @@ Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS eve
 * <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener>
 
 ##Selector
-```
+```css_example
 [onafterprint], [onbeforeprint], [onbeforeunload],
 [onerror], [onhaschange], [onload], [onmessage],
 [onoffline], [ononline], [onpagehide], [onpageshow],
@@ -918,7 +918,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L480>
 
 ##Selector
-```
+```css_example
 [id^="1"],
 [id^="2"],
 [id^="3"],
@@ -1031,7 +1031,7 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ##Selector
-```
+```css_example
 [style]
 ```
 
@@ -1079,7 +1079,7 @@ We also use the `:-moz-only-whitespace` pseudo-class, which is an alias of `:bla
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ##Selector
-```
+```css_example
 title:empty
 title:blank
 title:-moz-only-whitespace

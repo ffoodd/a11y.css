@@ -20,7 +20,7 @@ The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also
 * <http://www.w3.org/TR/html5/grouping-content.html#the-li-element>
 
 ##Selector
-```
+```css_example
 ul > :not(li),
 ol > :not(li),
 :not(ul):not(ol) > li
@@ -60,7 +60,7 @@ category: Warnings
 * <http://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
 ##Selector
-```
+```css_example
 dt + :not(dd),
 :not(dt):not(dd) + dd
 ```
@@ -104,7 +104,7 @@ Any other imbrication may be a crime somewhere.
 * <http://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
 ##Selector
-```
+```css_example
 :not(dl) > dt,
 :not(dl) > dd,
 dl > :not(dt):not(dd)
@@ -150,7 +150,7 @@ category: Warnings
 * <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element>
 
 ##Selector
-```
+```css_example
 :not(figure) > figcaption
 ```
 
@@ -180,7 +180,7 @@ category: Warnings
 * <http://www.w3.org/TR/html51/semantics.html#alt>
 
 ##Selector
-```
+```css_example
 figure:not([role="group"])
 ```
 
@@ -217,7 +217,7 @@ Maybe other invalid nestings to test. Stay tuned.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L277>
 
 ##Selector
-```
+```css_example
 select > :not(option):not(optgroup),
 :not(select):not(optgroup) > option,
 optgroup > :not(option),
@@ -259,7 +259,7 @@ You could use a `<span>` instead.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326>
 
 ##Selector
-```
+```css_example
 b div,
 i div,
 q div,
@@ -309,7 +309,7 @@ They must not be used as wrappers!
 * <http://www.w3.org/TR/html5/dom.html#sectioning-content>
 
 ##Selector
-```
+```css_example
 aside > aside:first-child,
 article > aside:first-child,
 aside > article:first-child,
@@ -356,7 +356,7 @@ Always.
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L449>
 
 ##Selector
-```
+```css_example
 fieldset > *:not(legend):first-child,
 fieldset > legend:not(:first-child)
 ```
@@ -395,7 +395,7 @@ Any abbreviation should give an explanation about its meaning, at least on its f
 * <http://www.w3.org/TR/WCAG-TECHS/H28.html>
 
 ##Selector
-```
+```css_example
 abbr:not([title]),
 abbr[title=""]
 ```
@@ -433,7 +433,7 @@ That should be double-checked.
 * <http://www.w3.org/TR/WCAG-TECHS/F38.html>
 
 ##Selector
-```
+```css_example
 img[alt=""],
 area[alt=""],
 input[type="image"][alt=""],
@@ -482,7 +482,7 @@ Otherwise it should have a `[role="presentation"]`, and should not have any of t
 * <http://www.w3.org/TR/WCAG-TECHS/F65.html>
 
 ##Selector
-```
+```css_example
 svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby])
 ```
 
@@ -517,7 +517,7 @@ A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because 
 * <http://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
 ##Selector
-```
+```css_example
 video[autoplay],
 audio[autoplay]
 ```
@@ -551,7 +551,7 @@ A time-based media like `<audio>` or `<video>` would be easier to use if `[contr
 * <http://www.w3.org/TR/WCAG-TECHS/G4.html>
 
 ##Selector
-```
+```css_example
 video:not([controls]),
 audio:not([controls])
 ```
@@ -591,7 +591,7 @@ We also use the `:-moz-only-whitespace` pseudo-class, which is an alias of `:bla
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ##Selector
-```
+```css_example
 body *:empty:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
 body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
 body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
@@ -634,7 +634,7 @@ Should be double checked!
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L331>
 
 ##Selector
-```
+```css_example
 table:not([role="presentation"]) > tr:only-child,
 table:not([role="presentation"]) > tbody > tr:only-child
 ```
@@ -673,7 +673,7 @@ And it must be the `:first-child`, by the way.
 * <http://www.w3.org/TR/WCAG-TECHS/H39.html>
 
 ##Selector
-```
+```css_example
 table:not([role="presentation"]) > caption:not(:first-child),
 table:not([role="presentation"]) > *:first-child:not(caption)
 ```
@@ -720,7 +720,7 @@ category: Warnings
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L326>
 
 ##Selector
-```
+```css_example
 table > tfoot ~ thead,
 table > tbody ~ tfoot,
 table > tbody ~ thead
@@ -768,7 +768,7 @@ category: Warnings
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L311>
 
 ##Selector
-```
+```css_example
 table:not([role="presentation"]) > caption + tbody,
 table:not([role="presentation"]) > tbody:first-child
 ```
@@ -813,7 +813,7 @@ category: Warnings
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L282>
 
 ##Selector
-```
+```css_example
 th:not([scope]):not([id])
 ```
 
@@ -851,7 +851,7 @@ Anything with a `[class]` containing "toggle" probably needs some ARIA flavour, 
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L185>
 
 ##Selector
-```
+```css_example
 [class*="toggle"]:not([aria-expanded]):not([aria-haspopup])
 ```
 
@@ -886,7 +886,7 @@ Believe me, this still have to be tested.
 * <http://www.la-grange.net/2015/03/11/visible>
 
 ##Selector
-```
+```css_example
 img[src*="1px.gif"]:not([role="presentation"]),
 img[src*="1x1.gif"]:not([role="presentation"]),
 img[src*="clear.gif"]:not([role="presentation"]),
@@ -923,7 +923,7 @@ category: Warnings
 Don't laugh, shit happens.
 
 ##Selector
-```
+```css_example
 [id*="NaN"],
 [id*="null"],
 [class*="NaN"],
@@ -974,7 +974,7 @@ Should probably be a `<button>` or at least a `[role="button"]`, don't you think
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L392>
 
 ##Selector
-```
+```css_example
 a[href^="javascript"]:not([role="button"])
 ```
 
@@ -1004,7 +1004,7 @@ Should probably be a `<button>` or at least a `[role="button"]`, don't you think
 * <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386>
 
 ##Selector
-```
+```css_example
 a[href="#"]:not([role="button"])
 ```
 
