@@ -28,6 +28,8 @@ De nombreuses références m’ont inspiré et aidé pour élaborer cette feuill
 
 Je tiens à signaler que l’idée n’est ni neuve, ni de moi (la proposition d’Eric Meyer date de 2007, et l’article de Marco Battilana de Juillet 2006 !). J’ai simplement pensé qu’il était possible d’aller beaucoup plus loin, alors je l’ai fait. Je vous invite à lire [mon article](http://www.ffoodd.fr/a11y-cssun-credo/) pour en apprendre plus sur la genèse de ce projet.
 
+## Architecture technique
+
 ### Code couleur
 
 Concrètement, les éléments en erreur, en alerte, obsolètes ou pouvant être améliorés seront cernés d’un contour de quatre pixels colorés:
@@ -52,7 +54,7 @@ Quand le sélecteur de négation ne permet pas un ciblage suffisamment précis, 
 
 Les sélecteurs génériques comme `[class]` peuvent également cibler des éléments remplacés et des balises auto-fermantes (voir la section « Cas particuliers et problèmes connus »). Certains sélecteurs sont étendus grâce au mixin `@void-tags`, qui reprend le sélecteur en ciblant plus particulièrement les éléments incongrus, et répète le message en y ajoutant l’argument `$self-closing: true`.
 
-### Sélecteur en quarantaine
+#### Sélecteur en quarantaine
 
 Quand un sélecteur n’est pas supporté par certains navigateurs, il est possible de le mettre en quarantaine afin qu’il n’invalide pas les autres sélecteurs.
 
@@ -64,17 +66,15 @@ Chaque test dispose de son propre message, afin d’informer et guider au maximu
 
 *Nouveauté* : il est désormais possible d’utiliser le fonction CSS `attr()` dans les messages afin de remonter la valeur réelle d’un attribut.
 
-## Documentation et cas de test
-
-Une documentation complète ainsi que des cas de test sont désormais disponibles [sur le site dédié](http://ffoodd.github.io/a11y.css/). Le tout est généré en utilisant [Hologram](https://github.com/trulia/hologram) et [sseeeedd](https://github.com/ffoodd/sseeeedd).
-
-## Compteurs
+### Compteurs
 
 Désormais des compteurs `CSS` ont incrémentés par chaque erreur, et les résultats sont affichés dans le `body::after`. C’est donc du faux-contenu, son intérêt est purement visuel afin de simplement indiquer au développeur l’étendue du chantier qui l’attend :) .
 
 *À noter :* ce nouveau compteur permet d’obtenir des indications sur l’éventuelle présence de messages incriminant les balises du `<head>`. Ils n’ont toujours pas d’affichage mais ils sont désormais mentionnés dans ce compteur qu’ils incrémentent bien gentimment.
 
-## Bookmarklet
+## Portabilité, langues et trous dans la raquette
+
+### Bookmarklet
 
 Vous pouvez utiliser facilement la dernière version à jour en ajoutant ce *bookmarklet* à vos favoris :
 ```
@@ -84,7 +84,7 @@ Vous pouvez également l’ajouter en allant sur [la page dédiée](http://ffood
 
 Pratique, n’est-ce pas ?
 
-## À propos des langues
+### À propos des langues
 
 a11y.css existe désormais en français et en anglais : vous trouverez tous les fichiers dans le répertoire [css](https://github.com/ffoodd/a11y.css/tree/master/css). ISi vous souhaitez contribuer en ajoutant une nouvelle langue, c’est très simple :
 
@@ -96,7 +96,7 @@ a11y.css existe désormais en français et en anglais : vous trouverez tous les 
 
 Et voilà !
 
-## Cas particuliers et problèmes connus
+### Cas particuliers et problèmes connus
 
 1. Les balises « auto-fermantes » n’autorisent pas la génération de contenu. Ainsi les erreurs ou alertes seront marquées, mais aucun message n’apparaitra au survol. Il sera en revanche consultable dans la plupart des inspecteurs de `DOM` : la limite est la création du pseudo-élément pour l’affichage (cf [la spécification](http://www.w3.org/TR/CSS2/generate.html#before-after-content). Voici la liste exhaustive des balises `HTML5` auto-fermantes :
 
@@ -130,7 +130,9 @@ Et voilà !
 
 4. Pour éviter les cas dans lesquels le contour pourrait être masqué, la propriété [outline-offset](https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset "Définition sur le MDN") est utilisée afin d’afficher le contour à l’intérieur de l’élément marqué. Amélioration suggérée par @7studio dans l’issue #4.
 
-## Compiler une version nivelée
+## Personnaliser son a11y.css
+
+### Compiler une version nivelée
 
 Vous pouvez désormais adapter le fichier de sortie au niveau d’erreur que vous souhaitez. Vous n’avez qu’à modifier le seul paramètre du mixin `set-minimum-level`. Les niveaux sont cumulatifs, et sont fidèles au nomage des thèmes :
 * `error`: seulement les erreurs;
@@ -142,7 +144,7 @@ Nous partons du principe que si vous êtes intéressés par les conseils, vous l
 
 Merci à [@HugoGiraudel](https://twitter.com/HugoGiraudel) dans l’issue [#69](https://github.com/ffoodd/a11y.css/issues/69).
 
-## Désactiver des tests
+### Désactiver des tests
 
 Il est possible de désactiver des tests au cas par cas si vous compilez votre propre version de `a11y.css`. Utilisez les mixins suivants :
 
@@ -159,7 +161,9 @@ Par exemple, si vous voulez désactiver les erreurs à propos des mauvais `tabin
 
 Merci à [@HugoGiraudel](https://twitter.com/HugoGiraudel) dans l’issue [#69](https://github.com/ffoodd/a11y.css/issues/113).
 
-## Construire la SassDoc
+## Documentation
+
+### Construire la SassDoc
 
 Avec une installation globale SassDoc :
 
@@ -174,6 +178,31 @@ Avec une installation locale SassDoc :
 $ npm install
 $ node_modules/sassdoc/bin/sassdoc sass/ --dest docs/ --verbose --config .sassdocrc
 ```
+
+### Générer la documentation Hologram
+
+C’est très facile. En ligne de commande, placez-vous dans le répertoire `a11y.css` et lancez `hologram`.
+Et voilà !
+
+Pour en savoir plus sur Hologram, jetez un œil à [leur répertoire GitHub](https://github.com/trulia/hologram)).
+
+## Automatisation
+
+Parce qu’il faut bien se mettre à la page un jour, un fichier de configuration [Gulp](http://gulpjs.com/) a été ajouté.
+Quelques tâches bien pratique ont donc été prévues.
+
+Si vous lancez `gulp` — qui par défaut joue `gulp build` — vous allez compiler les fichiers Sass et
+(en incluant les *sourcemaps*) optimiser les CSS générés.
+
+Vous pouvez aussi lancer `gulp docs`, qui va générer les documentations *via* SassDoc et Hologram.
+
+Chacune de ses tâches est disponible isolément :
+* `gulp sass`
+* `gulp minify`
+* `gulp sassdoc`
+* `gulp hologram`
+
+Et vous pouvez lancer une surveillance sur la compilation Sass et la minification des CSS avec `gulp watch`.
 
 ## Crédits et remerciements
 

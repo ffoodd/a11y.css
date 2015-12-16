@@ -1,12 +1,28 @@
 {
-    "title": "a11y.css",
-    "name": "a11y.css",
-    "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
-    "version": "2.2",
-    "license": "MIT",
-    "homepage": "http://ffoodd.github.io/a11y.css",
-    "repository": "https://github.com/ffoodd/a11y.css",
-    "devDependencies": {
-        "sassdoc": "^2.1.16"
-    }
+  "title": "a11y.css",
+  "name": "a11y.css",
+  "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
+  "version": "2.2.1",
+  "author": {
+    "name": "Gaël Poupard",
+    "url": "http://www.ffoodd.fr",
+    "email": "gael@ffoodd.fr"
+  },
+  "license": "MIT",
+  "homepage": "http://ffoodd.github.io/a11y.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ffoodd/a11y.css"
+  },
+  "bugs": {
+    "url": "https://github.com/ffoodd/a11y.css/issues"
+  },
+  "devDependencies": {
+    "sassdoc": "^2.1.18",
+    "gulp": "latest",
+    "gulp-ruby-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-csso": "latest",
+    "gulp-hologram": "latest"
+  }
 }

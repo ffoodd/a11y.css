@@ -28,6 +28,8 @@ Many references helped me in the making of this stylesheet:
 
 Although let's keep in mind the idea has nothing new (there is an article from Marco Battilana from 2006, and a proposal by Eric Meyer himself from 2007). I only tried to push things further. I suggest you read [my article](http://www.ffoodd.fr/a11y-cssun-credo/) (in French) to learn more about the project.
 
+## Technical structure
+
 ### About colors
 
 In concrete terms, errors, warnings and advices are outlined by a 4px colored border:
@@ -53,7 +55,7 @@ When the `:not()` selector cannot be precise enough, you may add a second select
 
 Generic selector like `[class]` may targetself-closing tags and replaced elements (see "Edge cases and known issues" section). Some selectors are now extended with `@void-tags` mixin, that improve selector to target those weird tags, and repeat the associated message (adding `$self-closing: true`).
 
-### Quarantine
+#### Quarantine
 
 When a selector is not cross-browser, you may send it to quarantine as it won't invalidate other selectors.
 
@@ -65,17 +67,15 @@ Each test has its own message, trying to explain and guide you as much as possib
 
 *New* : You are now able to use the `attr()` CSS function in messages to show the real value of an attribute.
 
-## Test cases and documentation
-
-A full documentation with all test cases is now available on [the dedicated site](http://ffoodd.github.io/a11y.css/). This is made using [Hologram](https://github.com/trulia/hologram) and [sseeeedd](https://github.com/ffoodd/sseeeedd).
-
-## Counters
+### Counters
 
 From now on, CSS counters are incremented on each error/advice/warning and results are displayed with `html::after`. Since it is added through CSS, it is basically fake-content which is good since it is no more than visual indication for the user to see what's going on.
 
 *Note: this counter takes into account possible issues with elements within `<head>` tag. Related messages are not displayed, but they do increment the counter correctly, as any other issues.*
 
-## Bookmarklet
+## Portability, languages and known limitations
+
+### Bookmarklet
 
 You can easily use the latest version of this stylesheet by adding this *bookmarklet* to your bookmarks:
 
@@ -86,7 +86,7 @@ javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='http
 *New*
 You can also generate your own bookmarklet (choosing language and minimum level) on [the dedicated page](http://ffoodd.github.io/a11y.css/) then directly drag it to your bookmarks. Isn't it handy?
 
-## About languages
+### About languages
 
 a11y.css currently exists in both English and French: you'll find both files in the [css](https://github.com/ffoodd/a11y.css/tree/master/css) folder. If you want to contribute and add a new language, it is very easy to do:
 
@@ -98,7 +98,7 @@ a11y.css currently exists in both English and French: you'll find both files in 
 
 Done!
 
-## Edge cases and known issues
+### Edge cases and known issues
 
 1. Self-closing tags (a.k.a. void elements) do not allow generated content through pseudo-elements. Thus, errors or whatever will correctly be displayed, but not the message on hover. That being said, it should be available for consultation with any DOM reader (DevTools, Firebug or whatever).
 Here are affected self-closing tags:
@@ -133,7 +133,9 @@ Here are affected self-closing tags:
 
 4. To avoid cases when outline could be hidden, the property [outline-offset](https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset) is being used in order to display it inside the element (rather than outside). Thanks to [@7studio](https://twitter.com/7studio) in [#4](https://github.com/ffoodd/a11y.css/issues/4).
 
-## Building leveled file
+## Build a custom a11y.css
+
+### Building leveled file
 
 You are now able to customize the file output by targeting a severity treshold. You just have to personalize the single parameter in `set-minimum-level` mixin. Levels are cumulative, and reflect theme's names:
 * `error`: only errors;
@@ -145,7 +147,7 @@ We are assuming that looking for advices means that you care about obsoletes, wa
 
 Credits to [@HugoGiraudel](https://twitter.com/HugoGiraudel) in [#69](https://github.com/ffoodd/a11y.css/issues/69).
 
-## Disabling tests
+### Disabling tests
 
 It is possible to disable some specific tests if you build your own `a11y.css` file. Use the following mixins:
 
@@ -162,7 +164,9 @@ For instance, if you want to disable the errors about messing with tabindex and 
 
 Credits to [@HugoGiraudel](https://twitter.com/HugoGiraudel) in [#69](https://github.com/ffoodd/a11y.css/issues/113).
 
-## Building docs
+## Documentation
+
+### Building SassDoc
 
 With global SassDoc install:
 
@@ -177,6 +181,31 @@ With local SassDoc install:
 $ npm install
 $ node_modules/sassdoc/bin/sassdoc sass/ --dest docs/ --verbose --config .sassdocrc
 ```
+
+### Build Hologram
+
+This one is easy. Usign command line, just cd` to `a11y.css` then run `hologram`.
+Et voilà !
+
+To learn more about Hologram, take a look at [their GitHub repository](https://github.com/trulia/hologram)).
+
+## Automatisation
+
+We all have to stay up-to-date, so you'll find a [Gulp](http://gulpjs.com/) configuration file.
+Some useful tasks are ready-to-run.
+
+If you run `gulp` — which runs `gulp build` behind the scene — you'll compile Sass files (including *sourcemaps*)
+and optimize the CSS output.
+
+You can also launch `gulp docs`, which will generate the whole documentation *via* both SassDoc and Hologram.
+
+Each task can be run individually:
+* `gulp sass`
+* `gulp minify`
+* `gulp sassdoc`
+* `gulp hologram`
+
+And of course you can watch for changes to automatically compile Sass and optimize the CSS output using `gulp watch`.
 
 ## Credits and Acknowledgements
 
