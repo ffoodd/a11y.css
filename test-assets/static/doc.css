@@ -19,7 +19,7 @@ p code {
 
 nav {
   position: sticky;
-  top: 0;
+  top: 3.5em;
   z-index: 2;
 }
 
