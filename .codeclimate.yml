@@ -8,3 +8,9 @@ engines:
     checks:
       important:
         enabled: false
+      selector-max:
+        enabled: false
+      outline-none:
+        enabled: false
+      order-alphabetical:
+        enabled: false
