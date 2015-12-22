@@ -40,13 +40,9 @@
   text-decoration: none                                                 !important;
   text-shadow: 0 1px 0 rgba( 255, 255, 255, .2 )                        !important;
   text-transform: none                                                  !important;
-  white-space: pre;
-
-  -webkit-transform:  translateY( -100% ) translateZ( 0 )               !important;
-  -ms-transform:      translateY( -100% ) translateZ( 0 )               !important;
   transform:          translateY( -100% ) translateZ( 0 )               !important;
-  -webkit-transition: -webkit-transform .3s ease-in                     !important;
   transition:         transform .3s ease-in                             !important;
+  white-space: pre;
 }
 
 /// Equivalent to %a11y-before, for quarantine context
@@ -57,10 +53,7 @@
 ///  @include quarantine-before();
 @mixin quarantine-hover {
   opacity: 1;
-  -webkit-transform:  translateY( 0 ) translateZ( 0 )                   !important;
-  -ms-transform:      translateY( 0 ) translateZ( 0 )                   !important;
   transform:          translateY( 0 ) translateZ( 0 )                   !important;
-  -webkit-transition: -webkit-transform .3s ease-out                    !important;
   transition:         transform .3s ease-in                             !important;
 }
 

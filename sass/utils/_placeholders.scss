@@ -34,21 +34,14 @@
   text-decoration: none                                                 !important;
   text-shadow: 0 1px 0 rgba( 255, 255, 255, .2 )                        !important;
   text-transform: none                                                  !important;
-  white-space: pre;
-
-  -webkit-transform:  translateY( -100% ) translateZ( 0 )               !important;
-  -ms-transform:      translateY( -100% ) translateZ( 0 )               !important;
   transform:          translateY( -100% ) translateZ( 0 )               !important;
-  -webkit-transition: -webkit-transform .3s ease-in                     !important;
   transition:         transform .3s ease-in                             !important;
+  white-space: pre;
 }
 
 %a11y-hover {
   opacity: 1;
-  -webkit-transform:  translateY( 0 ) translateZ( 0 )                   !important;
-  -ms-transform:      translateY( 0 ) translateZ( 0 )                   !important;
   transform:          translateY( 0 ) translateZ( 0 )                   !important;
-  -webkit-transition: -webkit-transform .3s ease-out                    !important;
   transition:         transform .3s ease-in                             !important;
 }
 
@@ -80,7 +73,7 @@
     outline: 4px solid theme-conf($theme, 'color') !important;
     outline-offset: -4px;
 
-    & ~ ::after {
+    ~ ::after {
       @extend %a11y-before;
 
       background:   change_color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;

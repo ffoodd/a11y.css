@@ -272,8 +272,8 @@ $messages: (
       'en': 'Here is the right order for those tags: <thead>, <tfoot> then <tbody>.'
     ),
     'missing-thead': (
-      'fr': 'Soit il manque un <thead> — voire même un <tfoot> — dans ce tableau de données, \A soit vous devriez ajouter un [role=\'presentation\'], s’il s’agit d’un tableau de mise en forme.',
-      'en': 'Either you’re missing a <thead> (even <tfoot>, maybe) in this data table, \A or you should add a [role=\'presentation\'], if this a layout table.'
+      'fr': 'Soit il manque un <thead> — voire même un <tfoot> — dans ce tableau de données, \A soit vous devriez ajouter un [role="presentation"], s’il s’agit d’un tableau de mise en forme.',
+      'en': 'Either you’re missing a <thead> (even <tfoot>, maybe) in this data table, \A or you should add a [role="presentation"], if this a layout table.'
     ),
     'th-no-scope': (
       'fr': 'À quoi s’applique cette cellule d’en-tête ? La totalité de la ligne / colonne ? \A Si oui, pensez à [scope]. Sinon, il faut probablement un [id] et des [headers].',
@@ -284,7 +284,7 @@ $messages: (
       'en': 'If it is toggleable, you should supply an [aria-expanded] or [aria-haspopup] attribute. Thanks!'
     ),
     'spacer-gif': (
-      'fr': 'Vous utilisez un \'spacer.gif\'. Quel âge a votre site, déjà ?',
+      'fr': 'Vous utilisez un "spacer.gif". Quel âge a votre site, déjà ?',
       'en': 'You’re using "spacer.gif". How old is your website?'
     ),
     'undefined': (

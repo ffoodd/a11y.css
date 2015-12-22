@@ -28,6 +28,8 @@ engines:
         enabled: false
       ImportantRule:
         enabled: false
+      TrailingSemicolon:
+        enabled: false
   csslint:
     enabled: true
     checks:
@@ -40,4 +42,12 @@ engines:
       outline-none:
         enabled: false
       order-alphabetical:
+        enabled: false
+      ids:
+        enabled: false
+      qualified-headings:
+        enabled: false
+      regex-selectors:
+        enabled: false
+      unqualified-attributes:
         enabled: false
