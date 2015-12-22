@@ -5,10 +5,6 @@ engines:
     enabled: true
   csslint:
     enabled: true
-exclude_paths:
-  - css/a11y-en_error.css
-  - css/a11y-en_obsolete.css
-  - css/a11y-en_warning.css
-  - css/a11y-fr_error.css
-  - css/a11y-fr_obsolete.css
-  - css/a11y-fr_warning.css
+    checks:
+      important:
+        enabled: false
