@@ -105,7 +105,7 @@
   outline: 4px solid theme-conf($theme, 'color') !important;
   outline-offset: -4px;
 
-  & ~ ::after {
+  ~ ::after {
     @include quarantine-before;
 
     background:   change_color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;

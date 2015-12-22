@@ -12,6 +12,8 @@ engines:
         enabled: false
       SpaceAfterComma:
         enabled: false
+      SpaceAfterVariableName:
+        enabled: false
       ColorKeyword:
         enabled: false
       ColorVariable:
@@ -50,4 +52,6 @@ engines:
       regex-selectors:
         enabled: false
       unqualified-attributes:
+        enabled: false
+      universal-selector:
         enabled: false
