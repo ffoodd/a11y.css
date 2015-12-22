@@ -1,2 +1,2 @@
-source "http://rubygems.org"
-gem "hologram"
+source 'http://rubygems.org'
+gem 'hologram'
