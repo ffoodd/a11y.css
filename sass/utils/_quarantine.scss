@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 /// Equivalent to %a11y-before, for quarantine context
 /// @group messages
@@ -77,17 +77,17 @@
 /// }
 @mixin quarantine($theme) {
   counter-increment: unquote($theme);
-  outline: 4px solid theme-conf($theme, "color") !important;
+  outline: 4px solid theme-conf($theme, 'color') !important;
   outline-offset: -4px;
 
   &::before {
     @include quarantine-before;
 
-    background:   change_color(theme-conf($theme, "color"), $saturation: 75%, $lightness: 95%) !important;
-    border-color: change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 50%) !important;
-    color:        change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 25%) !important;
+    background:   change_color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;
+    border-color: change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 50%) !important;
+    color:        change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 25%) !important;
 
-    z-index: theme-conf($theme, "index") !important;
+    z-index: theme-conf($theme, 'index') !important;
   }
 
   &:hover::before {
@@ -107,19 +107,19 @@
 ///   @include quarantine-self-closing("advice");
 /// }
 @mixin quarantine-self-closing($theme) {
-  background-color: transparentize(theme-conf($theme, "color"), .75) !important;
+  background-color: transparentize(theme-conf($theme, 'color'), .75) !important;
   counter-increment: unquote($theme);
-  outline: 4px solid theme-conf($theme, "color") !important;
+  outline: 4px solid theme-conf($theme, 'color') !important;
   outline-offset: -4px;
 
   & ~ ::after {
     @include quarantine-before;
 
-    background:   change_color(theme-conf($theme, "color"), $saturation: 75%, $lightness: 95%) !important;
-    border-color: change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 50%) !important;
-    color:        change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 25%) !important;
+    background:   change_color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;
+    border-color: change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 50%) !important;
+    color:        change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 25%) !important;
 
-    z-index: theme-conf($theme, "index") !important;
+    z-index: theme-conf($theme, 'index') !important;
   }
 
   &:hover ~ ::after {

@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 %a11y-before {
   border-style: solid                                                   !important;
@@ -53,20 +53,20 @@
 }
 
 // Dynamically generating a placeholder for each theme
-@each $theme in "advice" "obsolete" "warning" "error" {
+@each $theme in 'advice' 'obsolete' 'warning' 'error' {
   %a11y-#{$theme} {
     counter-increment: unquote($theme);
-    outline: 4px solid theme-conf($theme, "color") !important;
+    outline: 4px solid theme-conf($theme, 'color') !important;
     outline-offset: -4px;
 
     &::before {
       @extend %a11y-before;
 
-      background:   change_color(theme-conf($theme, "color"), $saturation: 75%, $lightness: 95%) !important;
-      border-color: change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 50%) !important;
-      color:        change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 25%) !important;
+      background:   change_color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;
+      border-color: change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 50%) !important;
+      color:        change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 25%) !important;
 
-      z-index: theme-conf($theme, "index") !important;
+      z-index: theme-conf($theme, 'index') !important;
     }
 
     &:hover::before {
@@ -75,19 +75,19 @@
   }
 
   %a11y-#{$theme}-self-closing {
-    background-color: transparentize(theme-conf($theme, "color"), .75) !important;
+    background-color: transparentize(theme-conf($theme, 'color'), .75) !important;
     counter-increment: unquote($theme);
-    outline: 4px solid theme-conf($theme, "color") !important;
+    outline: 4px solid theme-conf($theme, 'color') !important;
     outline-offset: -4px;
 
     & ~ ::after {
       @extend %a11y-before;
 
-      background:   change_color(theme-conf($theme, "color"), $saturation: 75%, $lightness: 95%) !important;
-      border-color: change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 50%) !important;
-      color:        change_color(theme-conf($theme, "color"), $saturation: 50%, $lightness: 25%) !important;
+      background:   change_color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;
+      border-color: change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 50%) !important;
+      color:        change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 25%) !important;
 
-      z-index: theme-conf($theme, "index") !important;
+      z-index: theme-conf($theme, 'index') !important;
     }
 
     &:hover ~ ::after {
@@ -106,7 +106,7 @@
 
     &::before,
     & ~ ::after {
-      content: "" !important;
+      content: '' !important;
     }
   }
 }

@@ -1,7 +1,7 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
-@import "utils/all";
-@include set-locale("fr");
-@include set-minimum-level("warning");
-@import "base/base";
-@import "themes/all";
+@import 'utils/all';
+@include set-locale('fr');
+@include set-minimum-level('warning');
+@import 'base/base';
+@import 'themes/all';

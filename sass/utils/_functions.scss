@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset 'UTF-8';
 
 /// Helper function to deep-get a map
 /// @access private
@@ -24,11 +24,11 @@
   $locale: if(global-variable-exists("language"), $language, "en");
 
   @if not index(map-keys($messages), $theme) {
-    @error "Theme `#{$theme}` does not exist.";
+    @error 'Theme `#{$theme}` does not exist.';
   }
 
   @if not index(map-keys(map-get($messages, $theme)), $key) {
-    @error "No key `#{$key}` found for theme `#{$theme}`.";
+    @error 'No key `#{$key}` found for theme `#{$theme}`.';
   }
 
   @return map-deep-get($messages, ($theme, $key, $locale)...);
