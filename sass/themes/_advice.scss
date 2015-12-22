@@ -22,12 +22,12 @@ category: Advices
 ```
 */
 [class=""] {
-  @include advice("empty-class");
+  @include advice('empty-class');
 }
 
 @include void-tags {
   &[class=""] {
-    @include advice("empty-class", $self-closing: true);
+    @include advice('empty-class', $self-closing: true);
   }
 }
 
@@ -54,12 +54,12 @@ category: Advices
 ```
 */
 [id=""] {
-  @include advice("empty-id");
+  @include advice('empty-id');
 }
 
 @include void-tags {
   &[id=""] {
-    @include advice("empty-id", $self-closing: true);
+    @include advice('empty-id', $self-closing: true);
   }
 }
 
@@ -87,7 +87,7 @@ main:not(:first-of-type)
 ```
 */
 main:not(:first-of-type) {
-  @include advice("main");
+  @include advice('main');
 }
 
 
@@ -119,7 +119,7 @@ figcaption:not(:only-of-type)
 ```
 */
 figcaption:not(:only-of-type) {
-  @include advice("figcaption");
+  @include advice('figcaption');
 }
 
 
@@ -151,7 +151,7 @@ figcaption:not(:first-child):not(:last-child)
 ```
 */
 figcaption:not(:first-child):not(:last-child) {
-  @include advice("figcaption-order");
+  @include advice('figcaption-order');
 }
 
 
@@ -177,7 +177,7 @@ Otherwise you may annoy your users.
 ```
 */
 [href^="mailto"] {
-  @include advice("mailto");
+  @include advice('mailto');
 }
 
 
@@ -203,7 +203,7 @@ Otherwise you may make your users to call anubody.
 ```
 */
 [href^="tel"] {
-  @include advice("tel");
+  @include advice('tel');
 }
 
 
@@ -231,7 +231,7 @@ a[role="button"]
 ```
 */
 a[role="button"] {
-  @include advice("role-button");
+  @include advice('role-button');
 }
 
 
@@ -265,7 +265,7 @@ You could use a `[title]`, for example.
 ```
 */
 [target$="blank"] {
-  @include advice("target-blank");
+  @include advice('target-blank');
 }
 
 
@@ -324,7 +324,7 @@ A link to a file should indicate the file format, the file size and if different
 [href$=".zip"],
 [href$=".rar"],
 [href$=".docx"] {
-  @include advice("file-format");
+  @include advice('file-format');
 }
 
 
@@ -360,7 +360,7 @@ Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[c
 [role="search"] ~ [role="search"],
 [role="banner"] ~ [role="banner"],
 [role="contentinfo"] ~ [role="contentinfo"] {
-  @include advice("duplicate-roles");
+  @include advice('duplicate-roles');
 }
 
 
@@ -394,12 +394,12 @@ A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 */
 [id*="search"]:not([role="search"]),
 [class*="search"]:not([role="search"]) {
-  @include advice("missing-role");
+  @include advice('missing-role');
 }
 
 input[id*="search"]:not([role="search"]),
 input[class*="search"]:not([role="search"]) {
-  @include advice("missing-role", $self-closing: true);
+  @include advice('missing-role', $self-closing: true);
 }
 
 
@@ -433,7 +433,7 @@ A `[required]` or `[aria-required]` should be visually understandable.
 */
 [required],
 [aria-required] {
-  @include advice("required", $self-closing: true);
+  @include advice('required', $self-closing: true);
 }
 
 input[required],
@@ -442,7 +442,7 @@ select[required],
 select[aria-required],
 textarea[required],
 textarea[aria-required] {
-  @include advice("required", $self-closing: true);
+  @include advice('required', $self-closing: true);
 }
 
 
@@ -473,13 +473,13 @@ A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 */
 [hidden]:not(:empty),
 [aria-hidden="true"]:not(:empty) {
-  @include advice("hidden");
+  @include advice('hidden');
 }
 
 @include void-tags {
   &[hidden]:not(:empty),
   &[aria-hidden="true"]:not(:empty) {
-    @include advice("hidden", $self-closing: true);
+    @include advice('hidden', $self-closing: true);
   }
 }
 
@@ -505,7 +505,7 @@ A `[placeholder]` is not a label, isn't it?
 ```
 */
 [placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include advice("placeholder", $self-closing: true);
+  @include advice('placeholder', $self-closing: true);
 }
 
 
@@ -539,7 +539,7 @@ audio
 */
 video,
 audio {
-  @include advice("video-audio", $self-closing: true);
+  @include advice('video-audio', $self-closing: true);
 }
 
 
@@ -574,7 +574,7 @@ svg[aria-label][title]
 img[alt][title],
 area[alt][title],
 svg[aria-label][title] {
-  @include advice("title", $self-closing: true);
+  @include advice('title', $self-closing: true);
 }
 
 
@@ -601,7 +601,7 @@ time,
 */
 time,
 [datetime] {
-  @include advice("time");
+  @include advice('time');
 }
 
 
@@ -649,7 +649,7 @@ th[scope]
 ```
 */
 th[scope] {
-  @include advice("th-scope");
+  @include advice('th-scope');
 }
 
 
@@ -687,5 +687,5 @@ table[role="presentation"]
 ```
 */
 table[role="presentation"] {
-  @include advice("table-presentation");
+  @include advice('table-presentation');
 }

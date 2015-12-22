@@ -73,7 +73,7 @@ multicol,
 nobr,
 spacer,
 tt {
-  @include obsolete("tags");
+  @include obsolete('tags');
 }
 
 
@@ -219,7 +219,7 @@ table[rules],
 td[height], th[height],
 td[nowrap], th[nowrap],
 body[background], table[background], thead[background], tbody[background], tfoot[background], tr[background], td[background], th[background] {
-  @include obsolete("attributes");
+  @include obsolete('attributes');
 }
 
 embed[name], img[name],
@@ -252,5 +252,5 @@ iframe[allowtransparency],
 iframe[frameborder],
 iframe[scrolling],
 img[border], object[border] {
-  @include obsolete("attributes", $self-closing: true);
+  @include obsolete('attributes', $self-closing: true);
 }

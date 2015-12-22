@@ -1,12 +1,19 @@
 engines:
   scss-lint:
     enabled: true
+    checks:
+      Comment:
+        enabled: false
+      QualifyingElement:
+        enabled: false
   csslint:
     enabled: true
     checks:
       important:
         enabled: false
       selector-max:
+        enabled: false
+      selector-max-approaching:
         enabled: false
       outline-none:
         enabled: false

@@ -24,12 +24,12 @@ The `[tabindex]` attribute should never be greater than 0.
 ```
 */
 [tabindex]:not([tabindex="0"]):not([tabindex="-1"]) {
-  @include error("tab-order");
+  @include error('tab-order');
 }
 
 @include void-tags {
   &[tabindex]:not([tabindex="0"]):not([tabindex="-1"]) {
-    @include error("tab-order", $self-closing: true);
+    @include error('tab-order', $self-closing: true);
   }
 }
 
@@ -74,7 +74,7 @@ a:not([name])[id=""]:not([href]),
 a[name=""]:not([id]):not([href]),
 a:not([name]):not([id])[href=""],
 a:not([name]):not([id]):not([href]) {
-  @include error("no-href");
+  @include error('no-href');
 }
 
 
@@ -130,21 +130,21 @@ a:empty[title=""],
 a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
 a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error("empty-link");
+  @include error('empty-link');
 }
 
 a:blank[title=""],
 a:blank[aria-label=""],
 a:blank[aria-labelledby=""],
 a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error("empty-link", $self-closing: false, $quarantine: true);
+  @include error('empty-link', $self-closing: false, $quarantine: true);
 }
 
 a:-moz-only-whitespace[title=""],
 a:-moz-only-whitespace[aria-label=""],
 a:-moz-only-whitespace[aria-labelledby=""],
 a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error("empty-link", $self-closing: false, $quarantine: true);
+  @include error('empty-link', $self-closing: false, $quarantine: true);
 }
 
 
@@ -185,7 +185,7 @@ input[type="image"]:not([alt])
 img:not([alt]),
 area:not([alt]),
 input[type="image"]:not([alt]) {
-  @include error("no-alt", $self-closing: true);
+  @include error('no-alt', $self-closing: true);
 }
 
 
@@ -234,7 +234,7 @@ input[type="image"][src=""],
 input[type="image"][src="#"],
 input[type="image"][srcset=""],
 input[type="image"][srcset="#"] {
-  @include error("no-src", $self-closing: true);
+  @include error('no-src', $self-closing: true);
 }
 
 
@@ -268,7 +268,7 @@ label[for=""]
 */
 label:not([for]),
 label[for=""] {
-  @include error("no-for");
+  @include error('no-for');
 }
 
 
@@ -304,7 +304,7 @@ select:not([id]):not([aria-label]):not([aria-labelledby])
 input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
 textarea:not([id]):not([aria-label]):not([aria-labelledby]),
 select:not([id]):not([aria-label]):not([aria-labelledby]) {
-  @include error("no-id", $self-closing: true);
+  @include error('no-id', $self-closing: true);
 }
 
 
@@ -341,7 +341,7 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error("no-value", $self-closing: true);
+  @include error('no-value', $self-closing: true);
 }
 
 
@@ -382,15 +382,15 @@ button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]
 ```
 */
 button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
-  @include error("empty-button");
+  @include error('empty-button');
 }
 
 button:blank:not([aria-label]):not([aria-labelledby]):not([title]) {
-  @include error("empty-button", $self-closing: false, $quarantine: true);
+  @include error('empty-button', $self-closing: false, $quarantine: true);
 }
 
 button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]) {
-  @include error("empty-button", $self-closing: false, $quarantine: true);
+  @include error('empty-button', $self-closing: false, $quarantine: true);
 }
 
 
@@ -426,7 +426,7 @@ button[aria-labelledby=""]
 button[title=""],
 button[aria-label=""],
 button[aria-labelledby=""] {
-  @include error("empty-button-attr");
+  @include error('empty-button-attr');
 }
 
 
@@ -459,7 +459,7 @@ button:not([type]):not([form]):not([formaction]):not([formtarget])
 ```
 */
 button:not([type]):not([form]):not([formaction]):not([formtarget]) {
-  @include error("not-form-button");
+  @include error('not-form-button');
 }
 
 form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
@@ -510,7 +510,7 @@ button[type="button"] {
   &[formtarget],
   &[formenctype],
   &[formnovalidate] {
-    @include error("not-submit-button");
+    @include error('not-submit-button');
   }
 }
 
@@ -539,7 +539,7 @@ button[class*="disabled"]:not([disabled]):not([readonly])
 ```
 */
 button[class*="disabled"]:not([disabled]):not([readonly]) {
-  @include error("disabled-button");
+  @include error('disabled-button');
 }
 
 
@@ -571,7 +571,7 @@ input[type=""]
 */
 input:not([type]),
 input[type=""] {
-  @include error("no-type", $self-closing: true);
+  @include error('no-type', $self-closing: true);
 }
 
 
@@ -613,7 +613,7 @@ optgroup:not([label])
 ```
 */
 optgroup:not([label]) {
-  @include error("optgroup", $self-closing: true);
+  @include error('optgroup', $self-closing: true);
 }
 
 
@@ -646,7 +646,7 @@ iframe[title=""]
 */
 iframe:not([title]),
 iframe[title=""] {
-  @include error("no-title", $self-closing: true);
+  @include error('no-title', $self-closing: true);
 }
 
 
@@ -679,7 +679,7 @@ form:not([action])
 ```
 */
 form:not([action]) {
-  @include error("no-action");
+  @include error('no-action');
 }
 
 
@@ -713,7 +713,7 @@ html[lang=""]
 */
 html:not([lang]),
 html[lang=""] {
-  @include error("no-lang");
+  @include error('no-lang');
 }
 
 
@@ -784,7 +784,7 @@ table[role="presentation"] [axis],
 table[role="presentation"] [scope],
 table[role="presentation"] [headers],
 table[role="presentation"] [colgroup] {
-  @include error("table-for-layout");
+  @include error('table-for-layout');
 }
 
 
@@ -818,13 +818,13 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 */
 :not(img):not(object):not(embed):not(svg):not(canvas)[width],
 :not(img):not(object):not(embed):not(svg):not(canvas)[height] {
-  @include error("dimensions");
+  @include error('dimensions');
 }
 
 @include void-tags {
   &:not(img):not(object):not(embed):not(svg):not(canvas)[width],
   &:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
-    @include error("dimensions", $self-closing: true);
+    @include error('dimensions', $self-closing: true);
   }
 }
 
@@ -895,7 +895,7 @@ Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS eve
 [onratechange], [onreadystatechange], [onseeked],
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
-  @include error("js-events");
+  @include error('js-events');
 }
 
 
@@ -1010,7 +1010,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 [class^="-8"],
 [class^="-9"],
 [class^="-0"] {
-  @include error("namespace");
+  @include error('namespace');
 }
 
 
@@ -1041,12 +1041,12 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 ```
 */
 [style] {
-  @include error("style-attr");
+  @include error('style-attr');
 }
 
 @include void-tags {
   &[style] {
-    @include error("style-attr", $self-closing: true);
+    @include error('style-attr', $self-closing: true);
   }
 }
 
@@ -1091,16 +1091,16 @@ title:-moz-only-whitespace
 ```
 */
 title:empty {
-  @include error("no-page-title");
-  @include a11y-head("<title>", "error");
+  @include error('no-page-title');
+  @include a11y-head('<title>', 'error');
 }
 
 title:blank {
-  @include error("no-page-title", $self-closing: false, $quarantine: true);
-  @include a11y-head("<title>", "error");
+  @include error('no-page-title', $self-closing: false, $quarantine: true);
+  @include a11y-head('<title>', 'error');
 }
 
 title:-moz-only-whitespace {
-  @include error("no-page-title", $self-closing: false, $quarantine: true);
-  @include a11y-head("<title>", "error");
+  @include error('no-page-title', $self-closing: false, $quarantine: true);
+  @include a11y-head('<title>', 'error');
 }
