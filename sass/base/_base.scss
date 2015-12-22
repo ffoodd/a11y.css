@@ -10,7 +10,7 @@ html {
       map-get(theme-conf('error',    'name'), $language) ': ' #{counter(error)}    '\A '
       map-get(theme-conf('warning',  'name'), $language) ': ' #{counter(warning)}  '\A '
       map-get(theme-conf('obsolete', 'name'), $language) ': ' #{counter(obsolete)} '\A '
-      map-get(theme-conf('advice',   'name'), $language) ': ' #{counter(advice)} ;
+      map-get(theme-conf('advice',   'name'), $language) ': ' #{counter(advice)};
 
     background: rgba( 0, 0, 0, .8 );
     border: 1px solid black;

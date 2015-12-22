@@ -6,6 +6,22 @@ engines:
         enabled: false
       QualifyingElement:
         enabled: false
+      SpaceAfterPropertyColon:
+        enabled: false
+      SpaceBetweenParens:
+        enabled: false
+      SpaceAfterComma:
+        enabled: false
+      ColorKeyword:
+        enabled: false
+      ColorVariable:
+        enabled: false
+      PropertySortOrder:
+        enabled: false
+      MergeableSelector:
+        enabled: false
+      SingleLinePerSelector:
+        enabled: false
   csslint:
     enabled: true
     checks:
