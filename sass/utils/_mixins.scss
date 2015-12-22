@@ -105,9 +105,7 @@
       & ~ ::after {
         @include message($theme, $key);
       }
-    }
-
-    @else {
+    } @else {
       @extend %a11y-#{$theme}-self-closing;
 
       &::before,
@@ -115,18 +113,14 @@
         @include message($theme, $key);
       }
     }
-  }
-
-  @else {
+  } @else {
     @if $quarantine {
       @include quarantine($theme);
 
       &::before {
         @include message($theme, $key);
       }
-    }
-
-    @else {
+    } @else {
       @extend %a11y-#{$theme};
 
       &::before {

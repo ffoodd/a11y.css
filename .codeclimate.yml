@@ -22,6 +22,12 @@ engines:
         enabled: false
       SingleLinePerSelector:
         enabled: false
+      FinalNewline:
+        enabled: false
+      NameFormat:
+        enabled: false
+      ImportantRule:
+        enabled: false
   csslint:
     enabled: true
     checks:

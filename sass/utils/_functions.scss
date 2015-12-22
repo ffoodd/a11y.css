@@ -21,7 +21,7 @@
 /// @requires $messages
 /// @return {String} Message
 @function message($theme, $key) {
-  $locale: if(global-variable-exists("language"), $language, "en");
+  $locale: if(global-variable-exists('language'), $language, 'en');
 
   @if not index(map-keys($messages), $theme) {
     @error 'Theme `#{$theme}` does not exist.';
@@ -78,8 +78,8 @@
 ///   content: " ";
 /// }
 @function replace-attr($message) {
-  $has-attr: str-index($message, "attr(");
-  $first-paren: str-index($message, ")");
+  $has-attr: str-index($message, 'attr(');
+  $first-paren: str-index($message, ')');
 
   @if not $has-attr {
     @return $message;
