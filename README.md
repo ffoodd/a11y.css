@@ -21,6 +21,10 @@ javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='http
 
 You can also generate your own bookmarklet (choosing language and minimum level) on [the dedicated page](http://ffoodd.github.io/a11y.css/) then directly drag it to your bookmarks. Isn't it handy?
 
+### Counters
+
+CSS counters are incremented on each error/advice/warning and results are displayed with `html::after`. Since it is added through CSS, it is basically fake-content which is good since it is no more than visual indication for the developper to see what's going on. It will appear on the bottom left side of your page :).
+
 ## Credits and Acknowledgements
 
 ### Acknowledgements

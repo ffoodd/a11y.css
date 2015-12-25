@@ -44,13 +44,7 @@ Here are affected self-closing tags:
 
 2. Messages are generated through a fixed pseudo-element. However there could be a containing block issue if the parent is a transformed element (`transform`):
  * [W3C Specification about this](http://www.w3.org/TR/css3-transforms/#transform-property)
- * [What no one told you about z-index](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) ([translated in French by @iamvdo](http://blog.iamvdo.me/post/41094013194/comprendre-z-index-et-les-contextes-dempilement))
-
-3. Along the same lines, tests on elements that are contained within `<head>` cannot be displayed (since `<head>` is a hidden element). I need to find a way to do this.
-
- *Issue [#66](https://github.com/ffoodd/a11y.css/issues/66) opened by [@7studio](https://twitter.com/7studio) (again) helped with this point, thanks to [an idea](https://mathiasbynens.be/notes/css-hidden-elements) from [Mathias Bynens](https://twitter.com/mathias).
-
-4. To avoid cases when outline could be hidden, the property [outline-offset](https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset) is being used in order to display it inside the element (rather than outside). Thanks to [@7studio](https://twitter.com/7studio) in [#4](https://github.com/ffoodd/a11y.css/issues/4).
+ * [What no one told you about z-index](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) ([translated in French by @iamvdo](http://blog.iamvdo.me/post/41094013194/comprendre-z-index-et-les-contextes-dempilement)).
 
 ## Automatisation
 
@@ -94,11 +88,3 @@ This one is easy. Usign command line, just `cd` to `a11y.css` then run `hologram
 Et voilà !
 
 To learn more about Hologram, take a look at [their GitHub repository](https://github.com/trulia/hologram).
-
-
-## Technical structure
-### Counters
-
-CSS counters are incremented on each error/advice/warning and results are displayed with `html::after`. Since it is added through CSS, it is basically fake-content which is good since it is no more than visual indication for the user to see what's going on.
-
-*Note: this counter takes into account possible issues with elements within `<head>` tag. Related messages are not displayed, but they do increment the counter correctly, as any other issue.*

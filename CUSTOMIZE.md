@@ -59,10 +59,10 @@ When the `:not()` selector cannot be precise enough, you may add a second select
 
 ### Extend a selector to target self-closing tags and replaced elements
 
-Generic selector like `[class]` may targetself-closing tags and replaced elements (see "Edge cases and known issues" section). Some selectors are now extended with `@void-tags` mixin, that improve selector to target those weird tags, and repeat the associated message (adding `$self-closing: true`).
+Generic selector like `[class]` may target self-closing tags and replaced elements. Some selectors are now extended with `@void-tags` mixin, that improve selector to target those weird tags, and repeat the associated message (adding `$self-closing: true`).
 
 ### Quarantine
 
 When a selector is not cross-browser, you may send it to quarantine as it won't invalidate other selectors.
 
-Just switch the boolean argument `$quarantine: true`.
+Just switch the boolean argument `$quarantine: true`. You have to specify `$self-closing` before, even if it's `false`.

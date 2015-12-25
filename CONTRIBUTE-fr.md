@@ -17,7 +17,7 @@ Et voilà !
 
 ## Cas particuliers et problèmes connus
 
-1. Les balises « auto-fermantes » n’autorisent pas la génération de contenu. Ainsi les erreurs ou alertes seront marquées, mais aucun message n’apparaitra au survol. Il sera en revanche consultable dans la plupart des inspecteurs de `DOM` : la limite est la création du pseudo-élément pour l’affichage (cf [la spécification](http://www.w3.org/TR/CSS2/generate.html#before-after-content). Voici la liste exhaustive des balises `HTML5` auto-fermantes :
+1. Les balises « auto-fermantes » n’autorisent pas la génération de contenu. Ainsi les erreurs ou alertes seront signalées, mais aucun message n’apparaitra au survol. Il sera en revanche consultable dans la plupart des inspecteurs de `DOM` : la limite est la création du pseudo-élément pour l’affichage (cf [la spécification](http://www.w3.org/TR/CSS2/generate.html#before-after-content). Voici la liste exhaustive des balises `HTML5` auto-fermantes :
 
  * `<area />`
  * `<base />`
@@ -43,11 +43,6 @@ Et voilà !
   * @see [La spéc W3C](http://www.w3.org/TR/css3-transforms/#transform-property)
   * @see [What no one told you about z-index](http://philipwalton.com/articles/what-no-one-told-you-about-z-index/) [traduit en Français par @iamvdo](http://blog.iamvdo.me/post/41094013194/comprendre-z-index-et-les-contextes-dempilement).
 
-3. De même, les tests sur les éléments contenus dans le `<head>` posent un souci pour l’affichage du message.
-
- *Dans l’issue [#66](https://github.com/ffoodd/a11y.css/issues/66) ouverte par [@7studio](https://twitter.com/7studio) (de nouveau), une solution a été aportée grâce à [une idée](https://mathiasbynens.be/notes/css-hidden-elements) de [Mathias Bynens](https://twitter.com/mathias).
-
-4. Pour éviter les cas dans lesquels le contour pourrait être masqué, la propriété [outline-offset](https://developer.mozilla.org/en-US/docs/Web/CSS/outline-offset "Définition sur le MDN") est utilisée afin d’afficher le contour à l’intérieur de l’élément marqué. Amélioration suggérée par @7studio dans l’issue #4.
 
 ## Automatisation
 
@@ -92,10 +87,4 @@ Et voilà !
 
 Pour en savoir plus sur Hologram, jetez un œil à [leur répertoire GitHub](https://github.com/trulia/hologram).
 
-## Architecture technique
-### Compteurs
-
-Désormais des compteurs `CSS` ont incrémentés par chaque erreur, et les résultats sont affichés dans le `body::after`. C’est donc du faux-contenu, son intérêt est purement visuel afin de simplement indiquer au développeur l’étendue du chantier qui l’attend :) .
-
-*À noter :* ce nouveau compteur permet d’obtenir des indications sur l’éventuelle présence de messages incriminant les balises du `<head>`. Ils n’ont toujours pas d’affichage mais ils sont désormais mentionnés dans ce compteur qu’ils incrémentent bien gentimment.
 

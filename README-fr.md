@@ -21,6 +21,10 @@ Vous pouvez également l’ajouter en allant sur [la page dédiée](http://ffood
 
 Pratique, n’est-ce pas ?
 
+### Compteurs
+
+Des compteurs `CSS` sont incrémentés par chaque erreur, et les résultats sont affichés dans le `html::after`. C’est donc du faux-contenu, son intérêt est purement visuel afin de simplement indiquer au développeur l’étendue du chantier qui l’attend. Vous le verrez directement en bas à gauche de votre page :).
+
 ## Crédits et remerciements
 
 ### Références et inspirations

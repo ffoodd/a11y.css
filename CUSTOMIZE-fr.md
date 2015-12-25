@@ -38,7 +38,7 @@ Concrètement, les éléments en erreur, en alerte, obsolètes ou pouvant être 
 * en bleu pour les élements & attributs obsolètes;
 * en vert les suggestions d’améliorations.
 
-Ces couleurs sont bien évidemment personnalisables. Au survol des éléments ainsi marqués, un bandeau apparaitra en haut de votre navigateur avec une petite formule vous précisant le problème, et un indice sous forme de boutade (tentative plus ou moins réussie de faire un peu de pédagogie en passant).
+Ces couleurs sont bien évidemment personnalisables, *via* [le fichier de configuratio](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L230). Au survol des éléments ainsi marqués, un bandeau apparaitra en haut de votre navigateur avec une petite formule vous précisant le problème, et un indice sous forme de boutade (tentative plus ou moins réussie de faire un peu de pédagogie en passant).
 
 ## Gestion des sélecteurs
 
@@ -58,7 +58,7 @@ Les sélecteurs génériques comme `[class]` peuvent également cibler des élé
 
 Quand un sélecteur n’est pas supporté par certains navigateurs, il est possible de le mettre en quarantaine afin qu’il n’invalide pas les autres sélecteurs.
 
-Activez simplement l’argument booléen `$quarantine: true`.
+Activez simplement l’argument booléen `$quarantine: true`. Vous devez spécifier `$self-closing` avant, même si celui vaut `false`.
 
 ### Customiser des messages
 
