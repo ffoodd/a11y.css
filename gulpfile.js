@@ -6,6 +6,7 @@ var gulp       = require('gulp'),
     sass       = require('gulp-ruby-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     csso       = require('gulp-csso'),
+//    csslint    = require('gulp-csslint'),
     hologram   = require('gulp-hologram');
 
 // Paths
@@ -56,6 +57,13 @@ gulp.task('hologram', function() {
   gulp.src('./hologram_config.yml')
     .pipe(hologram());
 });
+
+// CSSLint
+//gulp.task('css-lint', function() {
+//  gulp.src(source + '/**/*.css')
+//    .pipe(csslint())
+//    .pipe(csslint.reporter());
+//});
 
 
 // Build a11y.css
