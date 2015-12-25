@@ -45,7 +45,7 @@ Errors, warnings and advices are outlined by a 4px colored border:
 * blue for obsolete stuff;
 * green for advices.
 
-Those colors are customisable through [the configuration file](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L230). When hovering marked elements, a little banner should appear on top of your browser displaying what's going on.
+Those colors are customisable through [the configuration file](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L333).
 
 ## About selectors
 
@@ -57,12 +57,73 @@ Given the very long list of selectors to test, [they are splitted across several
 
 When the `:not()` selector cannot be precise enough, you may add a second selector to extend the `%a11y-reset` placeholder, which tries to cancel the test in your second case. However a few styles from the original page will still be overrided.
 
+```scss
+button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+  @include error('not-form-button');
+}
+
+form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+  @extend %a11y-reset;
+}
+```
+
 ### Extend a selector to target self-closing tags and replaced elements
 
 Generic selector like `[class]` may target self-closing tags and replaced elements. Some selectors are now extended with `@void-tags` mixin, that improve selector to target those weird tags, and repeat the associated message (adding `$self-closing: true`).
+
+```scss
+:not(img):not(object):not(embed):not(svg):not(canvas)[width],
+:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+  @include error('dimensions');
+}
+
+@include void-tags {
+  &:not(img):not(object):not(embed):not(svg):not(canvas)[width],
+  &:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+    @include error('dimensions', $self-closing: true);
+  }
+}
+```
 
 ### Quarantine
 
 When a selector is not cross-browser, you may send it to quarantine as it won't invalidate other selectors.
 
 Just switch the boolean argument `$quarantine: true`. You have to specify `$self-closing` before, even if it's `false`.
+
+```scss
+a:empty[title=""],
+a:empty[aria-label=""],
+a:empty[aria-labelledby=""],
+a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
+  @include error('empty-link');
+}
+
+a:blank[title=""],
+a:blank[aria-label=""],
+a:blank[aria-labelledby=""],
+a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
+  @include error('empty-link', $self-closing: false, $quarantine: true);
+}
+
+a:-moz-only-whitespace[title=""],
+a:-moz-only-whitespace[aria-label=""],
+a:-moz-only-whitespace[aria-labelledby=""],
+a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
+  @include error('empty-link', $self-closing: false, $quarantine: true);
+}
+
+### Customise messages
+
+Each test comes with its own message, in order to inform and help developper searching for improvement. They also are in partials files, to make reading and writing easier. Customizing will also be much easier.
+
+You may use the CSS `attr()` function in messages to show the real value of an attribute.
+
+Here is an example in `_variables.scss`:
+
+```scss
+'duplicate-roles': (
+    'fr': 'Le rôle ARIA attr(role) devrait être uniques, mais celui-ci est le deuxième dans la page !',
+    'en': 'ARIA role attr(role) should be unique, but this one is the second!'
+),
+```

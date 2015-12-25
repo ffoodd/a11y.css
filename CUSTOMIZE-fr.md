@@ -38,7 +38,7 @@ Concrètement, les éléments en erreur, en alerte, obsolètes ou pouvant être 
 * en bleu pour les élements & attributs obsolètes;
 * en vert les suggestions d’améliorations.
 
-Ces couleurs sont bien évidemment personnalisables, *via* [le fichier de configuratio](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L230). Au survol des éléments ainsi marqués, un bandeau apparaitra en haut de votre navigateur avec une petite formule vous précisant le problème, et un indice sous forme de boutade (tentative plus ou moins réussie de faire un peu de pédagogie en passant).
+Ces couleurs sont bien évidemment personnalisables, *via* [le fichier de configuration](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L333).
 
 ## Gestion des sélecteurs
 
@@ -50,9 +50,33 @@ Ces couleurs sont bien évidemment personnalisables, *via* [le fichier de config
 
 Quand le sélecteur de négation ne permet pas un ciblage suffisamment précis, vous pouvez ajouter un second sélecteur après le premier qui étendra le placeholder `%a11y-reset` et annulera (au mieux) le premier sélecteur dans certains cas. Malheureusement certains styles de la page originelle seront malgré tout écrasés.
 
+```scss
+button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+  @include error('not-form-button');
+}
+
+form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+  @extend %a11y-reset;
+}
+```
+
 ### Étendre un sélecteur pour cibler les balises auto-fermantes et éléments remplacés
 
 Les sélecteurs génériques comme `[class]` peuvent également cibler des éléments remplacés et des balises auto-fermantes (voir la section « Cas particuliers et problèmes connus »). Certains sélecteurs sont étendus grâce au mixin `@void-tags`, qui reprend le sélecteur en ciblant plus particulièrement les éléments incongrus, et répète le message en y ajoutant l’argument `$self-closing: true`.
+
+```scss
+:not(img):not(object):not(embed):not(svg):not(canvas)[width],
+:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+  @include error('dimensions');
+}
+
+@include void-tags {
+  &:not(img):not(object):not(embed):not(svg):not(canvas)[width],
+  &:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+    @include error('dimensions', $self-closing: true);
+  }
+}
+```
 
 ### Sélecteur en quarantaine
 
@@ -60,8 +84,40 @@ Quand un sélecteur n’est pas supporté par certains navigateurs, il est possi
 
 Activez simplement l’argument booléen `$quarantine: true`. Vous devez spécifier `$self-closing` avant, même si celui vaut `false`.
 
+```scss
+a:empty[title=""],
+a:empty[aria-label=""],
+a:empty[aria-labelledby=""],
+a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
+  @include error('empty-link');
+}
+
+a:blank[title=""],
+a:blank[aria-label=""],
+a:blank[aria-labelledby=""],
+a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
+  @include error('empty-link', $self-closing: false, $quarantine: true);
+}
+
+a:-moz-only-whitespace[title=""],
+a:-moz-only-whitespace[aria-label=""],
+a:-moz-only-whitespace[aria-labelledby=""],
+a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
+  @include error('empty-link', $self-closing: false, $quarantine: true);
+}
+```
+
 ### Customiser des messages
 
 Chaque test dispose de son propre message, afin d’informer et guider au maximum l’intégrateur en quête d’amélioration. Ils sont eux aussi dans des fichiers partiels, pour en faciliter la lecture et la rédaction. Une personnalisation sera bien plus simple de cette façon (tout le monde n’aimera mes touches d’humour ;-) ).
 
 Il est possible d’utiliser la fonction CSS `attr()` dans les messages afin d'afficher la valeur réelle d’un attribut.
+
+Voici un exemple dans `_variables.scss` :
+
+```scss
+'duplicate-roles': (
+    'fr': 'Le rôle ARIA attr(role) devrait être uniques, mais celui-ci est le deuxième dans la page !',
+    'en': 'ARIA role attr(role) should be unique, but this one is the second!'
+),
+```

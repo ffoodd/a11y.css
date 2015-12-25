@@ -9,6 +9,8 @@ Pronounced « Alix ». Because it's fun.
 
 This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.
 
+When hovering marked elements, a little banner should appear on top of your browser displaying what's going on.
+
 *This file is not a replacement to a complete tool such as [OpQuast Reporting](http://reporting.opquast.com/). It only intends to show possible weaknesses. You should obviously do some manual check by hand to know whether the code should or should not be fixed.*
 
 ## Bookmarklet
