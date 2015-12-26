@@ -10,6 +10,7 @@ GEM
     json (1.8.3)
     redcarpet (3.2.0)
     rouge (1.7.4)
+    sass (3.4.20)
     simplecov (0.11.1)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -23,6 +24,7 @@ PLATFORMS
 DEPENDENCIES
   codeclimate-test-reporter
   hologram
+  sass
 
 BUNDLED WITH
    1.11.2

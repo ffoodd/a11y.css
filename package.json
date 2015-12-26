@@ -20,7 +20,6 @@
   "devDependencies": {
     "gulp": "latest",
     "gulp-csslint": "latest",
-    "gulp-csslint-sourcemap-reporter": "latest",
     "gulp-csso": "latest",
     "gulp-hologram": "latest",
     "gulp-ruby-sass": "latest",
