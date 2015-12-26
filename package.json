@@ -26,6 +26,7 @@
     "gulp-ruby-sass": "latest",
     "gulp-scss-lint": "latest",
     "gulp-sourcemaps": "latest",
+    "gulp-util": "^3.0.7",
     "sassdoc": "latest"
   }
 }

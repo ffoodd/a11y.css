@@ -6,6 +6,7 @@ var gulp       = require('gulp'),
     sass       = require('gulp-ruby-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     csso       = require('gulp-csso'),
+    gutil      = require('gulp-util'),
     csslint    = require('gulp-csslint'),
     scsslint   = require('gulp-scss-lint'),
     hologram   = require('gulp-hologram');
@@ -59,6 +60,7 @@ gulp.task('hologram', function() {
     .pipe(hologram());
 });
 
+
 // scss lint
 gulp.task('scss-lint', function() {
   return gulp.src(source + '/**/*.scss')
@@ -67,11 +69,24 @@ gulp.task('scss-lint', function() {
     }));
 });
 
+function customReporter(file) {
+  gutil.log(gutil.colors.cyan(file.csslint.errorCount) + ' errors in ' + gutil.colors.magenta(file.path));
+
+  file.csslint.results.forEach(function(result) {
+    if (result.error.type === 'warning') {
+      gutil.log( gutil.colors.yellow.bold('[Warning]') + gutil.colors.green(' Line: ' + result.error.line) + gutil.colors.cyan(' Column: ' + result.error.col) + ' ' + gutil.colors.magenta(result.error.message) + ' ' +  gutil.colors.gray(result.error.rule.desc) + ' ' + gutil.colors.red('Browsers: ' + result.error.rule.browsers));
+    }
+    else {
+      gutil.log( gutil.colors.red.bold('[' + result.error.type + ']') + gutil.colors.green(' Line: ' + result.error.line) + gutil.colors.cyan(' Column: ' + result.error.col) + ' ' + gutil.colors.magenta(result.error.message) + ' ' +  gutil.colors.gray(result.error.rule.desc) + ' ' + gutil.colors.red('Browsers: ' + result.error.rule.browsers));
+    }
+  });
+}
+
 // CSSLint
 gulp.task('css-lint', function() {
   gulp.src(destination + '/**/*.css')
     .pipe(csslint())
-    .pipe(csslint.reporter());
+    .pipe(csslint.reporter(customReporter));
 });
 
 
