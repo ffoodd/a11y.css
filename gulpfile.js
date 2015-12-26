@@ -1,25 +1,30 @@
 'use strict';
 
 // Requires
-var gulp       = require('gulp'),
-    sassdoc    = require('sassdoc'),
-    sass       = require('gulp-ruby-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    csso       = require('gulp-csso'),
-    gutil      = require('gulp-util'),
-    csslint    = require('gulp-csslint'),
-    scsslint   = require('gulp-scss-lint'),
-    hologram   = require('gulp-hologram');
+var gulp         = require('gulp'),
+    sassdoc      = require('sassdoc'),
+    sass         = require('gulp-ruby-sass'),
+    sourcemaps   = require('gulp-sourcemaps'),
+    gutil        = require('gulp-util'),
+    autoprefixer = require('gulp-autoprefixer'),
+    csslint      = require('gulp-csslint'),
+    scsslint     = require('gulp-scss-lint'),
+    hologram     = require('gulp-hologram');
 
 // Paths
 var source      = './sass',
     destination = './css';
+
+var autoprefixerOptions = {
+  browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+};
 
 
 // Sass w sourcemaps
 gulp.task('sass', function () {
   return sass(source + '/**/*.scss', {sourcemap: true, style: 'compressed'})
     .on('error', sass.logError)
+    .pipe(autoprefixer(autoprefixerOptions))
     .pipe(sourcemaps.write('maps', {
       includeContent: false,
       sourceRoot: source
@@ -27,11 +32,6 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(destination));
 });
 
-// Minify CSS
-gulp.task('minify', function () {
-  return gulp.src(destination + '/*.css')
-    .pipe(csso());
-});
 
 // Generate SassDoc
 gulp.task('sassdoc', function () {
@@ -91,13 +91,13 @@ gulp.task('css-lint', function() {
 
 
 // Build a11y.css
-gulp.task('build', ['sass', 'minify']);
+//gulp.task('build', ['sass']);
 
 // Generate doc
 gulp.task('docs', ['sassdoc', 'hologram']);
 
 // Default: build
-gulp.task('default', ['build']);
+gulp.task('default', ['sass']);
 
 // Watch: build
 gulp.task('watch', function () {
