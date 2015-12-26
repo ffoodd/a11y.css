@@ -19,12 +19,13 @@
   },
   "devDependencies": {
     "gulp": "latest",
-    "gulp-csslint": "^0.2.0",
-    "gulp-csslint-sourcemap-reporter": "^0.1.1",
+    "gulp-csslint": "latest",
+    "gulp-csslint-sourcemap-reporter": "latest",
     "gulp-csso": "latest",
     "gulp-hologram": "latest",
     "gulp-ruby-sass": "latest",
+    "gulp-scss-lint": "latest",
     "gulp-sourcemaps": "latest",
-    "sassdoc": "^2.1.18"
+    "sassdoc": "latest"
   }
 }

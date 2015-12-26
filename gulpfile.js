@@ -7,6 +7,7 @@ var gulp       = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     csso       = require('gulp-csso'),
     csslint    = require('gulp-csslint'),
+    scsslint   = require('gulp-scss-lint'),
     hologram   = require('gulp-hologram');
 
 // Paths
@@ -56,6 +57,14 @@ gulp.task('sassdoc', function () {
 gulp.task('hologram', function() {
   gulp.src('./hologram_config.yml')
     .pipe(hologram());
+});
+
+// scss lint
+gulp.task('scss-lint', function() {
+  return gulp.src(source + '/**/*.scss')
+    .pipe(scsslint({
+      'config': '.scsslint.yml',
+    }));
 });
 
 // CSSLint
