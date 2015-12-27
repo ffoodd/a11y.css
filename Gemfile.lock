@@ -12,9 +12,9 @@ GEM
     redcarpet (3.2.0)
     rouge (1.7.4)
     sass (3.4.20)
-    scss-lint (0.38.0)
+    scss_lint (0.43.2)
       rainbow (~> 2.0)
-      sass (~> 3.4.1)
+      sass (~> 3.4.15)
     simplecov (0.11.1)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -29,7 +29,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   hologram
   sass
-  scss-lint
+  scss_lint
 
 BUNDLED WITH
    1.11.2
