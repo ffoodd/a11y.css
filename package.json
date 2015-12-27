@@ -18,13 +18,12 @@
     "url": "https://github.com/ffoodd/a11y.css/issues"
   },
   "devDependencies": {
-    "gulp": "latest",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "latest",
     "gulp-csslint": "latest",
     "gulp-hologram": "latest",
     "gulp-ruby-sass": "latest",
     "gulp-scss-lint": "latest",
-    "gulp-sourcemaps": "latest",
-    "gulp-autoprefixer": "latest",
     "gulp-util": "^3.0.7",
     "sassdoc": "latest"
   }

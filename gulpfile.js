@@ -4,7 +4,6 @@
 var gulp         = require('gulp'),
     sassdoc      = require('sassdoc'),
     sass         = require('gulp-ruby-sass'),
-    sourcemaps   = require('gulp-sourcemaps'),
     gutil        = require('gulp-util'),
     autoprefixer = require('gulp-autoprefixer'),
     csslint      = require('gulp-csslint'),
@@ -22,13 +21,9 @@ var autoprefixerOptions = {
 
 // Sass w sourcemaps
 gulp.task('sass', function () {
-  return sass(source + '/**/*.scss', {sourcemap: true, style: 'compressed'})
+  return sass(source + '/**/*.scss')
     .on('error', sass.logError)
     .pipe(autoprefixer(autoprefixerOptions))
-    .pipe(sourcemaps.write('maps', {
-      includeContent: false,
-      sourceRoot: source
-    }))
     .pipe(gulp.dest(destination));
 });
 
