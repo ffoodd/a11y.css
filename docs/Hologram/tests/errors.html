@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Errors a11y.css</title>
+    <link rel="stylesheet" href="https://rawgit.com/ffoodd/sseeeedd/master/css/sseeeedd.css">
+    <link rel="stylesheet" href="static/doc.css">
+    <!-- CSS to be documented -->
+    <link rel="stylesheet" href="css/a11y-en.css" media="(min-width: 800px)">
+  </head>
+  <body>
+
+    <header role="banner" class="mw--site center pt3" id="top">
+      <h1 class="mt0">a11y.css</h1>
+    </header>
+
+    <nav role="navigation" aria-label="Main navigation" class="mw--site center Errors">
+      <ul class="row ul-reset p-reset m-reset">
+        <li class="col p-reset">
+          <a href="index.html" class="inbl w-100 pa1 action--secondary index">Home</a>
+        </li>
+        <li class="col p-reset">
+          <a href="errors.html" class="inbl w-100 pa1 action--secondary errors">Errors</a>
+        </li>
+        <li class="col p-reset">
+          <a href="warnings.html" class="inbl w-100 pa1 action--secondary warnings">Warnings</a>
+        </li>
+        <li class="col p-reset">
+          <a href="obsolete.html" class="inbl w-100 pa1 action--secondary obsolete">Obsoletes</a>
+        </li>
+        <li class="col p-reset">
+          <a href="advices.html" class="inbl w-100 pa1 action--secondary advices">Advices</a>
+        </li>
+        <li class="col p-reset">
+          <a href="docs/" class="inbl w-100 pa1 action--primary" target="_blank" title="(opens in new tab)"><b><abbr title="Application Programming Interface">API</abbr></b> Doc</a>
+        </li>
+        <li class="col p-reset">
+          <a href="https://github.com/ffoodd/a11y.css" class="inbl w-100 pa1 action--extra" target="_blank" title="(opens in new tab)">on <b>Github</b></a>
+        </li>
+      </ul>
+    </nav>
+
+    <main role="main" class="grid-1-2 mw--site center mt2">
+      <aside role="complementary" class="pr1">
+        <h2 class="h4-like">Errors</h2>
+        <ol id="toc" class="mb3">
+          
+            <li>
+              <a href="#dimensions">[width] &amp; [height] attributes</a>
+            </li>
+          
+            <li>
+              <a href="#disabled-button">Disabled button</a>
+            </li>
+          
+            <li>
+              <a href="#empty-button">Empty button</a>
+            </li>
+          
+            <li>
+              <a href="#empty-button-attr">Empty button attribute</a>
+            </li>
+          
+            <li>
+              <a href="#empty-link">Empty link</a>
+            </li>
+          
+            <li>
+              <a href="#js-events">Javascript events attributes</a>
+            </li>
+          
+            <li>
+              <a href="#namespace">Namespaces</a>
+            </li>
+          
+            <li>
+              <a href="#no-action">form missing an [action]</a>
+            </li>
+          
+            <li>
+              <a href="#no-alt">Missing alternative for img</a>
+            </li>
+          
+            <li>
+              <a href="#no-for">A label without a [for] attribute</a>
+            </li>
+          
+            <li>
+              <a href="#no-href">No [href]</a>
+            </li>
+          
+            <li>
+              <a href="#no-id">Missing some kind of label</a>
+            </li>
+          
+            <li>
+              <a href="#no-lang">No language defined</a>
+            </li>
+          
+            <li>
+              <a href="#no-page-title">Empty &lt;title&gt;</a>
+            </li>
+          
+            <li>
+              <a href="#no-src">Missing source for img</a>
+            </li>
+          
+            <li>
+              <a href="#no-title">iframe without [title]</a>
+            </li>
+          
+            <li>
+              <a href="#no-type">input without [type]</a>
+            </li>
+          
+            <li>
+              <a href="#no-value">Missing a value</a>
+            </li>
+          
+            <li>
+              <a href="#not-form-button">Form button</a>
+            </li>
+          
+            <li>
+              <a href="#not-submit-button">Button not submitting</a>
+            </li>
+          
+            <li>
+              <a href="#optgroup">optgroup without label</a>
+            </li>
+          
+            <li>
+              <a href="#style-attr">[style] attribute</a>
+            </li>
+          
+            <li>
+              <a href="#tab-order">[tabindex] &gt; 0</a>
+            </li>
+          
+            <li>
+              <a href="#table-for-layout">table used for layout</a>
+            </li>
+          
+        </ol>
+
+        <form action="#" id="bookmarklet" class="line clearfix">
+          <fieldset>
+            <legend class="h5-like m-reset">Bookmarlet generator</legend>
+            <p class="row">
+              <label for="minimum-level" class="w-50 m-reset">Minimum level</label>
+              <select id="minimum-level" name="minimum-level">
+                <option value="advice">Advices</option>
+                <option value="obsolete">Obsoletes</option>
+                <option value="warning">Warnings</option>
+                <option value="error">Errors</option>
+              </select>
+            </p>
+            <p class="row">
+              <label for="language" class="w-50 m-reset">Language</label>
+              <select id="language" name="language">
+                <option value="fr">French</option>
+                <option value="en">English</option>
+              </select>
+            </p>
+          </fieldset>
+
+          <button type="submit" class="w-100 action--secondary pa1">Generate bookmarklet</button>
+        </form>
+
+        <p class="clear grid-2">
+          <small class="txtright pr1">Just drag this to your bookmarks, and you'll be able to use <b>a11y.css</b> on any page:</small>
+          <a id="bookmarklet--link" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='(max-width: 800px)';document.body.appendChild(a11ycss);})();" class="pa1 txtcenter action--extra bookmarklet">a11y.css</a>
+        </p>
+      </aside>
+          
+      <div>
+
+<h1 id="dimensions" class="styleguide">[width] &amp; [height] attributes</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">[width]</code> and <code class="styleguide">[height]</code> are presentation informations.
+Therefore it shouldn&#39;t be used in markup, except for <code class="styleguide">&lt;img&gt;</code>. Use CSS instead.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-prsentation-de-linformation">http://references.modernisation.gouv.fr/referentiel-technique-0#title-prsentation-de-linformation</a></li>
+<li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-101-a-dans-le-site-web-des-feuilles-de-styles-sont-elles-utilises-pour-contrler-la-prsentation-de-linformation-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-101-a-dans-le-site-web-des-feuilles-de-styles-sont-elles-utilises-pour-contrler-la-prsentation-de-linformation-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence">http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nd">:not</span><span class="o">(</span><span class="nt">img</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">object</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">embed</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">svg</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">canvas</span><span class="o">)[</span><span class="nt">width</span><span class="o">],</span>
+<span class="nd">:not</span><span class="o">(</span><span class="nt">img</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">object</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">embed</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">svg</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">canvas</span><span class="o">)[</span><span class="nt">height</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p width="20">Damned! I feel sooo strait :(</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;p</span> <span class="na">width=</span><span class="s">"20"</span><span class="nt">&gt;</span>Damned! I feel sooo strait :(<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="disabled-button" class="styleguide">Disabled button</h1>
+
+<h2>Description</h2>
+<p class="styleguide">A <code class="styleguide">&lt;button&gt;</code> styled to be disabled should be disabled <em>for real</em>.
+Use <code class="styleguide">[disabled]</code> and <code class="styleguide">[readonly]</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">button</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="err">"</span><span class="nt">disabled</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">disabled</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">readonly</span><span class="o">])</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <button class="is-disabled" type="button">To be or not to be (disabled)?</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"is-disabled"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>To be or not to be (disabled)?<span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="empty-button" class="styleguide">Empty button</h1>
+
+<h2>Description</h2>
+<p class="styleguide">A <code class="styleguide">&lt;button&gt;</code> should either have content or an <code class="styleguide">[aria-label]</code>, <code class="styleguide">[aria-labelledby]</code> or <code class="styleguide">[title]</code>. Those attributes, if present, should not be empty.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-1211-formulaires">http://references.modernisation.gouv.fr/referentiel-technique-0#title-1211-formulaires</a></li>
+<li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-119-a-dans-chaque-formulaire-lintitul-de-chaque-bouton-est-il-pertinent-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-119-a-dans-chaque-formulaire-lintitul-de-chaque-bouton-est-il-pertinent-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H91.html">http://www.w3.org/TR/WCAG-TECHS/H91.html</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193</a></li>
+<li><a href="https://drafts.csswg.org/selectors-4/#the-blank-pseudo">https://drafts.csswg.org/selectors-4/#the-blank-pseudo</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace">https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace</a></li>
+<li><a href="https://css-tricks.com/almanac/selectors/b/blank/">https://css-tricks.com/almanac/selectors/b/blank/</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">button</span><span class="nd">:empty:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span>
+
+<span class="nt">button</span><span class="nd">:blank:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span>
+
+<span class="nt">button</span><span class="nd">:-moz-only-whitespace:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <button type="button"></button>
+
+<button type="button"> </button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;&lt;/button&gt;</span>
+
+<span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span> <span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="empty-button-attr" class="styleguide">Empty button attribute</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">[aria-label]</code>, <code class="styleguide">[aria-labelledby]</code> or <code class="styleguide">[title]</code> on a <code class="styleguide">&lt;button&gt;</code> must not be empty.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-1211-formulaires">http://references.modernisation.gouv.fr/referentiel-technique-0#title-1211-formulaires</a></li>
+<li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-119-a-dans-chaque-formulaire-lintitul-de-chaque-bouton-est-il-pertinent-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-119-a-dans-chaque-formulaire-lintitul-de-chaque-bouton-est-il-pertinent-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H91.html">http://www.w3.org/TR/WCAG-TECHS/H91.html</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">button</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <button title="" type="button">Test</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;button</span> <span class="na">title=</span><span class="s">""</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Test<span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="empty-link" class="styleguide">Empty link</h1>
+
+<h2>Description</h2>
+<p class="styleguide">An empty link should have a label, within <code class="styleguide">[title]</code>, <code class="styleguide">[aria-label]</code> or targeted by <code class="styleguide">[aria-labelledby]</code>.
+By the way, why would you use an empty link?</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-65-a-dans-chaque-page-web-chaque-lien-lexception-des-ancres-a-t-il-un-intitul-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-65-a-dans-chaque-page-web-chaque-lien-lexception-des-ancres-a-t-il-un-intitul-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#text-equiv-all">http://www.w3.org/TR/WCAG20/#text-equiv-all</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs">http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link">http://www.w3.org/TR/WCAG20/#navigation-mechanisms-link</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H30.html">http://www.w3.org/TR/WCAG-TECHS/H30.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/G91.html">http://www.w3.org/TR/WCAG-TECHS/G91.html</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193</a></li>
+<li><a href="https://drafts.csswg.org/selectors-4/#the-blank-pseudo">https://drafts.csswg.org/selectors-4/#the-blank-pseudo</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace">https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace</a></li>
+<li><a href="https://css-tricks.com/almanac/selectors/b/blank/">https://css-tricks.com/almanac/selectors/b/blank/</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:empty:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span>
+
+<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:blank:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span>
+
+<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:-moz-only-whitespace:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <a href="/" class="inbl w-20" id="empty-link_code"></a>
+
+<a href="/" class="inbl w-20" id="empty-link_code-moz"> </a>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="na">class=</span><span class="s">"inbl w-20"</span> <span class="na">id=</span><span class="s">"empty-link_code"</span><span class="nt">&gt;&lt;/a&gt;</span>
+
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="na">class=</span><span class="s">"inbl w-20"</span> <span class="na">id=</span><span class="s">"empty-link_code-moz"</span><span class="nt">&gt;</span> <span class="nt">&lt;/a&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="js-events" class="styleguide">Javascript events attributes</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Javascript event attributes (such as <code class="styleguide">[onmouseover]</code>) should not be used.
+Prefer either CSS pseudo-classes (<code class="styleguide">:hover</code>, <code class="styleguide">:focus</code>, <code class="styleguide">:active</code>, etc.) or JS event listeners.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes">https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener">https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="o">[</span><span class="nt">onafterprint</span><span class="o">],</span> <span class="o">[</span><span class="nt">onbeforeprint</span><span class="o">],</span> <span class="o">[</span><span class="nt">onbeforeunload</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onerror</span><span class="o">],</span> <span class="o">[</span><span class="nt">onhaschange</span><span class="o">],</span> <span class="o">[</span><span class="nt">onload</span><span class="o">],</span> <span class="o">[</span><span class="nt">onmessage</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onoffline</span><span class="o">],</span> <span class="o">[</span><span class="nt">ononline</span><span class="o">],</span> <span class="o">[</span><span class="nt">onpagehide</span><span class="o">],</span> <span class="o">[</span><span class="nt">onpageshow</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onpopstate</span><span class="o">],</span> <span class="o">[</span><span class="nt">onredo</span><span class="o">],</span> <span class="o">[</span><span class="nt">onresize</span><span class="o">],</span> <span class="o">[</span><span class="nt">onstorage</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onundo</span><span class="o">],</span> <span class="o">[</span><span class="nt">onunload</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onblur</span><span class="o">],</span> <span class="o">[</span><span class="nt">onchage</span><span class="o">],</span> <span class="o">[</span><span class="nt">oncontextmenu</span><span class="o">],</span> <span class="o">[</span><span class="nt">onfocus</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onformchange</span><span class="o">],</span> <span class="o">[</span><span class="nt">onforminput</span><span class="o">],</span> <span class="o">[</span><span class="nt">oninput</span><span class="o">],</span> <span class="o">[</span><span class="nt">oninvalid</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onreset</span><span class="o">],</span> <span class="o">[</span><span class="nt">onselect</span><span class="o">],</span> <span class="o">[</span><span class="nt">onsubmit</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onkeydown</span><span class="o">],</span> <span class="o">[</span><span class="nt">onkeypress</span><span class="o">],</span> <span class="o">[</span><span class="nt">onkeyup</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onclick</span><span class="o">],</span> <span class="o">[</span><span class="nt">ondblclick</span><span class="o">],</span> <span class="o">[</span><span class="nt">ondrag</span><span class="o">],</span> <span class="o">[</span><span class="nt">ondragend</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">ondragenter</span><span class="o">],</span> <span class="o">[</span><span class="nt">ondragleave</span><span class="o">],</span> <span class="o">[</span><span class="nt">ondragover</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">ondragstart</span><span class="o">],</span> <span class="o">[</span><span class="nt">ondrop</span><span class="o">],</span> <span class="o">[</span><span class="nt">onmousedown</span><span class="o">],</span> <span class="o">[</span><span class="nt">onmousemove</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onmouseout</span><span class="o">],</span> <span class="o">[</span><span class="nt">onmouseover</span><span class="o">],</span> <span class="o">[</span><span class="nt">onmouseup</span><span class="o">],</span> <span class="o">[</span><span class="nt">onmousewheel</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onscroll</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onabort</span><span class="o">],</span> <span class="o">[</span><span class="nt">oncanplay</span><span class="o">],</span> <span class="o">[</span><span class="nt">oncanplaythrough</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">ondurationchange</span><span class="o">],</span> <span class="o">[</span><span class="nt">onemptied</span><span class="o">],</span> <span class="o">[</span><span class="nt">onended</span><span class="o">],</span> <span class="o">[</span><span class="nt">onerror</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onloadeddata</span><span class="o">],</span> <span class="o">[</span><span class="nt">onloadedmetadata</span><span class="o">],</span> <span class="o">[</span><span class="nt">onloadstart</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onpause</span><span class="o">],</span> <span class="o">[</span><span class="nt">onplay</span><span class="o">],</span> <span class="o">[</span><span class="nt">onplaying</span><span class="o">],</span> <span class="o">[</span><span class="nt">onprogress</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onratechange</span><span class="o">],</span> <span class="o">[</span><span class="nt">onreadystatechange</span><span class="o">],</span> <span class="o">[</span><span class="nt">onseeked</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onseeking</span><span class="o">],</span> <span class="o">[</span><span class="nt">onstalled</span><span class="o">],</span> <span class="o">[</span><span class="nt">onsuspend</span><span class="o">],</span> <span class="o">[</span><span class="nt">ontimeupdate</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">onvolumechange</span><span class="o">],</span> <span class="o">[</span><span class="nt">onwaiting</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <span onclick="alert('You clicked!');">Click click click</span>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;span</span> <span class="na">onclick=</span><span class="s">"alert('You clicked!');"</span><span class="nt">&gt;</span>Click click click<span class="nt">&lt;/span&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="namespace" class="styleguide">Namespaces</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Did you know that some characters should be avoided as first characters in class names and identifiers?
+Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar">http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar</a></li>
+<li><a href="http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/">http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/</a></li>
+<li><a href="http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html">http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L466">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L466</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L480">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L480</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">1</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">2</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">3</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">4</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">5</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">6</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">7</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">8</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">9</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">0</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">--</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-1</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-2</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-3</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-4</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-5</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-6</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-7</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-8</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-9</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-0</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">1</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">2</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">3</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">4</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">5</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">6</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">7</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">8</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">9</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">0</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">--</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-1</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-2</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-3</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-4</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-5</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-6</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-7</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-8</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-9</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-0</span><span class="err">"</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div id="2">Hello! My ID is 2.</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"2"</span><span class="nt">&gt;</span>Hello! My ID is 2.<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="no-action" class="styleguide">form missing an [action]</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;form&gt;</code> should do something, isnt&#39;it? Well, <code class="styleguide">[action]</code> is meant to define what.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">form</span><span class="nd">:not</span><span class="o">([</span><span class="nt">action</span><span class="o">])</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <form>
+  <label for="input">Guess what do we do with your datas?</label>
+  <input id="input" type="text" />
+
+  <input type="submit" value="No idea, huh?"/>
+</form>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"input"</span><span class="nt">&gt;</span>Guess what do we do with your datas?<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"input"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="nt">/&gt;</span>
+
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"No idea, huh?"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="no-alt" class="styleguide">Missing alternative for img</h1>
+
+<h2>Description</h2>
+<p class="styleguide">An <code class="styleguide">&lt;img&gt;</code> must have an <code class="styleguide">[alt]</code>. Always.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-11-a-chaque-image-a-t-elle-une-alternative-textuelle-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-11-a-chaque-image-a-t-elle-une-alternative-textuelle-</a></li>
+<li><a href="http://www.w3.org/WAI/tutorials/images/decision-tree/">http://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
+<li><a href="http://www.w3.org/TR/html51/semantics.html#alt">http://www.w3.org/TR/html51/semantics.html#alt</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#text-equiv-all">http://www.w3.org/TR/WCAG20/#text-equiv-all</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H36.html">http://www.w3.org/TR/WCAG-TECHS/H36.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H37.html">http://www.w3.org/TR/WCAG-TECHS/H37.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H24.html">http://www.w3.org/TR/WCAG-TECHS/H24.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F65.html">http://www.w3.org/TR/WCAG-TECHS/F65.html</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">img</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">]),</span>
+<span class="nt">area</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">]),</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">])</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img src="static/ffoodd.png" width="144" height="144" /><i> </i>
+<input type="image" src="static/ffoodd.png" /><i> </i>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="na">width=</span><span class="s">"144"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="nt">/&gt;&lt;i&gt;</span> <span class="nt">&lt;/i&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"image"</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="nt">/&gt;&lt;i&gt;</span> <span class="nt">&lt;/i&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="no-for" class="styleguide">A label without a [for] attribute</h1>
+
+<h2>Description</h2>
+<p class="styleguide">A <code class="styleguide">&lt;label&gt;</code> is labelling something, in theory.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-111-a-chaque-champ-de-formulaire-a-t-il-une-tiquette-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-111-a-chaque-champ-de-formulaire-a-t-il-une-tiquette-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#minimize-error-cues">http://www.w3.org/TR/WCAG20/#minimize-error-cues</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive">http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H44.html">http://www.w3.org/TR/WCAG-TECHS/H44.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">label</span><span class="nd">:not</span><span class="o">([</span><span class="nt">for</span><span class="o">]),</span>
+<span class="nt">label</span><span class="o">[</span><span class="nt">for</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <label>Guess what?</label>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;label&gt;</span>Guess what?<span class="nt">&lt;/label&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="no-href" class="styleguide">No [href]</h1>
+
+<h2>Description</h2>
+<p class="styleguide">The <code class="styleguide">[href]</code> attribute, if present, should not be empty. A link <em>to</em> something, right?
+However a link may be an anchor, using <code class="styleguide">[name]</code> or <code class="styleguide">[id]</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">a</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="err">""</span><span class="o">][</span><span class="nt">id</span><span class="o">=</span><span class="err">""</span><span class="o">][</span><span class="nt">href</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:not</span><span class="o">([</span><span class="nt">name</span><span class="o">])[</span><span class="nt">id</span><span class="o">=</span><span class="err">""</span><span class="o">][</span><span class="nt">href</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="err">""</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])[</span><span class="nt">href</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:not</span><span class="o">([</span><span class="nt">name</span><span class="o">])[</span><span class="nt">id</span><span class="o">=</span><span class="err">""</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">]),</span>
+<span class="nt">a</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="err">""</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">]),</span>
+<span class="nt">a</span><span class="nd">:not</span><span class="o">([</span><span class="nt">name</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])[</span><span class="nt">href</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:not</span><span class="o">([</span><span class="nt">name</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">])</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <a>Who am I? Where do I link?</a>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;a&gt;</span>Who am I? Where do I link?<span class="nt">&lt;/a&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="no-id" class="styleguide">Missing some kind of label</h1>
+
+<h2>Description</h2>
+<p class="styleguide">How to label a field? You have a few choices: <code class="styleguide">[id]</code>, <code class="styleguide">[title]</code>, <code class="styleguide">[aria-label]</code> and <code class="styleguide">[aria-labelledby]</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-111-a-chaque-champ-de-formulaire-a-t-il-une-tiquette-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-111-a-chaque-champ-de-formulaire-a-t-il-une-tiquette-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#minimize-error-cues">http://www.w3.org/TR/WCAG20/#minimize-error-cues</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive">http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H44.html">http://www.w3.org/TR/WCAG-TECHS/H44.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">input</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">submit</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">hidden</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
+<span class="nt">textarea</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
+<span class="nt">select</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <input type="text" /><i> </i>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="nt">/&gt;&lt;i&gt;</span> <span class="nt">&lt;/i&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="no-lang" class="styleguide">No language defined</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;html&gt;</code> must indicate to User Agents the human language used in the document.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-83-a-dans-chaque-page-web-la-langue-par-dfaut-est-elle-prsente-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-83-a-dans-chaque-page-web-la-langue-par-dfaut-est-elle-prsente-</a></li>
+<li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-langue-par-dfaut">http://references.modernisation.gouv.fr/referentiel-technique-0#title-langue-par-dfaut</a></li>
+<li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-84-a-pour-chaque-page-web-ayant-une-langue-par-dfaut-le-code-de-langue-est-il-pertinent-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-84-a-pour-chaque-page-web-ayant-une-langue-par-dfaut-le-code-de-langue-est-il-pertinent-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#meaning-doc-lang-id">http://www.w3.org/TR/WCAG20/#meaning-doc-lang-id</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H57.html">http://www.w3.org/TR/WCAG-TECHS/H57.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">html</span><span class="nd">:not</span><span class="o">([</span><span class="nt">lang</span><span class="o">]),</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <iframe title="No language defined a11y.css test-case" src="static/no-lang.html" width="650" height="200" class="b-reset"></iframe>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;iframe</span> <span class="na">title=</span><span class="s">"No language defined a11y.css test-case"</span> <span class="na">src=</span><span class="s">"static/no-lang.html"</span> <span class="na">width=</span><span class="s">"650"</span> <span class="na">height=</span><span class="s">"200"</span> <span class="na">class=</span><span class="s">"b-reset"</span><span class="nt">&gt;&lt;/iframe&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="no-page-title" class="styleguide">Empty &lt;title&gt;</h1>
+
+<h2>Description</h2>
+<p class="styleguide">The <code class="styleguide">title&gt;</code> tag is the first thing read aloud by screen readers — to announce the page&hellip; title — and also the first thing displayed on search engines&#39; results pages.</p><p class="styleguide">We also use the <code class="styleguide">:blank</code> pseudo-class for the single space case, but at this time its support is very poor.
+We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-class, which is an alias of <code class="styleguide">:blank</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-85-a-chaque-page-web-a-t-elle-un-titre-de-page-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-85-a-chaque-page-web-a-t-elle-un-titre-de-page-</a></li>
+<li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#titre-de-page">http://references.modernisation.gouv.fr/referentiel-technique-0#titre-de-page</a></li>
+<li><a href="http://www.w3.org/TR/html5/document-metadata.html#the-title-element">http://www.w3.org/TR/html5/document-metadata.html#the-title-element</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#navigation-mechanisms-title">http://www.w3.org/TR/WCAG20/#navigation-mechanisms-title</a></li>
+<li><a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-title">http://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-title</a></li>
+<li><a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html">http://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/G88.html">http://www.w3.org/TR/WCAG-TECHS/G88.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/G127.html">http://www.w3.org/TR/WCAG-TECHS/G127.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H25.html">http://www.w3.org/TR/WCAG-TECHS/H25.html</a></li>
+<li><a href="https://drafts.csswg.org/selectors-4/#the-blank-pseudo">https://drafts.csswg.org/selectors-4/#the-blank-pseudo</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace">https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace</a></li>
+<li><a href="https://css-tricks.com/almanac/selectors/b/blank/">https://css-tricks.com/almanac/selectors/b/blank/</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">title</span><span class="nd">:empty</span>
+<span class="nt">title</span><span class="nd">:blank</span>
+<span class="nt">title</span><span class="nd">:-moz-only-whitespace</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <title></title>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;title&gt;&lt;/title&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="no-src" class="styleguide">Missing source for img</h1>
+
+<h2>Description</h2>
+<p class="styleguide">An <code class="styleguide">&lt;img&gt;</code> must have an <code class="styleguide">[src]</code> or an <code class="styleguide">[srcset]</code>. Obviously.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src">http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374</a></li>
+<li><a href="http://scottjehl.github.io/picturefill/">http://scottjehl.github.io/picturefill/</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">img</span><span class="nd">:not</span><span class="o">([</span><span class="nt">src</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">srcset</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="err">"#"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="err">"#"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">src</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">srcset</span><span class="o">]),</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="err">"#"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="err">"#"</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img alt="Missing src" width="144" height="144" /><i> </i>
+<input type="image" alt="Missing src" /><i> </i>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"Missing src"</span> <span class="na">width=</span><span class="s">"144"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="nt">/&gt;&lt;i&gt;</span> <span class="nt">&lt;/i&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"image"</span> <span class="na">alt=</span><span class="s">"Missing src"</span> <span class="nt">/&gt;&lt;i&gt;</span> <span class="nt">&lt;/i&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="no-title" class="styleguide">iframe without [title]</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;iframe&gt;</code> needs a <code class="styleguide">[title]</code> in order to tell the user what to expect inside the iframe.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-21-a-chaque-cadre-en-ligne-a-t-il-un-titre-de-cadre-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-21-a-chaque-cadre-en-ligne-a-t-il-un-titre-de-cadre-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H64.html">http://www.w3.org/TR/WCAG-TECHS/H64.html</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">iframe</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">]),</span>
+<span class="nt">iframe</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe><i> </i>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;iframe</span> <span class="na">height=</span><span class="s">"500"</span> <span class="na">width=</span><span class="s">"500"</span> <span class="na">src=</span><span class="s">"http://www.ffoodd.fr"</span><span class="nt">&gt;&lt;/iframe&gt;&lt;i&gt;</span> <span class="nt">&lt;/i&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="no-type" class="styleguide">input without [type]</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;input&gt;</code> needs a <code class="styleguide">[type]</code> in order to tell the user what kind of data is wanted.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-1111-aa-dans-chaque-formulaire-le-contrle-de-saisie-est-il-accompagn-si-ncessaire-de-suggestions-facilitant-la-correction-des-erreurs-de-saisie-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-1111-aa-dans-chaque-formulaire-le-contrle-de-saisie-est-il-accompagn-si-ncessaire-de-suggestions-facilitant-la-correction-des-erreurs-de-saisie-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#minimize-error-suggestions">http://www.w3.org/TR/WCAG20/#minimize-error-suggestions</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">input</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">]),</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <label for="No-type">No type</label>
+<input value="Whatever you want" id="No-type"/><i> </i>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"No-type"</span><span class="nt">&gt;</span>No type<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">value=</span><span class="s">"Whatever you want"</span> <span class="na">id=</span><span class="s">"No-type"</span><span class="nt">/&gt;&lt;i&gt;</span> <span class="nt">&lt;/i&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="no-value" class="styleguide">Missing a value</h1>
+
+<h2>Description</h2>
+<p class="styleguide">How to label a <code class="styleguide">[reset]</code>, <code class="styleguide">[submit]</code> or <code class="styleguide">[button]</code> type input?
+You still have a few choices: <code class="styleguide">[value]</code>, <code class="styleguide">[title]</code>, <code class="styleguide">[aria-label]</code> and <code class="styleguide">[aria-labelledby]</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-119-a-dans-chaque-formulaire-lintitul-de-chaque-bouton-est-il-pertinent-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-119-a-dans-chaque-formulaire-lintitul-de-chaque-bouton-est-il-pertinent-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H91.html">http://www.w3.org/TR/WCAG-TECHS/H91.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">value</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">submit</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">value</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">value</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <input type="reset" /><i> </i>
+<input type="submit" /><i> </i>
+<input type="button" /><i> </i>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"reset"</span> <span class="nt">/&gt;&lt;i&gt;</span> <span class="nt">&lt;/i&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="nt">/&gt;&lt;i&gt;</span> <span class="nt">&lt;/i&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="nt">/&gt;&lt;i&gt;</span> <span class="nt">&lt;/i&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="not-form-button" class="styleguide">Form button</h1>
+
+<h2>Description</h2>
+<p class="styleguide">A <code class="styleguide">&lt;button&gt;</code> has a defaut <code class="styleguide">[type]</code> value of <code class="styleguide">&quot;submit&quot;</code>, in order to send a <code class="styleguide">&lt;form&gt;</code>.</p><p class="styleguide">However outside a form, if it&#39;s intended to send a form it should mention it with one of those attributes: <code class="styleguide">[form]</code>, <code class="styleguide">[formaction]</code>, <code class="styleguide">[formtarget]</code>.</p><p class="styleguide">If it doesn&#39;t submit anything, it should have the <code class="styleguide">[type=&quot;button&quot;]</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://www.w3.org/TR/html5/forms.html#the-button-element">http://www.w3.org/TR/html5/forms.html#the-button-element</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">button</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">form</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">formaction</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">formtarget</span><span class="o">])</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <button>I just don't know what todo with myself</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;button&gt;</span>I just don't know what todo with myself<span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="not-submit-button" class="styleguide">Button not submitting</h1>
+
+<h2>Description</h2>
+<p class="styleguide">If a <code class="styleguide">&lt;button&gt;</code>&#39;s<code class="styleguide">[type]</code> is either <code class="styleguide">&quot;reset&quot;</code> or <code class="styleguide">&quot;button&quot;</code>, it should not use the following attributes:
+* <code class="styleguide">[formmethod]</code>;
+* <code class="styleguide">[formaction]</code>;
+* <code class="styleguide">[formtarget]</code>;
+* <code class="styleguide">[formenctype]</code>;
+* <code class="styleguide">[formnovalidate]</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://www.w3.org/TR/html5/forms.html#the-button-element">http://www.w3.org/TR/html5/forms.html#the-button-element</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">][</span><span class="nt">formmethod</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">][</span><span class="nt">formaction</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">][</span><span class="nt">formtarget</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">][</span><span class="nt">formenctype</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">][</span><span class="nt">formnovalidate</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">][</span><span class="nt">formmethod</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">][</span><span class="nt">formaction</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">][</span><span class="nt">formtarget</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">][</span><span class="nt">formenctype</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">][</span><span class="nt">formnovalidate</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <button type="button" formmethod="GET">I do have a method, but I'm not a submit button!</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">formmethod=</span><span class="s">"GET"</span><span class="nt">&gt;</span>I do have a method, but I'm not a submit button!<span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="optgroup" class="styleguide">optgroup without label</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;optgroup&gt;</code> needs a <code class="styleguide">[label]</code> to explain what&#39;s inside the group.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-118-a-dans-chaque-formulaire-chaque-liste-de-choix-est-elle-structure-de-manire-pertinente-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-118-a-dans-chaque-formulaire-chaque-liste-de-choix-est-elle-structure-de-manire-pertinente-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H85.html">http://www.w3.org/TR/WCAG-TECHS/H85.html</a></li>
+<li><a href="http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85">http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">optgroup</span><span class="nd">:not</span><span class="o">([</span><span class="nt">label</span><span class="o">])</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <form action="/">
+    <label for="optgroup">Oh, hey</label>
+    <select id="optgroup">
+      <optgroup label="I'm a group">
+        <option value="1">I'm an option</option>
+        <option value="2">I'm another option</option>
+      </optgroup>
+      <optgroup>
+        <option value="3">I'm an option, but from another group</option>
+        <option value="4">I'm another option, still from another group</option>
+     </optgroup>
+   </select>
+</form>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"optgroup"</span><span class="nt">&gt;</span>Oh, hey<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"optgroup"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;optgroup</span> <span class="na">label=</span><span class="s">"I'm a group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>I'm an option<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2"</span><span class="nt">&gt;</span>I'm another option<span class="nt">&lt;/option&gt;</span>
+      <span class="nt">&lt;/optgroup&gt;</span>
+      <span class="nt">&lt;optgroup&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"3"</span><span class="nt">&gt;</span>I'm an option, but from another group<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"4"</span><span class="nt">&gt;</span>I'm another option, still from another group<span class="nt">&lt;/option&gt;</span>
+     <span class="nt">&lt;/optgroup&gt;</span>
+   <span class="nt">&lt;/select&gt;</span>
+<span class="nt">&lt;/form&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="style-attr" class="styleguide">[style] attribute</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Your styles should be driven by a CSS file. That&#39;s it.
+And no, JS shouldn&#39;t manipulate styles: it&#39;s better to play with classes, for example.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-101-a-dans-le-site-web-des-feuilles-de-styles-sont-elles-utilises-pour-contrler-la-prsentation-de-linformation-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-101-a-dans-le-site-web-des-feuilles-de-styles-sont-elles-utilises-pour-contrler-la-prsentation-de-linformation-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence">http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="o">[</span><span class="nt">style</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div style="color: red;">I'm red. I really feel dirty.</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"color: red;"</span><span class="nt">&gt;</span>I'm red. I really feel dirty.<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="tab-order" class="styleguide">[tabindex] &gt; 0</h1>
+
+<h2>Description</h2>
+<p class="styleguide">The <code class="styleguide">[tabindex]</code> attribute should never be greater than 0.</p>
+<h2>Reference</h2>
+<ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="o">[</span><span class="nt">tabindex</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">tabindex</span><span class="o">=</span><span class="err">"</span><span class="nt">0</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">tabindex</span><span class="o">=</span><span class="err">"</span><span class="nt">-1</span><span class="err">"</span><span class="o">])</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <button tabindex="1" type="button">Positive tabindex is bad</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;button</span> <span class="na">tabindex=</span><span class="s">"1"</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Positive tabindex is bad<span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="table-for-layout" class="styleguide">table used for layout</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;table&gt;</code> may be used for layout if a [role=&quot;presentation&quot;] is added.
+However, semantics tags and attributes aiming to organize datas mustn&#39;t be used. Here&#39;s a list:
+* <code class="styleguide">&lt;th&gt;</code>;
+* <code class="styleguide">&lt;thead&gt;</code>;
+* <code class="styleguide">&lt;tfoot&gt;</code>;
+* <code class="styleguide">&lt;caption&gt;</code>;
+* <code class="styleguide">[axis]</code>;
+* <code class="styleguide">[scope]</code>;
+* <code class="styleguide">[headers]</code>;
+* <code class="styleguide">[colgroup]</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-58-a-chaque-tableau-de-mise-en-forme-ne-doit-pas-utiliser-dlments-propres-aux-tableaux-de-donnes-cette-rgle-est-elle-respecte-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-58-a-chaque-tableau-de-mise-en-forme-ne-doit-pas-utiliser-dlments-propres-aux-tableaux-de-donnes-cette-rgle-est-elle-respecte-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F46.html">http://www.w3.org/TR/WCAG-TECHS/F46.html</a></li>
+<li><a href="http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49">http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <div class="highlight">
+    <pre><span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">th</span><span class="o">,</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">thead</span><span class="o">,</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">tfoot</span><span class="o">,</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">caption</span><span class="o">,</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">axis</span><span class="o">],</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">scope</span><span class="o">],</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">headers</span><span class="o">],</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">colgroup</span><span class="o">]</span></pre>
+  </div>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <table role="presentation">
+  <caption>I do not mean anything!</caption>
+  <thead>
+    <tr>
+      <th scope="col" id="col">Nope</th>
+      <th scope="col">Just sayin'</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="2" headers="col">Hello world</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td colspan="2">It works</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight">
+      <pre><span class="nt">&lt;table</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;caption&gt;</span>I do not mean anything!<span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span> <span class="na">id=</span><span class="s">"col"</span><span class="nt">&gt;</span>Nope<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Just sayin'<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tfoot&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"2"</span> <span class="na">headers=</span><span class="s">"col"</span><span class="nt">&gt;</span>Hello world<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tfoot&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"2"</span><span class="nt">&gt;</span>It works<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></pre>
+    </div>
+  </div>
+</div>
+      </div>
+    </main>
+
+    <footer role="contentinfo" class="grid-1-2 mw--site center">
+      <p class="txtright"><strong>® 2014 Gaël Poupard</strong></p>
+      <p>This project is distributed under license <a href="http://opensource.org/licenses/MIT" title="The MIT licence">MIT</a> and <a href="http://creativecommons.org/licenses/by/3.0/fr/" hreflang="fr" title="Explications de la licence">CC BY 3.0 FR</a>. <a class="end" href="#top">Back to top &uarr;</a></p>
+    </footer>
+    <script>
+      document.getElementById("bookmarklet").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var $minimum_level = document.getElementById("minimum-level").value;
+        var $language = document.getElementById("language").value;
+
+        var $hrefstart = 'javascript:(function(){a11ycss=document.createElement("LINK");a11ycss.href="https://rawgit.com/ffoodd/a11y.css/master/css/a11y-';
+        var $hreflang = $language;
+        var $hreflevel = '';
+        if( $minimum_level !== "advice" ) {
+          $hreflevel = '_' + $minimum_level;
+        }
+        var $hrefend = '.css";a11ycss.rel="stylesheet";a11ycss.media="(max-width: 800px)";document.body.appendChild(a11ycss);})();';
+
+        var $href = $hrefstart + $hreflang + $hreflevel + $hrefend;
+
+        document.getElementById("bookmarklet--link").setAttribute("href", $href);
+        document.getElementById("bookmarklet--link").classList.add("done");
+      });
+
+      document.getElementById("bookmarklet").addEventListener("change", function() {
+        document.getElementById("bookmarklet--link").classList.remove("done");
+      });
+
+
+      function activeAnchor() {
+        var $currentHref = document.getElementById("toc").getElementsByTagName("a");
+        var $length = $currentHref.length;
+        var i = 0;
+        for(;i<$length;i++) {
+          if(document.location.href.indexOf($currentHref[i].href)>=0) {
+            $currentHref[i].classList.add("active-test");
+          }
+        }
+      }
+
+      if (document.readyState != "loading") {
+        activeAnchor();
+      } else {
+        document.addEventListener("DOMContentLoaded", activeAnchor);
+      }
+
+      document.getElementById("toc").addEventListener("click", function(e) {
+        var $link = e.target;
+        var $active = document.querySelector(".active-test");
+
+        if( $active ) {
+          $active.removeAttribute("class");
+        }
+
+        $link.classList.add("active-test");
+      });
+    </script>
+  </body>
+</html>

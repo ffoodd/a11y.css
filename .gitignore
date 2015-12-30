@@ -1,7 +1,5 @@
 .sass-cache
 *.map
 node_modules
-docs
-tests
 .idea
 prepros.cfg
