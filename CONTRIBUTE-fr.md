@@ -70,19 +70,19 @@ Avec une installation globale SassDoc :
 
 ```sh
 $ npm install sassdoc -g
-$ sassdoc sass/ --dest docs/ --verbose --config .sassdocrc
+$ sassdoc sass/ --dest docs/SassDoc/ --verbose --config configs/.sassdocrc
 ```
 
 Avec une installation locale SassDoc :
 
 ```sh
 $ npm install
-$ node_modules/sassdoc/bin/sassdoc sass/ --dest docs/ --verbose --config .sassdocrc
+$ node_modules/sassdoc/bin/sassdoc sass/ --dest docs/SassDoc/ --verbose --config configs/.sassdocrc
 ```
 
 ### Générer la documentation Hologram
 
-C’est très facile. En ligne de commande, placez-vous dans le répertoire `a11y.css` et lancez `hologram`.
+C’est très facile. En ligne de commande, placez-vous dans le répertoire `a11y.css` et lancez `hologram -c /configs/hologram_config.yml`.
 Et voilà !
 
 Pour en savoir plus sur Hologram, jetez un œil à [leur répertoire GitHub](https://github.com/trulia/hologram).

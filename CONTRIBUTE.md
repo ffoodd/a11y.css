@@ -72,19 +72,19 @@ With global SassDoc install:
 
 ```sh
 $ npm install sassdoc -g
-$ sassdoc sass/ --dest docs/ --verbose --config .sassdocrc
+$ sassdoc sass/ --dest docs/SassDoc/ --verbose --config configs/.sassdocrc
 ```
 
 With local SassDoc install:
 
 ```sh
 $ npm install
-$ node_modules/sassdoc/bin/sassdoc sass/ --dest docs/ --verbose --config .sassdocrc
+$ node_modules/sassdoc/bin/sassdoc sass/ --dest docs/SassDoc/ --verbose --config configs/.sassdocrc
 ```
 
 ### Build Hologram
 
-This one is easy. Usign command line, just `cd` to `a11y.css` then run `hologram`.
+This one is easy. Using command line, just `cd` to `a11y.css` then run `hologram -c /configs/hologram_config.yml`.
 Et voilà !
 
 To learn more about Hologram, take a look at [their GitHub repository](https://github.com/trulia/hologram).

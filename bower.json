@@ -31,5 +31,15 @@
     "node_modules",
     "tests",
     "docs"
-  ]
+  ],
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "latest",
+    "gulp-csslint": "latest",
+    "gulp-hologram": "latest",
+    "gulp-ruby-sass": "latest",
+    "gulp-scss-lint": "latest",
+    "gulp-util": "^3.0.7",
+    "sassdoc": "latest"
+  }
 }

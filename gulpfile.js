@@ -31,7 +31,7 @@ gulp.task('sass', function () {
 // Generate SassDoc
 gulp.task('sassdoc', function () {
   var options = {
-    dest: 'docs',
+    dest: 'docs/SassDoc',
     theme: 'default',
     display: {
       access: ['public'],
@@ -51,7 +51,7 @@ gulp.task('sassdoc', function () {
 
 // Generate Hologram
 gulp.task('hologram', function() {
-  gulp.src('./hologram_config.yml')
+  gulp.src('./configs/hologram_config.yml')
     .pipe(hologram());
 });
 
@@ -60,7 +60,7 @@ gulp.task('hologram', function() {
 gulp.task('scss-lint', function() {
   return gulp.src(source + '/**/*.scss')
     .pipe(scsslint({
-      'config': '.scsslint.yml',
+      'config': 'configs/.scsslint.yml'
     }));
 });
 

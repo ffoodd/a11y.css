@@ -63,3 +63,10 @@ engines:
         enabled: false
       adjoining-classes:
         enabled: false
+ratings:
+  paths:
+    - sass/**
+    - css/**
+    - "**.md"
+    - "**.css"
+    - "**.html"
