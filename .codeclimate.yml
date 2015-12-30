@@ -63,6 +63,8 @@ engines:
         enabled: false
       adjoining-classes:
         enabled: false
+      compatible-vendor-prefixes:
+        enabled: false
 ratings:
   paths:
     - sass/**
