@@ -70,3 +70,5 @@ ratings:
     - "**.md"
     - "**.css"
     - "**.html"
+exclude_paths:
+  - /docs/SassDoc/*
