@@ -58,5 +58,4 @@ ratings:
     - "**.css"
     - "**.html"
 exclude_paths:
-  - docs/*
-  - docs/Hologram/test-assets/static/*.css
+  - docs/**
