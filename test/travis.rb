@@ -1,6 +1,3 @@
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
-
 #!/usr/bin/env ruby
 result = `sass sass/a11y-fr.scss css/a11y-fr.css`
 raise result unless $?.to_i == 0
