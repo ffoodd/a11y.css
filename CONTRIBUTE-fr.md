@@ -1,11 +1,11 @@
-Contribuer à a11y.css
-=====================
+Contribuer à `a11y.css`
+=======================
 
 *PS*: Non, les bonnes pratiques `CSS` n’ont pas cours dans ce fichier puisque certains sélecteurs sont tout simplement immondes. Mais ce fichier n’est pas voué à être chargé sur d’autres machines que celles des intégrateurs en quête de qualité, comme moi :D.
 
 ## Ajouter une langue
 
-a11y.css existe en français et en anglais : vous trouverez tous les fichiers dans le répertoire [css](https://github.com/ffoodd/a11y.css/tree/master/css). Si vous souhaitez contribuer en ajoutant une nouvelle langue, c’est très simple :
+`a11y.css` existe en français et en anglais : vous trouverez tous les fichiers dans le répertoire [css](https://github.com/ffoodd/a11y.css/tree/master/css). Si vous souhaitez contribuer en ajoutant une nouvelle langue, c’est très simple :
 
 1. Ajoutez le nom de la langue dans [cette liste](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_mixins.scss#L10) ;
 2. Copiez [`_a11y-en.scss`](https://github.com/ffoodd/a11y.css/blob/master/sass/a11y-en.scss), rennommez-le en `_a11y-<your-language>.scss` et modifiez la valeur passée au mixin `set-locale` ;
@@ -49,18 +49,19 @@ Et voilà !
 Parce qu’il faut bien se mettre à la page un jour, un fichier de configuration [Gulp](http://gulpjs.com/) a été ajouté.
 Quelques tâches bien pratiques ont donc été prévues.
 
-Si vous lancez `gulp` — qui par défaut joue `gulp build` — vous allez compiler les fichiers Sass et
-(en incluant les *sourcemaps*) optimiser les CSS générés.
+Si vous lancez `gulp` vous allez compiler les fichiers Sass et améliorer les CSS générés.
 
-Vous pouvez aussi lancer `gulp docs`, qui va générer les documentations *via* SassDoc et Hologram.
+Vous pouvez aussi lancer `gulp docs`, qui va générer les documentations *via* SassDoc et Hologram, ou `gulp lints` qui va lancer le *linting* des fichiers scss et CSS.
 
 Chacune de ses tâches est disponible séparément :
 * `gulp sass`
-* `gulp minify`
+* `gulp css`
+* `gulp scss-lint`
+* `gulp css-lint`
 * `gulp sassdoc`
 * `gulp hologram`
 
-Et vous pouvez lancer une surveillance sur la compilation Sass et la minification des CSS avec `gulp watch`.
+Et vous pouvez lancer une surveillance sur la compilation Sass et l’amélioration des CSS avec `gulp watch` — qui va aussi *linter* les fichiers scss et CSS après la compilation.
 
 ## Documentation
 
