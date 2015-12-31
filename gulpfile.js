@@ -6,24 +6,33 @@ var gulp         = require('gulp'),
     sass         = require('gulp-ruby-sass'),
     gutil        = require('gulp-util'),
     autoprefixer = require('gulp-autoprefixer'),
+    csscomb      = require('gulp-csscomb'),
     csslint      = require('gulp-csslint'),
     scsslint     = require('gulp-scss-lint'),
     hologram     = require('gulp-hologram');
 
 // Paths
-var source      = './sass',
+var source      = './sass/**/*.scss',
     destination = './css';
 
+// Autoprefixer config
 var autoprefixerOptions = {
-  browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+  browsers: ['last 2 versions']
 };
 
 
-// Sass w sourcemaps
+// Sass
 gulp.task('sass', function () {
-  return sass(source + '/**/*.scss')
+  return sass(source)
     .on('error', sass.logError)
+    .pipe(gulp.dest(destination));
+});
+
+// CSS
+gulp.task('css', ['sass'], function () {
+  return gulp.src(destination + '/**/*.css')
     .pipe(autoprefixer(autoprefixerOptions))
+    .pipe(csscomb())
     .pipe(gulp.dest(destination));
 });
 
@@ -45,7 +54,7 @@ gulp.task('sassdoc', function () {
     basePath: 'https://github.com/ffoodd/a11y.css/tree/master/sass',
   };
 
-  return gulp.src(source + '/**/*.scss')
+  return gulp.src(source)
     .pipe(sassdoc(options));
 });
 
@@ -58,7 +67,7 @@ gulp.task('hologram', function() {
 
 // scss lint
 gulp.task('scss-lint', function() {
-  return gulp.src(source + '/**/*.scss')
+  return gulp.src(source)
     .pipe(scsslint({
       'config': 'configs/.scsslint.yml'
     }));
@@ -91,10 +100,13 @@ gulp.task('css-lint', function() {
 // Generate doc
 gulp.task('docs', ['sassdoc', 'hologram']);
 
+// Linters
+gulp.task('lints', ['scss-lint', 'css-lint']);
+
 // Default: build
-gulp.task('default', ['sass']);
+gulp.task('default', ['css']);
 
 // Watch: build
 gulp.task('watch', function () {
-  gulp.watch(source + '/**/*.scss', ['build']);
+  gulp.watch(source, ['default']);
 });

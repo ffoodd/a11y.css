@@ -5,32 +5,27 @@ engines:
       Comment:
         enabled: false
       QualifyingElement:
-        enabled: false
+        enabled: true
+        allow_element_with_attribute: true
+        allow_element_with_class: false
+        allow_element_with_id: false
       SpaceAfterPropertyColon:
-        enabled: false
+        enabled: true
+        style: at_least_one_space
       SpaceBetweenParens:
         enabled: false
       SpaceAfterComma:
-        enabled: false
-      SpaceAfterVariableName:
-        enabled: false
+        enabled: true
+        style: at_least_one_space
       ColorKeyword:
-        enabled: false
-      ColorVariable:
         enabled: false
       PropertySortOrder:
         enabled: false
-      MergeableSelector:
-        enabled: false
       SingleLinePerSelector:
-        enabled: false
-      FinalNewline:
         enabled: false
       NameFormat:
         enabled: false
       ImportantRule:
-        enabled: false
-      TrailingSemicolon:
         enabled: false
   csslint:
     enabled: true
@@ -43,10 +38,6 @@ engines:
         enabled: false
       outline-none:
         enabled: false
-      order-alphabetical:
-        enabled: false
-      ids:
-        enabled: false
       qualified-headings:
         enabled: false
       regex-selectors:
@@ -55,13 +46,7 @@ engines:
         enabled: false
       universal-selector:
         enabled: false
-      box-model:
-        enabled: false
-      known-properties:
-        enabled: false
       fallback-colors:
-        enabled: false
-      adjoining-classes:
         enabled: false
       compatible-vendor-prefixes:
         enabled: false

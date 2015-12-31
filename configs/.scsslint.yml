@@ -23,10 +23,10 @@ linters:
     convention: zero # or `none`
 
   ChainedClasses:
-    enabled: false
+    enabled: true
 
   ColorKeyword:
-    enabled: false
+    enabled: true
 
   ColorVariable:
     enabled: false
@@ -62,7 +62,7 @@ linters:
     enabled: false
 
   FinalNewline:
-    enabled: false
+    enabled: true
     present: true
 
   HexLength:
@@ -98,13 +98,13 @@ linters:
     style: exclude_zero # or 'include_zero'
 
   MergeableSelector:
-    enabled: false
+    enabled: true
     force_nesting: false
 
   NameFormat:
     enabled: false
     allow_leading_underscore: true
-    convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
+    convention: snake_case # or 'camel_case', or 'hyphenated_lowercase', or a regex pattern
 
   NestingDepth:
     enabled: true
@@ -147,8 +147,8 @@ linters:
     enabled: true
 
   QualifyingElement:
-    enabled: false
-    allow_element_with_attribute: false
+    enabled: true
+    allow_element_with_attribute: true
     allow_element_with_class: false
     allow_element_with_id: false
 
@@ -172,18 +172,18 @@ linters:
     enabled: false
 
   SpaceAfterComma:
-    enabled: false
-    style: one_space # or 'no_space', or 'at_least_one_space'
+    enabled: true
+    style: at_least_one_space # or 'no_space', or 'one_space'
 
   SpaceAfterPropertyColon:
-    enabled: false
-    style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
+    enabled: true
+    style: at_least_one_space # or 'no_space', or 'one_space', or 'aligned'
 
   SpaceAfterPropertyName:
     enabled: true
 
   SpaceAfterVariableName:
-    enabled: false
+    enabled: true
 
   SpaceAroundOperator:
     enabled: true
@@ -196,23 +196,23 @@ linters:
 
   SpaceBetweenParens:
     enabled: false
-    spaces: 0
+    spaces: 1
 
   StringQuotes:
     enabled: true
     style: single_quotes # or double_quotes
 
   TrailingSemicolon:
-    enabled: false
+    enabled: true
 
   TrailingWhitespace:
     enabled: true
 
   TrailingZero:
-    enabled: false
+    enabled: true
 
   TransitionAll:
-    enabled: false
+    enabled: true
 
   UnnecessaryMantissa:
     enabled: true
@@ -227,7 +227,7 @@ linters:
     enabled: true
 
   VariableForProperty:
-    enabled: false
+    enabled: true
     properties: []
 
   VendorPrefix:

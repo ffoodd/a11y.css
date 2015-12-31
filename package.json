@@ -20,8 +20,10 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "latest",
+    "gulp-csscomb": "^3.0.6",
     "gulp-csslint": "latest",
     "gulp-hologram": "latest",
+    "gulp-plumber": "^1.0.1",
     "gulp-ruby-sass": "latest",
     "gulp-scss-lint": "latest",
     "gulp-util": "^3.0.7",
