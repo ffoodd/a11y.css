@@ -53,7 +53,7 @@ Si vous lancez `gulp` vous allez compiler les fichiers Sass et améliorer les CS
 
 Vous pouvez aussi lancer `gulp docs`, qui va générer les documentations *via* SassDoc et Hologram, ou `gulp lints` qui va lancer le *linting* des fichiers scss et CSS.
 
-Chacune de ses tâches est disponible séparément :
+Chacune de ces tâches est disponible séparément :
 * `gulp sass`
 * `gulp css`
 * `gulp scss-lint`
@@ -61,7 +61,7 @@ Chacune de ses tâches est disponible séparément :
 * `gulp sassdoc`
 * `gulp hologram`
 
-Et vous pouvez lancer une surveillance sur la compilation Sass et l’amélioration des CSS avec `gulp watch` — qui va aussi *linter* les fichiers scss et CSS après la compilation.
+Et vous pouvez lancer une surveillance sur la compilation Sass et l’amélioration des CSS avec `gulp watch` — qui va aussi *linter* les fichiers scss et CSS après chaque compilation.
 
 ## Documentation
 

@@ -45,16 +45,16 @@ You can play with sources and easily [build your own version of `a11y.css`](http
 ## Gulp file
 
 If you're brave enough, the `gulpfile.js` allows you to work with every brick of this project:
-* `Sass` linting and compiling;
-* `CSS` linting optimizing (for readability);
+* `Sass` linting and compilation;
+* `CSS` linting and optimization (for readability);
 * Hologram and SassDoc generation.
 
 I guess you will find your way out of this configuration file, but if not: ask me!
 *Notice*: you'll need [a few Ruby `gem`](https://github.com/ffoodd/a11y.css/blob/master/Gemfile), Ì suggest Bundler and  `bundle install`.
 
-## *Via* `npm` ou `Bower`
+## *Via* `npm` or `Bower`
 
-Vous pouvez récupérer le projet grâce aux commandes respectives `npm install a11y.css` et `bower install a11y.css`.
+You can get this project by running `npm install a11y.css` or `bower install a11y.css`.
 
 ## Credits and Acknowledgements
 
