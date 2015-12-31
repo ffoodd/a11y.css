@@ -58,4 +58,4 @@ ratings:
     - "**.css"
     - "**.html"
 exclude_paths:
-  - docs/SassDoc/*
+  - docs/*
