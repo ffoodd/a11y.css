@@ -5,19 +5,14 @@ engines:
       Comment:
         enabled: false
       QualifyingElement:
-        enabled: true
-        allow_element_with_attribute: true
-        allow_element_with_class: false
-        allow_element_with_id: false
+        enabled: false
       SpaceAfterPropertyColon:
-        enabled: true
-        style: at_least_one_space
+        enabled: false
       SpaceBetweenParens:
         enabled: false
       SpaceAfterComma:
-        enabled: true
-        style: at_least_one_space
-      ColorKeyword:
+        enabled: false
+      ColorVariable:
         enabled: false
       PropertySortOrder:
         enabled: false
