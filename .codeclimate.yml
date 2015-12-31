@@ -22,6 +22,12 @@ engines:
         enabled: false
       ImportantRule:
         enabled: false
+      TrailingSemicolon:
+        enabled: false
+      SpaceAfterVariableName:
+        enabled: false
+      MergeableSelector:
+        enabled: false
   csslint:
     enabled: true
     checks:
