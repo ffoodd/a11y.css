@@ -13,6 +13,11 @@ When hovering marked elements, a little banner should appear on top of your brow
 
 *This file is not a replacement to a complete tool such as [OpQuast Reporting](http://reporting.opquast.com/). It only intends to show possible weaknesses. You should obviously do some manual check by hand to know whether the code should or should not be fixed.*
 
+
+# Usage
+
+You can use `a11y.css` in multiple ways.
+
 ## Bookmarklet
 
 You can easily use the latest version of this stylesheet by adding this *bookmarklet* to your bookmarks:
@@ -26,6 +31,30 @@ You can also generate your own bookmarklet (choosing language and minimum level)
 ### Counters
 
 CSS counters are incremented on each error/advice/warning and results are displayed with `html::after`. Since it is added through CSS, it is basically fake-content which is good since it is no more than visual indication for the developper to see what's going on. It will appear on the bottom left side of your page :).
+
+## CSS file
+
+You will find static `CSS` files in the `/CSS` folder.
+CSS files are available in french and english, and leveled or full.
+You can simply download it and add it to your usual stack, just like any `CSS`.
+
+## Sass files
+
+You can play with sources and easily [build your own version of `a11y.css`](https://github.com/ffoodd/a11y.css/blob/master/CUSTOMIZE.md).
+
+## Gulp file
+
+If you're brave enough, the `gulpfile.js` allows you to work with every brick of this project:
+* `Sass` linting and compiling;
+* `CSS` linting optimizing (for readability);
+* Hologram and SassDoc generation.
+
+I guess you will find your way out of this configuration file, but if not: ask me!
+*Notice*: you'll need [a few Ruby `gem`](https://github.com/ffoodd/a11y.css/blob/master/Gemfile), Ì suggest Bundler and  `bundle install`.
+
+## *Via* `npm` ou `Bower`
+
+Vous pouvez récupérer le projet grâce aux commandes respectives `npm install a11y.css` et `bower install a11y.css`.
 
 ## Credits and Acknowledgements
 

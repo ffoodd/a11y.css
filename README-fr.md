@@ -13,6 +13,10 @@ Au survol des éléments signalés, un bandeau apparaitra en haut de votre navig
 
 *Il ne peut pas se substituer à un outil complet tel que [OpQuast Reporting](http://reporting.opquast.com/fr/) : il doit uniquement servir à obtenir un aperçu des faiblesses d’une page. Chaque critère technique a un alter-ego pour interroger et vérifier la pertinence de la technique employée et du contenu servi à l’utilisateur : c’est alors à vous de faire ces tests, via un contrôle manuel.*
 
+# Utilisation
+
+Il est possible de se servir dʼ`a11y.css` de diverses manières.
+
 ## Bookmarklet
 
 Vous pouvez utiliser facilement la dernière version à jour en ajoutant ce *bookmarklet* à vos favoris :
@@ -26,6 +30,35 @@ Pratique, n’est-ce pas ?
 ### Compteurs
 
 Des compteurs `CSS` sont incrémentés par chaque erreur, et les résultats sont affichés dans le `html::after`. C’est donc du faux-contenu, son intérêt est purement visuel afin de simplement indiquer au développeur l’étendue du chantier qui l’attend. Vous le verrez directement en bas à gauche de votre page :).
+
+## Fichier CSS
+
+Vous trouverez les fichiers `CSS` statiques dans le dossier `/CSS`.
+Ces fichiers sont disponibles en Français et en Anglais, en version complète ou nivelée.
+Vous pouvez simplement les récupérer et les ajouter à vos outils de développements statiques,
+comme n’importe quel fichier `CSS`.
+
+## Fichiers Sass
+
+Vous avez accès aux sources, alors profitez-en !
+À partir de ces fichiers, vous pouvez [construire votre propre version d’`a11y.css`](https://github.com/ffoodd/a11y.css/blob/master/CUSTOMIZE-fr.md).
+Vous verrez, c’est facile !
+
+## Projet Gulp
+
+Pour les plus braves d’entre vous, la configuration Gulp permet de travailler la totalité du projet :
+* la compilation `Sass` ;
+* l’optimisation des fichiers `CSS` ;
+* la génération des documentations Hologram et SassDoc ;
+* le *linting* des fichiers `scss` et `CSS`.
+
+Si vous en arrivez là, je suppose que vous vous repèrerez aisément dans la configuration. Dans le cas contraire, posez une question ;)
+*Attention* : vous aurez besoin de [quelques `gem` Ruby](https://github.com/ffoodd/a11y.css/blob/master/Gemfile), je vous recommande d’installer Bundler et de faire un `bundle install`.
+
+
+## *Via* `npm` ou `Bower`
+
+Vous pouvez récupérer le projet grâce aux commandes respectives `npm install a11y.css` et `bower install a11y.css`.
 
 ## Crédits et remerciements
 

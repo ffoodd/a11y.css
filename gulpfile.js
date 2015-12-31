@@ -2,6 +2,7 @@
 
 // Requires
 var gulp         = require('gulp'),
+    plumber      = require('gulp-plumber'),
     sassdoc      = require('sassdoc'),
     sass         = require('gulp-ruby-sass'),
     gutil        = require('gulp-util'),
@@ -20,6 +21,11 @@ var autoprefixerOptions = {
   browsers: ['last 2 versions']
 };
 
+// Error handler with plumber
+var onError = function(err) {
+  console.log(err);
+  this.emit('end');
+};
 
 // Sass
 gulp.task('sass', function () {
@@ -31,6 +37,7 @@ gulp.task('sass', function () {
 // CSS
 gulp.task('css', ['sass'], function () {
   return gulp.src(destination + '/**/*.css')
+    .pipe(plumber({errorHandler: onError}))
     .pipe(autoprefixer(autoprefixerOptions))
     .pipe(csscomb())
     .pipe(gulp.dest(destination));
@@ -55,12 +62,14 @@ gulp.task('sassdoc', function () {
   };
 
   return gulp.src(source)
+    .pipe(plumber({errorHandler: onError}))
     .pipe(sassdoc(options));
 });
 
 // Generate Hologram
 gulp.task('hologram', function() {
   gulp.src('./configs/hologram_config.yml')
+    .pipe(plumber({errorHandler: onError}))
     .pipe(hologram());
 });
 
@@ -68,11 +77,13 @@ gulp.task('hologram', function() {
 // scss lint
 gulp.task('scss-lint', function() {
   return gulp.src(source)
+    .pipe(plumber({errorHandler: onError}))
     .pipe(scsslint({
       'config': 'configs/.scsslint.yml'
     }));
 });
 
+// CSSLint custom reporter
 function customReporter(file) {
   gutil.log(gutil.colors.cyan(file.csslint.errorCount) + ' errors in ' + gutil.colors.magenta(file.path));
 
@@ -89,6 +100,7 @@ function customReporter(file) {
 // CSSLint
 gulp.task('css-lint', function() {
   gulp.src(destination + '/**/*.css')
+    .pipe(plumber({errorHandler: onError}))
     .pipe(csslint())
     .pipe(csslint.reporter(customReporter));
 });
@@ -108,5 +120,5 @@ gulp.task('default', ['css']);
 
 // Watch: build
 gulp.task('watch', function () {
-  gulp.watch(source, ['default']);
+  gulp.watch(source, ['default'], 'lints');
 });
