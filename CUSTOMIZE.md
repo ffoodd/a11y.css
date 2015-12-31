@@ -112,6 +112,7 @@ a:-moz-only-whitespace[aria-labelledby=""],
 a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
   @include error('empty-link', $self-closing: false, $quarantine: true);
 }
+```
 
 ### Customise messages
 
