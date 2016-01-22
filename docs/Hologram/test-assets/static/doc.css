@@ -73,8 +73,6 @@ nav:not(.Errors):not(.Warnings):not(.Obsolete):not(.Advices) .index::before {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin: 1em 0;
-  position: relative;
-  z-index: 1;
 }
 
 .cssExample::before,
