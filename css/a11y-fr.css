@@ -1783,7 +1783,7 @@ time,
 th[scope],
 table[role="presentation"] {
   counter-increment: advice;
-  outline: 4px solid green !important;
+  outline: 4px solid OliveDrab !important;
   outline-offset: -4px;
 }
 [class=""]::before,
@@ -1822,9 +1822,9 @@ time::before,
 [datetime]::before,
 th[scope]::before,
 table[role="presentation"]::before {
-  background: #e9fce9 !important;
-  border-color: #40bf40 !important;
-  color: #206020 !important;
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  color: #4b6020 !important;
   z-index: 2147483644 !important;
 }
 
@@ -1932,9 +1932,9 @@ audio,
 img[alt][title],
 area[alt][title],
 svg[aria-label][title] {
-  background-color: rgba(0, 128, 0, .25) !important;
+  background-color: rgba(107, 142, 35, .25) !important;
   counter-increment: advice;
-  outline: 4px solid green !important;
+  outline: 4px solid OliveDrab !important;
   outline-offset: -4px;
 }
 area[class=""] ~ ::after,
@@ -2041,9 +2041,9 @@ audio ~ ::after,
 img[alt][title] ~ ::after,
 area[alt][title] ~ ::after,
 svg[aria-label][title] ~ ::after {
-  background: #e9fce9 !important;
-  border-color: #40bf40 !important;
-  color: #206020 !important;
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  color: #4b6020 !important;
   z-index: 2147483644 !important;
 }
 
