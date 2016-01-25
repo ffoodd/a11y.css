@@ -58,7 +58,7 @@ gulp.task('sassdoc', function () {
       "undefined": "Configuration",
       "languages": "Translation"
     },
-    basePath: 'https://github.com/ffoodd/a11y.css/tree/master/sass',
+    basePath: 'https://github.com/ffoodd/a11y.css/tree/master/sass'
   };
 
   return gulp.src(source)
