@@ -83,7 +83,7 @@ $ node_modules/sassdoc/bin/sassdoc sass/ --dest docs/SassDoc/ --verbose --config
 
 ### Générer la documentation Hologram
 
-C’est très facile. En ligne de commande, placez-vous dans le répertoire `a11y.css` et lancez `hologram -c /configs/hologram_config.yml`.
+C’est très facile. En ligne de commande, placez-vous dans le répertoire `a11y.css` et lancez `hologram -c configs/hologram_config.yml`.
 Et voilà !
 
 Pour en savoir plus sur Hologram, jetez un œil à [leur répertoire GitHub](https://github.com/trulia/hologram).

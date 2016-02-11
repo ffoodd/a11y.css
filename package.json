@@ -18,7 +18,7 @@
     "url": "https://github.com/ffoodd/a11y.css/issues"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
+    "gulp": "~3.9.0",
     "gulp-autoprefixer": "latest",
     "gulp-csscomb": "latest",
     "gulp-csslint": "latest",

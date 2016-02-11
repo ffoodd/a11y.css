@@ -1,3 +1,189 @@
+html {
+  background: #ffdd4c;
+  box-sizing: border-box;
+  color: #483d23;
+  display: flex; 
+  flex-direction: column;
+  font-family: "Fira Sans", "Helvetica Neue", "Arial", "Nimbus Sans L", sans-serif;
+  line-height: 1.5;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+/**
+ * 1. crée un contexte flex pour ses enfants
+ * 2. affichage vertical
+ * 3. toute la hauteur du viewport (compatible IE9+)
+ */
+body {
+  display: flex;          /* 1 */
+  flex-direction: column; /* 2 */
+  min-height: 100vh;      /* 3 */
+}
+
+/**
+ * 1. IE fix 
+ * 2. occupe la hauteur restante
+ * 3. crée un contexte flex pour ses enfants
+ * 4. affichage horizontal
+ */
+main,
+.main {
+  display: block;      /* 1 */
+  flex: 1 1 auto;      /* 2 */
+  display: flex;       /* 3 */
+  flex-direction: row; /* 4 */
+}
+
+nav {
+  align-self: flex-end;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;
+  padding: .75em 1em;
+}
+
+aside,
+.logo,
+footer > *:first-child {
+  padding: 0 1rem 0 1rem;
+  width: 15rem;
+}
+
+/**
+ * 1. IE fix 
+ * 2. occupe la largeur restante
+ */
+nav,
+aside + *,
+footer > * + * {
+  display: block; /* 1 */
+  flex: 1;        /* 2 */
+}
+
+aside + * > * {
+  margin: 0 auto;
+  max-width: 40rem;
+}
+
+/* RWD */
+@media (max-width: 60rem) {
+  body {
+    min-height: 0; 
+  }
+  
+  main,
+  .main {
+    flex-direction: column;
+  }
+  
+  aside,
+  .logo,
+  footer > *:first-child {
+    width: auto;
+    order: 1;
+  }
+  
+  nav,
+  aside + *,
+  footer > * + * {
+    flex-basis: auto;
+  }
+}
+
+/**
+ * Echelle typographique
+ */
+p, 
+ul, 
+ol, 
+dl, 
+blockquote, 
+pre, 
+td, 
+th, 
+textarea {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 1.5em auto;
+}
+
+h1 {
+    font-size: 3em;
+    line-height: 1;
+    margin: 1em auto .5em;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.5;
+  margin: 1.5em auto .75em;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1;
+  margin: 2em auto 1em;
+}
+
+h4 {
+  font-size: 1.25em;
+  line-height: 1.2;
+  margin: 2.4em auto 1.2em;
+}
+
+h5 {
+  font-size: 1.125em; 
+  line-height: 1.3333;
+  margin: 2.6666em auto 1.3333em;
+}
+
+h6 {
+  font-size: 1.0625em;
+  line-height: 1.4118;
+  margin: 2.8236em auto 1.4118em;
+}
+
+li p,
+li ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+textarea,
+table, 
+td, 
+th, 
+samp, 
+div, 
+p {
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  hyphens: auto;
+}
+
+code {
+  line-height: 1;
+}
+
+table {
+  margin-bottom: 1.5em;
+}
+
 pre {
   border: 0;
   color: #032C36;
@@ -14,44 +200,38 @@ pre {
 }
 
 p code {
+  border: 1px solid;
+  border-radius: .2em;
+  display: inline-block;
+  padding: .1em .2em;
   white-space: nowrap;
 }
 
-nav {
-  position: sticky;
-  top: 3.5em;
-  z-index: 2;
+footer p {
+  margin: 1.5em 0;
 }
 
-nav a,
-nav a:hover,
-nav a:focus,
-nav a:visited {
-  color: #fff;
+footer p + p {
+  text-align: right;
 }
 
 [id="toc"] {
-  padding-left: 3em;
+  list-style: none;
+  padding: 0;
 }
 
-.active-test {
+[id="toc"] li {
+  margin: .25em 0 .5em;
+}
+
+[class="active-test"] {
   position: relative;
 }
 
-.active-test::before {
+[class="active-test"]::before {
   content: "➜";
   left: -2.5em;
   position: absolute;
-}
-
-nav .action--secondary {
-  position: relative;
-}
-
-nav li + li .action--extra,
-nav li + li .action--primary,
-nav li + li .action--secondary {
-  border-left: 0;
 }
 
 .Errors .errors::before,
@@ -72,7 +252,7 @@ nav:not(.Errors):not(.Warnings):not(.Obsolete):not(.Advices) .index::before {
 .codeBlock.cssExample {
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin: 1em 0;
+  margin: 1em auto;
 }
 
 .cssExample::before,
@@ -105,58 +285,8 @@ nav:not(.Errors):not(.Warnings):not(.Obsolete):not(.Advices) .index::before {
   border-radius: 0 0 4px 4px;
 }
 
-header h1::before {
-  content: "\2665\00A0";
-  color: #c42419;
-  float: left;
-  text-align: right;
-  width: 32%;
-}
-
-main {
-  counter-reset: titles;
-}
-
-/* .h3-like from sseeeedd.css */
-main h1 {
-  counter-increment: titles;
-  font-size: 2.625em;
-  line-height: 1.14286;
-  margin: 1.14286em 0 .57143em -1.15em;
-}
-
-main h1::before {
-  content: counter(titles);
-  background: #f9f9f9;
-  border: 1px dotted #ccc;
-  border-radius: 50%;
-  display: inline-block;
-  font-size: .75em;
-  height: 1.5em;
-  line-height: 1.4;
-  margin-right: .25em;
-  text-align: center;
-  vertical-align: middle;
-  width: 1.5em;
-}
-
-/* .h5-like from sseeeedd.css */
-main h2 {
-  font-size: 1.5em;
-  margin: 1em 0;
-}
-
 form label {
   min-width: 1em;
-}
-
-aside small {
-  line-height: 1.25;
-}
-
-main > div {
-  border-left: 1px dotted #ccc;
-  padding-left: 1.5rem;
 }
 
 a[target$="blank"]::after {

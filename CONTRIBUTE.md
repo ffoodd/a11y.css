@@ -85,7 +85,7 @@ $ node_modules/sassdoc/bin/sassdoc sass/ --dest docs/SassDoc/ --verbose --config
 
 ### Build Hologram
 
-This one is easy. Using command line, just `cd` to `a11y.css` then run `hologram -c /configs/hologram_config.yml`.
+This one is easy. Using command line, just `cd` to `a11y.css` then run `hologram -c configs/hologram_config.yml`.
 Et voilà !
 
 To learn more about Hologram, take a look at [their GitHub repository](https://github.com/trulia/hologram).

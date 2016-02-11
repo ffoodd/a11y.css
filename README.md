@@ -11,7 +11,7 @@ This CSS file intends to warn developers about possible risks and mistakes that 
 
 When hovering marked elements, a little banner should appear on top of your browser displaying what's going on.
 
-*This file is not a replacement to a complete tool such as [OpQuast Reporting](http://reporting.opquast.com/). It only intends to show possible weaknesses. You should obviously do some manual check by hand to know whether the code should or should not be fixed.*
+*This file is not a replacement to a complete tool such as [OpQuast Reporting](http://reporting.opquast.com/), [Tanaguru](http://www.tanaguru.com/en/) ou [Tenon](http://tenon.io/). It only intends to show possible weaknesses. You should obviously do some manual check by hand to know whether the code should or should not be fixed.*
 
 
 # Usage

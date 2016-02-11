@@ -106,9 +106,6 @@ gulp.task('css-lint', function() {
 });
 
 
-// Build a11y.css
-//gulp.task('build', ['sass']);
-
 // Generate doc
 gulp.task('docs', ['sassdoc', 'hologram']);
 
