@@ -45,7 +45,7 @@ Voici donc les directives à ajouter, en attendant que les navigateurs traitent 
 
 Et ça devrait aller ! Si vous souhaitez en apprendre plus sur les divers _bugs_ mentionnés
 (et découvrir de super ressources pour implémenter vos CSP) je vous conseille la lecture de
-l’issue [#201] ouverte et documentée par l’inénarrable [Nicolas Hoffmann](https://twitter.com/Nico3333fr).
+l’issue [#201](https://github.com/ffoodd/a11y.css/issues/201) ouverte et documentée par l’inénarrable [Nicolas Hoffmann](https://twitter.com/Nico3333fr).
 
 ## Fichier CSS
 

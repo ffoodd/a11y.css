@@ -45,7 +45,7 @@ Here are two directives you need to add, while waiting for browsers to fix their
 
 And you should be good! If you want to know more about bugs I mentionned
 (and discover great resources to help you with CSP usage) I suggest you read
-issue [#201] opened and documented by the awesome [Nicolas Hoffmann](https://twitter.com/Nico3333fr).
+issue [#201](https://github.com/ffoodd/a11y.css/issues/201) opened and documented by the awesome [Nicolas Hoffmann](https://twitter.com/Nico3333fr).
 
 ## CSS file
 
