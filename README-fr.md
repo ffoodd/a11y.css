@@ -13,11 +13,16 @@ Au survol des éléments signalés, un bandeau apparaitra en haut de votre navig
 
 *Il ne peut pas se substituer à un outil complet tel que [OpQuast Reporting](http://reporting.opquast.com/fr/), [Tanaguru](http://www.tanaguru.com/fr/) ou [Tenon](http://tenon.io/) : il doit uniquement servir à obtenir un aperçu des faiblesses d’une page. Chaque critère technique a un alter-ego pour interroger et vérifier la pertinence de la technique employée et du contenu servi à l’utilisateur : c’est alors à vous de faire ces tests, via un contrôle manuel.*
 
+### Compteurs
+
+Des compteurs `CSS` sont incrémentés par chaque erreur, et les résultats sont affichés dans le `html::after`. C’est donc du faux-contenu, son intérêt est purement visuel afin de simplement indiquer au développeur l’étendue du chantier qui l’attend. Vous le verrez directement en bas à gauche de votre page :).
+
+
 # Utilisation
 
 Il est possible de se servir dʼ`a11y.css` de diverses manières.
 
-## Bookmarklet
+## _Bookmarklet_
 
 Vous pouvez utiliser facilement la dernière version à jour en ajoutant ce *bookmarklet* à vos favoris :
 ```
@@ -27,9 +32,20 @@ Vous pouvez également l’ajouter en allant sur [la page dédiée](http://ffood
 
 Pratique, n’est-ce pas ?
 
-### Compteurs
+### Le cas des CSP
 
-Des compteurs `CSS` sont incrémentés par chaque erreur, et les résultats sont affichés dans le `html::after`. C’est donc du faux-contenu, son intérêt est purement visuel afin de simplement indiquer au développeur l’étendue du chantier qui l’attend. Vous le verrez directement en bas à gauche de votre page :).
+Les [CSP](https://www.w3.org/TR/CSP/) sont super chouettes, mais peuvent poser des problèmes si vous souhaitez utiliser
+le _bookmarklet_. Soyons honnêtes, en théorie *vous ne devriez pas modifier vos CSP pour que le bookmarklet fonctionne*.
+
+Il existe cependant quelques _bugs_ — sur divers navigateurs — qui nous en empêchent.
+Voici donc les directives à ajouter, en attendant que les navigateurs traitent leurs _bugs_ respectifs :
+
+* `script-src 'unsafe-inline'`
+* `style-src https://rawgit.com/`
+
+Et ça devrait aller ! Si vous souhaitez en apprendre plus sur les divers _bugs_ mentionnés
+(et découvrir de super ressources pour implémenter vos CSP) je vous conseille la lecture de
+l’issue [#201] ouverte et documentée par l’inénarrable [Nicolas Hoffmann](https://twitter.com/Nico3333fr).
 
 ## Fichier CSS
 
@@ -87,6 +103,7 @@ Ils ont beaucoup aidé :
 * [@HugoGiraudel](https://twitter.com/HugoGiraudel)
 * [@7studio](https://twitter.com/7studio)
 * [@Heydon](https://twitter.com/heydonworks)
+* [@nico3333fr](https://twitter.com/Nico3333fr)
 * [@kloh-fr](https://twitter.com/klohFR)
 * [@GaetanBt](https://twitter.com/GaetanBt)
 * [@a5e](https://github.com/a5e)

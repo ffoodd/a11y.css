@@ -13,6 +13,10 @@ When hovering marked elements, a little banner should appear on top of your brow
 
 *This file is not a replacement to a complete tool such as [OpQuast Reporting](http://reporting.opquast.com/), [Tanaguru](http://www.tanaguru.com/en/) ou [Tenon](http://tenon.io/). It only intends to show possible weaknesses. You should obviously do some manual check by hand to know whether the code should or should not be fixed.*
 
+### Counters
+
+CSS counters are incremented on each error/advice/warning and results are displayed with `html::after`. Since it is added through CSS, it is basically fake-content which is good since it is no more than visual indication for the developper to see what's going on. It will appear on the bottom left side of your page :).
+
 
 # Usage
 
@@ -28,9 +32,20 @@ javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='http
 
 You can also generate your own bookmarklet (choosing language and minimum level) on [the dedicated page](http://ffoodd.github.io/a11y.css/) then directly drag it to your bookmarks. Isn't it handy?
 
-### Counters
+### The CSP case
 
-CSS counters are incremented on each error/advice/warning and results are displayed with `html::after`. Since it is added through CSS, it is basically fake-content which is good since it is no more than visual indication for the developper to see what's going on. It will appear on the bottom left side of your page :).
+[CSP](https://www.w3.org/TR/CSP/) are awesome, but may prevent bookmarklets usage.
+Let’s be honest, in theory *you should not update your CSP directives to allow directives*.
+
+However it appears that some browsers have bugs when implementing CSP, preventing us from simply use bookmarklets.
+Here are two directives you need to add, while waiting for browsers to fix their bugs:
+
+* `script-src 'unsafe-inline'`
+* `style-src https://rawgit.com/`
+
+And you should be good! If you want to know more about bugs I mentionned
+(and discover great resources to help you with CSP usage) I suggest you read
+issue [#201] opened and documented by the awesome [Nicolas Hoffmann](https://twitter.com/Nico3333fr).
 
 ## CSS file
 
