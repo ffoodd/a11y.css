@@ -35,7 +35,7 @@ You can also generate your own bookmarklet (choosing language and minimum level)
 ### The CSP case
 
 [CSP](https://www.w3.org/TR/CSP/) are awesome, but may prevent bookmarklets usage.
-Let’s be honest, in theory *you should not update your CSP directives to allow directives*.
+Let’s be honest, in theory *you should not update your CSP directives to allow bookmarklets*.
 
 However it appears that some browsers have bugs when implementing CSP, preventing us from simply use bookmarklets.
 Here are two directives you need to add, while waiting for browsers to fix their bugs:
