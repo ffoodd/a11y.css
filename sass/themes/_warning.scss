@@ -616,6 +616,10 @@ body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(tex
   @include warning('empty-nodes', $self-closing: false, $quarantine: true);
 }
 
+svg *:empty:not(title):not(desc) {
+  @extend %a11y-reset;
+}
+
 
 /*doc
 ---

@@ -4399,18 +4399,27 @@ iframe[style] ~ ::after {
   z-index: 2147483647 !important;
 }
 
+svg *:empty:not(title):not(desc),
 form button:not([type]):not([form]):not([formaction]):not([formtarget]),
+svg :hover:empty:not(title):not(desc),
 form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]),
+svg :focus:empty:not(title):not(desc),
 form button:focus:not([type]):not([form]):not([formaction]):not([formtarget]) {
   counter-increment: none !important;
   outline: none !important;
   outline-offset: 0 !important;
 }
+svg :not(desc):not(title):empty::before,
 form button:not([formtarget]):not([formaction]):not([form]):not([type])::before,
+svg *:empty:not(title):not(desc) ~ ::after,
 form button:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after,
+svg :not(desc):not(title):empty:hover::before,
 form button:not([formtarget]):not([formaction]):not([form]):not([type]):hover::before,
+svg :hover:empty:not(title):not(desc) ~ ::after,
 form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after,
+svg :not(desc):not(title):empty:focus::before,
 form button:not([formtarget]):not([formaction]):not([form]):not([type]):focus::before,
+svg :focus:empty:not(title):not(desc) ~ ::after,
 form button:focus:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after {
   content: "" !important;
 }
