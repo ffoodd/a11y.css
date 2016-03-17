@@ -113,6 +113,9 @@ Et ils ont pris le temps d’ouvrir des issues :
 * [@Twikito](https://twitter.com/twikito)
 * [@olamedia](https://github.com/olamedia)
 * [@bartveneman](http://bveneman.nl/)
+* [@olivares](https://twitter.com/olivares)
+* [@vibby](https://twitter.com/vibby0)
+* [@accesbilis](https://twitter.com/accesbilis)
 
 Merci à tous !
 

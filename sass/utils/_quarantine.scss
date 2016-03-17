@@ -83,7 +83,8 @@
     z-index: theme-conf($theme, 'index') !important;
   }
 
-  &:hover::before {
+  &:hover::before,
+  &:focus::before {
     @include quarantine-hover;
   }
 }
@@ -115,7 +116,8 @@
     z-index: theme-conf($theme, 'index') !important;
   }
 
-  &:hover ~ ::after {
+  &:hover ~ ::after,
+  &:focus ~ ::after {
     @include quarantine-hover;
   }
 }

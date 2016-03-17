@@ -583,6 +583,66 @@ th:not([id]):not([scope]):hover::before,
 [class*="undefined"]:hover::before,
 a[href^="javascript"]:not([role="button"]):hover::before,
 a[href="#"]:not([role="button"]):hover::before,
+ul > :not(li):focus::before,
+ol > :not(li):focus::before,
+:not(ul):not(ol) > li:focus::before,
+dt + :not(dd):focus::before,
+:not(dt):not(dd) + dd:focus::before,
+:not(dl) > dt:focus::before,
+:not(dl) > dd:focus::before,
+dl > :not(dd):not(dt):focus::before,
+:not(figure) > figcaption:focus::before,
+figure:not([role="group"]):focus::before,
+select > :not(optgroup):not(option):focus::before,
+:not(select):not(optgroup) > option:focus::before,
+optgroup > :not(option):focus::before,
+:not(select) > optgroup:focus::before,
+:not(fieldset) > legend:focus::before,
+tr > :not(th):not(td):focus::before,
+table > :not(caption):not(colgroup):not(tr):not(tbody):not(tfoot):not(thead):focus::before,
+b div:focus::before,
+i div:focus::before,
+q div:focus::before,
+em div:focus::before,
+abbr div:focus::before,
+cite div:focus::before,
+code div:focus::before,
+span div:focus::before,
+small div:focus::before,
+label div:focus::before,
+strong div:focus::before,
+aside > aside:first-child:focus::before,
+article > aside:first-child:focus::before,
+aside > article:first-child:focus::before,
+aside > section:first-child:focus::before,
+section > section:first-child:focus::before,
+article > section:first-child:focus::before,
+article > article:first-child:focus::before,
+fieldset > :first-child:not(legend):focus::before,
+fieldset > legend:not(:first-child):focus::before,
+abbr:not([title]):focus::before,
+abbr[title=""]:focus::before,
+embed[type="image"][alt=""]:focus::before,
+object[type="image"][alt=""]:focus::before,
+body :not(title):not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([aria-hidden]):not([hidden]):empty:focus::before,
+table:not([role="presentation"]) > tr:only-child:focus::before,
+table:not([role="presentation"]) > tbody > tr:only-child:focus::before,
+table:not([role="presentation"]) > caption:not(:first-child):focus::before,
+table:not([role="presentation"]) > :not(caption):first-child:focus::before,
+table > tfoot ~ thead:focus::before,
+table > tbody ~ tfoot:focus::before,
+table > tbody ~ thead:focus::before,
+table:not([role="presentation"]) > caption + tbody:focus::before,
+th:not([id]):not([scope]):focus::before,
+[class*="toggle"]:not([aria-haspopup]):not([aria-expanded]):focus::before,
+[id*="NaN"]:focus::before,
+[id*="null"]:focus::before,
+[class*="NaN"]:focus::before,
+[class*="null"]:focus::before,
+[id*="undefined"]:focus::before,
+[class*="undefined"]:focus::before,
+a[href^="javascript"]:not([role="button"]):focus::before,
+a[href="#"]:not([role="button"]):focus::before,
 img[alt=""]:hover ~ ::after,
 area[alt=""]:hover ~ ::after,
 input[type="image"][alt=""]:hover ~ ::after,
@@ -752,6 +812,175 @@ iframe[class*="NaN"]:hover ~ ::after,
 iframe[class*="null"]:hover ~ ::after,
 iframe[id*="undefined"]:hover ~ ::after,
 iframe[class*="undefined"]:hover ~ ::after,
+img[alt=""]:focus ~ ::after,
+area[alt=""]:focus ~ ::after,
+input[type="image"][alt=""]:focus ~ ::after,
+svg:focus:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) ~ ::after,
+video[autoplay]:focus ~ ::after,
+audio[autoplay]:focus ~ ::after,
+video:focus:not([controls]) ~ ::after,
+audio:focus:not([controls]) ~ ::after,
+area[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+base[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+br[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+col[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+command[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+embed[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+hr[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+img[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+input[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+keygen[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+link[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+meta[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+param[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+source[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+track[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+wbr[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+textarea[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+select[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+svg[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+audio[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+video[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+iframe[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after,
+img[src*="1px.gif"]:focus:not([role="presentation"]) ~ ::after,
+img[src*="1x1.gif"]:focus:not([role="presentation"]) ~ ::after,
+img[src*="clear.gif"]:focus:not([role="presentation"]) ~ ::after,
+img[src*="spacer.gif"]:focus:not([role="presentation"]) ~ ::after,
+img[src*="dotclear.gif"]:focus:not([role="presentation"]) ~ ::after,
+img[src*="transparent.gif"]:focus:not([role="presentation"]) ~ ::after,
+img[src*="pixel-1x1-clear.gif"]:focus:not([role="presentation"]) ~ ::after,
+area[id*="NaN"]:focus ~ ::after,
+area[id*="null"]:focus ~ ::after,
+area[class*="NaN"]:focus ~ ::after,
+area[class*="null"]:focus ~ ::after,
+area[id*="undefined"]:focus ~ ::after,
+area[class*="undefined"]:focus ~ ::after,
+base[id*="NaN"]:focus ~ ::after,
+base[id*="null"]:focus ~ ::after,
+base[class*="NaN"]:focus ~ ::after,
+base[class*="null"]:focus ~ ::after,
+base[id*="undefined"]:focus ~ ::after,
+base[class*="undefined"]:focus ~ ::after,
+br[id*="NaN"]:focus ~ ::after,
+br[id*="null"]:focus ~ ::after,
+br[class*="NaN"]:focus ~ ::after,
+br[class*="null"]:focus ~ ::after,
+br[id*="undefined"]:focus ~ ::after,
+br[class*="undefined"]:focus ~ ::after,
+col[id*="NaN"]:focus ~ ::after,
+col[id*="null"]:focus ~ ::after,
+col[class*="NaN"]:focus ~ ::after,
+col[class*="null"]:focus ~ ::after,
+col[id*="undefined"]:focus ~ ::after,
+col[class*="undefined"]:focus ~ ::after,
+command[id*="NaN"]:focus ~ ::after,
+command[id*="null"]:focus ~ ::after,
+command[class*="NaN"]:focus ~ ::after,
+command[class*="null"]:focus ~ ::after,
+command[id*="undefined"]:focus ~ ::after,
+command[class*="undefined"]:focus ~ ::after,
+embed[id*="NaN"]:focus ~ ::after,
+embed[id*="null"]:focus ~ ::after,
+embed[class*="NaN"]:focus ~ ::after,
+embed[class*="null"]:focus ~ ::after,
+embed[id*="undefined"]:focus ~ ::after,
+embed[class*="undefined"]:focus ~ ::after,
+hr[id*="NaN"]:focus ~ ::after,
+hr[id*="null"]:focus ~ ::after,
+hr[class*="NaN"]:focus ~ ::after,
+hr[class*="null"]:focus ~ ::after,
+hr[id*="undefined"]:focus ~ ::after,
+hr[class*="undefined"]:focus ~ ::after,
+img[id*="NaN"]:focus ~ ::after,
+img[id*="null"]:focus ~ ::after,
+img[class*="NaN"]:focus ~ ::after,
+img[class*="null"]:focus ~ ::after,
+img[id*="undefined"]:focus ~ ::after,
+img[class*="undefined"]:focus ~ ::after,
+input[id*="NaN"]:focus ~ ::after,
+input[id*="null"]:focus ~ ::after,
+input[class*="NaN"]:focus ~ ::after,
+input[class*="null"]:focus ~ ::after,
+input[id*="undefined"]:focus ~ ::after,
+input[class*="undefined"]:focus ~ ::after,
+keygen[id*="NaN"]:focus ~ ::after,
+keygen[id*="null"]:focus ~ ::after,
+keygen[class*="NaN"]:focus ~ ::after,
+keygen[class*="null"]:focus ~ ::after,
+keygen[id*="undefined"]:focus ~ ::after,
+keygen[class*="undefined"]:focus ~ ::after,
+link[id*="NaN"]:focus ~ ::after,
+link[id*="null"]:focus ~ ::after,
+link[class*="NaN"]:focus ~ ::after,
+link[class*="null"]:focus ~ ::after,
+link[id*="undefined"]:focus ~ ::after,
+link[class*="undefined"]:focus ~ ::after,
+meta[id*="NaN"]:focus ~ ::after,
+meta[id*="null"]:focus ~ ::after,
+meta[class*="NaN"]:focus ~ ::after,
+meta[class*="null"]:focus ~ ::after,
+meta[id*="undefined"]:focus ~ ::after,
+meta[class*="undefined"]:focus ~ ::after,
+param[id*="NaN"]:focus ~ ::after,
+param[id*="null"]:focus ~ ::after,
+param[class*="NaN"]:focus ~ ::after,
+param[class*="null"]:focus ~ ::after,
+param[id*="undefined"]:focus ~ ::after,
+param[class*="undefined"]:focus ~ ::after,
+source[id*="NaN"]:focus ~ ::after,
+source[id*="null"]:focus ~ ::after,
+source[class*="NaN"]:focus ~ ::after,
+source[class*="null"]:focus ~ ::after,
+source[id*="undefined"]:focus ~ ::after,
+source[class*="undefined"]:focus ~ ::after,
+track[id*="NaN"]:focus ~ ::after,
+track[id*="null"]:focus ~ ::after,
+track[class*="NaN"]:focus ~ ::after,
+track[class*="null"]:focus ~ ::after,
+track[id*="undefined"]:focus ~ ::after,
+track[class*="undefined"]:focus ~ ::after,
+wbr[id*="NaN"]:focus ~ ::after,
+wbr[id*="null"]:focus ~ ::after,
+wbr[class*="NaN"]:focus ~ ::after,
+wbr[class*="null"]:focus ~ ::after,
+wbr[id*="undefined"]:focus ~ ::after,
+wbr[class*="undefined"]:focus ~ ::after,
+textarea[id*="NaN"]:focus ~ ::after,
+textarea[id*="null"]:focus ~ ::after,
+textarea[class*="NaN"]:focus ~ ::after,
+textarea[class*="null"]:focus ~ ::after,
+textarea[id*="undefined"]:focus ~ ::after,
+textarea[class*="undefined"]:focus ~ ::after,
+select[id*="NaN"]:focus ~ ::after,
+select[id*="null"]:focus ~ ::after,
+select[class*="NaN"]:focus ~ ::after,
+select[class*="null"]:focus ~ ::after,
+select[id*="undefined"]:focus ~ ::after,
+select[class*="undefined"]:focus ~ ::after,
+svg[id*="NaN"]:focus ~ ::after,
+svg[id*="null"]:focus ~ ::after,
+svg[class*="NaN"]:focus ~ ::after,
+svg[class*="null"]:focus ~ ::after,
+svg[id*="undefined"]:focus ~ ::after,
+svg[class*="undefined"]:focus ~ ::after,
+audio[id*="NaN"]:focus ~ ::after,
+audio[id*="null"]:focus ~ ::after,
+audio[class*="NaN"]:focus ~ ::after,
+audio[class*="null"]:focus ~ ::after,
+audio[id*="undefined"]:focus ~ ::after,
+audio[class*="undefined"]:focus ~ ::after,
+video[id*="NaN"]:focus ~ ::after,
+video[id*="null"]:focus ~ ::after,
+video[class*="NaN"]:focus ~ ::after,
+video[class*="null"]:focus ~ ::after,
+video[id*="undefined"]:focus ~ ::after,
+video[class*="undefined"]:focus ~ ::after,
+iframe[id*="NaN"]:focus ~ ::after,
+iframe[id*="null"]:focus ~ ::after,
+iframe[class*="NaN"]:focus ~ ::after,
+iframe[class*="null"]:focus ~ ::after,
+iframe[id*="undefined"]:focus ~ ::after,
+iframe[class*="undefined"]:focus ~ ::after,
 [tabindex]:not([tabindex="-1"]):not([tabindex="0"]):hover::before,
 a[name=""][id=""][href=""]:hover::before,
 a[id=""][href=""]:not([name]):hover::before,
@@ -908,6 +1137,162 @@ table[role="presentation"] [colgroup]:hover::before,
 [class^="-0"]:hover::before,
 [style]:hover::before,
 title:empty:hover::before,
+[tabindex]:not([tabindex="-1"]):not([tabindex="0"]):focus::before,
+a[name=""][id=""][href=""]:focus::before,
+a[id=""][href=""]:not([name]):focus::before,
+a[name=""][href=""]:not([id]):focus::before,
+a[id=""]:not([href]):not([name]):focus::before,
+a[name=""]:not([href]):not([id]):focus::before,
+a[href=""]:not([id]):not([name]):focus::before,
+a:not([href]):not([id]):not([name]):focus::before,
+a[title=""]:empty:focus::before,
+a[aria-label=""]:empty:focus::before,
+a[aria-labelledby=""]:empty:focus::before,
+a:not([aria-labelledby]):not([aria-label]):not([title]):empty:focus::before,
+label:not([for]):focus::before,
+label[for=""]:focus::before,
+button:not([title]):not([aria-labelledby]):not([aria-label]):empty:focus::before,
+button[title=""]:focus::before,
+button[aria-label=""]:focus::before,
+button[aria-labelledby=""]:focus::before,
+button:not([formtarget]):not([formaction]):not([form]):not([type]):focus::before,
+button[type="reset"][formmethod]:focus::before,
+button[type="reset"][formaction]:focus::before,
+button[type="reset"][formtarget]:focus::before,
+button[type="reset"][formenctype]:focus::before,
+button[type="reset"][formnovalidate]:focus::before,
+button[type="button"][formmethod]:focus::before,
+button[type="button"][formaction]:focus::before,
+button[type="button"][formtarget]:focus::before,
+button[type="button"][formenctype]:focus::before,
+button[type="button"][formnovalidate]:focus::before,
+button[class*="disabled"]:not([readonly]):not([disabled]):focus::before,
+form:not([action]):focus::before,
+html:not([lang]):focus::before,
+html[lang=""]:focus::before,
+table[role="presentation"] th:focus::before,
+table[role="presentation"] thead:focus::before,
+table[role="presentation"] tfoot:focus::before,
+table[role="presentation"] caption:focus::before,
+table[role="presentation"] [axis]:focus::before,
+table[role="presentation"] [scope]:focus::before,
+table[role="presentation"] [headers]:focus::before,
+table[role="presentation"] [colgroup]:focus::before,
+[width]:not(canvas):not(svg):not(embed):not(object):not(img):focus::before,
+[height]:not(canvas):not(svg):not(embed):not(object):not(img):focus::before,
+[onafterprint]:focus::before,
+[onbeforeprint]:focus::before,
+[onbeforeunload]:focus::before,
+[onerror]:focus::before,
+[onhaschange]:focus::before,
+[onload]:focus::before,
+[onmessage]:focus::before,
+[onoffline]:focus::before,
+[ononline]:focus::before,
+[onpagehide]:focus::before,
+[onpageshow]:focus::before,
+[onpopstate]:focus::before,
+[onredo]:focus::before,
+[onresize]:focus::before,
+[onstorage]:focus::before,
+[onundo]:focus::before,
+[onunload]:focus::before,
+[onblur]:focus::before,
+[onchage]:focus::before,
+[oncontextmenu]:focus::before,
+[onfocus]:focus::before,
+[onformchange]:focus::before,
+[onforminput]:focus::before,
+[oninput]:focus::before,
+[oninvalid]:focus::before,
+[onreset]:focus::before,
+[onselect]:focus::before,
+[onsubmit]:focus::before,
+[onkeydown]:focus::before,
+[onkeypress]:focus::before,
+[onkeyup]:focus::before,
+[onclick]:focus::before,
+[ondblclick]:focus::before,
+[ondrag]:focus::before,
+[ondragend]:focus::before,
+[ondragenter]:focus::before,
+[ondragleave]:focus::before,
+[ondragover]:focus::before,
+[ondragstart]:focus::before,
+[ondrop]:focus::before,
+[onmousedown]:focus::before,
+[onmousemove]:focus::before,
+[onmouseout]:focus::before,
+[onmouseover]:focus::before,
+[onmouseup]:focus::before,
+[onmousewheel]:focus::before,
+[onscroll]:focus::before,
+[onabort]:focus::before,
+[oncanplay]:focus::before,
+[oncanplaythrough]:focus::before,
+[ondurationchange]:focus::before,
+[onemptied]:focus::before,
+[onended]:focus::before,
+[onloadeddata]:focus::before,
+[onloadedmetadata]:focus::before,
+[onloadstart]:focus::before,
+[onpause]:focus::before,
+[onplay]:focus::before,
+[onplaying]:focus::before,
+[onprogress]:focus::before,
+[onratechange]:focus::before,
+[onreadystatechange]:focus::before,
+[onseeked]:focus::before,
+[onseeking]:focus::before,
+[onstalled]:focus::before,
+[onsuspend]:focus::before,
+[ontimeupdate]:focus::before,
+[onvolumechange]:focus::before,
+[onwaiting]:focus::before,
+[id^="1"]:focus::before,
+[id^="2"]:focus::before,
+[id^="3"]:focus::before,
+[id^="4"]:focus::before,
+[id^="5"]:focus::before,
+[id^="6"]:focus::before,
+[id^="7"]:focus::before,
+[id^="8"]:focus::before,
+[id^="9"]:focus::before,
+[id^="0"]:focus::before,
+[id^="--"]:focus::before,
+[id^="-1"]:focus::before,
+[id^="-2"]:focus::before,
+[id^="-3"]:focus::before,
+[id^="-4"]:focus::before,
+[id^="-5"]:focus::before,
+[id^="-6"]:focus::before,
+[id^="-7"]:focus::before,
+[id^="-8"]:focus::before,
+[id^="-9"]:focus::before,
+[id^="-0"]:focus::before,
+[class^="1"]:focus::before,
+[class^="2"]:focus::before,
+[class^="3"]:focus::before,
+[class^="4"]:focus::before,
+[class^="5"]:focus::before,
+[class^="6"]:focus::before,
+[class^="7"]:focus::before,
+[class^="8"]:focus::before,
+[class^="9"]:focus::before,
+[class^="0"]:focus::before,
+[class^="--"]:focus::before,
+[class^="-1"]:focus::before,
+[class^="-2"]:focus::before,
+[class^="-3"]:focus::before,
+[class^="-4"]:focus::before,
+[class^="-5"]:focus::before,
+[class^="-6"]:focus::before,
+[class^="-7"]:focus::before,
+[class^="-8"]:focus::before,
+[class^="-9"]:focus::before,
+[class^="-0"]:focus::before,
+[style]:focus::before,
+title:empty:focus::before,
 area[tabindex]:hover:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
 base[tabindex]:hover:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
 br[tabindex]:hover:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
@@ -1019,7 +1404,119 @@ select[style]:hover ~ ::after,
 svg[style]:hover ~ ::after,
 audio[style]:hover ~ ::after,
 video[style]:hover ~ ::after,
-iframe[style]:hover ~ ::after {
+iframe[style]:hover ~ ::after,
+area[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+base[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+br[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+col[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+command[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+embed[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+hr[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+img[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+input[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+keygen[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+link[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+meta[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+param[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+source[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+track[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+wbr[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+textarea[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+select[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+svg[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+audio[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+video[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+iframe[tabindex]:focus:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
+img:focus:not([alt]) ~ ::after,
+area:focus:not([alt]) ~ ::after,
+input[type="image"]:focus:not([alt]) ~ ::after,
+img:focus:not([src]):not([srcset]) ~ ::after,
+img[src=""]:focus ~ ::after,
+img[src="#"]:focus ~ ::after,
+img[srcset=""]:focus ~ ::after,
+img[srcset="#"]:focus ~ ::after,
+input[type="image"]:focus:not([src]):not([srcset]) ~ ::after,
+input[type="image"][src=""]:focus ~ ::after,
+input[type="image"][src="#"]:focus ~ ::after,
+input[type="image"][srcset=""]:focus ~ ::after,
+input[type="image"][srcset="#"]:focus ~ ::after,
+input:focus:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]) ~ ::after,
+textarea:focus:not([id]):not([aria-label]):not([aria-labelledby]) ~ ::after,
+select:focus:not([id]):not([aria-label]):not([aria-labelledby]) ~ ::after,
+input[type="reset"]:focus:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
+input[type="submit"]:focus:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
+input[type="button"]:focus:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
+input:focus:not([type]) ~ ::after,
+input[type=""]:focus ~ ::after,
+optgroup:focus:not([label]) ~ ::after,
+iframe:focus:not([title]) ~ ::after,
+iframe[title=""]:focus ~ ::after,
+area[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+area[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+base[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+base[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+br[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+br[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+col[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+col[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+command[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+command[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+embed[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+embed[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+hr[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+hr[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+img[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+img[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+input[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+input[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+keygen[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+keygen[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+link[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+link[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+meta[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+meta[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+param[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+param[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+source[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+source[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+track[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+track[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+wbr[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+wbr[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+textarea[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+textarea[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+select[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+select[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+svg[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+svg[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+audio[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+audio[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+video[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+video[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+iframe[width]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+iframe[height]:focus:not(img):not(object):not(embed):not(svg):not(canvas) ~ ::after,
+area[style]:focus ~ ::after,
+base[style]:focus ~ ::after,
+br[style]:focus ~ ::after,
+col[style]:focus ~ ::after,
+command[style]:focus ~ ::after,
+embed[style]:focus ~ ::after,
+hr[style]:focus ~ ::after,
+img[style]:focus ~ ::after,
+input[style]:focus ~ ::after,
+keygen[style]:focus ~ ::after,
+link[style]:focus ~ ::after,
+meta[style]:focus ~ ::after,
+param[style]:focus ~ ::after,
+source[style]:focus ~ ::after,
+track[style]:focus ~ ::after,
+wbr[style]:focus ~ ::after,
+textarea[style]:focus ~ ::after,
+select[style]:focus ~ ::after,
+svg[style]:focus ~ ::after,
+audio[style]:focus ~ ::after,
+video[style]:focus ~ ::after,
+iframe[style]:focus ~ ::after {
   opacity: 1;
   -webkit-transform: translateY(0) translateZ(0) !important;
           transform: translateY(0) translateZ(0) !important;
@@ -2066,7 +2563,8 @@ iframe[style] ~ ::after {
 }
 
 form button:not([type]):not([form]):not([formaction]):not([formtarget]),
-form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]) {
+form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]),
+form button:focus:not([type]):not([form]):not([formaction]):not([formtarget]) {
   counter-increment: none !important;
   outline: none !important;
   outline-offset: 0 !important;
@@ -2074,7 +2572,9 @@ form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]) {
 form button:not([formtarget]):not([formaction]):not([form]):not([type])::before,
 form button:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after,
 form button:not([formtarget]):not([formaction]):not([form]):not([type]):hover::before,
-form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after {
+form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after,
+form button:not([formtarget]):not([formaction]):not([form]):not([type]):focus::before,
+form button:focus:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after {
   content: "" !important;
 }
 
@@ -2906,7 +3406,7 @@ dl > :not(dt):not(dd)
 :not(dl) > dt::before,
 :not(dl) > dd::before,
 dl > :not(dt):not(dd)::before {
-  content: "☢  <dl> contient un ou plusieurs groupe(s) de <dt> et <dd>.  Aucun autre usage des ces balises n’est permis." !important;
+  content: "☢  <dl> contient un ou plusieurs groupe(s) de <dt> et <dd>. \a Aucun autre usage des ces balises n’est permis." !important;
 }
 
 /*doc
@@ -3014,7 +3514,7 @@ optgroup > :not(option)::before,
 :not(fieldset) > legend::before,
 tr > :not(td):not(th)::before,
 table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption)::before {
-  content: "☢  Imbrication inadéquate d’éléments.  Ça peut heurter la sensibilité des plus jeunes, vous savez ?" !important;
+  content: "☢  Imbrication inadéquate d’éléments. \aÇa peut heurter la sensibilité des plus jeunes, vous savez ?" !important;
 }
 
 /*doc
@@ -3142,7 +3642,7 @@ fieldset > legend:not(:first-child)
 */
 fieldset > *:not(legend):first-child::before,
 fieldset > legend:not(:first-child)::before {
-  content: "☢  Imbrication inadéquate d’éléments.  Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
+  content: "☢  Imbrication inadéquate d’éléments. \aUn fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
 }
 
 /*doc
@@ -3221,12 +3721,12 @@ area[alt=""]::before,
 area[alt=""] ~ ::after,
 input[type="image"][alt=""]::before,
 input[type="image"][alt=""] ~ ::after {
-  content: "☢  Attribut [alt] vide.  C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
+  content: "☢  Attribut [alt] vide. \a C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
 }
 
 embed[type="image"][alt=""]::before,
 object[type="image"][alt=""]::before {
-  content: "☢  Attribut [alt] vide.  C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
+  content: "☢  Attribut [alt] vide. \a C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
 }
 
 /*doc
@@ -3268,7 +3768,7 @@ svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-lab
 */
 svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby])::before,
 svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☢  Ce svg n’a pas d’attribut [role], [aria-label] ou [aria-labelledby].  Si ce n’est pas décoratif, un élément <desc> devrait être présent. Il y en a un ?" !important;
+  content: "☢  Ce svg n’a pas d’attribut [role], [aria-label] ou [aria-labelledby]. \aSi ce n’est pas décoratif, un élément <desc> devrait être présent. Il y en a un ?" !important;
 }
 
 /*doc
@@ -3337,7 +3837,7 @@ video:not([controls])::before,
 video:not([controls]) ~ ::after,
 audio:not([controls])::before,
 audio:not([controls]) ~ ::after {
-  content: "☢  Ce média temporel ne dispose pas des contrôles par défaut.  Avez-vous implémenté des contrôles satisfaisants ?" !important;
+  content: "☢  Ce média temporel ne dispose pas des contrôles par défaut. \a Avez-vous implémenté des contrôles satisfaisants ?" !important;
 }
 
 /*doc
@@ -3417,7 +3917,8 @@ body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area
   width: 100%                                                           !important;
   z-index: 2147483646 !important;
 }
-body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):hover::before {
+body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):hover::before,
+body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):focus::before {
   opacity: 1;
   -webkit-transform: translateY(0) translateZ(0) !important;
           transform: translateY(0) translateZ(0) !important;
@@ -3464,7 +3965,8 @@ body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(tex
   width: 100%                                                           !important;
   z-index: 2147483646 !important;
 }
-body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):hover::before {
+body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):hover::before,
+body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):focus::before {
   opacity: 1;
   transform: translateY(0) translateZ(0) !important;
   transition: -webkit-transform .3s ease-in                             !important;
@@ -3647,7 +4149,7 @@ table:not([role="presentation"]) > tbody:first-child
 */
 table:not([role="presentation"]) > caption + tbody::before,
 table:not([role="presentation"]) > tbody:first-child::before {
-  content: "☢  Soit il manque un <thead> — voire même un <tfoot> — dans ce tableau de données,  soit vous devriez ajouter un [role=\"presentation\"], s’il s’agit d’un tableau de mise en forme." !important;
+  content: "☢  Soit il manque un <thead> — voire même un <tfoot> — dans ce tableau de données, \asoit vous devriez ajouter un [role=\"presentation\"], s’il s’agit d’un tableau de mise en forme." !important;
 }
 
 /*doc
@@ -3687,7 +4189,7 @@ th:not([scope]):not([id])
 ```
 */
 th:not([scope]):not([id])::before {
-  content: "☢  À quoi s’applique cette cellule d’en-tête ? La totalité de la ligne / colonne ?  Si oui, pensez à [scope]. Sinon, il faut probablement un [id] et des [headers]." !important;
+  content: "☢  À quoi s’applique cette cellule d’en-tête ? La totalité de la ligne / colonne ? \aSi oui, pensez à [scope]. Sinon, il faut probablement un [id] et des [headers]." !important;
 }
 
 /*doc
@@ -3842,7 +4344,7 @@ Don't laugh, shit happens.
 [class*="null"]::before,
 [id*="undefined"]::before,
 [class*="undefined"]::before {
-  content: "☢  Vous n’essayeriez pas de calculer une [class] ou un [id] dynamiquement, vous ?  PArce que là, je vois null ou undefined." !important;
+  content: "☢  Vous n’essayeriez pas de calculer une [class] ou un [id] dynamiquement, vous ? \aPArce que là, je vois null ou undefined." !important;
 }
 
 area[id*="NaN"]::before,
@@ -4109,7 +4611,7 @@ iframe[id*="undefined"]::before,
 iframe[id*="undefined"] ~ ::after,
 iframe[class*="undefined"]::before,
 iframe[class*="undefined"] ~ ::after {
-  content: "☢  Vous n’essayeriez pas de calculer une [class] ou un [id] dynamiquement, vous ?  PArce que là, je vois null ou undefined." !important;
+  content: "☢  Vous n’essayeriez pas de calculer une [class] ou un [id] dynamiquement, vous ? \aPArce que là, je vois null ou undefined." !important;
 }
 
 /*doc
@@ -4385,9 +4887,13 @@ a:blank:not([title]):not([aria-label]):not([aria-labelledby])::before {
   z-index: 2147483647 !important;
 }
 a:blank[title=""]:hover::before,
+a:blank[title=""]:focus::before,
 a:blank[aria-label=""]:hover::before,
+a:blank[aria-label=""]:focus::before,
 a:blank[aria-labelledby=""]:hover::before,
-a:blank:not([title]):not([aria-label]):not([aria-labelledby]):hover::before {
+a:blank[aria-labelledby=""]:focus::before,
+a:blank:not([title]):not([aria-label]):not([aria-labelledby]):hover::before,
+a:blank:not([title]):not([aria-label]):not([aria-labelledby]):focus::before {
   opacity: 1;
   -webkit-transform: translateY(0) translateZ(0) !important;
           transform: translateY(0) translateZ(0) !important;
@@ -4444,9 +4950,13 @@ a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby])::be
   z-index: 2147483647 !important;
 }
 a:-moz-only-whitespace[title=""]:hover::before,
+a:-moz-only-whitespace[title=""]:focus::before,
 a:-moz-only-whitespace[aria-label=""]:hover::before,
+a:-moz-only-whitespace[aria-label=""]:focus::before,
 a:-moz-only-whitespace[aria-labelledby=""]:hover::before,
-a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]):hover::before {
+a:-moz-only-whitespace[aria-labelledby=""]:focus::before,
+a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]):hover::before,
+a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]):focus::before {
   opacity: 1;
   transform: translateY(0) translateZ(0) !important;
   transition: -webkit-transform .3s ease-in                             !important;
@@ -4629,7 +5139,7 @@ textarea:not([id]):not([aria-label]):not([aria-labelledby])::before,
 textarea:not([id]):not([aria-label]):not([aria-labelledby]) ~ ::after,
 select:not([id]):not([aria-label]):not([aria-labelledby])::before,
 select:not([id]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☠  Ce champ est indescriptible. Vous avez pourtant le choix :  [title], [id], [aria-label], [aria-labelledby]." !important;
+  content: "☠  Ce champ est indescriptible. Vous avez pourtant le choix : \a[title], [id], [aria-label], [aria-labelledby]." !important;
 }
 
 /*doc
@@ -4668,7 +5178,7 @@ input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-label
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])::before,
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☠  Ça fait quoi, si je clique dessus ?  Avec [value], [title] ou [aria-label], j’aurais su :)" !important;
+  content: "☠  Ça fait quoi, si je clique dessus ? \a Avec [value], [title] ou [aria-label], j’aurais su :)" !important;
 }
 
 /*doc
@@ -4708,7 +5218,7 @@ button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]
 ```
 */
 button:empty:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  Ça fait quoi, si je clique dessus ?  Il manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
+  content: "☠  Ça fait quoi, si je clique dessus ? \aIl manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
 }
 
 button:blank:not([aria-label]):not([aria-labelledby]):not([title]) {
@@ -4747,7 +5257,8 @@ button:blank:not([aria-label]):not([aria-labelledby]):not([title])::before {
   width: 100%                                                           !important;
   z-index: 2147483647 !important;
 }
-button:blank:not([aria-label]):not([aria-labelledby]):not([title]):hover::before {
+button:blank:not([aria-label]):not([aria-labelledby]):not([title]):hover::before,
+button:blank:not([aria-label]):not([aria-labelledby]):not([title]):focus::before {
   opacity: 1;
   -webkit-transform: translateY(0) translateZ(0) !important;
           transform: translateY(0) translateZ(0) !important;
@@ -4756,7 +5267,7 @@ button:blank:not([aria-label]):not([aria-labelledby]):not([title]):hover::before
   transition:         transform .3s ease-in, -webkit-transform .3s ease-in                             !important;
 }
 button:blank:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  Ça fait quoi, si je clique dessus ?  Il manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
+  content: "☠  Ça fait quoi, si je clique dessus ? \aIl manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
 }
 
 button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]) {
@@ -4794,7 +5305,8 @@ button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]
   width: 100%                                                           !important;
   z-index: 2147483647 !important;
 }
-button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]):hover::before {
+button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]):hover::before,
+button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]):focus::before {
   opacity: 1;
   transform: translateY(0) translateZ(0) !important;
   transition: -webkit-transform .3s ease-in                             !important;
@@ -4802,7 +5314,7 @@ button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]
   transition:         transform .3s ease-in, -webkit-transform .3s ease-in                             !important;
 }
 button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  Ça fait quoi, si je clique dessus ?  Il manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
+  content: "☠  Ça fait quoi, si je clique dessus ? \aIl manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
 }
 
 /*doc
@@ -4980,7 +5492,7 @@ input:not([type])::before,
 input:not([type]) ~ ::after,
 input[type=""]::before,
 input[type=""] ~ ::after {
-  content: "☠  Attribut [type] manquant ou vide.  On met quoi, dans ce champ ?" !important;
+  content: "☠  Attribut [type] manquant ou vide. \aOn met quoi, dans ce champ ?" !important;
 }
 
 /*doc
@@ -5022,7 +5534,7 @@ optgroup:not([label])
 */
 optgroup:not([label])::before,
 optgroup:not([label]) ~ ::after {
-  content: "☠  Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options.  Dommage…" !important;
+  content: "☠  Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. \a Dommage…" !important;
 }
 
 /*doc
@@ -5056,7 +5568,7 @@ iframe:not([title])::before,
 iframe:not([title]) ~ ::after,
 iframe[title=""]::before,
 iframe[title=""] ~ ::after {
-  content: "☠  Attribut [title] manquant ou vide.  Dieu seul sait ce que contient cette <iframe>." !important;
+  content: "☠  Attribut [title] manquant ou vide. \a Dieu seul sait ce que contient cette <iframe>." !important;
 }
 
 /*doc
@@ -5088,7 +5600,7 @@ form:not([action])
 ```
 */
 form:not([action])::before {
-  content: "☠  Attribut [action] manquant.  Et après, il se passe quoi ?" !important;
+  content: "☠  Attribut [action] manquant. \a Et après, il se passe quoi ?" !important;
 }
 
 /*doc
@@ -5121,7 +5633,7 @@ html[lang=""]
 */
 html:not([lang])::before,
 html[lang=""]::before {
-  content: "☠  Pas d’attribut lang/xml:lang sur la balise <html>.  JAWS va avoir un accent chelou." !important;
+  content: "☠  Pas d’attribut lang/xml:lang sur la balise <html>. \aJAWS va avoir un accent chelou." !important;
 }
 
 /*doc
@@ -5577,7 +6089,7 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 ```
 */
 [style]::before {
-  content: "☠  Éléments supportant des styles en ligne.  Préférez utiliser des classes ou IDs." !important;
+  content: "☠  Éléments supportant des styles en ligne. \aPréférez utiliser des classes ou IDs." !important;
 }
 
 area[style]::before,
@@ -5624,12 +6136,12 @@ video[style]::before,
 video[style] ~ ::after,
 iframe[style]::before,
 iframe[style] ~ ::after {
-  content: "☠  Éléments supportant des styles en ligne.  Préférez utiliser des classes ou IDs." !important;
+  content: "☠  Éléments supportant des styles en ligne. \aPréférez utiliser des classes ou IDs." !important;
 }
 
 /*doc
 ---
-title: "Empty <title>"
+title: "Empty title tag"
 name: no-page-title
 category: Errors
 ---
@@ -5733,7 +6245,8 @@ title:blank::before {
   width: 100%                                                           !important;
   z-index: 2147483647 !important;
 }
-title:blank:hover::before {
+title:blank:hover::before,
+title:blank:focus::before {
   opacity: 1;
   -webkit-transform: translateY(0) translateZ(0) !important;
           transform: translateY(0) translateZ(0) !important;
@@ -5804,7 +6317,8 @@ title:-moz-only-whitespace::before {
   width: 100%                                                           !important;
   z-index: 2147483647 !important;
 }
-title:-moz-only-whitespace:hover::before {
+title:-moz-only-whitespace:hover::before,
+title:-moz-only-whitespace:focus::before {
   opacity: 1;
   transform: translateY(0) translateZ(0) !important;
   transition: -webkit-transform .3s ease-in                             !important;

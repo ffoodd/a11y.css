@@ -62,7 +62,8 @@
       z-index: theme-conf($theme, 'index') !important;
     }
 
-    &:hover::before {
+    &:hover::before,
+    &:focus::before {
       @extend %a11y-hover;
     }
   }
@@ -83,7 +84,8 @@
       z-index: theme-conf($theme, 'index') !important;
     }
 
-    &:hover ~ ::after {
+    &:hover ~ ::after,
+    &:focus ~ ::after {
       @extend %a11y-hover;
     }
   }
@@ -92,7 +94,8 @@
 // Provides a way to cancel a message
 %a11y-reset {
   &,
-  &:hover {
+  &:hover,
+  &:focus {
     counter-increment: none !important;
     outline: none !important;
     outline-offset: 0 !important;

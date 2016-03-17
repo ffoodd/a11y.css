@@ -107,6 +107,9 @@ And they took time to open a few issues:
 * [@Twikito](https://twitter.com/twikito)
 * [@olamedia](https://github.com/olamedia)
 * [@bartveneman](http://bveneman.nl/)
+* [@olivares](https://twitter.com/olivares)
+* [@vibby](https://twitter.com/vibby0)
+* [@accesbilis](https://twitter.com/accesbilis)
 
 Thank you all!
 
