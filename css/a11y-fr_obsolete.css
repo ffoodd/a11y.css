@@ -3708,6 +3708,10 @@ html {
 }
 html::after {
   background: rgba(0, 0, 0, .8);
+  background-image: linear-gradient(to bottom, transparent, transparent 1.4em, #911 1.4em, #911 1.6em, transparent 1.6em, transparent 2.9em, Gold 2.9em, Gold 3.1em, transparent 3.1em, transparent 4.4em, RoyalBlue 4.4em, RoyalBlue 4.6em, transparent 4.6em, transparent 5.9em, OliveDrab 5.9em, OliveDrab 6.1em, transparent 6.1em, transparent 100%);
+  background-position: .5em 0;
+  background-repeat: no-repeat;
+  background-size: .5em 100%;
   border: 1px solid #000;
   border-radius: 3px;
   bottom: 1em;
@@ -3716,7 +3720,7 @@ html::after {
   content: "Erreurs" ": " counter(error) "\a" "Avertissements" ": " counter(warning) "\a" "Obsolètes" ": " counter(obsolete) "\a" "Conseils" ": " counter(advice);
   font: 700 1.2rem/1.5 "Arial", "Nimbus Sans L", sans-serif;
   left: 1em;
-  padding: .75em 1em;
+  padding: .75em 1em .75em 1.5em;
   position: fixed;
   right: auto;
   text-shadow: 1px 1px #000;

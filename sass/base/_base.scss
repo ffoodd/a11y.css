@@ -12,6 +12,31 @@ html {
              map-get(theme-conf('advice',   'name'), $language) ': ' #{counter(advice)};
 
     background: rgba( 0, 0, 0, .8 );
+    background-image:
+      linear-gradient(
+          to bottom,
+          transparent,
+          transparent 1.4em,
+          theme-conf('error', 'color') 1.4em,
+          theme-conf('error', 'color') 1.6em,
+          transparent 1.6em,
+          transparent 2.9em,
+          theme-conf('warning', 'color') 2.9em,
+          theme-conf('warning', 'color') 3.1em,
+          transparent 3.1em,
+          transparent 4.4em,
+          theme-conf('obsolete', 'color') 4.4em,
+          theme-conf('obsolete', 'color') 4.6em,
+          transparent 4.6em,
+          transparent 5.9em,
+          theme-conf('advice', 'color') 5.9em,
+          theme-conf('advice', 'color') 6.1em,
+          transparent 6.1em,
+          transparent 100%
+      );
+    background-position: .5em 0;
+    background-repeat: no-repeat;
+    background-size: .5em 100%;
     border: 1px solid #000;
     border-radius: 3px;
     box-shadow: inset 1px 1px 0 rgba( 255, 255, 255, .3 );
@@ -21,7 +46,7 @@ html {
     left: 1em;
     right: auto;
     top: auto;
-    padding: .75em 1em;
+    padding: .75em 1em .75em 1.5em;
 
     color: #fff;
     font: 700 1.2rem/1.5 "Arial", "Nimbus Sans L", sans-serif;
