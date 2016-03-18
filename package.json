@@ -2,7 +2,7 @@
   "title": "a11y.css",
   "name": "a11y.css",
   "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "author": {
     "name": "Gaël Poupard",
     "url": "http://www.ffoodd.fr",
