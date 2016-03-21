@@ -3678,27 +3678,27 @@ iframe[style] ~ ::after {
   z-index: 2147483647 !important;
 }
 
-svg *:empty:not(title):not(desc),
+svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr),
 form button:not([type]):not([form]):not([formaction]):not([formtarget]),
-svg :hover:empty:not(title):not(desc),
+svg :hover:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr),
 form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]),
-svg :focus:empty:not(title):not(desc),
+svg :focus:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr),
 form button:focus:not([type]):not([form]):not([formaction]):not([formtarget]) {
   counter-increment: none !important;
   outline: none !important;
   outline-offset: 0 !important;
 }
-svg :not(desc):not(title):empty::before,
+svg :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([aria-hidden]):not([hidden]):not(desc):not(title):empty::before,
 form button:not([formtarget]):not([formaction]):not([form]):not([type])::before,
-svg *:empty:not(title):not(desc) ~ ::after,
+svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) ~ ::after,
 form button:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after,
-svg :not(desc):not(title):empty:hover::before,
+svg :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([aria-hidden]):not([hidden]):not(desc):not(title):empty:hover::before,
 form button:not([formtarget]):not([formaction]):not([form]):not([type]):hover::before,
-svg :hover:empty:not(title):not(desc) ~ ::after,
+svg :hover:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) ~ ::after,
 form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after,
-svg :not(desc):not(title):empty:focus::before,
+svg :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([aria-hidden]):not([hidden]):not(desc):not(title):empty:focus::before,
 form button:not([formtarget]):not([formaction]):not([form]):not([type]):focus::before,
-svg :focus:empty:not(title):not(desc) ~ ::after,
+svg :focus:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) ~ ::after,
 form button:focus:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after {
   content: "" !important;
 }
