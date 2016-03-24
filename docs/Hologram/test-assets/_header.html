@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
           content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
+    <link rel="stylesheet" href="static/normalize.css">
     <link rel="stylesheet" href="static/doc.css">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic" rel="stylesheet" type="text/css">
     <!-- CSS to be documented -->
@@ -62,34 +63,40 @@
           <% end %>
         </ol>
 
-        <form action="/" id="bookmarklet">
-          <fieldset>
-            <legend>Bookmarlet generator</legend>
-            <p>
-              <label for="minimum-level">Minimum level</label>
-              <select id="minimum-level" name="minimum-level">
-                <option value="advice">Advices</option>
-                <option value="obsolete">Obsoletes</option>
-                <option value="warning">Warnings</option>
-                <option value="error">Errors</option>
-              </select>
-            </p>
-            <p>
-              <label for="language">Language</label>
-              <select id="language" name="language">
-                <option value="fr">French</option>
-                <option value="en">English</option>
-              </select>
-            </p>
-          </fieldset>
+        <div>
 
-          <button type="submit">Generate bookmarklet</button>
-        </form>
+          <form action="/" id="bookmarklet">
+            <fieldset>
+              <legend>Bookmarlet generator</legend>
+              <p>
+                <label for="minimum-level">Minimum level</label>
+                <select id="minimum-level" name="minimum-level">
+                  <option value="advice">Advices</option>
+                  <option value="obsolete">Obsoletes</option>
+                  <option value="warning">Warnings</option>
+                  <option value="error">Errors</option>
+                </select>
+              </p>
+              <p>
+                <label for="language">Language</label>
+                <select id="language" name="language">
+                  <option value="fr">French</option>
+                  <option value="en">English</option>
+                </select>
+              </p>
+            </fieldset>
 
-        <p>
-          <small>Just drag this to your bookmarks, and you'll be able to use <b>a11y.css</b> on any page:</small>
-          <a id="bookmarklet--link" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='(max-width: 800px)';document.body.appendChild(a11ycss);})();" class="bookmarklet">a11y.css</a>
-        </p>
+            <button type="submit">Generate <span>the</span> bookmarklet</button>
+          </form>
+
+          <p>
+            Just drag this to your bookmarks, and you'll be able to use <b>a11y.css</b> on any page:
+            <a id="bookmarklet--link" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='(max-width: 800px)';document.body.appendChild(a11ycss);})();" class="bookmarklet">
+              <span>Grab your a11y.css</span>
+              bookmarklet
+            </a>
+          </p>
+        </div>
       </aside>
           
       <div>

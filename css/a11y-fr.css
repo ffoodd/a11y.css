@@ -6771,7 +6771,7 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"]) ~ ::after {
 /*doc
 ---
 title: "Bad computed value"
-name: null-undefined
+name: oops
 category: Warnings
 ---
 
@@ -7079,6 +7079,7 @@ category: Warnings
 ##Description
 The `[href]` attribute should not start with "javascript".
 Should probably be a `<button>` or at least a `[role="button"]`, don't you think?
+The only exception shall be bookmarklets.
 
 ##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
@@ -7095,7 +7096,7 @@ a[href^="javascript"]:not([role="button"])
 ```
 */
 a[href^="javascript"]:not([role="button"])::before {
-  content: "☢  Attribut [href] débutant par javascript. Ça n’augure rien de bon…" !important;
+  content: "☢  Attribut [href] débutant par javascript. Ça n’augure rien de bon… \aSauf si c’est un bookmarklet. Genre a11y.css :)" !important;
 }
 
 /*doc
@@ -8083,7 +8084,7 @@ html[lang=""]
 
 ##Test
 ```html_example
-<iframe title="No language defined a11y.css test-case" src="static/no-lang.html" width="650" height="200" class="b-reset"></iframe>
+<iframe title="No language defined a11y.css test-case" src="static/no-lang.html" width="500" height="200"></iframe>
 ```
 */
 html:not([lang])::before,

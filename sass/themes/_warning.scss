@@ -972,6 +972,7 @@ category: Warnings
 ##Description
 The `[href]` attribute should not start with "javascript".
 Should probably be a `<button>` or at least a `[role="button"]`, don't you think?
+The only exception shall be bookmarklets.
 
 ##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>

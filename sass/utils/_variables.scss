@@ -296,8 +296,8 @@ $messages: (
       'en': '[href=attr(href)] attribute. Why? A <button> would be semantically better.'
     ),
     'href-js': (
-      'fr': 'Attribut [href] débutant par javascript. Ça n’augure rien de bon…',
-      'en': '[href] attribute starting with `javascript:`. Doesn`t sound good…'
+      'fr': 'Attribut [href] débutant par javascript. Ça n’augure rien de bon… \A Sauf si c’est un bookmarklet. Genre a11y.css :)',
+      'en': '[href] attribute starting with `javascript:`. Doesn`t sound good… \A Except for a bookmarklet. Like a11y.css :)'
     )
   ),
 
