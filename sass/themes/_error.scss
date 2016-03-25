@@ -178,8 +178,8 @@ input[type="image"]:not([alt])
 
 ##Test
 ```html_example
-<img src="static/ffoodd.png" width="144" height="144" /><i> </i>
-<input type="image" src="static/ffoodd.png" /><i> </i>
+<img src="static/ffoodd.png" width="144" height="144" /><span>†</span>
+<input type="image" src="static/ffoodd.png" /><span>†</span>
 ```
 */
 img:not([alt]),
@@ -220,8 +220,8 @@ input[type="image"][srcset="#"]
 
 ##Test
 ```html_example
-<img alt="Missing src" width="144" height="144" /><i> </i>
-<input type="image" alt="Missing src" /><i> </i>
+<img alt="Missing src" width="144" height="144" /><span>†</span>
+<input type="image" alt="Missing src" /><span>†</span>
 ```
 */
 img:not([src]):not([srcset]),
@@ -298,7 +298,7 @@ select:not([id]):not([aria-label]):not([aria-labelledby])
 
 ##Test
 ```html_example
-<input type="text" /><i> </i>
+<input type="text" /><span>†</span>
 ```
 */
 input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
@@ -333,9 +333,9 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 
 ##Test
 ```html_example
-<input type="reset" /><i> </i>
-<input type="submit" /><i> </i>
-<input type="button" /><i> </i>
+<input type="reset" /><span>†</span>
+<input type="submit" /><span>†</span>
+<input type="button" /><span>†</span>
 ```
 */
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
@@ -566,7 +566,7 @@ input[type=""]
 ##Test
 ```html_example
 <label for="No-type">No type</label>
-<input value="Whatever you want" id="No-type"/><i> </i>
+<input value="Whatever you want" id="No-type"/><span>†</span>
 ```
 */
 input:not([type]),
@@ -641,7 +641,7 @@ iframe[title=""]
 
 ##Test
 ```html_example
-<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe><i> </i>
+<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe><span>†</span>
 ```
 */
 iframe:not([title]),

@@ -2922,7 +2922,7 @@ A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 ```html_example
 <form class="search" action="">
   <label for="field">Search</label>
-  <input type="search" id="field" /><i> </i>
+  <input type="search" id="field" /><i>†</i>
 </form>
 ```
 */
@@ -2950,7 +2950,7 @@ A `[required]` or `[aria-required]` should be visually understandable.
 ```html_example
 <form action="">
   <label for="field">Fied</label>
-  <textarea id="field" required></textarea><i> </i>
+  <textarea id="field" required></textarea><i>†</i>
 </form>
 ```
 */
@@ -2996,7 +2996,7 @@ A `[placeholder]` is not a label, isn't it?
 
 ##Test
 ```html_example
-<input type="text" placeholder="Look Ma, no label!" id="test"><i> </i>
+<input type="text" placeholder="Look Ma, no label!" id="test"><i>†</i>
 ```
 */
 /*doc
@@ -3024,7 +3024,7 @@ audio
 
 ##Test
 ```html_example
-<video src="/" controls></video><i> </i>
+<video src="/" controls></video><i>†</i>
 ```
 */
 /*doc
@@ -3052,7 +3052,7 @@ svg[aria-label][title]
 
 ##Test
 ```html_example
-<svg aria-label="I'm a label!" title="I'm a title!"> </svg><i> </i>
+<img src="static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144">
 ```
 */
 /*doc
@@ -3725,7 +3725,7 @@ object[type="image"][alt=""]
 
 ##Test
 ```html_example
-<img alt="" src="static/ffoodd.png" width="144" height="144" /><i> </i>
+<img alt="" src="static/ffoodd.png" width="144" height="144" /><i>†</i>
 ```
 */
 img[alt=""]::before,
@@ -3776,7 +3776,7 @@ svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-lab
      xmlns="http://www.w3.org/2000/svg" version="1.1">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
-</svg><i> </i>
+</svg><i>†</i>
 ```
 */
 svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby])::before,
@@ -3808,7 +3808,7 @@ audio[autoplay]
 
 ##Test
 ```html_example
-<video autoplay controls src=""></video><i> </i>
+<video autoplay controls src=""></video><i>†</i>
 ```
 */
 video[autoplay]::before,
@@ -3843,7 +3843,7 @@ audio:not([controls])
 
 ##Test
 ```html_example
-<video src=""></video><i> </i>
+<video src=""></video><i>†</i>
 ```
 */
 video:not([controls])::before,
@@ -4306,7 +4306,7 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"])
 
 ##Test
 ```html_example
-<img src="spacer.gif" alt="Spacer.gif" width="100" height="100"/><i> </i>
+<img src="spacer.gif" alt="Spacer.gif" width="100" height="100"/><i>†</i>
 ```
 */
 img[src*="1px.gif"]:not([role="presentation"])::before,
@@ -5014,8 +5014,8 @@ input[type="image"]:not([alt])
 
 ##Test
 ```html_example
-<img src="static/ffoodd.png" width="144" height="144" /><i> </i>
-<input type="image" src="static/ffoodd.png" /><i> </i>
+<img src="static/ffoodd.png" width="144" height="144" /><i>†</i>
+<input type="image" src="static/ffoodd.png" /><i>†</i>
 ```
 */
 img:not([alt])::before,
@@ -5058,8 +5058,8 @@ input[type="image"][srcset="#"]
 
 ##Test
 ```html_example
-<img alt="Missing src" width="144" height="144" /><i> </i>
-<input type="image" alt="Missing src" /><i> </i>
+<img alt="Missing src" width="144" height="144" /><i>†</i>
+<input type="image" alt="Missing src" /><i>†</i>
 ```
 */
 img:not([src]):not([srcset])::before,
@@ -5144,7 +5144,7 @@ select:not([id]):not([aria-label]):not([aria-labelledby])
 
 ##Test
 ```html_example
-<input type="text" /><i> </i>
+<input type="text" /><i>†</i>
 ```
 */
 input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby])::before,
@@ -5181,9 +5181,9 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 
 ##Test
 ```html_example
-<input type="reset" /><i> </i>
-<input type="submit" /><i> </i>
-<input type="button" /><i> </i>
+<input type="reset" /><i>†</i>
+<input type="submit" /><i>†</i>
+<input type="button" /><i>†</i>
 ```
 */
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])::before,
@@ -5499,7 +5499,7 @@ input[type=""]
 ##Test
 ```html_example
 <label for="No-type">No type</label>
-<input value="Whatever you want" id="No-type"/><i> </i>
+<input value="Whatever you want" id="No-type"/><i>†</i>
 ```
 */
 input:not([type])::before,
@@ -5575,7 +5575,7 @@ iframe[title=""]
 
 ##Test
 ```html_example
-<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe><i> </i>
+<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe><i>†</i>
 ```
 */
 iframe:not([title])::before,

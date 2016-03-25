@@ -388,7 +388,7 @@ A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 ```html_example
 <form class="search" action="">
   <label for="field">Search</label>
-  <input type="search" id="field" /><i> </i>
+  <input type="search" id="field" /><span>†</span>
 </form>
 ```
 */
@@ -427,7 +427,7 @@ A `[required]` or `[aria-required]` should be visually understandable.
 ```html_example
 <form action="">
   <label for="field">Fied</label>
-  <textarea id="field" required></textarea><i> </i>
+  <textarea id="field" required></textarea><span>†</span>
 </form>
 ```
 */
@@ -501,7 +501,7 @@ A `[placeholder]` is not a label, isn't it?
 
 ##Test
 ```html_example
-<input type="text" placeholder="Look Ma, no label!" id="test"><i> </i>
+<input type="text" placeholder="Look Ma, no label!" id="test"><span>†</span>
 ```
 */
 [placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
@@ -534,7 +534,7 @@ audio
 
 ##Test
 ```html_example
-<video src="/" controls></video><i> </i>
+<video src="/" controls></video><span>†</span>
 ```
 */
 video,
@@ -568,7 +568,7 @@ svg[aria-label][title]
 
 ##Test
 ```html_example
-<svg aria-label="I'm a label!" title="I'm a title!"> </svg><i> </i>
+<img src="static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144">
 ```
 */
 img[alt][title],

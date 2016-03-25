@@ -443,7 +443,7 @@ object[type="image"][alt=""]
 
 ##Test
 ```html_example
-<img alt="" src="static/ffoodd.png" width="144" height="144" /><i> </i>
+<img alt="" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
 */
 img[alt=""],
@@ -492,7 +492,7 @@ svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-lab
      xmlns="http://www.w3.org/2000/svg" version="1.1">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
-</svg><i> </i>
+</svg><span>†</span>
 ```
 */
 svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) {
@@ -524,7 +524,7 @@ audio[autoplay]
 
 ##Test
 ```html_example
-<video autoplay controls src=""></video><i> </i>
+<video autoplay controls src=""></video><span>†</span>
 ```
 */
 video[autoplay],
@@ -558,7 +558,7 @@ audio:not([controls])
 
 ##Test
 ```html_example
-<video src=""></video><i> </i>
+<video src=""></video><span>†</span>
 ```
 */
 video:not([controls]),
@@ -902,7 +902,7 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"])
 
 ##Test
 ```html_example
-<img src="spacer.gif" alt="Spacer.gif" width="100" height="100"/><i> </i>
+<img src="spacer.gif" alt="Spacer.gif" width="100" height="100"/><span>†</span>
 ```
 */
 img[src*="1px.gif"]:not([role="presentation"]),
