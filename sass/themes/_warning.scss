@@ -604,16 +604,29 @@ body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(tex
 <p id="-moz-only-whitespace"> </p>
 ```
 */
+/**
+ * 1. An empty tag without dimensions isn't hoverable :/
+ * @note Won't do anything for inline elements.
+ */
 body *:empty:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   @include warning('empty-nodes');
+  /* 1 */
+  min-height: 1px;
+  min-width: 1px;
 }
 
 body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   @include warning('empty-nodes', $self-closing: false, $quarantine: true);
+  /* 1 */
+  min-height: 1px;
+  min-width: 1px;
 }
 
 body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   @include warning('empty-nodes', $self-closing: false, $quarantine: true);
+  /* 1 */
+  min-height: 1px;
+  min-width: 1px;
 }
 
 svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
