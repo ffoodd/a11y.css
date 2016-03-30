@@ -130,7 +130,7 @@ article > section:first-child::before,
 article > article:first-child::before, fieldset > :first-child:not(legend)::before,
 fieldset > legend:not(:first-child)::before, abbr:not([title])::before,
 abbr[title=""]::before, embed[type="image"][alt=""]::before,
-object[type="image"][alt=""]::before, body :not(title):not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([aria-hidden]):not([hidden]):empty::before, table:not([role="presentation"]) > tr:only-child::before,
+object[type="image"][alt=""]::before, body :not(title):not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([src]):not([aria-hidden]):not([hidden]):empty::before, table:not([role="presentation"]) > tr:only-child::before,
 table:not([role="presentation"]) > tbody > tr:only-child::before, table:not([role="presentation"]) > caption:not(:first-child)::before,
 table:not([role="presentation"]) > :not(caption):first-child::before, table > tfoot ~ thead::before,
 table > tbody ~ tfoot::before,
@@ -509,7 +509,7 @@ article > section:first-child:hover::before,
 article > article:first-child:hover::before, fieldset > :first-child:not(legend):hover::before,
 fieldset > legend:not(:first-child):hover::before, abbr:not([title]):hover::before,
 abbr[title=""]:hover::before, embed[type="image"][alt=""]:hover::before,
-object[type="image"][alt=""]:hover::before, body :not(title):not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([aria-hidden]):not([hidden]):empty:hover::before, table:not([role="presentation"]) > tr:only-child:hover::before,
+object[type="image"][alt=""]:hover::before, body :not(title):not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([src]):not([aria-hidden]):not([hidden]):empty:hover::before, table:not([role="presentation"]) > tr:only-child:hover::before,
 table:not([role="presentation"]) > tbody > tr:only-child:hover::before, table:not([role="presentation"]) > caption:not(:first-child):hover::before,
 table:not([role="presentation"]) > :not(caption):first-child:hover::before, table > tfoot ~ thead:hover::before,
 table > tbody ~ tfoot:hover::before,
@@ -548,7 +548,7 @@ article > section:first-child:focus::before,
 article > article:first-child:focus::before, fieldset > :first-child:not(legend):focus::before,
 fieldset > legend:not(:first-child):focus::before, abbr:not([title]):focus::before,
 abbr[title=""]:focus::before, embed[type="image"][alt=""]:focus::before,
-object[type="image"][alt=""]:focus::before, body :not(title):not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([aria-hidden]):not([hidden]):empty:focus::before, table:not([role="presentation"]) > tr:only-child:focus::before,
+object[type="image"][alt=""]:focus::before, body :not(title):not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([src]):not([aria-hidden]):not([hidden]):empty:focus::before, table:not([role="presentation"]) > tr:only-child:focus::before,
 table:not([role="presentation"]) > tbody > tr:only-child:focus::before, table:not([role="presentation"]) > caption:not(:first-child):focus::before,
 table:not([role="presentation"]) > :not(caption):first-child:focus::before, table > tfoot ~ thead:focus::before,
 table > tbody ~ tfoot:focus::before,
@@ -1043,7 +1043,7 @@ article > section:first-child,
 article > article:first-child, fieldset > *:not(legend):first-child,
 fieldset > legend:not(:first-child), abbr:not([title]),
 abbr[title=""], embed[type="image"][alt=""],
-object[type="image"][alt=""], body *:empty:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title), table:not([role="presentation"]) > tr:only-child,
+object[type="image"][alt=""], body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title), table:not([role="presentation"]) > tr:only-child,
 table:not([role="presentation"]) > tbody > tr:only-child, table:not([role="presentation"]) > caption:not(:first-child),
 table:not([role="presentation"]) > *:first-child:not(caption), table > tfoot ~ thead,
 table > tbody ~ tfoot,
@@ -1087,7 +1087,7 @@ table:not([role="presentation"]) > tbody:first-child, th:not([scope]):not([id]),
   article > article:first-child::before, fieldset > :first-child:not(legend)::before,
   fieldset > legend:not(:first-child)::before, abbr:not([title])::before,
   abbr[title=""]::before, embed[type="image"][alt=""]::before,
-  object[type="image"][alt=""]::before, body :not(title):not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([aria-hidden]):not([hidden]):empty::before, table:not([role="presentation"]) > tr:only-child::before,
+  object[type="image"][alt=""]::before, body :not(title):not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([src]):not([aria-hidden]):not([hidden]):empty::before, table:not([role="presentation"]) > tr:only-child::before,
   table:not([role="presentation"]) > tbody > tr:only-child::before, table:not([role="presentation"]) > caption:not(:first-child)::before,
   table:not([role="presentation"]) > :not(caption):first-child::before, table > tfoot ~ thead::before,
   table > tbody ~ tfoot::before,
@@ -1362,11 +1362,11 @@ iframe[title=""], area[width]:not(img):not(object):not(embed):not(svg):not(canva
     color: #602020 !important;
     z-index: 2147483647 !important; }
 
-svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr), form button:not([type]):not([form]):not([formaction]):not([formtarget]), svg :hover:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr), form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]), svg :focus:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr), form button:focus:not([type]):not([form]):not([formaction]):not([formtarget]) {
+svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr), form button:not([type]):not([form]):not([formaction]):not([formtarget]), svg :hover:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr), form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]), svg :focus:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr), form button:focus:not([type]):not([form]):not([formaction]):not([formtarget]) {
   counter-increment: none !important;
   outline: none !important;
   outline-offset: 0 !important; }
-  svg :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([aria-hidden]):not([hidden]):not(desc):not(title):empty::before, form button:not([formtarget]):not([formaction]):not([form]):not([type])::before, svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) ~ ::after, form button:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after, svg :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([aria-hidden]):not([hidden]):not(desc):not(title):empty:hover::before, form button:not([formtarget]):not([formaction]):not([form]):not([type]):hover::before, svg :hover:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) ~ ::after, form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after, svg :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([aria-hidden]):not([hidden]):not(desc):not(title):empty:focus::before, form button:not([formtarget]):not([formaction]):not([form]):not([type]):focus::before, svg :focus:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) ~ ::after, form button:focus:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after {
+  svg :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([src]):not([aria-hidden]):not([hidden]):not(desc):not(title):empty::before, form button:not([formtarget]):not([formaction]):not([form]):not([type])::before, svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) ~ ::after, form button:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after, svg :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([src]):not([aria-hidden]):not([hidden]):not(desc):not(title):empty:hover::before, form button:not([formtarget]):not([formaction]):not([form]):not([type]):hover::before, svg :hover:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) ~ ::after, form button:hover:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after, svg :not(wbr):not(track):not(source):not(param):not(meta):not(link):not(keygen):not(input):not(img):not(hr):not(embed):not(command):not(col):not(br):not(base):not(area):not(textarea):not(iframe):not([src]):not([aria-hidden]):not([hidden]):not(desc):not(title):empty:focus::before, form button:not([formtarget]):not([formaction]):not([form]):not([type]):focus::before, svg :focus:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) ~ ::after, form button:focus:not([type]):not([form]):not([formaction]):not([formtarget]) ~ ::after {
     content: '' !important; }
 
 html {
@@ -2762,6 +2762,10 @@ category: Warnings
 Obviously void elements are empty, as well as `<iframe>` and `<textarea>` could be `:empty`.
 Any other `:empty` tag that is not hidden is probably useless, and should be deleted.
 
+Please note that it's disabled for tags owning a source through `[src]`. It's pretty opinionated,
+but it's meant to avoid false positives on tags such as `<video>` or `<audio>` which may be
+empty if they have at least one source specified through `[src]`.
+
 Note: this test only targets tags in `<body>`, since most of head's tags should be empty.
 
 We also use the `:blank` pseudo-class, but at this time its support is very poor.
@@ -2776,9 +2780,9 @@ We also use the `:-moz-only-whitespace` pseudo-class, which is an alias of `:bla
 
 ##Selector
 ```css_example
-body *:empty:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
-body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
-body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
+body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
+body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
+body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
 ```
 
 ##Test
@@ -2792,21 +2796,21 @@ body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(tex
  * 1. An empty tag without dimensions isn't hoverable :/
  * @note Won't do anything for inline elements.
  */
-body *:empty:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
+body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   /* 1 */
   min-height: 1px;
   min-width: 1px; }
-  body *:empty:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
+  body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
     content: "☢  Élément vide. Diantre." !important; }
 
-body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
+body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   counter-increment: warning;
   outline: 4px solid Gold !important;
   outline-offset: -4px;
   /* 1 */
   min-height: 1px;
   min-width: 1px; }
-  body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
+  body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
     border-style: solid                                                   !important;
     border-width: 0 0 1px                                                 !important;
     border-radius: 0                                                      !important;
@@ -2833,21 +2837,21 @@ body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area
     border-color: #bfab40 !important;
     color: #605620 !important;
     z-index: 2147483646 !important; }
-  body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):hover::before, body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):focus::before {
+  body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):hover::before, body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):focus::before {
     opacity: 1;
     transform: translateY(0) translateZ(0) !important;
     transition: transform .3s ease-in                             !important; }
-  body *:blank:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
+  body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
     content: "☢  Élément vide. Diantre." !important; }
 
-body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
+body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   counter-increment: warning;
   outline: 4px solid Gold !important;
   outline-offset: -4px;
   /* 1 */
   min-height: 1px;
   min-width: 1px; }
-  body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
+  body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
     border-style: solid                                                   !important;
     border-width: 0 0 1px                                                 !important;
     border-radius: 0                                                      !important;
@@ -2874,11 +2878,11 @@ body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(tex
     border-color: #bfab40 !important;
     color: #605620 !important;
     z-index: 2147483646 !important; }
-  body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):hover::before, body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):focus::before {
+  body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):hover::before, body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title):focus::before {
     opacity: 1;
     transform: translateY(0) translateZ(0) !important;
     transition: transform .3s ease-in                             !important; }
-  body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
+  body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
     content: "☢  Élément vide. Diantre." !important; }
 
 /*doc
