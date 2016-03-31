@@ -1139,6 +1139,16 @@ a[target$="blank"]::after {
   min-height: 1em;
 }
 
+.skip {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+
+.skip:focus {
+  opacity: 1;
+}
+
 @media only screen and (max-width: 67.5em) {
   nav ul {
     justify-content: space-between;
@@ -1240,8 +1250,6 @@ a[target$="blank"]::after {
     left: calc( 50% - 50vw + 2.25rem );
   }
 }
-
-
 
 @media only screen and (max-width: 50em) {
   h1,

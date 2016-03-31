@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/a11y-en.css" media="(min-width: 800px)">
   </head>
   <body>
+    <a href="#toc" class="skip">Skip to table of content</a>
+    <a href="#content" class="skip">Skip to content</a>
 
     <header role="banner" id="top" class="main">
       <a href="http://ffoodd.github.io/a11y.css/">
@@ -55,7 +57,7 @@
     <main role="main">
       <aside>
         <h2><%= title %></h2>
-        <ol id="toc">
+        <ol id="toc" tabindex="-1">
           <% @blocks.each do |block| %>
             <li>
               <a href="#<%= block[:name] %>"><%= block[:title] %></a>
@@ -64,7 +66,6 @@
         </ol>
 
         <div>
-
           <form action="/" id="bookmarklet">
             <fieldset>
               <legend>Bookmarlet generator</legend>
@@ -99,5 +100,5 @@
         </div>
       </aside>
           
-      <div>
+      <div id="content" tabindex="-1">
 
