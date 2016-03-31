@@ -174,7 +174,7 @@ $messages: (
     ),
     'dimensions': (
       'fr': 'Sapristi ! Les attributs [width] et [height] ne sont autorisés que sur les <img>, <object>, <embed>, <svg> et <canvas> !',
-      'en': 'By jove! [width] & [height] attributes are forbidden on any tags but , <object>, <embed>, <svg> and <canvas>!'
+      'en': 'By jove! [width] & [height] attributes are forbidden on any tags but <img>, <object>, <embed>, <svg> and <canvas>!'
     ),
     'no-lang': (
       'fr': 'Pas d’attribut lang/xml:lang sur la balise <html>. \A JAWS va avoir un accent chelou.',

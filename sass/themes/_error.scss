@@ -209,32 +209,40 @@ An `<img>` must have an `[src]` or an `[srcset]`. Obviously.
 img:not([src]):not([srcset]),
 img[src=""],
 img[src="#"],
+img[src="/"],
 img[srcset=""],
 img[srcset="#"],
+img[srcset="/"],
 input[type="image"]:not([src]):not([srcset]),
 input[type="image"][src=""],
 input[type="image"][src="#"],
+input[type="image"][src="/"],
 input[type="image"][srcset=""],
 input[type="image"][srcset="#"]
+input[type="image"][srcset="/"]
 ```
 
 ##Test
 ```html_example
-<img alt="Missing src" width="144" height="144" /><span>†</span>
-<input type="image" alt="Missing src" /><span>†</span>
+<img alt="Missing src" width="144" height="144" />
+<input type="image" alt="Missing src" />
 ```
 */
 img:not([src]):not([srcset]),
 img[src=""],
 img[src="#"],
+img[src="/"],
 img[srcset=""],
 img[srcset="#"],
+img[srcset="/"],
 input[type="image"]:not([src]):not([srcset]),
 input[type="image"][src=""],
 input[type="image"][src="#"],
+input[type="image"][src="/"],
 input[type="image"][srcset=""],
-input[type="image"][srcset="#"] {
-  @include error('no-src', $self-closing: true);
+input[type="image"][srcset="#"],
+input[type="image"][srcset="/"] {
+  @include error('no-src');
 }
 
 
