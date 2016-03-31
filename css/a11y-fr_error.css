@@ -2008,29 +2008,6 @@ th:not([scope]):not([id])
 */
 /*doc
 ---
-title: "toggle [class] without [aria-*]"
-name: aria-pressed
-category: Warnings
----
-
-##Description
-Anything with a `[class]` containing "toggle" probably needs some ARIA flavour, isn't it?
-
-##References
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L185>
-
-##Selector
-```css_example
-[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])
-```
-
-##Test
-```html_example
-<a class="toggle-machin" href="/">Do I toggle anything?</a>
-```
-*/
-/*doc
----
 title: "spacer.gif used"
 name: spacer-gif
 category: Warnings

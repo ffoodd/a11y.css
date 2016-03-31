@@ -134,7 +134,7 @@ object[type="image"][alt=""]::before, body :not(title):not(wbr):not(track):not(s
 table:not([role="presentation"]) > tbody > tr:only-child::before, table:not([role="presentation"]) > caption:not(:first-child)::before,
 table:not([role="presentation"]) > :not(caption):first-child::before, table > tfoot ~ thead::before,
 table > tbody ~ tfoot::before,
-table > tbody ~ thead::before, table:not([role="presentation"]) > caption + tbody::before, th:not([id]):not([scope])::before, [class*="toggle"]:not([aria-haspopup]):not([aria-expanded])::before, [id*="NaN"]::before,
+table > tbody ~ thead::before, table:not([role="presentation"]) > caption + tbody::before, th:not([id]):not([scope])::before, [id*="NaN"]::before,
 [id*="null"]::before,
 [class*="NaN"]::before,
 [class*="null"]::before,
@@ -143,7 +143,7 @@ table > tbody ~ thead::before, table:not([role="presentation"]) > caption + tbod
 area[alt=""] ~ ::after,
 input[type="image"][alt=""] ~ ::after, svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) ~ ::after, video[autoplay] ~ ::after,
 audio[autoplay] ~ ::after, video:not([controls]) ~ ::after,
-audio:not([controls]) ~ ::after, area[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, base[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, br[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, col[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, command[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, embed[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, hr[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, img[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, input[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, keygen[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, link[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, meta[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, param[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, source[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, track[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, wbr[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, textarea[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, select[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, svg[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, audio[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, video[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, iframe[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, img[src*="1px.gif"]:not([role="presentation"]) ~ ::after,
+audio:not([controls]) ~ ::after, img[src*="1px.gif"]:not([role="presentation"]) ~ ::after,
 img[src*="1x1.gif"]:not([role="presentation"]) ~ ::after,
 img[src*="clear.gif"]:not([role="presentation"]) ~ ::after,
 img[src*="spacer.gif"]:not([role="presentation"]) ~ ::after,
@@ -517,7 +517,7 @@ object[type="image"][alt=""]:hover::before, body :not(title):not(wbr):not(track)
 table:not([role="presentation"]) > tbody > tr:only-child:hover::before, table:not([role="presentation"]) > caption:not(:first-child):hover::before,
 table:not([role="presentation"]) > :not(caption):first-child:hover::before, table > tfoot ~ thead:hover::before,
 table > tbody ~ tfoot:hover::before,
-table > tbody ~ thead:hover::before, table:not([role="presentation"]) > caption + tbody:hover::before, th:not([id]):not([scope]):hover::before, [class*="toggle"]:not([aria-haspopup]):not([aria-expanded]):hover::before, [id*="NaN"]:hover::before,
+table > tbody ~ thead:hover::before, table:not([role="presentation"]) > caption + tbody:hover::before, th:not([id]):not([scope]):hover::before, [id*="NaN"]:hover::before,
 [id*="null"]:hover::before,
 [class*="NaN"]:hover::before,
 [class*="null"]:hover::before,
@@ -556,7 +556,7 @@ object[type="image"][alt=""]:focus::before, body :not(title):not(wbr):not(track)
 table:not([role="presentation"]) > tbody > tr:only-child:focus::before, table:not([role="presentation"]) > caption:not(:first-child):focus::before,
 table:not([role="presentation"]) > :not(caption):first-child:focus::before, table > tfoot ~ thead:focus::before,
 table > tbody ~ tfoot:focus::before,
-table > tbody ~ thead:focus::before, table:not([role="presentation"]) > caption + tbody:focus::before, th:not([id]):not([scope]):focus::before, [class*="toggle"]:not([aria-haspopup]):not([aria-expanded]):focus::before, [id*="NaN"]:focus::before,
+table > tbody ~ thead:focus::before, table:not([role="presentation"]) > caption + tbody:focus::before, th:not([id]):not([scope]):focus::before, [id*="NaN"]:focus::before,
 [id*="null"]:focus::before,
 [class*="NaN"]:focus::before,
 [class*="null"]:focus::before,
@@ -565,7 +565,7 @@ table > tbody ~ thead:focus::before, table:not([role="presentation"]) > caption 
 area[alt=""]:hover ~ ::after,
 input[type="image"][alt=""]:hover ~ ::after, svg:hover:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) ~ ::after, video[autoplay]:hover ~ ::after,
 audio[autoplay]:hover ~ ::after, video:hover:not([controls]) ~ ::after,
-audio:hover:not([controls]) ~ ::after, area[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, base[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, br[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, col[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, command[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, embed[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, hr[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, img[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, input[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, keygen[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, link[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, meta[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, param[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, source[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, track[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, wbr[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, textarea[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, select[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, svg[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, audio[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, video[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, iframe[class*="toggle"]:hover:not([aria-expanded]):not([aria-haspopup]) ~ ::after, img[src*="1px.gif"]:hover:not([role="presentation"]) ~ ::after,
+audio:hover:not([controls]) ~ ::after, img[src*="1px.gif"]:hover:not([role="presentation"]) ~ ::after,
 img[src*="1x1.gif"]:hover:not([role="presentation"]) ~ ::after,
 img[src*="clear.gif"]:hover:not([role="presentation"]) ~ ::after,
 img[src*="spacer.gif"]:hover:not([role="presentation"]) ~ ::after,
@@ -575,7 +575,7 @@ img[src*="pixel-1x1-clear.gif"]:hover:not([role="presentation"]) ~ ::after, area
 area[alt=""]:focus ~ ::after,
 input[type="image"][alt=""]:focus ~ ::after, svg:focus:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) ~ ::after, video[autoplay]:focus ~ ::after,
 audio[autoplay]:focus ~ ::after, video:focus:not([controls]) ~ ::after,
-audio:focus:not([controls]) ~ ::after, area[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, base[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, br[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, col[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, command[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, embed[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, hr[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, img[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, input[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, keygen[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, link[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, meta[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, param[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, source[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, track[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, wbr[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, textarea[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, select[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, svg[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, audio[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, video[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, iframe[class*="toggle"]:focus:not([aria-expanded]):not([aria-haspopup]) ~ ::after, img[src*="1px.gif"]:focus:not([role="presentation"]) ~ ::after,
+audio:focus:not([controls]) ~ ::after, img[src*="1px.gif"]:focus:not([role="presentation"]) ~ ::after,
 img[src*="1x1.gif"]:focus:not([role="presentation"]) ~ ::after,
 img[src*="clear.gif"]:focus:not([role="presentation"]) ~ ::after,
 img[src*="spacer.gif"]:focus:not([role="presentation"]) ~ ::after,
@@ -1060,7 +1060,7 @@ table:not([role="presentation"]) > tbody > tr:only-child, table:not([role="prese
 table:not([role="presentation"]) > *:first-child:not(caption), table > tfoot ~ thead,
 table > tbody ~ tfoot,
 table > tbody ~ thead, table:not([role="presentation"]) > caption + tbody,
-table:not([role="presentation"]) > tbody:first-child, th:not([scope]):not([id]), [class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), [id*="NaN"],
+table:not([role="presentation"]) > tbody:first-child, th:not([scope]):not([id]), [id*="NaN"],
 [id*="null"],
 [class*="NaN"],
 [class*="null"],
@@ -1103,7 +1103,7 @@ table:not([role="presentation"]) > tbody:first-child, th:not([scope]):not([id]),
   table:not([role="presentation"]) > tbody > tr:only-child::before, table:not([role="presentation"]) > caption:not(:first-child)::before,
   table:not([role="presentation"]) > :not(caption):first-child::before, table > tfoot ~ thead::before,
   table > tbody ~ tfoot::before,
-  table > tbody ~ thead::before, table:not([role="presentation"]) > caption + tbody::before, th:not([id]):not([scope])::before, [class*="toggle"]:not([aria-haspopup]):not([aria-expanded])::before, [id*="NaN"]::before,
+  table > tbody ~ thead::before, table:not([role="presentation"]) > caption + tbody::before, th:not([id]):not([scope])::before, [id*="NaN"]::before,
   [id*="null"]::before,
   [class*="NaN"]::before,
   [class*="null"]::before,
@@ -1118,7 +1118,7 @@ img[alt=""],
 area[alt=""],
 input[type="image"][alt=""], svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]), video[autoplay],
 audio[autoplay], video:not([controls]),
-audio:not([controls]), area[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), base[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), br[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), col[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), command[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), embed[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), hr[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), img[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), input[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), keygen[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), link[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), meta[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), param[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), source[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), track[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), wbr[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), textarea[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), select[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), svg[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), audio[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), video[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), iframe[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]), img[src*="1px.gif"]:not([role="presentation"]),
+audio:not([controls]), img[src*="1px.gif"]:not([role="presentation"]),
 img[src*="1x1.gif"]:not([role="presentation"]),
 img[src*="clear.gif"]:not([role="presentation"]),
 img[src*="spacer.gif"]:not([role="presentation"]),
@@ -1133,7 +1133,7 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"]), area[id*="NaN"], are
   area[alt=""] ~ ::after,
   input[type="image"][alt=""] ~ ::after, svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) ~ ::after, video[autoplay] ~ ::after,
   audio[autoplay] ~ ::after, video:not([controls]) ~ ::after,
-  audio:not([controls]) ~ ::after, area[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, base[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, br[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, col[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, command[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, embed[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, hr[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, img[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, input[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, keygen[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, link[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, meta[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, param[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, source[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, track[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, wbr[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, textarea[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, select[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, svg[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, audio[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, video[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, iframe[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, img[src*="1px.gif"]:not([role="presentation"]) ~ ::after,
+  audio:not([controls]) ~ ::after, img[src*="1px.gif"]:not([role="presentation"]) ~ ::after,
   img[src*="1x1.gif"]:not([role="presentation"]) ~ ::after,
   img[src*="clear.gif"]:not([role="presentation"]) ~ ::after,
   img[src*="spacer.gif"]:not([role="presentation"]) ~ ::after,
@@ -3114,35 +3114,6 @@ th:not([scope]):not([id])
 */
 th:not([scope]):not([id])::before {
   content: "☢  Does this head cell apply to a full line/row, or not? \aIf so, think of [scope]. If not, use an [id] with [headers]." !important; }
-
-/*doc
----
-title: "toggle [class] without [aria-*]"
-name: aria-pressed
-category: Warnings
----
-
-##Description
-Anything with a `[class]` containing "toggle" probably needs some ARIA flavour, isn't it?
-
-##References
-* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L185>
-
-##Selector
-```css_example
-[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])
-```
-
-##Test
-```html_example
-<a class="toggle-machin" href="/">Do I toggle anything?</a>
-```
-*/
-[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before {
-  content: "☢  If it is toggleable, you should supply an [aria-expanded] or [aria-haspopup] attribute. Thanks!" !important; }
-
-area[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, area[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, base[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, base[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, br[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, br[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, col[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, col[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, command[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, command[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, embed[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, embed[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, hr[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, hr[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, img[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, img[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, input[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, input[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, keygen[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, keygen[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, link[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, link[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, meta[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, meta[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, param[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, param[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, source[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, source[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, track[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, track[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, wbr[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, wbr[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, textarea[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, textarea[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, select[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, select[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, svg[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, svg[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, audio[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, audio[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, video[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, video[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after, iframe[class*="toggle"]:not([aria-expanded]):not([aria-haspopup])::before, iframe[class*="toggle"]:not([aria-expanded]):not([aria-haspopup]) ~ ::after {
-  content: "☢  If it is toggleable, you should supply an [aria-expanded] or [aria-haspopup] attribute. Thanks!" !important; }
 
 /*doc
 ---
