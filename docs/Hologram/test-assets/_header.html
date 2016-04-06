@@ -56,14 +56,16 @@
     
     <main role="main">
       <aside>
-        <h2><%= title %></h2>
-        <ol id="toc" tabindex="-1">
-          <% @blocks.each do |block| %>
-            <li>
-              <a href="#<%= block[:name] %>"><%= block[:title] %></a>
-            </li>
-          <% end %>
-        </ol>
+        <nav role="navigation" aria-labelledby="toc-title" id="toc" tabindex="-1">
+          <p class="h2-like" id="toc-title">Table of content</p>
+          <ol>
+            <% @blocks.each do |block| %>
+              <li>
+                <a href="#<%= block[:name] %>"><%= block[:title] %></a>
+              </li>
+            <% end %>
+          </ol>
+        </nav>
 
         <div>
           <form action="/" id="bookmarklet">
@@ -101,4 +103,5 @@
       </aside>
           
       <div id="content" tabindex="-1">
+        <h1><%= title %></h1>
 

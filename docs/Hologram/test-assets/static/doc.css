@@ -535,11 +535,11 @@ header > a:focus {
   color: #911;
 }
 
-nav {
+header nav {
   align-self: center;
 }
 
-nav ul {
+header nav ul {
   display: flex;
   flex-flow: row wrap;
   list-style: none;
@@ -547,7 +547,7 @@ nav ul {
   padding: 0;
 }
 
-nav a {
+header nav a {
   display: inline-block;
   padding: .75em 1em;
   position: relative;
@@ -560,8 +560,8 @@ nav a {
  * @see http://tympanus.net/codrops/2013/08/06/creative-link-effects/
  * @see http://tympanus.net/Development/CreativeLinkEffects/#cl-effect-12
  */
-nav a::after,
-nav a::before {
+header nav a::after,
+header nav a::before {
   border: 2px solid;
   border-radius: .25rem;
   content: "";
@@ -575,7 +575,7 @@ nav a::before {
   width: calc( 100% - .5em );
 }
 
-nav a::after {
+header nav a::after {
   background: currentColor;
   border: 0;
   height: 2.5rem;
@@ -608,10 +608,10 @@ nav a::after {
   transform: translate3d( -50%, -50%, 0 ) scale( .2 ) rotate( 45deg );
 }
 
-nav a:hover::after,
-nav a:hover::before,
-nav a:focus::after,
-nav a:focus::before,
+header nav a:hover::after,
+header nav a:hover::before,
+header nav a:focus::after,
+header nav a:focus::before,
 [class="Index "] .index::after,
 [class="Index "] .index::before,
 .Errors .errors::after,
@@ -692,20 +692,20 @@ textarea {
 
 h1, h2, h3,
 h4, h5, h6,
-strong, b, legend {
+strong, b, legend,
+.h2-like {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
 }
 
 h1 {
-  color: #483d23;
   font-size: 3em;
   line-height: 1;
   margin: 1em 0 .5em;
 }
 
-h1 {
+h1[id] {
   background-color: inherit;
   color: inherit;
   counter-increment: titles;
@@ -717,12 +717,12 @@ h1 {
   z-index: 1;
 }
 
-h1:nth-of-type(9) ~ h1 {
+h1[id]:nth-of-type(10) ~ h1[id] {
   padding: 0 0 0 2ch;
 }
 
-h1::after,
-h1::before {
+h1[id]::after,
+h1[id]::before {
   background: #f3f0e0;
   bottom: 0;
   content: "";
@@ -732,7 +732,7 @@ h1::before {
   z-index: -2;
 }
 
-h1::before {
+h1[id]::before {
   background-color: #ece7d4;
   background-image:
     radial-gradient( rgba( 0, 0, 0, .05 ) 15%, transparent 16%),
@@ -743,7 +743,7 @@ h1::before {
   width: 67vw;
 }
 
-h1::after {
+h1[id]::after {
   background-color: inherit;
   color: #e5dec8;
   content: counter(titles) ".";
@@ -755,7 +755,8 @@ h1::after {
   z-index: -1;
 }
 
-h2 {
+h2,
+.h2-like {
   font-size: 2em;
   line-height: 1.5;
   margin: 1.5em 0 .75em;
@@ -1150,7 +1151,7 @@ a[target$="blank"]::after {
 }
 
 @media only screen and (max-width: 67.5em) {
-  nav ul {
+  header nav ul {
     justify-content: space-between;
     width: 90vw;
   }
@@ -1181,11 +1182,11 @@ a[target$="blank"]::after {
     order: 0;
   }
 
-  aside h2 {
+  aside .h2-like {
     margin-top: 1rem;
   }
 
-  nav,
+  header nav,
   aside + *,
   footer[class] > div {
     width: auto;
@@ -1207,7 +1208,7 @@ a[target$="blank"]::after {
     margin-right: auto;
   }
 
-  h1::before {
+  h1[id]::before {
     width: 100vw;
   }
 
@@ -1240,24 +1241,24 @@ a[target$="blank"]::after {
     flex: 1;
   }
 
-  h1 {
+  h1[id] {
     display: block;
     left: -2.25rem;
     max-width: 42.25rem;
   }
 
-  h1::before {
+  h1[id]::before {
     left: calc( 50% - 50vw + 2.25rem );
   }
 }
 
 @media only screen and (max-width: 50em) {
-  h1,
+  h1[id],
   main > * + * > * {
     max-width: 90vw;
   }
 
-  h1 {
+  h1[id] {
     left: 1rem;
   }
 

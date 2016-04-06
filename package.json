@@ -27,6 +27,7 @@
     "gulp-ruby-sass": "latest",
     "gulp-scss-lint": "latest",
     "gulp-util": "latest",
-    "sassdoc": "latest"
+    "sassdoc": "latest",
+    "sassdoc-theme-alix": "^0.1.1"
   }
 }

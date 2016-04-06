@@ -4,6 +4,7 @@
 var gulp         = require('gulp'),
     plumber      = require('gulp-plumber'),
     sassdoc      = require('sassdoc'),
+    alix         = require('sassdoc-theme-alix'),
     sass         = require('gulp-ruby-sass'),
     gutil        = require('gulp-util'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -48,7 +49,7 @@ gulp.task('css', ['sass'], function () {
 gulp.task('sassdoc', function () {
   var options = {
     dest: 'docs/SassDoc',
-    theme: 'default',
+    theme: 'alix',
     display: {
       access: ['public'],
       alias: false,
