@@ -24,7 +24,6 @@
     "gulp-csslint": "latest",
     "gulp-hologram": "latest",
     "gulp-plumber": "latest",
-    "gulp-ruby-sass": "latest",
     "gulp-sass": "^2.2.0",
     "gulp-scss-lint": "latest",
     "gulp-util": "latest",
