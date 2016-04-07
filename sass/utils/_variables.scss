@@ -338,7 +338,7 @@ $themes: (
   ),
   'warning': (
     'icon': '\2622\00A0',
-    'color': Gold,
+    'color': gold,
     'index': ($max-z-index - 1),
     'name': (
       'fr': 'Avertissements',
@@ -347,7 +347,7 @@ $themes: (
   ),
   'obsolete': (
     'icon': '\271D\00A0',
-    'color': RoyalBlue,
+    'color': royalblue,
     'index': ($max-z-index - 2),
     'name': (
       'fr': 'Obsolètes',
@@ -356,7 +356,7 @@ $themes: (
   ),
   'advice': (
     'icon': '\2665\00A0',
-    'color': OliveDrab,
+    'color': olivedrab,
     'index': ($max-z-index - 3),
     'name': (
       'fr': 'Conseils',
