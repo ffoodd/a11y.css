@@ -582,10 +582,12 @@ Please note that it's disabled for tags owning a source through `[src]`. It's pr
 but it's meant to avoid false positives on tags such as `<video>` or `<audio>` which may be
 empty if they have at least one source specified through `[src]`.
 
-Note: this test only targets tags in `<body>`, since most of head's tags should be empty.
+###Notes
 
-We also use the `:blank` pseudo-class, but at this time its support is very poor.
-We also use the `:-moz-only-whitespace` pseudo-class, which is an alias of `:blank`.
+* This test only targets tags in `<body>`, since most of head's tags should be empty.
+* `<button>` and `<a>` are also excluded since `button:empty` and `a:empty` are both covered by their own error.
+* We also use the `:blank` pseudo-class, but at this time its support is very poor.
+* We also use the `:-moz-only-whitespace` pseudo-class, which is an alias of `:blank`.
 
 ##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
@@ -596,9 +598,9 @@ We also use the `:-moz-only-whitespace` pseudo-class, which is an alias of `:bla
 
 ##Selector
 ```css_example
-body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
-body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
-body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
+body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
+body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
+body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
 ```
 
 ##Test
@@ -612,21 +614,21 @@ body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(ifra
  * 1. An empty tag without dimensions isn't hoverable :/
  * @note Won't do anything for inline elements.
  */
-body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
+body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   @include warning('empty-nodes');
   /* 1 */
   min-height: 1px;
   min-width: 1px;
 }
 
-body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
+body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   @include warning('empty-nodes', $self-closing: false, $quarantine: true);
   /* 1 */
   min-height: 1px;
   min-width: 1px;
 }
 
-body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
+body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   @include warning('empty-nodes', $self-closing: false, $quarantine: true);
   /* 1 */
   min-height: 1px;

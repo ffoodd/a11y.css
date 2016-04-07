@@ -892,7 +892,8 @@ pre {
   word-spacing: normal;
 }
 
-p code {
+p code,
+ul code {
   border: 1px solid;
   border-radius: .2em;
   display: inline-block;
@@ -1137,7 +1138,9 @@ a[target$="blank"]::after {
 #empty-title_code,
 #empty-node_code,
 #-moz-only-#f3f3f3space {
+  display: inline-block;
   min-height: 1em;
+  min-width: 1em;
 }
 
 .skip {

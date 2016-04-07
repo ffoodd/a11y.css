@@ -28,6 +28,6 @@
     "gulp-scss-lint": "latest",
     "gulp-util": "latest",
     "sassdoc": "latest",
-    "sassdoc-theme-alix": "^0.1.1"
+    "sassdoc-theme-alix": "^0.2.12"
   }
 }
