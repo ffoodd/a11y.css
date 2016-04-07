@@ -5,7 +5,7 @@ var gulp         = require('gulp'),
     plumber      = require('gulp-plumber'),
     sassdoc      = require('sassdoc'),
     alix         = require('sassdoc-theme-alix'),
-    sass         = require('gulp-ruby-sass'),
+    sass         = require('gulp-sass'),
     gutil        = require('gulp-util'),
     autoprefixer = require('gulp-autoprefixer'),
     csscomb      = require('gulp-csscomb'),
@@ -30,8 +30,8 @@ var onError = function(err) {
 
 // Sass
 gulp.task('sass', function () {
-  return sass(source)
-    .on('error', sass.logError)
+  return gulp.src(source)
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(destination));
 });
 
