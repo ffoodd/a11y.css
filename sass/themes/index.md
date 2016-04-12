@@ -1,5 +1,4 @@
-Introduction
-============
+##Introduction
 
 Pronounced « Alix ». Because it's fun.
 

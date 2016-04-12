@@ -583,21 +583,29 @@ header nav a::after {
   width: calc( 100% - 1em );
 }
 
-.errors::after,
-.errors::before {
-  border-radius: 50%;
-}
-
-.errors::before,
 .warnings::before,
 .obsolete::before {
   width: 3rem;
 }
 
-.errors::after,
 .warnings::after,
 .obsolete::after {
   width: 2.5rem;
+}
+
+.errors::before {
+  height: 4rem;
+  width: 4rem;
+}
+
+.errors::after {
+  height: 3.25rem;
+  width: 3.25rem;
+}
+
+.errors::after,
+.errors::before {
+  border-radius: 50%;
 }
 
 .warnings::after {
@@ -930,6 +938,7 @@ a[href="#top"]::after {
 
 footer[class] {
   justify-content: flex-end;
+  position: relative;
 }
 
 footer[class] > div {
@@ -1151,6 +1160,25 @@ a[target$="blank"]::after {
 
 .skip:focus {
   opacity: 1;
+}
+
+.builtWith {
+  background: white;
+  border: 1px solid lightGray;
+  border-radius: 0 0 .25rem .25rem;
+  border-top: 0;
+  box-shadow: inset 0 0 0 .25rem rgba( 0, 0, 0, .05 );
+  margin: 0;
+  padding: 1rem;
+  position: absolute;
+  right: 2rem;
+  top: 0;
+}
+
+.builtWith a,
+.builtWith a * {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 @media only screen and (max-width: 67.5em) {

@@ -53,7 +53,7 @@ gulp.task('sassdoc', function () {
     display: {
       access: ['public'],
       alias: false,
-      watermark: true,
+      watermark: true
     },
     groups: {
       "undefined": "Configuration",

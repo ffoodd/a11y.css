@@ -18,6 +18,7 @@
     "url": "https://github.com/ffoodd/a11y.css/issues"
   },
   "devDependencies": {
+    "fs-promise": "^0.5.0",
     "gulp": "~3.9.0",
     "gulp-autoprefixer": "latest",
     "gulp-csscomb": "latest",
@@ -28,6 +29,6 @@
     "gulp-scss-lint": "latest",
     "gulp-util": "latest",
     "sassdoc": "latest",
-    "sassdoc-theme-alix": "^0.2.12"
+    "sassdoc-theme-alix": "^0.3.8"
   }
 }
