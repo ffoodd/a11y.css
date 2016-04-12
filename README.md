@@ -66,6 +66,8 @@ If you're brave enough, the `gulpfile.js` allows you to work with every brick of
 
 I guess you will find your way out of this configuration file, but if not: ask me!
 *Notice*: you'll need [a few Ruby `gem`](https://github.com/ffoodd/a11y.css/blob/master/Gemfile), Ì suggest Bundler and  `bundle install`.
+*Note* : `a11y.css` has its own SassDoc theme: [sassdoc-theme-alix](https://github.com/ffoodd/sassdoc-theme-alix).
+
 
 ## *Via* `npm` or `Bower`
 

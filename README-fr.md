@@ -70,7 +70,7 @@ Pour les plus braves d’entre vous, la configuration Gulp permet de travailler 
 
 Si vous en arrivez là, je suppose que vous vous repèrerez aisément dans la configuration. Dans le cas contraire, posez une question ;)
 *Attention* : vous aurez besoin de [quelques `gem` Ruby](https://github.com/ffoodd/a11y.css/blob/master/Gemfile), je vous recommande d’installer Bundler et de faire un `bundle install`.
-
+*Note* : `a11y.css` a son propre thème SassDoc : [sassdoc-theme-alix](https://github.com/ffoodd/sassdoc-theme-alix).
 
 ## *Via* `npm` ou `Bower`
 
