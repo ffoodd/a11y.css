@@ -649,7 +649,7 @@ iframe[title=""]
 
 ##Test
 ```html_example
-<iframe height="500" width="500" src="http://www.ffoodd.fr"></iframe><span>†</span>
+<iframe src="static/no-title.html"></iframe><span>†</span>
 ```
 */
 iframe:not([title]),
@@ -716,7 +716,7 @@ html[lang=""]
 
 ##Test
 ```html_example
-<iframe title="No language defined a11y.css test-case" src="static/no-lang.html" width="500" height="200"></iframe>
+<iframe title="No language defined a11y.css test-case" src="static/no-lang.html"></iframe>
 ```
 */
 html:not([lang]),
