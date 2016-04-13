@@ -887,7 +887,7 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"])
 
 ##Test
 ```html_example
-<img src="spacer.gif" alt="Spacer.gif" width="100" height="100"/><span>†</span>
+<img src="static/spacer.gif" alt="Spacer.gif" width="100" height="100"/><span>†</span>
 ```
 */
 img[src*="1px.gif"]:not([role="presentation"]),
