@@ -606,8 +606,8 @@ optgroup:not([label])
 ##Test
 ```html_example
 <form action="/">
-    <label for="optgroup">Oh, hey</label>
-    <select id="optgroup">
+    <label for="optgroup-test">Oh, hey</label>
+    <select id="optgroup-test">
       <optgroup label="I'm a group">
         <option value="1">I'm an option</option>
         <option value="2">I'm another option</option>
