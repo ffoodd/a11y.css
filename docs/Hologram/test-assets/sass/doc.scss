@@ -771,12 +771,13 @@ a[target$="blank"]::after {
   }
 
   [id="top"] > * {
+    display: inline-block;
     min-width: 5.625rem;
     width: auto;
   }
 
   [id="top"] > * + * {
-    flex: 1;
+    flex: 1 0 auto;
     width: auto;
   }
 }
@@ -837,11 +838,7 @@ a[target$="blank"]::after {
 
 @media only screen and (min-width: 25em) and (max-width: 57.5em) {
   [id="toc"] {
-    -webkit-columns: 2;
-    -moz-columns: 2;
     columns: 2;
-    -webkit-column-gap: 3rem;
-    -moz-column-gap: 3rem;
     column-gap: 3rem;
   }
 }
@@ -852,7 +849,7 @@ a[target$="blank"]::after {
   }
 
   [id="toc"] {
-    flex: 1;
+    flex: 1 0 auto;
   }
 
   h1[id] {
