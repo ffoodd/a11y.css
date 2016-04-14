@@ -77,11 +77,14 @@ main > *,
  **
  * 1. IE fix
  * 2. occupe la largeur restante
+ * @bugfix On n'utilise pas flex:1;
+ * @affected IE 10 et IE 11
+ * @see https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored
  */
 main > * + *,
 .main > * + * {
   display: block; /* 1 */
-  flex: 1;        /* 2 */
+  flex: 1 0 auto; /* 2 */
 }
 
 .main > * + * {
@@ -522,6 +525,7 @@ footer[class] {
 
 footer[class] > div {
   display: flex;
+  flex-flow: row wrap;
   margin: 1.5em 0;
   justify-content: space-between;
   width: 67vw;
@@ -763,7 +767,7 @@ a[target$="blank"]::after {
 @media only screen and (max-width: 67.5em) {
   header nav ul {
     justify-content: space-between;
-    width: 90vw;
+    max-width: 90vw;
   }
 
   [id="top"] > * {
