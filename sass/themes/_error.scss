@@ -649,7 +649,7 @@ iframe[title=""]
 
 ##Test
 ```html_example
-<iframe src="static/no-title.html" sandbox="allow-pointer-lock"></iframe><span>†</span>
+<iframe src="static/no-title.html" sandbox="allow-same-origin"></iframe><span>†</span>
 ```
 */
 iframe:not([title]),
@@ -716,7 +716,7 @@ html[lang=""]
 
 ##Test
 ```html_example
-<iframe title="No language defined a11y.css test-case" src="static/no-lang.html" sandbox="allow-pointer-lock"></iframe>
+<iframe title="No language defined a11y.css test-case" src="static/no-lang.html" sandbox="allow-same-origin"></iframe>
 ```
 */
 html:not([lang]),

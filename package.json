@@ -21,14 +21,17 @@
     "fs-promise": "^0.5.0",
     "gulp": "~3.9.0",
     "gulp-autoprefixer": "latest",
+    "gulp-concat": "^2.6.0",
     "gulp-csscomb": "latest",
     "gulp-csslint": "latest",
     "gulp-hologram": "latest",
+    "gulp-html-minifier": "^0.1.8",
     "gulp-plumber": "latest",
     "gulp-sass": "^2.2.0",
     "gulp-scss-lint": "latest",
+    "gulp-uglify": "^1.5.3",
     "gulp-util": "latest",
     "sassdoc": "latest",
-    "sassdoc-theme-alix": "^0.3.15"
+    "sassdoc-theme-alix": "^0.3.17"
   }
 }
