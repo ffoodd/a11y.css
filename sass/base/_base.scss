@@ -51,6 +51,7 @@ html {
     color: #fff;
     font: 700 1.2rem/1.5 "Arial", "Nimbus Sans L", sans-serif;
     text-shadow: 1px 1px #000;
+    transform: translateZ(0 );
     white-space: pre;
     z-index: $max-z-index;
   }
