@@ -1,6 +1,7 @@
 // Quand le DOM a fini de charger
 document.addEventListener("DOMContentLoaded", function() {
   var bookmarklink = document.getElementById("bookmarklet");
+  var toc = document.getElementById("toc");
 
   // On écoute la soumission du formulaire de génération
   if ( bookmarklink ) {
@@ -29,23 +30,27 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // On bricole pour afficher l'ancre active dans le sommaire
-  document.getElementById("toc").addEventListener("click", function(e) {
-    var $link = e.target;
-    var $active = document.querySelector(".active-test");
+  if( toc ) {
+    // On bricole pour afficher l'ancre active dans le sommaire
+    toc.addEventListener("click", function(e) {
+      var $link = e.target;
+      var $active = document.querySelector(".active-test");
 
-    if( $active ) {
-      $active.removeAttribute("class");
-    }
+      if( $active ) {
+        $active.removeAttribute("class");
+      }
 
-    if( $link.tagName.toLowerCase() === "a" ) {
-      $link.classList.add("active-test");
-    }
-  });
+      if( $link.tagName.toLowerCase() === "a" ) {
+        $link.classList.add("active-test");
+      }
+    });
+
+    activeAnchor();
+  }
 
   // On fait pareil au chargement
   function activeAnchor() {
-    var $currentHref = document.getElementById("toc").getElementsByTagName("a");
+    var $currentHref = toc.getElementsByTagName("a");
     var $length = $currentHref.length;
     var i = 0;
     for(;i<$length;i++) {
@@ -54,8 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   }
-
-  activeAnchor();
 });
 
 
