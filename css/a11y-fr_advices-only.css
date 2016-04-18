@@ -870,9 +870,9 @@ iframe[id=""] ~ ::after {
 }main:not(:first-of-type)::before {
   content: "♥  <main> est réservée à la zone de contenu principal, et doit donc être unique :) ." !important;
 }figcaption:not(:only-of-type)::before {
-  content: "♥  <figcaption> décrit le contenu d’une <figure> et doit donc être unique dans cette <figure>. \aOups :) ." !important;
+  content: "♥  <figcaption> décrit le contenu d’une <figure> et doit donc être unique dans cette <figure>. \a  Oups :) ." !important;
 }figcaption:not(:first-child):not(:last-child)::before {
-  content: "♥  <figcaption> est censé être le premier ou le dernier enfant d’une <figure>. \aOn en apprend tous les jours !" !important;
+  content: "♥  <figcaption> est censé être le premier ou le dernier enfant d’une <figure>. \a  On en apprend tous les jours !" !important;
 }[href^="mailto"]::before {
   content: "♥  L’adresse mail est valide, pas vrai ?" !important;
 }[href^="tel"]::before {
@@ -880,7 +880,7 @@ iframe[id=""] ~ ::after {
 }a[role="button"]::before {
   content: "♥  Ce lien est déguisé en bouton. Un vrai <button> serait probablement mieux :)" !important;
 }[target$="blank"]::before {
-  content: "♥  L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre. \aMais vous y avez pensé, non :) ?" !important;
+  content: "♥  L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre. \a  Mais vous y avez pensé, non :) ?" !important;
 }[download]::before,
 [href$=".pdf"]::before,
 [href$=".doc"]::before,
@@ -904,12 +904,12 @@ iframe[id=""] ~ ::after {
   content: "♥  Le rôle ARIA " attr(role) " devrait être uniques, mais celui-ci est le deuxième dans la page !" !important;
 }[id*="search"]:not([role="search"])::before,
 [class*="search"]:not([role="search"])::before {
-  content: "♥  Vu ! Cet élément semble être la recherche. \aMais alors, le rôle ARIA est là, non ?" !important;
+  content: "♥  Vu ! Cet élément semble être la recherche. \a  Mais alors, le rôle ARIA est là, non ?" !important;
 }input[id*="search"]:not([role="search"])::before,
 input[id*="search"]:not([role="search"]) ~ ::after,
 input[class*="search"]:not([role="search"])::before,
 input[class*="search"]:not([role="search"]) ~ ::after {
-  content: "♥  Vu ! Cet élément semble être la recherche. \aMais alors, le rôle ARIA est là, non ?" !important;
+  content: "♥  Vu ! Cet élément semble être la recherche. \a  Mais alors, le rôle ARIA est là, non ?" !important;
 }[required]::before,
 [required] ~ ::after,
 [aria-required]::before,
@@ -1034,12 +1034,12 @@ area[alt][title]::before,
 area[alt][title] ~ ::after,
 svg[aria-label][title]::before,
 svg[aria-label][title] ~ ::after {
-  content: "♥  L’attribut [title], s’il est présent, doit être identique à l’alternative renseignée. \aÀ vous de jouer ;-) ." !important;
+  content: "♥  L’attribut [title], s’il est présent, doit être identique à l’alternative renseignée. \a  À vous de jouer ;-) ." !important;
 }time::before,
 [datetime]::before {
   content: "♥  Le format de date est-il compréhensible ?" !important;
 }th[scope]::before {
-  content: "♥  Cette cellule d’en-tête s’applique à la totalité de la " attr(scope) ", vrai ou pas ? ¬’est ce que dit son [scope], en tout cas." !important;
+  content: "♥  Cette cellule d’en-tête s’applique à la totalité de la " attr(scope) ", vrai ou pas ? \a  C’est ce que dit son [scope], en tout cas." !important;
 }table[role="presentation"]::before {
-  content: "♥  Un tableau de mise en forme ne doit pas avoir de résumé. \aIl doit également rester compréhensible une fois linéarisé." !important;
+  content: "♥  Un tableau de mise en forme ne doit pas avoir de résumé. \a  Il doit également rester compréhensible une fois linéarisé." !important;
 }

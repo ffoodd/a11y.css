@@ -1653,16 +1653,16 @@ textarea:not([id]):not([aria-label]):not([aria-labelledby])::before,
 textarea:not([id]):not([aria-label]):not([aria-labelledby]) ~ ::after,
 select:not([id]):not([aria-label]):not([aria-labelledby])::before,
 select:not([id]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☠  Ce champ est indescriptible. Vous avez pourtant le choix : \a[title], [id], [aria-label], [aria-labelledby]." !important;
+  content: "☠  Ce champ est indescriptible. Vous avez pourtant le choix : \a  [title], [id], [aria-label], [aria-labelledby]." !important;
 }input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])::before,
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])::before,
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])::before,
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☠  Ça fait quoi, si je clique dessus ? ªvec [value], [title] ou [aria-label], j’aurais su :)" !important;
+  content: "☠  Ça fait quoi, si je clique dessus ? \a  Avec [value], [title] ou [aria-label], j’aurais su :)" !important;
 }button:empty:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  Ça fait quoi, si je clique dessus ? \aIl manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
+  content: "☠  Ça fait quoi, si je clique dessus ? \a  Il manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
 }button:blank:not([aria-label]):not([aria-labelledby]):not([title]) {
   counter-increment: error;
   outline: 4px solid #911 !important;
@@ -1706,7 +1706,7 @@ button:blank:not([aria-label]):not([aria-labelledby]):not([title]):focus::before
   transition:         transform .3s ease-in                             !important;
   transition:         transform .3s ease-in, -webkit-transform .3s ease-in                             !important;
 }button:blank:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  Ça fait quoi, si je clique dessus ? \aIl manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
+  content: "☠  Ça fait quoi, si je clique dessus ? \a  Il manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
 }button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]) {
   counter-increment: error;
   outline: 4px solid #911 !important;
@@ -1748,7 +1748,7 @@ button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]
   transition:         transform .3s ease-in                             !important;
   transition:         transform .3s ease-in, -webkit-transform .3s ease-in                             !important;
 }button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  Ça fait quoi, si je clique dessus ? \aIl manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
+  content: "☠  Ça fait quoi, si je clique dessus ? \a  Il manque du contenu ou un intitulé via [aria-label], [aria-labelledby] ou [title]." !important;
 }button[title=""]::before,
 button[aria-label=""]::before,
 button[aria-labelledby=""]::before {
@@ -1772,20 +1772,20 @@ button[type="button"][formnovalidate]::before {
 input:not([type]) ~ ::after,
 input[type=""]::before,
 input[type=""] ~ ::after {
-  content: "☠  Attribut [type] manquant ou vide. \aOn met quoi, dans ce champ ?" !important;
+  content: "☠  Attribut [type] manquant ou vide. \a  On met quoi, dans ce champ ?" !important;
 }optgroup:not([label])::before,
 optgroup:not([label]) ~ ::after {
-  content: "☠  Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. ­ommage…" !important;
+  content: "☠  Vous avez regroupé des options, mais aucun attribut label ne présente ce groupe d’options. \a  Dommage…" !important;
 }iframe:not([title])::before,
 iframe:not([title]) ~ ::after,
 iframe[title=""]::before,
 iframe[title=""] ~ ::after {
-  content: "☠  Attribut [title] manquant ou vide. ­ieu seul sait ce que contient cette <iframe>." !important;
+  content: "☠  Attribut [title] manquant ou vide. \a  Dieu seul sait ce que contient cette <iframe>." !important;
 }form:not([action])::before {
-  content: "☠  Attribut [action] manquant. ®t après, il se passe quoi ?" !important;
+  content: "☠  Attribut [action] manquant. \a  Et après, il se passe quoi ?" !important;
 }html:not([lang])::before,
 html[lang=""]::before {
-  content: "☠  Pas d’attribut lang/xml:lang sur la balise <html>. \aJAWS va avoir un accent chelou." !important;
+  content: "☠  Pas d’attribut lang/xml:lang sur la balise <html>. \a  JAWS va avoir un accent chelou." !important;
 }table[role="presentation"] th::before,
 table[role="presentation"] thead::before,
 table[role="presentation"] tfoot::before,
@@ -2002,7 +2002,7 @@ iframe:not(img):not(object):not(embed):not(svg):not(canvas)[height] ~ ::after {
 [class^="-0"]::before {
   content: "☠  Les classes et identifiants doivent respecter une grammaire définie. Et ce truc-là, ça marche pas." !important;
 }[style]::before {
-  content: "☠  Éléments supportant des styles en ligne. \aPréférez utiliser des classes ou IDs." !important;
+  content: "☠  Éléments supportant des styles en ligne. \a  Préférez utiliser des classes ou IDs." !important;
 }area[style]::before,
 area[style] ~ ::after,
 base[style]::before,
@@ -2047,7 +2047,7 @@ video[style]::before,
 video[style] ~ ::after,
 iframe[style]::before,
 iframe[style] ~ ::after {
-  content: "☠  Éléments supportant des styles en ligne. \aPréférez utiliser des classes ou IDs." !important;
+  content: "☠  Éléments supportant des styles en ligne. \a  Préférez utiliser des classes ou IDs." !important;
 }title:empty {
   display: block !important;
 }title:empty::before {

@@ -4427,9 +4427,9 @@ iframe[id=""] ~ ::after {
 }main:not(:first-of-type)::before {
   content: "♥  The <main> tag is exclusively restricted to the main content area, thus should be unique :)." !important;
 }figcaption:not(:only-of-type)::before {
-  content: "♥  The <figcaption> tag describes a <figure> content, thus should be unique in these <figure>. \aOups!" !important;
+  content: "♥  The <figcaption> tag describes a <figure> content, thus should be unique in these <figure>. \a  Oups!" !important;
 }figcaption:not(:first-child):not(:last-child)::before {
-  content: "♥  The <figcaption> tag is supposed to be <figure>’s first or last child. \aYou learn something every day!" !important;
+  content: "♥  The <figcaption> tag is supposed to be <figure>’s first or last child. \a  You learn something every day!" !important;
 }[href^="mailto"]::before {
   content: "♥  This email is valid, isn’t it?" !important;
 }[href^="tel"]::before {
@@ -4437,7 +4437,7 @@ iframe[id=""] ~ ::after {
 }a[role="button"]::before {
   content: "♥  This link is disguised as a button. A real <button> would be better :)" !important;
 }[target$="blank"]::before {
-  content: "♥  User should be warned whenever a link is being opened in a new tab. \aIs that OK?" !important;
+  content: "♥  User should be warned whenever a link is being opened in a new tab. \a  Is that OK?" !important;
 }[download]::before,
 [href$=".pdf"]::before,
 [href$=".doc"]::before,
@@ -4461,12 +4461,12 @@ iframe[id=""] ~ ::after {
   content: "♥  ARIA role " attr(role) " should be unique, but this one is the second!" !important;
 }[id*="search"]:not([role="search"])::before,
 [class*="search"]:not([role="search"])::before {
-  content: "♥  Gotcha! This component seems to be the search. \aWhere is the ARIA role?" !important;
+  content: "♥  Gotcha! This component seems to be the search. \a  Where is the ARIA role?" !important;
 }input[id*="search"]:not([role="search"])::before,
 input[id*="search"]:not([role="search"]) ~ ::after,
 input[class*="search"]:not([role="search"])::before,
 input[class*="search"]:not([role="search"]) ~ ::after {
-  content: "♥  Gotcha! This component seems to be the search. \aWhere is the ARIA role?" !important;
+  content: "♥  Gotcha! This component seems to be the search. \a  Where is the ARIA role?" !important;
 }[required]::before,
 [required] ~ ::after,
 [aria-required]::before,
@@ -4593,14 +4593,14 @@ area[alt][title]::before,
 area[alt][title] ~ ::after,
 svg[aria-label][title]::before,
 svg[aria-label][title] ~ ::after {
-  content: "♥  [title] attribute, if present, should be identical to the given alternative. \aYour move!" !important;
+  content: "♥  [title] attribute, if present, should be identical to the given alternative. \a  Your move!" !important;
 }time::before,
 [datetime]::before {
   content: "♥  Is this is a valid date format?" !important;
 }th[scope]::before {
-  content: "♥  This head cell applies to a " attr(scope) ", doesn’t it? \aThat’s what its [scope] says." !important;
+  content: "♥  This head cell applies to a " attr(scope) ", doesn’t it? \a  That’s what its [scope] says." !important;
 }table[role="presentation"]::before {
-  content: "♥  A presentional table should not contain a summary nor a caption. ªnd it should be understandable once linearized." !important;
+  content: "♥  A presentional table should not contain a summary nor a caption. \a  And it should be understandable once linearized." !important;
 }applet::before,
 acronym::before,
 bgsound::before,
@@ -4891,7 +4891,7 @@ ol > :not(li)::before,
 }:not(dl) > dt::before,
 :not(dl) > dd::before,
 dl > :not(dt):not(dd)::before {
-  content: "☢  <dl> contains one or more groups of <dt> and <dd>. ªny other use of those tags is forbidden." !important;
+  content: "☢  <dl> contains one or more groups of <dt> and <dd>. \a  Any other use of those tags is forbidden." !important;
 }:not(figure) > figcaption::before {
   content: "☢  Poor <figcaption> is totally lost without its parent <figure>." !important;
 }figure:not([role="group"])::before {
@@ -4903,7 +4903,7 @@ optgroup > :not(option)::before,
 :not(fieldset) > legend::before,
 tr > :not(td):not(th)::before,
 table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption)::before {
-  content: "☢  Invalid nesting. \aPlease be aware this may offend the viewer." !important;
+  content: "☢  Invalid nesting. \a  Please be aware this may offend the viewer." !important;
 }b div::before,
 i div::before,
 q div::before,
@@ -4926,7 +4926,7 @@ article > article:first-child::before {
   content: "☢  Sectioning tags are not arbitrary wrappers. Use <div> here." !important;
 }fieldset > *:not(legend):first-child::before,
 fieldset > legend:not(:first-child)::before {
-  content: "☢  Invalid nesting. ªfieldset should contain a <legend> before anything else." !important;
+  content: "☢  Invalid nesting. \a  A fieldset should contain a <legend> before anything else." !important;
 }abbr:not([title])::before,
 abbr[title=""]::before {
   content: "☢  Empty [title] atribute. What does this abbreviation mean?" !important;
@@ -4936,13 +4936,13 @@ area[alt=""]::before,
 area[alt=""] ~ ::after,
 input[type="image"][alt=""]::before,
 input[type="image"][alt=""] ~ ::after {
-  content: "☢  Empty [alt] attribute. \aThis is only okay for decorative images. Is it a decorative image?" !important;
+  content: "☢  Empty [alt] attribute. \a  This is only okay for decorative images. Is it a decorative image?" !important;
 }embed[type="image"][alt=""]::before,
 object[type="image"][alt=""]::before {
-  content: "☢  Empty [alt] attribute. \aThis is only okay for decorative images. Is it a decorative image?" !important;
+  content: "☢  Empty [alt] attribute. \a  This is only okay for decorative images. Is it a decorative image?" !important;
 }svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby])::before,
 svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☢  No [role]/[aria-label]/[aria-labelledby] attribute for this SVG. \aIf it’s not decorative, it’s only okay if a <desc> tag is included. Is this ok?" !important;
+  content: "☢  No [role]/[aria-label]/[aria-labelledby] attribute for this SVG. \a  If it’s not decorative, it’s only okay if a <desc> tag is included. Is this ok?" !important;
 }video[autoplay]::before,
 video[autoplay] ~ ::after,
 audio[autoplay]::before,
@@ -4952,7 +4952,7 @@ audio[autoplay] ~ ::after {
 video:not([controls]) ~ ::after,
 audio:not([controls])::before,
 audio:not([controls]) ~ ::after {
-  content: "☢  This time-based media doesn’t use native controls. ­id you add satisfying controls on your own?" !important;
+  content: "☢  This time-based media doesn’t use native controls. \a  Did you add satisfying controls on your own?" !important;
 }body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   min-height: 1px;
   min-width: 1px;
@@ -5060,9 +5060,9 @@ table > tbody ~ thead::before {
   content: "☢  Here is the right order for those tags: <thead>, <tfoot> then <tbody>." !important;
 }table:not([role="presentation"]) > caption + tbody::before,
 table:not([role="presentation"]) > tbody:first-child::before {
-  content: "☢  Either you’re missing a <thead> (even <tfoot>, maybe) in this data table, \aor you should add a [role=\"presentation\"], if this a layout table." !important;
+  content: "☢  Either you’re missing a <thead> (even <tfoot>, maybe) in this data table, \a  or you should add a [role=\"presentation\"], if this a layout table." !important;
 }th:not([scope]):not([id])::before {
-  content: "☢  Does this head cell apply to a full line/row, or not? \aIf so, think of [scope]. If not, use an [id] with [headers]." !important;
+  content: "☢  Does this head cell apply to a full line/row, or not? \a  If so, think of [scope]. If not, use an [id] with [headers]." !important;
 }img[src*="1px.gif"]:not([role="presentation"])::before,
 img[src*="1px.gif"]:not([role="presentation"]) ~ ::after,
 img[src*="1x1.gif"]:not([role="presentation"])::before,
@@ -5084,7 +5084,7 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"]) ~ ::after {
 [class*="null"]::before,
 [id*="undefined"]::before,
 [class*="undefined"]::before {
-  content: "☢  Don’t you try to dynamically compute an [id] or a [class]? 򫻊use I see null or undefined, here." !important;
+  content: "☢  Don’t you try to dynamically compute an [id] or a [class]? \a  Because I see null or undefined, here." !important;
 }area[id*="NaN"]::before,
 area[id*="NaN"] ~ ::after,
 area[id*="null"]::before,
@@ -5349,9 +5349,9 @@ iframe[id*="undefined"]::before,
 iframe[id*="undefined"] ~ ::after,
 iframe[class*="undefined"]::before,
 iframe[class*="undefined"] ~ ::after {
-  content: "☢  Don’t you try to dynamically compute an [id] or a [class]? 򫻊use I see null or undefined, here." !important;
+  content: "☢  Don’t you try to dynamically compute an [id] or a [class]? \a  Because I see null or undefined, here." !important;
 }a[href^="javascript"]:not([role="button"])::before {
-  content: "☢  [href] attribute starting with `javascript:`. Doesn`t sound good… ®xcept for a bookmarklet. Like a11y.css :)" !important;
+  content: "☢  [href] attribute starting with `javascript:`. Doesn’t sound good… \a  Except for a bookmarklet. Like a11y.css :)" !important;
 }a[href="#"]:not([role="button"])::before {
   content: "☢  [href=" attr(href) "] attribute. Why? A <button> would be semantically better." !important;
 }[tabindex]:not([tabindex="0"]):not([tabindex="-1"])::before {
@@ -5561,16 +5561,16 @@ textarea:not([id]):not([aria-label]):not([aria-labelledby])::before,
 textarea:not([id]):not([aria-label]):not([aria-labelledby]) ~ ::after,
 select:not([id]):not([aria-label]):not([aria-labelledby])::before,
 select:not([id]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☠  This field is indescribable. However you got choices: \a[title], [id], [aria-label], [aria-labelledby]." !important;
+  content: "☠  This field is indescribable. However you got choices: \a  [title], [id], [aria-label], [aria-labelledby]." !important;
 }input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])::before,
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])::before,
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])::before,
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☠  What should happen when I click? \aToo bad. [value], [title] or [aria-label] could have told me :)" !important;
+  content: "☠  What should happen when I click? \a  Too bad. [value], [title] or [aria-label] could have told me :)" !important;
 }button:empty:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  What should happen when I click? \aIt’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
+  content: "☠  What should happen when I click? \a  It’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
 }button:blank:not([aria-label]):not([aria-labelledby]):not([title]) {
   counter-increment: error;
   outline: 4px solid #911 !important;
@@ -5614,7 +5614,7 @@ button:blank:not([aria-label]):not([aria-labelledby]):not([title]):focus::before
   transition:         transform .3s ease-in                             !important;
   transition:         transform .3s ease-in, -webkit-transform .3s ease-in                             !important;
 }button:blank:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  What should happen when I click? \aIt’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
+  content: "☠  What should happen when I click? \a  It’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
 }button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]) {
   counter-increment: error;
   outline: 4px solid #911 !important;
@@ -5656,7 +5656,7 @@ button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]
   transition:         transform .3s ease-in                             !important;
   transition:         transform .3s ease-in, -webkit-transform .3s ease-in                             !important;
 }button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  What should happen when I click? \aIt’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
+  content: "☠  What should happen when I click? \a  It’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
 }button[title=""]::before,
 button[aria-label=""]::before,
 button[aria-labelledby=""]::before {
@@ -5680,20 +5680,20 @@ button[type="button"][formnovalidate]::before {
 input:not([type]) ~ ::after,
 input[type=""]::before,
 input[type=""] ~ ::after {
-  content: "☠  Missing or empty [type] attribute. \aWhat is the field for then?" !important;
+  content: "☠  Missing or empty [type] attribute. \a  What is the field for then?" !important;
 }optgroup:not([label])::before,
 optgroup:not([label]) ~ ::after {
-  content: "☠  You have gathered options, but no label attribute introduces this options group. \aToo bad…" !important;
+  content: "☠  You have gathered options, but no label attribute introduces this options group. \a  Too bad…" !important;
 }iframe:not([title])::before,
 iframe:not([title]) ~ ::after,
 iframe[title=""]::before,
 iframe[title=""] ~ ::after {
-  content: "☠  Missing or empty [title]. \aOnly God knows what is this <iframe>." !important;
+  content: "☠  Missing or empty [title]. \a  Only God knows what is this <iframe>." !important;
 }form:not([action])::before {
-  content: "☠  Missing [action] attribute. \aWhat now?" !important;
+  content: "☠  Missing [action] attribute. \a  What now?" !important;
 }html:not([lang])::before,
 html[lang=""]::before {
-  content: "☠  No lang/xml:lang found on <html> tag. \aJAWS will have a weird accent!" !important;
+  content: "☠  No lang/xml:lang found on <html> tag. \a  JAWS will have a weird accent!" !important;
 }table[role="presentation"] th::before,
 table[role="presentation"] thead::before,
 table[role="presentation"] tfoot::before,
@@ -5910,7 +5910,7 @@ iframe:not(img):not(object):not(embed):not(svg):not(canvas)[height] ~ ::after {
 [class^="-0"]::before {
   content: "☠  Classes and IDs must follow a specific grammar. And this thing here doesn’t." !important;
 }[style]::before {
-  content: "☠  Inline styles. \aYou’d better use classes or IDs." !important;
+  content: "☠  Inline styles. \a  You’d better use classes or IDs." !important;
 }area[style]::before,
 area[style] ~ ::after,
 base[style]::before,
@@ -5955,7 +5955,7 @@ video[style]::before,
 video[style] ~ ::after,
 iframe[style]::before,
 iframe[style] ~ ::after {
-  content: "☠  Inline styles. \aYou’d better use classes or IDs." !important;
+  content: "☠  Inline styles. \a  You’d better use classes or IDs." !important;
 }title:empty {
   display: block !important;
 }title:empty::before {

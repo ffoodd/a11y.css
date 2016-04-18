@@ -1131,7 +1131,7 @@ ol > :not(li)::before,
 }:not(dl) > dt::before,
 :not(dl) > dd::before,
 dl > :not(dt):not(dd)::before {
-  content: "☢  <dl> contains one or more groups of <dt> and <dd>. ªny other use of those tags is forbidden." !important;
+  content: "☢  <dl> contains one or more groups of <dt> and <dd>. \a  Any other use of those tags is forbidden." !important;
 }:not(figure) > figcaption::before {
   content: "☢  Poor <figcaption> is totally lost without its parent <figure>." !important;
 }figure:not([role="group"])::before {
@@ -1143,7 +1143,7 @@ optgroup > :not(option)::before,
 :not(fieldset) > legend::before,
 tr > :not(td):not(th)::before,
 table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption)::before {
-  content: "☢  Invalid nesting. \aPlease be aware this may offend the viewer." !important;
+  content: "☢  Invalid nesting. \a  Please be aware this may offend the viewer." !important;
 }b div::before,
 i div::before,
 q div::before,
@@ -1166,7 +1166,7 @@ article > article:first-child::before {
   content: "☢  Sectioning tags are not arbitrary wrappers. Use <div> here." !important;
 }fieldset > *:not(legend):first-child::before,
 fieldset > legend:not(:first-child)::before {
-  content: "☢  Invalid nesting. ªfieldset should contain a <legend> before anything else." !important;
+  content: "☢  Invalid nesting. \a  A fieldset should contain a <legend> before anything else." !important;
 }abbr:not([title])::before,
 abbr[title=""]::before {
   content: "☢  Empty [title] atribute. What does this abbreviation mean?" !important;
@@ -1176,13 +1176,13 @@ area[alt=""]::before,
 area[alt=""] ~ ::after,
 input[type="image"][alt=""]::before,
 input[type="image"][alt=""] ~ ::after {
-  content: "☢  Empty [alt] attribute. \aThis is only okay for decorative images. Is it a decorative image?" !important;
+  content: "☢  Empty [alt] attribute. \a  This is only okay for decorative images. Is it a decorative image?" !important;
 }embed[type="image"][alt=""]::before,
 object[type="image"][alt=""]::before {
-  content: "☢  Empty [alt] attribute. \aThis is only okay for decorative images. Is it a decorative image?" !important;
+  content: "☢  Empty [alt] attribute. \a  This is only okay for decorative images. Is it a decorative image?" !important;
 }svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby])::before,
 svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☢  No [role]/[aria-label]/[aria-labelledby] attribute for this SVG. \aIf it’s not decorative, it’s only okay if a <desc> tag is included. Is this ok?" !important;
+  content: "☢  No [role]/[aria-label]/[aria-labelledby] attribute for this SVG. \a  If it’s not decorative, it’s only okay if a <desc> tag is included. Is this ok?" !important;
 }video[autoplay]::before,
 video[autoplay] ~ ::after,
 audio[autoplay]::before,
@@ -1192,7 +1192,7 @@ audio[autoplay] ~ ::after {
 video:not([controls]) ~ ::after,
 audio:not([controls])::before,
 audio:not([controls]) ~ ::after {
-  content: "☢  This time-based media doesn’t use native controls. ­id you add satisfying controls on your own?" !important;
+  content: "☢  This time-based media doesn’t use native controls. \a  Did you add satisfying controls on your own?" !important;
 }body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   min-height: 1px;
   min-width: 1px;
@@ -1300,9 +1300,9 @@ table > tbody ~ thead::before {
   content: "☢  Here is the right order for those tags: <thead>, <tfoot> then <tbody>." !important;
 }table:not([role="presentation"]) > caption + tbody::before,
 table:not([role="presentation"]) > tbody:first-child::before {
-  content: "☢  Either you’re missing a <thead> (even <tfoot>, maybe) in this data table, \aor you should add a [role=\"presentation\"], if this a layout table." !important;
+  content: "☢  Either you’re missing a <thead> (even <tfoot>, maybe) in this data table, \a  or you should add a [role=\"presentation\"], if this a layout table." !important;
 }th:not([scope]):not([id])::before {
-  content: "☢  Does this head cell apply to a full line/row, or not? \aIf so, think of [scope]. If not, use an [id] with [headers]." !important;
+  content: "☢  Does this head cell apply to a full line/row, or not? \a  If so, think of [scope]. If not, use an [id] with [headers]." !important;
 }img[src*="1px.gif"]:not([role="presentation"])::before,
 img[src*="1px.gif"]:not([role="presentation"]) ~ ::after,
 img[src*="1x1.gif"]:not([role="presentation"])::before,
@@ -1324,7 +1324,7 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"]) ~ ::after {
 [class*="null"]::before,
 [id*="undefined"]::before,
 [class*="undefined"]::before {
-  content: "☢  Don’t you try to dynamically compute an [id] or a [class]? 򫻊use I see null or undefined, here." !important;
+  content: "☢  Don’t you try to dynamically compute an [id] or a [class]? \a  Because I see null or undefined, here." !important;
 }area[id*="NaN"]::before,
 area[id*="NaN"] ~ ::after,
 area[id*="null"]::before,
@@ -1589,9 +1589,9 @@ iframe[id*="undefined"]::before,
 iframe[id*="undefined"] ~ ::after,
 iframe[class*="undefined"]::before,
 iframe[class*="undefined"] ~ ::after {
-  content: "☢  Don’t you try to dynamically compute an [id] or a [class]? 򫻊use I see null or undefined, here." !important;
+  content: "☢  Don’t you try to dynamically compute an [id] or a [class]? \a  Because I see null or undefined, here." !important;
 }a[href^="javascript"]:not([role="button"])::before {
-  content: "☢  [href] attribute starting with `javascript:`. Doesn`t sound good… ®xcept for a bookmarklet. Like a11y.css :)" !important;
+  content: "☢  [href] attribute starting with `javascript:`. Doesn’t sound good… \a  Except for a bookmarklet. Like a11y.css :)" !important;
 }a[href="#"]:not([role="button"])::before {
   content: "☢  [href=" attr(href) "] attribute. Why? A <button> would be semantically better." !important;
 }
