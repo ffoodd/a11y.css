@@ -713,8 +713,6 @@ a[href="#"]:not([role="button"]) {
   counter-increment: warning;
   outline: 4px solid gold !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }ul > :not(li)::before,
 ol > :not(li)::before,
 :not(ul):not(ol) > li::before,
@@ -930,8 +928,6 @@ iframe[class*="undefined"] {
   counter-increment: warning;
   outline: 4px solid gold !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }img[alt=""] ~ ::after,
 area[alt=""] ~ ::after,
 input[type="image"][alt=""] ~ ::after,
@@ -1208,8 +1204,6 @@ audio:not([controls]) ~ ::after {
   min-width: 1px;
   outline: 4px solid gold !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
   background: #fcf9e9 !important;
   border-color: #bfab40 !important;
@@ -1256,7 +1250,6 @@ body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(
   min-width: 1px;
   outline: 4px solid gold !important;
   outline-offset: -4px;
-  transform: translateZ(0);
 }body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
   background: #fcf9e9 !important;
   border-color: #bfab40 !important;

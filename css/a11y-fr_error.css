@@ -1018,8 +1018,6 @@ title:empty {
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }[tabindex]:not([tabindex="-1"]):not([tabindex="0"])::before,
 a[name=""][id=""][href=""]::before,
 a[id=""][href=""]:not([name])::before,
@@ -1300,8 +1298,6 @@ iframe[style] {
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }area[tabindex]:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
 base[tabindex]:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
 br[tabindex]:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
@@ -1535,8 +1531,6 @@ a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }a:blank[title=""]::before,
 a:blank[aria-label=""]::before,
 a:blank[aria-labelledby=""]::before,
@@ -1596,7 +1590,6 @@ a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  transform: translateZ(0);
 }a:-moz-only-whitespace[title=""]::before,
 a:-moz-only-whitespace[aria-label=""]::before,
 a:-moz-only-whitespace[aria-labelledby=""]::before,
@@ -1692,8 +1685,6 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }button:blank:not([aria-label]):not([aria-labelledby]):not([title])::before {
   background: #fce9e9 !important;
   border-color: #bf4040 !important;
@@ -1738,7 +1729,6 @@ button:blank:not([aria-label]):not([aria-labelledby]):not([title]):focus::before
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  transform: translateZ(0);
 }button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title])::before {
   background: #fce9e9 !important;
   border-color: #bf4040 !important;
@@ -2107,8 +2097,6 @@ iframe[style] ~ ::after {
   display: block !important;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }title:blank::before {
   background: #fce9e9 !important;
   border-color: #bf4040 !important;
@@ -2176,7 +2164,6 @@ title:blank:focus::before {
   display: block !important;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  transform: translateZ(0);
 }title:-moz-only-whitespace::before {
   background: #fce9e9 !important;
   border-color: #bf4040 !important;

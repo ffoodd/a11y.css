@@ -488,8 +488,6 @@ table[role="presentation"] {
   counter-increment: advice;
   outline: 4px solid #6b8e23 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }[class=""]::before,
 [id=""]::before,
 main:not(:first-of-type)::before,
@@ -638,8 +636,6 @@ svg[aria-label][title] {
   counter-increment: advice;
   outline: 4px solid #6b8e23 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }area[class=""] ~ ::after,
 base[class=""] ~ ::after,
 br[class=""] ~ ::after,

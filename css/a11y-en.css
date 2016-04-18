@@ -2582,8 +2582,6 @@ table[role="presentation"] {
   counter-increment: advice;
   outline: 4px solid #6b8e23 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }[class=""]::before,
 [id=""]::before,
 main:not(:first-of-type)::before,
@@ -2732,8 +2730,6 @@ svg[aria-label][title] {
   counter-increment: advice;
   outline: 4px solid #6b8e23 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }area[class=""] ~ ::after,
 base[class=""] ~ ::after,
 br[class=""] ~ ::after,
@@ -3006,8 +3002,6 @@ th[background] {
   counter-increment: obsolete;
   outline: 4px solid #4169e1 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }applet::before,
 acronym::before,
 bgsound::before,
@@ -3235,8 +3229,6 @@ object[border] {
   counter-increment: obsolete;
   outline: 4px solid #4169e1 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }embed[name] ~ ::after,
 img[name] ~ ::after,
 area[nohref] ~ ::after,
@@ -3362,8 +3354,6 @@ a[href="#"]:not([role="button"]) {
   counter-increment: warning;
   outline: 4px solid gold !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }ul > :not(li)::before,
 ol > :not(li)::before,
 :not(ul):not(ol) > li::before,
@@ -3579,8 +3569,6 @@ iframe[class*="undefined"] {
   counter-increment: warning;
   outline: 4px solid gold !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }img[alt=""] ~ ::after,
 area[alt=""] ~ ::after,
 input[type="image"][alt=""] ~ ::after,
@@ -3905,8 +3893,6 @@ title:empty {
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }[tabindex]:not([tabindex="-1"]):not([tabindex="0"])::before,
 a[name=""][id=""][href=""]::before,
 a[id=""][href=""]:not([name])::before,
@@ -4187,8 +4173,6 @@ iframe[style] {
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }area[tabindex]:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
 base[tabindex]:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
 br[tabindex]:not([tabindex="0"]):not([tabindex="-1"]) ~ ::after,
@@ -4980,8 +4964,6 @@ audio:not([controls]) ~ ::after {
   min-width: 1px;
   outline: 4px solid gold !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
   background: #fcf9e9 !important;
   border-color: #bfab40 !important;
@@ -5028,7 +5010,6 @@ body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(
   min-width: 1px;
   outline: 4px solid gold !important;
   outline-offset: -4px;
-  transform: translateZ(0);
 }body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)::before {
   background: #fcf9e9 !important;
   border-color: #bfab40 !important;
@@ -5440,8 +5421,6 @@ a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }a:blank[title=""]::before,
 a:blank[aria-label=""]::before,
 a:blank[aria-labelledby=""]::before,
@@ -5501,7 +5480,6 @@ a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  transform: translateZ(0);
 }a:-moz-only-whitespace[title=""]::before,
 a:-moz-only-whitespace[aria-label=""]::before,
 a:-moz-only-whitespace[aria-labelledby=""]::before,
@@ -5597,8 +5575,6 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }button:blank:not([aria-label]):not([aria-labelledby]):not([title])::before {
   background: #fce9e9 !important;
   border-color: #bf4040 !important;
@@ -5643,7 +5619,6 @@ button:blank:not([aria-label]):not([aria-labelledby]):not([title]):focus::before
   counter-increment: error;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  transform: translateZ(0);
 }button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title])::before {
   background: #fce9e9 !important;
   border-color: #bf4040 !important;
@@ -6012,8 +5987,6 @@ iframe[style] ~ ::after {
   display: block !important;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }title:blank::before {
   background: #fce9e9 !important;
   border-color: #bf4040 !important;
@@ -6081,7 +6054,6 @@ title:blank:focus::before {
   display: block !important;
   outline: 4px solid #911 !important;
   outline-offset: -4px;
-  transform: translateZ(0);
 }title:-moz-only-whitespace::before {
   background: #fce9e9 !important;
   border-color: #bf4040 !important;

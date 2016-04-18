@@ -850,8 +850,6 @@ th[background] {
   counter-increment: obsolete;
   outline: 4px solid #4169e1 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }applet::before,
 acronym::before,
 bgsound::before,
@@ -1079,8 +1077,6 @@ object[border] {
   counter-increment: obsolete;
   outline: 4px solid #4169e1 !important;
   outline-offset: -4px;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
 }embed[name] ~ ::after,
 img[name] ~ ::after,
 area[nohref] ~ ::after,
