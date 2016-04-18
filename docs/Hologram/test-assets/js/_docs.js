@@ -1,29 +1,33 @@
 // Quand le DOM a fini de charger
 document.addEventListener("DOMContentLoaded", function() {
+  var bookmarklink = document.getElementById("bookmarklet");
+
   // On écoute la soumission du formulaire de génération
-  document.getElementById("bookmarklet").addEventListener("submit", function (e) {
-    e.preventDefault();
+  if ( bookmarklink ) {
+    bookmarklink.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    var $minimum_level = document.getElementById("minimum-level").value;
-    var $language = document.getElementById("language").value;
+      var $minimum_level = document.getElementById("minimum-level").value;
+      var $language = document.getElementById("language").value;
 
-    var $hrefstart = 'javascript:(function(){a11ycss=document.createElement("LINK");a11ycss.href="https://rawgit.com/ffoodd/a11y.css/master/css/a11y-';
-    var $hreflang = $language;
-    var $hreflevel = '';
-    if ($minimum_level !== "advice") {
-      $hreflevel = '_' + $minimum_level;
-    }
-    var $hrefend = '.css";a11ycss.rel="stylesheet";a11ycss.media="(min-width: 800px)";document.body.appendChild(a11ycss);})();';
+      var $hrefstart = 'javascript:(function(){a11ycss=document.createElement("LINK");a11ycss.href="https://rawgit.com/ffoodd/a11y.css/master/css/a11y-';
+      var $hreflang = $language;
+      var $hreflevel = '';
+      if ($minimum_level !== "advice") {
+        $hreflevel = '_' + $minimum_level;
+      }
+      var $hrefend = '.css";a11ycss.rel="stylesheet";a11ycss.media="(min-width: 800px)";document.body.appendChild(a11ycss);})();';
 
-    var $href = $hrefstart + $hreflang + $hreflevel + $hrefend;
+      var $href = $hrefstart + $hreflang + $hreflevel + $hrefend;
 
-    document.getElementById("bookmarklet--link").setAttribute("href", $href);
-    document.getElementById("bookmarklet--link").classList.add("done");
-  });
+      document.getElementById("bookmarklet--link").setAttribute("href", $href);
+      document.getElementById("bookmarklet--link").classList.add("done");
+    });
 
-  document.getElementById("bookmarklet").addEventListener("change", function () {
-    document.getElementById("bookmarklet--link").classList.remove("done");
-  });
+    bookmarklink.addEventListener("change", function () {
+      document.getElementById("bookmarklet--link").classList.remove("done");
+    });
+  }
 
   // On bricole pour afficher l'ancre active dans le sommaire
   document.getElementById("toc").addEventListener("click", function(e) {
