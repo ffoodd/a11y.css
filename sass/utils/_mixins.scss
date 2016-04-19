@@ -320,11 +320,10 @@
 }
 
 
-/// Display counters on <head>'s ::after
 /// Defines `head::after`'s `content` and `background-image` depending on `$minimum-level`.
-/// @group configuration
+/// @param {String} $minimum-level - Inheriting minimum level
+/// @output `content` and `background-image`
 /// @access public
-/// @param {Arglist} $minimum-level - Inheriting minimum level
 /// @require {function} theme-conf
 /// @require {function} is-level-enough
 /// @example scss - Display counters on <head>'s ::after
