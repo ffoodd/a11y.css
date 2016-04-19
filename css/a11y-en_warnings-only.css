@@ -1096,7 +1096,7 @@ svg :focus:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]
   counter-reset: error warning obsolete advice;
 }html::after {
   background: rgba(0,0,0,.8);
-  background-image: linear-gradient(to bottom, transparent, transparent 1.4em, #911 1.4em, #911 1.6em, transparent 1.6em, transparent 2.9em, gold 2.9em, gold 3.1em, transparent 3.1em, transparent 4.4em, #4169e1 4.4em, #4169e1 4.6em, transparent 4.6em, transparent 5.9em, #6b8e23 5.9em, #6b8e23 6.1em, transparent 6.1em, transparent 100%);
+  background-image: linear-gradient(to bottom, transparent, transparent 1.4em,#911 1.4em,#911 1.6em,transparent 1.6em,transparent 2.9em,gold 2.9em,gold 3.1em,transparent 3.1em, transparent 100%);
   background-position: .5em 0;
   background-repeat: no-repeat;
   background-size: .5em 100%;
@@ -1105,7 +1105,7 @@ svg :focus:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]
   bottom: 1em;
   box-shadow: inset 1px 1px 0 rgba(255,255,255,.3);
   color: #fff;
-  content: "Errors" ": " counter(error) "\a" "Warnings" ": " counter(warning) "\a" "Obsoletes" ": " counter(obsolete) "\a" "Advices" ": " counter(advice);
+  content: "Errors" ": " counter(error) "\a" "Warnings" ": " counter(warning) "\a";
   font: 700 1.2rem/1.5 "Arial", "Nimbus Sans L", sans-serif;
   left: 1em;
   padding: .75em 1em .75em 1.5em;

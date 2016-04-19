@@ -318,3 +318,56 @@
     white-space: pre;
   }
 }
+
+
+/// Display counters on <head>'s ::after
+/// Defines `head::after`'s `content` and `background-image` depending on `$minimum-level`.
+/// @group configuration
+/// @access public
+/// @param {Arglist} $minimum-level - Inheriting minimum level
+/// @require {function} theme-conf
+/// @require {function} is-level-enough
+/// @example scss - Display counters on <head>'s ::after
+///  @include base-content($minimum-level);
+@mixin base-content($minimum-level) {
+  $background: ();
+  $content: ();
+
+  // @note Line breaks can be triggered by «\A» within the message content.
+  // @see issue #7, solution from @7studio
+  @if is-level-enough('error') {
+    $background-error: transparent 1.4em, theme-conf('error', 'color') 1.4em, theme-conf('error', 'color') 1.6em, transparent 1.6em;
+    $background: append( $background, $background-error, comma );
+
+    $content-error: map-get(theme-conf('error', 'name'), $language) ': ' #{counter(error)} '\A ';
+    $content: append( $content, $content-error);
+  }
+
+  @if is-level-enough('warning') {
+    $background-warning: transparent 2.9em, theme-conf('warning', 'color') 2.9em, theme-conf('warning', 'color') 3.1em, transparent 3.1em;
+    $background: append( $background, $background-warning, comma );
+
+    $content-warning: map-get(theme-conf('warning', 'name'), $language) ': ' #{counter(warning)} '\A ';
+    $content: append( $content, $content-warning);
+  }
+
+  @if is-level-enough('obsolete') {
+    $background-obsolete: transparent 4.4em, theme-conf('obsolete', 'color') 4.4em, theme-conf('obsolete', 'color') 4.6em, transparent 4.6em;
+    $background: append( $background, $background-obsolete, comma );
+
+    $content-obsolete: map-get(theme-conf('obsolete', 'name'), $language) ': ' #{counter(obsolete)} '\A ';
+    $content: append( $content, $content-obsolete);
+  }
+
+  @if is-level-enough('advice') {
+    $background-advice: transparent 5.9em, theme-conf('advice', 'color') 5.9em, theme-conf('advice', 'color') 6.1em, transparent 6.1em;
+    $background: append( $background, $background-advice );
+
+    $content-advice: map-get(theme-conf('advice', 'name'), $language) ': ' #{counter(advice)} '\A ';
+    $content: append( $content, $content-advice);
+  }
+
+  background-image: linear-gradient(to bottom, transparent, $background, transparent 100%);
+  content: $content;
+}
+

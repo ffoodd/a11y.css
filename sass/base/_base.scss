@@ -4,36 +4,9 @@ html {
   counter-reset: error warning obsolete advice;
 
   &::after {
-    // @note Line breaks can be triggered by «\A» within the message content.
-    // @see issue #7, solution from @7studio
-    content: map-get(theme-conf('error',    'name'), $language) ': ' #{counter(error)}    '\A '
-             map-get(theme-conf('warning',  'name'), $language) ': ' #{counter(warning)}  '\A '
-             map-get(theme-conf('obsolete', 'name'), $language) ': ' #{counter(obsolete)} '\A '
-             map-get(theme-conf('advice',   'name'), $language) ': ' #{counter(advice)};
+    @include base-content($minimum-level);
 
     background: rgba( 0, 0, 0, .8 );
-    background-image:
-      linear-gradient(
-          to bottom,
-          transparent,
-          transparent 1.4em,
-          theme-conf('error', 'color') 1.4em,
-          theme-conf('error', 'color') 1.6em,
-          transparent 1.6em,
-          transparent 2.9em,
-          theme-conf('warning', 'color') 2.9em,
-          theme-conf('warning', 'color') 3.1em,
-          transparent 3.1em,
-          transparent 4.4em,
-          theme-conf('obsolete', 'color') 4.4em,
-          theme-conf('obsolete', 'color') 4.6em,
-          transparent 4.6em,
-          transparent 5.9em,
-          theme-conf('advice', 'color') 5.9em,
-          theme-conf('advice', 'color') 6.1em,
-          transparent 6.1em,
-          transparent 100%
-      );
     background-position: .5em 0;
     background-repeat: no-repeat;
     background-size: .5em 100%;
