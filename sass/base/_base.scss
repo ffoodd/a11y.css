@@ -26,7 +26,7 @@ html {
     text-shadow: 1px 1px #000;
     transform: translateZ(0 );
     white-space: pre;
-    z-index: $max-z-index;
+    z-index: 2147483647;
   }
 }
 

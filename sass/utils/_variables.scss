@@ -1,16 +1,6 @@
 @charset 'UTF-8';
 
 
-/// Max z-index
-/// @access private
-/// This is the maximum allowed z-index on most browsers.
-/// If a z-index value happens to be higher, all browsers truncate it to this value.
-/// This is meant to make sure messages will always be on top of everything else.
-/// @type Number
-/// @link http://www.puidokas.com/max-z-index/
-$max-z-index: 2147483647;
-
-
 /// This map holds configuration for all themes. Each theme has an icon, a color and a z-index.
 /// @type Map
 /// @prop {Map} theme
@@ -21,25 +11,25 @@ $themes: (
   'error': (
     'icon': '\2620\00A0',
     'color': #911,
-    'index': ($max-z-index),
+    'index': 2147483647,
     'background-offset': 1.4em
   ),
   'warning': (
     'icon': '\2622\00A0',
     'color': gold,
-    'index': ($max-z-index - 1),
+    'index': 2147483646,
     'background-offset': 2.9em
   ),
   'obsolete': (
     'icon': '\271D\00A0',
     'color': royalblue,
-    'index': ($max-z-index - 2),
+    'index': 2147483645,
     'background-offset': 4.4em
   ),
   'advice': (
     'icon': '\2665\00A0',
     'color': olivedrab,
-    'index': ($max-z-index - 3),
+    'index': 2147483644,
     'background-offset': 5.9em
   ),
 );
