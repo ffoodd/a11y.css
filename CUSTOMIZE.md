@@ -15,18 +15,15 @@ Credits to [@HugoGiraudel](https://twitter.com/HugoGiraudel) in [#69](https://gi
 
 ## Disabling tests
 
-It is possible to disable some specific tests if you build your own `a11y.css` file. Use the following mixins:
-
-* `disable-errors($keys...)`
-* `disable-advices($keys...)`
-* `disable-warnings($keys...)`
-* `disable-obsoletes($keys...)`
+It is possible to disable some specific tests if you build your own `a11y.css` file with the `disable-tests(..)` mixin.
 
 For instance, if you want to disable the errors about messing with tabindex and missing href, you can do:
 
 ```scss
-@include disable-errors("tab-order, no-href");
+@include disable-tests('error:tab-order', 'error:no-href');
 ```
+
+You can find the exact key names in JSON files in the `locales/` folder.
 
 Credits to [@HugoGiraudel](https://twitter.com/HugoGiraudel) in [#69](https://github.com/ffoodd/a11y.css/issues/113).
 

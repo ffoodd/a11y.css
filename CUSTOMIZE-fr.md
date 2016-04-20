@@ -15,18 +15,15 @@ Merci à [@HugoGiraudel](https://twitter.com/HugoGiraudel) dans l’issue [#69](
 
 ## Désactiver des tests
 
-Il est possible de désactiver des tests au cas par cas si vous compilez votre propre version de `a11y.css`. Utilisez les mixins suivants :
-
-* `disable-errors($keys...)`
-* `disable-advices($keys...)`
-* `disable-warnings($keys...)`
-* `disable-obsoletes($keys...)`
+Il est possible de désactiver des tests au cas par cas si vous compilez votre propre version de `a11y.css` via le mixin `disable-tests(..)`.
 
 Par exemple, si vous voulez désactiver les erreurs à propos des mauvais `tabindex` et du `href` manquant, voici comment faire :
 
 ```scss
-@include disable-errors("tab-order, no-href");
+@include disable-tests('error:tab-order', 'error:no-href');
 ```
+
+Vous pouvez trouver le nom exact des clés dans les fichiers JSON du dossier `locales/`.
 
 Merci à [@HugoGiraudel](https://twitter.com/HugoGiraudel) dans l’issue [#69](https://github.com/ffoodd/a11y.css/issues/113).
 

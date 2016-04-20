@@ -44,18 +44,9 @@ $themes: (
   ),
 );
 
-/// Map of disabled tests per type, referred by their key
-/// @type Map
-/// @prop {List} error - Lists of disabled 'error' tests
-/// @prop {List} warning - Lists of disabled 'warning' tests
-/// @prop {List} obsolete - Lists of disabled 'obsolete' tests
-/// @prop {List} advice - Lists of disabled 'advice' tests
-$disabled-tests: (
-  'error': (),
-  'warning': (),
-  'obsolete': (),
-  'advice': (),
-);
+/// Map of disabled tests, referred by their key
+/// @type List
+$disabled-tests: ();
 
 /// List of self-closing tags & replaced elements
 /// @access private

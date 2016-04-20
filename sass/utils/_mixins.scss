@@ -196,55 +196,16 @@
 }
 
 
-/// Disable specific errors tests
+/// Disable specific tests
 /// @group messages
 /// @access public
 /// @param {Arglist} $keys - Keys of tests to disable
 /// @require $disabled-tests
-/// @example scss - Disable a specific error test
-///  @include disable-errors("tab-order")
-@mixin disable-errors($keys...) {
+/// @example scss - Disable a specific test
+///  @include disable("error:tab-order")
+@mixin disable-tests($keys...) {
   @each $key in $keys {
-    $disabled-tests: map-merge($disabled-tests, ('error': append(map-get($disabled-tests, 'error'), $key))) !global;
-  }
-}
-
-/// Disable specific advices tests
-/// @group messages
-/// @access public
-/// @param {Arglist} $keys - Keys of tests to disable
-/// @require $disabled-tests
-/// @example scss - Disable a specific advice test
-///  @include disable-advices("fake-button")
-@mixin disable-advices($keys...) {
-  @each $key in $keys {
-    $disabled-tests: map-merge($disabled-tests, ('advice': append(map-get($disabled-tests, 'advice'), $key))) !global;
-  }
-}
-
-/// Disable specific warnings tests
-/// @group messages
-/// @access public
-/// @param {Arglist} $keys - Keys of tests to disable
-/// @require $disabled-tests
-/// @example scss - Disable a specific warning test
-///  @include disable-warnings("figure-role")
-@mixin disable-warnings($keys...) {
-  @each $key in $keys {
-    $disabled-tests: map-merge($disabled-tests, ('warning': append(map-get($disabled-tests, 'warning'), $key))) !global;
-  }
-}
-
-/// Disable specific obsoletes tests
-/// @group messages
-/// @access public
-/// @param {Arglist} $keys - Keys of tests to disable
-/// @require $disabled-tests
-/// @example scss - Disable a specific obsolete test
-///  @include disable-obsolete("any")
-@mixin disable-obsoletes($keys...) {
-  @each $key in $keys {
-    $disabled-tests: map-merge($disabled-tests, ('obsolete': append(map-get($disabled-tests, 'obsolete'), $key))) !global;
+    $disabled-tests: append($disabled-tests, $key) !global;
   }
 }
 
