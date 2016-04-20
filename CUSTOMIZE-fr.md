@@ -72,35 +72,6 @@ Les sélecteurs génériques comme `[class]` peuvent également cibler des élé
 }
 ```
 
-### Sélecteur en quarantaine
-
-Quand un sélecteur n’est pas supporté par certains navigateurs, il est possible de le mettre en quarantaine afin qu’il n’invalide pas les autres sélecteurs.
-
-Activez simplement l’argument booléen `$quarantine: true`. Vous devez spécifier `$self-closing` avant, même si celui vaut `false`.
-
-```scss
-a:empty[title=""],
-a:empty[aria-label=""],
-a:empty[aria-labelledby=""],
-a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link');
-}
-
-a:blank[title=""],
-a:blank[aria-label=""],
-a:blank[aria-labelledby=""],
-a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false, $quarantine: true);
-}
-
-a:-moz-only-whitespace[title=""],
-a:-moz-only-whitespace[aria-label=""],
-a:-moz-only-whitespace[aria-labelledby=""],
-a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false, $quarantine: true);
-}
-```
-
 ### Customiser des messages
 
 Chaque test dispose de son propre message, afin d’informer et guider au maximum l’intégrateur en quête d’amélioration. Ils sont eux aussi dans des fichiers partiels, pour en faciliter la lecture et la rédaction. Une personnalisation sera bien plus simple de cette façon (tout le monde n’aimera mes touches d’humour ;-) ).

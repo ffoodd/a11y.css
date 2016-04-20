@@ -79,35 +79,6 @@ Generic selector like `[class]` may target self-closing tags and replaced elemen
 }
 ```
 
-### Quarantine
-
-When a selector is not cross-browser, you may send it to quarantine as it won't invalidate other selectors.
-
-Just switch the boolean argument `$quarantine: true`. You have to specify `$self-closing` before, even if it's `false`.
-
-```scss
-a:empty[title=""],
-a:empty[aria-label=""],
-a:empty[aria-labelledby=""],
-a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link');
-}
-
-a:blank[title=""],
-a:blank[aria-label=""],
-a:blank[aria-labelledby=""],
-a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false, $quarantine: true);
-}
-
-a:-moz-only-whitespace[title=""],
-a:-moz-only-whitespace[aria-label=""],
-a:-moz-only-whitespace[aria-labelledby=""],
-a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false, $quarantine: true);
-}
-```
-
 ### Customise messages
 
 Each test comes with its own message, in order to inform and help developper searching for improvement. They also are in partials files, to make reading and writing easier. Customizing will also be much easier.

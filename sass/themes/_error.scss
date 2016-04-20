@@ -136,14 +136,14 @@ a:blank[title=""],
 a:blank[aria-label=""],
 a:blank[aria-labelledby=""],
 a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false, $quarantine: true);
+  @include error('empty-link', $self-closing: false);
 }
 
 a:-moz-only-whitespace[title=""],
 a:-moz-only-whitespace[aria-label=""],
 a:-moz-only-whitespace[aria-labelledby=""],
 a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false, $quarantine: true);
+  @include error('empty-link', $self-closing: false);
 }
 
 
@@ -393,11 +393,11 @@ button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
 }
 
 button:blank:not([aria-label]):not([aria-labelledby]):not([title]) {
-  @include error('empty-button', $self-closing: false, $quarantine: true);
+  @include error('empty-button', $self-closing: false);
 }
 
 button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]) {
-  @include error('empty-button', $self-closing: false, $quarantine: true);
+  @include error('empty-button', $self-closing: false);
 }
 
 
@@ -1100,11 +1100,11 @@ title:empty {
 }
 
 title:blank {
-  @include error('no-page-title', $self-closing: false, $quarantine: true);
+  @include error('no-page-title', $self-closing: false);
   @include a11y-head('<title>', 'error');
 }
 
 title:-moz-only-whitespace {
-  @include error('no-page-title', $self-closing: false, $quarantine: true);
+  @include error('no-page-title', $self-closing: false);
   @include a11y-head('<title>', 'error');
 }

@@ -82,46 +82,13 @@
 /// @param {String} $theme - Theme
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @param {Bool} $quarantine [false] - Whether or not to compile this single selector apart
 /// @requires {mixin} message
 /// @requires {function} theme-conf
-@mixin item($theme, $key, $self-closing: false, $quarantine: false) {
+@mixin item($theme, $key, $self-closing: false) {
   $is-disabled: index(map-get($disabled-tests, $theme), $key);
 
   @if is-level-enough($theme) and not $is-disabled {
-    // If it's a self closing tag
-    // Include message on next item
-    @if $self-closing {
-      @if $quarantine {
-        @include quarantine-self-closing($theme);
-
-        &::before,
-        & ~ ::after {
-          @include message($theme, $key);
-        }
-      } @else {
-        @extend %a11y-#{$theme}-self-closing;
-
-        &::before,
-        & ~ ::after {
-          @include message($theme, $key);
-        }
-      }
-    } @else {
-      @if $quarantine {
-        @include quarantine($theme);
-
-        &::before {
-          @include message($theme, $key);
-        }
-      } @else {
-        @extend %a11y-#{$theme};
-
-        &::before {
-          @include message($theme, $key);
-        }
-      }
-    }
+    @include a11y($theme, $key, $self-closing);
   }
 }
 
@@ -136,8 +103,8 @@
 /// .selector {
 ///   @include error("no-src");
 /// }
-@mixin error($key, $self-closing: false, $quarantine: false) {
-  @include item('error', $key, $self-closing, $quarantine);
+@mixin error($key, $self-closing: false) {
+  @include item('error', $key, $self-closing);
 }
 
 
@@ -151,8 +118,8 @@
 /// .selector {
 ///   @include warning("abbr");
 /// }
-@mixin warning($key, $self-closing: false, $quarantine: false) {
-  @include item('warning', $key, $self-closing, $quarantine);
+@mixin warning($key, $self-closing: false) {
+  @include item('warning', $key, $self-closing);
 }
 
 
@@ -166,8 +133,8 @@
 /// .selector {
 ///   @include obsolete("any");
 /// }
-@mixin obsolete($key, $self-closing: false, $quarantine: false) {
-  @include item('obsolete', $key, $self-closing, $quarantine);
+@mixin obsolete($key, $self-closing: false) {
+  @include item('obsolete', $key, $self-closing);
 }
 
 /// Defines an advice
@@ -180,8 +147,8 @@
 /// .selector {
 ///   @include advice("nav");
 /// }
-@mixin advice($key, $self-closing: false, $quarantine: false) {
-  @include item('advice', $key, $self-closing, $quarantine);
+@mixin advice($key, $self-closing: false) {
+  @include item('advice', $key, $self-closing);
 }
 
 
@@ -282,4 +249,96 @@
 
   background-image: linear-gradient(to bottom, transparent, $background, transparent 100%);
   content: $content;
+}
+
+/// TBA.
+@mixin a11y-before {
+  border-style: solid                                                   !important;
+  border-width: 0 0 1px                                                 !important;
+  border-radius: 0                                                      !important;
+  display: block                                                        !important;
+  height: auto                                                          !important;
+  width: 100%                                                           !important;
+  padding: 1em 0;
+
+  position: fixed                                                       !important;
+  bottom: auto                                                          !important;
+  left: 0                                                               !important;
+  right: 0                                                              !important;
+  top: 0                                                                !important;
+
+  pointer-events: none                                                  !important;
+  opacity: 0;
+
+  font: 400
+        normal
+        1rem/1.5
+        "Source Code Pro",
+        "SourceCodePro-Medium",
+        "Fira Mono",
+        "Droid Sans Mono",
+        "Ubuntu Mono",
+        "Consolas",
+        "Monaco",
+        "Andale Mono",
+        monospace                                                       !important;
+  text-align: center                                                    !important;
+  text-decoration: none                                                 !important;
+  text-shadow: 0 1px 0 rgba( 255, 255, 255, .2 )                        !important;
+  text-transform: none                                                  !important;
+  transform:          translateY( -100% ) translateZ( 0 )               !important;
+  transition:         transform .3s ease-in                             !important;
+  white-space: pre;
+}
+
+/// TBA.
+@mixin a11y-hover {
+  opacity: 1;
+  transform:          translateY( 0 ) translateZ( 0 )                   !important;
+  transition:         transform .3s ease-in                             !important;
+}
+
+/// TBA.
+@mixin a11y($theme, $key, $self-closing: false) {
+  $base-selector: '&::before';
+  $event-selector: '&:hover::before, &:focus::before';
+
+  counter-increment: unquote($theme);
+  outline: 4px solid theme-conf($theme, 'color') !important;
+  outline-offset: -4px;
+
+  @if $self-closing {
+    $base-selector: '& ~ ::after';
+    $event-selector: '&:hover ~ ::after, &:focus ~ ::after';
+    background-color: transparentize(theme-conf($theme, 'color'), .75) !important;
+  }
+
+  #{$base-selector} {
+    @include a11y-before;
+    @include message($theme, $key);
+    background:   change-color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;
+    border-color: change-color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 50%) !important;
+    color:        change-color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 25%) !important;
+    z-index: theme-conf($theme, 'index') !important;
+  }
+
+  #{$event-selector} {
+    @include a11y-hover;
+  }
+}
+
+/// Provides a way to cancel a message
+@mixin a11y-reset {
+  &,
+  &:hover,
+  &:focus {
+    counter-increment: none !important;
+    outline: none           !important;
+    outline-offset: 0       !important;
+
+    &::before,
+    & ~ ::after {
+      content: ""           !important;
+    }
+  }
 }
