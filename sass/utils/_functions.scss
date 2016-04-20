@@ -1,19 +1,5 @@
 @charset 'UTF-8';
 
-/// Helper function to deep-get a map
-/// @access private
-/// @param {Map} $map
-/// @param {Arglist} $keys
-/// @return {*}
-@function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map-get($map, $key);
-  }
-
-  @return $map;
-}
-
-
 /// Retrieve message from series of keys
 /// @access private
 /// @param {String} $theme - Either `advice`, `error`, `warning` or `obsolete`
@@ -21,17 +7,13 @@
 /// @requires $messages
 /// @return {String} Message
 @function message($theme, $key) {
-  $locale: if(global-variable-exists('language'), $language, 'en');
+  $message-key: $theme + ':' + $key;
 
-  @if not index(map-keys($messages), $theme) {
-    @error 'Theme `#{$theme}` does not exist.';
+  @if not map-has-key($messages, $message-key) {
+    @error 'No key `#{$message-key}` found.';
   }
 
-  @if not index(map-keys(map-get($messages, $theme)), $key) {
-    @error 'No key `#{$key}` found for theme `#{$theme}`.';
-  }
-
-  @return map-deep-get($messages, ($theme, $key, $locale)...);
+  @return map-get($messages, $message-key);
 }
 
 
@@ -50,7 +32,7 @@
 ///   color: #911;
 /// }
 @function theme-conf($theme, $key) {
-  @return map-deep-get($themes, $theme, $key);
+  @return map-get(map-get($themes, $theme), $key);
 }
 
 
@@ -60,7 +42,6 @@
 /// @return {Boolean}
 @function is-level-enough($level) {
   $levels: map-keys($themes);
-
   @return index($levels, $level) <= index($levels, $minimum-level);
 }
 

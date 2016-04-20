@@ -46,7 +46,7 @@
 }
 
 // Dynamically generating a placeholder for each theme
-@each $theme in 'advice' 'obsolete' 'warning' 'error' {
+@each $theme in map-keys($themes) {
   %a11y-#{$theme} {
     counter-increment: unquote($theme);
     outline: 4px solid theme-conf($theme, 'color') !important;
@@ -55,9 +55,9 @@
     &::before {
       @extend %a11y-before;
 
-      background:   change_color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;
-      border-color: change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 50%) !important;
-      color:        change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 25%) !important;
+      background:   change-color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;
+      border-color: change-color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 50%) !important;
+      color:        change-color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 25%) !important;
 
       z-index: theme-conf($theme, 'index') !important;
     }
@@ -77,9 +77,9 @@
     ~ ::after {
       @extend %a11y-before;
 
-      background:   change_color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;
-      border-color: change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 50%) !important;
-      color:        change_color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 25%) !important;
+      background:   change-color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;
+      border-color: change-color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 50%) !important;
+      color:        change-color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 25%) !important;
 
       z-index: theme-conf($theme, 'index') !important;
     }

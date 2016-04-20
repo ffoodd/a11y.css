@@ -1,23 +1,5 @@
 @charset 'UTF-8';
 
-/// Defines the language used by `a11y.css`. For now, only `fr` and `en` allowed.
-/// @access public
-/// @param {String} $language
-/// @output Nothing
-/// @example scss - Defines the language to `fr`.
-///  @include set-locale("fr");
-@mixin set-locale($language) {
-  $supported-languages: 'fr', 'en';
-  $language: to-lower-case($language);
-
-  @if not index($supported-languages, $language) {
-    @error 'Language `#{$language}` is not supported. Pull request welcome!';
-  }
-
-  $language: $language !global;
-}
-
-
 /// Defines the minimum level used by `a11y.css`.
 /// Either:
 /// * `error` for errors only;
@@ -334,36 +316,18 @@
 
   // @note Line breaks can be triggered by «\A» within the message content.
   // @see issue #7, solution from @7studio
-  @if is-level-enough('error') {
-    $background-error: transparent 1.4em, theme-conf('error', 'color') 1.4em, theme-conf('error', 'color') 1.6em, transparent 1.6em;
-    $background: append( $background, $background-error, comma );
-
-    $content-error: map-get(theme-conf('error', 'name'), $language) ': ' #{counter(error)} '\A ';
-    $content: append( $content, $content-error);
-  }
-
-  @if is-level-enough('warning') {
-    $background-warning: transparent 2.9em, theme-conf('warning', 'color') 2.9em, theme-conf('warning', 'color') 3.1em, transparent 3.1em;
-    $background: append( $background, $background-warning, comma );
-
-    $content-warning: map-get(theme-conf('warning', 'name'), $language) ': ' #{counter(warning)} '\A ';
-    $content: append( $content, $content-warning);
-  }
-
-  @if is-level-enough('obsolete') {
-    $background-obsolete: transparent 4.4em, theme-conf('obsolete', 'color') 4.4em, theme-conf('obsolete', 'color') 4.6em, transparent 4.6em;
-    $background: append( $background, $background-obsolete, comma );
-
-    $content-obsolete: map-get(theme-conf('obsolete', 'name'), $language) ': ' #{counter(obsolete)} '\A ';
-    $content: append( $content, $content-obsolete);
-  }
-
-  @if is-level-enough('advice') {
-    $background-advice: transparent 5.9em, theme-conf('advice', 'color') 5.9em, theme-conf('advice', 'color') 6.1em, transparent 6.1em;
-    $background: append( $background, $background-advice );
-
-    $content-advice: map-get(theme-conf('advice', 'name'), $language) ': ' #{counter(advice)} '\A ';
-    $content: append( $content, $content-advice);
+  @each $theme in map-keys($themes) {
+    @if is-level-enough($theme) {
+      $background-offset: theme-conf($theme, 'background-offset');
+      $background-theme:
+        transparent $background-offset,
+        theme-conf($theme, 'color') $background-offset,
+        theme-conf($theme, 'color') ($background-offset + 0.2em),
+        transparent ($background-offset + 0.2em);
+      $background: append($background, $background-theme, 'comma');
+      $content-theme: message('ui', $theme) ': ' #{counter(error)} '\A ';
+      $content: append($content, $content-theme);
+    }
   }
 
   background-image: linear-gradient(to bottom, transparent, $background, transparent 100%);

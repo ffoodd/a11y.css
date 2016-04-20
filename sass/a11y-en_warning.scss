@@ -1,7 +1,8 @@
 @charset 'UTF-8';
 
+$messages: require('./locales/en', $infer: false);
+
 @import 'utils/all';
-@include set-locale('en');
 @include set-minimum-level('warning');
 @import 'base/base';
 @import 'themes/all';
