@@ -622,14 +622,14 @@ body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(
 }
 
 body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
-  @include warning('empty-nodes', $self-closing: false, $quarantine: true);
+  @include warning('empty-nodes', $self-closing: false);
   /* 1 */
   min-height: 1px;
   min-width: 1px;
 }
 
 body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
-  @include warning('empty-nodes', $self-closing: false, $quarantine: true);
+  @include warning('empty-nodes', $self-closing: false);
   /* 1 */
   min-height: 1px;
   min-width: 1px;
@@ -933,15 +933,8 @@ Don't laugh, shit happens.
 [id*="undefined"],
 [class*="undefined"] {
   @include warning('undefined');
-}
 
-@include void-tags {
-  &[id*="NaN"],
-  &[id*="null"],
-  &[class*="NaN"],
-  &[class*="null"],
-  &[id*="undefined"],
-  &[class*="undefined"] {
+  @include void-tags {
     @include warning('undefined', $self-closing: true);
   }
 }

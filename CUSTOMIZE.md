@@ -15,18 +15,15 @@ Credits to [@HugoGiraudel](https://twitter.com/HugoGiraudel) in [#69](https://gi
 
 ## Disabling tests
 
-It is possible to disable some specific tests if you build your own `a11y.css` file. Use the following mixins:
-
-* `disable-errors($keys...)`
-* `disable-advices($keys...)`
-* `disable-warnings($keys...)`
-* `disable-obsoletes($keys...)`
+It is possible to disable some specific tests if you build your own `a11y.css` file with the `disable-tests(..)` mixin.
 
 For instance, if you want to disable the errors about messing with tabindex and missing href, you can do:
 
 ```scss
-@include disable-errors("tab-order, no-href");
+@include disable-tests('error:tab-order', 'error:no-href');
 ```
+
+You can find the exact key names in JSON files in the `locales/` folder.
 
 Credits to [@HugoGiraudel](https://twitter.com/HugoGiraudel) in [#69](https://github.com/ffoodd/a11y.css/issues/113).
 
@@ -75,42 +72,10 @@ Generic selector like `[class]` may target self-closing tags and replaced elemen
 :not(img):not(object):not(embed):not(svg):not(canvas)[width],
 :not(img):not(object):not(embed):not(svg):not(canvas)[height] {
   @include error('dimensions');
-}
 
-@include void-tags {
-  &:not(img):not(object):not(embed):not(svg):not(canvas)[width],
-  &:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+  @include void-tags {
     @include error('dimensions', $self-closing: true);
   }
-}
-```
-
-### Quarantine
-
-When a selector is not cross-browser, you may send it to quarantine as it won't invalidate other selectors.
-
-Just switch the boolean argument `$quarantine: true`. You have to specify `$self-closing` before, even if it's `false`.
-
-```scss
-a:empty[title=""],
-a:empty[aria-label=""],
-a:empty[aria-labelledby=""],
-a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link');
-}
-
-a:blank[title=""],
-a:blank[aria-label=""],
-a:blank[aria-labelledby=""],
-a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false, $quarantine: true);
-}
-
-a:-moz-only-whitespace[title=""],
-a:-moz-only-whitespace[aria-label=""],
-a:-moz-only-whitespace[aria-labelledby=""],
-a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false, $quarantine: true);
 }
 ```
 

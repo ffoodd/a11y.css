@@ -15,18 +15,15 @@ Merci à [@HugoGiraudel](https://twitter.com/HugoGiraudel) dans l’issue [#69](
 
 ## Désactiver des tests
 
-Il est possible de désactiver des tests au cas par cas si vous compilez votre propre version de `a11y.css`. Utilisez les mixins suivants :
-
-* `disable-errors($keys...)`
-* `disable-advices($keys...)`
-* `disable-warnings($keys...)`
-* `disable-obsoletes($keys...)`
+Il est possible de désactiver des tests au cas par cas si vous compilez votre propre version de `a11y.css` via le mixin `disable-tests(..)`.
 
 Par exemple, si vous voulez désactiver les erreurs à propos des mauvais `tabindex` et du `href` manquant, voici comment faire :
 
 ```scss
-@include disable-errors("tab-order, no-href");
+@include disable-tests('error:tab-order', 'error:no-href');
 ```
+
+Vous pouvez trouver le nom exact des clés dans les fichiers JSON du dossier `locales/`.
 
 Merci à [@HugoGiraudel](https://twitter.com/HugoGiraudel) dans l’issue [#69](https://github.com/ffoodd/a11y.css/issues/113).
 
@@ -68,42 +65,10 @@ Les sélecteurs génériques comme `[class]` peuvent également cibler des élé
 :not(img):not(object):not(embed):not(svg):not(canvas)[width],
 :not(img):not(object):not(embed):not(svg):not(canvas)[height] {
   @include error('dimensions');
-}
 
-@include void-tags {
-  &:not(img):not(object):not(embed):not(svg):not(canvas)[width],
-  &:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+  @include void-tags {
     @include error('dimensions', $self-closing: true);
   }
-}
-```
-
-### Sélecteur en quarantaine
-
-Quand un sélecteur n’est pas supporté par certains navigateurs, il est possible de le mettre en quarantaine afin qu’il n’invalide pas les autres sélecteurs.
-
-Activez simplement l’argument booléen `$quarantine: true`. Vous devez spécifier `$self-closing` avant, même si celui vaut `false`.
-
-```scss
-a:empty[title=""],
-a:empty[aria-label=""],
-a:empty[aria-labelledby=""],
-a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link');
-}
-
-a:blank[title=""],
-a:blank[aria-label=""],
-a:blank[aria-labelledby=""],
-a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false, $quarantine: true);
-}
-
-a:-moz-only-whitespace[title=""],
-a:-moz-only-whitespace[aria-label=""],
-a:-moz-only-whitespace[aria-labelledby=""],
-a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false, $quarantine: true);
 }
 ```
 
