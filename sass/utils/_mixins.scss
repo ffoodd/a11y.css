@@ -77,36 +77,40 @@
 /// @requires {mixin} message
 /// @requires {function} theme-conf
 @mixin item($theme, $key, $self-closing: false, $quarantine: false) {
-  // If it's a self closing tag
-  // Include message on next item
-  @if $self-closing {
-    @if $quarantine {
-      @include quarantine-self-closing($theme);
+  $is-disabled: index(map-get($disabled-tests, $theme), $key);
 
-      &::before,
-      & ~ ::after {
-        @include message($theme, $key);
+  @if is-level-enough($theme) and not $is-disabled {
+    // If it's a self closing tag
+    // Include message on next item
+    @if $self-closing {
+      @if $quarantine {
+        @include quarantine-self-closing($theme);
+
+        &::before,
+        & ~ ::after {
+          @include message($theme, $key);
+        }
+      } @else {
+        @extend %a11y-#{$theme}-self-closing;
+
+        &::before,
+        & ~ ::after {
+          @include message($theme, $key);
+        }
       }
     } @else {
-      @extend %a11y-#{$theme}-self-closing;
+      @if $quarantine {
+        @include quarantine($theme);
 
-      &::before,
-      & ~ ::after {
-        @include message($theme, $key);
-      }
-    }
-  } @else {
-    @if $quarantine {
-      @include quarantine($theme);
+        &::before {
+          @include message($theme, $key);
+        }
+      } @else {
+        @extend %a11y-#{$theme};
 
-      &::before {
-        @include message($theme, $key);
-      }
-    } @else {
-      @extend %a11y-#{$theme};
-
-      &::before {
-        @include message($theme, $key);
+        &::before {
+          @include message($theme, $key);
+        }
       }
     }
   }
@@ -119,18 +123,12 @@
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 /// @require {mixin} item
-/// @require {variable} disabled-tests
-/// @require {function} is-level-enough
 /// @example scss - Define an error
 /// .selector {
 ///   @include error("no-src");
 /// }
 @mixin error($key, $self-closing: false, $quarantine: false) {
-  $is-disabled: index(map-get($disabled-tests, 'error'), $key);
-
-  @if is-level-enough('error') and not $is-disabled {
-    @include item('error', $key, $self-closing, $quarantine);
-  }
+  @include item('error', $key, $self-closing, $quarantine);
 }
 
 
@@ -140,18 +138,12 @@
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 /// @require {mixin} item
-/// @require {variable} disabled-tests
-/// @require {function} is-level-enough
 /// @example scss - Define an warning
 /// .selector {
 ///   @include warning("abbr");
 /// }
 @mixin warning($key, $self-closing: false, $quarantine: false) {
-  $is-disabled: index(map-get($disabled-tests, 'warning'), $key);
-
-  @if is-level-enough('warning') and not $is-disabled {
-    @include item('warning', $key, $self-closing, $quarantine);
-  }
+  @include item('warning', $key, $self-closing, $quarantine);
 }
 
 
@@ -161,18 +153,12 @@
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 /// @require {mixin} item
-/// @require {variable} disabled-tests
-/// @require {function} is-level-enough
 /// @example scss - Define an obsolete
 /// .selector {
 ///   @include obsolete("any");
 /// }
 @mixin obsolete($key, $self-closing: false, $quarantine: false) {
-  $is-disabled: index(map-get($disabled-tests, 'obsolete'), $key);
-
-  @if is-level-enough('obsolete') and not $is-disabled {
-    @include item('obsolete', $key, $self-closing, $quarantine);
-  }
+  @include item('obsolete', $key, $self-closing, $quarantine);
 }
 
 /// Defines an advice
@@ -181,18 +167,12 @@
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 /// @require {mixin} item
-/// @require {variable} disabled-tests
-/// @require {function} is-level-enough
 /// @example scss - Define an advice
 /// .selector {
 ///   @include advice("nav");
 /// }
 @mixin advice($key, $self-closing: false, $quarantine: false) {
-  $is-disabled: index(map-get($disabled-tests, 'advice'), $key);
-
-  @if is-level-enough('advice') and not $is-disabled {
-    @include item('advice', $key, $self-closing, $quarantine);
-  }
+  @include item('advice', $key, $self-closing, $quarantine);
 }
 
 
@@ -294,4 +274,3 @@
   background-image: linear-gradient(to bottom, transparent, $background, transparent 100%);
   content: $content;
 }
-
