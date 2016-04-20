@@ -21,8 +21,6 @@
 /// @requires $messages
 /// @return {String} Message
 @function message($theme, $key) {
-  $locale: if(global-variable-exists('language'), $language, 'en');
-
   @if not index(map-keys($messages), $theme) {
     @error 'Theme `#{$theme}` does not exist.';
   }
@@ -31,7 +29,7 @@
     @error 'No key `#{$key}` found for theme `#{$theme}`.';
   }
 
-  @return map-deep-get($messages, ($theme, $key, $locale)...);
+  @return map-deep-get($messages, $theme, $key);
 }
 
 
