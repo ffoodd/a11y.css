@@ -1,750 +1,4 @@
-[class=""]::before,
-[id=""]::before,
-main:not(:first-of-type)::before,
-figcaption:not(:only-of-type)::before,
-figcaption:not(:last-child):not(:first-child)::before,
-[href^="mailto"]::before,
-[href^="tel"]::before,
-a[role="button"]::before,
-[target$="blank"]::before,
-[download]::before,
-[href$=".pdf"]::before,
-[href$=".doc"]::before,
-[href$=".png"]::before,
-[href$=".jpg"]::before,
-[href$=".gif"]::before,
-[href$=".mp3"]::before,
-[href$=".mp4"]::before,
-[href$=".mov"]::before,
-[href$=".ogg"]::before,
-[href$=".xls"]::before,
-[href$=".txt"]::before,
-[href$=".zip"]::before,
-[href$=".rar"]::before,
-[href$=".docx"]::before,
-[role="main"] ~ [role="main"]::before,
-[role="search"] ~ [role="search"]::before,
-[role="banner"] ~ [role="banner"]::before,
-[role="contentinfo"] ~ [role="contentinfo"]::before,
-[id*="search"]:not([role="search"])::before,
-[class*="search"]:not([role="search"])::before,
-[hidden]:not(:empty)::before,
-[aria-hidden="true"]:not(:empty)::before,
-time::before,
-[datetime]::before,
-th[scope]::before,
-table[role="presentation"]::before,
-area[class=""] ~ ::after,
-base[class=""] ~ ::after,
-br[class=""] ~ ::after,
-col[class=""] ~ ::after,
-command[class=""] ~ ::after,
-embed[class=""] ~ ::after,
-hr[class=""] ~ ::after,
-img[class=""] ~ ::after,
-input[class=""] ~ ::after,
-keygen[class=""] ~ ::after,
-link[class=""] ~ ::after,
-meta[class=""] ~ ::after,
-param[class=""] ~ ::after,
-source[class=""] ~ ::after,
-track[class=""] ~ ::after,
-wbr[class=""] ~ ::after,
-textarea[class=""] ~ ::after,
-select[class=""] ~ ::after,
-svg[class=""] ~ ::after,
-audio[class=""] ~ ::after,
-video[class=""] ~ ::after,
-iframe[class=""] ~ ::after,
-area[id=""] ~ ::after,
-base[id=""] ~ ::after,
-br[id=""] ~ ::after,
-col[id=""] ~ ::after,
-command[id=""] ~ ::after,
-embed[id=""] ~ ::after,
-hr[id=""] ~ ::after,
-img[id=""] ~ ::after,
-input[id=""] ~ ::after,
-keygen[id=""] ~ ::after,
-link[id=""] ~ ::after,
-meta[id=""] ~ ::after,
-param[id=""] ~ ::after,
-source[id=""] ~ ::after,
-track[id=""] ~ ::after,
-wbr[id=""] ~ ::after,
-textarea[id=""] ~ ::after,
-select[id=""] ~ ::after,
-svg[id=""] ~ ::after,
-audio[id=""] ~ ::after,
-video[id=""] ~ ::after,
-iframe[id=""] ~ ::after,
-input[id*="search"]:not([role="search"]) ~ ::after,
-input[class*="search"]:not([role="search"]) ~ ::after,
-[required] ~ ::after,
-[aria-required] ~ ::after,
-input[required] ~ ::after,
-input[aria-required] ~ ::after,
-select[required] ~ ::after,
-select[aria-required] ~ ::after,
-textarea[required] ~ ::after,
-textarea[aria-required] ~ ::after,
-area[hidden]:not(:empty) ~ ::after,
-area[aria-hidden="true"]:not(:empty) ~ ::after,
-base[hidden]:not(:empty) ~ ::after,
-base[aria-hidden="true"]:not(:empty) ~ ::after,
-br[hidden]:not(:empty) ~ ::after,
-br[aria-hidden="true"]:not(:empty) ~ ::after,
-col[hidden]:not(:empty) ~ ::after,
-col[aria-hidden="true"]:not(:empty) ~ ::after,
-command[hidden]:not(:empty) ~ ::after,
-command[aria-hidden="true"]:not(:empty) ~ ::after,
-embed[hidden]:not(:empty) ~ ::after,
-embed[aria-hidden="true"]:not(:empty) ~ ::after,
-hr[hidden]:not(:empty) ~ ::after,
-hr[aria-hidden="true"]:not(:empty) ~ ::after,
-img[hidden]:not(:empty) ~ ::after,
-img[aria-hidden="true"]:not(:empty) ~ ::after,
-input[hidden]:not(:empty) ~ ::after,
-input[aria-hidden="true"]:not(:empty) ~ ::after,
-keygen[hidden]:not(:empty) ~ ::after,
-keygen[aria-hidden="true"]:not(:empty) ~ ::after,
-link[hidden]:not(:empty) ~ ::after,
-link[aria-hidden="true"]:not(:empty) ~ ::after,
-meta[hidden]:not(:empty) ~ ::after,
-meta[aria-hidden="true"]:not(:empty) ~ ::after,
-param[hidden]:not(:empty) ~ ::after,
-param[aria-hidden="true"]:not(:empty) ~ ::after,
-source[hidden]:not(:empty) ~ ::after,
-source[aria-hidden="true"]:not(:empty) ~ ::after,
-track[hidden]:not(:empty) ~ ::after,
-track[aria-hidden="true"]:not(:empty) ~ ::after,
-wbr[hidden]:not(:empty) ~ ::after,
-wbr[aria-hidden="true"]:not(:empty) ~ ::after,
-textarea[hidden]:not(:empty) ~ ::after,
-textarea[aria-hidden="true"]:not(:empty) ~ ::after,
-select[hidden]:not(:empty) ~ ::after,
-select[aria-hidden="true"]:not(:empty) ~ ::after,
-svg[hidden]:not(:empty) ~ ::after,
-svg[aria-hidden="true"]:not(:empty) ~ ::after,
-audio[hidden]:not(:empty) ~ ::after,
-audio[aria-hidden="true"]:not(:empty) ~ ::after,
-video[hidden]:not(:empty) ~ ::after,
-video[aria-hidden="true"]:not(:empty) ~ ::after,
-iframe[hidden]:not(:empty) ~ ::after,
-iframe[aria-hidden="true"]:not(:empty) ~ ::after,
-[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
-video ~ ::after,
-audio ~ ::after,
-img[alt][title] ~ ::after,
-area[alt][title] ~ ::after,
-svg[aria-label][title] ~ ::after {
-  border-radius: 0                                                      !important;
-  border-style: solid                                                   !important;
-  border-width: 0 0 1px                                                 !important;
-  bottom: auto                                                          !important;
-  display: block                                                        !important;
-  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace                                                       !important;
-  height: auto                                                          !important;
-  left: 0                                                               !important;
-  opacity: 0;
-  padding: 1em 0;
-  pointer-events: none                                                  !important;
-  position: fixed                                                       !important;
-  right: 0                                                              !important;
-  text-align: center                                                    !important;
-  text-decoration: none                                                 !important;
-  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
-  text-transform: none                                                  !important;
-  top: 0                                                                !important;
-  -webkit-transform: translateY(-100%) translateZ(0) !important;
-          transform: translateY(-100%) translateZ(0) !important;
-  transition: -webkit-transform .3s ease-in                             !important;
-  transition:         transform .3s ease-in                             !important;
-  transition:         transform .3s ease-in, -webkit-transform .3s ease-in                             !important;
-  white-space: pre;
-  width: 100%                                                           !important;
-}[class=""]:hover::before,
-[id=""]:hover::before,
-main:not(:first-of-type):hover::before,
-figcaption:not(:only-of-type):hover::before,
-figcaption:not(:last-child):not(:first-child):hover::before,
-[href^="mailto"]:hover::before,
-[href^="tel"]:hover::before,
-a[role="button"]:hover::before,
-[target$="blank"]:hover::before,
-[download]:hover::before,
-[href$=".pdf"]:hover::before,
-[href$=".doc"]:hover::before,
-[href$=".png"]:hover::before,
-[href$=".jpg"]:hover::before,
-[href$=".gif"]:hover::before,
-[href$=".mp3"]:hover::before,
-[href$=".mp4"]:hover::before,
-[href$=".mov"]:hover::before,
-[href$=".ogg"]:hover::before,
-[href$=".xls"]:hover::before,
-[href$=".txt"]:hover::before,
-[href$=".zip"]:hover::before,
-[href$=".rar"]:hover::before,
-[href$=".docx"]:hover::before,
-[role="main"] ~ [role="main"]:hover::before,
-[role="search"] ~ [role="search"]:hover::before,
-[role="banner"] ~ [role="banner"]:hover::before,
-[role="contentinfo"] ~ [role="contentinfo"]:hover::before,
-[id*="search"]:not([role="search"]):hover::before,
-[class*="search"]:not([role="search"]):hover::before,
-[hidden]:not(:empty):hover::before,
-[aria-hidden="true"]:not(:empty):hover::before,
-time:hover::before,
-[datetime]:hover::before,
-th[scope]:hover::before,
-table[role="presentation"]:hover::before,
-[class=""]:focus::before,
-[id=""]:focus::before,
-main:not(:first-of-type):focus::before,
-figcaption:not(:only-of-type):focus::before,
-figcaption:not(:last-child):not(:first-child):focus::before,
-[href^="mailto"]:focus::before,
-[href^="tel"]:focus::before,
-a[role="button"]:focus::before,
-[target$="blank"]:focus::before,
-[download]:focus::before,
-[href$=".pdf"]:focus::before,
-[href$=".doc"]:focus::before,
-[href$=".png"]:focus::before,
-[href$=".jpg"]:focus::before,
-[href$=".gif"]:focus::before,
-[href$=".mp3"]:focus::before,
-[href$=".mp4"]:focus::before,
-[href$=".mov"]:focus::before,
-[href$=".ogg"]:focus::before,
-[href$=".xls"]:focus::before,
-[href$=".txt"]:focus::before,
-[href$=".zip"]:focus::before,
-[href$=".rar"]:focus::before,
-[href$=".docx"]:focus::before,
-[role="main"] ~ [role="main"]:focus::before,
-[role="search"] ~ [role="search"]:focus::before,
-[role="banner"] ~ [role="banner"]:focus::before,
-[role="contentinfo"] ~ [role="contentinfo"]:focus::before,
-[id*="search"]:not([role="search"]):focus::before,
-[class*="search"]:not([role="search"]):focus::before,
-[hidden]:not(:empty):focus::before,
-[aria-hidden="true"]:not(:empty):focus::before,
-time:focus::before,
-[datetime]:focus::before,
-th[scope]:focus::before,
-table[role="presentation"]:focus::before,
-area[class=""]:hover ~ ::after,
-base[class=""]:hover ~ ::after,
-br[class=""]:hover ~ ::after,
-col[class=""]:hover ~ ::after,
-command[class=""]:hover ~ ::after,
-embed[class=""]:hover ~ ::after,
-hr[class=""]:hover ~ ::after,
-img[class=""]:hover ~ ::after,
-input[class=""]:hover ~ ::after,
-keygen[class=""]:hover ~ ::after,
-link[class=""]:hover ~ ::after,
-meta[class=""]:hover ~ ::after,
-param[class=""]:hover ~ ::after,
-source[class=""]:hover ~ ::after,
-track[class=""]:hover ~ ::after,
-wbr[class=""]:hover ~ ::after,
-textarea[class=""]:hover ~ ::after,
-select[class=""]:hover ~ ::after,
-svg[class=""]:hover ~ ::after,
-audio[class=""]:hover ~ ::after,
-video[class=""]:hover ~ ::after,
-iframe[class=""]:hover ~ ::after,
-area[id=""]:hover ~ ::after,
-base[id=""]:hover ~ ::after,
-br[id=""]:hover ~ ::after,
-col[id=""]:hover ~ ::after,
-command[id=""]:hover ~ ::after,
-embed[id=""]:hover ~ ::after,
-hr[id=""]:hover ~ ::after,
-img[id=""]:hover ~ ::after,
-input[id=""]:hover ~ ::after,
-keygen[id=""]:hover ~ ::after,
-link[id=""]:hover ~ ::after,
-meta[id=""]:hover ~ ::after,
-param[id=""]:hover ~ ::after,
-source[id=""]:hover ~ ::after,
-track[id=""]:hover ~ ::after,
-wbr[id=""]:hover ~ ::after,
-textarea[id=""]:hover ~ ::after,
-select[id=""]:hover ~ ::after,
-svg[id=""]:hover ~ ::after,
-audio[id=""]:hover ~ ::after,
-video[id=""]:hover ~ ::after,
-iframe[id=""]:hover ~ ::after,
-input[id*="search"]:hover:not([role="search"]) ~ ::after,
-input[class*="search"]:hover:not([role="search"]) ~ ::after,
-[required]:hover ~ ::after,
-[aria-required]:hover ~ ::after,
-input[required]:hover ~ ::after,
-input[aria-required]:hover ~ ::after,
-select[required]:hover ~ ::after,
-select[aria-required]:hover ~ ::after,
-textarea[required]:hover ~ ::after,
-textarea[aria-required]:hover ~ ::after,
-area[hidden]:hover:not(:empty) ~ ::after,
-area[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-base[hidden]:hover:not(:empty) ~ ::after,
-base[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-br[hidden]:hover:not(:empty) ~ ::after,
-br[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-col[hidden]:hover:not(:empty) ~ ::after,
-col[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-command[hidden]:hover:not(:empty) ~ ::after,
-command[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-embed[hidden]:hover:not(:empty) ~ ::after,
-embed[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-hr[hidden]:hover:not(:empty) ~ ::after,
-hr[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-img[hidden]:hover:not(:empty) ~ ::after,
-img[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-input[hidden]:hover:not(:empty) ~ ::after,
-input[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-keygen[hidden]:hover:not(:empty) ~ ::after,
-keygen[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-link[hidden]:hover:not(:empty) ~ ::after,
-link[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-meta[hidden]:hover:not(:empty) ~ ::after,
-meta[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-param[hidden]:hover:not(:empty) ~ ::after,
-param[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-source[hidden]:hover:not(:empty) ~ ::after,
-source[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-track[hidden]:hover:not(:empty) ~ ::after,
-track[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-wbr[hidden]:hover:not(:empty) ~ ::after,
-wbr[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-textarea[hidden]:hover:not(:empty) ~ ::after,
-textarea[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-select[hidden]:hover:not(:empty) ~ ::after,
-select[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-svg[hidden]:hover:not(:empty) ~ ::after,
-svg[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-audio[hidden]:hover:not(:empty) ~ ::after,
-audio[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-video[hidden]:hover:not(:empty) ~ ::after,
-video[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-iframe[hidden]:hover:not(:empty) ~ ::after,
-iframe[aria-hidden="true"]:hover:not(:empty) ~ ::after,
-[placeholder]:hover:not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
-video:hover ~ ::after,
-audio:hover ~ ::after,
-img[alt][title]:hover ~ ::after,
-area[alt][title]:hover ~ ::after,
-svg[aria-label][title]:hover ~ ::after,
-area[class=""]:focus ~ ::after,
-base[class=""]:focus ~ ::after,
-br[class=""]:focus ~ ::after,
-col[class=""]:focus ~ ::after,
-command[class=""]:focus ~ ::after,
-embed[class=""]:focus ~ ::after,
-hr[class=""]:focus ~ ::after,
-img[class=""]:focus ~ ::after,
-input[class=""]:focus ~ ::after,
-keygen[class=""]:focus ~ ::after,
-link[class=""]:focus ~ ::after,
-meta[class=""]:focus ~ ::after,
-param[class=""]:focus ~ ::after,
-source[class=""]:focus ~ ::after,
-track[class=""]:focus ~ ::after,
-wbr[class=""]:focus ~ ::after,
-textarea[class=""]:focus ~ ::after,
-select[class=""]:focus ~ ::after,
-svg[class=""]:focus ~ ::after,
-audio[class=""]:focus ~ ::after,
-video[class=""]:focus ~ ::after,
-iframe[class=""]:focus ~ ::after,
-area[id=""]:focus ~ ::after,
-base[id=""]:focus ~ ::after,
-br[id=""]:focus ~ ::after,
-col[id=""]:focus ~ ::after,
-command[id=""]:focus ~ ::after,
-embed[id=""]:focus ~ ::after,
-hr[id=""]:focus ~ ::after,
-img[id=""]:focus ~ ::after,
-input[id=""]:focus ~ ::after,
-keygen[id=""]:focus ~ ::after,
-link[id=""]:focus ~ ::after,
-meta[id=""]:focus ~ ::after,
-param[id=""]:focus ~ ::after,
-source[id=""]:focus ~ ::after,
-track[id=""]:focus ~ ::after,
-wbr[id=""]:focus ~ ::after,
-textarea[id=""]:focus ~ ::after,
-select[id=""]:focus ~ ::after,
-svg[id=""]:focus ~ ::after,
-audio[id=""]:focus ~ ::after,
-video[id=""]:focus ~ ::after,
-iframe[id=""]:focus ~ ::after,
-input[id*="search"]:focus:not([role="search"]) ~ ::after,
-input[class*="search"]:focus:not([role="search"]) ~ ::after,
-[required]:focus ~ ::after,
-[aria-required]:focus ~ ::after,
-input[required]:focus ~ ::after,
-input[aria-required]:focus ~ ::after,
-select[required]:focus ~ ::after,
-select[aria-required]:focus ~ ::after,
-textarea[required]:focus ~ ::after,
-textarea[aria-required]:focus ~ ::after,
-area[hidden]:focus:not(:empty) ~ ::after,
-area[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-base[hidden]:focus:not(:empty) ~ ::after,
-base[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-br[hidden]:focus:not(:empty) ~ ::after,
-br[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-col[hidden]:focus:not(:empty) ~ ::after,
-col[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-command[hidden]:focus:not(:empty) ~ ::after,
-command[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-embed[hidden]:focus:not(:empty) ~ ::after,
-embed[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-hr[hidden]:focus:not(:empty) ~ ::after,
-hr[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-img[hidden]:focus:not(:empty) ~ ::after,
-img[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-input[hidden]:focus:not(:empty) ~ ::after,
-input[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-keygen[hidden]:focus:not(:empty) ~ ::after,
-keygen[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-link[hidden]:focus:not(:empty) ~ ::after,
-link[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-meta[hidden]:focus:not(:empty) ~ ::after,
-meta[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-param[hidden]:focus:not(:empty) ~ ::after,
-param[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-source[hidden]:focus:not(:empty) ~ ::after,
-source[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-track[hidden]:focus:not(:empty) ~ ::after,
-track[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-wbr[hidden]:focus:not(:empty) ~ ::after,
-wbr[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-textarea[hidden]:focus:not(:empty) ~ ::after,
-textarea[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-select[hidden]:focus:not(:empty) ~ ::after,
-select[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-svg[hidden]:focus:not(:empty) ~ ::after,
-svg[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-audio[hidden]:focus:not(:empty) ~ ::after,
-audio[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-video[hidden]:focus:not(:empty) ~ ::after,
-video[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-iframe[hidden]:focus:not(:empty) ~ ::after,
-iframe[aria-hidden="true"]:focus:not(:empty) ~ ::after,
-[placeholder]:focus:not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
-video:focus ~ ::after,
-audio:focus ~ ::after,
-img[alt][title]:focus ~ ::after,
-area[alt][title]:focus ~ ::after,
-svg[aria-label][title]:focus ~ ::after {
-  opacity: 1;
-  -webkit-transform: translateY(0) translateZ(0) !important;
-          transform: translateY(0) translateZ(0) !important;
-  transition: -webkit-transform .3s ease-in                             !important;
-  transition:         transform .3s ease-in                             !important;
-  transition:         transform .3s ease-in, -webkit-transform .3s ease-in                             !important;
-}[class=""],
-[id=""],
-main:not(:first-of-type),
-figcaption:not(:only-of-type),
-figcaption:not(:first-child):not(:last-child),
-[href^="mailto"],
-[href^="tel"],
-a[role="button"],
-[target$="blank"],
-[download],
-[href$=".pdf"],
-[href$=".doc"],
-[href$=".png"],
-[href$=".jpg"],
-[href$=".gif"],
-[href$=".mp3"],
-[href$=".mp4"],
-[href$=".mov"],
-[href$=".ogg"],
-[href$=".xls"],
-[href$=".txt"],
-[href$=".zip"],
-[href$=".rar"],
-[href$=".docx"],
-[role="main"] ~ [role="main"],
-[role="search"] ~ [role="search"],
-[role="banner"] ~ [role="banner"],
-[role="contentinfo"] ~ [role="contentinfo"],
-[id*="search"]:not([role="search"]),
-[class*="search"]:not([role="search"]),
-[hidden]:not(:empty),
-[aria-hidden="true"]:not(:empty),
-time,
-[datetime],
-th[scope],
-table[role="presentation"] {
-  counter-increment: advice;
-  outline: 4px solid #6b8e23 !important;
-  outline-offset: -4px;
-}[class=""]::before,
-[id=""]::before,
-main:not(:first-of-type)::before,
-figcaption:not(:only-of-type)::before,
-figcaption:not(:last-child):not(:first-child)::before,
-[href^="mailto"]::before,
-[href^="tel"]::before,
-a[role="button"]::before,
-[target$="blank"]::before,
-[download]::before,
-[href$=".pdf"]::before,
-[href$=".doc"]::before,
-[href$=".png"]::before,
-[href$=".jpg"]::before,
-[href$=".gif"]::before,
-[href$=".mp3"]::before,
-[href$=".mp4"]::before,
-[href$=".mov"]::before,
-[href$=".ogg"]::before,
-[href$=".xls"]::before,
-[href$=".txt"]::before,
-[href$=".zip"]::before,
-[href$=".rar"]::before,
-[href$=".docx"]::before,
-[role="main"] ~ [role="main"]::before,
-[role="search"] ~ [role="search"]::before,
-[role="banner"] ~ [role="banner"]::before,
-[role="contentinfo"] ~ [role="contentinfo"]::before,
-[id*="search"]:not([role="search"])::before,
-[class*="search"]:not([role="search"])::before,
-[hidden]:not(:empty)::before,
-[aria-hidden="true"]:not(:empty)::before,
-time::before,
-[datetime]::before,
-th[scope]::before,
-table[role="presentation"]::before {
-  background: #f6fce9 !important;
-  border-color: #96bf40 !important;
-  color: #4b6020 !important;
-  z-index: 2147483644 !important;
-}area[class=""],
-base[class=""],
-br[class=""],
-col[class=""],
-command[class=""],
-embed[class=""],
-hr[class=""],
-img[class=""],
-input[class=""],
-keygen[class=""],
-link[class=""],
-meta[class=""],
-param[class=""],
-source[class=""],
-track[class=""],
-wbr[class=""],
-textarea[class=""],
-select[class=""],
-svg[class=""],
-audio[class=""],
-video[class=""],
-iframe[class=""],
-area[id=""],
-base[id=""],
-br[id=""],
-col[id=""],
-command[id=""],
-embed[id=""],
-hr[id=""],
-img[id=""],
-input[id=""],
-keygen[id=""],
-link[id=""],
-meta[id=""],
-param[id=""],
-source[id=""],
-track[id=""],
-wbr[id=""],
-textarea[id=""],
-select[id=""],
-svg[id=""],
-audio[id=""],
-video[id=""],
-iframe[id=""],
-input[id*="search"]:not([role="search"]),
-input[class*="search"]:not([role="search"]),
-[required],
-[aria-required],
-input[required],
-input[aria-required],
-select[required],
-select[aria-required],
-textarea[required],
-textarea[aria-required],
-area[hidden]:not(:empty),
-area[aria-hidden="true"]:not(:empty),
-base[hidden]:not(:empty),
-base[aria-hidden="true"]:not(:empty),
-br[hidden]:not(:empty),
-br[aria-hidden="true"]:not(:empty),
-col[hidden]:not(:empty),
-col[aria-hidden="true"]:not(:empty),
-command[hidden]:not(:empty),
-command[aria-hidden="true"]:not(:empty),
-embed[hidden]:not(:empty),
-embed[aria-hidden="true"]:not(:empty),
-hr[hidden]:not(:empty),
-hr[aria-hidden="true"]:not(:empty),
-img[hidden]:not(:empty),
-img[aria-hidden="true"]:not(:empty),
-input[hidden]:not(:empty),
-input[aria-hidden="true"]:not(:empty),
-keygen[hidden]:not(:empty),
-keygen[aria-hidden="true"]:not(:empty),
-link[hidden]:not(:empty),
-link[aria-hidden="true"]:not(:empty),
-meta[hidden]:not(:empty),
-meta[aria-hidden="true"]:not(:empty),
-param[hidden]:not(:empty),
-param[aria-hidden="true"]:not(:empty),
-source[hidden]:not(:empty),
-source[aria-hidden="true"]:not(:empty),
-track[hidden]:not(:empty),
-track[aria-hidden="true"]:not(:empty),
-wbr[hidden]:not(:empty),
-wbr[aria-hidden="true"]:not(:empty),
-textarea[hidden]:not(:empty),
-textarea[aria-hidden="true"]:not(:empty),
-select[hidden]:not(:empty),
-select[aria-hidden="true"]:not(:empty),
-svg[hidden]:not(:empty),
-svg[aria-hidden="true"]:not(:empty),
-audio[hidden]:not(:empty),
-audio[aria-hidden="true"]:not(:empty),
-video[hidden]:not(:empty),
-video[aria-hidden="true"]:not(:empty),
-iframe[hidden]:not(:empty),
-iframe[aria-hidden="true"]:not(:empty),
-[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]),
-video,
-audio,
-img[alt][title],
-area[alt][title],
-svg[aria-label][title] {
-  background-color: rgba(107,142,35,.25) !important;
-  counter-increment: advice;
-  outline: 4px solid #6b8e23 !important;
-  outline-offset: -4px;
-}area[class=""] ~ ::after,
-base[class=""] ~ ::after,
-br[class=""] ~ ::after,
-col[class=""] ~ ::after,
-command[class=""] ~ ::after,
-embed[class=""] ~ ::after,
-hr[class=""] ~ ::after,
-img[class=""] ~ ::after,
-input[class=""] ~ ::after,
-keygen[class=""] ~ ::after,
-link[class=""] ~ ::after,
-meta[class=""] ~ ::after,
-param[class=""] ~ ::after,
-source[class=""] ~ ::after,
-track[class=""] ~ ::after,
-wbr[class=""] ~ ::after,
-textarea[class=""] ~ ::after,
-select[class=""] ~ ::after,
-svg[class=""] ~ ::after,
-audio[class=""] ~ ::after,
-video[class=""] ~ ::after,
-iframe[class=""] ~ ::after,
-area[id=""] ~ ::after,
-base[id=""] ~ ::after,
-br[id=""] ~ ::after,
-col[id=""] ~ ::after,
-command[id=""] ~ ::after,
-embed[id=""] ~ ::after,
-hr[id=""] ~ ::after,
-img[id=""] ~ ::after,
-input[id=""] ~ ::after,
-keygen[id=""] ~ ::after,
-link[id=""] ~ ::after,
-meta[id=""] ~ ::after,
-param[id=""] ~ ::after,
-source[id=""] ~ ::after,
-track[id=""] ~ ::after,
-wbr[id=""] ~ ::after,
-textarea[id=""] ~ ::after,
-select[id=""] ~ ::after,
-svg[id=""] ~ ::after,
-audio[id=""] ~ ::after,
-video[id=""] ~ ::after,
-iframe[id=""] ~ ::after,
-input[id*="search"]:not([role="search"]) ~ ::after,
-input[class*="search"]:not([role="search"]) ~ ::after,
-[required] ~ ::after,
-[aria-required] ~ ::after,
-input[required] ~ ::after,
-input[aria-required] ~ ::after,
-select[required] ~ ::after,
-select[aria-required] ~ ::after,
-textarea[required] ~ ::after,
-textarea[aria-required] ~ ::after,
-area[hidden]:not(:empty) ~ ::after,
-area[aria-hidden="true"]:not(:empty) ~ ::after,
-base[hidden]:not(:empty) ~ ::after,
-base[aria-hidden="true"]:not(:empty) ~ ::after,
-br[hidden]:not(:empty) ~ ::after,
-br[aria-hidden="true"]:not(:empty) ~ ::after,
-col[hidden]:not(:empty) ~ ::after,
-col[aria-hidden="true"]:not(:empty) ~ ::after,
-command[hidden]:not(:empty) ~ ::after,
-command[aria-hidden="true"]:not(:empty) ~ ::after,
-embed[hidden]:not(:empty) ~ ::after,
-embed[aria-hidden="true"]:not(:empty) ~ ::after,
-hr[hidden]:not(:empty) ~ ::after,
-hr[aria-hidden="true"]:not(:empty) ~ ::after,
-img[hidden]:not(:empty) ~ ::after,
-img[aria-hidden="true"]:not(:empty) ~ ::after,
-input[hidden]:not(:empty) ~ ::after,
-input[aria-hidden="true"]:not(:empty) ~ ::after,
-keygen[hidden]:not(:empty) ~ ::after,
-keygen[aria-hidden="true"]:not(:empty) ~ ::after,
-link[hidden]:not(:empty) ~ ::after,
-link[aria-hidden="true"]:not(:empty) ~ ::after,
-meta[hidden]:not(:empty) ~ ::after,
-meta[aria-hidden="true"]:not(:empty) ~ ::after,
-param[hidden]:not(:empty) ~ ::after,
-param[aria-hidden="true"]:not(:empty) ~ ::after,
-source[hidden]:not(:empty) ~ ::after,
-source[aria-hidden="true"]:not(:empty) ~ ::after,
-track[hidden]:not(:empty) ~ ::after,
-track[aria-hidden="true"]:not(:empty) ~ ::after,
-wbr[hidden]:not(:empty) ~ ::after,
-wbr[aria-hidden="true"]:not(:empty) ~ ::after,
-textarea[hidden]:not(:empty) ~ ::after,
-textarea[aria-hidden="true"]:not(:empty) ~ ::after,
-select[hidden]:not(:empty) ~ ::after,
-select[aria-hidden="true"]:not(:empty) ~ ::after,
-svg[hidden]:not(:empty) ~ ::after,
-svg[aria-hidden="true"]:not(:empty) ~ ::after,
-audio[hidden]:not(:empty) ~ ::after,
-audio[aria-hidden="true"]:not(:empty) ~ ::after,
-video[hidden]:not(:empty) ~ ::after,
-video[aria-hidden="true"]:not(:empty) ~ ::after,
-iframe[hidden]:not(:empty) ~ ::after,
-iframe[aria-hidden="true"]:not(:empty) ~ ::after,
-[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
-video ~ ::after,
-audio ~ ::after,
-img[alt][title] ~ ::after,
-area[alt][title] ~ ::after,
-svg[aria-label][title] ~ ::after {
-  background: #f6fce9 !important;
-  border-color: #96bf40 !important;
-  color: #4b6020 !important;
-  z-index: 2147483644 !important;
-}html {
+html {
   counter-reset: error warning obsolete advice;
 }html::after {
   background: rgba(0,0,0,.8);
@@ -773,114 +27,667 @@ svg[aria-label][title] ~ ::after {
   display: block;
 }head * {
   display: none;
+}[class=""] {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }[class=""]::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Sacrebleu ! Attribut [class] vide." !important;
-}area[class=""]::before,
-area[class=""] ~ ::after,
-base[class=""]::before,
-base[class=""] ~ ::after,
-br[class=""]::before,
-br[class=""] ~ ::after,
-col[class=""]::before,
-col[class=""] ~ ::after,
-command[class=""]::before,
-command[class=""] ~ ::after,
-embed[class=""]::before,
-embed[class=""] ~ ::after,
-hr[class=""]::before,
-hr[class=""] ~ ::after,
-img[class=""]::before,
-img[class=""] ~ ::after,
-input[class=""]::before,
-input[class=""] ~ ::after,
-keygen[class=""]::before,
-keygen[class=""] ~ ::after,
-link[class=""]::before,
-link[class=""] ~ ::after,
-meta[class=""]::before,
-meta[class=""] ~ ::after,
-param[class=""]::before,
-param[class=""] ~ ::after,
-source[class=""]::before,
-source[class=""] ~ ::after,
-track[class=""]::before,
-track[class=""] ~ ::after,
-wbr[class=""]::before,
-wbr[class=""] ~ ::after,
-textarea[class=""]::before,
-textarea[class=""] ~ ::after,
-select[class=""]::before,
-select[class=""] ~ ::after,
-svg[class=""]::before,
-svg[class=""] ~ ::after,
-audio[class=""]::before,
-audio[class=""] ~ ::after,
-video[class=""]::before,
-video[class=""] ~ ::after,
-iframe[class=""]::before,
-iframe[class=""] ~ ::after {
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[class=""]:hover::before,
+[class=""]:focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[class=""]area,
+[class=""] base,
+[class=""] br,
+[class=""] col,
+[class=""] command,
+[class=""] embed,
+[class=""] hr,
+[class=""] img,
+[class=""] input,
+[class=""] keygen,
+[class=""] link,
+[class=""] meta,
+[class=""] param,
+[class=""] source,
+[class=""] track,
+[class=""] wbr,
+[class=""] textarea,
+[class=""] select,
+[class=""] svg,
+[class=""] audio,
+[class=""] video,
+[class=""] iframe {
+  background-color: rgba(107,142,35,.25) !important;
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
+}[class=""]area ~ ::after,
+[class=""] base ~ ::after,
+[class=""] br ~ ::after,
+[class=""] col ~ ::after,
+[class=""] command ~ ::after,
+[class=""] embed ~ ::after,
+[class=""] hr ~ ::after,
+[class=""] img ~ ::after,
+[class=""] input ~ ::after,
+[class=""] keygen ~ ::after,
+[class=""] link ~ ::after,
+[class=""] meta ~ ::after,
+[class=""] param ~ ::after,
+[class=""] source ~ ::after,
+[class=""] track ~ ::after,
+[class=""] wbr ~ ::after,
+[class=""] textarea ~ ::after,
+[class=""] select ~ ::after,
+[class=""] svg ~ ::after,
+[class=""] audio ~ ::after,
+[class=""] video ~ ::after,
+[class=""] iframe ~ ::after {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Sacrebleu ! Attribut [class] vide." !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[class=""]area:hover ~ ::after,
+[class=""]area:focus ~ ::after,
+[class=""] base:hover ~ ::after,
+[class=""] base:focus ~ ::after,
+[class=""] br:hover ~ ::after,
+[class=""] br:focus ~ ::after,
+[class=""] col:hover ~ ::after,
+[class=""] col:focus ~ ::after,
+[class=""] command:hover ~ ::after,
+[class=""] command:focus ~ ::after,
+[class=""] embed:hover ~ ::after,
+[class=""] embed:focus ~ ::after,
+[class=""] hr:hover ~ ::after,
+[class=""] hr:focus ~ ::after,
+[class=""] img:hover ~ ::after,
+[class=""] img:focus ~ ::after,
+[class=""] input:hover ~ ::after,
+[class=""] input:focus ~ ::after,
+[class=""] keygen:hover ~ ::after,
+[class=""] keygen:focus ~ ::after,
+[class=""] link:hover ~ ::after,
+[class=""] link:focus ~ ::after,
+[class=""] meta:hover ~ ::after,
+[class=""] meta:focus ~ ::after,
+[class=""] param:hover ~ ::after,
+[class=""] param:focus ~ ::after,
+[class=""] source:hover ~ ::after,
+[class=""] source:focus ~ ::after,
+[class=""] track:hover ~ ::after,
+[class=""] track:focus ~ ::after,
+[class=""] wbr:hover ~ ::after,
+[class=""] wbr:focus ~ ::after,
+[class=""] textarea:hover ~ ::after,
+[class=""] textarea:focus ~ ::after,
+[class=""] select:hover ~ ::after,
+[class=""] select:focus ~ ::after,
+[class=""] svg:hover ~ ::after,
+[class=""] svg:focus ~ ::after,
+[class=""] audio:hover ~ ::after,
+[class=""] audio:focus ~ ::after,
+[class=""] video:hover ~ ::after,
+[class=""] video:focus ~ ::after,
+[class=""] iframe:hover ~ ::after,
+[class=""] iframe:focus ~ ::after {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[id=""] {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }[id=""]::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Tiens ? Un attribut [id] vide ?" !important;
-}area[id=""]::before,
-area[id=""] ~ ::after,
-base[id=""]::before,
-base[id=""] ~ ::after,
-br[id=""]::before,
-br[id=""] ~ ::after,
-col[id=""]::before,
-col[id=""] ~ ::after,
-command[id=""]::before,
-command[id=""] ~ ::after,
-embed[id=""]::before,
-embed[id=""] ~ ::after,
-hr[id=""]::before,
-hr[id=""] ~ ::after,
-img[id=""]::before,
-img[id=""] ~ ::after,
-input[id=""]::before,
-input[id=""] ~ ::after,
-keygen[id=""]::before,
-keygen[id=""] ~ ::after,
-link[id=""]::before,
-link[id=""] ~ ::after,
-meta[id=""]::before,
-meta[id=""] ~ ::after,
-param[id=""]::before,
-param[id=""] ~ ::after,
-source[id=""]::before,
-source[id=""] ~ ::after,
-track[id=""]::before,
-track[id=""] ~ ::after,
-wbr[id=""]::before,
-wbr[id=""] ~ ::after,
-textarea[id=""]::before,
-textarea[id=""] ~ ::after,
-select[id=""]::before,
-select[id=""] ~ ::after,
-svg[id=""]::before,
-svg[id=""] ~ ::after,
-audio[id=""]::before,
-audio[id=""] ~ ::after,
-video[id=""]::before,
-video[id=""] ~ ::after,
-iframe[id=""]::before,
-iframe[id=""] ~ ::after {
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[id=""]:hover::before,
+[id=""]:focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[id=""]area,
+[id=""] base,
+[id=""] br,
+[id=""] col,
+[id=""] command,
+[id=""] embed,
+[id=""] hr,
+[id=""] img,
+[id=""] input,
+[id=""] keygen,
+[id=""] link,
+[id=""] meta,
+[id=""] param,
+[id=""] source,
+[id=""] track,
+[id=""] wbr,
+[id=""] textarea,
+[id=""] select,
+[id=""] svg,
+[id=""] audio,
+[id=""] video,
+[id=""] iframe {
+  background-color: rgba(107,142,35,.25) !important;
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
+}[id=""]area ~ ::after,
+[id=""] base ~ ::after,
+[id=""] br ~ ::after,
+[id=""] col ~ ::after,
+[id=""] command ~ ::after,
+[id=""] embed ~ ::after,
+[id=""] hr ~ ::after,
+[id=""] img ~ ::after,
+[id=""] input ~ ::after,
+[id=""] keygen ~ ::after,
+[id=""] link ~ ::after,
+[id=""] meta ~ ::after,
+[id=""] param ~ ::after,
+[id=""] source ~ ::after,
+[id=""] track ~ ::after,
+[id=""] wbr ~ ::after,
+[id=""] textarea ~ ::after,
+[id=""] select ~ ::after,
+[id=""] svg ~ ::after,
+[id=""] audio ~ ::after,
+[id=""] video ~ ::after,
+[id=""] iframe ~ ::after {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Tiens ? Un attribut [id] vide ?" !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[id=""]area:hover ~ ::after,
+[id=""]area:focus ~ ::after,
+[id=""] base:hover ~ ::after,
+[id=""] base:focus ~ ::after,
+[id=""] br:hover ~ ::after,
+[id=""] br:focus ~ ::after,
+[id=""] col:hover ~ ::after,
+[id=""] col:focus ~ ::after,
+[id=""] command:hover ~ ::after,
+[id=""] command:focus ~ ::after,
+[id=""] embed:hover ~ ::after,
+[id=""] embed:focus ~ ::after,
+[id=""] hr:hover ~ ::after,
+[id=""] hr:focus ~ ::after,
+[id=""] img:hover ~ ::after,
+[id=""] img:focus ~ ::after,
+[id=""] input:hover ~ ::after,
+[id=""] input:focus ~ ::after,
+[id=""] keygen:hover ~ ::after,
+[id=""] keygen:focus ~ ::after,
+[id=""] link:hover ~ ::after,
+[id=""] link:focus ~ ::after,
+[id=""] meta:hover ~ ::after,
+[id=""] meta:focus ~ ::after,
+[id=""] param:hover ~ ::after,
+[id=""] param:focus ~ ::after,
+[id=""] source:hover ~ ::after,
+[id=""] source:focus ~ ::after,
+[id=""] track:hover ~ ::after,
+[id=""] track:focus ~ ::after,
+[id=""] wbr:hover ~ ::after,
+[id=""] wbr:focus ~ ::after,
+[id=""] textarea:hover ~ ::after,
+[id=""] textarea:focus ~ ::after,
+[id=""] select:hover ~ ::after,
+[id=""] select:focus ~ ::after,
+[id=""] svg:hover ~ ::after,
+[id=""] svg:focus ~ ::after,
+[id=""] audio:hover ~ ::after,
+[id=""] audio:focus ~ ::after,
+[id=""] video:hover ~ ::after,
+[id=""] video:focus ~ ::after,
+[id=""] iframe:hover ~ ::after,
+[id=""] iframe:focus ~ ::after {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}main:not(:first-of-type) {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }main:not(:first-of-type)::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  <main> est réservée à la zone de contenu principal, et doit donc être unique :) ." !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}main:not(:first-of-type):hover::before,
+main:not(:first-of-type):focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}figcaption:not(:only-of-type) {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }figcaption:not(:only-of-type)::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  <figcaption> décrit le contenu d’une <figure> et doit donc être unique dans cette <figure>.\aOups :) ." !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}figcaption:not(:only-of-type):hover::before,
+figcaption:not(:only-of-type):focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}figcaption:not(:first-child):not(:last-child) {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }figcaption:not(:first-child):not(:last-child)::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  <figcaption> est censé être le premier ou le dernier enfant d’une <figure>.\aOn en apprend tous les jours !" !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}figcaption:not(:first-child):not(:last-child):hover::before,
+figcaption:not(:first-child):not(:last-child):focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[href^="mailto"] {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }[href^="mailto"]::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  L’adresse mail est valide, pas vrai ?" !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[href^="mailto"]:hover::before,
+[href^="mailto"]:focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[href^="tel"] {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }[href^="tel"]::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Vais-je appeler un vrai numéro de téléphone ?" !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[href^="tel"]:hover::before,
+[href^="tel"]:focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}a[role="button"] {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }a[role="button"]::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Ce lien est déguisé en bouton. Un vrai <button> serait probablement mieux :)" !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}a[role="button"]:hover::before,
+a[role="button"]:focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[target$="blank"] {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }[target$="blank"]::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  L’utilisateur doit être averti si un lien ouvre une nouvelle fenêtre.\aMais vous y avez pensé, non :) ?" !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[target$="blank"]:hover::before,
+[target$="blank"]:focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[download],
+[href$=".pdf"],
+[href$=".doc"],
+[href$=".png"],
+[href$=".jpg"],
+[href$=".gif"],
+[href$=".mp3"],
+[href$=".mp4"],
+[href$=".mov"],
+[href$=".ogg"],
+[href$=".xls"],
+[href$=".txt"],
+[href$=".zip"],
+[href$=".rar"],
+[href$=".docx"] {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }[download]::before,
 [href$=".pdf"]::before,
 [href$=".doc"]::before,
@@ -896,150 +703,872 @@ iframe[id=""] ~ ::after {
 [href$=".zip"]::before,
 [href$=".rar"]::before,
 [href$=".docx"]::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Le format et le poids d’un fichier téléchargeable devraient être indiqués — et il devrait être accessible." !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[download]:hover::before,
+[download]:focus::before,
+[href$=".pdf"]:hover::before,
+[href$=".pdf"]:focus::before,
+[href$=".doc"]:hover::before,
+[href$=".doc"]:focus::before,
+[href$=".png"]:hover::before,
+[href$=".png"]:focus::before,
+[href$=".jpg"]:hover::before,
+[href$=".jpg"]:focus::before,
+[href$=".gif"]:hover::before,
+[href$=".gif"]:focus::before,
+[href$=".mp3"]:hover::before,
+[href$=".mp3"]:focus::before,
+[href$=".mp4"]:hover::before,
+[href$=".mp4"]:focus::before,
+[href$=".mov"]:hover::before,
+[href$=".mov"]:focus::before,
+[href$=".ogg"]:hover::before,
+[href$=".ogg"]:focus::before,
+[href$=".xls"]:hover::before,
+[href$=".xls"]:focus::before,
+[href$=".txt"]:hover::before,
+[href$=".txt"]:focus::before,
+[href$=".zip"]:hover::before,
+[href$=".zip"]:focus::before,
+[href$=".rar"]:hover::before,
+[href$=".rar"]:focus::before,
+[href$=".docx"]:hover::before,
+[href$=".docx"]:focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[role="main"] ~ [role="main"],
+[role="search"] ~ [role="search"],
+[role="banner"] ~ [role="banner"],
+[role="contentinfo"] ~ [role="contentinfo"] {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }[role="main"] ~ [role="main"]::before,
 [role="search"] ~ [role="search"]::before,
 [role="banner"] ~ [role="banner"]::before,
 [role="contentinfo"] ~ [role="contentinfo"]::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Le rôle ARIA " attr(role) " devrait être uniques, mais celui-ci est le deuxième dans la page !" !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[role="main"] ~ [role="main"]:hover::before,
+[role="main"] ~ [role="main"]:focus::before,
+[role="search"] ~ [role="search"]:hover::before,
+[role="search"] ~ [role="search"]:focus::before,
+[role="banner"] ~ [role="banner"]:hover::before,
+[role="banner"] ~ [role="banner"]:focus::before,
+[role="contentinfo"] ~ [role="contentinfo"]:hover::before,
+[role="contentinfo"] ~ [role="contentinfo"]:focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[id*="search"]:not([role="search"]),
+[class*="search"]:not([role="search"]) {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }[id*="search"]:not([role="search"])::before,
 [class*="search"]:not([role="search"])::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Vu ! Cet élément semble être la recherche.\aMais alors, le rôle ARIA est là, non ?" !important;
-}input[id*="search"]:not([role="search"])::before,
-input[id*="search"]:not([role="search"]) ~ ::after,
-input[class*="search"]:not([role="search"])::before,
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[id*="search"]:not([role="search"]):hover::before,
+[id*="search"]:not([role="search"]):focus::before,
+[class*="search"]:not([role="search"]):hover::before,
+[class*="search"]:not([role="search"]):focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}input[id*="search"]:not([role="search"]),
+input[class*="search"]:not([role="search"]) {
+  background-color: rgba(107,142,35,.25) !important;
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
+}input[id*="search"]:not([role="search"]) ~ ::after,
 input[class*="search"]:not([role="search"]) ~ ::after {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Vu ! Cet élément semble être la recherche.\aMais alors, le rôle ARIA est là, non ?" !important;
-}[required]::before,
-[required] ~ ::after,
-[aria-required]::before,
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}input[id*="search"]:not([role="search"]):hover ~ ::after,
+input[id*="search"]:not([role="search"]):focus ~ ::after,
+input[class*="search"]:not([role="search"]):hover ~ ::after,
+input[class*="search"]:not([role="search"]):focus ~ ::after {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[required],
+[aria-required] {
+  background-color: rgba(107,142,35,.25) !important;
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
+}[required] ~ ::after,
 [aria-required] ~ ::after {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur." !important;
-}input[required]::before,
-input[required] ~ ::after,
-input[aria-required]::before,
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[required]:hover ~ ::after,
+[required]:focus ~ ::after,
+[aria-required]:hover ~ ::after,
+[aria-required]:focus ~ ::after {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}input[required],
+input[aria-required],
+select[required],
+select[aria-required],
+textarea[required],
+textarea[aria-required] {
+  background-color: rgba(107,142,35,.25) !important;
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
+}input[required] ~ ::after,
 input[aria-required] ~ ::after,
-select[required]::before,
 select[required] ~ ::after,
-select[aria-required]::before,
 select[aria-required] ~ ::after,
-textarea[required]::before,
 textarea[required] ~ ::after,
-textarea[aria-required]::before,
 textarea[aria-required] ~ ::after {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Le caractère obligatoire d’un champ doit être indiqué intelligiblement (en texte) et pas seulement par la couleur." !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}input[required]:hover ~ ::after,
+input[required]:focus ~ ::after,
+input[aria-required]:hover ~ ::after,
+input[aria-required]:focus ~ ::after,
+select[required]:hover ~ ::after,
+select[required]:focus ~ ::after,
+select[aria-required]:hover ~ ::after,
+select[aria-required]:focus ~ ::after,
+textarea[required]:hover ~ ::after,
+textarea[required]:focus ~ ::after,
+textarea[aria-required]:hover ~ ::after,
+textarea[aria-required]:focus ~ ::after {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[hidden]:not(:empty),
+[aria-hidden="true"]:not(:empty) {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }[hidden]:not(:empty)::before,
 [aria-hidden="true"]:not(:empty)::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Cet élément — masqué aux technologies d’assistance — ne porte aucune information, vous en êtes bien sûr ?" !important;
-}area[hidden]:not(:empty)::before,
-area[hidden]:not(:empty) ~ ::after,
-area[aria-hidden="true"]:not(:empty)::before,
-area[aria-hidden="true"]:not(:empty) ~ ::after,
-base[hidden]:not(:empty)::before,
-base[hidden]:not(:empty) ~ ::after,
-base[aria-hidden="true"]:not(:empty)::before,
-base[aria-hidden="true"]:not(:empty) ~ ::after,
-br[hidden]:not(:empty)::before,
-br[hidden]:not(:empty) ~ ::after,
-br[aria-hidden="true"]:not(:empty)::before,
-br[aria-hidden="true"]:not(:empty) ~ ::after,
-col[hidden]:not(:empty)::before,
-col[hidden]:not(:empty) ~ ::after,
-col[aria-hidden="true"]:not(:empty)::before,
-col[aria-hidden="true"]:not(:empty) ~ ::after,
-command[hidden]:not(:empty)::before,
-command[hidden]:not(:empty) ~ ::after,
-command[aria-hidden="true"]:not(:empty)::before,
-command[aria-hidden="true"]:not(:empty) ~ ::after,
-embed[hidden]:not(:empty)::before,
-embed[hidden]:not(:empty) ~ ::after,
-embed[aria-hidden="true"]:not(:empty)::before,
-embed[aria-hidden="true"]:not(:empty) ~ ::after,
-hr[hidden]:not(:empty)::before,
-hr[hidden]:not(:empty) ~ ::after,
-hr[aria-hidden="true"]:not(:empty)::before,
-hr[aria-hidden="true"]:not(:empty) ~ ::after,
-img[hidden]:not(:empty)::before,
-img[hidden]:not(:empty) ~ ::after,
-img[aria-hidden="true"]:not(:empty)::before,
-img[aria-hidden="true"]:not(:empty) ~ ::after,
-input[hidden]:not(:empty)::before,
-input[hidden]:not(:empty) ~ ::after,
-input[aria-hidden="true"]:not(:empty)::before,
-input[aria-hidden="true"]:not(:empty) ~ ::after,
-keygen[hidden]:not(:empty)::before,
-keygen[hidden]:not(:empty) ~ ::after,
-keygen[aria-hidden="true"]:not(:empty)::before,
-keygen[aria-hidden="true"]:not(:empty) ~ ::after,
-link[hidden]:not(:empty)::before,
-link[hidden]:not(:empty) ~ ::after,
-link[aria-hidden="true"]:not(:empty)::before,
-link[aria-hidden="true"]:not(:empty) ~ ::after,
-meta[hidden]:not(:empty)::before,
-meta[hidden]:not(:empty) ~ ::after,
-meta[aria-hidden="true"]:not(:empty)::before,
-meta[aria-hidden="true"]:not(:empty) ~ ::after,
-param[hidden]:not(:empty)::before,
-param[hidden]:not(:empty) ~ ::after,
-param[aria-hidden="true"]:not(:empty)::before,
-param[aria-hidden="true"]:not(:empty) ~ ::after,
-source[hidden]:not(:empty)::before,
-source[hidden]:not(:empty) ~ ::after,
-source[aria-hidden="true"]:not(:empty)::before,
-source[aria-hidden="true"]:not(:empty) ~ ::after,
-track[hidden]:not(:empty)::before,
-track[hidden]:not(:empty) ~ ::after,
-track[aria-hidden="true"]:not(:empty)::before,
-track[aria-hidden="true"]:not(:empty) ~ ::after,
-wbr[hidden]:not(:empty)::before,
-wbr[hidden]:not(:empty) ~ ::after,
-wbr[aria-hidden="true"]:not(:empty)::before,
-wbr[aria-hidden="true"]:not(:empty) ~ ::after,
-textarea[hidden]:not(:empty)::before,
-textarea[hidden]:not(:empty) ~ ::after,
-textarea[aria-hidden="true"]:not(:empty)::before,
-textarea[aria-hidden="true"]:not(:empty) ~ ::after,
-select[hidden]:not(:empty)::before,
-select[hidden]:not(:empty) ~ ::after,
-select[aria-hidden="true"]:not(:empty)::before,
-select[aria-hidden="true"]:not(:empty) ~ ::after,
-svg[hidden]:not(:empty)::before,
-svg[hidden]:not(:empty) ~ ::after,
-svg[aria-hidden="true"]:not(:empty)::before,
-svg[aria-hidden="true"]:not(:empty) ~ ::after,
-audio[hidden]:not(:empty)::before,
-audio[hidden]:not(:empty) ~ ::after,
-audio[aria-hidden="true"]:not(:empty)::before,
-audio[aria-hidden="true"]:not(:empty) ~ ::after,
-video[hidden]:not(:empty)::before,
-video[hidden]:not(:empty) ~ ::after,
-video[aria-hidden="true"]:not(:empty)::before,
-video[aria-hidden="true"]:not(:empty) ~ ::after,
-iframe[hidden]:not(:empty)::before,
-iframe[hidden]:not(:empty) ~ ::after,
-iframe[aria-hidden="true"]:not(:empty)::before,
-iframe[aria-hidden="true"]:not(:empty) ~ ::after {
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[hidden]:not(:empty):hover::before,
+[hidden]:not(:empty):focus::before,
+[aria-hidden="true"]:not(:empty):hover::before,
+[aria-hidden="true"]:not(:empty):focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[hidden]:not(:empty)area,
+[hidden]:not(:empty) base,
+[hidden]:not(:empty) br,
+[hidden]:not(:empty) col,
+[hidden]:not(:empty) command,
+[hidden]:not(:empty) embed,
+[hidden]:not(:empty) hr,
+[hidden]:not(:empty) img,
+[hidden]:not(:empty) input,
+[hidden]:not(:empty) keygen,
+[hidden]:not(:empty) link,
+[hidden]:not(:empty) meta,
+[hidden]:not(:empty) param,
+[hidden]:not(:empty) source,
+[hidden]:not(:empty) track,
+[hidden]:not(:empty) wbr,
+[hidden]:not(:empty) textarea,
+[hidden]:not(:empty) select,
+[hidden]:not(:empty) svg,
+[hidden]:not(:empty) audio,
+[hidden]:not(:empty) video,
+[hidden]:not(:empty) iframe,
+[aria-hidden="true"]:not(:empty)area,
+[aria-hidden="true"]:not(:empty) base,
+[aria-hidden="true"]:not(:empty) br,
+[aria-hidden="true"]:not(:empty) col,
+[aria-hidden="true"]:not(:empty) command,
+[aria-hidden="true"]:not(:empty) embed,
+[aria-hidden="true"]:not(:empty) hr,
+[aria-hidden="true"]:not(:empty) img,
+[aria-hidden="true"]:not(:empty) input,
+[aria-hidden="true"]:not(:empty) keygen,
+[aria-hidden="true"]:not(:empty) link,
+[aria-hidden="true"]:not(:empty) meta,
+[aria-hidden="true"]:not(:empty) param,
+[aria-hidden="true"]:not(:empty) source,
+[aria-hidden="true"]:not(:empty) track,
+[aria-hidden="true"]:not(:empty) wbr,
+[aria-hidden="true"]:not(:empty) textarea,
+[aria-hidden="true"]:not(:empty) select,
+[aria-hidden="true"]:not(:empty) svg,
+[aria-hidden="true"]:not(:empty) audio,
+[aria-hidden="true"]:not(:empty) video,
+[aria-hidden="true"]:not(:empty) iframe {
+  background-color: rgba(107,142,35,.25) !important;
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
+}[hidden]:not(:empty)area ~ ::after,
+[hidden]:not(:empty) base ~ ::after,
+[hidden]:not(:empty) br ~ ::after,
+[hidden]:not(:empty) col ~ ::after,
+[hidden]:not(:empty) command ~ ::after,
+[hidden]:not(:empty) embed ~ ::after,
+[hidden]:not(:empty) hr ~ ::after,
+[hidden]:not(:empty) img ~ ::after,
+[hidden]:not(:empty) input ~ ::after,
+[hidden]:not(:empty) keygen ~ ::after,
+[hidden]:not(:empty) link ~ ::after,
+[hidden]:not(:empty) meta ~ ::after,
+[hidden]:not(:empty) param ~ ::after,
+[hidden]:not(:empty) source ~ ::after,
+[hidden]:not(:empty) track ~ ::after,
+[hidden]:not(:empty) wbr ~ ::after,
+[hidden]:not(:empty) textarea ~ ::after,
+[hidden]:not(:empty) select ~ ::after,
+[hidden]:not(:empty) svg ~ ::after,
+[hidden]:not(:empty) audio ~ ::after,
+[hidden]:not(:empty) video ~ ::after,
+[hidden]:not(:empty) iframe ~ ::after,
+[aria-hidden="true"]:not(:empty)area ~ ::after,
+[aria-hidden="true"]:not(:empty) base ~ ::after,
+[aria-hidden="true"]:not(:empty) br ~ ::after,
+[aria-hidden="true"]:not(:empty) col ~ ::after,
+[aria-hidden="true"]:not(:empty) command ~ ::after,
+[aria-hidden="true"]:not(:empty) embed ~ ::after,
+[aria-hidden="true"]:not(:empty) hr ~ ::after,
+[aria-hidden="true"]:not(:empty) img ~ ::after,
+[aria-hidden="true"]:not(:empty) input ~ ::after,
+[aria-hidden="true"]:not(:empty) keygen ~ ::after,
+[aria-hidden="true"]:not(:empty) link ~ ::after,
+[aria-hidden="true"]:not(:empty) meta ~ ::after,
+[aria-hidden="true"]:not(:empty) param ~ ::after,
+[aria-hidden="true"]:not(:empty) source ~ ::after,
+[aria-hidden="true"]:not(:empty) track ~ ::after,
+[aria-hidden="true"]:not(:empty) wbr ~ ::after,
+[aria-hidden="true"]:not(:empty) textarea ~ ::after,
+[aria-hidden="true"]:not(:empty) select ~ ::after,
+[aria-hidden="true"]:not(:empty) svg ~ ::after,
+[aria-hidden="true"]:not(:empty) audio ~ ::after,
+[aria-hidden="true"]:not(:empty) video ~ ::after,
+[aria-hidden="true"]:not(:empty) iframe ~ ::after {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Cet élément — masqué aux technologies d’assistance — ne porte aucune information, vous en êtes bien sûr ?" !important;
-}[placeholder]:not([title]):not([aria-label]):not([aria-labelledby])::before,
-[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after {
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[hidden]:not(:empty)area:hover ~ ::after,
+[hidden]:not(:empty)area:focus ~ ::after,
+[hidden]:not(:empty) base:hover ~ ::after,
+[hidden]:not(:empty) base:focus ~ ::after,
+[hidden]:not(:empty) br:hover ~ ::after,
+[hidden]:not(:empty) br:focus ~ ::after,
+[hidden]:not(:empty) col:hover ~ ::after,
+[hidden]:not(:empty) col:focus ~ ::after,
+[hidden]:not(:empty) command:hover ~ ::after,
+[hidden]:not(:empty) command:focus ~ ::after,
+[hidden]:not(:empty) embed:hover ~ ::after,
+[hidden]:not(:empty) embed:focus ~ ::after,
+[hidden]:not(:empty) hr:hover ~ ::after,
+[hidden]:not(:empty) hr:focus ~ ::after,
+[hidden]:not(:empty) img:hover ~ ::after,
+[hidden]:not(:empty) img:focus ~ ::after,
+[hidden]:not(:empty) input:hover ~ ::after,
+[hidden]:not(:empty) input:focus ~ ::after,
+[hidden]:not(:empty) keygen:hover ~ ::after,
+[hidden]:not(:empty) keygen:focus ~ ::after,
+[hidden]:not(:empty) link:hover ~ ::after,
+[hidden]:not(:empty) link:focus ~ ::after,
+[hidden]:not(:empty) meta:hover ~ ::after,
+[hidden]:not(:empty) meta:focus ~ ::after,
+[hidden]:not(:empty) param:hover ~ ::after,
+[hidden]:not(:empty) param:focus ~ ::after,
+[hidden]:not(:empty) source:hover ~ ::after,
+[hidden]:not(:empty) source:focus ~ ::after,
+[hidden]:not(:empty) track:hover ~ ::after,
+[hidden]:not(:empty) track:focus ~ ::after,
+[hidden]:not(:empty) wbr:hover ~ ::after,
+[hidden]:not(:empty) wbr:focus ~ ::after,
+[hidden]:not(:empty) textarea:hover ~ ::after,
+[hidden]:not(:empty) textarea:focus ~ ::after,
+[hidden]:not(:empty) select:hover ~ ::after,
+[hidden]:not(:empty) select:focus ~ ::after,
+[hidden]:not(:empty) svg:hover ~ ::after,
+[hidden]:not(:empty) svg:focus ~ ::after,
+[hidden]:not(:empty) audio:hover ~ ::after,
+[hidden]:not(:empty) audio:focus ~ ::after,
+[hidden]:not(:empty) video:hover ~ ::after,
+[hidden]:not(:empty) video:focus ~ ::after,
+[hidden]:not(:empty) iframe:hover ~ ::after,
+[hidden]:not(:empty) iframe:focus ~ ::after,
+[aria-hidden="true"]:not(:empty)area:hover ~ ::after,
+[aria-hidden="true"]:not(:empty)area:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) base:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) base:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) br:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) br:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) col:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) col:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) command:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) command:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) embed:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) embed:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) hr:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) hr:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) img:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) img:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) input:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) input:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) keygen:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) keygen:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) link:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) link:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) meta:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) meta:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) param:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) param:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) source:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) source:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) track:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) track:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) wbr:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) wbr:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) textarea:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) textarea:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) select:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) select:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) svg:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) svg:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) audio:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) audio:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) video:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) video:focus ~ ::after,
+[aria-hidden="true"]:not(:empty) iframe:hover ~ ::after,
+[aria-hidden="true"]:not(:empty) iframe:focus ~ ::after {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
+  background-color: rgba(107,142,35,.25) !important;
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
+}[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Saviez-vous qu’un placeholder ne peut pas remplacer un <label> ?" !important;
-}video::before,
-video ~ ::after,
-audio::before,
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]):hover ~ ::after,
+[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]):focus ~ ::after {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}video,
+audio {
+  background-color: rgba(107,142,35,.25) !important;
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
+}video ~ ::after,
 audio ~ ::after {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Les médias temporels doivent disposer d’une alternative, d’un transcript ou d’un sous-titrage (<track>), et indiquer leur durée." !important;
-}img[alt][title]::before,
-img[alt][title] ~ ::after,
-area[alt][title]::before,
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}video:hover ~ ::after,
+video:focus ~ ::after,
+audio:hover ~ ::after,
+audio:focus ~ ::after {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}img[alt][title],
+area[alt][title],
+svg[aria-label][title] {
+  background-color: rgba(107,142,35,.25) !important;
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
+}img[alt][title] ~ ::after,
 area[alt][title] ~ ::after,
-svg[aria-label][title]::before,
 svg[aria-label][title] ~ ::after {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  L’attribut [title], s’il est présent, doit être identique à l’alternative renseignée.\aÀ vous de jouer ;-) ." !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}img[alt][title]:hover ~ ::after,
+img[alt][title]:focus ~ ::after,
+area[alt][title]:hover ~ ::after,
+area[alt][title]:focus ~ ::after,
+svg[aria-label][title]:hover ~ ::after,
+svg[aria-label][title]:focus ~ ::after {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}time,
+[datetime] {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }time::before,
 [datetime]::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Le format de date est-il compréhensible ?" !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}time:hover::before,
+time:focus::before,
+[datetime]:hover::before,
+[datetime]:focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}th[scope] {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }th[scope]::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Cette cellule d’en-tête s’applique à la totalité de la " attr(scope) ", vrai ou pas ?¬’est ce que dit son [scope], en tout cas." !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}th[scope]:hover::before,
+th[scope]:focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+}table[role="presentation"] {
+  counter-increment: advice;
+  outline: 4px solid #6b8e23 !important;
+  outline-offset: -4px;
 }table[role="presentation"]::before {
+  background: #f6fce9 !important;
+  border-color: #96bf40 !important;
+  border-radius: 0 !important;
+  border-style: solid !important;
+  border-width: 0 0 1px !important;
+  bottom: auto !important;
+  color: #4b6020 !important;
   content: "♥  Un tableau de mise en forme ne doit pas avoir de résumé.\aIl doit également rester compréhensible une fois linéarisé." !important;
+  display: block !important;
+  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  height: auto !important;
+  left: 0 !important;
+  opacity: 0;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
+  right: 0 !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  text-shadow: 0 1px 0 rgba(255,255,255,.2) !important;
+  text-transform: none !important;
+  top: 0 !important;
+  -webkit-transform: translateY(-100%) translateZ(0) !important;
+          transform: translateY(-100%) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
+  white-space: pre;
+  width: 100% !important;
+  z-index: 2147483644 !important;
+}table[role="presentation"]:hover::before,
+table[role="presentation"]:focus::before {
+  opacity: 1;
+  -webkit-transform: translateY(0) translateZ(0) !important;
+          transform: translateY(0) translateZ(0) !important;
+  transition: -webkit-transform .3s ease-in !important;
+  transition:         transform .3s ease-in !important;
+  transition:         transform .3s ease-in, -webkit-transform .3s ease-in !important;
 }
