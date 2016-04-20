@@ -7,11 +7,9 @@ Contribuer à `a11y.css`
 
 `a11y.css` existe en français et en anglais : vous trouverez tous les fichiers dans le répertoire [css](https://github.com/ffoodd/a11y.css/tree/master/css). Si vous souhaitez contribuer en ajoutant une nouvelle langue, c’est très simple :
 
-1. Ajoutez le nom de la langue dans [cette liste](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_mixins.scss#L10) ;
-2. Copiez [`_a11y-en.scss`](https://github.com/ffoodd/a11y.css/blob/master/sass/a11y-en.scss), rennommez-le en `_a11y-<your-language>.scss` et modifiez la valeur passée au mixin `set-locale` ;
-3. Mettez à jour [cette map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L10) avec vos traductions ;
-4. Mettez à jour [cette map](https://github.com/ffoodd/a11y.css/blob/master/sass/utils/_variables.scss#L241) pour traduire le nom des thèmes ;
-5. Lancez `gulp sass` ou `sass --update sass:css --style=compressed` pour générer les nouveaux fichiers CSS.
+1. Ajoutez un fichier JSON de traduction dans le [dossier `locales`](https://github.com/ffoodd/a11y.css/blob/master/locales/) nommé selon votre langage (ex : `fr.json`).
+2. Copiez [`sass/a11y-en.scss`](https://github.com/ffoodd/a11y.css/blob/master/sass/a11y-en.scss), rennommez-le en `a11y-<your-language>.scss` et modifiez la valeur passée à la fonction `require(..)` ;
+3. Lancez `gulp sass` pour générer le nouveau fichier CSS.
 
 Et voilà !
 
