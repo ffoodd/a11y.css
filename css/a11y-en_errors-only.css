@@ -1430,7 +1430,7 @@ form button:focus:not([type]):not([form]):not([formaction]):not([formtarget]) ~ 
   bottom: 1em;
   box-shadow: inset 1px 1px 0 rgba(255,255,255,.3);
   color: #fff;
-  content: "Errors" ": " counter(error) "\a";
+  content: Errors ": " counter(error) "\a";
   font: 700 1.2rem/1.5 "Arial", "Nimbus Sans L", sans-serif;
   left: 1em;
   padding: .75em 1em .75em 1.5em;
@@ -1653,16 +1653,16 @@ textarea:not([id]):not([aria-label]):not([aria-labelledby])::before,
 textarea:not([id]):not([aria-label]):not([aria-labelledby]) ~ ::after,
 select:not([id]):not([aria-label]):not([aria-labelledby])::before,
 select:not([id]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☠  This field is indescribable. However you got choices: \a  [title], [id], [aria-label], [aria-labelledby]." !important;
+  content: "☠  This field is indescribable. However you got choices:\a[title], [id], [aria-label], [aria-labelledby]." !important;
 }input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])::before,
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])::before,
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after,
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])::before,
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☠  What should happen when I click? \a  Too bad. [value], [title] or [aria-label] could have told me :)" !important;
+  content: "☠  What should happen when I click?\aToo bad. [value], [title] or [aria-label] could have told me :)" !important;
 }button:empty:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  What should happen when I click? \a  It’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
+  content: "☠  What should happen when I click?\aIt’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
 }button:blank:not([aria-label]):not([aria-labelledby]):not([title]) {
   counter-increment: error;
   outline: 4px solid #911 !important;
@@ -1706,7 +1706,7 @@ button:blank:not([aria-label]):not([aria-labelledby]):not([title]):focus::before
   transition:         transform .3s ease-in                             !important;
   transition:         transform .3s ease-in, -webkit-transform .3s ease-in                             !important;
 }button:blank:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  What should happen when I click? \a  It’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
+  content: "☠  What should happen when I click?\aIt’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
 }button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]) {
   counter-increment: error;
   outline: 4px solid #911 !important;
@@ -1748,7 +1748,7 @@ button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]
   transition:         transform .3s ease-in                             !important;
   transition:         transform .3s ease-in, -webkit-transform .3s ease-in                             !important;
 }button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title])::before {
-  content: "☠  What should happen when I click? \a  It’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
+  content: "☠  What should happen when I click?\aIt’s missing a content or a title via [aria-label], [aria-labelledby] or [title]." !important;
 }button[title=""]::before,
 button[aria-label=""]::before,
 button[aria-labelledby=""]::before {
@@ -1772,20 +1772,20 @@ button[type="button"][formnovalidate]::before {
 input:not([type]) ~ ::after,
 input[type=""]::before,
 input[type=""] ~ ::after {
-  content: "☠  Missing or empty [type] attribute. \a  What is the field for then?" !important;
+  content: "☠  Missing or empty [type] attribute.\aWhat is the field for then?" !important;
 }optgroup:not([label])::before,
 optgroup:not([label]) ~ ::after {
-  content: "☠  You have gathered options, but no label attribute introduces this options group. \a  Too bad…" !important;
+  content: "☠  You have gathered options, but no label attribute introduces this options group.\aToo bad…" !important;
 }iframe:not([title])::before,
 iframe:not([title]) ~ ::after,
 iframe[title=""]::before,
 iframe[title=""] ~ ::after {
-  content: "☠  Missing or empty [title]. \a  Only God knows what is this <iframe>." !important;
+  content: "☠  Missing or empty [title].\aOnly God knows what is this <iframe>." !important;
 }form:not([action])::before {
-  content: "☠  Missing [action] attribute. \a  What now?" !important;
+  content: "☠  Missing [action] attribute.\aWhat now?" !important;
 }html:not([lang])::before,
 html[lang=""]::before {
-  content: "☠  No lang/xml:lang found on <html> tag. \a  JAWS will have a weird accent!" !important;
+  content: "☠  No lang/xml:lang found on <html> tag.\aJAWS will have a weird accent!" !important;
 }table[role="presentation"] th::before,
 table[role="presentation"] thead::before,
 table[role="presentation"] tfoot::before,
@@ -2002,7 +2002,7 @@ iframe:not(img):not(object):not(embed):not(svg):not(canvas)[height] ~ ::after {
 [class^="-0"]::before {
   content: "☠  Classes and IDs must follow a specific grammar. And this thing here doesn’t." !important;
 }[style]::before {
-  content: "☠  Inline styles. \a  You’d better use classes or IDs." !important;
+  content: "☠  Inline styles.\aYou’d better use classes or IDs." !important;
 }area[style]::before,
 area[style] ~ ::after,
 base[style]::before,
@@ -2047,7 +2047,7 @@ video[style]::before,
 video[style] ~ ::after,
 iframe[style]::before,
 iframe[style] ~ ::after {
-  content: "☠  Inline styles. \a  You’d better use classes or IDs." !important;
+  content: "☠  Inline styles.\aYou’d better use classes or IDs." !important;
 }title:empty {
   display: block !important;
 }title:empty::before {

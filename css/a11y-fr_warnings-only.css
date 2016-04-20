@@ -1105,7 +1105,7 @@ svg :focus:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]
   bottom: 1em;
   box-shadow: inset 1px 1px 0 rgba(255,255,255,.3);
   color: #fff;
-  content: "Erreurs" ": " counter(error) "\a" "Avertissements" ": " counter(warning) "\a";
+  content: Erreurs ": " counter(error) "\a" Avertissements ": " counter(error) "\a";
   font: 700 1.2rem/1.5 "Arial", "Nimbus Sans L", sans-serif;
   left: 1em;
   padding: .75em 1em .75em 1.5em;
@@ -1131,11 +1131,11 @@ ol > :not(li)::before,
 }:not(dl) > dt::before,
 :not(dl) > dd::before,
 dl > :not(dt):not(dd)::before {
-  content: "☢  <dl> contient un ou plusieurs groupe(s) de <dt> et <dd>. \a  Aucun autre usage des ces balises n’est permis." !important;
+  content: "☢  <dl> contient un ou plusieurs groupe(s) de <dt> et <dd>.ªucun autre usage des ces balises n’est permis." !important;
 }:not(figure) > figcaption::before {
   content: "☢  <figcaption> est perdu dans la vie, sans sa <figure> parente." !important;
 }figure:not([role="group"])::before {
-  content: "☢  <figure> a besoin du [role=\"group\"] pour une meilleure accessibilité." !important;
+  content: "☢  <figure> a besoin du [role='group'] pour une meilleure accessibilité." !important;
 }select > :not(option):not(optgroup)::before,
 :not(select):not(optgroup) > option::before,
 optgroup > :not(option)::before,
@@ -1143,7 +1143,7 @@ optgroup > :not(option)::before,
 :not(fieldset) > legend::before,
 tr > :not(td):not(th)::before,
 table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption)::before {
-  content: "☢  Imbrication inadéquate d’éléments. \a  Ça peut heurter la sensibilité des plus jeunes, vous savez ?" !important;
+  content: "☢  Imbrication inadéquate d’éléments.\aÇa peut heurter la sensibilité des plus jeunes, vous savez ?" !important;
 }b div::before,
 i div::before,
 q div::before,
@@ -1166,7 +1166,7 @@ article > article:first-child::before {
   content: "☢  Les éléments sectionnants ne sont pas des conteneurs arbitraires. Utilisez des <div>." !important;
 }fieldset > *:not(legend):first-child::before,
 fieldset > legend:not(:first-child)::before {
-  content: "☢  Imbrication inadéquate d’éléments. \a  Un fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
+  content: "☢  Imbrication inadéquate d’éléments.\aUn fieldset doit enfanter d’une légende d’abord, sinon rien." !important;
 }abbr:not([title])::before,
 abbr[title=""]::before {
   content: "☢  L’attribut [title] est vide ou absent. Que signifie cette abréviation ?" !important;
@@ -1176,13 +1176,13 @@ area[alt=""]::before,
 area[alt=""] ~ ::after,
 input[type="image"][alt=""]::before,
 input[type="image"][alt=""] ~ ::after {
-  content: "☢  Attribut [alt] vide. \a  C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
+  content: "☢  Attribut [alt] vide.¬’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
 }embed[type="image"][alt=""]::before,
 object[type="image"][alt=""]::before {
-  content: "☢  Attribut [alt] vide. \a  C’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
+  content: "☢  Attribut [alt] vide.¬’est toléré pour les images de décoration uniquement. Est-ce le cas ?" !important;
 }svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby])::before,
 svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) ~ ::after {
-  content: "☢  Ce svg n’a pas d’attribut [role], [aria-label] ou [aria-labelledby]. \a  Si ce n’est pas décoratif, un élément <desc> devrait être présent. Il y en a un ?" !important;
+  content: "☢  Ce svg n’a pas d’attribut [role], [aria-label] ou [aria-labelledby].\aSi ce n’est pas décoratif, un élément <desc> devrait être présent. Il y en a un ?" !important;
 }video[autoplay]::before,
 video[autoplay] ~ ::after,
 audio[autoplay]::before,
@@ -1192,7 +1192,7 @@ audio[autoplay] ~ ::after {
 video:not([controls]) ~ ::after,
 audio:not([controls])::before,
 audio:not([controls]) ~ ::after {
-  content: "☢  Ce média temporel ne dispose pas des contrôles par défaut. \a  Avez-vous implémenté des contrôles satisfaisants ?" !important;
+  content: "☢  Ce média temporel ne dispose pas des contrôles par défaut.ªvez-vous implémenté des contrôles satisfaisants ?" !important;
 }body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   min-height: 1px;
   min-width: 1px;
@@ -1300,9 +1300,9 @@ table > tbody ~ thead::before {
   content: "☢  Voilà dans quel ordre vous devriez les mettre : <thead>, <tfoot> puis <tbody>." !important;
 }table:not([role="presentation"]) > caption + tbody::before,
 table:not([role="presentation"]) > tbody:first-child::before {
-  content: "☢  Soit il manque un <thead> — voire même un <tfoot> — dans ce tableau de données, \a  soit vous devriez ajouter un [role=\"presentation\"], s’il s’agit d’un tableau de mise en forme." !important;
+  content: "☢  Soit il manque un <thead> — voire même un <tfoot> — dans ce tableau de données,\asoit vous devriez ajouter un [role='presentation'], s’il s’agit d’un tableau de mise en forme." !important;
 }th:not([scope]):not([id])::before {
-  content: "☢  À quoi s’applique cette cellule d’en-tête ? La totalité de la ligne / colonne ? \a  Si oui, pensez à [scope]. Sinon, il faut probablement un [id] et des [headers]." !important;
+  content: "☢  À quoi s’applique cette cellule d’en-tête ? La totalité de la ligne / colonne ?\aSi oui, pensez à [scope]. Sinon, il faut probablement un [id] et des [headers]." !important;
 }img[src*="1px.gif"]:not([role="presentation"])::before,
 img[src*="1px.gif"]:not([role="presentation"]) ~ ::after,
 img[src*="1x1.gif"]:not([role="presentation"])::before,
@@ -1317,14 +1317,14 @@ img[src*="transparent.gif"]:not([role="presentation"])::before,
 img[src*="transparent.gif"]:not([role="presentation"]) ~ ::after,
 img[src*="pixel-1x1-clear.gif"]:not([role="presentation"])::before,
 img[src*="pixel-1x1-clear.gif"]:not([role="presentation"]) ~ ::after {
-  content: "☢  Vous utilisez un \"spacer.gif\". Quel âge a votre site, déjà ?" !important;
+  content: "☢  Vous utilisez un “spacer.gif”. Quel âge a votre site, déjà ?" !important;
 }[id*="NaN"]::before,
 [id*="null"]::before,
 [class*="NaN"]::before,
 [class*="null"]::before,
 [id*="undefined"]::before,
 [class*="undefined"]::before {
-  content: "☢  Vous n’essayeriez pas de calculer une [class] ou un [id] dynamiquement, vous ? \a  PArce que là, je vois null ou undefined." !important;
+  content: "☢  Vous n’essayeriez pas de calculer une [class] ou un [id] dynamiquement, vous ?\aParce que là, je vois null ou undefined." !important;
 }area[id*="NaN"]::before,
 area[id*="NaN"] ~ ::after,
 area[id*="null"]::before,
@@ -1589,9 +1589,9 @@ iframe[id*="undefined"]::before,
 iframe[id*="undefined"] ~ ::after,
 iframe[class*="undefined"]::before,
 iframe[class*="undefined"] ~ ::after {
-  content: "☢  Vous n’essayeriez pas de calculer une [class] ou un [id] dynamiquement, vous ? \a  PArce que là, je vois null ou undefined." !important;
+  content: "☢  Vous n’essayeriez pas de calculer une [class] ou un [id] dynamiquement, vous ?\aParce que là, je vois null ou undefined." !important;
 }a[href^="javascript"]:not([role="button"])::before {
-  content: "☢  Attribut [href] débutant par javascript. Ça n’augure rien de bon… \a  Sauf si c’est un bookmarklet. Genre a11y.css :)" !important;
+  content: "☢  Attribut [href] débutant par javascript. Ça n’augure rien de bon…\aSauf si c’est un bookmarklet. Genre a11y.css :)" !important;
 }a[href="#"]:not([role="button"])::before {
   content: "☢  Attribut [href=" attr(href) "]. Pourquoi ? Un <button> semble plus indiqué." !important;
 }

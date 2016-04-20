@@ -1152,7 +1152,7 @@ object[border] ~ ::after {
   bottom: 1em;
   box-shadow: inset 1px 1px 0 rgba(255,255,255,.3);
   color: #fff;
-  content: "Errors" ": " counter(error) "\a" "Warnings" ": " counter(warning) "\a" "Obsoletes" ": " counter(obsolete) "\a";
+  content: Errors ": " counter(error) "\a" Warnings ": " counter(error) "\a" Obsoletes ": " counter(error) "\a";
   font: 700 1.2rem/1.5 "Arial", "Nimbus Sans L", sans-serif;
   left: 1em;
   padding: .75em 1em .75em 1.5em;

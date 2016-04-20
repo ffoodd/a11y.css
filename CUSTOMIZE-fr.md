@@ -113,11 +113,8 @@ Chaque test dispose de son propre message, afin d’informer et guider au maximu
 
 Il est possible d’utiliser la fonction CSS `attr()` dans les messages afin d'afficher la valeur réelle d’un attribut.
 
-Voici un exemple dans `_variables.scss` :
+Voici un exemple dans [`locales/fr.json`](https://github.com/ffoodd/a11y.css/blob/master/locales/fr.json):
 
-```scss
-'duplicate-roles': (
-    'fr': 'Le rôle ARIA attr(role) devrait être uniques, mais celui-ci est le deuxième dans la page !',
-    'en': 'ARIA role attr(role) should be unique, but this one is the second!'
-),
+```json
+"advice:duplicate-roles": "Le rôle ARIA attr(role) devrait être uniques, mais celui-ci est le deuxième dans la page !",
 ```

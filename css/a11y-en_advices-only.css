@@ -757,7 +757,7 @@ svg[aria-label][title] ~ ::after {
   bottom: 1em;
   box-shadow: inset 1px 1px 0 rgba(255,255,255,.3);
   color: #fff;
-  content: "Errors" ": " counter(error) "\a" "Warnings" ": " counter(warning) "\a" "Obsoletes" ": " counter(obsolete) "\a" "Advices" ": " counter(advice) "\a";
+  content: Errors ": " counter(error) "\a" Warnings ": " counter(error) "\a" Obsoletes ": " counter(error) "\a" Advices ": " counter(error) "\a";
   font: 700 1.2rem/1.5 "Arial", "Nimbus Sans L", sans-serif;
   left: 1em;
   padding: .75em 1em .75em 1.5em;
@@ -870,9 +870,9 @@ iframe[id=""] ~ ::after {
 }main:not(:first-of-type)::before {
   content: "♥  The <main> tag is exclusively restricted to the main content area, thus should be unique :)." !important;
 }figcaption:not(:only-of-type)::before {
-  content: "♥  The <figcaption> tag describes a <figure> content, thus should be unique in these <figure>. \a  Oups!" !important;
+  content: "♥  The <figcaption> tag describes a <figure> content, thus should be unique in these <figure>.\aOups!" !important;
 }figcaption:not(:first-child):not(:last-child)::before {
-  content: "♥  The <figcaption> tag is supposed to be <figure>’s first or last child. \a  You learn something every day!" !important;
+  content: "♥  The <figcaption> tag is supposed to be <figure>’s first or last child.\aYou learn something every day!" !important;
 }[href^="mailto"]::before {
   content: "♥  This email is valid, isn’t it?" !important;
 }[href^="tel"]::before {
@@ -880,7 +880,7 @@ iframe[id=""] ~ ::after {
 }a[role="button"]::before {
   content: "♥  This link is disguised as a button. A real <button> would be better :)" !important;
 }[target$="blank"]::before {
-  content: "♥  User should be warned whenever a link is being opened in a new tab. \a  Is that OK?" !important;
+  content: "♥  User should be warned whenever a link is being opened in a new tab.\aIs that OK?" !important;
 }[download]::before,
 [href$=".pdf"]::before,
 [href$=".doc"]::before,
@@ -904,12 +904,12 @@ iframe[id=""] ~ ::after {
   content: "♥  ARIA role " attr(role) " should be unique, but this one is the second!" !important;
 }[id*="search"]:not([role="search"])::before,
 [class*="search"]:not([role="search"])::before {
-  content: "♥  Gotcha! This component seems to be the search. \a  Where is the ARIA role?" !important;
+  content: "♥  Gotcha! This component seems to be the search.\aWhere is the ARIA role?" !important;
 }input[id*="search"]:not([role="search"])::before,
 input[id*="search"]:not([role="search"]) ~ ::after,
 input[class*="search"]:not([role="search"])::before,
 input[class*="search"]:not([role="search"]) ~ ::after {
-  content: "♥  Gotcha! This component seems to be the search. \a  Where is the ARIA role?" !important;
+  content: "♥  Gotcha! This component seems to be the search.\aWhere is the ARIA role?" !important;
 }[required]::before,
 [required] ~ ::after,
 [aria-required]::before,
@@ -1036,12 +1036,12 @@ area[alt][title]::before,
 area[alt][title] ~ ::after,
 svg[aria-label][title]::before,
 svg[aria-label][title] ~ ::after {
-  content: "♥  [title] attribute, if present, should be identical to the given alternative. \a  Your move!" !important;
+  content: "♥  [title] attribute, if present, should be identical to the given alternative.\aYour move!" !important;
 }time::before,
 [datetime]::before {
   content: "♥  Is this is a valid date format?" !important;
 }th[scope]::before {
-  content: "♥  This head cell applies to a " attr(scope) ", doesn’t it? \a  That’s what its [scope] says." !important;
+  content: "♥  This head cell applies to a " attr(scope) ", doesn’t it?\aThat’s what its [scope] says." !important;
 }table[role="presentation"]::before {
-  content: "♥  A presentional table should not contain a summary nor a caption. \a  And it should be understandable once linearized." !important;
+  content: "♥  A presentional table should not contain a summary nor a caption.ªnd it should be understandable once linearized." !important;
 }

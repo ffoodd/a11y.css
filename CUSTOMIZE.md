@@ -116,15 +116,12 @@ a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
 
 ### Customise messages
 
-Each test comes with its own message, in order to inform and help developper searching for improvement. They also are in partials files, to make reading and writing easier. Customizing will also be much easier.
+Each test comes with its own message, in order to inform and help developper searching for improvement. They are in a separate json file, to make reading and writing easier. Customizing will also be much easier.
 
 You may use the CSS `attr()` function in messages to show the real value of an attribute.
 
-Here is an example in `_variables.scss`:
+Here is an example in [`locales/en.json`](https://github.com/ffoodd/a11y.css/blob/master/locales/en.json):
 
-```scss
-'duplicate-roles': (
-    'fr': 'Le rôle ARIA attr(role) devrait être uniques, mais celui-ci est le deuxième dans la page !',
-    'en': 'ARIA role attr(role) should be unique, but this one is the second!'
-),
+```json
+"advice:duplicate-roles": "ARIA role attr(role) should be unique, but this one is the second!",
 ```
