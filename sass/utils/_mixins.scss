@@ -16,7 +16,12 @@
   $levels: map-keys($themes);
 
   @if not index($levels, $level) {
-    @error 'Level `#{$level}` is not supported. Please choose one of `#{$levels}`.';
+    $default-level: nth($levels, -1);
+    $level: $default-level;
+
+    @warn 'Level `#{$level}` does not exist. '
+      + 'Please choose one of `#{inspect($levels)}`. '
+      + 'Falling back on `#{$default-level}`';
   }
 
   $minimum-level: $level !global;
