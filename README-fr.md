@@ -3,11 +3,16 @@ a11y.css
 
 Prononcez « Alix », c’est rigolo et ça mange pas de pain.
 
-[![GitHub version](https://badge.fury.io/gh/ffoodd%2Fa11y.css.svg)](https://badge.fury.io/gh/ffoodd%2Fa11y.css) [![npm version](https://badge.fury.io/js/a11y.css.svg)](https://badge.fury.io/js/a11y.css) [![Bower version](https://badge.fury.io/bo/a11y.css.svg)](https://badge.fury.io/bo/a11y.css) [![devDependency Status](https://david-dm.org/ffoodd/a11y.css/dev-status.svg)](https://david-dm.org/ffoodd/a11y.css#info=devDependencies) [![Build Status](https://travis-ci.org/ffoodd/a11y.css.svg?branch=master)](https://travis-ci.org/ffoodd/a11y.css) [![Code Climate](https://codeclimate.com/github/ffoodd/a11y.css/badges/gpa.svg)](https://codeclimate.com/github/ffoodd/a11y.css)
+[![GitHub version](https://badge.fury.io/gh/ffoodd%2Fa11y.css.svg)](https://badge.fury.io/gh/ffoodd%2Fa11y.css)
+[![npm version](https://badge.fury.io/js/a11y.css.svg)](https://badge.fury.io/js/a11y.css)
+[![Bower version](https://badge.fury.io/bo/a11y.css.svg)](https://badge.fury.io/bo/a11y.css)
+[![devDependency Status](https://david-dm.org/ffoodd/a11y.css/dev-status.svg)](https://david-dm.org/ffoodd/a11y.css#info=devDependencies)
+[![Build Status](https://travis-ci.org/ffoodd/a11y.css.svg?branch=master)](https://travis-ci.org/ffoodd/a11y.css)
+[![Code Climate](https://codeclimate.com/github/ffoodd/a11y.css/badges/gpa.svg)](https://codeclimate.com/github/ffoodd/a11y.css)
 
 ## Présentation
 
-L’objectif de ce fichier `CSS` est d’alerter l’intégrateur sur les erreurs et risques potentiels dans le code — mais il peut également servir à auditer rapidement un site existant afin d’évaluer l’ampleur des dégâts.
+L’objectif de ce fichier CSS est d’alerter l’intégrateur sur les erreurs et risques potentiels dans le code — mais il peut également servir à auditer rapidement un site existant afin d’évaluer l’ampleur des dégâts.
 
 Au survol des éléments signalés, un bandeau apparaitra en haut de votre navigateur avec une petite formule vous précisant le problème, et un indice sous forme de boutade (tentative plus ou moins réussie de faire un peu de pédagogie en passant).
 
@@ -15,66 +20,73 @@ Au survol des éléments signalés, un bandeau apparaitra en haut de votre navig
 
 ### Compteurs
 
-Des compteurs `CSS` sont incrémentés par chaque erreur, et les résultats sont affichés dans le `html::after`. C’est donc du faux-contenu, son intérêt est purement visuel afin de simplement indiquer au développeur l’étendue du chantier qui l’attend. Vous le verrez directement en bas à gauche de votre page :).
+Des compteurs CSS sont incrémentés par chaque erreur, et les résultats sont affichés dans le `html::after`. C’est donc du faux-contenu, son intérêt est purement visuel afin de simplement indiquer au développeur l’étendue du chantier qui l’attend. Vous le verrez directement en bas à gauche de votre page. :)
 
 
-# Utilisation
+## Utilisation
 
 Il est possible de se servir dʼ`a11y.css` de diverses manières.
 
-## _Bookmarklet_
+### _Bookmarklet_
 
 Vous pouvez utiliser facilement la dernière version à jour en ajoutant ce *bookmarklet* à vos favoris :
+
 ```
 javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/a11y.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();
 ```
+
 Vous pouvez également l’ajouter en allant sur [la page dédiée](http://ffoodd.github.io/a11y.css/) et en glissant le bouton rouge intitulé « a11y.css » vers votre barre de favoris.
 
 Pratique, n’est-ce pas ?
 
-### Le cas des CSP
+#### Le cas des CSP
 
-Les [CSP](https://www.w3.org/TR/CSP/) sont super chouettes, mais peuvent poser des problèmes si vous souhaitez utiliser
-le _bookmarklet_. Soyons honnêtes, en théorie *vous ne devriez pas modifier vos CSP pour que le bookmarklet fonctionne*.
+Les [CSP](https://www.w3.org/TR/CSP/) sont super chouettes, mais peuvent poser des problèmes si vous souhaitez utiliser le *bookmarklet*. Soyons honnêtes, en théorie *vous ne devriez pas modifier vos CSP pour que le bookmarklet fonctionne*.
 
-Il existe cependant quelques _bugs_ — sur divers navigateurs — qui nous en empêchent.
+Il existe cependant quelques *bugs* — sur divers navigateurs — qui nous en empêchent.
 Voici donc les directives à ajouter, en attendant que les navigateurs traitent leurs _bugs_ respectifs :
 
 * `script-src 'unsafe-inline'`
 * `style-src https://rawgit.com/`
 
-Et ça devrait aller ! Si vous souhaitez en apprendre plus sur les divers _bugs_ mentionnés
-(et découvrir de super ressources pour implémenter vos CSP) je vous conseille la lecture de
-l’issue [#201](https://github.com/ffoodd/a11y.css/issues/201) ouverte et documentée par l’inénarrable [Nicolas Hoffmann](https://twitter.com/Nico3333fr).
+Et ça devrait aller ! Si vous souhaitez en apprendre plus sur les divers _bugs_ mentionnés (et découvrir de super ressources pour implémenter vos CSP) je vous conseille la lecture de l’issue [#201](https://github.com/ffoodd/a11y.css/issues/201) ouverte et documentée par l’inénarrable [Nicolas Hoffmann](https://twitter.com/Nico3333fr).
 
-## Fichier CSS
+### Fichier CSS
 
-Vous trouverez les fichiers `CSS` statiques dans le dossier `/CSS`.
+Vous trouverez les fichiers CSS statiques dans le dossier `/css`.
 Ces fichiers sont disponibles en Français et en Anglais, en version complète ou nivelée.
-Vous pouvez simplement les récupérer et les ajouter à vos outils de développements statiques,
-comme n’importe quel fichier `CSS`.
+Vous pouvez simplement les récupérer et les ajouter à vos outils de développements statiques, comme n’importe quel fichier CSS.
 
-## Fichiers Sass
+### Fichiers Sass
 
 Vous avez accès aux sources, alors profitez-en !
 À partir de ces fichiers, vous pouvez [construire votre propre version d’`a11y.css`](https://github.com/ffoodd/a11y.css/blob/master/CUSTOMIZE-fr.md).
 Vous verrez, c’est facile !
 
-## Projet Gulp
+### Projet Gulp
 
 Pour les plus braves d’entre vous, la configuration Gulp permet de travailler la totalité du projet :
-* la compilation `Sass` ;
-* l’optimisation des fichiers `CSS` ;
+* la compilation Sass ;
+* l’optimisation des fichiers CSS ;
 * la génération des documentations Hologram et SassDoc ;
-* le *linting* des fichiers `scss` et `CSS`.
+* le *linting* des fichiers `.scss` et `.css`.
 
 Si vous en arrivez là, je suppose que vous vous repèrerez aisément dans la configuration. Dans le cas contraire, posez une question ;)
-*Attention* : vous aurez besoin de [quelques `gem` Ruby](https://github.com/ffoodd/a11y.css/blob/master/Gemfile), je vous recommande d’installer Bundler et de faire un `bundle install`.
+*Attention* : vous aurez besoin de [quelques gems Ruby](https://github.com/ffoodd/a11y.css/blob/master/Gemfile), je vous recommande d’installer Bundler et de faire un `bundle install`.
 *Note* : `a11y.css` a son propre thème SassDoc : [sassdoc-theme-alix](https://github.com/ffoodd/sassdoc-theme-alix).
 
-## *Via* `npm` ou `Bower`
+### *Via* npm ou Bower
 
-Vous pouvez récupérer le projet grâce aux commandes respectives `npm install a11y.css` et `bower install a11y.css`.
+Vous pouvez récupérer le projet grâce aux commandes respectives :
+
+```
+npm install a11y.css
+```
+
+```
+bower install a11y.css
+```
+
 
 ## Crédits et remerciements
 
@@ -100,6 +112,7 @@ Je tiens à signaler que l’idée n’est ni neuve, ni de moi (la proposition d
 ### Contributeurs
 
 Ils ont beaucoup aidé :
+
 * [@HugoGiraudel](https://twitter.com/HugoGiraudel)
 * [@7studio](https://twitter.com/7studio)
 * [@Heydon](https://twitter.com/heydonworks)
@@ -109,6 +122,7 @@ Ils ont beaucoup aidé :
 * [@a5e](https://github.com/a5e)
 
 Et ils ont pris le temps d’ouvrir des issues :
+
 * [@goetsu](https://twitter.com/goetsu)
 * [@Twikito](https://twitter.com/twikito)
 * [@olamedia](https://github.com/olamedia)
@@ -120,4 +134,5 @@ Et ils ont pris le temps d’ouvrir des issues :
 Merci à tous !
 
 Ce projet est sous licence [MIT](http://opensource.org/licenses/MIT "The MIT licence") et [CC BY 3.0 FR](http://creativecommons.org/licenses/by/3.0/fr/ "Explications de la licence").
+
 *Copyright (c) 2013 Gaël Poupard*
