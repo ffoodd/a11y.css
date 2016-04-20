@@ -65,11 +65,8 @@ Les sélecteurs génériques comme `[class]` peuvent également cibler des élé
 :not(img):not(object):not(embed):not(svg):not(canvas)[width],
 :not(img):not(object):not(embed):not(svg):not(canvas)[height] {
   @include error('dimensions');
-}
 
-@include void-tags {
-  &:not(img):not(object):not(embed):not(svg):not(canvas)[width],
-  &:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+  @include void-tags {
     @include error('dimensions', $self-closing: true);
   }
 }

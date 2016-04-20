@@ -933,15 +933,8 @@ Don't laugh, shit happens.
 [id*="undefined"],
 [class*="undefined"] {
   @include warning('undefined');
-}
 
-@include void-tags {
-  &[id*="NaN"],
-  &[id*="null"],
-  &[class*="NaN"],
-  &[class*="null"],
-  &[id*="undefined"],
-  &[class*="undefined"] {
+  @include void-tags {
     @include warning('undefined', $self-closing: true);
   }
 }

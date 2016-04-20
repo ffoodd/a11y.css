@@ -25,13 +25,12 @@ The `[tabindex]` attribute should never be greater than 0.
 */
 [tabindex]:not([tabindex="0"]):not([tabindex="-1"]) {
   @include error('tab-order');
-}
 
-@include void-tags {
-  &[tabindex]:not([tabindex="0"]):not([tabindex="-1"]) {
+  @include void-tags {
     @include error('tab-order', $self-closing: true);
   }
 }
+
 
 
 /*doc
@@ -827,14 +826,12 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 :not(img):not(object):not(embed):not(svg):not(canvas)[width],
 :not(img):not(object):not(embed):not(svg):not(canvas)[height] {
   @include error('dimensions');
-}
 
-@include void-tags {
-  &:not(img):not(object):not(embed):not(svg):not(canvas)[width],
-  &:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+  @include void-tags {
     @include error('dimensions', $self-closing: true);
   }
 }
+
 
 
 /*doc
@@ -1050,13 +1047,12 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 */
 [style] {
   @include error('style-attr');
-}
 
-@include void-tags {
-  &[style] {
+  @include void-tags {
     @include error('style-attr', $self-closing: true);
   }
 }
+
 
 
 /*doc
