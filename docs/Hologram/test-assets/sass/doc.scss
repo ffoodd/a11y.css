@@ -664,8 +664,8 @@ a[target$="blank"]::after {
   transition: all 300ms;
 }
 
-#bookmarklet--link span {
-  background-image:
+#bookmarklet--link::before {
+  background:
     linear-gradient(
         to right,
         rgba( 255, 255, 255, .3 ) 0%,
@@ -674,15 +674,23 @@ a[target$="blank"]::after {
         transparent 80%,
         rgba( 255, 255, 255, .3 ) 80%,
         rgba( 255, 255, 255, .3 ) 100%
-    );
-  background-position: 0 50%;
-  background-repeat: no-repeat;
-  background-size: 100% 1px;
+    )
+    0 50% / 100% 1px
+    no-repeat
+    !important;
+  border: 0 !important;
+  color: inherit !important;
+  content: "Grab your bookmarklet" !important;
   display: block;
-  font-size: small;
-  font-weight: 400;
+  font: inherit !important;
+  font-size: small !important;
+  font-weight: 400 !important;
   opacity: .8;
+  padding: 0;
+  position: static !important;
   text-indent: 0;
+  transform: none !important;
+  width: 100% !important;
 }
 
 #bookmarklet--link:hover,
