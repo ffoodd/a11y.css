@@ -8,6 +8,4 @@ Pronounced « Alix ». Because it’s fun.
 
 **The whole documentation lives in the [wiki](https://github.com/ffoodd/a11y.css/wiki).**
 
-This project is distributed under [MIT](http://opensource.org/licenses/MIT "The MIT licence") license and [CC BY 3.0 FR](http://creativecommons.org/licenses/by/3.0/fr/).
-
-*Copyright (c) 2013 Gaël Poupard*
+Le wiki existe également [en Français](https://github.com/ffoodd/a11y.css/wiki/Introduction) ! 
