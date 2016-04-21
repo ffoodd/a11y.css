@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var path = require('path');
+var gutil = require('gulp-util');
 var csslint = require('gulp-csslint');
 var plumber = require('gulp-plumber');
 var options = require('./helpers/options');

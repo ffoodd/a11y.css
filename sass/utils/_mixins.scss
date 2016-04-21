@@ -55,7 +55,7 @@
 /// @example scss - Apply a test to void tags
 ///  .selector {
 ///    @include advice('nav')
-///      
+///
 ///    @include void-tags {
 ///      @include advice('nav', $self-closing: true);
 ///    }
@@ -65,10 +65,8 @@
 ///    content: "\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
 ///  }
 @mixin void-tags {
-  & {
-    &#{$void-tags} {
-      @content;
-    }
+  @at-root #{selector-unify($void-tags, &)} {
+    @content;
   }
 }
 
@@ -168,27 +166,11 @@
   display: block !important;
 
   &::after {
+    @include a11y-before;
     content: $tag;
     background: change-color(theme-conf($theme, 'color'), $saturation: 75%, $lightness: 95%) !important;
     border-color: change-color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 50%) !important;
     color: change-color(theme-conf($theme, 'color'), $saturation: 50%, $lightness: 25%) !important;
-    border-style: solid !important;
-    border-width: 0 0 0 1px !important;
-    border-radius: 0 !important;
-    cursor: pointer;
-    display: inline-block !important;
-    padding: 0.5em 1em;
-    position: fixed !important;
-    bottom: auto !important;
-    left: 1em !important;
-    right: auto !important;
-    top: 5em !important;
-    font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
-    text-align: left !important;
-    text-decoration: none !important;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-    text-transform: none !important;
-    white-space: pre;
   }
 }
 
@@ -214,7 +196,7 @@
         theme-conf($theme, 'color') ($background-offset + 0.2em),
         transparent ($background-offset + 0.2em);
       $background: append($background, $background-theme, 'comma');
-      $content-theme: message('ui', $theme) ': ' #{counter(error)} '\A ';
+      $content-theme: quote(message('ui', $theme)) ': ' #{counter(unquote($theme))} '\A ';
       $content: append($content, $content-theme);
     }
   }
@@ -226,28 +208,24 @@
 /// CSS content for pseudo-element used to display a message.
 /// @access private
 @mixin a11y-before {
-  border-style: solid !important;
-  border-width: 0 0 1px !important;
+  border-bottom: 1px solid !important;
   border-radius: 0 !important;
-  display: block !important;
-  height: auto !important;
-  width: 100% !important;
-  padding: 1em 0;
-  position: fixed !important;
   bottom: auto !important;
+  font: 400 normal 1.2rem/1.5 monospace !important;
+  height: auto !important;
   left: 0 !important;
-  right: 0 !important;
-  top: 0 !important;
-  pointer-events: none !important;
   opacity: 0;
-  font: 400 normal 1rem/1.5 "Source Code Pro", "SourceCodePro-Medium", "Fira Mono", "Droid Sans Mono", "Ubuntu Mono", "Consolas", "Monaco", "Andale Mono", monospace !important;
+  padding: 1em 0;
+  pointer-events: none !important;
+  position: fixed !important;
   text-align: center !important;
   text-decoration: none !important;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) !important;
   text-transform: none !important;
+  top: 0 !important;
   transform: translateY(-100%) translateZ(0) !important;
   transition: transform 0.3s ease-in !important;
   white-space: pre;
+  width: 100vw !important;
 }
 
 /// CSS content for pseudo-element used to display a message when hovered.
@@ -255,7 +233,6 @@
 @mixin a11y-hover {
   opacity: 1;
   transform: translateY(0) translateZ(0) !important;
-  transition: transform 0.3s ease-in !important;
 }
 
 /// Main mixin to display a message.

@@ -1,6 +1,6 @@
 {
   "name": "a11y.css",
-  "version": "2.3.0",
+  "version": "3.2.0",
   "homepage": "https://github.com/ffoodd/a11y.css",
   "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
   "main": "a11y.css",
@@ -33,14 +33,18 @@
     "docs"
   ],
   "devDependencies": {
-    "gulp": "^3.9.0",
+    "gulp": "~3.9.0",
     "gulp-autoprefixer": "latest",
+    "gulp-concat": "^2.6.0",
     "gulp-csslint": "latest",
-    "gulp-csscomb": "^3.0.6",
     "gulp-hologram": "latest",
-    "gulp-ruby-sass": "latest",
+    "gulp-plumber": "latest",
+    "gulp-sass": "^2.2.0",
+    "gulp-sassport": "^0.4.0",
     "gulp-scss-lint": "latest",
-    "gulp-util": "^3.0.7",
-    "sassdoc": "latest"
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "latest",
+    "sassdoc": "latest",
+    "sassdoc-theme-alix": "^0.3.24"
   }
 }

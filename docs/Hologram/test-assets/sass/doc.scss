@@ -595,10 +595,10 @@ aside fieldset p {
 
 .cssExample::before,
 .codeExample::before {
-  background: #fff;
-  border: 1px solid;
+  background: #fcf9e9;
+  border: 1px solid #e5dec8;
   border-radius: 4px 0 4px 0;
-  color: #e5dec8;
+  color: #7b6e50;
   content: "Example";
   display: inline-block;
   font-style: italic;
@@ -730,9 +730,9 @@ a[target$="blank"]::after {
 }
 
 .s, .nd { color: #07a }
-.na, .cssExample .nt { color: #690 }
+.na, .cssExample .nt { color: #667f1f }
 .nt, .cssExample .err + .nt { color: #905 }
-.o, .err { color: #999 }
+.o, .err { color: #807373 }
 
 #empty-link_code,
 #empty-link_code-moz,
