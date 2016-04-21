@@ -10,7 +10,7 @@
 /// @param {String} $level
 /// @output Nothing
 /// @example scss - Defines the minimum level to `error` to display only errors.
-///  @include set-minimum-level("error");
+///   @include set-minimum-level('error');
 @mixin set-minimum-level($level) {
   $level: to-lower-case($level);
   $levels: map-keys($themes);
@@ -34,16 +34,14 @@
 /// @group messages
 /// @param {String} $theme - Theme name
 /// @param {String} $key - Key name
-/// @require {function} message
-/// @require $themes
 /// @output `content`, with `!important`
 /// @example scss - Get message for `nav` from `advice` category when language is set to `en`
 /// .selector {
-///   @include message("advice", "nav");
+///   @include message('advice', 'nav');
 /// }
 /// @example css - Resulting CSS
 /// .selector {
-///   content: "\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
+///   content: '\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?';
 /// }
 @mixin message($theme, $key) {
   content: replace-attr(quote("#{unquote(theme-conf($theme, 'icon'))} #{message($theme, $key)}")) !important;
@@ -53,14 +51,13 @@
 /// Extends selector with self-closing tags & replaced elements
 /// Notice the `&` before the selector, and `$self-closing: true` argument.
 /// @access private
-/// @require {variable} void-tags
 /// @output `selectors` extended with void tags
 /// @example scss - Apply a test to void tags
 ///  .selector {
-///    @include advice("nav")
+///    @include advice('nav')
 ///      
 ///    @include void-tags {
-///      @include advice("nav", $self-closing: true);
+///      @include advice('nav', $self-closing: true);
 ///    }
 ///  }
 /// @example css - `.selector` extended
@@ -76,14 +73,12 @@
 }
 
 
-/// Theme mixin extending everything needed for the `$theme`,
+/// Theme mixin including everything needed for the `$theme`,
 /// and including a message in a pseudo-element.
 /// @access private
 /// @param {String} $theme - Theme
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @requires {mixin} message
-/// @requires {function} theme-conf
 @mixin item($theme, $key, $self-closing: false) {
   $is-disabled: index(map-get($disabled-tests, $theme), $key);
 
@@ -98,7 +93,6 @@
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @require {mixin} item
 /// @example scss - Define an error
 /// .selector {
 ///   @include error("no-src");
@@ -113,7 +107,6 @@
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @require {mixin} item
 /// @example scss - Define an warning
 /// .selector {
 ///   @include warning("abbr");
@@ -128,7 +121,6 @@
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @require {mixin} item
 /// @example scss - Define an obsolete
 /// .selector {
 ///   @include obsolete("any");
@@ -142,7 +134,6 @@
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @require {mixin} item
 /// @example scss - Define an advice
 /// .selector {
 ///   @include advice("nav");
@@ -156,9 +147,8 @@
 /// @group messages
 /// @access public
 /// @param {Arglist} $keys - Keys of tests to disable
-/// @require $disabled-tests
 /// @example scss - Disable a specific test
-///  @include disable("error:tab-order")
+///  @include disable-tests('error:tab-order', 'advice:empty-class');
 @mixin disable-tests($keys...) {
   @each $key in $keys {
     $disabled-tests: append($disabled-tests, $key) !global;
@@ -166,14 +156,13 @@
 }
 
 
-/// Display messages on <head>'s tags
+/// Display messages on &lt;head>'s tags
 /// @group messages
 /// @access public
 /// @param {Arglist} $tag - Text to display, recommended: tag name
 /// @param {Arglist} $theme - Message's level
-/// @require {function} theme-conf
-/// @example scss - Display messages on <head>'s tags
-///  @include a11y-head("title", error)
+/// @example scss - Display messages on &lt;head>’s tags
+///  @include a11y-head('title', 'error')
 @mixin a11y-head($tag, $theme) {
   // Because it's in the <head>
   display: block !important;
@@ -204,12 +193,10 @@
 }
 
 
-/// Defines `head::after`'s `content` and `background-image` depending on `$minimum-level`.
+/// Defines `head::after`’s `content` and `background-image` depending on `$minimum-level`.
 /// @param {String} $minimum-level - Inheriting minimum level
 /// @output `content` and `background-image`
 /// @access public
-/// @require {function} theme-conf
-/// @require {function} is-level-enough
 /// @example scss - Display counters on <head>'s ::after
 ///  @include base-content($minimum-level);
 @mixin base-content($minimum-level) {
@@ -236,7 +223,8 @@
   content: $content;
 }
 
-/// TBA.
+/// CSS content for pseudo-element used to display a message.
+/// @access private
 @mixin a11y-before {
   border-style: solid !important;
   border-width: 0 0 1px !important;
@@ -262,14 +250,18 @@
   white-space: pre;
 }
 
-/// TBA.
+/// CSS content for pseudo-element used to display a message when hovered.
+/// @access private
 @mixin a11y-hover {
   opacity: 1;
   transform: translateY(0) translateZ(0) !important;
   transition: transform 0.3s ease-in !important;
 }
 
-/// TBA.
+/// Main mixin to display a message.
+/// @param {String} $theme - Theme
+/// @param {String} $key - Key used to fetch message in `$messages` map
+/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 @mixin a11y($theme, $key, $self-closing: false) {
   $base-selector: '&::before';
   $event-selector: '&:hover::before, &:focus::before';
@@ -298,7 +290,8 @@
   }
 }
 
-/// Provides a way to cancel a message
+/// Provides a way to cancel a message.
+/// @access public
 @mixin a11y-reset {
   &,
   &:hover,

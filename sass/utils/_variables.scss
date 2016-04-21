@@ -1,12 +1,14 @@
 @charset 'UTF-8';
 
 
-/// This map holds configuration for all themes. Each theme has an icon, a color and a z-index.
+/// This map holds configuration for all themes.
+/// Each theme has an icon, a color and a z-index, and a background offset.
 /// @type Map
 /// @prop {Map} theme
 /// @prop {String} theme.icon  - Theme icon
 /// @prop {Color} theme.color  - Theme color
 /// @prop {Number} theme.index - Theme z-index
+/// @prop {Length} theme.background-offset - Theme background-offset
 $themes: (
   'error': (
     'icon': '\2620\00A0',
