@@ -45,7 +45,7 @@ Ces couleurs sont bien évidemment personnalisables, *via* [le fichier de config
 
 ### Annuler un sélecteur
 
-Quand le sélecteur de négation ne permet pas un ciblage suffisamment précis, vous pouvez ajouter un second sélecteur après le premier qui étendra le placeholder `%a11y-reset` et annulera (au mieux) le premier sélecteur dans certains cas. Malheureusement certains styles de la page originelle seront malgré tout écrasés.
+Quand le sélecteur de négation ne permet pas un ciblage suffisamment précis, vous pouvez ajouter un second sélecteur après le premier qui utilise le mixin `a11y-reset` et annulera (au mieux) le premier sélecteur dans certains cas. Malheureusement certains styles de la page originelle seront malgré tout écrasés.
 
 ```scss
 button:not([type]):not([form]):not([formaction]):not([formtarget]) {
@@ -53,7 +53,7 @@ button:not([type]):not([form]):not([formaction]):not([formtarget]) {
 }
 
 form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
-  @extend %a11y-reset;
+  @include a11y-reset;
 }
 ```
 
