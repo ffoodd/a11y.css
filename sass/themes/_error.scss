@@ -470,7 +470,7 @@ button:not([type]):not([form]):not([formaction]):not([formtarget]) {
 }
 
 form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
-  @extend %a11y-reset;
+  @include a11y-reset;
 }
 
 /*doc

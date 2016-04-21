@@ -52,7 +52,7 @@ Given the very long list of selectors to test, [they are splitted across several
 
 ### Cancel a selector
 
-When the `:not()` selector cannot be precise enough, you may add a second selector to extend the `%a11y-reset` placeholder, which tries to cancel the test in your second case. However a few styles from the original page will still be overrided.
+When the `:not()` selector cannot be precise enough, you may add a second selector to use the `a11y-reset` mixin, which tries to cancel the test in your second case. However a few styles from the original page will still be overrided.
 
 ```scss
 button:not([type]):not([form]):not([formaction]):not([formtarget]) {
@@ -60,7 +60,7 @@ button:not([type]):not([form]):not([formaction]):not([formtarget]) {
 }
 
 form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
-  @extend %a11y-reset;
+  @include a11y-reset;
 }
 ```
 
