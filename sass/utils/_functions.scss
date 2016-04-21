@@ -1,10 +1,9 @@
 @charset 'UTF-8';
 
-/// Retrieve message from series of keys
+/// Retrieve message from translation map.
 /// @access private
 /// @param {String} $theme - Either `advice`, `error`, `warning` or `obsolete`
 /// @param {String} $key - Key to find message for
-/// @requires $messages
 /// @return {String} Message
 @function message($theme, $key) {
   $message-key: $theme + ':' + $key;
@@ -17,15 +16,14 @@
 }
 
 
-/// Configuration helper
+/// Helper function to easily access a theme configuration.
 /// @access private
 /// @param {String} $theme
 /// @param {String} $key
-/// @require $themes
 /// @return {*}
 /// @example scss - Get color from error theme
 /// .selector {
-///   color: theme-conf("error", "color");
+///   color: theme-conf('error', 'color');
 /// }
 /// @example css - Resulting CSS
 /// .selector {
@@ -46,17 +44,17 @@
 }
 
 
-/// Escaping CSS attr() function
+/// Escaping CSS attr(..) function.
 /// @access private
 /// @param {String} $message
 /// @return {String}
 /// @example scss - Call message
 /// .selector {
-///   content: replace-attr("th-scope");
+///   content: replace-attr("ARIA role attr(role) should be unique, but this one is the second!");
 /// }
 /// @example css - Escaped message
 /// .selector {
-///   content: " ";
+///   content: "ARIA role " attr(role) "should be unique, but this one is the second!";
 /// }
 @function replace-attr($message) {
   $has-attr: str-index($message, 'attr(');
