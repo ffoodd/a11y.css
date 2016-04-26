@@ -5,4 +5,4 @@ node_modules
 prepros.cfg
 /docs/Hologram/tests
 /docs/SassDoc/*
-
+*.log
