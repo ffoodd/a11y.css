@@ -8,6 +8,12 @@
     "url": "http://www.ffoodd.fr",
     "email": "gael@ffoodd.fr"
   },
+  "scripts": {
+    "docs": "npm run docs:build && npm run docs:prepare && npm run docs:deploy",
+    "docs:build": "gulp docs",
+    "docs:prepare": "cp -r docs/Hologram/tests .tmpdocs && rsync -avh docs/SassDoc/ .tmpdocs && rm -rf .tmpdocs/sass && rm -rf .tmpdocs/js",
+    "docs:deploy": "git subtree push --prefix .tmpdocs origin gh-pages"
+  },
   "license": "MIT",
   "homepage": "http://ffoodd.github.io/a11y.css",
   "repository": {
