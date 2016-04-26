@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Warnings a11y.css</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
+    <link rel="stylesheet" href="static/doc.css">
+    <link rel="shortcut icon" href="http://ffoodd.github.io/a11y.css/static/favicon.ico">
+    <!-- CSS to be documented -->
+    
+      <link rel="stylesheet" href="css/a11y-en_warnings-only.css" media="(min-width: 800px)">
+    
+  </head>
+  <body>
+    <a href="#toc" class="skip">Skip to table of content</a>
+    <a href="#content" class="skip">Skip to content</a>
+
+    <header role="banner" id="top" class="main">
+      <a href="http://ffoodd.github.io/a11y.css/">
+        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="89.905" viewBox="0 0 180 179.81" role="img" aria-labelledby="titre">
+          <title id="titre">a11y.css</title>
+          <path fill="#ffce00" d="M0 8a8 8 0 0 1 8-8h164a8 8 0 0 1 8 8v163.81a8 8 0 0 1-8 8H8a8 8 0 0 1-8-8V8z"/>
+          <path fill="currentColor" d="M80.83 36.9a10 10 0 0 1 5.06-7.18 7.43 7.43 0 0 1 8.53 1.53 8.76 8.76 0 0 1 2.91 6.18c0 4.71.09 64.9 0 68.32a10.42 10.42 0 0 1-1.77 5.83 8 8 0 0 1-8 3.23c-4-.86-6.63-4.74-6.75-8.71s-.01-69.07.02-69.2zM27 120.87c6-4.4 11.77-9.09 17.83-13.4-4-3.22-7.94-6.52-12.17-9.39-3.62-2.46-8.14-5.36-7-10.42a5.86 5.86 0 0 1 3.8-4.43 7.07 7.07 0 0 1 6.19 1.41c2.23 1.7 22.88 17.71 24.22 19.61a5.75 5.75 0 0 1 .63 5.93 13.16 13.16 0 0 1-5 4.79c-4.37 2.7-17.18 12.84-19.54 14.66a8.32 8.32 0 0 1-6.87 1.74 5.47 5.47 0 0 1-4-5 7.62 7.62 0 0 1 .57-3.52 5.84 5.84 0 0 1 1.34-1.98zm126.43.81c2.18 3.27 1.27 7.87-2.57 9.37-4.27 1.67-8-2.09-11.07-4.4-3.81-2.83-7.55-5.73-11.35-8.57-1.72-1.29-3.48-2.48-5.25-3.71a12.08 12.08 0 0 1-4.18-4.35 5.81 5.81 0 0 1 .42-5.41c1-1.69 23.77-19.87 25.64-20.75a6.78 6.78 0 0 1 5.5-.45 6 6 0 0 1 3.43 4.08c1.29 5.07-3.31 8.09-6.93 10.53-2.08 1.41-10.21 7.81-12.27 9.48 3.42 2.33 16.62 12.48 17.46 13.11a10 10 0 0 0 1.21 1.06zM100 141.25a11 11 0 1 1-11-11 11 11 0 0 1 11 11z"/>
+        </svg>
+      </a>
+
+      <nav role="navigation" aria-label="Main navigation" class="Index Warnings">
+        <ul>
+          <li><a href="index.html" class="index">Home</a></li>
+          <li><a href="errors.html" class="errors">Errors</a></li>
+          <li><a href="warnings.html" class="warnings">Warnings</a></li>
+          <li><a href="obsolete.html" class="obsolete">Obsoletes</a></li>
+          <li><a href="advices.html" class="advices">Advices</a></li>
+          <li><a href="docs.html" class="sassdoc"><b><abbr title="Application Programming Interface">API</abbr></b> Doc</a></li>
+          <li>
+            <a href="https://github.com/ffoodd/a11y.css">
+              on <b>Github</b>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
+                <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
+                <polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main role="main">
+      <aside>
+        
+        <nav role="navigation" aria-labelledby="toc-title" id="toc">
+          <p class="h2-like" id="toc-title">Table of content</p>
+          <ol>
+            
+              <li>
+                <a href="#autoplay">[autoplay] should probably not be used</a>
+              </li>
+            
+              <li>
+                <a href="#controls">[controls] would be helpful</a>
+              </li>
+            
+              <li>
+                <a href="#empty-alt">[alt] can be empty but has to be checked</a>
+              </li>
+            
+              <li>
+                <a href="#empty-href"># [href]</a>
+              </li>
+            
+              <li>
+                <a href="#empty-nodes">Most of DOM nodes shouldn&#39;t be :empty</a>
+              </li>
+            
+              <li>
+                <a href="#empty-title">abbr should have a [title]</a>
+              </li>
+            
+              <li>
+                <a href="#fieldset">legend must be a fieldset&#39;s:first-child</a>
+              </li>
+            
+              <li>
+                <a href="#figure-role">figure without the group ARIA role</a>
+              </li>
+            
+              <li>
+                <a href="#href-js">JS [href]</a>
+              </li>
+            
+              <li>
+                <a href="#invalid-def">Invalid sibling in a definition list</a>
+              </li>
+            
+              <li>
+                <a href="#invalid-def-nesting">Invalid nesting in a definition list</a>
+              </li>
+            
+              <li>
+                <a href="#invalid-figcaption-nesting">figcaption outside a figure</a>
+              </li>
+            
+              <li>
+                <a href="#invalid-list-nesting">Invalid nesting in a list</a>
+              </li>
+            
+              <li>
+                <a href="#invalid-nesting">Invalid nesting</a>
+              </li>
+            
+              <li>
+                <a href="#misplaced-div">Misplaced div</a>
+              </li>
+            
+              <li>
+                <a href="#missing-thead">Missing head for data table</a>
+              </li>
+            
+              <li>
+                <a href="#no-aria-label">A label is needed for svg</a>
+              </li>
+            
+              <li>
+                <a href="#oops">Bad computed value</a>
+              </li>
+            
+              <li>
+                <a href="#sectioning-tags">Misused sectioning tags</a>
+              </li>
+            
+              <li>
+                <a href="#spacer-gif">spacer.gif used</a>
+              </li>
+            
+              <li>
+                <a href="#table-caption">Every data table must have a caption</a>
+              </li>
+            
+              <li>
+                <a href="#table-layout">A single line table may be used for layout</a>
+              </li>
+            
+              <li>
+                <a href="#table-structure">Invalid table structure</a>
+              </li>
+            
+              <li>
+                <a href="#th-no-scope">th without [scope] or [id]</a>
+              </li>
+            
+          </ol>
+        </nav>
+        
+
+        <div>
+          <form action="/" id="bookmarklet">
+            <fieldset>
+              <legend>Bookmarlet generator</legend>
+              <p>
+                <label for="minimum-level">Minimum level</label>
+                <select id="minimum-level" name="minimum-level">
+                  <option value="advice">Advices</option>
+                  <option value="obsolete">Obsoletes</option>
+                  <option value="warning">Warnings</option>
+                  <option value="error">Errors</option>
+                </select>
+              </p>
+              <p>
+                <label for="language">Language</label>
+                <select id="language" name="language">
+                  <option value="fr">French</option>
+                  <option value="en">English</option>
+                </select>
+              </p>
+            </fieldset>
+
+            <button type="submit">Generate <span>the</span> bookmarklet</button>
+          </form>
+
+          <p>
+            Just drag this to your bookmarks, and you'll be able to use <b>a11y.css</b> on any page:
+            <a id="bookmarklet--link" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='(max-width: 800px)';document.body.appendChild(a11ycss);})();" class="bookmarklet">a11y.css</a>
+          </p>
+        </div>
+      </aside>
+          
+      <div id="content">
+        <h1>Warnings</h1>
+
+<h1 id="autoplay" class="styleguide">[autoplay] should probably not be used</h1>
+
+<h2>Description</h2>
+<p class="styleguide">A time-based media like <code class="styleguide">&lt;audio&gt;</code> or <code class="styleguide">&lt;video&gt;</code> should not <code class="styleguide">[autoplay]</code>, because it can be quite surprising for the user.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-418-a-chaque-son-dclench-automatiquement-est-il-contrlable-par-lutilisateur-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-418-a-chaque-son-dclench-automatiquement-est-il-contrlable-par-lutilisateur-</a></li>
+<li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-1317-a-dans-chaque-page-web-chaque-contenu-en-mouvement-ou-clignotant-est-il-contrlable-par-lutilisateur-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-1317-a-dans-chaque-page-web-chaque-contenu-en-mouvement-ou-clignotant-est-il-contrlable-par-lutilisateur-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio">http://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio</a></li>
+<li><a href="http://www.punkchip.com/autoplay-is-bad-for-all-users/">http://www.punkchip.com/autoplay-is-bad-for-all-users/</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">video</span><span class="o">[</span><span class="nt">autoplay</span><span class="o">],</span>
+<span class="nt">audio</span><span class="o">[</span><span class="nt">autoplay</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <video autoplay controls src=""></video><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;video</span> <span class="na">autoplay</span> <span class="na">controls</span> <span class="na">src=</span><span class="s">""</span><span class="nt">&gt;&lt;/video&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="controls" class="styleguide">[controls] would be helpful</h1>
+
+<h2>Description</h2>
+<p class="styleguide">A time-based media like <code class="styleguide">&lt;audio&gt;</code> or <code class="styleguide">&lt;video&gt;</code> would be easier to use if <code class="styleguide">[controls]</code> are activated for the user.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-420-a-la-consultation-de-chaque-mdia-temporel-est-elle-si-ncessaire-contrlable-par-le-clavier-et-la-souris-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-420-a-la-consultation-de-chaque-mdia-temporel-est-elle-si-ncessaire-contrlable-par-le-clavier-et-la-souris-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc">http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable">http://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#keyboard-operation-trapping">http://www.w3.org/TR/WCAG20/#keyboard-operation-trapping</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/G4.html">http://www.w3.org/TR/WCAG-TECHS/G4.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">video</span><span class="nd">:not</span><span class="o">([</span><span class="nt">controls</span><span class="o">]),</span>
+<span class="nt">audio</span><span class="nd">:not</span><span class="o">([</span><span class="nt">controls</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <video src=""></video><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;video</span> <span class="na">src=</span><span class="s">""</span><span class="nt">&gt;&lt;/video&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="empty-alt" class="styleguide">[alt] can be empty but has to be checked</h1>
+
+<h2>Description</h2>
+<p class="styleguide">An alternative has to be empty when image is decorative only. In any other case, <code class="styleguide">[alt]</code> must be defined.
+That should be double-checked.</p>
+<h2>References</h2>
+<ul class="styleguide"><li>BP160 OpQuast</li>
+<li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-12-a-pour-chaque-image-de-dcoration-ayant-une-alternative-textuelle-cette-alternative-est-elle-vide-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-12-a-pour-chaque-image-de-dcoration-ayant-une-alternative-textuelle-cette-alternative-est-elle-vide-</a></li>
+<li><a href="http://www.w3.org/WAI/tutorials/images/decision-tree/">http://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
+<li><a href="http://www.w3.org/TR/html51/semantics.html#alt">http://www.w3.org/TR/html51/semantics.html#alt</a></li>
+<li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H67.html">http://www.w3.org/TR/WCAG-TECHS/H67.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F39.html">http://www.w3.org/TR/WCAG-TECHS/F39.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F38.html">http://www.w3.org/TR/WCAG-TECHS/F38.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img alt="" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="na">width=</span><span class="s">"144"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="empty-href" class="styleguide"># [href]</h1>
+
+<h2>Description</h2>
+<p class="styleguide">The <code class="styleguide">[href]</code> attribute is only containing <code class="styleguide">#</code>.
+Should probably be a <code class="styleguide">&lt;button&gt;</code> or at least a <code class="styleguide">[role=&quot;button&quot;]</code>, don&#39;t you think?</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">=</span><span class="err">"#"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <a href="#">Oh boy, I don't mean anything</a>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Oh boy, I don't mean anything<span class="nt">&lt;/a&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="empty-nodes" class="styleguide">Most of DOM nodes shouldn&#39;t be :empty</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Obviously void elements are empty, as well as <code class="styleguide">&lt;iframe&gt;</code> and <code class="styleguide">&lt;textarea&gt;</code> could be <code class="styleguide">:empty</code>.
+Any other <code class="styleguide">:empty</code> tag that is not hidden is probably useless, and should be deleted.</p><p class="styleguide">Please note that it&#39;s disabled for tags owning a source through <code class="styleguide">[src]</code>. It&#39;s pretty opinionated,
+but it&#39;s meant to avoid false positives on tags such as <code class="styleguide">&lt;video&gt;</code> or <code class="styleguide">&lt;audio&gt;</code> which may be
+empty if they have at least one source specified through <code class="styleguide">[src]</code>.</p>
+<h3>Notes</h3>
+<ul class="styleguide"><li>This test only targets tags in <code class="styleguide">&lt;body&gt;</code>, since most of head&#39;s tags should be empty.</li>
+<li><code class="styleguide">&lt;button&gt;</code> and <code class="styleguide">&lt;a&gt;</code> are also excluded since <code class="styleguide">button:empty</code> and <code class="styleguide">a:empty</code> are both covered by their own error.</li>
+<li>We also use the <code class="styleguide">:blank</code> pseudo-class, but at this time its support is very poor.</li>
+<li>We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-class, which is an alias of <code class="styleguide">:blank</code>.</li>
+</ul>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243</a></li>
+<li><a href="http://www.w3.org/TR/html-markup/syntax.html#void-element">http://www.w3.org/TR/html-markup/syntax.html#void-element</a></li>
+<li><a href="https://drafts.csswg.org/selectors-4/#the-blank-pseudo">https://drafts.csswg.org/selectors-4/#the-blank-pseudo</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace">https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace</a></li>
+<li><a href="https://css-tricks.com/almanac/selectors/b/blank/">https://css-tricks.com/almanac/selectors/b/blank/</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">body</span> <span class="o">*</span><span class="nd">:empty:not</span><span class="o">([</span><span class="nt">hidden</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-hidden</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">src</span><span class="o">])</span><span class="nd">:not</span><span class="o">(</span><span class="nt">button</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">a</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">iframe</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">textarea</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">area</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">base</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">br</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">col</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">command</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">embed</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">hr</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">img</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">input</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">keygen</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">meta</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">param</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">source</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">track</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">wbr</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">title</span><span class="o">)</span>
+<span class="nt">body</span> <span class="o">*</span><span class="nd">:blank:not</span><span class="o">([</span><span class="nt">hidden</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-hidden</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">src</span><span class="o">])</span><span class="nd">:not</span><span class="o">(</span><span class="nt">button</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">a</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">iframe</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">textarea</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">area</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">base</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">br</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">col</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">command</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">embed</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">hr</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">img</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">input</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">keygen</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">meta</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">param</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">source</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">track</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">wbr</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">title</span><span class="o">)</span>
+<span class="nt">body</span> <span class="o">*</span><span class="nd">:-moz-only-whitespace:not</span><span class="o">([</span><span class="nt">hidden</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-hidden</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">src</span><span class="o">])</span><span class="nd">:not</span><span class="o">(</span><span class="nt">button</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">a</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">iframe</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">textarea</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">area</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">base</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">br</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">col</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">command</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">embed</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">hr</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">img</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">input</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">keygen</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">meta</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">param</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">source</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">track</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">wbr</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">title</span><span class="o">)</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p id="empty-node_code"></p>
+
+<p id="-moz-only-whitespace"> </p>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"empty-node_code"</span><span class="nt">&gt;&lt;/p&gt;</span>
+
+<span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"-moz-only-whitespace"</span><span class="nt">&gt;</span> <span class="nt">&lt;/p&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="empty-title" class="styleguide">abbr should have a [title]</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Any abbreviation should give an explanation about its meaning, at least on its first occurrence.</p>
+<h2>References</h2>
+<ul class="styleguide"><li>BP160 OpQuast</li>
+<li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-94-aaa-dans-chaque-page-web-la-premire-occurrence-de-chaque-abrviation-permet-elle-den-connatre-la-signification-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-94-aaa-dans-chaque-page-web-la-premire-occurrence-de-chaque-abrviation-permet-elle-den-connatre-la-signification-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#meaning-located">http://www.w3.org/TR/WCAG20/#meaning-located</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/G70.html">http://www.w3.org/TR/WCAG-TECHS/G70.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/G97.html">http://www.w3.org/TR/WCAG-TECHS/G97.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/G102.html">http://www.w3.org/TR/WCAG-TECHS/G102.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H28.html">http://www.w3.org/TR/WCAG-TECHS/H28.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">abbr</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">]),</span>
+<span class="nt">abbr</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p>Do you know about <abbr>W3C</abbr>?</p>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;p&gt;</span>Do you know about <span class="nt">&lt;abbr&gt;</span>W3C<span class="nt">&lt;/abbr&gt;</span>?<span class="nt">&lt;/p&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="fieldset" class="styleguide">legend must be a fieldset&#39;s:first-child</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;legend&gt;</code> must be a <code class="styleguide">&lt;fieldset&gt;</code>&#39;s<code class="styleguide">:first-child</code>.
+Always.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-116-a-dans-chaque-formulaire-chaque-regroupement-de-champs-de-formulaire-a-t-il-une-lgende-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-116-a-dans-chaque-formulaire-chaque-regroupement-de-champs-de-formulaire-a-t-il-une-lgende-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#minimize-error-cues">http://www.w3.org/TR/WCAG20/#minimize-error-cues</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L449">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L449</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">fieldset</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:not</span><span class="o">(</span><span class="nt">legend</span><span class="o">)</span><span class="nd">:first-child</span><span class="o">,</span>
+<span class="nt">fieldset</span> <span class="o">&gt;</span> <span class="nt">legend</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:first-child</span><span class="o">)</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <fieldset>
+  <label>I'm not a legend.</label>
+  <legend>I am legend.</legend>
+</fieldset>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;fieldset&gt;</span>
+  <span class="nt">&lt;label&gt;</span>I'm not a legend.<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;legend&gt;</span>I am legend.<span class="nt">&lt;/legend&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="figure-role" class="styleguide">figure without the group ARIA role</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;figure&gt;</code> needs <code class="styleguide">[role=&quot;group&quot;]</code> for accessibility reason.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-110-a-chaque-lgende-dimage-est-elle-si-ncessaire-correctement-relie-limage-correspondante-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-110-a-chaque-lgende-dimage-est-elle-si-ncessaire-correctement-relie-limage-correspondante-</a></li>
+<li><a href="http://www.w3.org/WAI/tutorials/images/decision-tree/">http://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
+<li><a href="http://www.w3.org/TR/html51/semantics.html#alt">http://www.w3.org/TR/html51/semantics.html#alt</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">figure</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">group</span><span class="err">"</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <figure>
+  <img src="static/ffoodd.png" width="144" height="144" alt="Figcaption test"/>
+  <figcaption>I'm a figcaption</figcaption>
+</figure>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;figure&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="na">width=</span><span class="s">"144"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="na">alt=</span><span class="s">"Figcaption test"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;figcaption&gt;</span>I'm a figcaption<span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="href-js" class="styleguide">JS [href]</h1>
+
+<h2>Description</h2>
+<p class="styleguide">The <code class="styleguide">[href]</code> attribute should not start with &quot;javascript&quot;.
+Should probably be a <code class="styleguide">&lt;button&gt;</code> or at least a <code class="styleguide">[role=&quot;button&quot;]</code>, don&#39;t you think?
+The only exception shall be bookmarklets.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L392">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L392</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="err">"</span><span class="nt">javascript</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <a href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">Please use my bookmarklet ;)</a>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();"</span><span class="nt">&gt;</span>Please use my bookmarklet ;)<span class="nt">&lt;/a&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="invalid-def" class="styleguide">Invalid sibling in a definition list</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;dt&gt;</code> and <code class="styleguide">&lt;dd&gt;</code> should be direct adjacent siblings, and nothing else. Although multiple <code class="styleguide">&lt;dd&gt;</code> may follow a single <code class="styleguide">&lt;dt&gt;</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-parses">http://www.w3.org/TR/WCAG20/#ensure-compat-parses</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312</a></li>
+<li><a href="http://www.w3.org/TR/html5/grouping-content.html#the-dl-element">http://www.w3.org/TR/html5/grouping-content.html#the-dl-element</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">dt</span> <span class="o">+</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">dd</span><span class="o">),</span>
+<span class="nd">:not</span><span class="o">(</span><span class="nt">dt</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">dd</span><span class="o">)</span> <span class="o">+</span> <span class="nt">dd</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <dl>
+  <li>I'm a list item.</li>
+  <dd>What do I define?</dd>
+</dl>
+
+<dl>
+  <dt>I need a definition, don't you think?</dt>
+  <li>I'm a list item.</li>
+</dl>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;dl&gt;</span>
+  <span class="nt">&lt;li&gt;</span>I'm a list item.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>What do I define?<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span>
+
+<span class="nt">&lt;dl&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>I need a definition, don't you think?<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;li&gt;</span>I'm a list item.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/dl&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="invalid-def-nesting" class="styleguide">Invalid nesting in a definition list</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;dt&gt;</code> and <code class="styleguide">&lt;dd&gt;</code> should be direct children of <code class="styleguide">&lt;dl&gt;</code>.
+Any other imbrication may be a crime somewhere.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-parses">http://www.w3.org/TR/WCAG20/#ensure-compat-parses</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L439">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L439</a></li>
+<li><a href="http://www.w3.org/TR/html5/grouping-content.html#the-dl-element">http://www.w3.org/TR/html5/grouping-content.html#the-dl-element</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nd">:not</span><span class="o">(</span><span class="nt">dl</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">dt</span><span class="o">,</span>
+<span class="nd">:not</span><span class="o">(</span><span class="nt">dl</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">dd</span><span class="o">,</span>
+<span class="nt">dl</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">dt</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">dd</span><span class="o">)</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <dl>
+  <li>I'm a list item.</li>
+  <li>I'm another list item.</li>
+</dl>
+
+<dd>Look, Ma! No context for my definition!</dd>
+
+<dl>
+  <li>I'm a list item.</li>
+</dl>
+
+<dt>I'm a lost term.</dt>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;dl&gt;</span>
+  <span class="nt">&lt;li&gt;</span>I'm a list item.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>I'm another list item.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/dl&gt;</span>
+
+<span class="nt">&lt;dd&gt;</span>Look, Ma! No context for my definition!<span class="nt">&lt;/dd&gt;</span>
+
+<span class="nt">&lt;dl&gt;</span>
+  <span class="nt">&lt;li&gt;</span>I'm a list item.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/dl&gt;</span>
+
+<span class="nt">&lt;dt&gt;</span>I'm a lost term.<span class="nt">&lt;/dt&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="invalid-figcaption-nesting" class="styleguide">figcaption outside a figure</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;figcaption&gt;</code> doesn&#39;t make sense outside a <code class="styleguide">&lt;figure&gt;</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-parses">http://www.w3.org/TR/WCAG20/#ensure-compat-parses</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element">http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nd">:not</span><span class="o">(</span><span class="nt">figure</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">figcaption</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <figcaption>I'm captionning something, isn't it?</figcaption>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;figcaption&gt;</span>I'm captionning something, isn't it?<span class="nt">&lt;/figcaption&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="invalid-list-nesting" class="styleguide">Invalid nesting in a list</h1>
+
+<h2>Description</h2>
+<p class="styleguide">The only child allowed in <code class="styleguide">&lt;ul&gt;</code> and <code class="styleguide">&lt;ol&gt;</code> is <code class="styleguide">&lt;li&gt;</code> - and the converse is also true.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-parses">http://www.w3.org/TR/WCAG20/#ensure-compat-parses</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L433">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L433</a></li>
+<li><a href="http://www.w3.org/TR/html5/grouping-content.html#the-li-element">http://www.w3.org/TR/html5/grouping-content.html#the-li-element</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">ul</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">li</span><span class="o">),</span>
+<span class="nt">ol</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">li</span><span class="o">),</span>
+<span class="nd">:not</span><span class="o">(</span><span class="nt">ul</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">ol</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">li</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <ul>
+  <p>I feel like I'm lost.</p>
+</ul>
+
+<li>Mom? Where are you, Mom?</li>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;p&gt;</span>I feel like I'm lost.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;li&gt;</span>Mom? Where are you, Mom?<span class="nt">&lt;/li&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="invalid-nesting" class="styleguide">Invalid nesting</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Some nestings are forbidden, and do not have their own test case for now:
+* <code class="styleguide">&lt;option&gt;</code> and <code class="styleguide">&lt;optgroup&gt;</code> outside a <code class="styleguide">&lt;select&gt;</code>;
+* <code class="styleguide">&lt;legend&gt;</code> outside a <code class="styleguide">&lt;fieldset&gt;</code>;
+* <code class="styleguide">&lt;td&gt;</code> or <code class="styleguide">&lt;th&gt;</code> outside a <code class="styleguide">&lt;tr&gt;</code>;
+* direct children of a <code class="styleguide">&lt;table&gt;</code>.</p><p class="styleguide">Maybe other invalid nestings to test. Stay tuned.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L277">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L277</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">select</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">option</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">optgroup</span><span class="o">),</span>
+<span class="nd">:not</span><span class="o">(</span><span class="nt">select</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">optgroup</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">option</span><span class="o">,</span>
+<span class="nt">optgroup</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">option</span><span class="o">),</span>
+<span class="nd">:not</span><span class="o">(</span><span class="nt">select</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">optgroup</span><span class="o">,</span>
+<span class="nd">:not</span><span class="o">(</span><span class="nt">fieldset</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">legend</span><span class="o">,</span>
+<span class="nt">tr</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">td</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">th</span><span class="o">),</span>
+<span class="nt">table</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:not</span><span class="o">(</span><span class="nt">thead</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tfoot</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tbody</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tr</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">colgroup</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">caption</span><span class="o">)</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <option>I'm an option. Am I?</option>
+<legend>I'm an legend. Am I?</legend>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;option&gt;</span>I'm an option. Am I?<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;legend&gt;</span>I'm an legend. Am I?<span class="nt">&lt;/legend&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="misplaced-div" class="styleguide">Misplaced div</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Did you know that you shouldn&#39;t add a <code class="styleguide">&lt;div&gt;</code> inside any inline element?
+You could use a <code class="styleguide">&lt;span&gt;</code> instead.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">b</span> <span class="nt">div</span><span class="o">,</span>
+<span class="nt">i</span> <span class="nt">div</span><span class="o">,</span>
+<span class="nt">q</span> <span class="nt">div</span><span class="o">,</span>
+<span class="nt">em</span> <span class="nt">div</span><span class="o">,</span>
+<span class="nt">abbr</span> <span class="nt">div</span><span class="o">,</span>
+<span class="nt">cite</span> <span class="nt">div</span><span class="o">,</span>
+<span class="nt">code</span> <span class="nt">div</span><span class="o">,</span>
+<span class="nt">span</span> <span class="nt">div</span><span class="o">,</span>
+<span class="nt">small</span> <span class="nt">div</span><span class="o">,</span>
+<span class="nt">label</span> <span class="nt">div</span><span class="o">,</span>
+<span class="nt">strong</span> <span class="nt">div</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <b><div>Hey ya!</div></b>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;b&gt;&lt;div&gt;</span>Hey ya!<span class="nt">&lt;/div&gt;&lt;/b&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="missing-thead" class="styleguide">Missing head for data table</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;thead&gt;</code> is strongly needed if <code class="styleguide">&lt;tbody&gt;</code> is present.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L311">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L311</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">caption</span> <span class="o">+</span> <span class="nt">tbody</span><span class="o">,</span>
+<span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">tbody</span><span class="nd">:first-child</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <table>
+  <caption>Missing thead</caption>
+  <tbody>
+    <tr>
+      <td>I'm a table without thead.</td>
+      <td>I'm a table without thead.</td>
+    </tr>
+    <tr>
+      <td>I'm a table without thead.</td>
+      <td>I'm a table without thead.</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;caption&gt;</span>Missing thead<span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a table without thead.<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a table without thead.<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a table without thead.<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a table without thead.<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="no-aria-label" class="styleguide">A label is needed for svg</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Any informative <code class="styleguide">&lt;svg&gt;</code> should either have a <code class="styleguide">[aria-label]</code>, <code class="styleguide">[aria-labelledby]</code> or a <code class="styleguide">&lt;desc&gt;</code> AND have a <code class="styleguide">[role=&quot;img&quot;]</code>.</p><p class="styleguide">Otherwise it should have a <code class="styleguide">[role=&quot;presentation&quot;]</code>, and should not have any of those:
+* <code class="styleguide">[title]</code>;
+* <code class="styleguide">[aria-label]</code>;
+* <code class="styleguide">[aria-labelledby]</code>;
+* <code class="styleguide">[aria-describedby]</code>;
+* a <code class="styleguide">&lt;title&gt;</code> child;
+* or a <code class="styleguide">&lt;desc&gt;</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-11-a-chaque-image-a-t-elle-une-alternative-textuelle-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-11-a-chaque-image-a-t-elle-une-alternative-textuelle-</a></li>
+<li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F65.html">http://www.w3.org/TR/WCAG-TECHS/F65.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">svg</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">img</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"12cm"</span> <span class="na">height=</span><span class="s">"4cm"</span> <span class="na">viewBox=</span><span class="s">"0 0 1200 400"</span>
+     <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"100"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"200"</span>
+        <span class="na">fill=</span><span class="s">"forestgreen"</span> <span class="na">stroke=</span><span class="s">"darkgreen"</span> <span class="na">stroke-width=</span><span class="s">"10"</span>  <span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="oops" class="styleguide">Bad computed value</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Don&#39;t laugh, shit happens.</p>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="err">"</span><span class="nt">NaN</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="err">"</span><span class="nt">null</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="err">"</span><span class="nt">NaN</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="err">"</span><span class="nt">null</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="err">"</span><span class="nt">undefined</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="err">"</span><span class="nt">undefined</span><span class="err">"</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p class="undefined">Oups, something went wrong.</p>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"undefined"</span><span class="nt">&gt;</span>Oups, something went wrong.<span class="nt">&lt;/p&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="sectioning-tags" class="styleguide">Misused sectioning tags</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;section&gt;</code>, <code class="styleguide">&lt;aside&gt;</code>, <code class="styleguide">&lt;article&gt;</code> are sectioning tags.
+They must not be used as wrappers!</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252</a></li>
+<li><a href="http://www.w3.org/TR/html5/dom.html#sectioning-content">http://www.w3.org/TR/html5/dom.html#sectioning-content</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">aside</span> <span class="o">&gt;</span> <span class="nt">aside</span><span class="nd">:first-child</span><span class="o">,</span>
+<span class="nt">article</span> <span class="o">&gt;</span> <span class="nt">aside</span><span class="nd">:first-child</span><span class="o">,</span>
+<span class="nt">aside</span> <span class="o">&gt;</span> <span class="nt">article</span><span class="nd">:first-child</span><span class="o">,</span>
+<span class="nt">aside</span> <span class="o">&gt;</span> <span class="nt">section</span><span class="nd">:first-child</span><span class="o">,</span>
+<span class="nt">section</span> <span class="o">&gt;</span> <span class="nt">section</span><span class="nd">:first-child</span><span class="o">,</span>
+<span class="nt">article</span> <span class="o">&gt;</span> <span class="nt">section</span><span class="nd">:first-child</span><span class="o">,</span>
+<span class="nt">article</span> <span class="o">&gt;</span> <span class="nt">article</span><span class="nd">:first-child</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <aside>
+  <section>I'm wrapping, you know.</section>
+</aside>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;aside&gt;</span>
+  <span class="nt">&lt;section&gt;</span>I'm wrapping, you know.<span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/aside&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="spacer-gif" class="styleguide">spacer.gif used</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Believe me, this still have to be tested.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L381">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L381</a></li>
+<li><a href="http://www.la-grange.net/2015/03/11/visible">http://www.la-grange.net/2015/03/11/visible</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">1px</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">1x1</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">clear</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">spacer</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">dotclear</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">transparent</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">pixel-1x1-clear</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img src="static/spacer.gif" alt="Spacer.gif" width="100" height="100"/><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"static/spacer.gif"</span> <span class="na">alt=</span><span class="s">"Spacer.gif"</span> <span class="na">width=</span><span class="s">"100"</span> <span class="na">height=</span><span class="s">"100"</span><span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="table-caption" class="styleguide">Every data table must have a caption</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;caption&gt;</code> is needed for data <code class="styleguide">&lt;table&gt;</code>.
+And it must be the <code class="styleguide">:first-child</code>, by the way.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-54-a-chaque-tableau-de-donnes-a-t-il-un-titre-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-54-a-chaque-tableau-de-donnes-a-t-il-un-titre-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+<li><a href="http://www.w3.org/TR/html5/tabular-data.html#the-caption-element">http://www.w3.org/TR/html5/tabular-data.html#the-caption-element</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H39.html">http://www.w3.org/TR/WCAG-TECHS/H39.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">caption</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:first-child</span><span class="o">),</span>
+<span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:first-child:not</span><span class="o">(</span><span class="nt">caption</span><span class="o">)</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <table>
+  <thead>
+    <tr>
+      <th id="th-one">I'm a table without a caption!</th>
+      <th id="th-two">I'm a table without a caption!</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="2" headers="th-one th-two">I'm a table without a caption!</td>
+    </tr>
+    <tr>
+      <td colspan="2" headers="th-one th-two">I'm a table without a caption!</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"th-one"</span><span class="nt">&gt;</span>I'm a table without a caption!<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"th-two"</span><span class="nt">&gt;</span>I'm a table without a caption!<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"2"</span> <span class="na">headers=</span><span class="s">"th-one th-two"</span><span class="nt">&gt;</span>I'm a table without a caption!<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">"2"</span> <span class="na">headers=</span><span class="s">"th-one th-two"</span><span class="nt">&gt;</span>I'm a table without a caption!<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="table-layout" class="styleguide">A single line table may be used for layout</h1>
+
+<h2>Description</h2>
+<p class="styleguide">A lonely <code class="styleguide">&lt;tr&gt;</code> can be a symptom of a table used for layout.
+Should be double checked!</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-53-a-pour-chaque-tableau-de-mise-en-forme-le-contenu-linaris-reste-t-il-comprhensible-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-53-a-pour-chaque-tableau-de-mise-en-forme-le-contenu-linaris-reste-t-il-comprhensible-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence">http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L331">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L331</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">tr</span><span class="nd">:only-child</span><span class="o">,</span>
+<span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">tbody</span> <span class="o">&gt;</span> <span class="nt">tr</span><span class="nd">:only-child</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <table>
+  <caption>I'm a caption :3</caption>
+  <tr>
+    <td>I'm a poor lonesone table-roooow!</td>
+  </tr>
+</table>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;caption&gt;</span>I'm a caption :3<span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>I'm a poor lonesone table-roooow!<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="table-structure" class="styleguide">Invalid table structure</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;thead&gt;</code>, <code class="styleguide">&lt;tfoot&gt;</code> and <code class="styleguide">&lt;tbody&gt;</code> must be in this order.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L316">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L316</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L321">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L321</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L326">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L326</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">table</span> <span class="o">&gt;</span> <span class="nt">tfoot</span> <span class="o">~</span> <span class="nt">thead</span><span class="o">,</span>
+<span class="nt">table</span> <span class="o">&gt;</span> <span class="nt">tbody</span> <span class="o">~</span> <span class="nt">tfoot</span><span class="o">,</span>
+<span class="nt">table</span> <span class="o">&gt;</span> <span class="nt">tbody</span> <span class="o">~</span> <span class="nt">thead</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <table>
+  <caption>I'm a caption</caption>
+  <tbody>
+    <tr>
+      <td>I'm a table with tfoot done wrong.</td>
+      <td>I'm a table with tfoot done wrong.</td>
+    </tr>
+    <tr>
+      <td>I'm a table with tfoot done wrong.</td>
+      <td>I'm a table with tfoot done wrong.</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <th id="th-1">I'm a table with tfoot done wrong.</th>
+    <th id="th-2">I'm a table with tfoot done wrong.</th>
+  </tfoot>
+</table>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;caption&gt;</span>I'm a caption<span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a table with tfoot done wrong.<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a table with tfoot done wrong.<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a table with tfoot done wrong.<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a table with tfoot done wrong.<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+  <span class="nt">&lt;tfoot&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"th-1"</span><span class="nt">&gt;</span>I'm a table with tfoot done wrong.<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">"th-2"</span><span class="nt">&gt;</span>I'm a table with tfoot done wrong.<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tfoot&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="th-no-scope" class="styleguide">th without [scope] or [id]</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;th&gt;</code> strongly needs an <code class="styleguide">[id]</code> or a <code class="styleguide">[scope]</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-57-a-pour-chaque-tableau-de-donnes-la-technique-approprie-permettant-dassocier-chaque-cellule-avec-ses-en-ttes-est-elle-utilise-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-57-a-pour-chaque-tableau-de-donnes-la-technique-approprie-permettant-dassocier-chaque-cellule-avec-ses-en-ttes-est-elle-utilise-</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20-TECHS/H43.html">http://www.w3.org/TR/WCAG20-TECHS/H43.html</a></li>
+<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L282">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L282</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">th</span><span class="nd">:not</span><span class="o">([</span><span class="nt">scope</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <table>
+  <caption>Need for a [scope] or [id]</caption>
+  <tr>
+    <th>I'm a th without [scope] or [id].</th>
+    <th>I'm a th without [scope] or [id].</th>
+  </tr>
+  <tr>
+    <td>I'm a td missing something.</td>
+    <td>I'm a td missing something.</td>
+  </tr>
+</table>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;caption&gt;</span>Need for a [scope] or [id]<span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th&gt;</span>I'm a th without [scope] or [id].<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>I'm a th without [scope] or [id].<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>I'm a td missing something.<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>I'm a td missing something.<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre>
+  </div>
+</div>
+      </div>
+    </main>
+
+    <footer role="contentinfo" class="main">
+      <div>
+        <p class="builtWith">
+          Built with
+          <a href="http://trulia.github.io/hologram/">
+            Hologram
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
+              <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
+              <polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
+            </svg>
+          </a>
+        </p>
+        <p>® 2014 —&nbsp;2016 <strong>Gaël Poupard</strong></p>
+        <p>This project is distributed under license <a href="http://opensource.org/licenses/MIT" title="The MIT licence">MIT</a> and <a href="http://creativecommons.org/licenses/by/3.0/fr/" hreflang="fr" title="Explications de la licence">CC BY 3.0 FR</a>. <a class="end" href="#top">Back to top</a></p>
+      </div>
+    </footer>
+
+    <script src="static/js/docs.js"></script>
+  </body>
+</html>
