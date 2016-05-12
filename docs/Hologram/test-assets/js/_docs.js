@@ -1,65 +1,80 @@
-// Quand le DOM a fini de charger
-document.addEventListener("DOMContentLoaded", function() {
-  var bookmarklink = document.getElementById("bookmarklet");
-  var toc = document.getElementById("toc");
+function getFileName () {
+  var base = 'https://rawgit.com/ffoodd/a11y.css/master/css/';
+  var prefix = 'a11y-';
+  var lang = document.getElementById('language').value || 'en';
+  var level = document.getElementById('minimum-level').value || 'advice';
+  var extension = '.css';
 
-  // On écoute la soumission du formulaire de génération
-  if ( bookmarklink ) {
-    bookmarklink.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      var $minimum_level = document.getElementById("minimum-level").value;
-      var $language = document.getElementById("language").value;
-
-      var $hrefstart = 'javascript:(function(){a11ycss=document.createElement("LINK");a11ycss.href="https://rawgit.com/ffoodd/a11y.css/master/css/a11y-';
-      var $hreflang = $language;
-      var $hreflevel = '';
-      if ($minimum_level !== "advice") {
-        $hreflevel = '_' + $minimum_level;
-      }
-      var $hrefend = '.css";a11ycss.rel="stylesheet";a11ycss.media="(min-width: 800px)";document.body.appendChild(a11ycss);})();';
-
-      var $href = $hrefstart + $hreflang + $hreflevel + $hrefend;
-
-      document.getElementById("bookmarklet--link").setAttribute("href", $href);
-      document.getElementById("bookmarklet--link").classList.add("done");
-    });
-
-    bookmarklink.addEventListener("change", function () {
-      document.getElementById("bookmarklet--link").classList.remove("done");
-    });
+  if (level !== 'advice') {
+    level = '_' + level;
   }
 
-  if( toc ) {
-    // On bricole pour afficher l'ancre active dans le sommaire
-    toc.addEventListener("click", function(e) {
-      var $link = e.target;
-      var $active = document.querySelector(".active-test");
+  return base + prefix + lang + level + extension;
+}
 
-      if( $active ) {
-        $active.removeAttribute("class");
-      }
+function getBookmarkletContent () {
+  return [
+    'javascript:',
+      '(function(){',
+        'a11ycss=document.createElement("LINK");',
+        'a11ycss.href="' + getFileName() + '";',
+        'a11ycss.rel="stylesheet";',
+        'a11ycss.media="(min-width: 800px)";',
+        'document.body.appendChild(a11ycss);',
+      '})();'
+  ].join('');
+}
 
-      if( $link.tagName.toLowerCase() === "a" ) {
-        $link.classList.add("active-test");
-      }
-    });
+function activeAnchor (toc) {
+  var toc = toc || document.getElementById('toc');
+  var currentHref = toc.getElementsByTagName('a');
 
-    activeAnchor();
-  }
-
-  // On fait pareil au chargement
-  function activeAnchor() {
-    var $currentHref = toc.getElementsByTagName("a");
-    var $length = $currentHref.length;
-    var i = 0;
-    for(;i<$length;i++) {
-      if(document.location.href.indexOf($currentHref[i].href)>=0) {
-        $currentHref[i].classList.add("active-test");
-      }
+  for (i = 0; i < currentHref.length; i++) {
+    if (document.location.href.indexOf(currentHref[i].href) >= 0) {
+      currentHref[i].classList.add('active-test');
     }
   }
+}
+
+function handleTocClick (event) {
+  var link = event.target;
+  var active = document.querySelector('.active-test');
+
+  if (active) {
+    active.removeAttribute('class');
+  }
+
+  if (link.tagName.toLowerCase() === 'a') {
+    link.classList.add('active-test');
+  }
+}
+
+function handleFormSubmit (event) {
+  event.preventDefault();
+
+  var link = document.getElementById('bookmarklet--link');
+  link.setAttribute('href', getBookmarkletContent());
+  link.classList.add('done');
+}
+
+function handleFormChange () {
+  var link = document.getElementById('bookmarklet--link');
+  link.classList.remove('done');
+}
+
+// Quand le DOM a fini de charger
+document.addEventListener('DOMContentLoaded', function() {
+  // On écoute la soumission du formulaire de génération
+  var bookmarklink = document.getElementById('bookmarklet');
+  if (bookmarklink) {
+    bookmarklink.addEventListener('submit', handleFormSubmit);
+    bookmarklink.addEventListener('change', handleFormChange);
+  }
+
+  // On bricole pour afficher l’ancre active dans le sommaire
+  var toc = document.getElementById('toc');
+  if (toc) {
+    toc.addEventListener('click', handleTocClick);
+    activeAnchor(toc);
+  }
 });
-
-
-
