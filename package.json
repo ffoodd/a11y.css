@@ -12,7 +12,7 @@
     "docs": "npm run docs:build && npm run docs:prepare && npm run docs:deploy",
     "docs:build": "gulp docs",
     "docs:prepare": "cp -r docs/Hologram/tests/ docs/build && rsync -avh docs/SassDoc/ docs/build && rm -rf docs/build/sass && rm -rf docs/build/js",
-    "docs:deploy": "git subtree push --prefix docs/build origin gh-pages --force"
+    "docs:deploy": "git subtree push --prefix docs/build origin gh-pages"
   },
   "license": "MIT",
   "homepage": "http://ffoodd.github.io/a11y.css",
