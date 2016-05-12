@@ -286,20 +286,20 @@ A link to a file should indicate the file format, the file size and if different
 ##Selector
 ```css_example
 [download],
-[href$=".pdf"],
-[href$=".doc"],
-[href$=".png"],
-[href$=".jpg"],
-[href$=".gif"],
-[href$=".mp3"],
-[href$=".mp4"],
-[href$=".mov"],
-[href$=".ogg"],
-[href$=".xls"],
-[href$=".txt"],
-[href$=".zip"],
-[href$=".rar"],
-[href$=".docx"]
+[href$=".pdf"]:not(link),
+[href$=".doc"]:not(link),
+[href$=".png"]:not(link),
+[href$=".jpg"]:not(link),
+[href$=".gif"]:not(link),
+[href$=".mp3"]:not(link),
+[href$=".mp4"]:not(link),
+[href$=".mov"]:not(link),
+[href$=".ogg"]:not(link),
+[href$=".xls"]:not(link),
+[href$=".txt"]:not(link),
+[href$=".zip"]:not(link),
+[href$=".rar"]:not(link),
+[href$=".docx"]:not(link)
 ```
 
 ##Test
@@ -308,20 +308,20 @@ A link to a file should indicate the file format, the file size and if different
 ```
 */
 [download],
-[href$=".pdf"],
-[href$=".doc"],
-[href$=".png"],
-[href$=".jpg"],
-[href$=".gif"],
-[href$=".mp3"],
-[href$=".mp4"],
-[href$=".mov"],
-[href$=".ogg"],
-[href$=".xls"],
-[href$=".txt"],
-[href$=".zip"],
-[href$=".rar"],
-[href$=".docx"] {
+[href$=".pdf"]:not(link),
+[href$=".doc"]:not(link),
+[href$=".png"]:not(link),
+[href$=".jpg"]:not(link),
+[href$=".gif"]:not(link),
+[href$=".mp3"]:not(link),
+[href$=".mp4"]:not(link),
+[href$=".mov"]:not(link),
+[href$=".ogg"]:not(link),
+[href$=".xls"]:not(link),
+[href$=".txt"]:not(link),
+[href$=".zip"]:not(link),
+[href$=".rar"]:not(link),
+[href$=".docx"]:not(link) {
   @include advice('file-format');
 }
 
