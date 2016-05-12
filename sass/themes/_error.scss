@@ -1021,42 +1021,6 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 
 /*doc
 ---
-title: "[style] attribute"
-name: style-attr
-category: Errors
----
-
-##Description
-Your styles should be driven by a CSS file. That's it.
-And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
-
-##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-101-a-dans-le-site-web-des-feuilles-de-styles-sont-elles-utilises-pour-contrler-la-prsentation-de-linformation->
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
-
-##Selector
-```css_example
-[style]
-```
-
-##Test
-```html_example
-<div style="color: red;">I'm red. I really feel dirty.</div>
-```
-*/
-[style] {
-  @include error('style-attr');
-
-  @include void-tags {
-    @include error('style-attr', $self-closing: true);
-  }
-}
-
-
-
-/*doc
----
 title: "Empty title tag"
 name: no-page-title
 category: Errors
