@@ -7,6 +7,8 @@ function getFileName () {
 
   if (level !== 'advice') {
     level = '_' + level;
+  } else {
+    level = '';
   }
 
   return base + prefix + lang + level + extension;
