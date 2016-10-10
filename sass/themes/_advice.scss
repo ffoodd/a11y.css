@@ -13,7 +13,8 @@ category: Advices
 
 ##Selector
 ```css_example
-[class=""]
+[class=""],
+[class=" "]
 ```
 
 ##Test
@@ -21,7 +22,8 @@ category: Advices
 <b class="">Why is there a class here?</b>
 ```
 */
-[class=""] {
+[class=""],
+[class=" "] {
   @include advice('empty-class');
 
   @include void-tags {
