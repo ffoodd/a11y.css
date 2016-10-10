@@ -16,7 +16,6 @@ The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L433>
 * <http://www.w3.org/TR/html5/grouping-content.html#the-li-element>
 
 ##Selector
@@ -100,7 +99,6 @@ Any other imbrication may be a crime somewhere.
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318>
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L439>
 * <http://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
 ##Selector
@@ -212,9 +210,6 @@ Some nestings are forbidden, and do not have their own test case for now:
 * direct children of a `<table>`.
 
 Maybe other invalid nestings to test. Stay tuned.
-
-##References
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L277>
 
 ##Selector
 ```css_example
@@ -353,7 +348,6 @@ Always.
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L449>
 
 ##Selector
 ```css_example
@@ -656,7 +650,6 @@ Should be double checked!
 ##References
 * <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-53-a-pour-chaque-tableau-de-mise-en-forme-le-contenu-linaris-reste-t-il-comprhensible->
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L331>
 
 ##Selector
 ```css_example
@@ -739,11 +732,6 @@ category: Warnings
 ##Description
 `<thead>`, `<tfoot>` and `<tbody>` must be in this order.
 
-##References
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L316>
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L321>
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L326>
-
 ##Selector
 ```css_example
 table > tfoot ~ thead,
@@ -789,9 +777,6 @@ category: Warnings
 ##Description
 `<thead>` is strongly needed if `<tbody>` is present.
 
-##References
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L311>
-
 ##Selector
 ```css_example
 table:not([role="presentation"]) > caption + tbody,
@@ -835,7 +820,6 @@ category: Warnings
 * <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-57-a-pour-chaque-tableau-de-donnes-la-technique-approprie-permettant-dassocier-chaque-cellule-avec-ses-en-ttes-est-elle-utilise->
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20-TECHS/H43.html>
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L282>
 
 ##Selector
 ```css_example
@@ -873,7 +857,6 @@ category: Warnings
 Believe me, this still have to be tested.
 
 ##References
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L381>
 * <http://www.la-grange.net/2015/03/11/visible>
 
 ##Selector
@@ -956,7 +939,6 @@ The only exception shall be bookmarklets.
 
 ##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L392>
 
 ##Selector
 ```css_example
@@ -986,7 +968,6 @@ Should probably be a `<button>` or at least a `[role="button"]`, don't you think
 
 ##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386>
 
 ##Selector
 ```css_example
