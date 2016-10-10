@@ -427,8 +427,6 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
 <ul class="styleguide"><li><a href="http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar">http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar</a></li>
 <li><a href="http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/">http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/</a></li>
 <li><a href="http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html">http://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html</a></li>
-<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L466">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L466</a></li>
-<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L480">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L480</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
@@ -495,7 +493,9 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">form</span><span class="nd">:not</span><span class="o">([</span><span class="nt">action</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">form</span><span class="nd">:not</span><span class="o">([</span><span class="nt">action</span><span class="o">]),</span>
+<span class="nt">form</span><span class="o">[</span><span class="nt">action</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
+<span class="nt">form</span><span class="o">[</span><span class="nt">action</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -531,11 +531,13 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
 <li><a href="http://www.w3.org/TR/WCAG-TECHS/H37.html">http://www.w3.org/TR/WCAG-TECHS/H37.html</a></li>
 <li><a href="http://www.w3.org/TR/WCAG-TECHS/H24.html">http://www.w3.org/TR/WCAG-TECHS/H24.html</a></li>
 <li><a href="http://www.w3.org/TR/WCAG-TECHS/F65.html">http://www.w3.org/TR/WCAG-TECHS/F65.html</a></li>
-<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L369</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">img</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">]),</span>
+  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
+<span class="nt">img</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">]),</span>
 <span class="nt">area</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">]),</span>
 <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">])</span></code></pre>
 </div>
@@ -566,6 +568,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">label</span><span class="nd">:not</span><span class="o">([</span><span class="nt">for</span><span class="o">]),</span>
+<span class="nt">label</span><span class="o">[</span><span class="nt">for</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
 <span class="nt">label</span><span class="o">[</span><span class="nt">for</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
@@ -621,6 +624,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">html</span><span class="nd">:not</span><span class="o">([</span><span class="nt">lang</span><span class="o">]),</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
 <span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
@@ -676,23 +680,26 @@ We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-cla
 <p class="styleguide">An <code class="styleguide">&lt;img&gt;</code> must have an <code class="styleguide">[src]</code> or an <code class="styleguide">[srcset]</code>. Obviously.</p>
 <h2>References</h2>
 <ul class="styleguide"><li><a href="http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src">http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src</a></li>
-<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L374</a></li>
 <li><a href="http://scottjehl.github.io/picturefill/">http://scottjehl.github.io/picturefill/</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">img</span><span class="nd">:not</span><span class="o">([</span><span class="nt">src</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">srcset</span><span class="o">]),</span>
 <span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
 <span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="s1">"#"</span><span class="o">],</span>
 <span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="s1">"/"</span><span class="o">],</span>
 <span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
 <span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">"#"</span><span class="o">],</span>
 <span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">"/"</span><span class="o">],</span>
 <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">src</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">srcset</span><span class="o">]),</span>
 <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
 <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="s1">"#"</span><span class="o">],</span>
 <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="s1">"/"</span><span class="o">],</span>
 <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
 <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">"#"</span><span class="o">]</span>
 <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">"/"</span><span class="o">]</span></code></pre>
 </div>
@@ -717,11 +724,11 @@ We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-cla
 <ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-21-a-chaque-cadre-en-ligne-a-t-il-un-titre-de-cadre-">http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-21-a-chaque-cadre-en-ligne-a-t-il-un-titre-de-cadre-</a></li>
 <li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
 <li><a href="http://www.w3.org/TR/WCAG-TECHS/H64.html">http://www.w3.org/TR/WCAG-TECHS/H64.html</a></li>
-<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L454</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">iframe</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">]),</span>
+<span class="nt">iframe</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
 <span class="nt">iframe</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
@@ -746,6 +753,7 @@ We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-cla
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">input</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">]),</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
 <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
