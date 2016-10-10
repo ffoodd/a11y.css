@@ -46,7 +46,8 @@ category: Advices
 
 ##Selector
 ```css_example
-[id=""]
+[id=""],
+[id=" "]
 ```
 
 ##Test
@@ -54,7 +55,8 @@ category: Advices
 <i id="">Wait. Why is my ID empty?</i>
 ```
 */
-[id=""] {
+[id=""],
+[id=" "] {
   @include advice('empty-id');
 
   @include void-tags {
