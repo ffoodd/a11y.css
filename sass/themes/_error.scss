@@ -664,7 +664,9 @@ category: Errors
 
 ##Selector
 ```css_example
-form:not([action])
+form:not([action]),
+form[action=" "],
+form[action=""]
 ```
 
 ##Test
@@ -677,7 +679,9 @@ form:not([action])
 </form>
 ```
 */
-form:not([action]) {
+form:not([action]),
+form[action=" "],
+form[action=""] {
   @include error('no-action');
 }
 
