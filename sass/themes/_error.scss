@@ -633,6 +633,7 @@ category: Errors
 ##Selector
 ```css_example
 iframe:not([title]),
+iframe[title=" "],
 iframe[title=""]
 ```
 
@@ -642,6 +643,7 @@ iframe[title=""]
 ```
 */
 iframe:not([title]),
+iframe[title=" "],
 iframe[title=""] {
   @include error('no-title', $self-closing: true);
 }
