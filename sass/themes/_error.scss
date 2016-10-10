@@ -706,6 +706,7 @@ category: Errors
 ##Selector
 ```css_example
 html:not([lang]),
+html[lang=" "],
 html[lang=""]
 ```
 
@@ -715,6 +716,7 @@ html[lang=""]
 ```
 */
 html:not([lang]),
+html[lang=" "],
 html[lang=""] {
   @include error('no-lang');
 }
