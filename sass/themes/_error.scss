@@ -261,6 +261,7 @@ A `<label>` is labelling something, in theory.
 ##Selector
 ```css_example
 label:not([for]),
+label[for=" "],
 label[for=""]
 ```
 
@@ -270,6 +271,7 @@ label[for=""]
 ```
 */
 label:not([for]),
+label[for=" "],
 label[for=""] {
   @include error('no-for');
 }
