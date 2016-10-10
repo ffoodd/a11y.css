@@ -1,8 +1,0 @@
-@charset 'UTF-8';
-
-$messages: require('./locales/fr', $infer: false);
-
-@import 'utils/all';
-@include set-minimum-level('obsolete');
-@import 'base/base';
-@import 'themes/all';

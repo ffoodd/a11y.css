@@ -1,8 +1,0 @@
-.sass-cache
-*.map
-node_modules
-.idea
-prepros.cfg
-/docs/Hologram/tests
-/docs/SassDoc/*
-*.log
