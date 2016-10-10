@@ -397,6 +397,7 @@ Any abbreviation should give an explanation about its meaning, at least on its f
 ##Selector
 ```css_example
 abbr:not([title]),
+abbr[title=" "],
 abbr[title=""]
 ```
 
@@ -406,6 +407,7 @@ abbr[title=""]
 ```
 */
 abbr:not([title]),
+abbr[title=" "],
 abbr[title=""] {
   @include warning('empty-title');
 }
