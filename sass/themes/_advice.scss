@@ -685,3 +685,33 @@ table[role="presentation"]
 table[role="presentation"] {
   @include advice('table-presentation');
 }
+
+
+/*doc
+---
+title: "No [href]"
+name: no-href
+category: Advices
+---
+
+##Description
+Yet it's valid to skip the `[href]` attribute on a link, it's probably better to double check, isn't it?
+
+##References
+* <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
+* <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
+
+##Selector
+```css_example
+a:not([href])
+```
+
+##Test
+```html_example
+<a>Who am I? Where do I link?</a>
+```
+*/
+a:not([href]) {
+  @include advice('no-href');
+}

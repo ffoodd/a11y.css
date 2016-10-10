@@ -35,45 +35,34 @@ The `[tabindex]` attribute should never be greater than 0.
 
 /*doc
 ---
-title: "No [href]"
-name: no-href
+title: "Empty [href]"
+name: empty-href
 category: Errors
 ---
 
 ##Description
 The `[href]` attribute, if present, should not be empty. A link *to* something, right?
-However a link may be an anchor, using `[name]` or `[id]`.
-
 
 ##References
+* <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
-* <https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386>
 
 ##Selector
 ```css_example
-a[name=""][id=""][href=""],
-a:not([name])[id=""][href=""],
-a[name=""]:not([id])[href=""],
-a:not([name])[id=""]:not([href]),
-a[name=""]:not([id]):not([href]),
-a:not([name]):not([id])[href=""],
-a:not([name]):not([id]):not([href])
+a[href=""],
+a[href=" "]
 ```
 
 ##Test
 ```html_example
-<a>Who am I? Where do I link?</a>
+<a href=" ">Who am I? Where do I link?</a>
 ```
 */
-a[name=""][id=""][href=""],
-a:not([name])[id=""][href=""],
-a[name=""]:not([id])[href=""],
-a:not([name])[id=""]:not([href]),
-a[name=""]:not([id]):not([href]),
-a:not([name]):not([id])[href=""],
-a:not([name]):not([id]):not([href]) {
-  @include error('no-href');
+a[href=""],
+a[href="/"],
+a[href=" "] {
+  @include error('empty-href');
 }
 
 
