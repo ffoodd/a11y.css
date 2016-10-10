@@ -29,7 +29,7 @@
   "error:tab-order": "Ne perturbez pas l’ordre de tabulation naturel. C’est comme tuer des chatons.",
   "error:empty-href": "Attribut [href] vide. Où va ce lien ?",
   "error:empty-link": "Ce lien est vide et n’a aucun intitulé. Dommage…",
-  "error:no-alt": "Attribut [alt] manquant. Quelle hérésie.",
+  "error:no-alt": "Attribut [alt] manquant, ou contenant un espace. Quelle hérésie.",
   "error:no-src": "Attribut [src] ou [srcset] manquant ou vide. Bon.",
   "error:no-for": "Attribut [for] manquant. Pourtant il doit bien servir à quelque chose, ce label, non ?",
   "error:no-id": "Ce champ est indescriptible. Vous avez pourtant le choix : \n  [title], [id], [aria-label], [aria-labelledby].",

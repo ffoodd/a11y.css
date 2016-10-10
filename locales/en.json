@@ -29,7 +29,7 @@
   "error:tab-order": "Do not disrupt the natural tab order. It’s like killing kittens.",
   "error:empty-href": "This [href] is empty. Where does this link go to?",
   "error:empty-link": "Empty link without any kind of label. Empty link…",
-  "error:no-alt": "Missing [alt] attribute. Sacrilege!",
+  "error:no-alt": "Missing [alt] attribute, or blank value. Sacrilege!",
   "error:no-src": "[src] or [srcset] attribute missing or empty. Oh, well…",
   "error:no-for": "Missing [for] attribute. Still, this label must be here for some reason.",
   "error:no-id": "This field is indescribable. However you got choices: \n  [title], [id], [aria-label], [aria-labelledby].",

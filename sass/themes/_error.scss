@@ -158,6 +158,9 @@ An `<img>` must have an `[alt]`. Always.
 
 ##Selector
 ```css_example
+img[alt=" "],
+area[alt=" "],
+input[type="image"][alt=" "],
 img:not([alt]),
 area:not([alt]),
 input[type="image"]:not([alt])
@@ -169,6 +172,9 @@ input[type="image"]:not([alt])
 <input type="image" src="static/ffoodd.png" /><span>†</span>
 ```
 */
+img[alt=" "],
+area[alt=" "],
+input[type="image"][alt=" "],
 img:not([alt]),
 area:not([alt]),
 input[type="image"]:not([alt]) {
