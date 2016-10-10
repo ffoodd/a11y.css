@@ -60,7 +60,6 @@ a[href=" "]
 ```
 */
 a[href=""],
-a[href="/"],
 a[href=" "] {
   @include error('empty-href');
 }
