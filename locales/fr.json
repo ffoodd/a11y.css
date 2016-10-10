@@ -24,9 +24,10 @@
   "advice:time": "Le format de date est-il compréhensible ?",
   "advice:th-scope": "Cette cellule d’en-tête s’applique à la totalité de la attr(scope), vrai ou pas ? \n  C’est ce que dit son [scope], en tout cas.",
   "advice:table-presentation": "Un tableau de mise en forme ne doit pas avoir de résumé. \n  Il doit également rester compréhensible une fois linéarisé.",
+  "advice:no-href": "Un lien sans cible est rare, vous êtes certain de n’avoir rien oublié ?",
 
   "error:tab-order": "Ne perturbez pas l’ordre de tabulation naturel. C’est comme tuer des chatons.",
-  "error:no-href": "Attribut [href], [id] ou [name] absent. Un lien doit avoir/être une cible, non ?",
+  "error:empty-href": "Attribut [href] vide. Où va ce lien ?",
   "error:empty-link": "Ce lien est vide et n’a aucun intitulé. Dommage…",
   "error:no-alt": "Attribut [alt] manquant. Quelle hérésie.",
   "error:no-src": "Attribut [src] ou [srcset] manquant ou vide. Bon.",
