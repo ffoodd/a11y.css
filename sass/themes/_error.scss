@@ -195,16 +195,20 @@ An `<img>` must have an `[src]` or an `[srcset]`. Obviously.
 ```css_example
 img:not([src]):not([srcset]),
 img[src=""],
+img[src=" "],
 img[src="#"],
 img[src="/"],
 img[srcset=""],
+img[srcset=" "],
 img[srcset="#"],
 img[srcset="/"],
 input[type="image"]:not([src]):not([srcset]),
 input[type="image"][src=""],
+input[type="image"][src=" "],
 input[type="image"][src="#"],
 input[type="image"][src="/"],
 input[type="image"][srcset=""],
+input[type="image"][srcset=" "],
 input[type="image"][srcset="#"]
 input[type="image"][srcset="/"]
 ```
@@ -217,16 +221,20 @@ input[type="image"][srcset="/"]
 */
 img:not([src]):not([srcset]),
 img[src=""],
+img[src=" "],
 img[src="#"],
 img[src="/"],
 img[srcset=""],
+img[srcset=" "],
 img[srcset="#"],
 img[srcset="/"],
 input[type="image"]:not([src]):not([srcset]),
 input[type="image"][src=""],
+input[type="image"][src=" "],
 input[type="image"][src="#"],
 input[type="image"][src="/"],
 input[type="image"][srcset=""],
+input[type="image"][srcset=" "],
 input[type="image"][srcset="#"],
 input[type="image"][srcset="/"] {
   @include error('no-src');
