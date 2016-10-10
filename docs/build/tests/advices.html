@@ -95,6 +95,10 @@
               </li>
             
               <li>
+                <a href="#no-href">No [href]</a>
+              </li>
+            
+              <li>
                 <a href="#placeholder">Placeholder can&#39;t replace a label</a>
               </li>
             
@@ -430,6 +434,30 @@ Otherwise you may annoy your users.</p>
   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"field"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/label&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">id=</span><span class="s">"field"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="no-href" class="styleguide">No [href]</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Yet it&#39;s valid to skip the <code class="styleguide">[href]</code> attribute on a link, it&#39;s probably better to double check, isn&#39;t it?</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements">https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">a</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <a>Who am I? Where do I link?</a>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;a&gt;</span>Who am I? Where do I link?<span class="nt">&lt;/a&gt;</span></code></pre>
   </div>
 </div>
 

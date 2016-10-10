@@ -71,6 +71,10 @@
               </li>
             
               <li>
+                <a href="#empty-href">Empty [href]</a>
+              </li>
+            
+              <li>
                 <a href="#empty-link">Empty link</a>
               </li>
             
@@ -92,10 +96,6 @@
             
               <li>
                 <a href="#no-for">A label without a [for] attribute</a>
-              </li>
-            
-              <li>
-                <a href="#no-href">No [href]</a>
               </li>
             
               <li>
@@ -297,6 +297,31 @@ Use <code class="styleguide">[disabled]</code> and <code class="styleguide">[rea
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;button</span> <span class="na">title=</span><span class="s">""</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Test<span class="nt">&lt;/button&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="empty-href" class="styleguide">Empty [href]</h1>
+
+<h2>Description</h2>
+<p class="styleguide">The <code class="styleguide">[href]</code> attribute, if present, should not be empty. A link <em>to</em> something, right?</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements">https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">=</span><span class="s1">" "</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <a href=" ">Who am I? Where do I link?</a>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">" "</span><span class="nt">&gt;</span>Who am I? Where do I link?<span class="nt">&lt;/a&gt;</span></code></pre>
   </div>
 </div>
 
@@ -551,37 +576,6 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;label&gt;</span>Guess what?<span class="nt">&lt;/label&gt;</span></code></pre>
-  </div>
-</div>
-
-<h1 id="no-href" class="styleguide">No [href]</h1>
-
-<h2>Description</h2>
-<p class="styleguide">The <code class="styleguide">[href]</code> attribute, if present, should not be empty. A link <em>to</em> something, right?
-However a link may be an anchor, using <code class="styleguide">[name]</code> or <code class="styleguide">[id]</code>.</p>
-<h2>References</h2>
-<ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161</a></li>
-<li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165</a></li>
-<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386</a></li>
-</ul>
-<h2>Selector</h2>
-<div class="codeBlock cssExample">
-  <pre><code><span class="nt">a</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="s1">""</span><span class="o">][</span><span class="nt">id</span><span class="o">=</span><span class="s1">""</span><span class="o">][</span><span class="nt">href</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:not</span><span class="o">([</span><span class="nt">name</span><span class="o">])[</span><span class="nt">id</span><span class="o">=</span><span class="s1">""</span><span class="o">][</span><span class="nt">href</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])[</span><span class="nt">href</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:not</span><span class="o">([</span><span class="nt">name</span><span class="o">])[</span><span class="nt">id</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">]),</span>
-<span class="nt">a</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">]),</span>
-<span class="nt">a</span><span class="nd">:not</span><span class="o">([</span><span class="nt">name</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])[</span><span class="nt">href</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:not</span><span class="o">([</span><span class="nt">name</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">])</span></code></pre>
-</div>
-<h2>Test</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <a>Who am I? Where do I link?</a>
-
-  </div>
-  <div class="codeBlock">
-    <pre><code><span class="nt">&lt;a&gt;</span>Who am I? Where do I link?<span class="nt">&lt;/a&gt;</span></code></pre>
   </div>
 </div>
 

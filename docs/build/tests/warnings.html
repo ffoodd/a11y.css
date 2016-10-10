@@ -67,10 +67,6 @@
               </li>
             
               <li>
-                <a href="#empty-href"># [href]</a>
-              </li>
-            
-              <li>
                 <a href="#empty-nodes">Most of DOM nodes shouldn&#39;t be :empty</a>
               </li>
             
@@ -277,30 +273,6 @@ That should be double-checked.</p>
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">""</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="na">width=</span><span class="s">"144"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
-  </div>
-</div>
-
-<h1 id="empty-href" class="styleguide"># [href]</h1>
-
-<h2>Description</h2>
-<p class="styleguide">The <code class="styleguide">[href]</code> attribute is only containing <code class="styleguide">#</code>.
-Should probably be a <code class="styleguide">&lt;button&gt;</code> or at least a <code class="styleguide">[role=&quot;button&quot;]</code>, don&#39;t you think?</p>
-<h2>References</h2>
-<ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165</a></li>
-<li><a href="https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386">https://github.com/yahoo/debugCSS/blob/master/debugCSS.css#L386</a></li>
-</ul>
-<h2>Selector</h2>
-<div class="codeBlock cssExample">
-  <pre><code><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">=</span><span class="s1">"#"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"button"</span><span class="o">])</span></code></pre>
-</div>
-<h2>Test</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <a href="#">Oh boy, I don't mean anything</a>
-
-  </div>
-  <div class="codeBlock">
-    <pre><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Oh boy, I don't mean anything<span class="nt">&lt;/a&gt;</span></code></pre>
   </div>
 </div>
 
