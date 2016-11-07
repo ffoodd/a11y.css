@@ -12,7 +12,7 @@ category: Warnings
 The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also true.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
@@ -52,7 +52,7 @@ category: Warnings
 `<dt>` and `<dd>` should be direct adjacent siblings, and nothing else. Although multiple `<dd>` may follow a single `<dt>`.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
@@ -95,7 +95,7 @@ category: Warnings
 Any other imbrication may be a crime somewhere.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318>
@@ -142,7 +142,7 @@ category: Warnings
 `<figcaption>` doesn't make sense outside a `<figure>`.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-82-a-pour-chaque-page-web-le-code-source-est-il-valide-selon-le-type-de-document-spcifi-hors-cas-particuliers->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element>
@@ -173,7 +173,7 @@ category: Warnings
 `<figure>` needs `[role="group"]` for accessibility reason.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-110-a-chaque-lgende-dimage-est-elle-si-ncessaire-correctement-relie-limage-correspondante->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-10>
 * <http://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <http://www.w3.org/TR/html51/semantics.html#alt>
 
@@ -344,7 +344,7 @@ category: Warnings
 Always.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-116-a-dans-chaque-formulaire-chaque-regroupement-de-champs-de-formulaire-a-t-il-une-lgende->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
@@ -381,7 +381,7 @@ Any abbreviation should give an explanation about its meaning, at least on its f
 
 ##References
 * BP160 OpQuast
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-94-aaa-dans-chaque-page-web-la-premire-occurrence-de-chaque-abrviation-permet-elle-den-connatre-la-signification->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-4>
 * <http://www.w3.org/TR/WCAG20/#meaning-located>
 * <http://www.w3.org/TR/WCAG-TECHS/G70.html>
 * <http://www.w3.org/TR/WCAG-TECHS/G97.html>
@@ -420,7 +420,7 @@ That should be double-checked.
 
 ##References
 * BP160 OpQuast
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-12-a-pour-chaque-image-de-dcoration-ayant-une-alternative-textuelle-cette-alternative-est-elle-vide->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <http://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <http://www.w3.org/TR/html51/semantics.html#alt>
 * <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
@@ -473,7 +473,7 @@ Otherwise it should have a `[role="presentation"]`, and should not have any of t
 * or a `<desc>`.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-11-a-chaque-image-a-t-elle-une-alternative-textuelle->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
 * <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
 * <http://www.w3.org/TR/WCAG-TECHS/F65.html>
 
@@ -507,8 +507,8 @@ category: Warnings
 A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because it can be quite surprising for the user.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-418-a-chaque-son-dclench-automatiquement-est-il-contrlable-par-lutilisateur->
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-1317-a-dans-chaque-page-web-chaque-contenu-en-mouvement-ou-clignotant-est-il-contrlable-par-lutilisateur->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-18>
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-17>
 * <http://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
 * <http://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
@@ -540,7 +540,7 @@ category: Warnings
 A time-based media like `<audio>` or `<video>` would be easier to use if `[controls]` are activated for the user.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-420-a-la-consultation-de-chaque-mdia-temporel-est-elle-si-ncessaire-contrlable-par-le-clavier-et-la-souris->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-20>
 * <http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
 * <http://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
 * <http://www.w3.org/TR/WCAG20/#keyboard-operation-trapping>
@@ -648,7 +648,7 @@ A lonely `<tr>` can be a symptom of a table used for layout.
 Should be double checked!
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-53-a-pour-chaque-tableau-de-mise-en-forme-le-contenu-linaris-reste-t-il-comprhensible->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ##Selector
@@ -685,7 +685,7 @@ category: Warnings
 And it must be the `:first-child`, by the way.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-54-a-chaque-tableau-de-donnes-a-t-il-un-titre->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-4>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
 * <http://www.w3.org/TR/WCAG-TECHS/H39.html>
@@ -817,7 +817,7 @@ category: Warnings
 `<th>` strongly needs an `[id]` or a `[scope]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-57-a-pour-chaque-tableau-de-donnes-la-technique-approprie-permettant-dassocier-chaque-cellule-avec-ses-en-ttes-est-elle-utilise->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20-TECHS/H43.html>
 
@@ -996,7 +996,7 @@ Your styles should be driven by a CSS file. That's it.
 And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-101-a-dans-le-site-web-des-feuilles-de-styles-sont-elles-utilises-pour-contrler-la-prsentation-de-linformation->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-1->
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 

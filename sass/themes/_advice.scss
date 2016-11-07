@@ -249,7 +249,7 @@ A link opening new tab or window should warn user about its behaviour.
 You could use a `[title]`, for example.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-132-a-dans-chaque-page-web-pour-chaque-ouverture-de-nouvelle-fentre-lutilisateur-est-il-averti->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-2>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <http://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context>
 * <http://www.w3.org/TR/WCAG-TECHS/H33.html>
@@ -282,8 +282,8 @@ category: Advices
 A link to a file should indicate the file format, the file size and if different from the main document, the file language.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-136-a-dans-chaque-page-web-pour-chaque-fichier-en-tlchargement-des-informations-relatives-sa-consultation-sont-elles-prsentes-hors-cas-particuliers->
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-137-a-dans-chaque-page-web-chaque-document-bureautique-en-tlchargement-possde-t-il-si-ncessaire-une-version-accessible>
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-6>
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-7>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <http://www.w3.org/TR/WCAG-TECHS/H33.html>
 
@@ -341,7 +341,7 @@ category: Advices
 Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[contentinfo]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-1210-a-dans-chaque-page-web-les-groupes-de-liens-importants-menu-barre-de-navigation-et-la-zone-de-contenu-sont-ils-identifis-hors-cas-particuliers->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
 ##Selector
@@ -377,7 +377,7 @@ category: Advices
 A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-1210-a-dans-chaque-page-web-les-groupes-de-liens-importants-menu-barre-de-navigation-et-la-zone-de-contenu-sont-ils-identifis-hors-cas-particuliers->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
 ##Selector
@@ -416,7 +416,7 @@ category: Advices
 A `[required]` or `[aria-required]` should be visually understandable.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-1110-a-dans-chaque-formulaire-le-contrle-de-saisie-est-il-utilis-de-manire-pertinente->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-10>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 
 ##Selector
@@ -459,7 +459,7 @@ category: Advices
 A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-1013-a-pour-chaque-page-web-les-textes-cachs-sont-ils-correctement-affichs-pour-tre-restitus-par-les-technologies-dassistance->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-13>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
 ##Selector
@@ -520,10 +520,10 @@ category: Advices
 A `<video>` or `<audio>` needs a few things to be accessible, like a transcript, subtitles, controls. This kind of things.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-41-a-chaque-mdia-temporel-pr-enregistr-a-t-il-si-ncessaire-une-transcription-textuelle-ou-une-audio-description-hors-cas-particuliers->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-1>
 * <http://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt>
 * <http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-413-aaa-chaque-mdia-temporel-synchronis-ou-seulement-vido-a-t-il-si-ncessaire-une-transcription-textuelle-hors-cas-particuliers->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-13>
 * <http://www.w3.org/TR/WCAG20/#media-equiv-text-doc>
 
 ##Selector
@@ -554,7 +554,7 @@ category: Advices
 A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-13-a-pour-chaque-image-porteuse-dinformation-ayant-une-alternative-textuelle-cette-alternative-est-elle-pertinente-hors-cas-particuliers->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-3>
 * <http://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <http://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <http://www.w3.org/TR/html51/semantics.html#alt>
@@ -616,7 +616,7 @@ category: Advices
 A `[scope]` can be col or row (and nothing else) and it has to be relevant.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-57-a-pour-chaque-tableau-de-donnes-la-technique-approprie-permettant-dassocier-chaque-cellule-avec-ses-en-ttes-est-elle-utilise->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/WCAG-TECHS/H63.html>
 
@@ -664,7 +664,7 @@ category: Advices
 A `[role="presentation"]` is a good idea for any `<table>` used for layout, but a bad thing for a data table. Double check this!
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel-technique-0#title-critre-53-a-pour-chaque-tableau-de-mise-en-forme-le-contenu-linaris-reste-t-il-comprhensible->
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ##Selector
