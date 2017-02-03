@@ -259,11 +259,11 @@ That should be double-checked.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
+  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -333,8 +333,8 @@ empty if they have at least one source specified through <code class="styleguide
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">abbr</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">]),</span>
-<span class="nt">abbr</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">abbr</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
+<span class="nt">abbr</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">abbr</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -391,7 +391,7 @@ Always.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">figure</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"group"</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">figure</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">group</span><span class="err">"</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -421,7 +421,7 @@ The only exception shall be bookmarklets.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="s1">"javascript"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"button"</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="err">"</span><span class="nt">javascript</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -659,8 +659,8 @@ You could use a <code class="styleguide">&lt;span&gt;</code> instead.</p>
 <p class="styleguide"><code class="styleguide">&lt;thead&gt;</code> is strongly needed if <code class="styleguide">&lt;tbody&gt;</code> is present.</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">caption</span> <span class="o">+</span> <span class="nt">tbody</span><span class="o">,</span>
-<span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">tbody</span><span class="nd">:first-child</span></code></pre>
+  <pre><code><span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">caption</span> <span class="o">+</span> <span class="nt">tbody</span><span class="o">,</span>
+<span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">tbody</span><span class="nd">:first-child</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -714,7 +714,7 @@ You could use a <code class="styleguide">&lt;span&gt;</code> instead.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">svg</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"img"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">svg</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">img</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -741,12 +741,12 @@ You could use a <code class="styleguide">&lt;span&gt;</code> instead.</p>
 <p class="styleguide">Don&#39;t laugh, shit happens.</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="s1">"NaN"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="s1">"null"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s1">"NaN"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s1">"null"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="s1">"undefined"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s1">"undefined"</span><span class="o">]</span></code></pre>
+  <pre><code><span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="err">"</span><span class="nt">NaN</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="err">"</span><span class="nt">null</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="err">"</span><span class="nt">NaN</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="err">"</span><span class="nt">null</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="err">"</span><span class="nt">undefined</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="err">"</span><span class="nt">undefined</span><span class="err">"</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -802,13 +802,13 @@ They must not be used as wrappers!</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="s1">"1px.gif"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]),</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="s1">"1x1.gif"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]),</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="s1">"clear.gif"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]),</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="s1">"spacer.gif"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]),</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="s1">"dotclear.gif"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]),</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="s1">"transparent.gif"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]),</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="s1">"pixel-1x1-clear.gif"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">1px</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">1x1</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">clear</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">spacer</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">dotclear</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">transparent</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">*=</span><span class="err">"</span><span class="nt">pixel-1x1-clear</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -859,8 +859,8 @@ And it must be the <code class="styleguide">:first-child</code>, by the way.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">caption</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:first-child</span><span class="o">),</span>
-<span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:first-child:not</span><span class="o">(</span><span class="nt">caption</span><span class="o">)</span></code></pre>
+  <pre><code><span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">caption</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:first-child</span><span class="o">),</span>
+<span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:first-child:not</span><span class="o">(</span><span class="nt">caption</span><span class="o">)</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -914,8 +914,8 @@ Should be double checked!</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">tr</span><span class="nd">:only-child</span><span class="o">,</span>
-<span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">tbody</span> <span class="o">&gt;</span> <span class="nt">tr</span><span class="nd">:only-child</span></code></pre>
+  <pre><code><span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">tr</span><span class="nd">:only-child</span><span class="o">,</span>
+<span class="nt">table</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span> <span class="o">&gt;</span> <span class="nt">tbody</span> <span class="o">&gt;</span> <span class="nt">tr</span><span class="nd">:only-child</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">

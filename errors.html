@@ -222,7 +222,7 @@ Use <code class="styleguide">[disabled]</code> and <code class="styleguide">[rea
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">button</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s1">"disabled"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">disabled</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">readonly</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">button</span><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="err">"</span><span class="nt">disabled</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">disabled</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">readonly</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -285,9 +285,9 @@ Use <code class="styleguide">[disabled]</code> and <code class="styleguide">[rea
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">button</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">button</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">button</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
+  <pre><code><span class="nt">button</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -311,8 +311,8 @@ Use <code class="styleguide">[disabled]</code> and <code class="styleguide">[rea
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">=</span><span class="s1">" "</span><span class="o">]</span></code></pre>
+  <pre><code><span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -344,19 +344,19 @@ By the way, why would you use an empty link?</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
+  <pre><code><span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
 <span class="nt">a</span><span class="nd">:empty:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span>
 
-<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
 <span class="nt">a</span><span class="nd">:blank:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span>
 
-<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
 <span class="nt">a</span><span class="nd">:-moz-only-whitespace:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
@@ -430,48 +430,48 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"1"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"2"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"3"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"4"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"5"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"6"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"7"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"8"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"9"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"0"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"--"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"-1"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"-2"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"-3"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"-4"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"-5"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"-6"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"-7"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"-8"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"-9"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="s1">"-0"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"1"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"2"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"3"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"4"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"5"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"6"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"7"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"8"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"9"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"0"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"--"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"-1"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"-2"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"-3"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"-4"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"-5"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"-6"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"-7"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"-8"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"-9"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="s1">"-0"</span><span class="o">]</span></code></pre>
+  <pre><code><span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">1</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">2</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">3</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">4</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">5</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">6</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">7</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">8</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">9</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">0</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">--</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-1</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-2</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-3</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-4</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-5</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-6</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-7</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-8</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-9</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">^=</span><span class="err">"</span><span class="nt">-0</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">1</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">2</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">3</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">4</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">5</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">6</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">7</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">8</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">9</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">0</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">--</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-1</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-2</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-3</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-4</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-5</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-6</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-7</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-8</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-9</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">^=</span><span class="err">"</span><span class="nt">-0</span><span class="err">"</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -494,8 +494,8 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">form</span><span class="nd">:not</span><span class="o">([</span><span class="nt">action</span><span class="o">]),</span>
-<span class="nt">form</span><span class="o">[</span><span class="nt">action</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">form</span><span class="o">[</span><span class="nt">action</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
+<span class="nt">form</span><span class="o">[</span><span class="nt">action</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">form</span><span class="o">[</span><span class="nt">action</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -534,12 +534,12 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
+  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
 <span class="nt">img</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">]),</span>
 <span class="nt">area</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">]),</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">])</span></code></pre>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -568,8 +568,8 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">label</span><span class="nd">:not</span><span class="o">([</span><span class="nt">for</span><span class="o">]),</span>
-<span class="nt">label</span><span class="o">[</span><span class="nt">for</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">label</span><span class="o">[</span><span class="nt">for</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
+<span class="nt">label</span><span class="o">[</span><span class="nt">for</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">label</span><span class="o">[</span><span class="nt">for</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -595,7 +595,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">input</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="s1">"submit"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="s1">"hidden"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="s1">"reset"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
+  <pre><code><span class="nt">input</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">submit</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">hidden</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
 <span class="nt">textarea</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
 <span class="nt">select</span><span class="nd">:not</span><span class="o">([</span><span class="nt">id</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
 </div>
@@ -624,8 +624,8 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">html</span><span class="nd">:not</span><span class="o">([</span><span class="nt">lang</span><span class="o">]),</span>
-<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -685,23 +685,23 @@ We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-cla
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">img</span><span class="nd">:not</span><span class="o">([</span><span class="nt">src</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">srcset</span><span class="o">]),</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="s1">"#"</span><span class="o">],</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="s1">"/"</span><span class="o">],</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">"#"</span><span class="o">],</span>
-<span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">"/"</span><span class="o">],</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">src</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">srcset</span><span class="o">]),</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="s1">"#"</span><span class="o">],</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="s1">"/"</span><span class="o">],</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">"#"</span><span class="o">]</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"image"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="s1">"/"</span><span class="o">]</span></code></pre>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="err">"#"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">src</span><span class="o">=</span><span class="err">"</span><span class="o">/</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="err">"#"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">srcset</span><span class="o">=</span><span class="err">"</span><span class="o">/</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">src</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">srcset</span><span class="o">]),</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="err">"#"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">src</span><span class="o">=</span><span class="err">"</span><span class="o">/</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="err">"#"</span><span class="o">]</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">srcset</span><span class="o">=</span><span class="err">"</span><span class="o">/</span><span class="err">"</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -728,8 +728,8 @@ We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-cla
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">iframe</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">]),</span>
-<span class="nt">iframe</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">iframe</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
+<span class="nt">iframe</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">iframe</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -753,8 +753,8 @@ We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-cla
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">input</span><span class="nd">:not</span><span class="o">([</span><span class="nt">type</span><span class="o">]),</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -781,9 +781,9 @@ You still have a few choices: <code class="styleguide">[value]</code>, <code cla
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"reset"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">value</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"submit"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">value</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">value</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">value</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">submit</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">value</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">value</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -837,16 +837,16 @@ You still have a few choices: <code class="styleguide">[value]</code>, <code cla
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"reset"</span><span class="o">][</span><span class="nt">formmethod</span><span class="o">],</span>
-<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"reset"</span><span class="o">][</span><span class="nt">formaction</span><span class="o">],</span>
-<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"reset"</span><span class="o">][</span><span class="nt">formtarget</span><span class="o">],</span>
-<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"reset"</span><span class="o">][</span><span class="nt">formenctype</span><span class="o">],</span>
-<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"reset"</span><span class="o">][</span><span class="nt">formnovalidate</span><span class="o">],</span>
-<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">][</span><span class="nt">formmethod</span><span class="o">],</span>
-<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">][</span><span class="nt">formaction</span><span class="o">],</span>
-<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">][</span><span class="nt">formtarget</span><span class="o">],</span>
-<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">][</span><span class="nt">formenctype</span><span class="o">],</span>
-<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"button"</span><span class="o">][</span><span class="nt">formnovalidate</span><span class="o">]</span></code></pre>
+  <pre><code><span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">][</span><span class="nt">formmethod</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">][</span><span class="nt">formaction</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">][</span><span class="nt">formtarget</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">][</span><span class="nt">formenctype</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">reset</span><span class="err">"</span><span class="o">][</span><span class="nt">formnovalidate</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">][</span><span class="nt">formmethod</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">][</span><span class="nt">formaction</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">][</span><span class="nt">formtarget</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">][</span><span class="nt">formenctype</span><span class="o">],</span>
+<span class="nt">button</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">][</span><span class="nt">formnovalidate</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -916,7 +916,7 @@ You still have a few choices: <code class="styleguide">[value]</code>, <code cla
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="o">[</span><span class="nt">tabindex</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">tabindex</span><span class="o">=</span><span class="s1">"0"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">tabindex</span><span class="o">=</span><span class="s1">"-1"</span><span class="o">])</span></code></pre>
+  <pre><code><span class="o">[</span><span class="nt">tabindex</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">tabindex</span><span class="o">=</span><span class="err">"</span><span class="nt">0</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">tabindex</span><span class="o">=</span><span class="err">"</span><span class="nt">-1</span><span class="err">"</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -949,14 +949,14 @@ However, semantics tags and attributes aiming to organize datas mustn&#39;t be u
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]</span> <span class="nt">th</span><span class="o">,</span>
-<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]</span> <span class="nt">thead</span><span class="o">,</span>
-<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]</span> <span class="nt">tfoot</span><span class="o">,</span>
-<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]</span> <span class="nt">caption</span><span class="o">,</span>
-<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]</span> <span class="o">[</span><span class="nt">axis</span><span class="o">],</span>
-<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]</span> <span class="o">[</span><span class="nt">scope</span><span class="o">],</span>
-<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]</span> <span class="o">[</span><span class="nt">headers</span><span class="o">],</span>
-<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]</span> <span class="o">[</span><span class="nt">colgroup</span><span class="o">]</span></code></pre>
+  <pre><code><span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">th</span><span class="o">,</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">thead</span><span class="o">,</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">tfoot</span><span class="o">,</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">caption</span><span class="o">,</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">axis</span><span class="o">],</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">scope</span><span class="o">],</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">headers</span><span class="o">],</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">colgroup</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
