@@ -37,6 +37,6 @@
     "gulp-uglify": "^1.5.3",
     "gulp-util": "latest",
     "sassdoc": "latest",
-    "sassdoc-theme-alix": "^0.3.27"
+    "sassdoc-theme-alix": "^0.3.28"
   }
 }
