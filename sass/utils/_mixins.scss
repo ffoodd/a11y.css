@@ -207,19 +207,17 @@
 /// CSS content for pseudo-element used to display a message.
 /// @access private
 @mixin a11y-before {
-  border-bottom: 1px solid !important;
-  border-radius: 0 !important;
   font: 700 normal 14px/1.5 monospace !important;
   height: auto !important;
   left: -4px !important;
-  padding: .25em;
+  padding: 4px;
   pointer-events: none !important;
   position: absolute !important;
-  text-align: center !important;
   text-decoration: none !important;
   text-transform: none !important;
   top: 100% !important;
   white-space: pre;
+  width: auto !important;
 }
 
 /// Main mixin to display a message.
