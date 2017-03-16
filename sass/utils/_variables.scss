@@ -5,32 +5,27 @@
 /// Each theme has an icon, a color and a z-index, and a background offset.
 /// @type Map
 /// @prop {Map} theme
-/// @prop {String} theme.icon  - Theme icon
 /// @prop {Color} theme.color  - Theme color
 /// @prop {Number} theme.index - Theme z-index
 /// @prop {Length} theme.background-offset - Theme background-offset
 $themes: (
   'error': (
-    'icon': '\2620\00A0',
-    'color': #911,
+    'color': #d90b0b,
     'index': 2147483647,
     'background-offset': 1.4em
   ),
   'warning': (
-    'icon': '\2622\00A0',
-    'color': gold,
+    'color': #f50,
     'index': 2147483646,
     'background-offset': 2.9em
   ),
   'obsolete': (
-    'icon': '\271D\00A0',
     'color': royalblue,
     'index': 2147483645,
     'background-offset': 4.4em
   ),
   'advice': (
-    'icon': '\2665\00A0',
-    'color': olivedrab,
+    'color': green,
     'index': 2147483644,
     'background-offset': 5.9em
   ),
