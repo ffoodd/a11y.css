@@ -233,7 +233,6 @@
 
   @if $self-closing {
     $base-selector: '& ~ ::after';
-    background-color: transparentize(theme-conf($theme, 'color'), .75) !important;
 
     & ~ * {
       position: relative;
@@ -254,8 +253,7 @@
 @mixin a11y-reset {
   & {
     counter-increment: none !important;
-    outline: none !important;
-    outline-offset: 0 !important;
+    border: 0 !important;
 
     &::before,
     & ~ ::after {
