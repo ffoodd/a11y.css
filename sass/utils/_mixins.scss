@@ -261,6 +261,7 @@
     &::before,
     & ~ ::after {
       content: '' !important;
+      display: none !important;;
     }
   }
 }
