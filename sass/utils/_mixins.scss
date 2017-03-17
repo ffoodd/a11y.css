@@ -265,10 +265,10 @@
   }
 }
 
-/// Provides a way to cancel a message on sibling same error
+/// Provides a way to cancel a message on adjacent same error
 /// @access public
 @mixin a11y-sibling {
-  & ~ &::before {
+  & + &::before {
     content: '' !important;
     display: none !important;
   }
