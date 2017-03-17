@@ -207,7 +207,7 @@
 /// CSS content for pseudo-element used to display a message.
 /// @access private
 @mixin a11y-before {
-  font: 700 normal 14px/1.5 monospace !important;
+  font: 700 normal 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
   height: auto !important;
   left: -4px !important;
   max-width: 100vw;
