@@ -236,7 +236,7 @@
   @if $self-closing {
     $base-selector: '& ~ ::after';
 
-    & ~ * {
+    ~ * {
       position: relative;
     }
   }
@@ -253,14 +253,12 @@
 /// Provides a way to cancel a message.
 /// @access public
 @mixin a11y-reset {
-  & {
-    counter-increment: none !important;
-    border: 0 !important;
+  counter-increment: none !important;
+  border: 0 !important;
 
-    &::before,
-    & ~ ::after {
-      content: '' !important;
-      display: none !important;;
-    }
+  &::before,
+  ~ ::after {
+    content: '' !important;
+    display: none !important;
   }
 }
