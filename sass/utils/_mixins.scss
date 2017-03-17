@@ -227,6 +227,7 @@
 @mixin a11y($theme, $key, $self-closing: false) {
   $base-selector: '&::before';
 
+  @include a11y-sibling;
   border: 4px solid theme-conf($theme, 'color');
   counter-increment: unquote($theme);
   position: relative;
@@ -259,5 +260,14 @@
     & ~ ::after {
       content: '' !important;
     }
+  }
+}
+
+/// Provides a way to cancel a message on sibling same error
+/// @access public
+@mixin a11y-sibling {
+  & ~ &::before {
+    content: '' !important;
+    display: none !important;
   }
 }
