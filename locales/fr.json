@@ -8,12 +8,12 @@
   "advice:empty-id": "[id] vide",
   "advice:main": "Second <main>",
   "advice:figcaption": "Second <figcaption>",
-  "advice:figcaption-order": "Mauvaiss position de <figcaption>",
+  "advice:figcaption-order": "Mauvaise position de <figcaption>",
   "advice:target-blank": "Lien ouvrant un nouvel onglet",
   "advice:mailto": "L’adresse mail est valide ?",
   "advice:tel": "Le numéro de téléphone est valide ?",
   "advice:role-button": "Lien avec [role=button]",
-  "advice:file-format": "Fichier téléchargeable : le format et le poids sont indiqués ?",
+  "advice:file-format": "Le format et le poids du fichier sont indiqués ?",
   "advice:duplicate-roles": "Second rôle attr(role)",
   "advice:missing-role": "Le [role=search] est défini ?",
   "advice:required": "Champ obligatoire : est-ce explicite ?",
@@ -75,7 +75,7 @@
   "warning:spacer-gif": "spacer.gif",
   "warning:undefined": "Mauvaise valeur calculée pour [class] ou [id]",
   "warning:empty-href": "[href=attr(href)]",
-  "warning:href-js": "[href] débutant par `javascript:`",
+  "warning:href-js": "[href] débutant par javascript:",
 
   "obsolete:tags": "Élément obsolète",
   "obsolete:attributes": "Attribut obsolète"
