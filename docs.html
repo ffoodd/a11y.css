@@ -3,9 +3,9 @@
   <head>
     
     <meta charset="utf-8" />
-<title>SassDoc for a11y.css — v3.3.1</title>
+<title>SassDoc for a11y.css — v3.3.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="SassDoc documentation for a11y.css — v3.3.1">
+<meta name="description" content="SassDoc documentation for a11y.css — v3.3.2">
 <link rel="stylesheet" href="static/main.css" />
 <link href="http://ffoodd.github.io/a11y.css/static/favicon.ico" rel="shortcut icon">
   </head>
@@ -1630,7 +1630,7 @@ Either:</p>
     <div class="language-scss">
       <pre>
 <code class="language-scss">@mixin a11y-sibling() { 
-  &amp; ~ &amp;::before {
+  &amp; + &amp;::before {
     content: &#39;&#39; !important;
     display: none !important;
   }
@@ -1651,7 +1651,7 @@ Either:</p>
 
   
   <h5>Description</h5>
-  <p><p>Provides a way to cancel a message on sibling same error</p>
+  <p><p>Provides a way to cancel a message on adjacent same error</p>
 </p>
 
 
