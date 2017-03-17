@@ -21,7 +21,7 @@ function getBookmarkletContent () {
         'a11ycss=document.createElement("LINK");',
         'a11ycss.href="' + getFileName() + '";',
         'a11ycss.rel="stylesheet";',
-        'a11ycss.media="(min-width: 800px)";',
+        'a11ycss.media="all";',
         'document.body.appendChild(a11ycss);',
       '})();'
   ].join('');
