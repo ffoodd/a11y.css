@@ -404,6 +404,11 @@ input[class*="search"]:not([role="search"]) {
   @include advice('missing-role', $self-closing: true);
 }
 
+[role="search"] [id*="search"]:not([role="search"]),
+[role="search"] [class*="search"]:not([role="search"]) {
+  @include a11y-reset;
+}
+
 
 /*doc
 ---
