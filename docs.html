@@ -3,9 +3,9 @@
   <head>
     
     <meta charset="utf-8" />
-<title>SassDoc for a11y.css — v3.2.1</title>
+<title>SassDoc for a11y.css — v3.3.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="SassDoc documentation for a11y.css — v3.2.1">
+<meta name="description" content="SassDoc documentation for a11y.css — v3.3.0">
 <link rel="stylesheet" href="static/main.css" />
 <link href="http://ffoodd.github.io/a11y.css/static/favicon.ico" rel="shortcut icon">
   </head>
@@ -901,14 +901,13 @@
   &amp;::after {
     @include a11y-before;
     content: $tag;
-    background: change-color(theme-conf($theme, &#39;color&#39;), $saturation: 75%, $lightness: 95%) !important;
-    border-color: change-color(theme-conf($theme, &#39;color&#39;), $saturation: 50%, $lightness: 50%) !important;
-    color: change-color(theme-conf($theme, &#39;color&#39;), $saturation: 50%, $lightness: 25%) !important;
+    background: theme-conf($theme, &#39;color&#39;) !important;
+    color: #fff !important;
   }
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L164-L175">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L164-L174">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1224,7 +1223,7 @@ Either:</p>
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L184-L206">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L183-L205">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1374,34 +1373,30 @@ Either:</p>
 
 <code class="language-scss">@mixin a11y($theme, $key, $self-closing: false) { 
   $base-selector: &#39;&amp;::before&#39;;
-  $event-selector: &#39;&amp;:hover::before, &amp;:focus::before&#39;;
 
+  border: 4px solid theme-conf($theme, &#39;color&#39;);
   counter-increment: unquote($theme);
-  outline: 4px solid theme-conf($theme, &#39;color&#39;) !important;
-  outline-offset: -4px;
+  position: relative;
 
   @if $self-closing {
     $base-selector: &#39;&amp; ~ ::after&#39;;
-    $event-selector: &#39;&amp;:hover ~ ::after, &amp;:focus ~ ::after&#39;;
-    background-color: transparentize(theme-conf($theme, &#39;color&#39;), .75) !important;
+
+    &amp; ~ * {
+      position: relative;
+    }
   }
 
   #{$base-selector} {
     @include a11y-before;
     @include message($theme, $key);
-    background: change-color(theme-conf($theme, &#39;color&#39;), $saturation: 75%, $lightness: 95%) !important;
-    border-color: change-color(theme-conf($theme, &#39;color&#39;), $saturation: 50%, $lightness: 50%) !important;
-    color: change-color(theme-conf($theme, &#39;color&#39;), $saturation: 50%, $lightness: 25%) !important;
+    background: theme-conf($theme, &#39;color&#39;) !important;
+    color: #fff !important;
     z-index: theme-conf($theme, &#39;index&#39;) !important;
-  }
-
-  #{$event-selector} {
-    @include a11y-hover;
   }
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L242-L268">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L227-L249">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1516,10 +1511,6 @@ Either:</p>
 
 
 
-  
-
-
-
 
 
 </article>
@@ -1539,12 +1530,9 @@ Either:</p>
     <div class="language-scss">
       <pre>
 <code class="language-scss">@mixin a11y-reset() { 
-  &amp;,
-  &amp;:hover,
-  &amp;:focus {
+  &amp; {
     counter-increment: none !important;
-    outline: none !important;
-    outline-offset: 0 !important;
+    border: 0 !important;
 
     &amp;::before,
     &amp; ~ ::after {
@@ -1554,7 +1542,7 @@ Either:</p>
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L272-L285">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L253-L263">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1622,26 +1610,22 @@ Either:</p>
     <div class="language-scss">
       <pre><code class="language-scss">$themes: (
   &#39;error&#39;: (
-    &#39;icon&#39;: &#39;\2620\00A0&#39;,
-    &#39;color&#39;: #911,
+    &#39;color&#39;: #d90b0b,
     &#39;index&#39;: 2147483647,
     &#39;background-offset&#39;: 1.4em
   ),
   &#39;warning&#39;: (
-    &#39;icon&#39;: &#39;\2622\00A0&#39;,
-    &#39;color&#39;: gold,
+    &#39;color&#39;: #f50,
     &#39;index&#39;: 2147483646,
     &#39;background-offset&#39;: 2.9em
   ),
   &#39;obsolete&#39;: (
-    &#39;icon&#39;: &#39;\271D\00A0&#39;,
     &#39;color&#39;: royalblue,
     &#39;index&#39;: 2147483645,
     &#39;background-offset&#39;: 4.4em
   ),
   &#39;advice&#39;: (
-    &#39;icon&#39;: &#39;\2665\00A0&#39;,
-    &#39;color&#39;: olivedrab,
+    &#39;color&#39;: green,
     &#39;index&#39;: 2147483644,
     &#39;background-offset&#39;: 5.9em
   ),
@@ -1649,7 +1633,7 @@ Either:</p>
 </pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_variables.scss#L12-L37">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_variables.scss#L11-L32">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1699,20 +1683,6 @@ Each theme has an icon, a color and a z-index, and a background offset.</p>
           <td>&mdash;<span class="visually-hidden"> none</span></td>
           <td>
             <code>Map</code>
-          </td>
-          <td>
-            
-              &mdash;<span class="visually-hidden"> none</span>
-            
-          </td>
-        </tr>
-      
-        <tr>
-          <th scope="row"><code>theme.icon</code></th>
-          <td><p>Theme icon</p>
-</td>
-          <td>
-            <code>String</code>
           </td>
           <td>
             
@@ -1845,7 +1815,7 @@ Each theme has an icon, a color and a z-index, and a background offset.</p>
 </pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_variables.scss#L41-L41">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_variables.scss#L36-L36">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
