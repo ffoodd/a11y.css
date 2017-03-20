@@ -676,7 +676,7 @@ We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-cla
 <h1 id="no-src" class="styleguide">Missing source for img</h1>
 
 <h2>Description</h2>
-<p class="styleguide">An <code class="styleguide">&lt;img&gt;</code> must have an <code class="styleguide">[src]</code> or an <code class="styleguide">[srcset]</code>. Obviously.</p>
+<p class="styleguide">An <code class="styleguide">&lt;img&gt;</code> must have an <code class="styleguide">[src]</code> or an <code class="styleguide">[srcset]</code>, and it should be a valid one. Obviously.</p>
 <h2>References</h2>
 <ul class="styleguide"><li><a href="http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src">http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src</a></li>
 <li><a href="http://scottjehl.github.io/picturefill/">http://scottjehl.github.io/picturefill/</a></li>
@@ -705,13 +705,13 @@ We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-cla
 <h2>Test</h2>
 <div class="codeExample">
   <div class="exampleOutput">
-    <img alt="Missing src" width="144" height="144" />
-<input type="image" alt="Missing src" />
+    <img alt="Missing src" width="144" height="144"/>
+<input type="image" alt="Missing src" src="#"/>
 
   </div>
   <div class="codeBlock">
-    <pre><code><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"Missing src"</span> <span class="na">width=</span><span class="s">"144"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"image"</span> <span class="na">alt=</span><span class="s">"Missing src"</span> <span class="nt">/&gt;</span></code></pre>
+    <pre><code><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"Missing src"</span> <span class="na">width=</span><span class="s">"144"</span> <span class="na">height=</span><span class="s">"144"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"image"</span> <span class="na">alt=</span><span class="s">"Missing src"</span> <span class="na">src=</span><span class="s">"#"</span><span class="nt">/&gt;</span></code></pre>
   </div>
 </div>
 

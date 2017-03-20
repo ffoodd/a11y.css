@@ -63,6 +63,10 @@
               </li>
             
               <li>
+                <a href="#decorative-svg">Semantic attribute on decorative svg</a>
+              </li>
+            
+              <li>
                 <a href="#empty-alt">[alt] can be empty but has to be checked</a>
               </li>
             
@@ -116,6 +120,10 @@
             
               <li>
                 <a href="#no-aria-label">A label is needed for svg</a>
+              </li>
+            
+              <li>
+                <a href="#no-aria-role">A role is needed for svg</a>
               </li>
             
               <li>
@@ -238,6 +246,49 @@
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;video</span> <span class="na">src=</span><span class="s">""</span><span class="nt">&gt;&lt;/video&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="decorative-svg" class="styleguide">Semantic attribute on decorative svg</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Any decorative <code class="styleguide">&lt;svg&gt;</code> — with a <code class="styleguide">[role=&quot;presentation&quot;]</code> — should not have any of those:
+* <code class="styleguide">[title]</code>;
+* <code class="styleguide">[aria-label]</code>;
+* <code class="styleguide">[aria-labelledby]</code>;
+* <code class="styleguide">[aria-describedby]</code>;
+* a <code class="styleguide">&lt;title&gt;</code> child;
+* or a <code class="styleguide">&lt;desc&gt;</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1</a></li>
+<li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F65.html">http://www.w3.org/TR/WCAG-TECHS/F65.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">svg</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">][</span><span class="nt">title</span><span class="o">],</span>
+<span class="nt">svg</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-label</span><span class="o">],</span>
+<span class="nt">svg</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-labelledby</span><span class="o">],</span>
+<span class="nt">svg</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-describedby</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     role="presentation" title="Decorative SVG, you punk!">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"12cm"</span> <span class="na">height=</span><span class="s">"4cm"</span> <span class="na">viewBox=</span><span class="s">"0 0 1200 400"</span>
+     <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span>
+     <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">title=</span><span class="s">"Decorative SVG, you punk!"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"100"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"200"</span>
+        <span class="na">fill=</span><span class="s">"forestgreen"</span> <span class="na">stroke=</span><span class="s">"darkgreen"</span> <span class="na">stroke-width=</span><span class="s">"10"</span>  <span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
   </div>
 </div>
 
@@ -697,13 +748,7 @@ You could use a <code class="styleguide">&lt;span&gt;</code> instead.</p>
 <h1 id="no-aria-label" class="styleguide">A label is needed for svg</h1>
 
 <h2>Description</h2>
-<p class="styleguide">Any informative <code class="styleguide">&lt;svg&gt;</code> should either have a <code class="styleguide">[aria-label]</code>, <code class="styleguide">[aria-labelledby]</code> or a <code class="styleguide">&lt;desc&gt;</code> AND have a <code class="styleguide">[role=&quot;img&quot;]</code>.</p><p class="styleguide">Otherwise it should have a <code class="styleguide">[role=&quot;presentation&quot;]</code>, and should not have any of those:
-* <code class="styleguide">[title]</code>;
-* <code class="styleguide">[aria-label]</code>;
-* <code class="styleguide">[aria-labelledby]</code>;
-* <code class="styleguide">[aria-describedby]</code>;
-* a <code class="styleguide">&lt;title&gt;</code> child;
-* or a <code class="styleguide">&lt;desc&gt;</code>.</p>
+<p class="styleguide">Any informative <code class="styleguide">&lt;svg&gt;</code> should either have a <code class="styleguide">[aria-label]</code>, <code class="styleguide">[aria-labelledby]</code> or a <code class="styleguide">&lt;desc&gt;</code>.</p>
 <h2>References</h2>
 <ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1</a></li>
 <li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
@@ -711,13 +756,13 @@ You could use a <code class="styleguide">&lt;span&gt;</code> instead.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">svg</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">img</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">svg</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
   <div class="exampleOutput">
     <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg" version="1.1">
+     xmlns="http://www.w3.org/2000/svg" version="1.1" role="img">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
 </svg><span>†</span>
@@ -725,7 +770,41 @@ You could use a <code class="styleguide">&lt;span&gt;</code> instead.</p>
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"12cm"</span> <span class="na">height=</span><span class="s">"4cm"</span> <span class="na">viewBox=</span><span class="s">"0 0 1200 400"</span>
-     <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span><span class="nt">&gt;</span>
+     <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">role=</span><span class="s">"img"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"100"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"200"</span>
+        <span class="na">fill=</span><span class="s">"forestgreen"</span> <span class="na">stroke=</span><span class="s">"darkgreen"</span> <span class="na">stroke-width=</span><span class="s">"10"</span>  <span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="no-aria-role" class="styleguide">A role is needed for svg</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Any <code class="styleguide">&lt;svg&gt;</code> should either have a <code class="styleguide">[role=&quot;presentation&quot;]</code> if decorative or a <code class="styleguide">[role=&quot;img&quot;]</code> if informative.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1</a></li>
+<li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F65.html">http://www.w3.org/TR/WCAG-TECHS/F65.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">svg</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">img</span><span class="err">"</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     aria-label="Decorative SVG, you punk!">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"12cm"</span> <span class="na">height=</span><span class="s">"4cm"</span> <span class="na">viewBox=</span><span class="s">"0 0 1200 400"</span>
+     <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span>
+     <span class="na">aria-label=</span><span class="s">"Decorative SVG, you punk!"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"100"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"200"</span>
         <span class="na">fill=</span><span class="s">"forestgreen"</span> <span class="na">stroke=</span><span class="s">"darkgreen"</span> <span class="na">stroke-width=</span><span class="s">"10"</span>  <span class="nt">/&gt;</span>
 <span class="nt">&lt;/svg&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
