@@ -189,7 +189,7 @@ category: Errors
 ---
 
 ##Description
-An `<img>` must have an `[src]` or an `[srcset]`. Obviously.
+An `<img>` must have an `[src]` or an `[srcset]`, and it should be a valid one. Obviously.
 
 ##References
 * <http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src>
@@ -219,29 +219,36 @@ input[type="image"][srcset="/"]
 
 ##Test
 ```html_example
-<img alt="Missing src" width="144" height="144" />
-<input type="image" alt="Missing src" />
+<img alt="Missing src" width="144" height="144"/>
+<input type="image" alt="Missing src" src="#"/>
 ```
 */
 img:not([src]):not([srcset]),
+input[type="image"]:not([src]):not([srcset]) {
+  @include error('no-src');
+}
+
+
 img[src=""],
 img[src=" "],
 img[src="#"],
 img[src="/"],
+input[type="image"][src=""],
+input[type="image"][src=" "],
+input[type="image"][src="#"],
+input[type="image"][src="/"] {
+  @include error('bad-src');
+}
+
 img[srcset=""],
 img[srcset=" "],
 img[srcset="#"],
 img[srcset="/"],
-input[type="image"]:not([src]):not([srcset]),
-input[type="image"][src=""],
-input[type="image"][src=" "],
-input[type="image"][src="#"],
-input[type="image"][src="/"],
 input[type="image"][srcset=""],
 input[type="image"][srcset=" "],
 input[type="image"][srcset="#"],
 input[type="image"][srcset="/"] {
-  @include error('no-src');
+  @include error('bad-srcset');
 }
 
 
