@@ -439,10 +439,16 @@ button[aria-labelledby=""]
 <button title="" type="button">Test</button>
 ```
 */
-button[title=""],
-button[aria-label=""],
+button[title=""] {
+  @include error('empty-button-title');
+}
+
+button[aria-label=""] {
+  @include error('empty-button-aria-label');
+}
+
 button[aria-labelledby=""] {
-  @include error('empty-button-attr');
+  @include error('empty-button-aria-labelledby');
 }
 
 
