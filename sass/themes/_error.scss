@@ -189,7 +189,7 @@ category: Errors
 ---
 
 ##Description
-An `<img>` must have an `[src]` or an `[srcset]`. Obviously.
+An `<img>` must have an `[src]` or an `[srcset]`, and it should be a valid one. Obviously.
 
 ##References
 * <http://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src>
@@ -219,29 +219,36 @@ input[type="image"][srcset="/"]
 
 ##Test
 ```html_example
-<img alt="Missing src" width="144" height="144" />
-<input type="image" alt="Missing src" />
+<img alt="Missing src" width="144" height="144"/>
+<input type="image" alt="Missing src" src="#"/>
 ```
 */
 img:not([src]):not([srcset]),
+input[type="image"]:not([src]):not([srcset]) {
+  @include error('no-src');
+}
+
+
 img[src=""],
 img[src=" "],
 img[src="#"],
 img[src="/"],
+input[type="image"][src=""],
+input[type="image"][src=" "],
+input[type="image"][src="#"],
+input[type="image"][src="/"] {
+  @include error('bad-src');
+}
+
 img[srcset=""],
 img[srcset=" "],
 img[srcset="#"],
 img[srcset="/"],
-input[type="image"]:not([src]):not([srcset]),
-input[type="image"][src=""],
-input[type="image"][src=" "],
-input[type="image"][src="#"],
-input[type="image"][src="/"],
 input[type="image"][srcset=""],
 input[type="image"][srcset=" "],
 input[type="image"][srcset="#"],
 input[type="image"][srcset="/"] {
-  @include error('no-src');
+  @include error('bad-srcset');
 }
 
 
@@ -395,11 +402,11 @@ button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
 }
 
 button:blank:not([aria-label]):not([aria-labelledby]):not([title]) {
-  @include error('empty-button', $self-closing: false);
+  @include error('empty-button');
 }
 
 button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]) {
-  @include error('empty-button', $self-closing: false);
+  @include error('empty-button');
 }
 
 
@@ -432,10 +439,16 @@ button[aria-labelledby=""]
 <button title="" type="button">Test</button>
 ```
 */
-button[title=""],
-button[aria-label=""],
+button[title=""] {
+  @include error('empty-button-title');
+}
+
+button[aria-label=""] {
+  @include error('empty-button-aria-label');
+}
+
 button[aria-labelledby=""] {
-  @include error('empty-button-attr');
+  @include error('empty-button-aria-labelledby');
 }
 
 
@@ -1002,7 +1015,10 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 [id^="-7"],
 [id^="-8"],
 [id^="-9"],
-[id^="-0"],
+[id^="-0"] {
+  @include error('id-namespace');
+}
+
 [class^="1"],
 [class^="2"],
 [class^="3"],
@@ -1024,7 +1040,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 [class^="-8"],
 [class^="-9"],
 [class^="-0"] {
-  @include error('namespace');
+  @include error('class-namespace');
 }
 
 

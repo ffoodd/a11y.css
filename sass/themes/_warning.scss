@@ -461,9 +461,76 @@ category: Warnings
 ---
 
 ##Description
-Any informative `<svg>` should either have a `[aria-label]`, `[aria-labelledby]` or a `<desc>` AND have a `[role="img"]`.
+Any informative `<svg>` should either have a `[aria-label]`, `[aria-labelledby]` or a `<desc>`.
 
-Otherwise it should have a `[role="presentation"]`, and should not have any of those:
+##References
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
+* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
+
+##Selector
+```css_example
+svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby])
+```
+
+##Test
+```html_example
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1" role="img">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+```
+*/
+svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) {
+  @include warning('no-aria-label', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "A role is needed for svg"
+name: no-aria-role
+category: Warnings
+---
+
+##Description
+Any `<svg>` should either have a `[role="presentation"]` if decorative or a `[role="img"]` if informative.
+
+##References
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
+* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
+
+##Selector
+```css_example
+svg:not([role="presentation"]):not([role="img"])
+```
+
+##Test
+```html_example
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     aria-label="Decorative SVG, you punk!">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+```
+*/
+svg:not([role="presentation"]):not([role="img"]) {
+  @include warning('no-aria-role', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "Semantic attribute on decorative svg"
+name: decorative-svg
+category: Warnings
+---
+
+##Description
+Any decorative `<svg>` — with a `[role="presentation"]` — should not have any of those:
 * `[title]`;
 * `[aria-label]`;
 * `[aria-labelledby]`;
@@ -478,20 +545,27 @@ Otherwise it should have a `[role="presentation"]`, and should not have any of t
 
 ##Selector
 ```css_example
-svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby])
+svg[role="presentation"][title],
+svg[role="presentation"][aria-label],
+svg[role="presentation"][aria-labelledby],
+svg[role="presentation"][aria-describedby]
 ```
 
 ##Test
 ```html_example
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg" version="1.1">
+     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     role="presentation" title="Decorative SVG, you punk!">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
 </svg><span>†</span>
 ```
 */
-svg:not([role="presentation"]):not([role="img"]):not([aria-label]):not([aria-labelledby]) {
-  @include warning('no-aria-label', $self-closing: true);
+svg[role="presentation"][title],
+svg[role="presentation"][aria-label],
+svg[role="presentation"][aria-labelledby],
+svg[role="presentation"][aria-describedby] {
+  @include warning('decorative-svg', $self-closing: true);
 }
 
 
@@ -910,19 +984,25 @@ Don't laugh, shit happens.
 <p class="undefined">Oups, something went wrong.</p>
 ```
 */
-[id*="NaN"],
-[id*="null"],
 [class*="NaN"],
 [class*="null"],
-[id*="undefined"],
 [class*="undefined"] {
-  @include warning('undefined');
+  @include warning('undefined-class');
 
   @include void-tags {
-    @include warning('undefined', $self-closing: true);
+    @include warning('undefined-class', $self-closing: true);
   }
 }
 
+[id*="NaN"],
+[id*="null"],
+[id*="undefined"] {
+  @include warning('undefined-id');
+
+  @include void-tags {
+    @include warning('undefined-id', $self-closing: true);
+  }
+}
 
 /*doc
 ---
