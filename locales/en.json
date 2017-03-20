@@ -37,7 +37,7 @@
   "error:no-id": "Unlabelled field",
   "error:optgroup": "<optgroup> without [label]",
   "error:no-value": "Untitled input",
-  "error:empty-button": "Missing content, [aria-label], [aria-labelledby] and [title]",
+  "error:empty-button": "Empty and untitled button",
   "error:empty-button-attr": "Empty [aria-label], [aria-labelledby] or [title]",
   "error:not-form-button": "Missing [type]",
   "error:not-submit-button": "[type=attr(type)] shouldn’t have form submission attributes",

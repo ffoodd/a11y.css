@@ -402,11 +402,11 @@ button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
 }
 
 button:blank:not([aria-label]):not([aria-labelledby]):not([title]) {
-  @include error('empty-button', $self-closing: false);
+  @include error('empty-button');
 }
 
 button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]) {
-  @include error('empty-button', $self-closing: false);
+  @include error('empty-button');
 }
 
 
