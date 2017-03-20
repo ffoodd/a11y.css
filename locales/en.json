@@ -52,7 +52,8 @@
   "error:dimensions": "[width] & [height] are forbidden",
   "error:no-lang": "Missing [lang]",
   "error:js-events": "JavaScript event attribute",
-  "error:namespace":  "Invalid [class] or [id]",
+  "error:id-namespace": "Invalid [id]",
+  "error:class-namespace": "Invalid [class]",
 
   "warning:style-attr": "Inline styles",
   "warning:invalid-nesting": "Invalid nesting",

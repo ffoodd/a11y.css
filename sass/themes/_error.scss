@@ -1015,7 +1015,10 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 [id^="-7"],
 [id^="-8"],
 [id^="-9"],
-[id^="-0"],
+[id^="-0"] {
+  @include error('id-namespace');
+}
+
 [class^="1"],
 [class^="2"],
 [class^="3"],
@@ -1037,7 +1040,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 [class^="-8"],
 [class^="-9"],
 [class^="-0"] {
-  @include error('namespace');
+  @include error('class-namespace');
 }
 
 

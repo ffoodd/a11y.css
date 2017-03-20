@@ -52,7 +52,8 @@
   "error:dimensions": "[width] et [height] prohibés",
   "error:no-lang": "[lang] absent",
   "error:js-events": "Attribut d’événement JavaScript",
-  "error:namespace": "[class] ou [id] invalide",
+  "error:id-namespace": "[id] invalide",
+  "error:class-namespace": "[class] invalide",
 
   "warning:style-attr": "Styles en ligne",
   "warning:invalid-nesting": "Imbrication invalide",
