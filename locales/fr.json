@@ -80,7 +80,8 @@
   "warning:missing-thead": "<thead> absent",
   "warning:th-no-scope": "[scope] ou [id] absent",
   "warning:spacer-gif": "spacer.gif",
-  "warning:undefined": "Mauvaise valeur calculée pour [class] ou [id]",
+  "warning:undefined-id": "Mauvaise valeur calculée pour [id]",
+  "warning:undefined-class": "Mauvaise valeur calculée pour [class]",
   "warning:empty-href": "[href=attr(href)]",
   "warning:href-js": "[href] débutant par javascript:",
 

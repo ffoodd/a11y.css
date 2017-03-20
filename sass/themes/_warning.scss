@@ -984,19 +984,25 @@ Don't laugh, shit happens.
 <p class="undefined">Oups, something went wrong.</p>
 ```
 */
-[id*="NaN"],
-[id*="null"],
 [class*="NaN"],
 [class*="null"],
-[id*="undefined"],
 [class*="undefined"] {
-  @include warning('undefined');
+  @include warning('undefined-class');
 
   @include void-tags {
-    @include warning('undefined', $self-closing: true);
+    @include warning('undefined-class', $self-closing: true);
   }
 }
 
+[id*="NaN"],
+[id*="null"],
+[id*="undefined"] {
+  @include warning('undefined-id');
+
+  @include void-tags {
+    @include warning('undefined-id', $self-closing: true);
+  }
+}
 
 /*doc
 ---
