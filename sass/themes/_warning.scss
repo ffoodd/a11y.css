@@ -734,9 +734,16 @@ table:not([role="presentation"]) > tbody > tr:only-child
 ```html_example
 <table>
   <caption>I'm a caption :3</caption>
-  <tr>
-    <td>I'm a poor lonesone table-roooow!</td>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="col">Oh boy…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I'm a poor lonesone table-roooow!</td>
+    </tr>
+  </tbody>
 </table>
 ```
 */
@@ -816,6 +823,11 @@ table > tbody ~ thead
 ```html_example
 <table>
   <caption>I'm a caption</caption>
+  <thead>
+    <tr>
+      <th scope="col">Where's my foot?</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
       <td>I'm a table with tfoot done wrong.</td>
@@ -903,14 +915,22 @@ th:not([scope]):not([id])
 ```html_example
 <table>
   <caption>Need for a [scope] or [id]</caption>
-  <tr>
-    <th>I'm a th without [scope] or [id].</th>
-    <th>I'm a th without [scope] or [id].</th>
-  </tr>
-  <tr>
-    <td>I'm a td missing something.</td>
-    <td>I'm a td missing something.</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>I'm a th without [scope] or [id].</th>
+      <th>I'm a th without [scope] or [id].</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I'm a td missing something.</td>
+      <td>I'm a td missing something.</td>
+    </tr>
+    <tr>
+      <td>I'm a td missing something.</td>
+      <td>I'm a td missing something.</td>
+    </tr>
+  </tbody>
 </table>
 ```
 */
