@@ -998,18 +998,32 @@ Should be double checked!</p>
   <div class="exampleOutput">
     <table>
   <caption>I'm a caption :3</caption>
-  <tr>
-    <td>I'm a poor lonesone table-roooow!</td>
-  </tr>
+  <thead>
+    <tr>
+      <th scope="col">Oh boy…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I'm a poor lonesone table-roooow!</td>
+    </tr>
+  </tbody>
 </table>
 
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;table&gt;</span>
   <span class="nt">&lt;caption&gt;</span>I'm a caption :3<span class="nt">&lt;/caption&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;td&gt;</span>I'm a poor lonesone table-roooow!<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Oh boy…<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a poor lonesone table-roooow!<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span></code></pre>
   </div>
 </div>
@@ -1029,6 +1043,11 @@ Should be double checked!</p>
   <div class="exampleOutput">
     <table>
   <caption>I'm a caption</caption>
+  <thead>
+    <tr>
+      <th scope="col">Where's my foot?</th>
+    </tr>
+  </thead>
   <tbody>
     <tr>
       <td>I'm a table with tfoot done wrong.</td>
@@ -1049,6 +1068,11 @@ Should be double checked!</p>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;table&gt;</span>
   <span class="nt">&lt;caption&gt;</span>I'm a caption<span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Where's my foot?<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
   <span class="nt">&lt;tbody&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
       <span class="nt">&lt;td&gt;</span>I'm a table with tfoot done wrong.<span class="nt">&lt;/td&gt;</span>
@@ -1085,28 +1109,44 @@ Should be double checked!</p>
   <div class="exampleOutput">
     <table>
   <caption>Need for a [scope] or [id]</caption>
-  <tr>
-    <th>I'm a th without [scope] or [id].</th>
-    <th>I'm a th without [scope] or [id].</th>
-  </tr>
-  <tr>
-    <td>I'm a td missing something.</td>
-    <td>I'm a td missing something.</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>I'm a th without [scope] or [id].</th>
+      <th>I'm a th without [scope] or [id].</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I'm a td missing something.</td>
+      <td>I'm a td missing something.</td>
+    </tr>
+    <tr>
+      <td>I'm a td missing something.</td>
+      <td>I'm a td missing something.</td>
+    </tr>
+  </tbody>
 </table>
 
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;table&gt;</span>
   <span class="nt">&lt;caption&gt;</span>Need for a [scope] or [id]<span class="nt">&lt;/caption&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;th&gt;</span>I'm a th without [scope] or [id].<span class="nt">&lt;/th&gt;</span>
-    <span class="nt">&lt;th&gt;</span>I'm a th without [scope] or [id].<span class="nt">&lt;/th&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
-  <span class="nt">&lt;tr&gt;</span>
-    <span class="nt">&lt;td&gt;</span>I'm a td missing something.<span class="nt">&lt;/td&gt;</span>
-    <span class="nt">&lt;td&gt;</span>I'm a td missing something.<span class="nt">&lt;/td&gt;</span>
-  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th&gt;</span>I'm a th without [scope] or [id].<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th&gt;</span>I'm a th without [scope] or [id].<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a td missing something.<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a td missing something.<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a td missing something.<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a td missing something.<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span></code></pre>
   </div>
 </div>
