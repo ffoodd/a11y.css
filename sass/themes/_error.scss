@@ -109,8 +109,6 @@ a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby])
 ##Test
 ```html_example
 <a href="/" class="inbl w-20" id="empty-link_code"></a>
-
-<a href="/" class="inbl w-20" id="empty-link_code-moz"> </a>
 ```
 */
 a:empty[title=""],
@@ -168,7 +166,6 @@ input[type="image"]:not([alt])
 ##Test
 ```html_example
 <img src="static/ffoodd.png" width="144" height="144" /><span>†</span>
-<input type="image" src="static/ffoodd.png" /><span>†</span>
 ```
 */
 img[alt=" "],
@@ -220,7 +217,6 @@ input[type="image"][srcset="/"]
 ##Test
 ```html_example
 <img alt="Missing src" width="144" height="144"/>
-<input type="image" alt="Missing src" src="#"/>
 ```
 */
 img:not([src]):not([srcset]),
@@ -349,9 +345,7 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 
 ##Test
 ```html_example
-<input type="reset" /><span>†</span>
 <input type="submit" /><span>†</span>
-<input type="button" /><span>†</span>
 ```
 */
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
@@ -393,8 +387,6 @@ button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]
 ##Test
 ```html_example
 <button type="button"></button>
-
-<button type="button"> </button>
 ```
 */
 button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
@@ -522,7 +514,7 @@ button[type="button"][formnovalidate]
 
 ##Test
 ```html_example
-<button type="button" formmethod="GET">I do have a method, but I'm not a submit button!</button>
+<button type="button" formmethod="GET">I have a method!</button>
 ```
 */
 button[type="reset"],
@@ -788,17 +780,6 @@ table[role="presentation"] [colgroup]
 ```html_example
 <table role="presentation">
   <caption>I do not mean anything!</caption>
-  <thead>
-    <tr>
-      <th scope="col" id="col">Nope</th>
-      <th scope="col">Just sayin'</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td colspan="2" headers="col">Hello world</td>
-    </tr>
-  </tfoot>
   <tbody>
     <tr>
       <td colspan="2">It works</td>
