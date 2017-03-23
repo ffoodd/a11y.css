@@ -573,7 +573,7 @@ svg[aria-label][title]
 
 ##Test
 ```html_example
-<img src="static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144">
+<img src="static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144"><span>†</span>
 ```
 */
 img[alt][title],
@@ -637,7 +637,7 @@ th[scope]
   <thead>
     <tr>
       <th scope="col">First column</th>
-      <th scope="col">Second column</th>
+      <td>Second column</td>
     </tr>
   </thead>
   <tbody>
