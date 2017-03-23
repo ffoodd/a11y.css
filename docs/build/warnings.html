@@ -357,13 +357,9 @@ empty if they have at least one source specified through <code class="styleguide
   <div class="exampleOutput">
     <p id="empty-node_code"></p>
 
-<p id="-moz-only-whitespace"> </p>
-
   </div>
   <div class="codeBlock">
-    <pre><code><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"empty-node_code"</span><span class="nt">&gt;&lt;/p&gt;</span>
-
-<span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"-moz-only-whitespace"</span><span class="nt">&gt;</span> <span class="nt">&lt;/p&gt;</span></code></pre>
+    <pre><code><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"empty-node_code"</span><span class="nt">&gt;&lt;/p&gt;</span></code></pre>
   </div>
 </div>
 
@@ -418,14 +414,12 @@ Always.</p>
   <div class="exampleOutput">
     <fieldset>
   <label>I'm not a legend.</label>
-  <legend>I am legend.</legend>
 </fieldset>
 
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;fieldset&gt;</span>
   <span class="nt">&lt;label&gt;</span>I'm not a legend.<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;legend&gt;</span>I am legend.<span class="nt">&lt;/legend&gt;</span>
 <span class="nt">&lt;/fieldset&gt;</span></code></pre>
   </div>
 </div>
@@ -504,11 +498,6 @@ The only exception shall be bookmarklets.</p>
 <div class="codeExample">
   <div class="exampleOutput">
     <dl>
-  <li>I'm a list item.</li>
-  <dd>What do I define?</dd>
-</dl>
-
-<dl>
   <dt>I need a definition, don't you think?</dt>
   <li>I'm a list item.</li>
 </dl>
@@ -516,11 +505,6 @@ The only exception shall be bookmarklets.</p>
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;dl&gt;</span>
-  <span class="nt">&lt;li&gt;</span>I'm a list item.<span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;dd&gt;</span>What do I define?<span class="nt">&lt;/dd&gt;</span>
-<span class="nt">&lt;/dl&gt;</span>
-
-<span class="nt">&lt;dl&gt;</span>
   <span class="nt">&lt;dt&gt;</span>I need a definition, don't you think?<span class="nt">&lt;/dt&gt;</span>
   <span class="nt">&lt;li&gt;</span>I'm a list item.<span class="nt">&lt;/li&gt;</span>
 <span class="nt">&lt;/dl&gt;</span></code></pre>
@@ -550,31 +534,13 @@ Any other imbrication may be a crime somewhere.</p>
   <div class="exampleOutput">
     <dl>
   <li>I'm a list item.</li>
-  <li>I'm another list item.</li>
 </dl>
-
-<dd>Look, Ma! No context for my definition!</dd>
-
-<dl>
-  <li>I'm a list item.</li>
-</dl>
-
-<dt>I'm a lost term.</dt>
 
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;dl&gt;</span>
   <span class="nt">&lt;li&gt;</span>I'm a list item.<span class="nt">&lt;/li&gt;</span>
-  <span class="nt">&lt;li&gt;</span>I'm another list item.<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/dl&gt;</span>
-
-<span class="nt">&lt;dd&gt;</span>Look, Ma! No context for my definition!<span class="nt">&lt;/dd&gt;</span>
-
-<span class="nt">&lt;dl&gt;</span>
-  <span class="nt">&lt;li&gt;</span>I'm a list item.<span class="nt">&lt;/li&gt;</span>
-<span class="nt">&lt;/dl&gt;</span>
-
-<span class="nt">&lt;dt&gt;</span>I'm a lost term.<span class="nt">&lt;/dt&gt;</span></code></pre>
+<span class="nt">&lt;/dl&gt;</span></code></pre>
   </div>
 </div>
 
@@ -627,15 +593,11 @@ Any other imbrication may be a crime somewhere.</p>
   <p>I feel like I'm lost.</p>
 </ul>
 
-<li>Mom? Where are you, Mom?</li>
-
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;ul&gt;</span>
   <span class="nt">&lt;p&gt;</span>I feel like I'm lost.<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;/ul&gt;</span>
-
-<span class="nt">&lt;li&gt;</span>Mom? Where are you, Mom?<span class="nt">&lt;/li&gt;</span></code></pre>
+<span class="nt">&lt;/ul&gt;</span></code></pre>
   </div>
 </div>
 
@@ -1112,7 +1074,7 @@ Should be double checked!</p>
   <thead>
     <tr>
       <th>I'm a th without [scope] or [id].</th>
-      <th>I'm a th without [scope] or [id].</th>
+      <th scope="col">I'm a th with [scope].</th>
     </tr>
   </thead>
   <tbody>
@@ -1121,8 +1083,8 @@ Should be double checked!</p>
       <td>I'm a td missing something.</td>
     </tr>
     <tr>
-      <td>I'm a td missing something.</td>
-      <td>I'm a td missing something.</td>
+      <td>I'm a td feeling well.</td>
+      <td>I'm a td feeling well.</td>
     </tr>
   </tbody>
 </table>
@@ -1134,7 +1096,7 @@ Should be double checked!</p>
   <span class="nt">&lt;thead&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
       <span class="nt">&lt;th&gt;</span>I'm a th without [scope] or [id].<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th&gt;</span>I'm a th without [scope] or [id].<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>I'm a th with [scope].<span class="nt">&lt;/th&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
   <span class="nt">&lt;/thead&gt;</span>
   <span class="nt">&lt;tbody&gt;</span>
@@ -1143,8 +1105,8 @@ Should be double checked!</p>
       <span class="nt">&lt;td&gt;</span>I'm a td missing something.<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
-      <span class="nt">&lt;td&gt;</span>I'm a td missing something.<span class="nt">&lt;/td&gt;</span>
-      <span class="nt">&lt;td&gt;</span>I'm a td missing something.<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a td feeling well.<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a td feeling well.<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
   <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span></code></pre>

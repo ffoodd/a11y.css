@@ -253,7 +253,7 @@
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">figcaption</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:only-of-type</span><span class="o">)</span></code></pre>
+  <pre><code><span class="nt">figcaption</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:first-of-type</span><span class="o">)</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -643,7 +643,7 @@ Otherwise you may make your users to call anubody.</p>
   <thead>
     <tr>
       <th scope="col">First column</th>
-      <th scope="col">Second column</th>
+      <td>Second column</td>
     </tr>
   </thead>
   <tbody>
@@ -665,7 +665,7 @@ Otherwise you may make your users to call anubody.</p>
   <span class="nt">&lt;thead&gt;</span>
     <span class="nt">&lt;tr&gt;</span>
       <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>First column<span class="nt">&lt;/th&gt;</span>
-      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Second column<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;td&gt;</span>Second column<span class="nt">&lt;/td&gt;</span>
     <span class="nt">&lt;/tr&gt;</span>
   <span class="nt">&lt;/thead&gt;</span>
   <span class="nt">&lt;tbody&gt;</span>
@@ -721,11 +721,11 @@ Otherwise you may make your users to call anubody.</p>
 <h2>Test</h2>
 <div class="codeExample">
   <div class="exampleOutput">
-    <img src="static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144">
+    <img src="static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144"><span>†</span>
 
   </div>
   <div class="codeBlock">
-    <pre><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="na">alt=</span><span class="s">"I'm an alternative text!"</span> <span class="na">title=</span><span class="s">"I'm a title!"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="na">width=</span><span class="s">"144"</span><span class="nt">&gt;</span></code></pre>
+    <pre><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="na">alt=</span><span class="s">"I'm an alternative text!"</span> <span class="na">title=</span><span class="s">"I'm a title!"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="na">width=</span><span class="s">"144"</span><span class="nt">&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
   </div>
 </div>
 
