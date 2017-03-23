@@ -645,6 +645,7 @@ a[target$="blank"]::after {
     inset 0 1px rgba( 255, 255, 255, .2 ),
     0 .25em 0 -.1em rgba( 0, 0, 0, .2 );
   color: white;
+  counter-increment: unset;
   display: block;
   font-size: larger;
   font-weight: 700;
@@ -741,8 +742,7 @@ a[target$="blank"]::after {
 
 #empty-link_code,
 #empty-title_code,
-#empty-node_code,
-#-moz-only-#f3f3f3space {
+#empty-node_code {
   display: inline-block;
   min-height: 1em;
   min-width: 1em;

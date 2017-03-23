@@ -30,8 +30,6 @@ ol > :not(li),
 <ul>
   <p>I feel like I'm lost.</p>
 </ul>
-
-<li>Mom? Where are you, Mom?</li>
 ```
 */
 ul > :not(li),
@@ -66,11 +64,6 @@ dt + :not(dd),
 
 ##Test
 ```html_example
-<dl>
-  <li>I'm a list item.</li>
-  <dd>What do I define?</dd>
-</dl>
-
 <dl>
   <dt>I need a definition, don't you think?</dt>
   <li>I'm a list item.</li>
@@ -112,16 +105,7 @@ dl > :not(dt):not(dd)
 ```html_example
 <dl>
   <li>I'm a list item.</li>
-  <li>I'm another list item.</li>
 </dl>
-
-<dd>Look, Ma! No context for my definition!</dd>
-
-<dl>
-  <li>I'm a list item.</li>
-</dl>
-
-<dt>I'm a lost term.</dt>
 ```
 */
 :not(dl) > dt,
@@ -358,7 +342,6 @@ fieldset > legend:not(:first-child)
 ```html_example
 <fieldset>
   <label>I'm not a legend.</label>
-  <legend>I am legend.</legend>
 </fieldset>
 ```
 */
@@ -675,8 +658,6 @@ body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(butt
 ##Test
 ```html_example
 <p id="empty-node_code"></p>
-
-<p id="-moz-only-whitespace"> </p>
 ```
 */
 /**
@@ -918,7 +899,7 @@ th:not([scope]):not([id])
   <thead>
     <tr>
       <th>I'm a th without [scope] or [id].</th>
-      <th>I'm a th without [scope] or [id].</th>
+      <th scope="col">I'm a th with [scope].</th>
     </tr>
   </thead>
   <tbody>
@@ -927,8 +908,8 @@ th:not([scope]):not([id])
       <td>I'm a td missing something.</td>
     </tr>
     <tr>
-      <td>I'm a td missing something.</td>
-      <td>I'm a td missing something.</td>
+      <td>I'm a td feeling well.</td>
+      <td>I'm a td feeling well.</td>
     </tr>
   </tbody>
 </table>
