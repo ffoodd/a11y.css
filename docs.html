@@ -1379,9 +1379,9 @@ Either:</p>
   position: relative;
 
   @if $self-closing {
-    $base-selector: &#39;&amp; ~ ::after&#39;;
+    $base-selector: &#39;&amp; + ::after&#39;;
 
-    ~ * {
+    + * {
       position: relative;
     }
   }
@@ -1534,7 +1534,7 @@ Either:</p>
   border: 0 !important;
 
   &amp;::before,
-  ~ ::after {
+  + ::after {
     content: &#39;&#39; !important;
     display: none !important;
   }
