@@ -234,9 +234,9 @@
   position: relative;
 
   @if $self-closing {
-    $base-selector: '& ~ ::after';
+    $base-selector: '& + ::after';
 
-    ~ * {
+    + * {
       position: relative;
     }
   }
@@ -257,7 +257,7 @@
   border: 0 !important;
 
   &::before,
-  ~ ::after {
+  + ::after {
     content: '' !important;
     display: none !important;
   }
