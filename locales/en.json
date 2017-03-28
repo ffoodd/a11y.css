@@ -54,6 +54,7 @@
   "error:js-events": "JavaScript event attribute",
   "error:id-namespace": "Invalid [id]",
   "error:class-namespace": "Invalid [class]",
+  "error:unaccessible-viewport": "Unaccessible [meta name=viewport]",
 
   "warning:style-attr": "Inline styles",
   "warning:invalid-nesting": "Invalid nesting",

@@ -54,6 +54,7 @@
   "error:js-events": "Attribut d’événement JavaScript",
   "error:id-namespace": "[id] invalide",
   "error:class-namespace": "[class] invalide",
+  "error:unaccessible-viewport": "[meta name=viewport] inaccessible",
 
   "warning:style-attr": "Styles en ligne",
   "warning:invalid-nesting": "Imbrication invalide",

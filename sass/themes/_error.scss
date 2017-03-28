@@ -1078,3 +1078,41 @@ title:-moz-only-whitespace {
   @include error('no-page-title', $self-closing: false);
   @include a11y-head();
 }
+
+
+/*doc
+---
+title: "Unaccessible viewport attribute"
+name: unaccessible-viewport
+category: Errors
+---
+
+##Description
+User should be able to zoom in or out the page to improve readability and comfort; this is usually allowed by the viewport `<meta>`.
+
+##References
+* <https://bitsofco.de/linting-html-using-css/>
+* <https://dequeuniversity.com/rules/axe/2.1/meta-viewport>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale>
+* <https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html>
+* <http://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/>
+* <http://adrianroselli.com/2015/10/dont-disable-zoom.html>
+
+##Selector
+```css_example
+meta[name="viewport"][content*="maximum-scale"],
+meta[name="viewport"][content*="minimum-scale"],
+meta[name="viewport"][content*="user-scalable=no"]
+```
+
+##Test
+```html_example
+<meta name="viewport" content="user-scalable=no" /><span>†</span>
+```
+*/
+meta[name="viewport"][content*="maximum-scale"],
+meta[name="viewport"][content*="minimum-scale"],
+meta[name="viewport"][content*="user-scalable=no"] {
+  @include error('unaccessible-viewport', $self-closing: true);
+  @include a11y-head();
+}
