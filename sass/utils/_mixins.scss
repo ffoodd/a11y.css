@@ -157,11 +157,9 @@
 /// Display messages on &lt;head>'s tags
 /// @group messages
 /// @access public
-/// @param {Arglist} $tag - Text to display, recommended: tag name
-/// @param {Arglist} $theme - Message's level
 /// @example scss - Display messages on &lt;head>’s tags
-///  @include a11y-head('title', 'error')
-@mixin a11y-head($tag, $theme) {
+///  @include a11y-head()
+@mixin a11y-head() {
   // Because it's in the <head>
   display: block !important;
 }

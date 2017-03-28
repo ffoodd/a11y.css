@@ -1066,15 +1066,15 @@ title:-moz-only-whitespace
 */
 title:empty {
   @include error('no-page-title');
-  @include a11y-head('<title>', 'error');
+  @include a11y-head();
 }
 
 title:blank {
   @include error('no-page-title', $self-closing: false);
-  @include a11y-head('<title>', 'error');
+  @include a11y-head();
 }
 
 title:-moz-only-whitespace {
   @include error('no-page-title', $self-closing: false);
-  @include a11y-head('<title>', 'error');
+  @include a11y-head();
 }
