@@ -886,28 +886,13 @@
   <div class="codeBlock scssSource">
     <div class="language-scss">
       <pre>
-
-
-
-
-
-
-
-
-<code class="language-scss">@mixin a11y-head($tag..., $theme...) { 
+<code class="language-scss">@mixin a11y-head() { 
   // Because it&#39;s in the &lt;head&gt;
   display: block !important;
-
-  &amp;::after {
-    @include a11y-before;
-    content: $tag;
-    background: theme-conf($theme, &#39;color&#39;) !important;
-    color: #fff !important;
-  }
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L164-L174">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L162-L165">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -931,51 +916,6 @@
 
   
 
-  <h5>Parameters</h5>
-
-  <table>
-    <thead>
-      <tr>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
-        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
-      </tr>
-    </thead>
-    <tbody>
-        
-          <tr>
-            <th scope="row"><code>$tag</code></th>
-            <td><p>Text to display, recommended: tag name</p>
-</td>
-            <td>
-              <code>Arglist</code>
-            </td>
-            <td>
-              
-                &mdash;<span class="visually-hidden"> none</span>
-              
-            </td>
-          </tr>
-        
-          <tr>
-            <th scope="row"><code>$theme</code></th>
-            <td><p>Message&#39;s level</p>
-</td>
-            <td>
-              <code>Arglist</code>
-            </td>
-            <td>
-              
-                &mdash;<span class="visually-hidden"> none</span>
-              
-            </td>
-          </tr>
-        
-      </tbody>
-  </table>
-
-
 
   
 
@@ -986,7 +926,7 @@
 
     <div class="codeBlock cssExample" data-description="Display messages on &lt;head&gt;’s tags">
         <div class="language-scss">
-            <pre><code class="language-scss">@include a11y-head(&#39;title&#39;, &#39;error&#39;)</code></pre>
+            <pre><code class="language-scss">@include a11y-head()</code></pre>
         </div>
     </div>
   
@@ -1001,14 +941,6 @@
 
 
   
-
-
-  
-
-
-
-  
-
 
 
 
@@ -1223,7 +1155,7 @@ Either:</p>
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L183-L205">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L174-L196">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1396,7 +1328,7 @@ Either:</p>
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L229-L251">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L220-L242">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1541,7 +1473,7 @@ Either:</p>
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L255-L264">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L246-L255">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
