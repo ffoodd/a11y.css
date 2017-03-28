@@ -403,6 +403,7 @@ That should be double-checked.
 ##References
 * BP160 OpQuast
 * <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
 * <http://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <http://www.w3.org/TR/html51/semantics.html#alt>
 * <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
@@ -432,6 +433,54 @@ input[type="image"][alt=""] {
 
 embed[type="image"][alt=""],
 object[type="image"][alt=""] {
+  @include warning('empty-alt');
+}
+
+
+/*doc
+---
+title: "[alt] should be empty for decorative image"
+name: non-empty-alt
+category: Warnings
+---
+
+##Description
+An alternative must be empty when image is decorative only — which is declared with `[role=presentation]`.
+
+##References
+* BP160 OpQuast
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
+* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/wai-aria/roles#presentation>
+* <http://www.w3.org/TR/html51/semantics.html#alt>
+* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <http://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F38.html>
+
+##Selector
+```css_example
+img[role="presentation"]:not([alt=""]),
+area[role="presentation"]:not([alt=""]),
+input[role="presentation"]:not([alt=""]),
+embed[type="image"][role="presentation"]:not([alt=""]),
+object[type="image"][role="presentation"]:not([alt=""])
+```
+
+##Test
+```html_example
+<img role="presentation" alt="I'm a deocrative image!" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
+```
+*/
+img[role="presentation"]:not([alt=""]),
+area[role="presentation"]:not([alt=""]),
+input[role="presentation"]:not([alt=""]) {
+  @include warning('non-empty-alt', $self-closing: true);
+}
+
+embed[type="image"][role="presentation"]:not([alt=""]),
+object[type="image"][role="presentation"]:not([alt=""]) {
   @include warning('empty-alt');
 }
 
