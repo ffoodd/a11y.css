@@ -735,6 +735,10 @@ a[target$="blank"]::after {
   content: "fr";
 }
 
+#bookmarklet--link[href*="-zh"]::after {
+  content: "zh";
+}
+
 .s, .nd { color: #07a }
 .na, .cssExample .nt { color: #667f1f }
 .nt, .cssExample .err + .nt { color: #905 }

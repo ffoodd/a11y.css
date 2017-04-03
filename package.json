@@ -2,7 +2,7 @@
   "title": "a11y.css",
   "name": "a11y.css",
   "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
-  "version": "3.3.5",
+  "version": "3.4.0",
   "style": "css/a11y-en.css",
   "author": {
     "name": "Gaël Poupard",
@@ -38,6 +38,6 @@
     "gulp-uglify": "^1.5.3",
     "gulp-util": "latest",
     "sassdoc": "latest",
-    "sassdoc-theme-alix": "^0.3.28"
+    "sassdoc-theme-alix": "^0.3.29"
   }
 }
