@@ -217,14 +217,14 @@
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 @mixin a11y($theme, $key, $self-closing: false) {
-  $base-selector: '&::before';
+  $base-selector: '&::after';
 
   counter-increment: unquote($theme);
   outline: 4px solid theme-conf($theme, 'color') !important;
   outline-offset: -4px !important;
 
   @if $self-closing {
-    $base-selector: '& + ::after';
+    $base-selector: '& + ::before';
   }
 
   #{$base-selector} {
