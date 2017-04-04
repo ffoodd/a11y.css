@@ -1304,18 +1304,14 @@ Either:</p>
 
 
 <code class="language-scss">@mixin a11y($theme, $key, $self-closing: false) { 
-  $base-selector: &#39;&amp;::before&#39;;
+  $base-selector: &#39;&amp;::after&#39;;
 
-  border: 4px solid theme-conf($theme, &#39;color&#39;);
   counter-increment: unquote($theme);
-  position: relative;
+  outline: 4px solid theme-conf($theme, &#39;color&#39;) !important;
+  outline-offset: -4px !important;
 
   @if $self-closing {
-    $base-selector: &#39;&amp; + ::after&#39;;
-
-    + * {
-      position: relative;
-    }
+    $base-selector: &#39;&amp; + ::before&#39;;
   }
 
   #{$base-selector} {
@@ -1328,7 +1324,7 @@ Either:</p>
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L220-L242">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L219-L237">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1473,7 +1469,7 @@ Either:</p>
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L246-L255">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L241-L250">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
