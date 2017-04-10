@@ -718,25 +718,29 @@ a[target$="blank"]::after {
 }
 
 #bookmarklet--link::after {
+  background: none !important;
   display: inline-block;
-  font-size: small;
-  font-weight: 400;
+  font: inherit !important;
+  font-size: small !important;
+  font-weight: 400 !important;
   opacity: .8;
+  padding: 0 !important;
   text-indent: 0;
+  text-shadow: inherit !important;
   vertical-align: super;
   width: 3ch;
 }
 
 #bookmarklet--link[href*="-en"]::after {
-  content: "en";
+  content: "en" !important;
 }
 
 #bookmarklet--link[href*="-fr"]::after {
-  content: "fr";
+  content: "fr" !important;
 }
 
 #bookmarklet--link[href*="-zh"]::after {
-  content: "zh";
+  content: "zh" !important;
 }
 
 .s, .nd { color: #07a }

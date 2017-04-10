@@ -198,9 +198,9 @@
 /// CSS content for pseudo-element used to display a message.
 /// @access private
 @mixin a11y-before {
+  display: block;
   font: 700 normal 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
   height: auto !important;
-  left: -4px !important;
   max-width: 100vw;
   padding: 4px;
   pointer-events: none !important;
@@ -208,7 +208,6 @@
   text-decoration: none !important;
   text-shadow: none !important;
   text-transform: none !important;
-  top: 100% !important;
   white-space: pre;
   width: auto !important;
 }
@@ -218,18 +217,14 @@
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 @mixin a11y($theme, $key, $self-closing: false) {
-  $base-selector: '&::before';
+  $base-selector: '&::after';
 
-  border: 4px solid theme-conf($theme, 'color');
   counter-increment: unquote($theme);
-  position: relative;
+  outline: 4px solid theme-conf($theme, 'color') !important;
+  outline-offset: -4px !important;
 
   @if $self-closing {
-    $base-selector: '& + ::after';
-
-    + * {
-      position: relative;
-    }
+    $base-selector: '& + ::before';
   }
 
   #{$base-selector} {
