@@ -1224,3 +1224,49 @@ This is opinionated: in a perfect world, `[accesskey]` could be used wisely. Yup
 [accesskey] {
   @include error('accesskey');
 }
+
+
+/*doc
+---
+title: "Grouping inputs"
+name: inputs-group
+category: Errors
+---
+
+##Description
+Inputs with a type of `radio` or `checkbox` are usually grouped. The `[name]` attribute is meant to programmatically associate them,
+thus is required.
+
+##References
+* <https://www.w3.org/WAI/tutorials/forms/grouping/>
+* <https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox>
+* <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
+* <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
+
+##Selector
+```css_example
+[type="radio"]:not([name]),
+[type="checkbox"]:not(:only-of-type):not([name])
+```
+
+##Test
+```html_example
+<form action="/">
+  <fieldset>
+    <legend>Options</legend>
+    <p>
+      <label for="option-1">Option N<sup>o</sup>1</label>
+      <input type="radio" id="option-1"><span>†</span>
+    </p>
+    <p>
+      <label for="option-2">Option N<sup>o</sup>2</label>
+      <input type="radio" id="option-2" name="options">
+    </p>
+  </fieldset>
+</form>
+```
+*/
+[type="radio"]:not([name]),
+[type="checkbox"]:not(:only-of-type):not([name]) {
+  @include error('inputs-group', $self-closing: true);
+}

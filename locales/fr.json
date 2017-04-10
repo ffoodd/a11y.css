@@ -59,6 +59,7 @@
   "error:incorrect-charset": "Le [charset] n’est pas utf-8",
   "error:invalid-dir": "[dir] invalide",
   "error:accesskey": "[accesskey]",
+  "error:inputs-group": "[name] absent",
 
   "warning:style-attr": "Styles en ligne",
   "warning:invalid-nesting": "Imbrication invalide",
