@@ -1156,3 +1156,34 @@ meta[charset="utf-8"]:not(:first-child) {
   @include error('incorrect-charset', $self-closing: true);
   @include a11y-head();
 }
+
+
+/*doc
+---
+title: "Invalid [dir] attribute"
+name: invalid-dir
+category: Errors
+---
+
+##Description
+The `[dir]` attribute — used to specify the element’s text directionality — only accepts three values: `rtl`, `ltr` and `auto`.
+
+##References
+* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113>
+* <https://www.w3.org/International/questions/qa-html-dir>
+* <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
+* <http://w3c.github.io/html/dom.html#the-dir-attribute>
+
+##Selector
+```css_example
+[dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"])
+```
+
+##Test
+```html_example
+<p dir="wtf">Well, I'm kinda disoriented…</p>
+```
+*/
+[dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"]) {
+  @include error('invalid-dir');
+}

@@ -56,6 +56,7 @@
   "error:class-namespace": "错误的 [class]",
   "error:unaccessible-viewport": "Inaccessible [meta name=viewport]",
   "error:incorrect-charset": "[charset] isn't utf-8",
+  "error:invalid-dir": "Invalid [dir]",
 
   "warning:style-attr": "内联样式",
   "warning:invalid-nesting": "元素嵌套错误",
