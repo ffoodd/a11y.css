@@ -54,7 +54,7 @@
   "error:js-events": "JavaScript 事件属性",
   "error:id-namespace": "错误的 [id]",
   "error:class-namespace": "错误的 [class]",
-  "error:unaccessible-viewport": "[meta name=viewport] inaccessible",
+  "error:unaccessible-viewport": "Inaccessible [meta name=viewport]",
 
   "warning:style-attr": "内联样式",
   "warning:invalid-nesting": "元素嵌套错误",
@@ -68,7 +68,7 @@
   "warning:fieldset": "<fieldset> 必须以 <legend> 开头",
   "warning:abbr": "缺少 [title]",
   "warning:empty-alt": "[alt] 为空",
-  "warning:non-empty-alt": "[alt] non vide sur [role=presentation]",
+  "warning:non-empty-alt": "Non empty [alt] on [role=presentation]",
   "warning:no-aria-label": "缺少 [aria-label] 和 [aria-labelledby]",
   "warning:no-aria-role": "缺少 [role]",
   "warning:decorative-svg": "语义化的 SVG",
