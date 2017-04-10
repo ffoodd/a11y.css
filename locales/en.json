@@ -57,6 +57,7 @@
   "error:unaccessible-viewport": "Unaccessible [meta name=viewport]",
   "error:incorrect-charset": "[charset] isn't utf-8",
   "error:invalid-dir": "Invalid [dir]",
+  "error:accesskey": "[accesskey]",
 
   "warning:style-attr": "Inline styles",
   "warning:invalid-nesting": "Invalid nesting",

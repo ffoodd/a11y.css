@@ -1187,3 +1187,40 @@ The `[dir]` attribute — used to specify the element’s text directionality �
 [dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"]) {
   @include error('invalid-dir');
 }
+
+
+/*doc
+---
+title: "[accesskey] is a bad idea"
+name: accesskey
+category: Errors
+---
+
+##Description
+The `[accesskey]` attribute is meant to implement site specific keyboard shortcuts.
+This is usually a bad idea since keys might be already used by either the operating system,
+the browser, browser extension and even user's settings…
+
+This is opinionated: in a perfect world, `[accesskey]` could be used wisely. Yup. Could be.
+
+##References
+* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159>
+* <http://www.cs.tut.fi/~jkorpela/forms/accesskey.html>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey>
+* <http://w3c.github.io/html/editing.html#element-attrdef-global-accesskey>
+* <http://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/>
+* <https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html>
+
+##Selector
+```css_example
+[accesskey]
+```
+
+##Test
+```html_example
+<a id="key" name="key" accesskey="1">Skip to this link using <kbd>1</kbd></a>
+```
+*/
+[accesskey] {
+  @include error('accesskey');
+}
