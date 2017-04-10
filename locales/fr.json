@@ -90,6 +90,7 @@
   "warning:undefined-class": "Mauvaise valeur calculée pour [class]",
   "warning:empty-href": "[href=attr(href)]",
   "warning:href-js": "[href] débutant par javascript:",
+  "warning:nested-table": "<table> imbriqués",
 
   "obsolete:tags": "Élément obsolète",
   "obsolete:attributes": "Attribut obsolète"

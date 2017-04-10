@@ -90,6 +90,7 @@
   "warning:undefined-class": "[class] 错误",
   "warning:empty-href": "[href] 为空",
   "warning:href-js": "[href] 为 javascript: 开头",
+  "warning:nested-table": "Nested <table>s",
 
   "obsolete:tags": "已废弃的元素",
   "obsolete:attributes": "已废弃的属性"

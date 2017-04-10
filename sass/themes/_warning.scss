@@ -800,6 +800,68 @@ table:not([role="presentation"]) > tbody > tr:only-child {
 
 /*doc
 ---
+title: "Nested tables"
+name: nested-table
+category: Warnings
+---
+
+##Description
+There's no good reason to nest data tables: thus it probably means we're facing a layout table…
+
+##References
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://www.w3.org/WAI/tutorials/tables/tips/>
+* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175>
+
+##Selector
+```css_example
+table table
+```
+
+##Test
+```html_example
+<table>
+  <caption>I'm a caption :3</caption>
+  <thead>
+    <tr>
+      <th scope="col">Oh boy…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I'm a table-cell!</td>
+    </tr>
+    <tr>
+      <td>
+        <table>
+          <caption>I'm a caption too!</caption>
+          <thead>
+            <tr>
+              <th scope="col">Oh boy…</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>I'm a table-cell!</td>
+            </tr>
+            <tr>
+              <td>I'm a table-cell!</td>
+            </tr>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+```
+*/
+table table {
+  @include warning('nested-table');
+}
+
+
+/*doc
+---
 title: "Every data table must have a caption"
 name: table-caption
 category: Warnings
