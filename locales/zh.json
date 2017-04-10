@@ -55,6 +55,7 @@
   "error:id-namespace": "错误的 [id]",
   "error:class-namespace": "错误的 [class]",
   "error:unaccessible-viewport": "Inaccessible [meta name=viewport]",
+  "error:incorrect-charset": "[charset] isn't utf-8",
 
   "warning:style-attr": "内联样式",
   "warning:invalid-nesting": "元素嵌套错误",

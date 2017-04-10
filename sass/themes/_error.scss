@@ -1116,3 +1116,43 @@ meta[name="viewport"][content*="user-scalable=no"] {
   @include error('unaccessible-viewport', $self-closing: true);
   @include a11y-head();
 }
+
+
+/*doc
+---
+title: "Incorrect charset"
+name: incorrect-charset
+category: Errors
+---
+
+##Description
+Using `utf-8` character encoding is recommended by the W3C itself:
+it "supports many languages and can accommodate pages and forms in any mixture of those languages".
+
+Moreover it avoids some security issues exploiting some other charsets…
+
+##References
+* <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
+* <https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
+* <https://validator.w3.org/docs/help.html#faq-charset>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning>
+* <https://validator.w3.org/i18n-checker/>
+* <https://www.w3.org/International/tutorials/tutorial-char-enc/>
+
+##Selector
+```css_example
+meta[charset]:not([charset="utf-8"]),
+meta[charset="utf-8"]:not(:first-child)
+```
+
+##Test
+```html_example
+<meta charset="Windows-1252" /><span>†</span>
+```
+*/
+meta[charset]:not([charset="utf-8"]),
+meta[charset="utf-8"]:not(:first-child) {
+  @include error('incorrect-charset', $self-closing: true);
+  @include a11y-head();
+}

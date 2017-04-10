@@ -55,6 +55,7 @@
   "error:id-namespace": "[id] invalide",
   "error:class-namespace": "[class] invalide",
   "error:unaccessible-viewport": "[meta name=viewport] inaccessible",
+  "error:incorrect-charset": "Le [charset] n’est pas utf-8",
 
   "warning:style-attr": "Styles en ligne",
   "warning:invalid-nesting": "Imbrication invalide",
