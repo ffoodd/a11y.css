@@ -188,21 +188,32 @@ category: Warnings
 
 ##Description
 Some nestings are forbidden, and do not have their own test case for now:
+
 * `<option>` and `<optgroup>` outside a `<select>`;
 * `<legend>` outside a `<fieldset>`;
 * `<td>` or `<th>` outside a `<tr>`;
-* direct children of a `<table>`.
+* direct children of a `<table>`;
+* `<colgroup>` containing anything else than `<col>`.
 
 Maybe other invalid nestings to test. Stay tuned.
 
+##References
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+
 ##Selector
 ```css_example
-select > :not(option):not(optgroup),
-:not(select):not(optgroup) > option,
+:not(tr) > td,
+:not(tr) > th,
+colgroup *:not(col),
+:not(colgroup) > col,
+tr > :not(td):not(th),
 optgroup > :not(option),
 :not(select) > optgroup,
 :not(fieldset) > legend,
-tr > :not(td):not(th),
+select > :not(option):not(optgroup),
+:not(select):not(optgroup) > option,
 table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption)
 ```
 
@@ -211,12 +222,16 @@ table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption)
 <legend>I'm an legend. Am I?</legend>
 ```
 */
-select > :not(option):not(optgroup),
-:not(select):not(optgroup) > option,
+:not(tr) > td,
+:not(tr) > th,
+colgroup *:not(col),
+:not(colgroup) > col,
+tr > :not(td):not(th),
 optgroup > :not(option),
 :not(select) > optgroup,
 :not(fieldset) > legend,
-tr > :not(td):not(th),
+select > :not(option):not(optgroup),
+:not(select):not(optgroup) > option,
 table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption) {
   @include warning('invalid-nesting');
 }
@@ -799,6 +814,7 @@ And it must be the `:first-child`, by the way.
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
 * <http://www.w3.org/TR/WCAG-TECHS/H39.html>
+* <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309>
 
 ##Selector
 ```css_example
@@ -842,11 +858,20 @@ category: Warnings
 ##Description
 `<thead>`, `<tfoot>` and `<tbody>` must be in this order.
 
+##References
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314>
+
 ##Selector
 ```css_example
 table > tfoot ~ thead,
 table > tbody ~ tfoot,
-table > tbody ~ thead
+table > tbody ~ thead,
+table > tfoot ~ colgroup,
+table > tbody ~ colgroup,
+table > tbody ~ colgroup
 ```
 
 ##Test
@@ -877,7 +902,10 @@ table > tbody ~ thead
 */
 table > tfoot ~ thead,
 table > tbody ~ tfoot,
-table > tbody ~ thead {
+table > tbody ~ thead,
+table > tfoot ~ colgroup,
+table > tbody ~ colgroup,
+table > tbody ~ colgroup {
   @include warning('table-structure');
 }
 
