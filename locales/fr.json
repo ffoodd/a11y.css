@@ -94,6 +94,7 @@
   "warning:nested-table": "<table> imbriqués",
   "warning:unsecured-target": "[target] vulnérable",
   "warning:filename-alt": "Nom de fichier dans [alt]",
+  "warning:no-aria-level": "Pas de [aria-level]",
 
   "obsolete:tags": "Élément obsolète",
   "obsolete:attributes": "Attribut obsolète"

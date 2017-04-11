@@ -1375,3 +1375,37 @@ This is not actually an accessibility related issue, but everything helping user
 [target$="blank"]:not([rel*="noreferrer"]) {
   @include warning('unsecured-target');
 }
+
+
+/*doc
+---
+title: "Missing [aria-level]"
+name: no-aria-level
+category: Warnings
+---
+
+##Description
+Though `[aria-level]` is not required by ARIA specification, it's actually better to specify it.
+
+##References
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-level>
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-1>
+* <https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css>
+* <https://www.w3.org/TR/wai-aria/roles#heading>
+* <https://www.w3.org/TR/WCAG-TECHS/ARIA12.html>
+* <https://www.w3.org/TR/WCAG-TECHS/G141.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H42.html>
+
+##Selector
+```css_example
+[role="heading"]:not([aria-level])
+```
+
+##Test
+```html_example
+<strong role="heading">Heading with undefined level</strong>
+```
+*/
+[role="heading"]:not([aria-level]) {
+  @include warning('no-aria-level');
+}

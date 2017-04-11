@@ -94,6 +94,7 @@
   "warning:nested-table": "Nested <table>s",
   "warning:unsecured-target": "Unsafe [target]",
   "warning:filename-alt": "File name [alt]",
+  "warning:no-aria-level": "No [aria-level]",
 
   "obsolete:tags": "已废弃的元素",
   "obsolete:attributes": "已废弃的属性"
