@@ -219,7 +219,7 @@
 @mixin a11y($theme, $key, $self-closing: false) {
   $base-selector: '&::after';
 
-  counter-increment: unquote($theme);
+  counter-increment: unquote($theme) !important;
   outline: 4px solid theme-conf($theme, 'color') !important;
   outline-offset: -4px !important;
 
