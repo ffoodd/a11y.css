@@ -94,6 +94,7 @@
   "warning:href-js": "[href] débutant par javascript:",
   "warning:nested-table": "<table> imbriqués",
   "warning:unsecured-target": "[target] vulnérable",
+  "warning:filename-alt": "Nom de fichier dans [alt]",
 
   "obsolete:tags": "Élément obsolète",
   "obsolete:attributes": "Attribut obsolète"

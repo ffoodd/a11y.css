@@ -42,3 +42,11 @@ $disabled-tests: ();
 /// @link http://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element
 /// @link https://la-cascade.io/quest-ce-quun-element-remplace/
 $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, textarea, select, svg, audio, video, iframe;
+
+
+/// List of file formats
+/// @access private
+/// File formats used in a few selectors.
+/// @type List
+/// @link http://hugogiraudel.com/2013/07/15/understanding-sass-lists/
+$formats: pdf, doc, png, jpg, gif, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx, webp, apng, svg, svgz;

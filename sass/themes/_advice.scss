@@ -301,7 +301,11 @@ A link to a file should indicate the file format, the file size and if different
 [href$=".txt"]:not(link),
 [href$=".zip"]:not(link),
 [href$=".rar"]:not(link),
-[href$=".docx"]:not(link)
+[href$=".docx"]:not(link),
+[href$=".webp"]:not(link),
+[href$=".apng"]:not(link),
+[href$=".svg"]:not(link),
+[href$=".svgz"]:not(link)
 ```
 
 ##Test
@@ -309,21 +313,13 @@ A link to a file should indicate the file format, the file size and if different
 <a href="/file.png">Wanna file?</a>
 ```
 */
-[download],
-[href$=".pdf"]:not(link),
-[href$=".doc"]:not(link),
-[href$=".png"]:not(link),
-[href$=".jpg"]:not(link),
-[href$=".gif"]:not(link),
-[href$=".mp3"]:not(link),
-[href$=".mp4"]:not(link),
-[href$=".mov"]:not(link),
-[href$=".ogg"]:not(link),
-[href$=".xls"]:not(link),
-[href$=".txt"]:not(link),
-[href$=".zip"]:not(link),
-[href$=".rar"]:not(link),
-[href$=".docx"]:not(link) {
+$href: ('[download]');
+
+@each $format in $formats {
+  $href: append($href, unquote('[href$=".#{$format}"]:not(link)'), 'comma');
+}
+
+#{$href} {
   @include advice('file-format');
 }
 
