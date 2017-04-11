@@ -237,7 +237,7 @@ a[role="button"] {
 
 /*doc
 ---
-title: "A link opening new tab or window"
+title: "Link opening new tab"
 name: target-blank
 category: Advices
 ---
@@ -261,7 +261,7 @@ You could use a `[title]`, for example.
 
 ##Test
 ```html_example
-<a href="/" target="_blank">New tab</a>
+<a href="/" target="_blank" rel="noopener noreferrer">New tab</a>
 ```
 */
 [target$="blank"] {

@@ -93,6 +93,7 @@
   "warning:empty-href": "[href=attr(href)]",
   "warning:href-js": "[href] débutant par javascript:",
   "warning:nested-table": "<table> imbriqués",
+  "warning:unsecured-target": "[target] vulnérable",
 
   "obsolete:tags": "Élément obsolète",
   "obsolete:attributes": "Attribut obsolète"
