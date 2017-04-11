@@ -62,6 +62,7 @@
   "error:radio-group": "[radio] outside any <fieldset>",
   "error:no-aria-label": "Missing [aria-label] and [aria-labelledby]",
   "error:role-missing-attr": "Missing attributes on [role=attr(role)]",
+  "error:role-checkbox": "Missing [aria-checked]",
 
   "warning:style-attr": "Inline styles",
   "warning:invalid-nesting": "Invalid nesting",

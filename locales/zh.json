@@ -62,6 +62,7 @@
   "error:radio-group": "[radio] outside any <fieldset>",
   "error:no-aria-label": "缺少 [aria-label] 和 [aria-labelledby]",
   "error:role-missing-attr": "Missing attributes on [role=attr(role)]",
+  "error:role-checkbox": "Missing [aria-checked]",
 
   "warning:style-attr": "内联样式",
   "warning:invalid-nesting": "元素嵌套错误",

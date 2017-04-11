@@ -1452,3 +1452,41 @@ category: Errors
     @include error('role-missing-attr', $self-closing: true);
   }
 }
+
+
+/*doc
+---
+title: "[role=checkbox] missing state"
+name: role-checkbox
+category: Errors
+---
+
+##Description
+`[role="spinbutton"]` requires a few attributes:
+
+* `[aria-valuemin]`
+* `[aria-valuemax]`
+* `[aria-valuenow]`
+
+##References
+* <https://www.w3.org/TR/wai-aria/roles#checkbox>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked>
+
+##Selector
+```css_example
+[role="checkbox"]:not([aria-checked])
+```
+
+##Test
+```html_example
+
+<img src="static/ffoodd.png" alt="Checkbox" role="checkbox" width="36" height="36"/><span>†</span>
+```
+*/
+[role="checkbox"]:not([aria-checked]) {
+  @include error('role-checkbox');
+
+  @include void-tags {
+    @include error('role-checkbox', $self-closing: true);
+  }
+}
