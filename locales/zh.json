@@ -25,7 +25,6 @@
   "advice:th-scope": "<th> 包含 [scope] 吗？",
   "advice:table-presentation": "确认这个 [table] 元素是用于布局而非展示数据",
   "advice:no-href": "缺少 [href]",
-  "advice:implicit-heading": "Implicit heading?",
 
   "error:tab-order": "标签页位置不正确",
   "error:empty-href": "[href] 为空",
