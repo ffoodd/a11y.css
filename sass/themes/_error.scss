@@ -182,6 +182,48 @@ input[type="image"]:not([alt]) {
 
 /*doc
 ---
+title: "Missing label for [role=img]"
+name: no-aria-label
+category: Errors
+---
+
+##Description
+`[role=img]` should either have `[aria-label]` or `[aria-labelledby]`.
+If image is decorative, please use `[role=presentation]` instead.
+
+##References
+* <https://www.w3.org/TR/wai-aria/roles#img>
+* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/wai-aria/roles#presentation>
+* <https://www.w3.org/TR/wai-aria/roles#textalternativecomputation>
+
+##Selector
+```css_example
+[role="img"]:not([aria-label]):not([aria-labelledby]),
+svg[role="img"]:not([aria-label]):not([aria-labelledby])
+```
+
+##Test
+```html_example
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1" role="img">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+```
+*/
+[role="img"]:not([aria-label]):not([aria-labelledby]) {
+  @include error('no-aria-label');
+}
+
+svg[role="img"]:not([aria-label]):not([aria-labelledby]) {
+  @include error('no-aria-label', $self-closing: true);
+}
+
+
+/*doc
+---
 title: "Missing source for img"
 name: no-src
 category: Errors

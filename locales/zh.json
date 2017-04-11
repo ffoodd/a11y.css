@@ -60,6 +60,7 @@
   "error:accesskey": "[accesskey]",
   "error:inputs-group": "Missing [name]",
   "error:radio-group": "[radio] outside any <fieldset>",
+  "error:no-aria-label": "缺少 [aria-label] 和 [aria-labelledby]",
 
   "warning:style-attr": "内联样式",
   "warning:invalid-nesting": "元素嵌套错误",
@@ -74,7 +75,6 @@
   "warning:abbr": "缺少 [title]",
   "warning:empty-alt": "[alt] 为空",
   "warning:non-empty-alt": "Non empty [alt] on [role=presentation]",
-  "warning:no-aria-label": "缺少 [aria-label] 和 [aria-labelledby]",
   "warning:no-aria-role": "缺少 [role]",
   "warning:decorative-svg": "语义化的 SVG",
   "warning:autoplay": "自动播放",

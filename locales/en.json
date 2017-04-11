@@ -60,6 +60,7 @@
   "error:accesskey": "[accesskey]",
   "error:inputs-group": "Missing [name]",
   "error:radio-group": "[radio] outside any <fieldset>",
+  "error:no-aria-label": "Missing [aria-label] and [aria-labelledby]",
 
   "warning:style-attr": "Inline styles",
   "warning:invalid-nesting": "Invalid nesting",
@@ -74,7 +75,6 @@
   "warning:abbr": "Missing [title]",
   "warning:empty-alt": "Empty [alt]",
   "warning:non-empty-alt": "Non empty [alt] on [role=presentation]",
-  "warning:no-aria-label": "Missing [aria-label] and [aria-labelledby]",
   "warning:no-aria-role": "Missing [role]",
   "warning:decorative-svg": "Semantic attribute on decorative SVG",
   "warning:autoplay": "Autoplay",

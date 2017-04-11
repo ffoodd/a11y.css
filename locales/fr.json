@@ -60,6 +60,7 @@
   "error:accesskey": "[accesskey]",
   "error:inputs-group": "[name] absent",
   "error:radio-group": "[radio] sans <fieldset>",
+  "error:no-aria-label": "[aria-label] et [aria-labelledby] absent",
 
   "warning:style-attr": "Styles en ligne",
   "warning:invalid-nesting": "Imbrication invalide",
@@ -74,7 +75,6 @@
   "warning:abbr": "[title] absent",
   "warning:empty-alt": "[alt] vide",
   "warning:non-empty-alt": "[alt] non vide sur [role=presentation]",
-  "warning:no-aria-label": "[aria-label] et [aria-labelledby] absent",
   "warning:no-aria-role": "[role] absent",
   "warning:decorative-svg": "Attribut sémantique sur un SVG décoratif",
   "warning:autoplay": "Lecture automatique",

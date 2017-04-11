@@ -638,40 +638,6 @@ object[type="image"][role="presentation"]:not([alt=""]) {
 
 /*doc
 ---
-title: "A label is needed for svg"
-name: no-aria-label
-category: Warnings
----
-
-##Description
-Any informative `<svg>` should either have a `[aria-label]`, `[aria-labelledby]` or a `<desc>`.
-
-##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
-* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
-
-##Selector
-```css_example
-svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby])
-```
-
-##Test
-```html_example
-<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg" version="1.1" role="img">
-  <rect x="400" y="100" width="400" height="200"
-        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
-</svg><span>†</span>
-```
-*/
-svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) {
-  @include warning('no-aria-label', $self-closing: true);
-}
-
-
-/*doc
----
 title: "A role is needed for svg"
 name: no-aria-role
 category: Warnings
