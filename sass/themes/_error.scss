@@ -1479,7 +1479,6 @@ category: Errors
 
 ##Test
 ```html_example
-
 <img src="static/ffoodd.png" alt="Checkbox" role="checkbox" width="36" height="36"/><span>†</span>
 ```
 */
@@ -1488,5 +1487,38 @@ category: Errors
 
   @include void-tags {
     @include error('role-checkbox', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "[role=combobox] missing [state]"
+name: role-combobox
+category: Errors
+---
+
+##Description
+`[aria-expanded]` is required on `[role="combobox"]`.
+
+##References
+* <https://www.w3.org/TR/wai-aria/roles#combobox>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded>
+
+##Selector
+```css_example
+[role="combobox"]:not([aria-expanded])
+```
+
+##Test
+```html_example
+<input type="text" aria-label="Combobox" role="combobox" id="combobox"><span>†</span>
+```
+*/
+[role="combobox"]:not([aria-expanded]) {
+  @include error('role-combobox');
+
+  @include void-tags {
+    @include error('role-combobox', $self-closing: true);
   }
 }

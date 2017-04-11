@@ -64,6 +64,7 @@
   "error:role-slider": "Missing attributes on [role=slider]",
   "error:role-spinbutton": "Missing attributes on [role=spinbutton]",
   "error:role-checkbox": "Missing [aria-checked]",
+  "error:role-combobox": "Missing [aria-expanded]",
 
   "warning:style-attr": "Inline styles",
   "warning:invalid-nesting": "Invalid nesting",
