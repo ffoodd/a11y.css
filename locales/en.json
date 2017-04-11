@@ -60,6 +60,7 @@
   "error:invalid-dir": "Invalid [dir]",
   "error:accesskey": "[accesskey]",
   "error:inputs-group": "Missing [name]",
+  "error:radio-group": "[radio] outside any <fieldset>",
 
   "warning:style-attr": "Inline styles",
   "warning:invalid-nesting": "Invalid nesting",

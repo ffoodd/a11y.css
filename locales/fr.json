@@ -60,6 +60,7 @@
   "error:invalid-dir": "[dir] invalide",
   "error:accesskey": "[accesskey]",
   "error:inputs-group": "[name] absent",
+  "error:radio-group": "[radio] sans <fieldset>",
 
   "warning:style-attr": "Styles en ligne",
   "warning:invalid-nesting": "Imbrication invalide",

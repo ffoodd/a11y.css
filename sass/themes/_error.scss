@@ -1235,13 +1235,14 @@ category: Errors
 
 ##Description
 Inputs with a type of `radio` or `checkbox` are usually grouped. The `[name]` attribute is meant to programmatically associate them,
-thus is required.
+thus is needed.
 
 ##References
 * <https://www.w3.org/WAI/tutorials/forms/grouping/>
 * <https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox>
 * <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
 * <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
+* <https://www.w3.org/TR/WCAG-TECHS/H71.html>
 
 ##Selector
 ```css_example
@@ -1269,4 +1270,49 @@ thus is required.
 [type="radio"]:not([name]),
 [type="checkbox"]:not(:only-of-type):not([name]) {
   @include error('inputs-group', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "[radio] outside a fieldset"
+name: radio-group
+category: Errors
+---
+
+##Description
+Inputs with a type of `radio` should be grouped by a parent `<fieldset>`, described by its `<legend>`.
+
+Please note that WCAG doesn't actually require this but strongly recommends it:
+"where the individual label associated with each particular control provides a sufficient description,
+the use of the fieldset and legend elements is not required."
+
+This test could be a warning…
+
+##References
+* <https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons>
+* <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
+* <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
+* <https://www.w3.org/TR/WCAG-TECHS/H71.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+
+##Selector
+```css_example
+[type="radio"]
+```
+
+##Test
+```html_example
+<form action="/">
+  <label for="option-1">Option N<sup>o</sup>1</label>
+  <input type="radio" id="option-1" name="options"><span>†</span>
+</form>
+```
+*/
+[type="radio"] {
+  @include error('radio-group', $self-closing: true);
+}
+
+fieldset [type="radio"] {
+  @include a11y-reset;
 }
