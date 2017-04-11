@@ -61,6 +61,7 @@
   "error:inputs-group": "Missing [name]",
   "error:radio-group": "[radio] outside any <fieldset>",
   "error:no-aria-label": "缺少 [aria-label] 和 [aria-labelledby]",
+  "error:role-missing-attr": "Missing attributes on [role=attr(role)]",
 
   "warning:style-attr": "内联样式",
   "warning:invalid-nesting": "元素嵌套错误",
@@ -68,7 +69,7 @@
   "warning:invalid-def": "错误的 <dd> 顺序",
   "warning:invalid-def-nesting": "错误的 <dl> 子元素",
   "warning:invalid-figcaption-nesting": "<figcaption> 处于 <figure> 之外",
-  "warning:figure-role": "<figure> 缺少 [role='group']",
+  "warning:figure-role": "<figure> 缺少 [role=group]",
   "warning:misplaced-div": "<div> 不应在内联元素之内",
   "warning:sectioning-tags": "<section> 使用有误",
   "warning:fieldset": "<fieldset> 必须以 <legend> 开头",

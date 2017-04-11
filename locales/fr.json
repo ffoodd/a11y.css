@@ -61,6 +61,7 @@
   "error:inputs-group": "[name] absent",
   "error:radio-group": "[radio] sans <fieldset>",
   "error:no-aria-label": "[aria-label] et [aria-labelledby] absent",
+  "error:role-missing-attr": "Attributs manquants pour [role=attr(role)]",
 
   "warning:style-attr": "Styles en ligne",
   "warning:invalid-nesting": "Imbrication invalide",

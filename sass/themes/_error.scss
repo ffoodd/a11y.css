@@ -1360,3 +1360,95 @@ This test could be a warning…
 fieldset [type="radio"] {
   @include a11y-reset;
 }
+
+
+/*doc
+---
+title: "[role=slider] missing attributes"
+name: role-slider
+category: Errors
+---
+
+##Description
+`[role="slider"]` requires a few attributes:
+
+* `[aria-valuemin]`
+* `[aria-valuemax]`
+* `[aria-valuenow]`
+
+Also `[aria-valuetext]` is welcome, even though it's not required by ARIA specification.
+
+##References
+* <https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378>
+* <https://www.w3.org/TR/wai-aria/roles#slider>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
+* <http://www.oaa-accessibility.org/examplep/slider1/>
+* <https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/>
+* <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/>
+* <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/>
+* <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role>
+
+##Selector
+```css_example
+[role="slider"]:not([aria-valuemin]),
+[role="slider"]:not([aria-valuemax]),
+[role="slider"]:not([aria-valuenow])
+```
+
+##Test
+```html_example
+<label for="slider">Slider</label>
+<input id="slider" role="slider" type="range" /><span>†</span>
+```
+*/
+[role="slider"]:not([aria-valuemin]),
+[role="slider"]:not([aria-valuemax]),
+[role="slider"]:not([aria-valuenow]) {
+  @include error('role-missing-attr');
+
+  @include void-tags {
+    @include error('role-missing-attr', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "[role=spinbutton] missing attributes"
+name: role-spinbutton
+category: Errors
+---
+
+##Description
+`[role="spinbutton"]` requires a few attributes:
+
+* `[aria-valuemin]`
+* `[aria-valuemax]`
+* `[aria-valuenow]`
+
+##References
+* <https://www.w3.org/TR/wai-aria/roles#spinbutton>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
+
+##Selector
+```css_example
+[role="spinbutton"]:not([aria-valuemin]),
+[role="spinbutton"]:not([aria-valuemax]),
+[role="spinbutton"]:not([aria-valuenow])
+```
+
+##Test
+```html_example
+<label for="spinbutton">Spinbutton</label>
+<input id="spinbutton" role="spinbutton" type="range" /><span>†</span>
+```
+*/
+[role="spinbutton"]:not([aria-valuemin]),
+[role="spinbutton"]:not([aria-valuemax]),
+[role="spinbutton"]:not([aria-valuenow]) {
+  @include error('role-missing-attr');
+
+  @include void-tags {
+    @include error('role-missing-attr', $self-closing: true);
+  }
+}

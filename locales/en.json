@@ -61,6 +61,7 @@
   "error:inputs-group": "Missing [name]",
   "error:radio-group": "[radio] outside any <fieldset>",
   "error:no-aria-label": "Missing [aria-label] and [aria-labelledby]",
+  "error:role-missing-attr": "Missing attributes on [role=attr(role)]",
 
   "warning:style-attr": "Inline styles",
   "warning:invalid-nesting": "Invalid nesting",
@@ -68,7 +69,7 @@
   "warning:invalid-def": "Invalid <dd> order",
   "warning:invalid-def-nesting": "Invalid <dl> child",
   "warning:invalid-figcaption-nesting": "<figcaption> outside <figure>",
-  "warning:figure-role": "<figure> without [role='group']",
+  "warning:figure-role": "<figure> without [role=group]",
   "warning:misplaced-div": "<div> in inline element",
   "warning:sectioning-tags": "Misused sectioning tag",
   "warning:fieldset": "<fieldset> must start with <legend>",
