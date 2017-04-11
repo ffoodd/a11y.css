@@ -1404,10 +1404,10 @@ Also `[aria-valuetext]` is welcome, even though it's not required by ARIA specif
 [role="slider"]:not([aria-valuemin]),
 [role="slider"]:not([aria-valuemax]),
 [role="slider"]:not([aria-valuenow]) {
-  @include error('role-missing-attr');
+  @include error('role-slider');
 
   @include void-tags {
-    @include error('role-missing-attr', $self-closing: true);
+    @include error('role-slider', $self-closing: true);
   }
 }
 
@@ -1446,10 +1446,10 @@ category: Errors
 [role="spinbutton"]:not([aria-valuemin]),
 [role="spinbutton"]:not([aria-valuemax]),
 [role="spinbutton"]:not([aria-valuenow]) {
-  @include error('role-missing-attr');
+  @include error('role-spinbutton');
 
   @include void-tags {
-    @include error('role-missing-attr', $self-closing: true);
+    @include error('role-spinbutton', $self-closing: true);
   }
 }
 

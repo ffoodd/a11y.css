@@ -61,7 +61,8 @@
   "error:inputs-group": "Missing [name]",
   "error:radio-group": "[radio] outside any <fieldset>",
   "error:no-aria-label": "缺少 [aria-label] 和 [aria-labelledby]",
-  "error:role-missing-attr": "Missing attributes on [role=attr(role)]",
+  "error:role-slider": "Missing attributes on [role=slider]",
+  "error:role-spinbutton": "Missing attributes on [role=spinbutton]",
   "error:role-checkbox": "Missing [aria-checked]",
 
   "warning:style-attr": "内联样式",
