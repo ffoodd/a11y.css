@@ -1382,6 +1382,8 @@ Also `[aria-valuetext]` is welcome, even though it's not required by ARIA specif
 * <https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378>
 * <https://www.w3.org/TR/wai-aria/roles#slider>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
 * <http://www.oaa-accessibility.org/examplep/slider1/>
 * <https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/>
 * <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/>
@@ -1429,6 +1431,9 @@ category: Errors
 ##References
 * <https://www.w3.org/TR/wai-aria/roles#spinbutton>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
+* <http://oaa-accessibility.org/example/33/>
 
 ##Selector
 ```css_example
@@ -1471,6 +1476,7 @@ category: Errors
 ##References
 * <https://www.w3.org/TR/wai-aria/roles#checkbox>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked>
+* <http://oaa-accessibility.org/examples/role/76/>
 
 ##Selector
 ```css_example
@@ -1504,6 +1510,7 @@ category: Errors
 ##References
 * <https://www.w3.org/TR/wai-aria/roles#combobox>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded>
+* <http://oaa-accessibility.org/examples/role/77/>
 
 ##Selector
 ```css_example
@@ -1521,4 +1528,51 @@ category: Errors
   @include void-tags {
     @include error('role-combobox', $self-closing: true);
   }
+}
+
+
+/*doc
+---
+title: "[role=scrollbar] required properties"
+name: role-scrollbar
+category: Errors
+---
+
+##Description
+Some properties are required to comply the `[role="scrollbar"]` pattern:
+
+* `[aria-controls]`
+* `[aria-valuemin]`
+* `[aria-valuemax]`
+* `[aria-valuenow]`
+* `[aria-orientation]`
+
+##References
+* <https://www.w3.org/TR/wai-aria/roles#scrollbar>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation>
+
+##Selector
+```css_example
+[role="scrollbar"]:not([aria-controls]),
+[role="scrollbar"]:not([aria-valuemin]),
+[role="scrollbar"]:not([aria-valuemax]),
+[role="scrollbar"]:not([aria-valuenow]),
+[role="scrollbar"]:not([aria-orientation])
+```
+
+##Test
+```html_example
+<div role="scrollbar">↓</div>
+```
+*/
+[role="scrollbar"]:not([aria-controls]),
+[role="scrollbar"]:not([aria-valuemin]),
+[role="scrollbar"]:not([aria-valuemax]),
+[role="scrollbar"]:not([aria-valuenow]),
+[role="scrollbar"]:not([aria-orientation]) {
+  @include error('role-scrollbar');
 }

@@ -65,6 +65,7 @@
   "error:role-spinbutton": "Attributs manquants pour [role=spinbutton]",
   "error:role-checkbox": "[aria-checked] absent",
   "error:role-combobox": "[aria-expanded] absent",
+  "error:role-scrollbar": "Attributs manquants pour [role=scrollbar]",
 
   "warning:style-attr": "Styles en ligne",
   "warning:invalid-nesting": "Imbrication invalide",

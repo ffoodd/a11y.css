@@ -65,6 +65,7 @@
   "error:role-spinbutton": "Missing attributes on [role=spinbutton]",
   "error:role-checkbox": "Missing [aria-checked]",
   "error:role-combobox": "Missing [aria-expanded]",
+  "error:role-scrollbar": "Missing attributes on [role=scrollbar]",
 
   "warning:style-attr": "内联样式",
   "warning:invalid-nesting": "元素嵌套错误",
