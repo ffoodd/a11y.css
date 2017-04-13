@@ -1187,7 +1187,9 @@ Moreover it avoids some security issues exploiting some other charsets…
 ##Selector
 ```css_example
 meta[charset]:not([charset="utf-8"]),
-meta[charset="utf-8"]:not(:first-child)
+meta[charset]:not([charset="UTF-8"]),
+meta[charset="utf-8"]:not(:first-child),
+meta[charset="UTF-8"]:not(:first-child)
 ```
 
 ##Test
@@ -1196,7 +1198,9 @@ meta[charset="utf-8"]:not(:first-child)
 ```
 */
 meta[charset]:not([charset="utf-8"]),
-meta[charset="utf-8"]:not(:first-child) {
+meta[charset]:not([charset="UTF-8"]),
+meta[charset="utf-8"]:not(:first-child),
+meta[charset="UTF-8"]:not(:first-child) {
   @include error('incorrect-charset', $self-closing: true);
   @include a11y-head();
 }
