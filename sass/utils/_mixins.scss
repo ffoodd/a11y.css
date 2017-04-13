@@ -77,11 +77,12 @@
 /// @param {String} $theme - Theme
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-@mixin item($theme, $key, $self-closing: false) {
+/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
+@mixin item($theme, $key, $self-closing: false, $head: false) {
   $is-disabled: index(map-get($disabled-tests, $theme), $key);
 
   @if is-level-enough($theme) and not $is-disabled {
-    @include a11y($theme, $key, $self-closing);
+    @include a11y($theme, $key, $self-closing, $head);
   }
 }
 
@@ -91,12 +92,13 @@
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
+/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
 /// @example scss - Define an error
 /// .selector {
 ///   @include error("no-src");
 /// }
-@mixin error($key, $self-closing: false) {
-  @include item('error', $key, $self-closing);
+@mixin error($key, $self-closing: false, $head: false) {
+  @include item('error', $key, $self-closing, $head);
 }
 
 
@@ -105,12 +107,13 @@
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
+/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
 /// @example scss - Define an warning
 /// .selector {
 ///   @include warning("abbr");
 /// }
-@mixin warning($key, $self-closing: false) {
-  @include item('warning', $key, $self-closing);
+@mixin warning($key, $self-closing: false, $head: false) {
+  @include item('warning', $key, $self-closing, $head);
 }
 
 
@@ -119,12 +122,13 @@
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
+/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
 /// @example scss - Define an obsolete
 /// .selector {
 ///   @include obsolete("any");
 /// }
-@mixin obsolete($key, $self-closing: false) {
-  @include item('obsolete', $key, $self-closing);
+@mixin obsolete($key, $self-closing: false, $head: false) {
+  @include item('obsolete', $key, $self-closing, $head);
 }
 
 /// Defines an advice
@@ -132,12 +136,13 @@
 /// @access public
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
+/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
 /// @example scss - Define an advice
 /// .selector {
 ///   @include advice("nav");
 /// }
-@mixin advice($key, $self-closing: false) {
-  @include item('advice', $key, $self-closing);
+@mixin advice($key, $self-closing: false, $head: false) {
+  @include item('advice', $key, $self-closing, $head);
 }
 
 
@@ -157,11 +162,19 @@
 /// Display messages on &lt;head>'s tags
 /// @group messages
 /// @access public
+/// @param {Bool} $self-closing [false] - Whether or not to display selector's target or last link tag
 /// @example scss - Display messages on &lt;head>’s tags
 ///  @include a11y-head()
-@mixin a11y-head() {
+@mixin a11y-head($self-closing: false) {
   // Because it's in the <head>
-  display: block !important;
+  @if $self-closing {
+    & ~ link:last-of-type {
+      display: block !important;
+    }
+  }
+  @else {
+    display: block !important;
+  }
 }
 
 
@@ -216,7 +229,8 @@
 /// @param {String} $theme - Theme
 /// @param {String} $key - Key used to fetch message in `$messages` map
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-@mixin a11y($theme, $key, $self-closing: false) {
+/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
+@mixin a11y($theme, $key, $self-closing: false, $head: false) {
   $base-selector: '&::after';
 
   counter-increment: unquote($theme) !important;
@@ -225,6 +239,10 @@
 
   @if $self-closing {
     $base-selector: '& + ::before';
+  }
+
+  @if $head {
+    $base-selector: '& ~ link:last-of-type::before';
   }
 
   #{$base-selector} {

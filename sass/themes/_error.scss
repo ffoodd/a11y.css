@@ -1114,12 +1114,12 @@ title:empty {
 }
 
 title:blank {
-  @include error('no-page-title', $self-closing: false);
+  @include error('no-page-title');
   @include a11y-head();
 }
 
 title:-moz-only-whitespace {
-  @include error('no-page-title', $self-closing: false);
+  @include error('no-page-title');
   @include a11y-head();
 }
 
@@ -1157,8 +1157,8 @@ meta[name="viewport"][content*="user-scalable=no"]
 meta[name="viewport"][content*="maximum-scale"],
 meta[name="viewport"][content*="minimum-scale"],
 meta[name="viewport"][content*="user-scalable=no"] {
-  @include error('unaccessible-viewport', $self-closing: true);
-  @include a11y-head();
+  @include error('unaccessible-viewport', $self-closing: true, $head: true);
+  @include a11y-head($self-closing: true);
 }
 
 
@@ -1201,8 +1201,8 @@ meta[charset]:not([charset="utf-8"]),
 meta[charset]:not([charset="UTF-8"]),
 meta[charset="utf-8"]:not(:first-child),
 meta[charset="UTF-8"]:not(:first-child) {
-  @include error('incorrect-charset', $self-closing: true);
-  @include a11y-head();
+  @include error('incorrect-charset', $self-closing: true, $head: true);
+  @include a11y-head($self-closing: true);
 }
 
 
