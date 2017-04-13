@@ -231,12 +231,16 @@
 
 
 
-<code class="language-scss">@mixin error($key, $self-closing: false) { 
-  @include item(&#39;error&#39;, $key, $self-closing);
+
+
+
+
+<code class="language-scss">@mixin error($key, $self-closing: false, $head: false) { 
+  @include item(&#39;error&#39;, $key, $self-closing, $head);
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L98-L100">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L100-L102">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -290,6 +294,20 @@
           <tr>
             <th scope="row"><code>$self-closing</code></th>
             <td><p>Whether or not to use message on self or next node</p>
+</td>
+            <td>
+              <code>Bool</code>
+            </td>
+            <td>
+              
+                <code>false</code>
+              
+            </td>
+          </tr>
+        
+          <tr>
+            <th scope="row"><code>$head</code></th>
+            <td><p>Whether or not a self-closing tag sits in document&#39;s head</p>
 </td>
             <td>
               <code>Bool</code>
@@ -364,12 +382,16 @@
 
 
 
-<code class="language-scss">@mixin warning($key, $self-closing: false) { 
-  @include item(&#39;warning&#39;, $key, $self-closing);
+
+
+
+
+<code class="language-scss">@mixin warning($key, $self-closing: false, $head: false) { 
+  @include item(&#39;warning&#39;, $key, $self-closing, $head);
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L112-L114">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L115-L117">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -423,6 +445,20 @@
           <tr>
             <th scope="row"><code>$self-closing</code></th>
             <td><p>Whether or not to use message on self or next node</p>
+</td>
+            <td>
+              <code>Bool</code>
+            </td>
+            <td>
+              
+                <code>false</code>
+              
+            </td>
+          </tr>
+        
+          <tr>
+            <th scope="row"><code>$head</code></th>
+            <td><p>Whether or not a self-closing tag sits in document&#39;s head</p>
 </td>
             <td>
               <code>Bool</code>
@@ -497,12 +533,16 @@
 
 
 
-<code class="language-scss">@mixin obsolete($key, $self-closing: false) { 
-  @include item(&#39;obsolete&#39;, $key, $self-closing);
+
+
+
+
+<code class="language-scss">@mixin obsolete($key, $self-closing: false, $head: false) { 
+  @include item(&#39;obsolete&#39;, $key, $self-closing, $head);
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L126-L128">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L130-L132">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -556,6 +596,20 @@
           <tr>
             <th scope="row"><code>$self-closing</code></th>
             <td><p>Whether or not to use message on self or next node</p>
+</td>
+            <td>
+              <code>Bool</code>
+            </td>
+            <td>
+              
+                <code>false</code>
+              
+            </td>
+          </tr>
+        
+          <tr>
+            <th scope="row"><code>$head</code></th>
+            <td><p>Whether or not a self-closing tag sits in document&#39;s head</p>
 </td>
             <td>
               <code>Bool</code>
@@ -630,12 +684,16 @@
 
 
 
-<code class="language-scss">@mixin advice($key, $self-closing: false) { 
-  @include item(&#39;advice&#39;, $key, $self-closing);
+
+
+
+
+<code class="language-scss">@mixin advice($key, $self-closing: false, $head: false) { 
+  @include item(&#39;advice&#39;, $key, $self-closing, $head);
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L139-L141">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L144-L146">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -689,6 +747,20 @@
           <tr>
             <th scope="row"><code>$self-closing</code></th>
             <td><p>Whether or not to use message on self or next node</p>
+</td>
+            <td>
+              <code>Bool</code>
+            </td>
+            <td>
+              
+                <code>false</code>
+              
+            </td>
+          </tr>
+        
+          <tr>
+            <th scope="row"><code>$head</code></th>
+            <td><p>Whether or not a self-closing tag sits in document&#39;s head</p>
 </td>
             <td>
               <code>Bool</code>
@@ -766,7 +838,7 @@
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L150-L154">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L155-L159">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -886,13 +958,24 @@
   <div class="codeBlock scssSource">
     <div class="language-scss">
       <pre>
-<code class="language-scss">@mixin a11y-head() { 
+
+
+
+
+<code class="language-scss">@mixin a11y-head($self-closing: false) { 
   // Because it&#39;s in the &lt;head&gt;
-  display: block !important;
+  @if $self-closing {
+    &amp; ~ link:last-of-type {
+      display: block !important;
+    }
+  }
+  @else {
+    display: block !important;
+  }
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L162-L165">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L168-L178">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -915,6 +998,37 @@
   
 
   
+
+  <h5>Parameters</h5>
+
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Name</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Description</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Type</th>
+        <th scope="col"><span class="visually-hidden"> parameter </span>Default value</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+          <tr>
+            <th scope="row"><code>$self-closing</code></th>
+            <td><p>Whether or not to display selector&#39;s target or last link tag</p>
+</td>
+            <td>
+              <code>Bool</code>
+            </td>
+            <td>
+              
+                <code>false</code>
+              
+            </td>
+          </tr>
+        
+      </tbody>
+  </table>
+
 
 
   
@@ -1155,7 +1269,7 @@ Either:</p>
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L174-L196">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L187-L209">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1303,15 +1417,23 @@ Either:</p>
 
 
 
-<code class="language-scss">@mixin a11y($theme, $key, $self-closing: false) { 
+
+
+
+
+<code class="language-scss">@mixin a11y($theme, $key, $self-closing: false, $head: false) { 
   $base-selector: &#39;&amp;::after&#39;;
 
-  counter-increment: unquote($theme);
+  counter-increment: unquote($theme) !important;
   outline: 4px solid theme-conf($theme, &#39;color&#39;) !important;
   outline-offset: -4px !important;
 
   @if $self-closing {
     $base-selector: &#39;&amp; + ::before&#39;;
+  }
+
+  @if $head {
+    $base-selector: &#39;&amp; ~ link:last-of-type::before&#39;;
   }
 
   #{$base-selector} {
@@ -1324,7 +1446,7 @@ Either:</p>
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L219-L237">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L234-L256">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1403,6 +1525,20 @@ Either:</p>
             </td>
           </tr>
         
+          <tr>
+            <th scope="row"><code>$head</code></th>
+            <td><p>Whether or not a self-closing tag sits in document&#39;s head</p>
+</td>
+            <td>
+              <code>Bool</code>
+            </td>
+            <td>
+              
+                <code>false</code>
+              
+            </td>
+          </tr>
+        
       </tbody>
   </table>
 
@@ -1459,7 +1595,7 @@ Either:</p>
       <pre>
 <code class="language-scss">@mixin a11y-reset() { 
   counter-increment: none !important;
-  border: 0 !important;
+  outline: 0 !important;
 
   &amp;::before,
   + ::after {
@@ -1469,7 +1605,7 @@ Either:</p>
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L241-L250">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L260-L269">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>

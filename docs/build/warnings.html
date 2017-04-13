@@ -87,6 +87,10 @@
               </li>
             
               <li>
+                <a href="#filename-alt">[alt] containing file name</a>
+              </li>
+            
+              <li>
                 <a href="#href-js">JS [href]</a>
               </li>
             
@@ -119,11 +123,19 @@
               </li>
             
               <li>
-                <a href="#no-aria-label">A label is needed for svg</a>
+                <a href="#nested-table">Nested tables</a>
+              </li>
+            
+              <li>
+                <a href="#no-aria-level">Missing [aria-level]</a>
               </li>
             
               <li>
                 <a href="#no-aria-role">A role is needed for svg</a>
+              </li>
+            
+              <li>
+                <a href="#non-empty-alt">[alt] should be empty for decorative image</a>
               </li>
             
               <li>
@@ -156,6 +168,10 @@
             
               <li>
                 <a href="#th-no-scope">th without [scope] or [id]</a>
+              </li>
+            
+              <li>
+                <a href="#unsecured-target">Unsecured [target=_blank]</a>
               </li>
             
           </ol>
@@ -301,6 +317,7 @@ That should be double-checked.</p>
 <h2>References</h2>
 <ul class="styleguide"><li>BP160 OpQuast</li>
 <li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2</a></li>
+<li><a href="http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/">http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/</a></li>
 <li><a href="http://www.w3.org/WAI/tutorials/images/decision-tree/">http://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
 <li><a href="http://www.w3.org/TR/html51/semantics.html#alt">http://www.w3.org/TR/html51/semantics.html#alt</a></li>
 <li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
@@ -455,6 +472,124 @@ Always.</p>
   </div>
 </div>
 
+<h1 id="filename-alt" class="styleguide">[alt] containing file name</h1>
+
+<h2>Description</h2>
+<p class="styleguide">A file name in <code class="styleguide">[alt]</code> is probably wrongly automated… and would never ever help any user.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2</a></li>
+<li><a href="http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/">http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/</a></li>
+<li><a href="http://www.w3.org/WAI/tutorials/images/decision-tree/">http://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
+<li><a href="http://www.w3.org/TR/html51/semantics.html#alt">http://www.w3.org/TR/html51/semantics.html#alt</a></li>
+<li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H67.html">http://www.w3.org/TR/WCAG-TECHS/H67.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F39.html">http://www.w3.org/TR/WCAG-TECHS/F39.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F38.html">http://www.w3.org/TR/WCAG-TECHS/F38.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.pdf</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.pdf</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.pdf</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.doc</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.doc</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.doc</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.png</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.png</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.png</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.jpg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.jpg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.jpg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.gif</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.gif</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.gif</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp3</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp3</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp3</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp4</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp4</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp4</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mov</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mov</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mov</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.ogg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.ogg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.ogg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.xls</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.xls</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.xls</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.txt</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.txt</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.txt</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.zip</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.zip</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.zip</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.rar</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.rar</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.rar</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.docx</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.docx</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.docx</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.webp</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.webp</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.webp</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.apng</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.apng</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.apng</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svgz</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svgz</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svgz</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.pdf</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.pdf</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.doc</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.doc</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.png</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.png</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.jpg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.jpg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.gif</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.gif</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp3</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp3</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp4</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp4</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mov</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mov</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.ogg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.ogg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.xls</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.xls</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.txt</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.txt</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.zip</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.zip</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.rar</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.rar</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.docx</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.docx</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.webp</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.webp</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.apng</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.apng</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svg</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svgz</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">alt</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svgz</span><span class="err">"</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img alt="static/ffoodd.png" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"static/ffoodd.png"</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="na">width=</span><span class="s">"144"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
 <h1 id="href-js" class="styleguide">JS [href]</h1>
 
 <h2>Description</h2>
@@ -605,19 +740,29 @@ Any other imbrication may be a crime somewhere.</p>
 <h1 id="invalid-nesting" class="styleguide">Invalid nesting</h1>
 
 <h2>Description</h2>
-<p class="styleguide">Some nestings are forbidden, and do not have their own test case for now:
-* <code class="styleguide">&lt;option&gt;</code> and <code class="styleguide">&lt;optgroup&gt;</code> outside a <code class="styleguide">&lt;select&gt;</code>;
-* <code class="styleguide">&lt;legend&gt;</code> outside a <code class="styleguide">&lt;fieldset&gt;</code>;
-* <code class="styleguide">&lt;td&gt;</code> or <code class="styleguide">&lt;th&gt;</code> outside a <code class="styleguide">&lt;tr&gt;</code>;
-* direct children of a <code class="styleguide">&lt;table&gt;</code>.</p><p class="styleguide">Maybe other invalid nestings to test. Stay tuned.</p>
+<p class="styleguide">Some nestings are forbidden, and do not have their own test case for now:</p><ul class="styleguide"><li><code class="styleguide">&lt;option&gt;</code> and <code class="styleguide">&lt;optgroup&gt;</code> outside a <code class="styleguide">&lt;select&gt;</code>;</li>
+<li><code class="styleguide">&lt;legend&gt;</code> outside a <code class="styleguide">&lt;fieldset&gt;</code>;</li>
+<li><code class="styleguide">&lt;td&gt;</code> or <code class="styleguide">&lt;th&gt;</code> outside a <code class="styleguide">&lt;tr&gt;</code>;</li>
+<li>direct children of a <code class="styleguide">&lt;table&gt;</code>;</li>
+<li><code class="styleguide">&lt;colgroup&gt;</code> containing anything else than <code class="styleguide">&lt;col&gt;</code>.</li>
+</ul><p class="styleguide">Maybe other invalid nestings to test. Stay tuned.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-parses">http://www.w3.org/TR/WCAG20/#ensure-compat-parses</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+</ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">select</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">option</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">optgroup</span><span class="o">),</span>
-<span class="nd">:not</span><span class="o">(</span><span class="nt">select</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">optgroup</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">option</span><span class="o">,</span>
+  <pre><code><span class="nd">:not</span><span class="o">(</span><span class="nt">tr</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">td</span><span class="o">,</span>
+<span class="nd">:not</span><span class="o">(</span><span class="nt">tr</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">th</span><span class="o">,</span>
+<span class="nt">colgroup</span> <span class="o">*</span><span class="nd">:not</span><span class="o">(</span><span class="nt">col</span><span class="o">),</span>
+<span class="nd">:not</span><span class="o">(</span><span class="nt">colgroup</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">col</span><span class="o">,</span>
+<span class="nt">tr</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">td</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">th</span><span class="o">),</span>
 <span class="nt">optgroup</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">option</span><span class="o">),</span>
 <span class="nd">:not</span><span class="o">(</span><span class="nt">select</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">optgroup</span><span class="o">,</span>
 <span class="nd">:not</span><span class="o">(</span><span class="nt">fieldset</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">legend</span><span class="o">,</span>
-<span class="nt">tr</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">td</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">th</span><span class="o">),</span>
+<span class="nt">select</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">option</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">optgroup</span><span class="o">),</span>
+<span class="nd">:not</span><span class="o">(</span><span class="nt">select</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">optgroup</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">option</span><span class="o">,</span>
 <span class="nt">table</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:not</span><span class="o">(</span><span class="nt">thead</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tfoot</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tbody</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tr</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">colgroup</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">caption</span><span class="o">)</span></code></pre>
 </div>
 <h2>Test</h2>
@@ -708,35 +853,118 @@ You could use a <code class="styleguide">&lt;span&gt;</code> instead.</p>
   </div>
 </div>
 
-<h1 id="no-aria-label" class="styleguide">A label is needed for svg</h1>
+<h1 id="nested-table" class="styleguide">Nested tables</h1>
 
 <h2>Description</h2>
-<p class="styleguide">Any informative <code class="styleguide">&lt;svg&gt;</code> should either have a <code class="styleguide">[aria-label]</code>, <code class="styleguide">[aria-labelledby]</code> or a <code class="styleguide">&lt;desc&gt;</code>.</p>
+<p class="styleguide">There&#39;s no good reason to nest data tables: thus it probably means we&#39;re facing a layout table…</p>
 <h2>References</h2>
-<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1</a></li>
-<li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/F65.html">http://www.w3.org/TR/WCAG-TECHS/F65.html</a></li>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence">http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/tables/tips/">https://www.w3.org/WAI/tutorials/tables/tips/</a></li>
+<li><a href="https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175">https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">svg</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">table</span> <span class="nt">table</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
   <div class="exampleOutput">
-    <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg" version="1.1" role="img">
-  <rect x="400" y="100" width="400" height="200"
-        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
-</svg><span>†</span>
+    <table>
+  <caption>I'm a caption :3</caption>
+  <thead>
+    <tr>
+      <th scope="col">Oh boy…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I'm a table-cell!</td>
+    </tr>
+    <tr>
+      <td>
+        <table>
+          <caption>I'm a caption too!</caption>
+          <thead>
+            <tr>
+              <th scope="col">Oh boy…</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>I'm a table-cell!</td>
+            </tr>
+            <tr>
+              <td>I'm a table-cell!</td>
+            </tr>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
   </div>
   <div class="codeBlock">
-    <pre><code><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"12cm"</span> <span class="na">height=</span><span class="s">"4cm"</span> <span class="na">viewBox=</span><span class="s">"0 0 1200 400"</span>
-     <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">role=</span><span class="s">"img"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"100"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"200"</span>
-        <span class="na">fill=</span><span class="s">"forestgreen"</span> <span class="na">stroke=</span><span class="s">"darkgreen"</span> <span class="na">stroke-width=</span><span class="s">"10"</span>  <span class="nt">/&gt;</span>
-<span class="nt">&lt;/svg&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+    <pre><code><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;caption&gt;</span>I'm a caption :3<span class="nt">&lt;/caption&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Oh boy…<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>I'm a table-cell!<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>
+        <span class="nt">&lt;table&gt;</span>
+          <span class="nt">&lt;caption&gt;</span>I'm a caption too!<span class="nt">&lt;/caption&gt;</span>
+          <span class="nt">&lt;thead&gt;</span>
+            <span class="nt">&lt;tr&gt;</span>
+              <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">"col"</span><span class="nt">&gt;</span>Oh boy…<span class="nt">&lt;/th&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+          <span class="nt">&lt;/thead&gt;</span>
+          <span class="nt">&lt;tbody&gt;</span>
+            <span class="nt">&lt;tr&gt;</span>
+              <span class="nt">&lt;td&gt;</span>I'm a table-cell!<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+            <span class="nt">&lt;tr&gt;</span>
+              <span class="nt">&lt;td&gt;</span>I'm a table-cell!<span class="nt">&lt;/td&gt;</span>
+            <span class="nt">&lt;/tr&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="no-aria-level" class="styleguide">Missing [aria-level]</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Though <code class="styleguide">[aria-level]</code> is not required by ARIA specification, it&#39;s actually better to specify it.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-level">https://www.w3.org/TR/wai-aria/states_and_properties#aria-level</a></li>
+<li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-1">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-1</a></li>
+<li><a href="https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css">https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#heading">https://www.w3.org/TR/wai-aria/roles#heading</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/ARIA12.html">https://www.w3.org/TR/WCAG-TECHS/ARIA12.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/G141.html">https://www.w3.org/TR/WCAG-TECHS/G141.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H42.html">https://www.w3.org/TR/WCAG-TECHS/H42.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">heading</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-level</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <strong role="heading">Heading with undefined level</strong>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;strong</span> <span class="na">role=</span><span class="s">"heading"</span><span class="nt">&gt;</span>Heading with undefined level<span class="nt">&lt;/strong&gt;</span></code></pre>
   </div>
 </div>
 
@@ -771,6 +999,41 @@ You could use a <code class="styleguide">&lt;span&gt;</code> instead.</p>
   <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"100"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"200"</span>
         <span class="na">fill=</span><span class="s">"forestgreen"</span> <span class="na">stroke=</span><span class="s">"darkgreen"</span> <span class="na">stroke-width=</span><span class="s">"10"</span>  <span class="nt">/&gt;</span>
 <span class="nt">&lt;/svg&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="non-empty-alt" class="styleguide">[alt] should be empty for decorative image</h1>
+
+<h2>Description</h2>
+<p class="styleguide">An alternative must be empty when image is decorative only — which is declared with <code class="styleguide">[role=presentation]</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li>BP160 OpQuast</li>
+<li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2</a></li>
+<li><a href="http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01">http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01</a></li>
+<li><a href="http://www.w3.org/WAI/tutorials/images/decision-tree/">http://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#presentation">https://www.w3.org/TR/wai-aria/roles#presentation</a></li>
+<li><a href="http://www.w3.org/TR/html51/semantics.html#alt">http://www.w3.org/TR/html51/semantics.html#alt</a></li>
+<li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H67.html">http://www.w3.org/TR/WCAG-TECHS/H67.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F39.html">http://www.w3.org/TR/WCAG-TECHS/F39.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F38.html">http://www.w3.org/TR/WCAG-TECHS/F38.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">]),</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">]),</span>
+<span class="nt">input</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">]),</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">]),</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img role="presentation" alt="I'm a deocrative image!" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;img</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">alt=</span><span class="s">"I'm a deocrative image!"</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="na">width=</span><span class="s">"144"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
   </div>
 </div>
 
@@ -895,6 +1158,7 @@ And it must be the <code class="styleguide">:first-child</code>, by the way.</p>
 <li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
 <li><a href="http://www.w3.org/TR/html5/tabular-data.html#the-caption-element">http://www.w3.org/TR/html5/tabular-data.html#the-caption-element</a></li>
 <li><a href="http://www.w3.org/TR/WCAG-TECHS/H39.html">http://www.w3.org/TR/WCAG-TECHS/H39.html</a></li>
+<li><a href="https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309">https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
@@ -995,11 +1259,20 @@ Should be double checked!</p>
 
 <h2>Description</h2>
 <p class="styleguide"><code class="styleguide">&lt;thead&gt;</code>, <code class="styleguide">&lt;tfoot&gt;</code> and <code class="styleguide">&lt;tbody&gt;</code> must be in this order.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-parses">http://www.w3.org/TR/WCAG20/#ensure-compat-parses</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314">https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314</a></li>
+</ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">table</span> <span class="o">&gt;</span> <span class="nt">tfoot</span> <span class="o">~</span> <span class="nt">thead</span><span class="o">,</span>
 <span class="nt">table</span> <span class="o">&gt;</span> <span class="nt">tbody</span> <span class="o">~</span> <span class="nt">tfoot</span><span class="o">,</span>
-<span class="nt">table</span> <span class="o">&gt;</span> <span class="nt">tbody</span> <span class="o">~</span> <span class="nt">thead</span></code></pre>
+<span class="nt">table</span> <span class="o">&gt;</span> <span class="nt">tbody</span> <span class="o">~</span> <span class="nt">thead</span><span class="o">,</span>
+<span class="nt">table</span> <span class="o">&gt;</span> <span class="nt">tfoot</span> <span class="o">~</span> <span class="nt">colgroup</span><span class="o">,</span>
+<span class="nt">table</span> <span class="o">&gt;</span> <span class="nt">tbody</span> <span class="o">~</span> <span class="nt">colgroup</span><span class="o">,</span>
+<span class="nt">table</span> <span class="o">&gt;</span> <span class="nt">tbody</span> <span class="o">~</span> <span class="nt">colgroup</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -1111,6 +1384,35 @@ Should be double checked!</p>
     <span class="nt">&lt;/tr&gt;</span>
   <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="unsecured-target" class="styleguide">Unsecured [target=_blank]</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">[target=&quot;_blank&quot;]</code> links might be used for phishing.
+This is not actually an accessibility related issue, but everything helping users is welcome.</p>
+<h2>References*</h2>
+<ul class="styleguide"><li><a href="https://mathiasbynens.github.io/rel-noopener/">https://mathiasbynens.github.io/rel-noopener/</a></li>
+<li><a href="https://html.spec.whatwg.org/multipage/semantics.html#link-type-noopener">https://html.spec.whatwg.org/multipage/semantics.html#link-type-noopener</a></li>
+<li><a href="https://html.spec.whatwg.org/multipage/semantics.html#link-type-noreferrer">https://html.spec.whatwg.org/multipage/semantics.html#link-type-noreferrer</a></li>
+<li><a href="https://dev.to/ben/the-targetblank-vulnerability-by-example">https://dev.to/ben/the-targetblank-vulnerability-by-example</a></li>
+<li><a href="https://twitter.com/HugoGiraudel/status/801475801397030912">https://twitter.com/HugoGiraudel/status/801475801397030912</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">target</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nt">blank</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">rel</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">target</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nt">blank</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">rel</span><span class="o">*=</span><span class="err">"</span><span class="nt">noopener</span><span class="err">"</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">target</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nt">blank</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">rel</span><span class="o">*=</span><span class="err">"</span><span class="nt">noreferrer</span><span class="err">"</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <a href="/" target="_blank">I feel vulnerable…</a>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>I feel vulnerable…<span class="nt">&lt;/a&gt;</span></code></pre>
   </div>
 </div>
       </div>

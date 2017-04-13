@@ -55,6 +55,10 @@
           <ol>
             
               <li>
+                <a href="#accesskey">[accesskey] is a bad idea</a>
+              </li>
+            
+              <li>
                 <a href="#dimensions">[width] &amp; [height] attributes</a>
               </li>
             
@@ -79,6 +83,18 @@
               </li>
             
               <li>
+                <a href="#incorrect-charset">Incorrect charset</a>
+              </li>
+            
+              <li>
+                <a href="#inputs-group">Grouping inputs</a>
+              </li>
+            
+              <li>
+                <a href="#invalid-dir">Invalid [dir] attribute</a>
+              </li>
+            
+              <li>
                 <a href="#js-events">Javascript events attributes</a>
               </li>
             
@@ -92,6 +108,10 @@
             
               <li>
                 <a href="#no-alt">Missing alternative for img</a>
+              </li>
+            
+              <li>
+                <a href="#no-aria-label">Missing label for [role=img]</a>
               </li>
             
               <li>
@@ -139,11 +159,39 @@
               </li>
             
               <li>
+                <a href="#radio-group">[radio] outside a fieldset</a>
+              </li>
+            
+              <li>
+                <a href="#role-checkbox">[role=checkbox] missing state</a>
+              </li>
+            
+              <li>
+                <a href="#role-combobox">[role=combobox] missing [state]</a>
+              </li>
+            
+              <li>
+                <a href="#role-scrollbar">[role=scrollbar] required properties</a>
+              </li>
+            
+              <li>
+                <a href="#role-slider">[role=slider] missing attributes</a>
+              </li>
+            
+              <li>
+                <a href="#role-spinbutton">[role=spinbutton] missing attributes</a>
+              </li>
+            
+              <li>
                 <a href="#tab-order">[tabindex] &gt; 0</a>
               </li>
             
               <li>
                 <a href="#table-for-layout">table used for layout</a>
+              </li>
+            
+              <li>
+                <a href="#unaccessible-viewport">Unaccessible viewport attribute</a>
               </li>
             
           </ol>
@@ -185,6 +233,35 @@
 
       <div id="content">
         <h1>Errors</h1>
+<h1 id="accesskey" class="styleguide">[accesskey] is a bad idea</h1>
+
+<h2>Description</h2>
+<p class="styleguide">The <code class="styleguide">[accesskey]</code> attribute is meant to implement site specific keyboard shortcuts.
+This is usually a bad idea since keys might be already used by either the operating system,
+the browser, browser extension and even user&#39;s settings…</p><p class="styleguide">This is opinionated: in a perfect world, <code class="styleguide">[accesskey]</code> could be used wisely. Yup. Could be.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159">https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159</a></li>
+<li><a href="http://www.cs.tut.fi/%7Ejkorpela/forms/accesskey.html">http://www.cs.tut.fi/~jkorpela/forms/accesskey.html</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey</a></li>
+<li><a href="http://w3c.github.io/html/editing.html#element-attrdef-global-accesskey">http://w3c.github.io/html/editing.html#element-attrdef-global-accesskey</a></li>
+<li><a href="http://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/">http://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/</a></li>
+<li><a href="https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html">https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">accesskey</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <a id="key" name="key" accesskey="1">Skip to this link using <kbd>1</kbd></a>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"key"</span> <span class="na">name=</span><span class="s">"key"</span> <span class="na">accesskey=</span><span class="s">"1"</span><span class="nt">&gt;</span>Skip to this link using <span class="nt">&lt;kbd&gt;</span>1<span class="nt">&lt;/kbd&gt;&lt;/a&gt;</span></code></pre>
+  </div>
+</div>
+
 <h1 id="dimensions" class="styleguide">[width] &amp; [height] attributes</h1>
 
 <h2>Description</h2>
@@ -366,6 +443,115 @@ By the way, why would you use an empty link?</p>
   </div>
 </div>
 
+<h1 id="incorrect-charset" class="styleguide">Incorrect charset</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Using <code class="styleguide">utf-8</code> character encoding is recommended by the W3C itself:
+it &quot;supports many languages and can accommodate pages and forms in any mixture of those languages&quot;.</p><p class="styleguide">Moreover it avoids some security issues exploiting some other charsets…</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://bitsofco.de/linting-html-using-css/#incorrectcharacterset">https://bitsofco.de/linting-html-using-css/#incorrectcharacterset</a></li>
+<li><a href="https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset">https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</a></li>
+<li><a href="https://validator.w3.org/docs/help.html#faq-charset">https://validator.w3.org/docs/help.html#faq-charset</a></li>
+<li><a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning">https://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning</a></li>
+<li><a href="https://validator.w3.org/i18n-checker/">https://validator.w3.org/i18n-checker/</a></li>
+<li><a href="https://www.w3.org/International/tutorials/tutorial-char-enc/">https://www.w3.org/International/tutorials/tutorial-char-enc/</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">meta</span><span class="o">[</span><span class="nt">charset</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">charset</span><span class="o">=</span><span class="err">"</span><span class="nt">utf-8</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">meta</span><span class="o">[</span><span class="nt">charset</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">charset</span><span class="o">=</span><span class="err">"</span><span class="nt">UTF-8</span><span class="err">"</span><span class="o">]),</span>
+<span class="nt">meta</span><span class="o">[</span><span class="nt">charset</span><span class="o">=</span><span class="err">"</span><span class="nt">utf-8</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:first-child</span><span class="o">),</span>
+<span class="nt">meta</span><span class="o">[</span><span class="nt">charset</span><span class="o">=</span><span class="err">"</span><span class="nt">UTF-8</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:first-child</span><span class="o">)</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <meta charset="Windows-1252" /><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"Windows-1252"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="inputs-group" class="styleguide">Grouping inputs</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Inputs with a type of <code class="styleguide">radio</code> or <code class="styleguide">checkbox</code> are usually grouped. The <code class="styleguide">[name]</code> attribute is meant to programmatically associate them,
+thus is needed.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/WAI/tutorials/forms/grouping/">https://www.w3.org/WAI/tutorials/forms/grouping/</a></li>
+<li><a href="https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox">https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox</a></li>
+<li><a href="https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio">https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio</a></li>
+<li><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name">https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H71.html">https://www.w3.org/TR/WCAG-TECHS/H71.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">radio</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">name</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">checkbox</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:only-of-type</span><span class="o">)</span><span class="nd">:not</span><span class="o">([</span><span class="nt">name</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <form action="/">
+  <fieldset>
+    <legend>Options</legend>
+    <p>
+      <label for="option-1">Option N<sup>o</sup>1</label>
+      <input type="radio" id="option-1"><span>†</span>
+    </p>
+    <p>
+      <label for="option-2">Option N<sup>o</sup>2</label>
+      <input type="radio" id="option-2" name="options">
+    </p>
+  </fieldset>
+</form>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;legend&gt;</span>Options<span class="nt">&lt;/legend&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"option-1"</span><span class="nt">&gt;</span>Option N<span class="nt">&lt;sup&gt;</span>o<span class="nt">&lt;/sup&gt;</span>1<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"option-1"</span><span class="nt">&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"option-2"</span><span class="nt">&gt;</span>Option N<span class="nt">&lt;sup&gt;</span>o<span class="nt">&lt;/sup&gt;</span>2<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"option-2"</span> <span class="na">name=</span><span class="s">"options"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="invalid-dir" class="styleguide">Invalid [dir] attribute</h1>
+
+<h2>Description</h2>
+<p class="styleguide">The <code class="styleguide">[dir]</code> attribute — used to specify the element’s text directionality — only accepts three values: <code class="styleguide">rtl</code>, <code class="styleguide">ltr</code> and <code class="styleguide">auto</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113">https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113</a></li>
+<li><a href="https://www.w3.org/International/questions/qa-html-dir">https://www.w3.org/International/questions/qa-html-dir</a></li>
+<li><a href="https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute">https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute</a></li>
+<li><a href="http://w3c.github.io/html/dom.html#the-dir-attribute">http://w3c.github.io/html/dom.html#the-dir-attribute</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">dir</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">dir</span><span class="o">=</span><span class="err">"</span><span class="nt">rtl</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">dir</span><span class="o">=</span><span class="err">"</span><span class="nt">ltr</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">dir</span><span class="o">=</span><span class="err">"</span><span class="nt">auto</span><span class="err">"</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p dir="wtf">Well, I'm kinda disoriented…</p>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;p</span> <span class="na">dir=</span><span class="s">"wtf"</span><span class="nt">&gt;</span>Well, I'm kinda disoriented…<span class="nt">&lt;/p&gt;</span></code></pre>
+  </div>
+</div>
+
 <h1 id="js-events" class="styleguide">Javascript events attributes</h1>
 
 <h2>Description</h2>
@@ -541,6 +727,42 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="na">width=</span><span class="s">"144"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="no-aria-label" class="styleguide">Missing label for [role=img]</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">[role=img]</code> should either have <code class="styleguide">[aria-label]</code> or <code class="styleguide">[aria-labelledby]</code>.
+If image is decorative, please use <code class="styleguide">[role=presentation]</code> instead.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/TR/wai-aria/roles#img">https://www.w3.org/TR/wai-aria/roles#img</a></li>
+<li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
+<li><a href="http://www.w3.org/WAI/tutorials/images/decision-tree/">http://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#presentation">https://www.w3.org/TR/wai-aria/roles#presentation</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#textalternativecomputation">https://www.w3.org/TR/wai-aria/roles#textalternativecomputation</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">img</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">]),</span>
+<span class="nt">svg</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">img</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1" role="img">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"12cm"</span> <span class="na">height=</span><span class="s">"4cm"</span> <span class="na">viewBox=</span><span class="s">"0 0 1200 400"</span>
+     <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span> <span class="na">role=</span><span class="s">"img"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"100"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"200"</span>
+        <span class="na">fill=</span><span class="s">"forestgreen"</span> <span class="na">stroke=</span><span class="s">"darkgreen"</span> <span class="na">stroke-width=</span><span class="s">"10"</span>  <span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
   </div>
 </div>
 
@@ -891,12 +1113,206 @@ You still have a few choices: <code class="styleguide">[value]</code>, <code cla
   </div>
 </div>
 
+<h1 id="radio-group" class="styleguide">[radio] outside a fieldset</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Inputs with a type of <code class="styleguide">radio</code> should be grouped by a parent <code class="styleguide">&lt;fieldset&gt;</code>, described by its <code class="styleguide">&lt;legend&gt;</code>.</p><p class="styleguide">Please note that WCAG doesn&#39;t actually require this but strongly recommends it:
+&quot;where the individual label associated with each particular control provides a sufficient description,
+the use of the fieldset and legend elements is not required.&quot;</p><p class="styleguide">This test could be a warning…</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons">https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons</a></li>
+<li><a href="https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio">https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio</a></li>
+<li><a href="https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name">https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H71.html">https://www.w3.org/TR/WCAG-TECHS/H71.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H44.html">https://www.w3.org/TR/WCAG-TECHS/H44.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">radio</span><span class="err">"</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <form action="/">
+  <label for="option-1">Option N<sup>o</sup>1</label>
+  <input type="radio" id="option-1" name="options"><span>†</span>
+</form>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"option-1"</span><span class="nt">&gt;</span>Option N<span class="nt">&lt;sup&gt;</span>o<span class="nt">&lt;/sup&gt;</span>1<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"option-1"</span> <span class="na">name=</span><span class="s">"options"</span><span class="nt">&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="role-checkbox" class="styleguide">[role=checkbox] missing state</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">[role=&quot;spinbutton&quot;]</code> requires a few attributes:</p><ul class="styleguide"><li><code class="styleguide">[aria-valuemin]</code></li>
+<li><code class="styleguide">[aria-valuemax]</code></li>
+<li><code class="styleguide">[aria-valuenow]</code></li>
+</ul>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/TR/wai-aria/roles#checkbox">https://www.w3.org/TR/wai-aria/roles#checkbox</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked">https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked</a></li>
+<li><a href="http://oaa-accessibility.org/examples/role/76/">http://oaa-accessibility.org/examples/role/76/</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">checkbox</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-checked</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <img src="static/ffoodd.png" alt="Checkbox" role="checkbox" width="36" height="36"/><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="na">alt=</span><span class="s">"Checkbox"</span> <span class="na">role=</span><span class="s">"checkbox"</span> <span class="na">width=</span><span class="s">"36"</span> <span class="na">height=</span><span class="s">"36"</span><span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="role-combobox" class="styleguide">[role=combobox] missing [state]</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">[aria-expanded]</code> is required on <code class="styleguide">[role=&quot;combobox&quot;]</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/TR/wai-aria/roles#combobox">https://www.w3.org/TR/wai-aria/roles#combobox</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded">https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded</a></li>
+<li><a href="http://oaa-accessibility.org/examples/role/77/">http://oaa-accessibility.org/examples/role/77/</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">combobox</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-expanded</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <input type="text" aria-label="Combobox" role="combobox" id="combobox"><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">aria-label=</span><span class="s">"Combobox"</span> <span class="na">role=</span><span class="s">"combobox"</span> <span class="na">id=</span><span class="s">"combobox"</span><span class="nt">&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="role-scrollbar" class="styleguide">[role=scrollbar] required properties</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Some properties are required to comply the <code class="styleguide">[role=&quot;scrollbar&quot;]</code> pattern:</p><ul class="styleguide"><li><code class="styleguide">[aria-controls]</code></li>
+<li><code class="styleguide">[aria-valuemin]</code></li>
+<li><code class="styleguide">[aria-valuemax]</code></li>
+<li><code class="styleguide">[aria-valuenow]</code></li>
+<li><code class="styleguide">[aria-orientation]</code></li>
+</ul>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/TR/wai-aria/roles#scrollbar">https://www.w3.org/TR/wai-aria/roles#scrollbar</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls">https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation">https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">scrollbar</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-controls</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">scrollbar</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-valuemin</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">scrollbar</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-valuemax</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">scrollbar</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-valuenow</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">scrollbar</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-orientation</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div role="scrollbar">↓</div>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"scrollbar"</span><span class="nt">&gt;</span>↓<span class="nt">&lt;/div&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="role-slider" class="styleguide">[role=slider] missing attributes</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">[role=&quot;slider&quot;]</code> requires a few attributes:</p><ul class="styleguide"><li><code class="styleguide">[aria-valuemin]</code></li>
+<li><code class="styleguide">[aria-valuemax]</code></li>
+<li><code class="styleguide">[aria-valuenow]</code></li>
+</ul><p class="styleguide">Also <code class="styleguide">[aria-valuetext]</code> is welcome, even though it&#39;s not required by ARIA specification.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378">https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#slider">https://www.w3.org/TR/wai-aria/roles#slider</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax</a></li>
+<li><a href="http://www.oaa-accessibility.org/examplep/slider1/">http://www.oaa-accessibility.org/examplep/slider1/</a></li>
+<li><a href="https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/">https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/</a></li>
+<li><a href="https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/">https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/</a></li>
+<li><a href="https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/">https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role">https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">slider</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-valuemin</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">slider</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-valuemax</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">slider</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-valuenow</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <label for="slider">Slider</label>
+<input id="slider" role="slider" type="range" /><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"slider"</span><span class="nt">&gt;</span>Slider<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"slider"</span> <span class="na">role=</span><span class="s">"slider"</span> <span class="na">type=</span><span class="s">"range"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="role-spinbutton" class="styleguide">[role=spinbutton] missing attributes</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">[role=&quot;spinbutton&quot;]</code> requires a few attributes:</p><ul class="styleguide"><li><code class="styleguide">[aria-valuemin]</code></li>
+<li><code class="styleguide">[aria-valuemax]</code></li>
+<li><code class="styleguide">[aria-valuenow]</code></li>
+</ul>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/TR/wai-aria/roles#spinbutton">https://www.w3.org/TR/wai-aria/roles#spinbutton</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax">https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax</a></li>
+<li><a href="http://oaa-accessibility.org/example/33/">http://oaa-accessibility.org/example/33/</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">spinbutton</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-valuemin</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">spinbutton</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-valuemax</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">spinbutton</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-valuenow</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <label for="spinbutton">Spinbutton</label>
+<input id="spinbutton" role="spinbutton" type="range" /><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"spinbutton"</span><span class="nt">&gt;</span>Spinbutton<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"spinbutton"</span> <span class="na">role=</span><span class="s">"spinbutton"</span> <span class="na">type=</span><span class="s">"range"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
 <h1 id="tab-order" class="styleguide">[tabindex] &gt; 0</h1>
 
 <h2>Description</h2>
 <p class="styleguide">The <code class="styleguide">[tabindex]</code> attribute should never be greater than 0.</p>
 <h2>Reference</h2>
 <ul class="styleguide"><li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337</a></li>
+<li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-13">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-13</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/F44.html">https://www.w3.org/TR/WCAG-TECHS/F44.html</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
@@ -964,6 +1380,35 @@ However, semantics tags and attributes aiming to organize datas mustn&#39;t be u
     <span class="nt">&lt;/tr&gt;</span>
   <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="unaccessible-viewport" class="styleguide">Unaccessible viewport attribute</h1>
+
+<h2>Description</h2>
+<p class="styleguide">User should be able to zoom in or out the page to improve readability and comfort; this is usually allowed by the viewport <code class="styleguide">&lt;meta&gt;</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://bitsofco.de/linting-html-using-css/">https://bitsofco.de/linting-html-using-css/</a></li>
+<li><a href="https://dequeuniversity.com/rules/axe/2.1/meta-viewport">https://dequeuniversity.com/rules/axe/2.1/meta-viewport</a></li>
+<li><a href="https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale">https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale</a></li>
+<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html</a></li>
+<li><a href="http://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/">http://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/</a></li>
+<li><a href="http://adrianroselli.com/2015/10/dont-disable-zoom.html">http://adrianroselli.com/2015/10/dont-disable-zoom.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">meta</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="err">"</span><span class="nt">viewport</span><span class="err">"</span><span class="o">][</span><span class="nt">content</span><span class="o">*=</span><span class="err">"</span><span class="nt">maximum-scale</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">meta</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="err">"</span><span class="nt">viewport</span><span class="err">"</span><span class="o">][</span><span class="nt">content</span><span class="o">*=</span><span class="err">"</span><span class="nt">minimum-scale</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">meta</span><span class="o">[</span><span class="nt">name</span><span class="o">=</span><span class="err">"</span><span class="nt">viewport</span><span class="err">"</span><span class="o">][</span><span class="nt">content</span><span class="o">*=</span><span class="err">"</span><span class="nt">user-scalable</span><span class="o">=</span><span class="nt">no</span><span class="err">"</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <meta name="viewport" content="user-scalable=no" /><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"user-scalable=no"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
   </div>
 </div>
       </div>
