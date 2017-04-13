@@ -115,7 +115,7 @@
               </li>
             
               <li>
-                <a href="#target-blank">A link opening new tab or window</a>
+                <a href="#target-blank">Link opening new tab</a>
               </li>
             
               <li>
@@ -331,7 +331,11 @@
 <span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.txt</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
 <span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.zip</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
 <span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.rar</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.docx</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">)</span></code></pre>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.docx</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.webp</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.apng</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svg</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svgz</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">)</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -466,7 +470,7 @@ Otherwise you may annoy your users.</p>
 <h1 id="placeholder" class="styleguide">Placeholder can&#39;t replace a label</h1>
 
 <h2>Description</h2>
-<p class="styleguide">A <code class="styleguide">[placeholder]</code> is not a label, isn&#39;t it?</p>
+<p class="styleguide">A <code class="styleguide">[placeholder]</code> is not a label, is it?</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="o">[</span><span class="nt">placeholder</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
@@ -575,7 +579,7 @@ Otherwise you may annoy your users.</p>
   </div>
 </div>
 
-<h1 id="target-blank" class="styleguide">A link opening new tab or window</h1>
+<h1 id="target-blank" class="styleguide">Link opening new tab</h1>
 
 <h2>Description</h2>
 <p class="styleguide">A link opening new tab or window should warn user about its behaviour.
@@ -595,11 +599,11 @@ You could use a <code class="styleguide">[title]</code>, for example.</p>
 <h2>Test</h2>
 <div class="codeExample">
   <div class="exampleOutput">
-    <a href="/" target="_blank">New tab</a>
+    <a href="/" target="_blank" rel="noopener noreferrer">New tab</a>
 
   </div>
   <div class="codeBlock">
-    <pre><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="na">target=</span><span class="s">"_blank"</span><span class="nt">&gt;</span>New tab<span class="nt">&lt;/a&gt;</span></code></pre>
+    <pre><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="na">target=</span><span class="s">"_blank"</span> <span class="na">rel=</span><span class="s">"noopener noreferrer"</span><span class="nt">&gt;</span>New tab<span class="nt">&lt;/a&gt;</span></code></pre>
   </div>
 </div>
 
