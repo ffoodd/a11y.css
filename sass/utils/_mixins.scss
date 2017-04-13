@@ -167,13 +167,12 @@
 ///  @include a11y-head()
 @mixin a11y-head($self-closing: false) {
   // Because it's in the <head>
+  display: block !important;
+
   @if $self-closing {
     & ~ link:last-of-type {
       display: block !important;
     }
-  }
-  @else {
-    display: block !important;
   }
 }
 
