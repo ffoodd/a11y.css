@@ -211,18 +211,19 @@
 /// CSS content for pseudo-element used to display a message.
 /// @access private
 @mixin a11y-before {
-  border-radius: 0;
-  display: block;
+  border-radius: 0 !important;
+  display: block !important;
   font: 700 normal 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
   height: auto !important;
-  max-width: 100vw;
-  padding: 4px;
+  max-width: 100vw !important;
+  padding: 4px !important;
   pointer-events: none !important;
   position: absolute !important;
   text-decoration: none !important;
   text-shadow: none !important;
   text-transform: none !important;
-  white-space: pre;
+  transform: none !important;
+  white-space: pre !important;
   width: auto !important;
 }
 
