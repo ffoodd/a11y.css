@@ -12,6 +12,8 @@ The `[tabindex]` attribute should never be greater than 0.
 
 ##Reference
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-13>
+* <https://www.w3.org/TR/WCAG-TECHS/F44.html>
 
 ##Selector
 ```css_example
@@ -175,6 +177,48 @@ img:not([alt]),
 area:not([alt]),
 input[type="image"]:not([alt]) {
   @include error('no-alt', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "Missing label for [role=img]"
+name: no-aria-label
+category: Errors
+---
+
+##Description
+`[role=img]` should either have `[aria-label]` or `[aria-labelledby]`.
+If image is decorative, please use `[role=presentation]` instead.
+
+##References
+* <https://www.w3.org/TR/wai-aria/roles#img>
+* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/wai-aria/roles#presentation>
+* <https://www.w3.org/TR/wai-aria/roles#textalternativecomputation>
+
+##Selector
+```css_example
+[role="img"]:not([aria-label]):not([aria-labelledby]),
+svg[role="img"]:not([aria-label]):not([aria-labelledby])
+```
+
+##Test
+```html_example
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1" role="img">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+```
+*/
+[role="img"]:not([aria-label]):not([aria-labelledby]) {
+  @include error('no-aria-label');
+}
+
+svg[role="img"]:not([aria-label]):not([aria-labelledby]) {
+  @include error('no-aria-label', $self-closing: true);
 }
 
 
@@ -1070,11 +1114,469 @@ title:empty {
 }
 
 title:blank {
-  @include error('no-page-title', $self-closing: false);
+  @include error('no-page-title');
   @include a11y-head();
 }
 
 title:-moz-only-whitespace {
-  @include error('no-page-title', $self-closing: false);
+  @include error('no-page-title');
   @include a11y-head();
+}
+
+
+/*doc
+---
+title: "Unaccessible viewport attribute"
+name: unaccessible-viewport
+category: Errors
+---
+
+##Description
+User should be able to zoom in or out the page to improve readability and comfort; this is usually allowed by the viewport `<meta>`.
+
+##References
+* <https://bitsofco.de/linting-html-using-css/>
+* <https://dequeuniversity.com/rules/axe/2.1/meta-viewport>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale>
+* <https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-scale.html>
+* <http://www.accede-web.com/notices/html-css-javascript/11-zoom-taille-texte/11-3-ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/>
+* <http://adrianroselli.com/2015/10/dont-disable-zoom.html>
+
+##Selector
+```css_example
+meta[name="viewport"][content*="maximum-scale"],
+meta[name="viewport"][content*="minimum-scale"],
+meta[name="viewport"][content*="user-scalable=no"]
+```
+
+##Test
+```html_example
+<meta name="viewport" content="user-scalable=no" /><span>†</span>
+```
+*/
+meta[name="viewport"][content*="maximum-scale"],
+meta[name="viewport"][content*="minimum-scale"],
+meta[name="viewport"][content*="user-scalable=no"] {
+  @include error('unaccessible-viewport', $self-closing: true, $head: true);
+  @include a11y-head($self-closing: true);
+}
+
+
+/*doc
+---
+title: "Incorrect charset"
+name: incorrect-charset
+category: Errors
+---
+
+##Description
+Using `utf-8` character encoding is recommended by the W3C itself:
+it "supports many languages and can accommodate pages and forms in any mixture of those languages".
+
+Moreover it avoids some security issues exploiting some other charsets…
+
+##References
+* <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
+* <https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
+* <https://validator.w3.org/docs/help.html#faq-charset>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#meaning>
+* <https://validator.w3.org/i18n-checker/>
+* <https://www.w3.org/International/tutorials/tutorial-char-enc/>
+
+##Selector
+```css_example
+meta[charset]:not([charset="utf-8"]),
+meta[charset]:not([charset="UTF-8"]),
+meta[charset="utf-8"]:not(:first-child),
+meta[charset="UTF-8"]:not(:first-child)
+```
+
+##Test
+```html_example
+<meta charset="Windows-1252" /><span>†</span>
+```
+*/
+meta[charset]:not([charset="utf-8"]),
+meta[charset]:not([charset="UTF-8"]),
+meta[charset="utf-8"]:not(:first-child),
+meta[charset="UTF-8"]:not(:first-child) {
+  @include error('incorrect-charset', $self-closing: true, $head: true);
+  @include a11y-head($self-closing: true);
+}
+
+
+/*doc
+---
+title: "Invalid [dir] attribute"
+name: invalid-dir
+category: Errors
+---
+
+##Description
+The `[dir]` attribute — used to specify the element’s text directionality — only accepts three values: `rtl`, `ltr` and `auto`.
+
+##References
+* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113>
+* <https://www.w3.org/International/questions/qa-html-dir>
+* <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
+* <http://w3c.github.io/html/dom.html#the-dir-attribute>
+
+##Selector
+```css_example
+[dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"])
+```
+
+##Test
+```html_example
+<p dir="wtf">Well, I'm kinda disoriented…</p>
+```
+*/
+[dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"]) {
+  @include error('invalid-dir');
+}
+
+
+/*doc
+---
+title: "[accesskey] is a bad idea"
+name: accesskey
+category: Errors
+---
+
+##Description
+The `[accesskey]` attribute is meant to implement site specific keyboard shortcuts.
+This is usually a bad idea since keys might be already used by either the operating system,
+the browser, browser extension and even user's settings…
+
+This is opinionated: in a perfect world, `[accesskey]` could be used wisely. Yup. Could be.
+
+##References
+* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159>
+* <http://www.cs.tut.fi/~jkorpela/forms/accesskey.html>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey>
+* <http://w3c.github.io/html/editing.html#element-attrdef-global-accesskey>
+* <http://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/>
+* <https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html>
+
+##Selector
+```css_example
+[accesskey]
+```
+
+##Test
+```html_example
+<a id="key" name="key" accesskey="1">Skip to this link using <kbd>1</kbd></a>
+```
+*/
+[accesskey] {
+  @include error('accesskey');
+}
+
+
+/*doc
+---
+title: "Grouping inputs"
+name: inputs-group
+category: Errors
+---
+
+##Description
+Inputs with a type of `radio` or `checkbox` are usually grouped. The `[name]` attribute is meant to programmatically associate them,
+thus is needed.
+
+##References
+* <https://www.w3.org/WAI/tutorials/forms/grouping/>
+* <https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox>
+* <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
+* <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
+* <https://www.w3.org/TR/WCAG-TECHS/H71.html>
+
+##Selector
+```css_example
+[type="radio"]:not([name]),
+[type="checkbox"]:not(:only-of-type):not([name])
+```
+
+##Test
+```html_example
+<form action="/">
+  <fieldset>
+    <legend>Options</legend>
+    <p>
+      <label for="option-1">Option N<sup>o</sup>1</label>
+      <input type="radio" id="option-1"><span>†</span>
+    </p>
+    <p>
+      <label for="option-2">Option N<sup>o</sup>2</label>
+      <input type="radio" id="option-2" name="options">
+    </p>
+  </fieldset>
+</form>
+```
+*/
+[type="radio"]:not([name]),
+[type="checkbox"]:not(:only-of-type):not([name]) {
+  @include error('inputs-group', $self-closing: true);
+}
+
+
+/*doc
+---
+title: "[radio] outside a fieldset"
+name: radio-group
+category: Errors
+---
+
+##Description
+Inputs with a type of `radio` should be grouped by a parent `<fieldset>`, described by its `<legend>`.
+
+Please note that WCAG doesn't actually require this but strongly recommends it:
+"where the individual label associated with each particular control provides a sufficient description,
+the use of the fieldset and legend elements is not required."
+
+This test could be a warning…
+
+##References
+* <https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons>
+* <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
+* <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
+* <https://www.w3.org/TR/WCAG-TECHS/H71.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+
+##Selector
+```css_example
+[type="radio"]
+```
+
+##Test
+```html_example
+<form action="/">
+  <label for="option-1">Option N<sup>o</sup>1</label>
+  <input type="radio" id="option-1" name="options"><span>†</span>
+</form>
+```
+*/
+[type="radio"] {
+  @include error('radio-group', $self-closing: true);
+}
+
+fieldset [type="radio"] {
+  @include a11y-reset;
+}
+
+
+/*doc
+---
+title: "[role=slider] missing attributes"
+name: role-slider
+category: Errors
+---
+
+##Description
+`[role="slider"]` requires a few attributes:
+
+* `[aria-valuemin]`
+* `[aria-valuemax]`
+* `[aria-valuenow]`
+
+Also `[aria-valuetext]` is welcome, even though it's not required by ARIA specification.
+
+##References
+* <https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378>
+* <https://www.w3.org/TR/wai-aria/roles#slider>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
+* <http://www.oaa-accessibility.org/examplep/slider1/>
+* <https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/>
+* <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/>
+* <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/>
+* <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role>
+
+##Selector
+```css_example
+[role="slider"]:not([aria-valuemin]),
+[role="slider"]:not([aria-valuemax]),
+[role="slider"]:not([aria-valuenow])
+```
+
+##Test
+```html_example
+<label for="slider">Slider</label>
+<input id="slider" role="slider" type="range" /><span>†</span>
+```
+*/
+[role="slider"]:not([aria-valuemin]),
+[role="slider"]:not([aria-valuemax]),
+[role="slider"]:not([aria-valuenow]) {
+  @include error('role-slider');
+
+  @include void-tags {
+    @include error('role-slider', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "[role=spinbutton] missing attributes"
+name: role-spinbutton
+category: Errors
+---
+
+##Description
+`[role="spinbutton"]` requires a few attributes:
+
+* `[aria-valuemin]`
+* `[aria-valuemax]`
+* `[aria-valuenow]`
+
+##References
+* <https://www.w3.org/TR/wai-aria/roles#spinbutton>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
+* <http://oaa-accessibility.org/example/33/>
+
+##Selector
+```css_example
+[role="spinbutton"]:not([aria-valuemin]),
+[role="spinbutton"]:not([aria-valuemax]),
+[role="spinbutton"]:not([aria-valuenow])
+```
+
+##Test
+```html_example
+<label for="spinbutton">Spinbutton</label>
+<input id="spinbutton" role="spinbutton" type="range" /><span>†</span>
+```
+*/
+[role="spinbutton"]:not([aria-valuemin]),
+[role="spinbutton"]:not([aria-valuemax]),
+[role="spinbutton"]:not([aria-valuenow]) {
+  @include error('role-spinbutton');
+
+  @include void-tags {
+    @include error('role-spinbutton', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "[role=checkbox] missing state"
+name: role-checkbox
+category: Errors
+---
+
+##Description
+`[role="spinbutton"]` requires a few attributes:
+
+* `[aria-valuemin]`
+* `[aria-valuemax]`
+* `[aria-valuenow]`
+
+##References
+* <https://www.w3.org/TR/wai-aria/roles#checkbox>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked>
+* <http://oaa-accessibility.org/examples/role/76/>
+
+##Selector
+```css_example
+[role="checkbox"]:not([aria-checked])
+```
+
+##Test
+```html_example
+<img src="static/ffoodd.png" alt="Checkbox" role="checkbox" width="36" height="36"/><span>†</span>
+```
+*/
+[role="checkbox"]:not([aria-checked]) {
+  @include error('role-checkbox');
+
+  @include void-tags {
+    @include error('role-checkbox', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "[role=combobox] missing [state]"
+name: role-combobox
+category: Errors
+---
+
+##Description
+`[aria-expanded]` is required on `[role="combobox"]`.
+
+##References
+* <https://www.w3.org/TR/wai-aria/roles#combobox>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded>
+* <http://oaa-accessibility.org/examples/role/77/>
+
+##Selector
+```css_example
+[role="combobox"]:not([aria-expanded])
+```
+
+##Test
+```html_example
+<input type="text" aria-label="Combobox" role="combobox" id="combobox"><span>†</span>
+```
+*/
+[role="combobox"]:not([aria-expanded]) {
+  @include error('role-combobox');
+
+  @include void-tags {
+    @include error('role-combobox', $self-closing: true);
+  }
+}
+
+
+/*doc
+---
+title: "[role=scrollbar] required properties"
+name: role-scrollbar
+category: Errors
+---
+
+##Description
+Some properties are required to comply the `[role="scrollbar"]` pattern:
+
+* `[aria-controls]`
+* `[aria-valuemin]`
+* `[aria-valuemax]`
+* `[aria-valuenow]`
+* `[aria-orientation]`
+
+##References
+* <https://www.w3.org/TR/wai-aria/roles#scrollbar>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemax>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation>
+
+##Selector
+```css_example
+[role="scrollbar"]:not([aria-controls]),
+[role="scrollbar"]:not([aria-valuemin]),
+[role="scrollbar"]:not([aria-valuemax]),
+[role="scrollbar"]:not([aria-valuenow]),
+[role="scrollbar"]:not([aria-orientation])
+```
+
+##Test
+```html_example
+<div role="scrollbar">↓</div>
+```
+*/
+[role="scrollbar"]:not([aria-controls]),
+[role="scrollbar"]:not([aria-valuemin]),
+[role="scrollbar"]:not([aria-valuemax]),
+[role="scrollbar"]:not([aria-valuenow]),
+[role="scrollbar"]:not([aria-orientation]) {
+  @include error('role-scrollbar');
 }

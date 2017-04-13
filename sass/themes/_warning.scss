@@ -188,21 +188,32 @@ category: Warnings
 
 ##Description
 Some nestings are forbidden, and do not have their own test case for now:
+
 * `<option>` and `<optgroup>` outside a `<select>`;
 * `<legend>` outside a `<fieldset>`;
 * `<td>` or `<th>` outside a `<tr>`;
-* direct children of a `<table>`.
+* direct children of a `<table>`;
+* `<colgroup>` containing anything else than `<col>`.
 
 Maybe other invalid nestings to test. Stay tuned.
 
+##References
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+
 ##Selector
 ```css_example
-select > :not(option):not(optgroup),
-:not(select):not(optgroup) > option,
+:not(tr) > td,
+:not(tr) > th,
+colgroup *:not(col),
+:not(colgroup) > col,
+tr > :not(td):not(th),
 optgroup > :not(option),
 :not(select) > optgroup,
 :not(fieldset) > legend,
-tr > :not(td):not(th),
+select > :not(option):not(optgroup),
+:not(select):not(optgroup) > option,
 table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption)
 ```
 
@@ -211,12 +222,16 @@ table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption)
 <legend>I'm an legend. Am I?</legend>
 ```
 */
-select > :not(option):not(optgroup),
-:not(select):not(optgroup) > option,
+:not(tr) > td,
+:not(tr) > th,
+colgroup *:not(col),
+:not(colgroup) > col,
+tr > :not(td):not(th),
 optgroup > :not(option),
 :not(select) > optgroup,
 :not(fieldset) > legend,
-tr > :not(td):not(th),
+select > :not(option):not(optgroup),
+:not(select):not(optgroup) > option,
 table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption) {
   @include warning('invalid-nesting');
 }
@@ -403,6 +418,7 @@ That should be double-checked.
 ##References
 * BP160 OpQuast
 * <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
 * <http://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <http://www.w3.org/TR/html51/semantics.html#alt>
 * <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
@@ -438,35 +454,185 @@ object[type="image"][alt=""] {
 
 /*doc
 ---
-title: "A label is needed for svg"
-name: no-aria-label
+title: "[alt] containing file name"
+name: filename-alt
 category: Warnings
 ---
 
 ##Description
-Any informative `<svg>` should either have a `[aria-label]`, `[aria-labelledby]` or a `<desc>`.
+A file name in `[alt]` is probably wrongly automated… and would never ever help any user.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
+* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <http://www.w3.org/TR/html51/semantics.html#alt>
 * <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
+* <http://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F38.html>
 
 ##Selector
 ```css_example
-svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby])
+img[alt$=".pdf"],
+area[alt$=".pdf"],
+input[type="image"][alt$=".pdf"],
+img[alt$=".doc"],
+area[alt$=".doc"],
+input[type="image"][alt$=".doc"],
+img[alt$=".png"],
+area[alt$=".png"],
+input[type="image"][alt$=".png"],
+img[alt$=".jpg"],
+area[alt$=".jpg"],
+input[type="image"][alt$=".jpg"],
+img[alt$=".gif"],
+area[alt$=".gif"],
+input[type="image"][alt$=".gif"],
+img[alt$=".mp3"],
+area[alt$=".mp3"],
+input[type="image"][alt$=".mp3"],
+img[alt$=".mp4"],
+area[alt$=".mp4"],
+input[type="image"][alt$=".mp4"],
+img[alt$=".mov"],
+area[alt$=".mov"],
+input[type="image"][alt$=".mov"],
+img[alt$=".ogg"],
+area[alt$=".ogg"],
+input[type="image"][alt$=".ogg"],
+img[alt$=".xls"],
+area[alt$=".xls"],
+input[type="image"][alt$=".xls"],
+img[alt$=".txt"],
+area[alt$=".txt"],
+input[type="image"][alt$=".txt"],
+img[alt$=".zip"],
+area[alt$=".zip"],
+input[type="image"][alt$=".zip"],
+img[alt$=".rar"],
+area[alt$=".rar"],
+input[type="image"][alt$=".rar"],
+img[alt$=".docx"],
+area[alt$=".docx"],
+input[type="image"][alt$=".docx"],
+img[alt$=".webp"],
+area[alt$=".webp"],
+input[type="image"][alt$=".webp"],
+img[alt$=".apng"],
+area[alt$=".apng"],
+input[type="image"][alt$=".apng"],
+img[alt$=".svg"],
+area[alt$=".svg"],
+input[type="image"][alt$=".svg"],
+img[alt$=".svgz"],
+area[alt$=".svgz"],
+input[type="image"][alt$=".svgz"],
+embed[type="image"][alt$=".pdf"],
+object[type="image"][alt$=".pdf"],
+embed[type="image"][alt$=".doc"],
+object[type="image"][alt$=".doc"],
+embed[type="image"][alt$=".png"],
+object[type="image"][alt$=".png"],
+embed[type="image"][alt$=".jpg"],
+object[type="image"][alt$=".jpg"],
+embed[type="image"][alt$=".gif"],
+object[type="image"][alt$=".gif"],
+embed[type="image"][alt$=".mp3"],
+object[type="image"][alt$=".mp3"],
+embed[type="image"][alt$=".mp4"],
+object[type="image"][alt$=".mp4"],
+embed[type="image"][alt$=".mov"],
+object[type="image"][alt$=".mov"],
+embed[type="image"][alt$=".ogg"],
+object[type="image"][alt$=".ogg"],
+embed[type="image"][alt$=".xls"],
+object[type="image"][alt$=".xls"],
+embed[type="image"][alt$=".txt"],
+object[type="image"][alt$=".txt"],
+embed[type="image"][alt$=".zip"],
+object[type="image"][alt$=".zip"],
+embed[type="image"][alt$=".rar"],
+object[type="image"][alt$=".rar"],
+embed[type="image"][alt$=".docx"],
+object[type="image"][alt$=".docx"],
+embed[type="image"][alt$=".webp"],
+object[type="image"][alt$=".webp"],
+embed[type="image"][alt$=".apng"],
+object[type="image"][alt$=".apng"],
+embed[type="image"][alt$=".svg"],
+object[type="image"][alt$=".svg"],
+embed[type="image"][alt$=".svgz"],
+object[type="image"][alt$=".svgz"]
 ```
 
 ##Test
 ```html_example
-<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg" version="1.1" role="img">
-  <rect x="400" y="100" width="400" height="200"
-        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
-</svg><span>†</span>
+<img alt="static/ffoodd.png" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
 */
-svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) {
-  @include warning('no-aria-label', $self-closing: true);
+$alt: ();
+$self-alt: ();
+
+@each $format in $formats {
+  $alt: append($alt, unquote('img[alt$=".#{$format}"], area[alt$=".#{$format}"], input[type="image"][alt$=".#{$format}"]'), 'comma');
+  $self-alt: append($self-alt, unquote('embed[type="image"][alt$=".#{$format}"], object[type="image"][alt$=".#{$format}"]'), 'comma');
+}
+
+#{$alt} {
+  @include warning('filename-alt', $self-closing: true);
+}
+
+#{$self-alt} {
+  @include warning('filename-alt');
+}
+
+
+/*doc
+---
+title: "[alt] should be empty for decorative image"
+name: non-empty-alt
+category: Warnings
+---
+
+##Description
+An alternative must be empty when image is decorative only — which is declared with `[role=presentation]`.
+
+##References
+* BP160 OpQuast
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
+* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/wai-aria/roles#presentation>
+* <http://www.w3.org/TR/html51/semantics.html#alt>
+* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <http://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F38.html>
+
+##Selector
+```css_example
+img[role="presentation"]:not([alt=""]),
+area[role="presentation"]:not([alt=""]),
+input[role="presentation"]:not([alt=""]),
+embed[type="image"][role="presentation"]:not([alt=""]),
+object[type="image"][role="presentation"]:not([alt=""])
+```
+
+##Test
+```html_example
+<img role="presentation" alt="I'm a deocrative image!" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
+```
+*/
+img[role="presentation"]:not([alt=""]),
+area[role="presentation"]:not([alt=""]),
+input[role="presentation"]:not([alt=""]) {
+  @include warning('non-empty-alt', $self-closing: true);
+}
+
+embed[type="image"][role="presentation"]:not([alt=""]),
+object[type="image"][role="presentation"]:not([alt=""]) {
+  @include warning('empty-alt');
 }
 
 
@@ -736,6 +902,68 @@ table:not([role="presentation"]) > tbody > tr:only-child {
 
 /*doc
 ---
+title: "Nested tables"
+name: nested-table
+category: Warnings
+---
+
+##Description
+There's no good reason to nest data tables: thus it probably means we're facing a layout table…
+
+##References
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://www.w3.org/WAI/tutorials/tables/tips/>
+* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175>
+
+##Selector
+```css_example
+table table
+```
+
+##Test
+```html_example
+<table>
+  <caption>I'm a caption :3</caption>
+  <thead>
+    <tr>
+      <th scope="col">Oh boy…</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>I'm a table-cell!</td>
+    </tr>
+    <tr>
+      <td>
+        <table>
+          <caption>I'm a caption too!</caption>
+          <thead>
+            <tr>
+              <th scope="col">Oh boy…</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>I'm a table-cell!</td>
+            </tr>
+            <tr>
+              <td>I'm a table-cell!</td>
+            </tr>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+```
+*/
+table table {
+  @include warning('nested-table');
+}
+
+
+/*doc
+---
 title: "Every data table must have a caption"
 name: table-caption
 category: Warnings
@@ -750,6 +978,7 @@ And it must be the `:first-child`, by the way.
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <http://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
 * <http://www.w3.org/TR/WCAG-TECHS/H39.html>
+* <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309>
 
 ##Selector
 ```css_example
@@ -793,11 +1022,20 @@ category: Warnings
 ##Description
 `<thead>`, `<tfoot>` and `<tbody>` must be in this order.
 
+##References
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314>
+
 ##Selector
 ```css_example
 table > tfoot ~ thead,
 table > tbody ~ tfoot,
-table > tbody ~ thead
+table > tbody ~ thead,
+table > tfoot ~ colgroup,
+table > tbody ~ colgroup,
+table > tbody ~ colgroup
 ```
 
 ##Test
@@ -828,7 +1066,10 @@ table > tbody ~ thead
 */
 table > tfoot ~ thead,
 table > tbody ~ tfoot,
-table > tbody ~ thead {
+table > tbody ~ thead,
+table > tfoot ~ colgroup,
+table > tbody ~ colgroup,
+table > tbody ~ colgroup {
   @include warning('table-structure');
 }
 
@@ -1096,4 +1337,75 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
   @include void-tags {
     @include warning('style-attr', $self-closing: true);
   }
+}
+
+
+/*doc
+---
+title: "Unsecured [target=_blank]"
+name: unsecured-target
+category: Warnings
+---
+
+##Description
+`[target="_blank"]` links might be used for phishing.
+This is not actually an accessibility related issue, but everything helping users is welcome.
+
+##References*
+* <https://mathiasbynens.github.io/rel-noopener/>
+* <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noopener>
+* <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noreferrer>
+* <https://dev.to/ben/the-targetblank-vulnerability-by-example>
+* <https://twitter.com/HugoGiraudel/status/801475801397030912>
+
+##Selector
+```css_example
+[target$="blank"]:not([rel]),
+[target$="blank"]:not([rel*="noopener"]),
+[target$="blank"]:not([rel*="noreferrer"])
+```
+
+##Test
+```html_example
+<a href="/" target="_blank">I feel vulnerable…</a>
+```
+*/
+[target$="blank"]:not([rel]),
+[target$="blank"]:not([rel*="noopener"]),
+[target$="blank"]:not([rel*="noreferrer"]) {
+  @include warning('unsecured-target');
+}
+
+
+/*doc
+---
+title: "Missing [aria-level]"
+name: no-aria-level
+category: Warnings
+---
+
+##Description
+Though `[aria-level]` is not required by ARIA specification, it's actually better to specify it.
+
+##References
+* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-level>
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-1>
+* <https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css>
+* <https://www.w3.org/TR/wai-aria/roles#heading>
+* <https://www.w3.org/TR/WCAG-TECHS/ARIA12.html>
+* <https://www.w3.org/TR/WCAG-TECHS/G141.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H42.html>
+
+##Selector
+```css_example
+[role="heading"]:not([aria-level])
+```
+
+##Test
+```html_example
+<strong role="heading">Heading with undefined level</strong>
+```
+*/
+[role="heading"]:not([aria-level]) {
+  @include warning('no-aria-level');
 }

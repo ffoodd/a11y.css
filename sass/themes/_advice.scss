@@ -65,8 +65,6 @@ category: Advices
 }
 
 
-
-
 /*doc
 ---
 title: "A second main tag"
@@ -239,7 +237,7 @@ a[role="button"] {
 
 /*doc
 ---
-title: "A link opening new tab or window"
+title: "Link opening new tab"
 name: target-blank
 category: Advices
 ---
@@ -263,7 +261,7 @@ You could use a `[title]`, for example.
 
 ##Test
 ```html_example
-<a href="/" target="_blank">New tab</a>
+<a href="/" target="_blank" rel="noopener noreferrer">New tab</a>
 ```
 */
 [target$="blank"] {
@@ -303,7 +301,11 @@ A link to a file should indicate the file format, the file size and if different
 [href$=".txt"]:not(link),
 [href$=".zip"]:not(link),
 [href$=".rar"]:not(link),
-[href$=".docx"]:not(link)
+[href$=".docx"]:not(link),
+[href$=".webp"]:not(link),
+[href$=".apng"]:not(link),
+[href$=".svg"]:not(link),
+[href$=".svgz"]:not(link)
 ```
 
 ##Test
@@ -311,21 +313,13 @@ A link to a file should indicate the file format, the file size and if different
 <a href="/file.png">Wanna file?</a>
 ```
 */
-[download],
-[href$=".pdf"]:not(link),
-[href$=".doc"]:not(link),
-[href$=".png"]:not(link),
-[href$=".jpg"]:not(link),
-[href$=".gif"]:not(link),
-[href$=".mp3"]:not(link),
-[href$=".mp4"]:not(link),
-[href$=".mov"]:not(link),
-[href$=".ogg"]:not(link),
-[href$=".xls"]:not(link),
-[href$=".txt"]:not(link),
-[href$=".zip"]:not(link),
-[href$=".rar"]:not(link),
-[href$=".docx"]:not(link) {
+$href: ('[download]');
+
+@each $format in $formats {
+  $href: append($href, unquote('[href$=".#{$format}"]:not(link)'), 'comma');
+}
+
+#{$href} {
   @include advice('file-format');
 }
 
@@ -497,7 +491,7 @@ category: Advices
 ---
 
 ##Description
-A `[placeholder]` is not a label, isn't it?
+A `[placeholder]` is not a label, is it?
 
 ##Selector
 ```css_example
