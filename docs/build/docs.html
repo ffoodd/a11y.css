@@ -3,9 +3,9 @@
   <head>
     
     <meta charset="utf-8" />
-<title>SassDoc for a11y.css — v3.4.0</title>
+<title>SassDoc for a11y.css — v4.0.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="SassDoc documentation for a11y.css — v3.4.0">
+<meta name="description" content="SassDoc documentation for a11y.css — v4.0.1">
 <link rel="stylesheet" href="static/main.css" />
 <link href="http://ffoodd.github.io/a11y.css/static/favicon.ico" rel="shortcut icon">
   </head>
@@ -938,6 +938,20 @@
 
 
 
+  
+    
+
+     
+        <li>
+          <span>[variable]</span>
+          <a href="#undefined-variable-disabled-tests"><code>disabled-tests</code></a>
+          
+        </li>
+      
+    
+
+
+
 
   </ul>
 
@@ -964,18 +978,17 @@
 
 <code class="language-scss">@mixin a11y-head($self-closing: false) { 
   // Because it&#39;s in the &lt;head&gt;
+  display: block !important;
+
   @if $self-closing {
     &amp; ~ link:last-of-type {
       display: block !important;
     }
   }
-  @else {
-    display: block !important;
-  }
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L168-L178">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L168-L177">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1269,7 +1282,7 @@ Either:</p>
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L187-L209">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L186-L208">
     View source on GitHub
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1353,6 +1366,14 @@ Either:</p>
 
 
   
+
+
+  
+
+
+
+  
+
 
 
   
@@ -1561,6 +1582,14 @@ Either:</p>
 
 
   
+
+
+  
+
+
+
+  
+
 
 
   
@@ -1927,6 +1956,18 @@ Each theme has an icon, a color and a z-index, and a background offset.</p>
       
       <h5>Used by</h5>
       <ul>
+    
+
+    <li>
+      <span>[mixin]</span>
+      <a href="#messages-mixin-disable-tests"><code>disable-tests</code></a>
+    </li>
+  
+
+
+
+  
+
     
 
     <li>
