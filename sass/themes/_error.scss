@@ -1151,7 +1151,7 @@ meta[name="viewport"][content*="user-scalable=no"]
 
 ##Test
 ```html_example
-<iframe src="static/viewport.html" sandbox="allow-same-origin"></iframe><span>†</span>
+<iframe src="static/viewport.html" sandbox="allow-same-origin" title="Wrong viewport instruction example"></iframe><span>†</span>
 ```
 */
 meta[name="viewport"][content*="maximum-scale"],
