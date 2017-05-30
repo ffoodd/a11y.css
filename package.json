@@ -27,17 +27,17 @@
   "devDependencies": {
     "fs-promise": "^0.5.0",
     "gulp": "~3.9.0",
-    "gulp-autoprefixer": "latest",
-    "gulp-concat": "^2.6.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-csslint": "latest",
-    "gulp-hologram": "latest",
+    "gulp-hologram": "^1.2.3",
     "gulp-plumber": "latest",
     "gulp-sass": "^2.2.0",
     "gulp-sassport": "^0.4.0",
     "gulp-scss-lint": "latest",
     "gulp-uglify": "^1.5.3",
-    "gulp-util": "latest",
-    "sassdoc": "latest",
+    "gulp-util": "^3.0.8",
+    "sassdoc": "^2.2.2",
     "sassdoc-theme-alix": "^0.3.29"
   }
 }
