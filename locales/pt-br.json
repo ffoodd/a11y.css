@@ -81,7 +81,7 @@
   "warning:empty-alt": "Vazio [alt]",
   "warning:non-empty-alt": "Vazio [alt] on [role=presentation]",
   "warning:no-aria-role": "Faltando [role]",
-  "warning:decorative-svg": "Semantic attribute on decorative SVG",
+  "warning:decorative-svg": "Atributo semântico em SVG decorativo",
   "warning:autoplay": "Autoplay",
   "warning:controls": "Faltando [controls]",
   "warning:empty-nodes": "Vazio element",
