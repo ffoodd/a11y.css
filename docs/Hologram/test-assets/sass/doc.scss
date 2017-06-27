@@ -744,7 +744,7 @@ a[target$="blank"]::after {
 }
 
 #bookmarklet--link[href*="-pt-br"]::after {
-  content: "pt-br" !important;
+  content: "pt" !important;
 }
 
 #bookmarklet--link[href*="-ru"]::after {
