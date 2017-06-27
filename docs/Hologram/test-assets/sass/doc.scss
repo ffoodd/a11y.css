@@ -743,6 +743,14 @@ a[target$="blank"]::after {
   content: "zh" !important;
 }
 
+#bookmarklet--link[href*="-pt-br"]::after {
+  content: "pt-br" !important;
+}
+
+#bookmarklet--link[href*="-ru"]::after {
+  content: "ru" !important;
+}
+
 .s, .nd { color: #07a }
 .na, .cssExample .nt { color: #667f1f }
 .nt, .cssExample .err + .nt { color: #905 }
