@@ -507,6 +507,10 @@ A `[placeholder]` is not a label, is it?
   @include advice('placeholder', $self-closing: true);
 }
 
+label [placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
+  @include a11y-reset;
+}
+
 
 /*doc
 ---
