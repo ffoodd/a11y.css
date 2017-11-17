@@ -294,37 +294,38 @@ input[type="image"][srcset="/"] {
 
 /*doc
 ---
-title: "A label without a [for] attribute"
-name: no-for
+title: "A label with an empty [for] attribute"
+name: empty-for
 category: Errors
 ---
 
 ##Description
-A `<label>` is labelling something, in theory.
+A `<label>` with a `[for]` attribute should label something with an `[id]` attribute, obviously.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-1>
+* <http://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
+* <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
+* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+* <https://www.w3.org/WAI/tutorials/forms/labels/>
+* <https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/>
 * <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <http://www.w3.org/TR/WCAG-TECHS/H44.html>
 
 ##Selector
 ```css_example
-label:not([for]),
-label[for=" "],
-label[for=""]
+label[for=""],
+label[for=" "]
 ```
 
 ##Test
 ```html_example
-<label>Guess what?</label>
+<label for=" ">Guess what?</label>
 ```
 */
-label:not([for]),
-label[for=" "],
-label[for=""] {
-  @include error('no-for');
+label[for=""],
+label[for=" "] {
+  @include error('empty-for');
 }
 
 
