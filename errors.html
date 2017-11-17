@@ -75,6 +75,10 @@
               </li>
             
               <li>
+                <a href="#empty-for">A label with an empty [for] attribute</a>
+              </li>
+            
+              <li>
                 <a href="#empty-href">Empty [href]</a>
               </li>
             
@@ -372,6 +376,36 @@ Use <code class="styleguide">[disabled]</code> and <code class="styleguide">[rea
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;button</span> <span class="na">title=</span><span class="s">""</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>Test<span class="nt">&lt;/button&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="empty-for" class="styleguide">A label with an empty [for] attribute</h1>
+
+<h2>Description</h2>
+<p class="styleguide">A <code class="styleguide">&lt;label&gt;</code> with a <code class="styleguide">[for]</code> attribute should label something with an <code class="styleguide">[id]</code> attribute, obviously.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2">http://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2</a></li>
+<li><a href="https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981">https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H44.html">https://www.w3.org/TR/WCAG-TECHS/H44.html</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/forms/labels/">https://www.w3.org/WAI/tutorials/forms/labels/</a></li>
+<li><a href="https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/">https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#minimize-error-cues">http://www.w3.org/TR/WCAG20/#minimize-error-cues</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive">http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">label</span><span class="o">[</span><span class="nt">for</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
+<span class="nt">label</span><span class="o">[</span><span class="nt">for</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <label for=" ">Guess what?</label>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">" "</span><span class="nt">&gt;</span>Guess what?<span class="nt">&lt;/label&gt;</span></code></pre>
   </div>
 </div>
 
@@ -771,19 +805,21 @@ If image is decorative, please use <code class="styleguide">[role=presentation]<
 <h1 id="no-for" class="styleguide">A label without a [for] attribute</h1>
 
 <h2>Description</h2>
-<p class="styleguide">A <code class="styleguide">&lt;label&gt;</code> is labelling something, in theory.</p>
+<p class="styleguide">A <code class="styleguide">&lt;label&gt;</code> is labelling something, in theory.
+Although implicitly labelling form controls is accepted, it&#39;s probably better to double-check that form control is <em>really</em> nested in its <code class="styleguide">&lt;label&gt;</code>.</p>
 <h2>References</h2>
-<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-1">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-1</a></li>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2">http://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2</a></li>
+<li><a href="https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981">https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H44.html">https://www.w3.org/TR/WCAG-TECHS/H44.html</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/forms/labels/">https://www.w3.org/WAI/tutorials/forms/labels/</a></li>
+<li><a href="https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/">https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/</a></li>
 <li><a href="http://www.w3.org/TR/WCAG20/#minimize-error-cues">http://www.w3.org/TR/WCAG20/#minimize-error-cues</a></li>
 <li><a href="http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive">http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive</a></li>
 <li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/H44.html">http://www.w3.org/TR/WCAG-TECHS/H44.html</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">label</span><span class="nd">:not</span><span class="o">([</span><span class="nt">for</span><span class="o">]),</span>
-<span class="nt">label</span><span class="o">[</span><span class="nt">for</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">],</span>
-<span class="nt">label</span><span class="o">[</span><span class="nt">for</span><span class="o">=</span><span class="err">""</span><span class="o">]</span></code></pre>
+  <pre><code><span class="nt">label</span><span class="nd">:not</span><span class="o">([</span><span class="nt">for</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
