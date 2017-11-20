@@ -1,0 +1,10 @@
+{
+  "important": false,
+  "outline-none": false,
+  "regex-selectors": false,
+  "unqualified-attributes": false,
+  "universal-selector": false,
+  "compatible-vendor-prefixes": false,
+  "gradients": false,
+  "order-alphabetical": false
+}
