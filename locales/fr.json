@@ -25,6 +25,7 @@
   "advice:th-scope": "<th> s'applique à attr(scope) ?",
   "advice:table-presentation": "Tableau de mise en forme",
   "advice:no-href": "Lien sans cible",
+  "advice:no-https": "Pas de HTTPS",
 
   "error:tab-order": "Ordre de tabulation perturbé",
   "error:empty-href": "[href] vide",

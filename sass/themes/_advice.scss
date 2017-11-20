@@ -722,3 +722,36 @@ a:not([href])
 a:not([href]) {
   @include advice('no-href');
 }
+
+
+/*doc
+---
+title: "Non HTTPS URL"
+name: no-https
+category: Advices
+---
+
+##Description
+When possible, try to use HTTPS.
+
+##References
+* <https://twitter.com/fvsch/status/921748801542639616>
+* <https://transparencyreport.google.com/https/overview?hl=en>
+* <https://letsencrypt.org/>
+* <https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels>
+
+##Selector
+```css_example
+[src^="http:"],
+[href^="http:"]
+```
+
+##Test
+```html_example
+<a href="http://www.ffoodd.fr/">My target's protocol isn't secured</a>
+```
+*/
+[src^="http:"],
+[href^="http:"] {
+  @include advice('no-https');
+}

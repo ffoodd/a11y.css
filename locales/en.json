@@ -25,6 +25,7 @@
   "advice:th-scope": "Does <th> apply to attr(scope)?",
   "advice:table-presentation": "Layout table",
   "advice:no-href": "Link without target",
+  "advice:no-https": "No HTTPS",
 
   "error:tab-order": "Disrupting tab order",
   "error:empty-href": "Empty [href]",
