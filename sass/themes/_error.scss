@@ -1187,10 +1187,9 @@ Moreover it avoids some security issues exploiting some other charsets…
 
 ##Selector
 ```css_example
-meta[charset]:not([charset="utf-8"]),
-meta[charset]:not([charset="UTF-8"]),
 meta[charset="utf-8"]:not(:first-child),
-meta[charset="UTF-8"]:not(:first-child)
+meta[charset="UTF-8"]:not(:first-child),
+meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
 ```
 
 ##Test
@@ -1198,10 +1197,9 @@ meta[charset="UTF-8"]:not(:first-child)
 <meta charset="Windows-1252" /><span>†</span>
 ```
 */
-meta[charset]:not([charset="utf-8"]),
-meta[charset]:not([charset="UTF-8"]),
 meta[charset="utf-8"]:not(:first-child),
-meta[charset="UTF-8"]:not(:first-child) {
+meta[charset="UTF-8"]:not(:first-child),
+meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"]) {
   @include error('incorrect-charset', $self-closing: true, $head: true);
   @include a11y-head($self-closing: true);
 }
