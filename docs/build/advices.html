@@ -99,6 +99,10 @@
               </li>
             
               <li>
+                <a href="#no-https">Non HTTPS URL</a>
+              </li>
+            
+              <li>
                 <a href="#placeholder">Placeholder can&#39;t replace a label</a>
               </li>
             
@@ -466,6 +470,32 @@ Otherwise you may annoy your users.</p>
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;a&gt;</span>Who am I? Where do I link?<span class="nt">&lt;/a&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="no-https" class="styleguide">Non HTTPS URL</h1>
+
+<h2>Description</h2>
+<p class="styleguide">When possible, try to use HTTPS.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://twitter.com/fvsch/status/921748801542639616">https://twitter.com/fvsch/status/921748801542639616</a></li>
+<li><a href="https://transparencyreport.google.com/https/overview?hl=en">https://transparencyreport.google.com/https/overview?hl=en</a></li>
+<li><a href="https://letsencrypt.org/">https://letsencrypt.org/</a></li>
+<li><a href="https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels">https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">src</span><span class="o">^=</span><span class="err">"</span><span class="nt">http</span><span class="o">:</span><span class="err">"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="err">"</span><span class="nt">http</span><span class="o">:</span><span class="err">"</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <a href="http://www.ffoodd.fr/">My target's protocol isn't secured</a>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://www.ffoodd.fr/"</span><span class="nt">&gt;</span>My target's protocol isn't secured<span class="nt">&lt;/a&gt;</span></code></pre>
   </div>
 </div>
 
