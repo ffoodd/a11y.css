@@ -16,7 +16,7 @@
     "docs:deploy": "git add docs/build && git commit -m 'Compile documentation' --allow-empty && git push origin :gh-pages && git subtree push --prefix docs/build origin gh-pages && echo 'Documentation successfully deployed'"
   },
   "license": "MIT",
-  "homepage": "http://ffoodd.github.io/a11y.css",
+  "homepage": "https://ffoodd.github.io/a11y.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/ffoodd/a11y.css"
@@ -38,6 +38,6 @@
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.8",
     "sassdoc": "^2.2.2",
-    "sassdoc-theme-alix": "^0.3.29"
+    "sassdoc-theme-alix": "^0.3.30"
   }
 }
