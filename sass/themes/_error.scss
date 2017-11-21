@@ -1187,8 +1187,6 @@ Moreover it avoids some security issues exploiting some other charsets…
 
 ##Selector
 ```css_example
-meta[charset="utf-8"]:not(:first-child),
-meta[charset="UTF-8"]:not(:first-child),
 meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
 ```
 
@@ -1197,10 +1195,50 @@ meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
 <meta charset="Windows-1252" /><span>†</span>
 ```
 */
-meta[charset="utf-8"]:not(:first-child),
-meta[charset="UTF-8"]:not(:first-child),
 meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"]) {
   @include error('incorrect-charset', $self-closing: true, $head: true);
+  @include a11y-head($self-closing: true);
+}
+
+
+/*doc
+---
+title: "Charset should be the first"
+name: late-charset
+category: Errors
+---
+
+##Description
+As explained on the Mozilla Developer Network:
+
+> The `<meta>` element declaring the encoding must be inside the `<head>` element
+> and *within the first 1024 bytes* of the HTML, as some browsers only look at
+> those bytes before choosing an encoding.
+
+It's also meant to prevent an old security exploit using UTF-7. Declaring the charset
+before the `<title>` tag is the simplest way to cover it.
+
+##References
+* <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
+* <http://w3c.github.io/html/document-metadata.html#charset>
+* <http://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html>
+
+##Selector
+```css_example
+meta[charset="utf-8"]:not(:first-child),
+meta[charset="UTF-8"]:not(:first-child)
+```
+
+##Test
+```html_example
+<title>Charset isn't first child</title>
+<meta charset="utf-8" /><span>†</span>
+```
+*/
+meta[charset="utf-8"]:not(:first-child),
+meta[charset="UTF-8"]:not(:first-child) {
+  @include error('late-charset', $self-closing: true, $head: true);
   @include a11y-head($self-closing: true);
 }
 

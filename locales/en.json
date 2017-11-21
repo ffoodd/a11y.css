@@ -57,6 +57,7 @@
   "error:class-namespace": "Invalid [class]",
   "error:unaccessible-viewport": "Unaccessible [meta name=viewport]",
   "error:incorrect-charset": "[charset] isn't utf-8",
+  "error:late-charset": "<head> must start with [charset]",
   "error:invalid-dir": "Invalid [dir]",
   "error:accesskey": "[accesskey]",
   "error:inputs-group": "Missing [name]",

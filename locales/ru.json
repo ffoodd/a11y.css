@@ -57,6 +57,7 @@
   "error:class-namespace": "Некорректный [class]",
   "error:unaccessible-viewport": "Некорректный [meta name=viewport]",
   "error:incorrect-charset": "[charset] не установлена в utf-8",
+  "error:late-charset": "<head> должна начинаться с [charset]",
   "error:invalid-dir": "Некорректный [dir]",
   "error:accesskey": "[accesskey]",
   "error:inputs-group": "Пропущен [name]",

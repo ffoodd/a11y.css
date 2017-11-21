@@ -67,6 +67,7 @@
   "error:radio-group": "[radio] 缺少 <fieldset> 包裹",
   "error:unaccessible-viewport": "[meta name=viewport] 对可用性有影响",
   "error:incorrect-charset": "[charset] 非 utf-8",
+  "error:late-charset": "<head> 必须以 [charset] 开头",
 
   "warning:style-attr": "内联样式",
   "warning:invalid-nesting": "元素嵌套错误",
