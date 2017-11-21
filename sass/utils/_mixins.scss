@@ -170,7 +170,7 @@
   display: block !important;
 
   @if $self-closing {
-    & ~ link:last-of-type {
+    ~ link:last-of-type {
       display: block !important;
     }
   }
