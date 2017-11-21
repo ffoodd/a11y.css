@@ -461,7 +461,6 @@ p {
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
-  -o-hyphens: auto;
   hyphens: auto;
 }
 
@@ -496,6 +495,35 @@ ul code {
   font-family: inherit;
   padding: .1em;
   white-space: nowrap;
+}
+
+// @see https://github.com/tetue/tinytypo/blob/fc1a3a90d2ffefeaed2bf4dcee0fb88320c65348/css/typo.css#L424
+blockquote {
+  border-left: .25rem solid #ece7d4;
+  color: #7b6e50;
+  font-style: italic;
+  padding-left: 2rem;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+
+  &::before {
+    content: open-quote;
+    margin-left: -1rem;
+  }
+
+  &::after {
+    content: close-quote;
+  }
+
+  p {
+    display: inline;
+  }
+
+  em,
+  code,
+  strong {
+    color: #483d23;
+    font-style: normal;
+  }
 }
 
 /* Liens */
