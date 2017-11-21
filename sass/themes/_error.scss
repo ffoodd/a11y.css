@@ -1172,7 +1172,7 @@ category: Errors
 
 ##Description
 Using `utf-8` character encoding is recommended by the W3C itself:
-it "supports many languages and can accommodate pages and forms in any mixture of those languages".
+> supports many languages and can accommodate pages and forms in any mixture of those languages.
 
 Moreover it avoids some security issues exploiting some other charsets…
 
@@ -1212,7 +1212,7 @@ category: Errors
 As explained on the Mozilla Developer Network:
 
 > The `<meta>` element declaring the encoding must be inside the `<head>` element
-> and *within the first 1024 bytes* of the HTML, as some browsers only look at
+> and **within the first 1024 bytes** of the HTML, as some browsers only look at
 > those bytes before choosing an encoding.
 
 It's also meant to prevent an old security exploit using UTF-7. Declaring the charset
