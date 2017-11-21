@@ -103,6 +103,10 @@
               </li>
             
               <li>
+                <a href="#late-charset">Charset should come first</a>
+              </li>
+            
+              <li>
                 <a href="#namespace">Namespaces</a>
               </li>
             
@@ -478,8 +482,10 @@ By the way, why would you use an empty link?</p>
 <h1 id="incorrect-charset" class="styleguide">Incorrect charset</h1>
 
 <h2>Description</h2>
-<p class="styleguide">Using <code class="styleguide">utf-8</code> character encoding is recommended by the W3C itself:
-it &quot;supports many languages and can accommodate pages and forms in any mixture of those languages&quot;.</p><p class="styleguide">Moreover it avoids some security issues exploiting some other charsets…</p>
+<p class="styleguide">Using <code class="styleguide">utf-8</code> character encoding is recommended by the W3C itself:</p>
+<blockquote>
+<p class="styleguide">supports many languages and can accommodate pages and forms in any mixture of those languages.</p></blockquote>
+<p class="styleguide">Moreover it avoids some security issues exploiting some other charsets…</p>
 <h2>References</h2>
 <ul class="styleguide"><li><a href="https://bitsofco.de/linting-html-using-css/#incorrectcharacterset">https://bitsofco.de/linting-html-using-css/#incorrectcharacterset</a></li>
 <li><a href="https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset">https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset</a></li>
@@ -491,10 +497,7 @@ it &quot;supports many languages and can accommodate pages and forms in any mixt
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">meta</span><span class="o">[</span><span class="nt">charset</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">charset</span><span class="o">=</span><span class="err">"</span><span class="nt">utf-8</span><span class="err">"</span><span class="o">]),</span>
-<span class="nt">meta</span><span class="o">[</span><span class="nt">charset</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">charset</span><span class="o">=</span><span class="err">"</span><span class="nt">UTF-8</span><span class="err">"</span><span class="o">]),</span>
-<span class="nt">meta</span><span class="o">[</span><span class="nt">charset</span><span class="o">=</span><span class="err">"</span><span class="nt">utf-8</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:first-child</span><span class="o">),</span>
-<span class="nt">meta</span><span class="o">[</span><span class="nt">charset</span><span class="o">=</span><span class="err">"</span><span class="nt">UTF-8</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:first-child</span><span class="o">)</span></code></pre>
+  <pre><code><span class="nt">meta</span><span class="o">[</span><span class="nt">charset</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">charset</span><span class="o">=</span><span class="err">"</span><span class="nt">utf-8</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">charset</span><span class="o">=</span><span class="err">"</span><span class="nt">UTF-8</span><span class="err">"</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -625,6 +628,39 @@ Prefer either CSS pseudo-classes (<code class="styleguide">:hover</code>, <code 
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;span</span> <span class="na">onclick=</span><span class="s">"alert('You clicked!');"</span><span class="nt">&gt;</span>Click click click<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="late-charset" class="styleguide">Charset should come first</h1>
+
+<h2>Description</h2>
+<p class="styleguide">As explained on the Mozilla Developer Network:</p>
+<blockquote>
+<p class="styleguide">The <code class="styleguide">&lt;meta&gt;</code> element declaring the encoding must be inside the <code class="styleguide">&lt;head&gt;</code> element
+and <strong>within the first 1024 bytes</strong> of the HTML, as some browsers only look at
+those bytes before choosing an encoding.</p></blockquote>
+<p class="styleguide">It&#39;s also meant to prevent an old security exploit using UTF-7. Declaring the charset
+before the <code class="styleguide">&lt;title&gt;</code> tag is the simplest way to cover it.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://bitsofco.de/linting-html-using-css/#incorrectcharacterset">https://bitsofco.de/linting-html-using-css/#incorrectcharacterset</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta</a></li>
+<li><a href="http://w3c.github.io/html/document-metadata.html#charset">http://w3c.github.io/html/document-metadata.html#charset</a></li>
+<li><a href="http://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html">http://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">head</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:first-child:not</span><span class="o">(</span><span class="nt">meta</span><span class="o">[</span><span class="nt">charset</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <title>Charset isn't first child</title>
+<meta charset="utf-8" /><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;title&gt;</span>Charset isn't first child<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
   </div>
 </div>
 
