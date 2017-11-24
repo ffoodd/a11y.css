@@ -79,7 +79,8 @@
 /// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
 /// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
 @mixin item($theme, $key, $self-closing: false, $head: false) {
-  $is-disabled: index(map-get($disabled-tests, $theme), $key);
+  $message-key: $theme + ':' + $key;
+  $is-disabled: index($disabled-tests, $message-key);
 
   @if is-level-enough($theme) and not $is-disabled {
     @include a11y($theme, $key, $self-closing, $head);
