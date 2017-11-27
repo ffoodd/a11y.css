@@ -9,6 +9,15 @@
     "url": "http://www.ffoodd.fr",
     "email": "gael@ffoodd.fr"
   },
+  "keywords": [
+    "a11y",
+    "accessibility",
+    "accessibility-checker",
+    "testing",
+    "css",
+    "sass",
+    "scss"
+  ],
   "scripts": {
     "docs": "npm run docs:build && npm run docs:prepare && npm run docs:deploy",
     "docs:build": "gulp docs",
