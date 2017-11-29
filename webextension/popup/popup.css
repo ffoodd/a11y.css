@@ -1,0 +1,9 @@
+body {
+	color:#000;
+	background: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#home button {
+	display: block;
+}
