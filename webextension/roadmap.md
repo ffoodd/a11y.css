@@ -3,7 +3,7 @@
 ## Who?
 
 * Main developer: @notabene
-* based on work by @ffoodd (a11y.css creator) and @ideade (porting to an extension)
+* based on work by @ffoodd (a11y.css creator) and @ireade (porting to an extension)
 
 ## Why?
 
