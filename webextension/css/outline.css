@@ -1,0 +1,5 @@
+*:focus {
+	outline: 2px red dotted !important;
+	background: #fee !important;
+	color:red !important;
+}
