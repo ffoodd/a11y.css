@@ -21,10 +21,9 @@ function setLocale() {
 	});
 	locale = localeNormalCase.toLowerCase();
 	document.body.setAttribute('lang',locale);
-	document.getElementById('btnOutline').innerHTML = localeStrings[locale]['btnOutline'];
-	var btns = document.getElementById('home').getElementsByTagName('button');
-	for(let i=0 ; i < btns.length ; i++) {
-		btns[i].innerHTML = localeStrings[locale][btns[i].getAttribute('id')] ? localeStrings[locale][btns[i].getAttribute('id')] : '?';
+	var localizableElts = document.getElementsByClassName('localizeMe');
+	for(let i=0 ; i < localizableElts.length ; i++) {
+		localizableElts[i].innerHTML = localeStrings[locale][localizableElts[i].getAttribute('id')] ? localeStrings[locale][localizableElts[i].getAttribute('id')] : '?';
 	}
 }
 
