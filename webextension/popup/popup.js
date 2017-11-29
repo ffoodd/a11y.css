@@ -23,9 +23,7 @@ function setLocale() {
 	document.body.setAttribute('lang',locale);
 	document.getElementById('btnOutline').innerHTML = localeStrings[locale]['btnOutline'];
 	var btns = document.getElementById('home').getElementsByTagName('button');
-	console.log(btns.toString());
 	for(let i=0 ; i < btns.length ; i++) {
-		console.log(i);
 		btns[i].innerHTML = localeStrings[locale][btns[i].getAttribute('id')] ? localeStrings[locale][btns[i].getAttribute('id')] : '?';
 	}
 }
