@@ -38,8 +38,7 @@ btnOutline.addEventListener('click', function() {
 	gettingItem.then(
 		// when we got something
 		function (item) {
-			console.log('item.outline.isSet', item.outline.isSet);
-			if (item.outline.isSet) { // the outline was shown already
+			if (item && item.outline && item.outline.isSet) { // the outline was shown already
 				removeOutline();
 				storeOutline(false);
 			} else {
@@ -61,8 +60,7 @@ function outlineCheckAtLoad() {
 	gettingItem.then(
 		// when we got something
 		function (item) {
-			console.log('item.outline.isSet at load', item.outline.isSet);
-			if (item.outline.isSet) { // the outline was shown already
+			if (item && item.outline && item.outline.isSet) { // the outline was shown already
 				addOutline();
 			}
 		},
