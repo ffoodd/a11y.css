@@ -18,7 +18,7 @@ function setLocale() {
 	document.body.setAttribute('lang',locale);
 	var localizableElts = document.getElementsByClassName('localizeMe'); // localise every element
 	for(let i=0 ; i < localizableElts.length ; i++) {
-		localizableElts[i].innerHTML = localeStrings[locale][localizableElts[i].getAttribute('id')] ? localeStrings[locale][localizableElts[i].getAttribute('id')] : '?';
+		localizableElts[i].innerHTML = _t(localizableElts[i].getAttribute('id'));
 	}
 }
 
