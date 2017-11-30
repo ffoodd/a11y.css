@@ -20,3 +20,10 @@ function onError(error) {
 function onGot(item) {
 	console.log(`A11Y.CSS GOT`, item);
 }
+/**
+ * Short-hand for showing/hiding an element
+ * @param {String} id : id of an element
+ */
+function showHide(id) {
+	document.getElementById(id).classList.toggle('hidden');
+}

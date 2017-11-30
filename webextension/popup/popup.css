@@ -2,8 +2,17 @@ body {
 	color:#000;
 	background: #fff;
 	font-family: Arial, Helvetica, sans-serif;
+	font-size:75%;
+}
+* {
+	font-size:1em;
+	/* one size fits all! ;) */
 }
 
 #home button {
 	display: block;
+}
+
+.hidden {
+    display: none;
 }

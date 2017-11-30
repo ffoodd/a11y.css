@@ -8,10 +8,45 @@
 </head>
 <body>
 <div id="home">
+	<h1 id="h1Allycss" class="localizeMe"></h1>
+	<button id="btnAllycss" class="localizeMe"></button>
+
+	<hr />
+	<h1 id="h1Others" class="localizeMe"></h1>
 	<button id="btnOutline" class="localizeMe"></button>
-	<button id="btnAllyCss" class="localizeMe"></button>
 </div>
 
+<!-- container for the main attraction! -->
+<div id="allycss" class="hidden"> 
+	<h1 id="h1Allycss2" class="localizeMe"></h1>
+	<button id="btnA11ycssBack" class="localizeMe"></button>
+
+	<form>
+		@@TODO LOCALISE
+		<div class="input-group">
+			<label for="language">Language</label>
+			<select name="language" id="language">
+				<option value="en">English</option>
+				<option value="fr">French</option>
+			</select>
+		</div>
+		<div class="input-group">
+			<label for="level">Minimum Notice Level</label>
+			<select name="level" id="level">
+				<option value="advice">Everything</option>
+				<option value="obsolete">Obsolete Stuff, Warnings, and Errors</option>
+				<option value="warning">Warnings and Errors</option>
+				<option value="error">Only Errors</option>
+			</select>
+		</div>
+		<div class="button-group">
+			<button id="trigger" type="button">
+				Apply
+			</button>
+			<button id="reset" type="button">Clear</button>
+		</div>
+	</form>
+</div>
 
 	<!-- generic scripts  -->
 	<script src="../scripts/constants.js"></script>
@@ -19,6 +54,7 @@
 	<script src="../scripts/utils.js"></script>
 	<script src="popup.js"></script>
 	<!-- proper functions -->
+	<script src="../scripts/a11ycss.js"></script>
 	<script src="../scripts/outline.js"></script>
 </body>
 </html>
