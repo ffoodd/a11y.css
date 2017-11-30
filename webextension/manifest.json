@@ -17,7 +17,15 @@
 
     "browser_action": {
         "default_title": "a11y.css",
-        "default_popup": "popup/index.html"
+        "default_popup": "popup/index.html",
+        "default_icon": {
+            "19": "icons/a11y-css_19.png",
+            "38": "icons/a11y-css_38.png"
+        }
+    },
+    "icons": {
+        "16": "icons/a11y-css_16.png",
+        "48": "icons/a11y-css_48.png",
+        "128": "icons/a11y-css_128.png"
     }
-
 }
