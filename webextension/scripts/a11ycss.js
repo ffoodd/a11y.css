@@ -29,7 +29,6 @@ function addA11ycss() {
 			currentLevel = key.value;
 		}
 	});
-	console.log(currentLevel);
 	const file = `/css/a11y-${locale}_${currentLevel}.css`;
 	const code = `
 		var oldStylesheet = document.getElementById("${EXTENSION_PREFIX}stylechecker");
@@ -40,7 +39,6 @@ function addA11ycss() {
 		stylesheet.id = "${EXTENSION_PREFIX}stylechecker";
 		document.getElementsByTagName("head")[0].appendChild(stylesheet);
 	`;
-	console.log(code)
 	BROWSER.tabs.executeScript({ code: code });
 }
 
@@ -68,7 +66,6 @@ function a11ycssOnload() {
 		// when we got something
 		function (item) {
 			if (item && item.a11ycss && item.a11ycss.level) { // a level was set already
-				console.log("item.a11ycss.level", item.a11ycss.level);
 				level.forEach(function (key) {
 					if (key.value === item.a11ycss.level) {
 						key.checked = true;
