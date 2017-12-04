@@ -28,13 +28,24 @@
 			</select>
 		</div> -->
 		<div class="input-group">
-			<label for="level" id="a11ycssMinimumNoticeLevel" class="localizeMe"></label>
-			<select name="level" id="level">
-				<option value="advice" id="a11ycssLevel_advice" class="localizeMe"></option>
-				<option value="obsolete" id="a11ycssLevel_obsolete" class="localizeMe"></option>
-				<option value="warning" id="a11ycssLevel_warning" class="localizeMe"></option>
-				<option value="error" id="a11ycssLevel_error" class="localizeMe"></option>
-			</select>
+			<!-- TODO: replace span by something more semantic -->
+			<span id="a11ycssMinimumNoticeLevel" class="localizeMe"></span>
+			<div class="radiocontainer">
+			<input type="radio" name="level" id="a11ycss1" value="advice">
+			<label for="a11ycss1" id="a11ycssLevel_advice" class="localizeMe"></label>
+			</div>
+			<div class="radiocontainer">
+			<input type="radio" name="level" id="a11ycss2" value="obsolete">
+			<label for="a11ycss2" id="a11ycssLevel_obsolete" class="localizeMe"></label>
+			</div>
+			<div class="radiocontainer">
+			<input type="radio" name="level" id="a11ycss3" value="warning">
+			<label for="a11ycss3" id="a11ycssLevel_warning" class="localizeMe"></label>
+			</div>
+			<div class="radiocontainer">
+			<input type="radio" name="level" id="a11ycss4" value="error">
+			<label for="a11ycss4" id="a11ycssLevel_error" class="localizeMe"></label>
+			</div>
 		</div>
 		<div class="button-group">
 			<button type="button" id="a11ycssBtnApply" class="localizeMe"></button>
