@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="popup.css">
 </head>
 <body>
-<div id="home">
+<div id="home" class="hidden">
 	<h1 id="h1Allycss" class="localizeMe"></h1>
 	<button id="btnAllycss" class="localizeMe"></button>
 
@@ -17,33 +17,28 @@
 </div>
 
 <!-- container for the main attraction! -->
-<div id="allycss" class="hidden"> 
+<div id="allycss" class=""> 
 	<h1 id="h1Allycss2" class="localizeMe"></h1>
 	<button id="btnA11ycssBack" class="localizeMe"></button>
 
 	<form>
-		@@TODO LOCALISE
 		<div class="input-group">
-			<label for="language">Language</label>
-			<select name="language" id="language">
-				<option value="en">English</option>
-				<option value="fr">French</option>
+			<label for="languageSelector" id="a11ycssLanguageLabel" class="localizeMe"></label>
+			<select name="languageSelector" id="languageSelector">
 			</select>
 		</div>
 		<div class="input-group">
-			<label for="level">Minimum Notice Level</label>
+			<label for="level" id="a11ycssMinimumNoticeLevel" class="localizeMe"></label>
 			<select name="level" id="level">
-				<option value="advice">Everything</option>
-				<option value="obsolete">Obsolete Stuff, Warnings, and Errors</option>
-				<option value="warning">Warnings and Errors</option>
-				<option value="error">Only Errors</option>
+				<option value="advice" id="a11ycssLevel_advice" class="localizeMe"></option>
+				<option value="obsolete" id="a11ycssLevel_obsolete" class="localizeMe"></option>
+				<option value="warning" id="a11ycssLevel_warning" class="localizeMe"></option>
+				<option value="error" id="a11ycssLevel_error" class="localizeMe"></option>
 			</select>
 		</div>
 		<div class="button-group">
-			<button id="trigger" type="button">
-				Apply
-			</button>
-			<button id="reset" type="button">Clear</button>
+			<button type="button" id="a11ycssBtnApply" class="localizeMe"></button>
+			<button type="button" id="a11ycssBtnClear" class="localizeMe"></button>
 		</div>
 	</form>
 </div>

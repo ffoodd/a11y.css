@@ -1,9 +1,13 @@
 /**
  * returns a localised string
  * @param {String} str 
+ * @param {String} locale (optional)
  */
-function _t(str) {
-	return localeStrings[locale][str] ? localeStrings[locale][str] : '???';
+function _t() {
+	var args = _t.arguments;
+	var str = args[0] ? args[0] : "";
+	var localestr = (args[1] && args[1].length > 0) ? args[1] : locale;
+	return (localeStrings[localestr] && localeStrings[localestr][str]) ? localeStrings[localestr][str] : '???';
 }
 
 /**

@@ -13,6 +13,8 @@ const locales = [
 const localeStrings = {
 	"en":{
 		"_LOCALE":"English",
+		"a11ycssBtnApply":"Apply",
+		"a11ycssBtnClear":"Clear",
 		"a11ycssLanguageLabel":"Language",
 		"a11ycssLevel_advice": "Everything",
 		"a11ycssLevel_obsolete": "Obsolete Stuff, Warnings, and Errors",
@@ -29,6 +31,8 @@ const localeStrings = {
 	},
 	"fr":{
 		"_LOCALE":"Français",
+		"a11ycssBtnApply": "Appliquer",
+		"a11ycssBtnClear": "Masquer",
 		"a11ycssLanguageLabel": "Langue",
 		"a11ycssLevel_advice": "Tout",
 		"a11ycssLevel_obsolete": "Éléments obsolètes, Avis et Erreurs",

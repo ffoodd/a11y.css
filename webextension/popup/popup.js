@@ -24,6 +24,20 @@ function setLocale() {
 	for(let i=0 ; i < localizableElts.length ; i++) {
 		localizableElts[i].innerHTML = _t(localizableElts[i].getAttribute('id'));
 	}
+
+	// localise a11ycss dropdown to choose language
+	var a11cssDropdown = ``;
+	locales.forEach(function(key){
+		// var str = localeStrings[key]["_LOCALE"];
+		var str = _t("_LOCALE",key);
+		a11cssDropdown += `<option value="${key}"`;
+		if(locale === key) {
+			a11cssDropdown += ` selected`;
+		}
+		a11cssDropdown += `>${str}</option>`;
+	});
+	console.log(a11cssDropdown);
+	document.getElementById("languageSelector").innerHTML = a11cssDropdown;
 }
 
 setLocale();
