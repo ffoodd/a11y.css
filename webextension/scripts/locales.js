@@ -38,7 +38,7 @@ const localeStrings = {
 		"a11ycssLevel_obsolete": "Éléments obsolètes, Avis et Erreurs",
 		"a11ycssLevel_warning": "Avis et Erreurs",
 		"a11ycssLevel_error": "Erreurs seulement",
-		"a11ycssMinimumNoticeLevel": "Minimum Notice Level",
+		"a11ycssMinimumNoticeLevel": "Niveau minimum de remarque",
 		"btnA11ycssBack":"&lt; &lt; Retour",
 		"btnOutline": "Encadrer le focus",
 		"btnOutlineRemove":"Retirer l'encadrement du focus",
