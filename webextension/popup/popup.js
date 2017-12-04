@@ -14,9 +14,13 @@ function setLocale() {
 			return;
 		}
 	});
+	// locale is used for all localisation strings, cf. locales.js
 	locale = localeNormalCase.toLowerCase();
-	document.body.setAttribute('lang',locale);
-	var localizableElts = document.getElementsByClassName('localizeMe'); // localise every element
+	// set lang of document
+	document.body.setAttribute('lang',localeNormalCase);
+	
+	// localise every element
+	var localizableElts = document.getElementsByClassName('localizeMe');
 	for(let i=0 ; i < localizableElts.length ; i++) {
 		localizableElts[i].innerHTML = _t(localizableElts[i].getAttribute('id'));
 	}
