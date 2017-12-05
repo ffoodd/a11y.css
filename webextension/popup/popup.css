@@ -41,6 +41,7 @@ button {
 	border-radius: .3em;
 	background:#ddd;
 	padding: .3em .5em;
+	margin-bottom: .5em;
 }
 button:active {
 	position:relative;

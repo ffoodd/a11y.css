@@ -1,0 +1,14 @@
+*[lang] {
+	border: 2px solid red;
+	background: rgba(255,0,0,.1);
+}
+
+*[lang]:before {
+	content: attr(lang);
+	background: red !important;
+	color: white !important;
+	font-size: 12px !important;
+	font-weight: bold !important;
+	font-style: normal !important;
+	font-family: 'courier new',monotype !important;
+}
