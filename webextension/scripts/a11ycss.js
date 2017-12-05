@@ -7,7 +7,7 @@ let level = document.getElementsByName('level');
  * @param {String} strLevel 
  */
 function storeA11ycss(strLevel) {
-	let a11ycss = { level: strLevel }
+	let a11ycss = { level: strLevel };
 	let setting = browser.storage.local.set({ a11ycss });
 	setting.then(null, onError); // just in case
 }

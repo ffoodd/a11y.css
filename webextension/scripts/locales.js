@@ -47,4 +47,4 @@ const localeStrings = {
 		"h1Allycss2": "a11y.css : réglages",
 		"h1Others": "Autres outils liés à l'accessibilité",
 	}
-}
+};

@@ -10,7 +10,6 @@ function addOutline() {
 		stylesheet.id = "${EXTENSION_PREFIX}outline";
 		document.getElementsByTagName("head")[0].appendChild(stylesheet);
 	`;
-	console.log(code)
 	BROWSER.tabs.executeScript({ code: code });
 	btnOutline.innerHTML = _t('btnOutlineRemove');
 	btnOutline.classList.remove('apply');
@@ -32,7 +31,7 @@ function removeOutline() {
  * @param {Boolean} bOutline 
  */
 function storeOutline(bOutline) {
-	let outline = { isSet: bOutline }
+	let outline = { isSet: bOutline };
 	let setting = browser.storage.local.set({ outline });
 	setting.then(null, onError); // just in case
 }
