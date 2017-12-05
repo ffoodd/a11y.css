@@ -1,18 +1,81 @@
+/* MAIN COLOURS AND LAYOUT */
+
 body {
 	color:#000;
 	background: #fff;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size:75%;
+	padding:0;
+	margin:0;
+	width:15em;
 }
 * {
 	font-size:1em;
 	/* one size fits all! ;) */
+	box-sizing: border-box;
 }
-
-#home button {
-	display: block;
+h1 {
+	background:#FFCE00;
+	margin-top:0;
+	padding:.5em;
 }
-
+.util {
+	margin:1em .5em;
+}
+.button-group {
+	text-align: center;
+	margin:1em 0;
+}
+hr {
+	visibility: hidden;
+}
 .hidden {
     display: none;
+}
+/* BUTTONS and clickable things */
+
+button {
+	box-shadow: .1em 0.1em 0.2em 0.1em rgba(30, 30, 30, 0.2);
+	display: inline-block;
+	border: 0;
+	border-radius: .3em;
+	background:#ddd;
+	padding: .3em .5em;
+}
+button:active {
+	position:relative;
+	top:.1em;
+	left:.1em;
+	box-shadow: 0 0.1em 0.2em 0 rgba(30, 30, 30, 0.2);
+}
+button.apply {
+	background: #326104;
+	color: #fff;
+}
+button.unapply {
+    background: #A30000;
+    color: #fff;
+}
+#btnA11ycssBack::before {
+	content:'← ';
+}
+#btnAllycss::after {
+	content:' →';
+}
+
+input[type=radio] {
+	display: none;
+}
+label {
+	color:#365180;
+	display:block;
+	padding:.3em .3em .3em 18px;
+	border-radius: .3em;
+}
+label:hover {
+	text-decoration: underline;
+}
+input:checked+label {
+	background:no-repeat left center url("../icons/check.png") #365180;
+	color: #fff;
 }

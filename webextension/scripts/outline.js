@@ -13,6 +13,8 @@ function addOutline() {
 	console.log(code)
 	BROWSER.tabs.executeScript({ code: code });
 	btnOutline.innerHTML = _t('btnOutlineRemove');
+	btnOutline.classList.remove('apply');
+	btnOutline.classList.add('unapply');
 }
 
 function removeOutline() {
@@ -22,6 +24,8 @@ function removeOutline() {
 	`;
 	BROWSER.tabs.executeScript({ code: code });
 	btnOutline.innerHTML = _t('btnOutline');
+	btnOutline.classList.remove('unapply');
+	btnOutline.classList.add('apply');
 }
 /**
  * Helper function for browser storage

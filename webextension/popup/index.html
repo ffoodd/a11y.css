@@ -9,27 +9,32 @@
 <body>
 <div id="home" class="">
 	<h1 id="h1Allycss" class="localizeMe"></h1>
-	<button id="btnAllycss" class="localizeMe"></button>
+	<div class="util">
+		<button id="btnAllycss" class="localizeMe"></button>
+	</div>
 
 	<hr />
 	<h1 id="h1Others" class="localizeMe"></h1>
-	<button id="btnOutline" class="localizeMe"></button>
+	<div class="util">
+		<button id="btnOutline" class="localizeMe apply"></button>
+	</div>
 </div>
 
 <!-- container for the main attraction! -->
 <div id="allycss" class="hidden"> 
 	<h1 id="h1Allycss2" class="localizeMe"></h1>
-	<button id="btnA11ycssBack" class="localizeMe"></button>
+	<div class="util">
+		<button id="btnA11ycssBack" class="localizeMe"></button>
+	</div>
 
-	<form id="a11ycssForm">
+	<form id="a11ycssForm" class="util">
 		<!-- <div class="input-group">
 			<label for="languageSelector" id="a11ycssLanguageLabel" class="localizeMe"></label>
 			<select name="languageSelector" id="languageSelector">
 			</select>
 		</div> -->
 		<div class="input-group">
-			<!-- TODO: replace span by something more semantic -->
-			<span id="a11ycssMinimumNoticeLevel" class="localizeMe"></span>
+			<h2 id="a11ycssMinimumNoticeLevel" class="localizeMe"></h2>
 			<div class="radiocontainer">
 			<input type="radio" name="level" id="a11ycss1" value="advice" checked>
 			<label for="a11ycss1" id="a11ycssLevel_advice" class="localizeMe"></label>
@@ -48,8 +53,8 @@
 			</div>
 		</div>
 		<div class="button-group">
-			<button type="button" id="a11ycssBtnApply" class="localizeMe"></button>
-			<button type="button" id="a11ycssBtnClear" class="localizeMe"></button>
+			<button type="button" id="a11ycssBtnApply" class="localizeMe apply"></button>
+			<button type="button" id="a11ycssBtnClear" class="localizeMe unapply"></button>
 		</div>
 	</form>
 </div>
