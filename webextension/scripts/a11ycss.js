@@ -4,7 +4,7 @@ let level = document.getElementsByName('level');
 
 /**
  * Helper function for browser storage
- * @param {String} strLevel 
+ * @param {String} strLevel
  */
 function storeA11ycss(strLevel) {
 	let a11ycss = { level: strLevel };
