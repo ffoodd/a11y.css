@@ -50,6 +50,7 @@
     "gulp-scss-lint": "latest",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.8",
+    "gulp-zip": "^4.0.0",
     "sassdoc": "^2.2.2",
     "sassdoc-theme-alix": "^0.3.30"
   }

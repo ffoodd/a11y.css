@@ -6,6 +6,9 @@ module.exports = {
   hologramhtmldest: './docs/Hologram/tests/',
   sassdochtmlsource: './docs/SassDoc/**/*.html',
   sassdochtmldest: './docs/SassDoc/',
+  webextension: './webextension',
+  webextensioncsssource: './css/a11y-*_*.css',
+  webextensioncssdest: './webextension/css',
   autoprefixer: { browsers: ['last 2 versions'] },
   scsslint: { config: 'configs/.scsslint.yml' },
   sassdoc: {
