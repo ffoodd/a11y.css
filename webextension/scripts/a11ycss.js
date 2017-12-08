@@ -39,6 +39,7 @@ function addA11ycss() {
 		stylesheet.id = "${EXTENSION_PREFIX}stylechecker";
 		document.getElementsByTagName("head")[0].appendChild(stylesheet);
 	`;
+	console.log(code);
 	BROWSER.tabs.executeScript({ code: code });
 }
 
