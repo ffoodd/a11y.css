@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="popup.css">
 </head>
 <body>
-<div id="home" class="">
+<div id="home" class="hidden">
 	<h1 id="h1Allycss" class="localizeMe"></h1>
 	<div class="util">
 		<button id="btnAllycss" class="localizeMe"></button>
@@ -22,11 +22,14 @@
 </div>
 
 <!-- container for the main attraction! -->
-<div id="allycss" class="hidden">
+<div id="allycss" class="">
 	<h1 id="h1Allycss2" class="localizeMe"></h1>
 	<div class="util">
 		<button id="btnA11ycssBack" class="localizeMe"></button>
 	</div>
+	<hr />
+	<p class="">@@TODO : UI</p>
+	<hr />
 
 	<form id="a11ycssForm" class="util">
 		<!-- <div class="input-group">
@@ -51,6 +54,25 @@
 			<div class="radiocontainer">
 			<input type="radio" name="level" id="a11ycss4" value="error">
 			<label for="a11ycss4" id="a11ycssLevel_error" class="localizeMe"></label>
+			</div>
+		</div>
+		<div class="input-group">
+			<h2 id="a11ycssSeparateLevels" class="localizeMe"></h2>
+			<div class="radiocontainer">
+				<input type="checkbox" name="leveladvices-only" id="a11ycssadvices-only" value="advices" checked>
+				<label for="a11ycssadvices-only" id="a11ycssLevel_advices-only" class="localizeMe"></label>
+			</div>
+			<div class="radiocontainer">
+				<input type="checkbox" name="levelobsolete-only" id="a11ycssobsolete-only" value="obsolete">
+				<label for="a11ycssobsolete-only" id="a11ycssLevel_obsolete-only" class="localizeMe"></label>
+			</div>
+			<div class="radiocontainer">
+				<input type="checkbox" name="levelwarning-only" id="a11ycsswarning-only" value="warning">
+				<label for="a11ycsswarning-only" id="a11ycssLevel_warning-only" class="localizeMe"></label>
+			</div>
+			<div class="radiocontainer">
+				<input type="checkbox" name="levelerror-only" id="a11ycsserror-only" value="error">
+				<label for="a11ycsserror-only" id="a11ycssLevel_error-only" class="localizeMe"></label>
 			</div>
 		</div>
 		<div class="button-group">
