@@ -14,3 +14,8 @@ Eventually this will be a proper extension, but for the moment it's not packaged
    ![The icon in Firefox's toolbar, among other friends](readme_images/webext_icon_running.png)
 
 Then you can run the Browser console `Ctrl+Shift+J` to see what's happening. You may see some errors that won't happen once the application will be properly packaged and distributed. Bear with us.
+
+## Credits
+
+* Some pictograms used are CC-BY 2.5 [Famfamfam Silk](http://www.famfamfam.com/lab/icons/silk/).
+* A11y.css icon by [Gaël Poupard](http://www.ffoodd.fr/).

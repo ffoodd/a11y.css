@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Alternate text for images</title>
+	<style>
+		div.testimg img { display:block; width:auto; height:auto; max-width:100%; border:1px solid gray; }
+		div.testimg { margin:1em; padding:.5em; background: silver; border:1px solid gray; }
+	</style>
+</head>
+<body>
+	<h1>Alternate text for images - test page</h1>
+	<p class="">This page provides fake content with images, some have a correct <code>alt</code> attribute, some don't, some have an empty <code>alt</code>.</p>
+
+	<div class="testimg">
+		<img src='http://nota-bene.org/IMG/jpg/dsc_0983.jpg' />
+		(0 alt, 0 title)
+	</div>
+	<div class="testimg">
+		<img alt='A typewriter' title='Last day of August' src='http://nota-bene.org/IMG/jpg/dsc_0717.jpg' />
+		(1 alt, 1 title)
+	</div>
+	<div class="testimg">
+		<img alt='' src='http://nota-bene.org/IMG/jpg/img_1846.jpg' />
+		(empty alt, 0 title)
+	</div>
+	<div class="testimg">
+		<img src="http://nota-bene.org/IMG/jpg/img_3002.jpg" alt="Sunset" />
+		(1 alt, 0 title)
+	</div>
+	<div class="testimg">
+		<img src="http://nota-bene.org/IMG/jpg/dsc_0696.jpg" />
+		(0 alt, 0 title)
+	</div>
+	<div class="testimg">
+		<img alt='Irish river' src='http://nota-bene.org/IMG/jpg/img_0588.jpg' />
+		(1 alt, 0 title)
+	</div>
+	<div class="testimg">
+		<img src="http://nota-bene.org/IMG/jpg/img_3380.jpg">
+		(0 alt, 0 title)
+	</div>
+
+	<script src="../scripts/injected/checkalts.js"></script>
+</body>
+</html>
