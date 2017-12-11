@@ -128,8 +128,8 @@ a11ycss.checkalts = {
 	},
 
 	init: function() {
-		this.collectImages();
 		this.buildReporter();
+		this.collectImages();
 		this.addBehaviour();
 	}
 };
