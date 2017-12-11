@@ -13,7 +13,7 @@ a11ycss.checkalts = {
 		empty:"<img src='../icons/alt_empty.png' alt='Empty' class='{NAMESPACE}picto'>",
 		missing:"<img src='../icons/alt_missing.png' alt='Missing' class='{NAMESPACE}picto'>"
 	},
-
+	// The reporter is a zone in the page where we gather thumbnails
 	buildReporter: function() {
 		var reporterid = this.namespace + 'reporter';
 		this.reporter.id = reporterid;
@@ -55,7 +55,7 @@ a11ycss.checkalts = {
 		document.getElementsByTagName('head').item(0).appendChild(s);
 		document.getElementsByTagName('body').item(0).appendChild(this.reporter);
 	},
-
+	// we collect images and add information on them
 	collectImages: function() {
 		var imgs = document.getElementsByTagName('img');
 		var str = '';
@@ -110,7 +110,7 @@ a11ycss.checkalts = {
 		}
 		this.reporter.innerHTML = str;
 	},
-
+	// we add behaviour on the figures (thumbnails) we gathered in the reporter
 	addBehaviour: function () {
 		var figures = this.reporter.getElementsByTagName('figure');
 		for(var i = 0 ; i < figures.length ; i++) {
