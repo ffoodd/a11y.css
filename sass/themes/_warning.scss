@@ -590,13 +590,23 @@ $self-alt: ();
 
 /*doc
 ---
-title: "[alt] should be empty for decorative image"
-name: non-empty-alt
+title: "Decorative image shouldn't have an accessible name"
+name: decoration
 category: Warnings
 ---
 
 ##Description
-An alternative must be empty when image is decorative only — which is declared with `[role=presentation]`.
+Any decorative image — with `[aria-hidden="true"]` or empty `[alt]` — shouldn't have any of those:
+
+* `[title]`;
+* `[aria-label]`;
+* `[aria-labelledby]`;
+* `[aria-describedby]`;
+* a `<title>` child;
+* or a `<desc>`.
+
+This test currently can't check if any `<title>` nor `<desc>` child is present since `<svg>` is a replaced elements.
+See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues) on a11y.css' wiki.
 
 ##References
 * BP160 OpQuast
@@ -609,30 +619,76 @@ An alternative must be empty when image is decorative only — which is declared
 * <http://www.w3.org/TR/WCAG-TECHS/H67.html>
 * <http://www.w3.org/TR/WCAG-TECHS/F39.html>
 * <http://www.w3.org/TR/WCAG-TECHS/F38.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
 
 ##Selector
 ```css_example
-img[role="presentation"]:not([alt=""]),
-area[role="presentation"]:not([alt=""]),
-input[role="presentation"]:not([alt=""]),
-embed[type="image"][role="presentation"]:not([alt=""]),
-object[type="image"][role="presentation"]:not([alt=""])
+img[alt=""][title],
+img[alt=""][aria-label],
+img[alt=""][aria-labelledby],
+img[alt=""][aria-describedby],
+area:not([href])[alt]:not([alt=""]),
+area:not([href])[alt=""][title],
+area:not([href])[alt=""][aria-label],
+area:not([href])[alt=""][aria-labelledby],
+area:not([href])[alt=""][aria-describedby],
+svg[aria-hidden="true"][title],
+svg[aria-hidden="true"][aria-label],
+svg[aria-hidden="true"][aria-labelledby],
+svg[aria-hidden="true"][aria-describedby],
+canvas[aria-hidden="true"][title],
+canvas[aria-hidden="true"][aria-label],
+canvas[aria-hidden="true"][aria-labelledby],
+canvas[aria-hidden="true"][aria-describedby],
+embed[type="image"][aria-hidden="true"][title],
+embed[type="image"][aria-hidden="true"][aria-label],
+embed[type="image"][aria-hidden="true"][aria-labelledby],
+embed[type="image"][aria-hidden="true"][aria-describedby],
+object[type="image"][aria-hidden="true"][title],
+object[type="image"][aria-hidden="true"][aria-label],
+object[type="image"][aria-hidden="true"][aria-labelledby],
+object[type="image"][aria-hidden="true"][aria-describedby],
 ```
 
 ##Test
 ```html_example
-<img role="presentation" alt="I'm a deocrative image!" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     role="presentation" title="Decorative SVG, you punk!">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
 ```
 */
-img[role="presentation"]:not([alt=""]),
-area[role="presentation"]:not([alt=""]),
-input[role="presentation"]:not([alt=""]) {
-  @include warning('non-empty-alt', $self-closing: true);
+img[alt=""][title],
+img[alt=""][aria-label],
+img[alt=""][aria-labelledby],
+img[alt=""][aria-describedby],
+area:not([href])[alt]:not([alt=""]),
+area:not([href])[alt=""][title],
+area:not([href])[alt=""][aria-label],
+area:not([href])[alt=""][aria-labelledby],
+area:not([href])[alt=""][aria-describedby],
+svg[aria-hidden="true"][title],
+svg[aria-hidden="true"][aria-label],
+svg[aria-hidden="true"][aria-labelledby],
+svg[aria-hidden="true"][aria-describedby],
+embed[type="image"][aria-hidden="true"][title],
+embed[type="image"][aria-hidden="true"][aria-label],
+embed[type="image"][aria-hidden="true"][aria-labelledby],
+embed[type="image"][aria-hidden="true"][aria-describedby], {
+  @include warning('decoration', $self-closing: true);
 }
 
-embed[type="image"][role="presentation"]:not([alt=""]),
-object[type="image"][role="presentation"]:not([alt=""]) {
-  @include warning('empty-alt');
+canvas[aria-hidden="true"][title],
+canvas[aria-hidden="true"][aria-label],
+canvas[aria-hidden="true"][aria-labelledby],
+canvas[aria-hidden="true"][aria-describedby],
+object[type="image"][aria-hidden="true"][title],
+object[type="image"][aria-hidden="true"][aria-label],
+object[type="image"][aria-hidden="true"][aria-labelledby],
+object[type="image"][aria-hidden="true"][aria-describedby] {
+  @include warning('decoration');
 }
 
 
@@ -668,65 +724,6 @@ svg:not([aria-hidden="true"]):not([role="presentation"]):not([role="img"])
 */
 svg:not([aria-hidden="true"]):not([role="presentation"]):not([role="img"]) {
   @include warning('no-aria-role', $self-closing: true);
-}
-
-
-/*doc
----
-title: "Semantic attribute on decorative svg"
-name: decorative-svg
-category: Warnings
----
-
-##Description
-Any decorative `<svg>` — with a `[role="presentation"]` or `[aria-hidden="true"]` — should not have any of those:
-
-* `[title]`;
-* `[aria-label]`;
-* `[aria-labelledby]`;
-* `[aria-describedby]`;
-* a `<title>` child;
-* or a `<desc>`.
-
-This test currently can't check if any `<title>` nor `<desc>` child is present since `<svg>` is a replaced elements.
-See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues) on a11y.css' wiki.
-
-##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
-* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
-
-##Selector
-```css_example
-svg[aria-hidden="true"][title],
-svg[aria-hidden="true"][aria-label],
-svg[aria-hidden="true"][aria-labelledby],
-svg[aria-hidden="true"][aria-describedby],
-svg[role="presentation"][title],
-svg[role="presentation"][aria-label],
-svg[role="presentation"][aria-labelledby],
-svg[role="presentation"][aria-describedby]
-```
-
-##Test
-```html_example
-<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg" version="1.1"
-     role="presentation" title="Decorative SVG, you punk!">
-  <rect x="400" y="100" width="400" height="200"
-        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
-</svg><span>†</span>
-```
-*/
-svg[aria-hidden="true"][title],
-svg[aria-hidden="true"][aria-label],
-svg[aria-hidden="true"][aria-labelledby],
-svg[aria-hidden="true"][aria-describedby],
-svg[role="presentation"][title],
-svg[role="presentation"][aria-label],
-svg[role="presentation"][aria-labelledby],
-svg[role="presentation"][aria-describedby] {
-  @include warning('decorative-svg', $self-closing: true);
 }
 
 
