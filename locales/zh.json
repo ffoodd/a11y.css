@@ -84,6 +84,7 @@
   "warning:no-aria-role": "这是SVG装饰吗？",
   "warning:no-for": "缺少 [for]",
   "warning:decoration": "装饰图像上的语义属性",
+  "warning:presentation": "[role=presentation] 在图像上",
   "warning:autoplay": "自动播放",
   "warning:controls": "缺少 [controls]",
   "warning:empty-nodes": "节点内容为空",

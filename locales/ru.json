@@ -84,6 +84,7 @@
   "warning:no-aria-role": "вляется ли этот SVG декоративным?",
   "warning:no-for": "Отсутствует [for]",
   "warning:decoration": "Семантический атрибут на декоративном изображении",
+  "warning:presentation": "[role=presentation] на изображении",
   "warning:autoplay": "Автовоспроизведение",
   "warning:controls": "Не указаны [controls]",
   "warning:empty-nodes": "Пустой элемент",

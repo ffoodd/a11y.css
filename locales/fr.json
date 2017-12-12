@@ -84,6 +84,7 @@
   "warning:no-aria-role": "SVG décoratif ou non ?",
   "warning:no-for": "[for] absent",
   "warning:decoration": "Attribut sémantique sur une image décorative",
+  "warning:presentation": "[role=presentation] sur une image",
   "warning:autoplay": "Lecture automatique",
   "warning:controls": "[controls] absent",
   "warning:empty-nodes": "Élément vide",

@@ -84,6 +84,7 @@
   "warning:no-aria-role": "Este SVG é decorativo?",
   "warning:no-for": "Faltando [for]",
   "warning:decoration": "Atributo semântico em uma imagem decorativa",
+  "warning:presentation": "[role=presentation] em uma imagem",
   "warning:autoplay": "Autoplay",
   "warning:controls": "Faltando [controls]",
   "warning:empty-nodes": "Vazio element",

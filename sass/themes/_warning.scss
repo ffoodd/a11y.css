@@ -654,7 +654,7 @@ object[type="image"][aria-hidden="true"][aria-describedby],
 ```html_example
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="http://www.w3.org/2000/svg" version="1.1"
-     role="presentation" title="Decorative SVG, you punk!">
+     aria-hidden="true" title="Decorative SVG, you punk!">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
 </svg><span>†</span>
@@ -689,6 +689,56 @@ object[type="image"][aria-hidden="true"][aria-label],
 object[type="image"][aria-hidden="true"][aria-labelledby],
 object[type="image"][aria-hidden="true"][aria-describedby] {
   @include warning('decoration');
+}
+
+
+/*doc
+---
+title: "[role=presentation] shouldn't be used on image"
+name: presentation
+category: Warnings
+---
+
+##Description
+Any decorative image should be marked up with `[aria-hidden="true"]` (or empty `[alt]` if `<img>`).
+`[role=presentation]` shall do the trick but at the time of writing, its support is too low compared
+to empty `[alt]` or `[aria-hidden=true]`.
+
+##References
+* <http://references.modernisation.gouv.fr/referentiel/notes-techniques.html#nt-1-2>
+* <https://www.w3.org/WAI/tutorials/images/decorative/>
+
+
+##Selector
+```css_example
+img[role="presentation"],
+svg[role="presentation"],
+area[role="presentation"],
+embed[role="presentation"],
+canvas[role="presentation"],
+object[role="presentation"]
+```
+
+##Test
+```html_example
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     role="presentation">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+```
+*/
+img[role="presentation"],
+svg[role="presentation"],
+area[role="presentation"],
+embed[role="presentation"] {
+  @include warning('presentation', $self-closing: true);
+}
+
+canvas[role="presentation"],
+object[role="presentation"] {
+  @include warning('presentation');
 }
 
 
