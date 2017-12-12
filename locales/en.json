@@ -81,7 +81,7 @@
   "warning:fieldset": "<fieldset> must start with <legend>",
   "warning:abbr": "Missing [title]",
   "warning:empty-alt": "Empty [alt]",
-  "warning:no-aria-role": "Missing [role]",
+  "warning:no-aria-role": "Is this SVG decorative?",
   "warning:no-for": "Missing [for]",
   "warning:decoration": "Semantic attribute on decorative image",
   "warning:autoplay": "Autoplay",

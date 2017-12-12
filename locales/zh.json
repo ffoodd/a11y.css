@@ -81,7 +81,7 @@
   "warning:fieldset": "<fieldset> 必须以 <legend> 开头",
   "warning:abbr": "缺少 [title]",
   "warning:empty-alt": "[alt] 为空",
-  "warning:no-aria-role": "缺少 [role]",
+  "warning:no-aria-role": "这是SVG装饰吗？",
   "warning:no-for": "缺少 [for]",
   "warning:decoration": "装饰图像上的语义属性",
   "warning:autoplay": "自动播放",

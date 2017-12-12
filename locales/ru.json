@@ -81,7 +81,7 @@
   "warning:fieldset": "<fieldset> должен начинаться с <legend>",
   "warning:abbr": "Не указан [title]",
   "warning:empty-alt": "Пустой [alt]",
-  "warning:no-aria-role": "Не указан [role]",
+  "warning:no-aria-role": "вляется ли этот SVG декоративным?",
   "warning:no-for": "Отсутствует [for]",
   "warning:decoration": "Семантический атрибут на декоративном изображении",
   "warning:autoplay": "Автовоспроизведение",

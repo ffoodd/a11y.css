@@ -700,7 +700,7 @@ category: Warnings
 ---
 
 ##Description
-Any `<svg>` should either have a `[role="presentation"]` or `[aria-hidden="true"]` if decorative, or a `[role="img"]` if informative.
+Any `<svg>` should either have `[aria-hidden="true"]` if decorative, or a `[role="img"]` if informative.
 
 ##References
 * <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
@@ -709,7 +709,7 @@ Any `<svg>` should either have a `[role="presentation"]` or `[aria-hidden="true"
 
 ##Selector
 ```css_example
-svg:not([aria-hidden="true"]):not([role="presentation"]):not([role="img"])
+svg:not([aria-hidden="true"]):not([role="img"])
 ```
 
 ##Test
@@ -722,7 +722,7 @@ svg:not([aria-hidden="true"]):not([role="presentation"]):not([role="img"])
 </svg><span>†</span>
 ```
 */
-svg:not([aria-hidden="true"]):not([role="presentation"]):not([role="img"]) {
+svg:not([aria-hidden="true"]):not([role="img"]) {
   @include warning('no-aria-role', $self-closing: true);
 }
 
