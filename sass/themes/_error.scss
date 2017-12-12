@@ -808,6 +808,7 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 * <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-8>
 * <http://www.w3.org/TR/WCAG-TECHS/F46.html>
 * <http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
+* <http://www.w3.org/Translations/WCAG20-fr/#content-structure-separation-programmatic>
 
 ##Selector
 ```css_example
@@ -815,10 +816,10 @@ table[role="presentation"] th,
 table[role="presentation"] thead,
 table[role="presentation"] tfoot,
 table[role="presentation"] caption,
+table[role="presentation"] colgroup,
 table[role="presentation"] [axis],
 table[role="presentation"] [scope],
-table[role="presentation"] [headers],
-table[role="presentation"] [colgroup]
+table[role="presentation"] [headers]
 ```
 
 ##Test
@@ -837,10 +838,10 @@ table[role="presentation"] th,
 table[role="presentation"] thead,
 table[role="presentation"] tfoot,
 table[role="presentation"] caption,
+table[role="presentation"] colgroup,
 table[role="presentation"] [axis],
 table[role="presentation"] [scope],
-table[role="presentation"] [headers],
-table[role="presentation"] [colgroup] {
+table[role="presentation"] [headers] {
   @include error('table-for-layout');
 }
 
