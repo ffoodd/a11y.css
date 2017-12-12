@@ -1227,7 +1227,7 @@ before the `<title>` tag is the simplest way to cover it.
 
 ##Selector
 ```css_example
-head > *:first-child:not(meta[charset])
+head > *:first-child:not([charset])
 ```
 
 ##Test
@@ -1236,7 +1236,7 @@ head > *:first-child:not(meta[charset])
 <meta charset="utf-8" /><span>†</span>
 ```
 */
-head > *:first-child:not(meta[charset]) {
+head > *:first-child:not([charset]) {
   @include error('late-charset', $self-closing: true, $head: true);
   @include a11y-head($self-closing: true);
 }
