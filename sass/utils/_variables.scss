@@ -57,4 +57,4 @@ $formats: pdf, doc, png, jpg, gif, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx,
 /// @type List
 /// @link http://w3c.github.io/html/dom.html#interactive-content-2
 /// @link http://hugogiraudel.com/2013/07/15/understanding-sass-lists/
-$interactive: "a[href]", "audio[controls]", "video[controls]", "button", "details", "embed", "iframe", "img[usemap]", "label", "select", "textarea", "input[type]:not([hidden])";
+$interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'details', 'embed', 'iframe', 'img[usemap]', 'label', 'select', 'textarea', 'input[type]:not([hidden])';
