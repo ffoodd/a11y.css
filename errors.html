@@ -111,6 +111,10 @@
               </li>
             
               <li>
+                <a href="#nested-interactive">Nested interactive elements</a>
+              </li>
+            
+              <li>
                 <a href="#no-action">form missing an [action]</a>
               </li>
             
@@ -649,7 +653,7 @@ before the <code class="styleguide">&lt;title&gt;</code> tag is the simplest way
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">head</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:first-child:not</span><span class="o">(</span><span class="nt">meta</span><span class="o">[</span><span class="nt">charset</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">head</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:first-child:not</span><span class="o">([</span><span class="nt">charset</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -727,6 +731,69 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.</p>
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"2"</span><span class="nt">&gt;</span>Hello! My ID is 2.<span class="nt">&lt;/div&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="nested-interactive" class="styleguide">Nested interactive elements</h1>
+
+<h2>Description</h2>
+<p class="styleguide">An interactive element should not be contained in another interactive element (e.g. <code class="styleguide">&lt;a&gt;</code> in <code class="styleguide">&lt;button&gt;</code>).</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-parses">http://www.w3.org/TR/WCAG20/#ensure-compat-parses</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
+<li><a href="https://www.w3.org/TR/xhtml1/#prohibitions">https://www.w3.org/TR/xhtml1/#prohibitions</a></li>
+<li><a href="http://w3c.github.io/html/dom.html#interactive-content-2">http://w3c.github.io/html/dom.html#interactive-content-2</a></li>
+<li><a href="http://w3c.github.io/html/sec-forms.html#the-form-element">http://w3c.github.io/html/sec-forms.html#the-form-element</a></li>
+<li><a href="http://w3c.github.io/html/sec-forms.html#the-progress-element">http://w3c.github.io/html/sec-forms.html#the-progress-element</a></li>
+<li><a href="http://w3c.github.io/html/sec-forms.html#the-meter-element">http://w3c.github.io/html/sec-forms.html#the-meter-element</a></li>
+<li><a href="http://w3c.github.io/html/sec-forms.html#the-button-element">http://w3c.github.io/html/sec-forms.html#the-button-element</a></li>
+<li><a href="http://w3c.github.io/html/textlevel-semantics.html#the-a-element">http://w3c.github.io/html/textlevel-semantics.html#the-a-element</a></li>
+<li><a href="http://w3c.github.io/html/sec-forms.html#the-label-element">http://w3c.github.io/html/sec-forms.html#the-label-element</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">a</span> <span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">],</span>
+<span class="nt">button</span> <span class="nt">a</span><span class="o">[</span><span class="nt">href</span><span class="o">],</span>
+<span class="nt">a</span> <span class="nt">audio</span><span class="o">[</span><span class="nt">controls</span><span class="o">],</span>
+<span class="nt">button</span> <span class="nt">audio</span><span class="o">[</span><span class="nt">controls</span><span class="o">],</span>
+<span class="nt">a</span> <span class="nt">video</span><span class="o">[</span><span class="nt">controls</span><span class="o">],</span>
+<span class="nt">button</span> <span class="nt">video</span><span class="o">[</span><span class="nt">controls</span><span class="o">],</span>
+<span class="nt">a</span> <span class="nt">button</span><span class="o">,</span>
+<span class="nt">button</span> <span class="nt">button</span><span class="o">,</span>
+<span class="nt">a</span> <span class="nt">details</span><span class="o">,</span>
+<span class="nt">button</span> <span class="nt">details</span><span class="o">,</span>
+<span class="nt">a</span> <span class="nt">embed</span><span class="o">,</span>
+<span class="nt">button</span> <span class="nt">embed</span><span class="o">,</span>
+<span class="nt">a</span> <span class="nt">iframe</span><span class="o">,</span>
+<span class="nt">button</span> <span class="nt">iframe</span><span class="o">,</span>
+<span class="nt">a</span> <span class="nt">img</span><span class="o">[</span><span class="nt">usemap</span><span class="o">],</span>
+<span class="nt">button</span> <span class="nt">img</span><span class="o">[</span><span class="nt">usemap</span><span class="o">],</span>
+<span class="nt">a</span> <span class="nt">label</span><span class="o">,</span>
+<span class="nt">button</span> <span class="nt">label</span><span class="o">,</span>
+<span class="nt">a</span> <span class="nt">select</span><span class="o">,</span>
+<span class="nt">button</span> <span class="nt">select</span><span class="o">,</span>
+<span class="nt">a</span> <span class="nt">textarea</span><span class="o">,</span>
+<span class="nt">button</span> <span class="nt">textarea</span><span class="o">,</span>
+<span class="nt">a</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">hidden</span><span class="o">]),</span>
+<span class="nt">button</span> <span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">hidden</span><span class="o">]),</span>
+<span class="nt">form</span> <span class="nt">form</span><span class="o">,</span>
+<span class="nt">label</span> <span class="nt">label</span><span class="o">,</span>
+<span class="nt">meter</span> <span class="nt">meter</span><span class="o">,</span>
+<span class="nt">progress</span> <span class="nt">progress</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <a href="https://www.ffoodd.fr">
+  <button type=button">Oh wait, what should I trigger?</button>
+</a>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.ffoodd.fr"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">button"</span><span class="nt">&gt;</span>Oh wait, what should I trigger?<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;/a&gt;</span></code></pre>
   </div>
 </div>
 
@@ -1386,6 +1453,7 @@ However, semantics tags and attributes aiming to organize datas mustn&#39;t be u
 <ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-8">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-8</a></li>
 <li><a href="http://www.w3.org/TR/WCAG-TECHS/F46.html">http://www.w3.org/TR/WCAG-TECHS/F46.html</a></li>
 <li><a href="http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49">http://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49</a></li>
+<li><a href="http://www.w3.org/Translations/WCAG20-fr/#content-structure-separation-programmatic">http://www.w3.org/Translations/WCAG20-fr/#content-structure-separation-programmatic</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
@@ -1393,10 +1461,10 @@ However, semantics tags and attributes aiming to organize datas mustn&#39;t be u
 <span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">thead</span><span class="o">,</span>
 <span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">tfoot</span><span class="o">,</span>
 <span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">caption</span><span class="o">,</span>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="nt">colgroup</span><span class="o">,</span>
 <span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">axis</span><span class="o">],</span>
 <span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">scope</span><span class="o">],</span>
-<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">headers</span><span class="o">],</span>
-<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">colgroup</span><span class="o">]</span></code></pre>
+<span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">headers</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
