@@ -68,6 +68,7 @@
   "error:role-checkbox": "Faltando [aria-checked]",
   "error:role-combobox": "Faltando [aria-expanded]",
   "error:role-scrollbar": "Faltando altributos [role=scrollbar]",
+  "error:nested-interactive": "Elementos interativos aninhados",
 
   "warning:style-attr": "Inline styles",
   "warning:invalid-nesting": "Inválido nesting",

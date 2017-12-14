@@ -68,6 +68,7 @@
   "error:role-checkbox": "[aria-checked] absent",
   "error:role-combobox": "[aria-expanded] absent",
   "error:role-scrollbar": "Attributs manquants pour [role=scrollbar]",
+  "error:nested-interactive": "Éléments interactifs imbriqués",
 
   "warning:style-attr": "Styles en ligne",
   "warning:invalid-nesting": "Imbrication invalide",

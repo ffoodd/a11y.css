@@ -1616,3 +1616,81 @@ Some properties are required to comply the `[role="scrollbar"]` pattern:
 [role="scrollbar"]:not([aria-orientation]) {
   @include error('role-scrollbar');
 }
+
+
+/*doc
+---
+title: "Nested interactive elements"
+name: nested-interactive
+category: Errors
+---
+
+##Description
+An interactive element should not be contained in another interactive element (e.g. `<a>` in `<button>`).
+
+
+##References
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://www.w3.org/TR/xhtml1/#prohibitions>
+* <http://w3c.github.io/html/dom.html#interactive-content-2>
+* <http://w3c.github.io/html/sec-forms.html#the-form-element>
+* <http://w3c.github.io/html/sec-forms.html#the-progress-element>
+* <http://w3c.github.io/html/sec-forms.html#the-meter-element>
+* <http://w3c.github.io/html/sec-forms.html#the-button-element>
+* <http://w3c.github.io/html/textlevel-semantics.html#the-a-element>
+* <http://w3c.github.io/html/sec-forms.html#the-label-element>
+
+##Selector
+```css_example
+a a[href],
+button a[href],
+a audio[controls],
+button audio[controls],
+a video[controls],
+button video[controls],
+a button,
+button button,
+a details,
+button details,
+a embed,
+button embed,
+a iframe,
+button iframe,
+a img[usemap],
+button img[usemap],
+a label,
+button label,
+a select,
+button select,
+a textarea,
+button textarea,
+a input[type]:not([hidden]),
+button input[type]:not([hidden]),
+form form,
+label label,
+meter meter,
+progress progress
+```
+
+##Test
+```html_example
+<a href="https://www.ffoodd.fr">
+  <button type=button">Oh wait, what should I trigger?</button>
+</a>
+```
+*/
+$tags: ();
+
+@each $tag in $interactive {
+  $tags: append($tags, unquote('a #{$tag}, button #{$tag}'), 'comma');
+}
+
+#{$tags},
+form form,
+label label,
+meter meter,
+progress progress {
+  @include error('nested-interactive');
+}
