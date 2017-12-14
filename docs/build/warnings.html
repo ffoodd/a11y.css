@@ -63,7 +63,7 @@
               </li>
             
               <li>
-                <a href="#decorative-svg">Semantic attribute on decorative svg</a>
+                <a href="#decoration">Decorative image shouldn&#39;t have an accessible name</a>
               </li>
             
               <li>
@@ -139,11 +139,11 @@
               </li>
             
               <li>
-                <a href="#non-empty-alt">[alt] should be empty for decorative image</a>
+                <a href="#oops">Bad computed value</a>
               </li>
             
               <li>
-                <a href="#oops">Bad computed value</a>
+                <a href="#presentation">[role=presentation] shouldn&#39;t be used on image</a>
               </li>
             
               <li>
@@ -272,10 +272,10 @@
   </div>
 </div>
 
-<h1 id="decorative-svg" class="styleguide">Semantic attribute on decorative svg</h1>
+<h1 id="decoration" class="styleguide">Decorative image shouldn&#39;t have an accessible name</h1>
 
 <h2>Description</h2>
-<p class="styleguide">Any decorative <code class="styleguide">&lt;svg&gt;</code> — with a <code class="styleguide">[role=&quot;presentation&quot;]</code> or <code class="styleguide">[aria-hidden=&quot;true&quot;]</code> — should not have any of those:</p><ul class="styleguide"><li><code class="styleguide">[title]</code>;</li>
+<p class="styleguide">Any decorative image — with <code class="styleguide">[aria-hidden=&quot;true&quot;]</code> or empty <code class="styleguide">[alt]</code> — shouldn&#39;t have any of those:</p><ul class="styleguide"><li><code class="styleguide">[title]</code>;</li>
 <li><code class="styleguide">[aria-label]</code>;</li>
 <li><code class="styleguide">[aria-labelledby]</code>;</li>
 <li><code class="styleguide">[aria-describedby]</code>;</li>
@@ -284,27 +284,52 @@
 </ul><p class="styleguide">This test currently can&#39;t check if any <code class="styleguide">&lt;title&gt;</code> nor <code class="styleguide">&lt;desc&gt;</code> child is present since <code class="styleguide">&lt;svg&gt;</code> is a replaced elements.
 See <a class="styleguide" href="https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues" title="https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues">Edge cases and known issues</a> on a11y.css&#39; wiki.</p>
 <h2>References</h2>
-<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2</a></li>
+<ul class="styleguide"><li>BP160 OpQuast</li>
+<li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2</a></li>
+<li><a href="http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01">http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01</a></li>
+<li><a href="http://www.w3.org/WAI/tutorials/images/decision-tree/">http://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
+<li><a href="https://www.w3.org/TR/wai-aria/roles#presentation">https://www.w3.org/TR/wai-aria/roles#presentation</a></li>
+<li><a href="http://www.w3.org/TR/html51/semantics.html#alt">http://www.w3.org/TR/html51/semantics.html#alt</a></li>
 <li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/H67.html">http://www.w3.org/TR/WCAG-TECHS/H67.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F39.html">http://www.w3.org/TR/WCAG-TECHS/F39.html</a></li>
+<li><a href="http://www.w3.org/TR/WCAG-TECHS/F38.html">http://www.w3.org/TR/WCAG-TECHS/F38.html</a></li>
 <li><a href="http://www.w3.org/TR/WCAG-TECHS/F65.html">http://www.w3.org/TR/WCAG-TECHS/F65.html</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">svg</span><span class="o">[</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">title</span><span class="o">],</span>
+  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">][</span><span class="nt">title</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">][</span><span class="nt">aria-label</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">][</span><span class="nt">aria-labelledby</span><span class="o">],</span>
+<span class="nt">img</span><span class="o">[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">][</span><span class="nt">aria-describedby</span><span class="o">],</span>
+<span class="nt">area</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">])[</span><span class="nt">alt</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">]),</span>
+<span class="nt">area</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">])[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">][</span><span class="nt">title</span><span class="o">],</span>
+<span class="nt">area</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">])[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">][</span><span class="nt">aria-label</span><span class="o">],</span>
+<span class="nt">area</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">])[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">][</span><span class="nt">aria-labelledby</span><span class="o">],</span>
+<span class="nt">area</span><span class="nd">:not</span><span class="o">([</span><span class="nt">href</span><span class="o">])[</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">][</span><span class="nt">aria-describedby</span><span class="o">],</span>
+<span class="nt">svg</span><span class="o">[</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">title</span><span class="o">],</span>
 <span class="nt">svg</span><span class="o">[</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-label</span><span class="o">],</span>
 <span class="nt">svg</span><span class="o">[</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-labelledby</span><span class="o">],</span>
 <span class="nt">svg</span><span class="o">[</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-describedby</span><span class="o">],</span>
-<span class="nt">svg</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">][</span><span class="nt">title</span><span class="o">],</span>
-<span class="nt">svg</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-label</span><span class="o">],</span>
-<span class="nt">svg</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-labelledby</span><span class="o">],</span>
-<span class="nt">svg</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-describedby</span><span class="o">]</span></code></pre>
+<span class="nt">canvas</span><span class="o">[</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">title</span><span class="o">],</span>
+<span class="nt">canvas</span><span class="o">[</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-label</span><span class="o">],</span>
+<span class="nt">canvas</span><span class="o">[</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-labelledby</span><span class="o">],</span>
+<span class="nt">canvas</span><span class="o">[</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-describedby</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">title</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-label</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-labelledby</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-describedby</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">title</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-label</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-labelledby</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">][</span><span class="nt">aria-describedby</span><span class="o">],</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
   <div class="exampleOutput">
     <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="http://www.w3.org/2000/svg" version="1.1"
-     role="presentation" title="Decorative SVG, you punk!">
+     aria-hidden="true" title="Decorative SVG, you punk!">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
 </svg><span>†</span>
@@ -313,7 +338,7 @@ See <a class="styleguide" href="https://github.com/ffoodd/a11y.css/wiki/Edge-cas
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"12cm"</span> <span class="na">height=</span><span class="s">"4cm"</span> <span class="na">viewBox=</span><span class="s">"0 0 1200 400"</span>
      <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span>
-     <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">title=</span><span class="s">"Decorative SVG, you punk!"</span><span class="nt">&gt;</span>
+     <span class="na">aria-hidden=</span><span class="s">"true"</span> <span class="na">title=</span><span class="s">"Decorative SVG, you punk!"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"100"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"200"</span>
         <span class="na">fill=</span><span class="s">"forestgreen"</span> <span class="na">stroke=</span><span class="s">"darkgreen"</span> <span class="na">stroke-width=</span><span class="s">"10"</span>  <span class="nt">/&gt;</span>
 <span class="nt">&lt;/svg&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
@@ -982,7 +1007,7 @@ You could use a <code class="styleguide">&lt;span&gt;</code> instead.</p>
 <h1 id="no-aria-role" class="styleguide">A role is needed for svg</h1>
 
 <h2>Description</h2>
-<p class="styleguide">Any <code class="styleguide">&lt;svg&gt;</code> should either have a <code class="styleguide">[role=&quot;presentation&quot;]</code> or <code class="styleguide">[aria-hidden=&quot;true&quot;]</code> if decorative, or a <code class="styleguide">[role=&quot;img&quot;]</code> if informative.</p>
+<p class="styleguide">Any <code class="styleguide">&lt;svg&gt;</code> should either have <code class="styleguide">[aria-hidden=&quot;true&quot;]</code> if decorative, or a <code class="styleguide">[role=&quot;img&quot;]</code> if informative.</p>
 <h2>References</h2>
 <ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2</a></li>
 <li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
@@ -990,7 +1015,7 @@ You could use a <code class="styleguide">&lt;span&gt;</code> instead.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">svg</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">img</span><span class="err">"</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">svg</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">img</span><span class="err">"</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -1043,41 +1068,6 @@ Although implicitly labelling form controls is accepted, it&#39;s probably bette
   </div>
 </div>
 
-<h1 id="non-empty-alt" class="styleguide">[alt] should be empty for decorative image</h1>
-
-<h2>Description</h2>
-<p class="styleguide">An alternative must be empty when image is decorative only — which is declared with <code class="styleguide">[role=presentation]</code>.</p>
-<h2>References</h2>
-<ul class="styleguide"><li>BP160 OpQuast</li>
-<li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2</a></li>
-<li><a href="http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01">http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01</a></li>
-<li><a href="http://www.w3.org/WAI/tutorials/images/decision-tree/">http://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
-<li><a href="https://www.w3.org/TR/wai-aria/roles#presentation">https://www.w3.org/TR/wai-aria/roles#presentation</a></li>
-<li><a href="http://www.w3.org/TR/html51/semantics.html#alt">http://www.w3.org/TR/html51/semantics.html#alt</a></li>
-<li><a href="http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all">http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/H67.html">http://www.w3.org/TR/WCAG-TECHS/H67.html</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/F39.html">http://www.w3.org/TR/WCAG-TECHS/F39.html</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/F38.html">http://www.w3.org/TR/WCAG-TECHS/F38.html</a></li>
-</ul>
-<h2>Selector</h2>
-<div class="codeBlock cssExample">
-  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">]),</span>
-<span class="nt">area</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">]),</span>
-<span class="nt">input</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">]),</span>
-<span class="nt">embed</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">]),</span>
-<span class="nt">object</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="err">"</span><span class="nt">image</span><span class="err">"</span><span class="o">][</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">alt</span><span class="o">=</span><span class="err">""</span><span class="o">])</span></code></pre>
-</div>
-<h2>Test</h2>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <img role="presentation" alt="I'm a deocrative image!" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
-
-  </div>
-  <div class="codeBlock">
-    <pre><code><span class="nt">&lt;img</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">alt=</span><span class="s">"I'm a deocrative image!"</span> <span class="na">src=</span><span class="s">"static/ffoodd.png"</span> <span class="na">width=</span><span class="s">"144"</span> <span class="na">height=</span><span class="s">"144"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
-  </div>
-</div>
-
 <h1 id="oops" class="styleguide">Bad computed value</h1>
 
 <h2>Description</h2>
@@ -1099,6 +1089,46 @@ Although implicitly labelling form controls is accepted, it&#39;s probably bette
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"undefined"</span><span class="nt">&gt;</span>Oups, something went wrong.<span class="nt">&lt;/p&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="presentation" class="styleguide">[role=presentation] shouldn&#39;t be used on image</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Any decorative image should be marked up with <code class="styleguide">[aria-hidden=&quot;true&quot;]</code> (or empty <code class="styleguide">[alt]</code> if <code class="styleguide">&lt;img&gt;</code>).
+<code class="styleguide">[role=presentation]</code> shall do the trick but at the time of writing, its support is too low compared
+to empty <code class="styleguide">[alt]</code> or <code class="styleguide">[aria-hidden=true]</code>.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/referentiel/notes-techniques.html#nt-1-2">http://references.modernisation.gouv.fr/referentiel/notes-techniques.html#nt-1-2</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/images/decorative/">https://www.w3.org/WAI/tutorials/images/decorative/</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">img</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">svg</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">area</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">embed</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">canvas</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">],</span>
+<span class="nt">object</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     role="presentation">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;svg</span> <span class="na">width=</span><span class="s">"12cm"</span> <span class="na">height=</span><span class="s">"4cm"</span> <span class="na">viewBox=</span><span class="s">"0 0 1200 400"</span>
+     <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">version=</span><span class="s">"1.1"</span>
+     <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"100"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"200"</span>
+        <span class="na">fill=</span><span class="s">"forestgreen"</span> <span class="na">stroke=</span><span class="s">"darkgreen"</span> <span class="na">stroke-width=</span><span class="s">"10"</span>  <span class="nt">/&gt;</span>
+<span class="nt">&lt;/svg&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
   </div>
 </div>
 
