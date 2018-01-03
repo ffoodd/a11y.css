@@ -9,6 +9,7 @@ module.exports = {
   autoprefixer: { browsers: ['last 2 versions'] },
   scsslint: { config: 'configs/.scsslint.yml' },
   locales: ['en','fr','ru','zh','pt-br'],
+  localesdest: 'sass/locales/',
   sassdoc: {
     dest: 'docs/SassDoc',
     theme: 'alix',

@@ -9,12 +9,11 @@ var onError = require('./helpers/onError');
 
 module.exports = function () {
     options.locales.forEach( function(locale) {
-      console.log('Generate translation Sass map for: ' + locale);
       return fs.createReadStream('locales/' + locale + '.json')
         .pipe(plumber({ errorHandler: onError }))
         .pipe(rootbeer({ prefix: '$messages: ' }))
         .pipe(source(locale + '.json'))
         .pipe(rename('_' + locale + '.scss'))
-        .pipe(gulp.dest('sass/locales/'));
+        .pipe(gulp.dest(options.localesdest));
     });
 };
