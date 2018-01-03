@@ -11,6 +11,7 @@ gulp.task('hologram', ['hologram-sass', 'hologram-js'], require('./tasks/hologra
 gulp.task('scss-lint', require('./tasks/scss-lint'));
 gulp.task('css-lint', require('./tasks/css-lint'));
 gulp.task('watch', require('./tasks/watch'));
+gulp.task('translate', require('./tasks/translate'));
 
 // Meta tasks
 gulp.task('docs', ['sassdoc', 'hologram']);

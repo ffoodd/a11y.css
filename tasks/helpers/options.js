@@ -8,6 +8,7 @@ module.exports = {
   sassdochtmldest: './docs/SassDoc/',
   autoprefixer: { browsers: ['last 2 versions'] },
   scsslint: { config: 'configs/.scsslint.yml' },
+  locales: ['en','fr','ru','zh','pt-br'],
   sassdoc: {
     dest: 'docs/SassDoc',
     theme: 'alix',
