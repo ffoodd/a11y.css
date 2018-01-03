@@ -14,7 +14,7 @@ module.exports = function () {
         .pipe(plumber({ errorHandler: onError }))
         .pipe(rootbeer({ prefix: '$messages: ' }))
         .pipe(source(locale + '.json'))
-        .pipe(rename(locale + '.scss'))
+        .pipe(rename('_' + locale + '.scss'))
         .pipe(gulp.dest('sass/locales/'));
     });
 };
