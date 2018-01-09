@@ -9,9 +9,9 @@ a11ycss.checkalts = {
 		missing: "MISSING"
 	},
 	pics: {
-		ok:"<img src='../webextension/icons/alt_ok.png' alt='OK' class='{NAMESPACE}picto'>",
-		empty:"<img src='../webextension/icons/alt_empty.png' alt='Empty' class='{NAMESPACE}picto'>",
-		missing:"<img src='../webextension/icons/alt_missing.png' alt='Missing' class='{NAMESPACE}picto'>"
+		ok:"<img src='../webextension/icons/ok.svg' alt='OK' class='{NAMESPACE}picto'>",
+		empty:"<img src='../webextension/icons/info.svg' alt='Empty' class='{NAMESPACE}picto'>",
+		missing:"<img src='../webextension/icons/ko.svg' alt='Missing' class='{NAMESPACE}picto'>"
 	},
 	// The reporter is a zone in the page where we gather thumbnails
 	buildReporter: function() {
@@ -48,6 +48,8 @@ a11ycss.checkalts = {
 				position:absolute;
 				top:0;
 				left:0;
+				width:32px;
+				height:32px;
 			}
 		`;
 		var s = document.createElement('style');

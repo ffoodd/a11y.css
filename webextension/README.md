@@ -17,5 +17,4 @@ Then you can run the Browser console `Ctrl+Shift+J` to see what's happening. You
 
 ## Credits
 
-* Some pictograms used are CC-BY 2.5 [Famfamfam Silk](http://www.famfamfam.com/lab/icons/silk/).
 * A11y.css icon by [Gaël Poupard](http://www.ffoodd.fr/).
