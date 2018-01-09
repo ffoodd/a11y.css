@@ -112,19 +112,29 @@ a11ycss.checkalts = {
 	},
 	// we add behaviour on the figures (thumbnails) we gathered in the reporter
 	addBehaviour: function () {
+		var that = this; // yeah I know it's cheap but I'm going for easy here.
 		var figures = this.reporter.getElementsByTagName('figure');
 		for(var i = 0 ; i < figures.length ; i++) {
 			var f = figures[i];
 			f.setAttribute('tabindex',0);
 			f.addEventListener('click',function(){
-				var scrollElt = document.getElementsByClassName(this.getAttribute('data-target')).item(0);
-				scrollElt.scrollIntoView({
-					block: "start",
-					inline: "nearest",
-					behavior: "smooth"
-				});
+				that.handleThumbnail(this);
+			});
+			f.addEventListener('keypress',function(e){
+				if (e.keyCode === 13) {
+					that.handleThumbnail(this);
+				}
 			});
 		}
+	},
+	// this handles events on thumbnails and scrolls to desired image
+	handleThumbnail: function(elt) {
+		var scrollElt = document.getElementsByClassName(elt.getAttribute('data-target')).item(0);
+		scrollElt.scrollIntoView({
+			block: "start",
+			inline: "nearest",
+			behavior: "smooth"
+		});
 	},
 
 	init: function() {
