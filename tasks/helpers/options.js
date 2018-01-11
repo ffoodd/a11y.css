@@ -9,8 +9,10 @@ module.exports = {
   webextension: './webextension/**/*',
   webextensioncsssource: './css/a11y-*_*.css',
   webextensioncssdest: './webextension/css',
-  autoprefixer: { browsers: ['last 2 versions'] },
+  autoprefixer: { browsers: ['last 1 versions'] },
   scsslint: { config: 'configs/.scsslint.yml' },
+  locales: ['en','fr','ru','zh','pt-br'],
+  localesdest: 'sass/locales/',
   sassdoc: {
     dest: 'docs/SassDoc',
     theme: 'alix',

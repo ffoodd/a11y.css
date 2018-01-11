@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-$messages: require('./locales/ru', $infer: false);
+@import 'locales/ru';
 
 @import 'utils/all';
 @include set-minimum-level('error');

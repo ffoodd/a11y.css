@@ -1,15 +1,15 @@
 {
-    "dest": ./../docs/SassDoc,
-    "package": ./../package.json,
-    "display": {
-        "access": ["public"],
-        "alias": false,
-        "watermark": true
-    },
-    "basePath": "https://github.com/ffoodd/a11y.css/tree/master/sass",
-    "theme": "alix",
-    "groups": {
-        "undefined": "Configuration",
-        "languages": "Translation"
-    }
+  "dest": ./../docs/SassDoc,
+  "package": ./../package.json,
+  "display": {
+    "access": ["public"],
+    "alias": false,
+    "watermark": true
+  },
+  "basePath": "https://github.com/ffoodd/a11y.css/tree/master/sass",
+  "theme": "alix",
+  "groups": {
+      "undefined": "Configuration",
+      "languages": "Translation"
+  }
 }

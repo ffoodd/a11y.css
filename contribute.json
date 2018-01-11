@@ -1,28 +1,28 @@
 {
-    "name": "a11y.css",
-    "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
-    "repository": {
-        "url": "https://github.com/ffoodd/a11y.css",
-        "license": "MIT",
-        "tests": "https://travis-ci.org/ffoodd/a11y.css"
-    },
-    "participate": {
-        "home": "http://ffoodd.github.io/a11y.css/",
-        "docs": "http://ffoodd.github.io/a11y.css/docs.html",
-        "wiki": "https://github.com/ffoodd/a11y.css/wiki"
-    },
-    "bugs": {
-        "list": "https://github.com/ffoodd/a11y.css/issues",
-        "report": "https://github.com/ffoodd/a11y.css/issues/new"
-    },
-    "keywords": [
-        "a11y",
-        "css",
-        "json",
-        "sass",
-        "sassdoc",
-        "hologram",
-        "accessibility",
-        "html"
-    ]
+  "name": "a11y.css",
+  "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
+  "repository": {
+    "url": "https://github.com/ffoodd/a11y.css",
+    "license": "MIT",
+    "tests": "https://travis-ci.org/ffoodd/a11y.css"
+  },
+  "participate": {
+    "home": "http://ffoodd.github.io/a11y.css/",
+    "docs": "http://ffoodd.github.io/a11y.css/docs.html",
+    "wiki": "https://github.com/ffoodd/a11y.css/wiki"
+  },
+  "bugs": {
+    "list": "https://github.com/ffoodd/a11y.css/issues",
+    "report": "https://github.com/ffoodd/a11y.css/issues/new"
+  },
+  "keywords": [
+    "a11y",
+    "css",
+    "json",
+    "sass",
+    "sassdoc",
+    "hologram",
+    "accessibility",
+    "html"
+  ]
 }
