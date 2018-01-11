@@ -10,9 +10,9 @@ a11ycss.checkalts = {
 	},
 	// string templates for pictograms
 	pics: {
-		ok:"<img src='' style='display:none;' alt='OK' class='{NAMESPACE}picto {NAMESPACE}picto_ok'>",
-		empty:"<img src='' style='display:none;' alt='Empty' class='{NAMESPACE}picto {NAMESPACE}picto_empty'>",
-		missing:"<img src='' style='display:none;' alt='Missing' class='{NAMESPACE}picto {NAMESPACE}picto_missing'>"
+		ok:"<img src='' alt='OK' class='{NAMESPACE}picto {NAMESPACE}picto_ok'>",
+		empty:"<img src='' alt='Empty' class='{NAMESPACE}picto {NAMESPACE}picto_info'>",
+		missing:"<img src='' alt='Missing' class='{NAMESPACE}picto {NAMESPACE}picto_ko'>"
 	},
 
 	extensionpics: {},
@@ -54,6 +54,7 @@ a11ycss.checkalts = {
 				left:0;
 				width:32px;
 				height:32px;
+				display:none;
 			}
 		`;
 		var s = document.createElement('style');
@@ -91,15 +92,15 @@ a11ycss.checkalts = {
 			if (tmpimg.getAttribute('alt') === null) {
 				tmptpl = tmptpl.replace(`{ALT}`, this.strings.missing);
 				tmptpl = tmptpl.replace(`{PICTOGRAM}`,
-					this.pics.missing.replace(`{NAMESPACE}`,this.namespace) );
+					this.pics.missing.replace(/{NAMESPACE}/g,this.namespace) );
 			} else if(tmpimg.alt === '') {
 				tmptpl = tmptpl.replace(`{ALT}`, this.strings.empty);
 				tmptpl = tmptpl.replace(`{PICTOGRAM}`,
-					this.pics.empty.replace(`{NAMESPACE}`, this.namespace));
+					this.pics.empty.replace(/{NAMESPACE}/g, this.namespace));
 			} else {
 				tmptpl = tmptpl.replace(`{ALT}`, "'" + tmpimg.alt + "'");
 				tmptpl = tmptpl.replace(`{PICTOGRAM}`,
-					this.pics.ok.replace(`{NAMESPACE}`, this.namespace));
+					this.pics.ok.replace(/{NAMESPACE}/g, this.namespace));
 			}
 
 			if (tmpimg.getAttribute('title') === null) {
@@ -144,39 +145,29 @@ a11ycss.checkalts = {
 		});
 	},
 
-	// used for dev purposes
-	// @@TODO remove
-	testScript: function() {
-		// var ok = chrome.extension
-		// browser.runtime.onMessage.addListener((message) => {
-		// 	if(message.icons) {
-		// 		console.log("runtime message : ", message.icons);
-		// 	}
-		// });
+	// this changes the pictos with icons stored in the webextension
+	updatePictos: function(icons) {
+		var keys = [ "info", "ko", "ok" ];
+		var classPrefix = a11ycss.checkalts.namespace + 'picto_';
+		keys.forEach(function(key) {
+			var elts = document.getElementsByClassName(classPrefix + key);
+			for(var i = 0 ; i < elts.length ; i++) {
+				elts[i].src = icons[key.valueOf()];
+				elts[i].style = 'display:block;';
+			}
+		}, this);
 	},
 
 	init: function() {
 		this.buildReporter();
 		this.collectImages();
 		this.addBehaviour();
-		this.testScript();
-		// browser.runtime.onMessage.addListener((message) => {
-		// 	if (message.icons) {
-		// 		console.log(message.icons);
-		// 	}
-		// });
 	}
 };
 
-// window.addEventListener('load', function () {
-	a11ycss.checkalts.init();
-// });
-
-// this does not work
-// console says "ReferenceError: browser is not defined"
 browser.runtime.onMessage.addListener((message) => {
+	a11ycss.checkalts.init();
 	if (message.icons) {
-		console.log(message.icons);
+		a11ycss.checkalts.updatePictos(message.icons);
 	}
 });
-
