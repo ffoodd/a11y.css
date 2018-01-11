@@ -52,11 +52,8 @@
     "gulp-scss-lint": "latest",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.8",
-<<<<<<< HEAD
     "gulp-zip": "^4.0.0",
-=======
     "rootbeer": "^1.0.5",
->>>>>>> fc61c7648368a3b4d79fc6fe882c6c8be59c93a2
     "sassdoc": "^2.2.2",
     "sassdoc-theme-alix": "^0.3.30",
     "vinyl-source-stream": "^2.0.0"
