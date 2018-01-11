@@ -12,6 +12,7 @@ gulp.task('scss-lint', require('./tasks/scss-lint'));
 gulp.task('css-lint', require('./tasks/css-lint'));
 gulp.task('watch', require('./tasks/watch'));
 gulp.task('copy-css', require('./tasks/webextension-css'));
+gulp.task('translate', require('./tasks/translate'));
 
 // Meta tasks
 gulp.task('docs', ['sassdoc', 'hologram']);

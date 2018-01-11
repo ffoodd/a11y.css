@@ -590,96 +590,13 @@ $self-alt: ();
 
 /*doc
 ---
-title: "[alt] should be empty for decorative image"
-name: non-empty-alt
+title: "Decorative image shouldn't have an accessible name"
+name: decoration
 category: Warnings
 ---
 
 ##Description
-An alternative must be empty when image is decorative only — which is declared with `[role=presentation]`.
-
-##References
-* BP160 OpQuast
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
-* <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
-* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <https://www.w3.org/TR/wai-aria/roles#presentation>
-* <http://www.w3.org/TR/html51/semantics.html#alt>
-* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <http://www.w3.org/TR/WCAG-TECHS/H67.html>
-* <http://www.w3.org/TR/WCAG-TECHS/F39.html>
-* <http://www.w3.org/TR/WCAG-TECHS/F38.html>
-
-##Selector
-```css_example
-img[role="presentation"]:not([alt=""]),
-area[role="presentation"]:not([alt=""]),
-input[role="presentation"]:not([alt=""]),
-embed[type="image"][role="presentation"]:not([alt=""]),
-object[type="image"][role="presentation"]:not([alt=""])
-```
-
-##Test
-```html_example
-<img role="presentation" alt="I'm a deocrative image!" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
-```
-*/
-img[role="presentation"]:not([alt=""]),
-area[role="presentation"]:not([alt=""]),
-input[role="presentation"]:not([alt=""]) {
-  @include warning('non-empty-alt', $self-closing: true);
-}
-
-embed[type="image"][role="presentation"]:not([alt=""]),
-object[type="image"][role="presentation"]:not([alt=""]) {
-  @include warning('empty-alt');
-}
-
-
-/*doc
----
-title: "A role is needed for svg"
-name: no-aria-role
-category: Warnings
----
-
-##Description
-Any `<svg>` should either have a `[role="presentation"]` or `[aria-hidden="true"]` if decorative, or a `[role="img"]` if informative.
-
-##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
-* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
-
-##Selector
-```css_example
-svg:not([aria-hidden="true"]):not([role="presentation"]):not([role="img"])
-```
-
-##Test
-```html_example
-<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg" version="1.1"
-     aria-label="Decorative SVG, you punk!">
-  <rect x="400" y="100" width="400" height="200"
-        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
-</svg><span>†</span>
-```
-*/
-svg:not([aria-hidden="true"]):not([role="presentation"]):not([role="img"]) {
-  @include warning('no-aria-role', $self-closing: true);
-}
-
-
-/*doc
----
-title: "Semantic attribute on decorative svg"
-name: decorative-svg
-category: Warnings
----
-
-##Description
-Any decorative `<svg>` — with a `[role="presentation"]` or `[aria-hidden="true"]` — should not have any of those:
+Any decorative image — with `[aria-hidden="true"]` or empty `[alt]` — shouldn't have any of those:
 
 * `[title]`;
 * `[aria-label]`;
@@ -692,41 +609,171 @@ This test currently can't check if any `<title>` nor `<desc>` child is present s
 See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues) on a11y.css' wiki.
 
 ##References
+* BP160 OpQuast
 * <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
+* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/wai-aria/roles#presentation>
+* <http://www.w3.org/TR/html51/semantics.html#alt>
 * <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <http://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <http://www.w3.org/TR/WCAG-TECHS/F38.html>
 * <http://www.w3.org/TR/WCAG-TECHS/F65.html>
 
 ##Selector
 ```css_example
+img[alt=""][title],
+img[alt=""][aria-label],
+img[alt=""][aria-labelledby],
+img[alt=""][aria-describedby],
+area:not([href])[alt]:not([alt=""]),
+area:not([href])[alt=""][title],
+area:not([href])[alt=""][aria-label],
+area:not([href])[alt=""][aria-labelledby],
+area:not([href])[alt=""][aria-describedby],
 svg[aria-hidden="true"][title],
 svg[aria-hidden="true"][aria-label],
 svg[aria-hidden="true"][aria-labelledby],
 svg[aria-hidden="true"][aria-describedby],
-svg[role="presentation"][title],
-svg[role="presentation"][aria-label],
-svg[role="presentation"][aria-labelledby],
-svg[role="presentation"][aria-describedby]
+canvas[aria-hidden="true"][title],
+canvas[aria-hidden="true"][aria-label],
+canvas[aria-hidden="true"][aria-labelledby],
+canvas[aria-hidden="true"][aria-describedby],
+embed[type="image"][aria-hidden="true"][title],
+embed[type="image"][aria-hidden="true"][aria-label],
+embed[type="image"][aria-hidden="true"][aria-labelledby],
+embed[type="image"][aria-hidden="true"][aria-describedby],
+object[type="image"][aria-hidden="true"][title],
+object[type="image"][aria-hidden="true"][aria-label],
+object[type="image"][aria-hidden="true"][aria-labelledby],
+object[type="image"][aria-hidden="true"][aria-describedby],
 ```
 
 ##Test
 ```html_example
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="http://www.w3.org/2000/svg" version="1.1"
-     role="presentation" title="Decorative SVG, you punk!">
+     aria-hidden="true" title="Decorative SVG, you punk!">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
 </svg><span>†</span>
 ```
 */
+img[alt=""][title],
+img[alt=""][aria-label],
+img[alt=""][aria-labelledby],
+img[alt=""][aria-describedby],
+area:not([href])[alt]:not([alt=""]),
+area:not([href])[alt=""][title],
+area:not([href])[alt=""][aria-label],
+area:not([href])[alt=""][aria-labelledby],
+area:not([href])[alt=""][aria-describedby],
 svg[aria-hidden="true"][title],
 svg[aria-hidden="true"][aria-label],
 svg[aria-hidden="true"][aria-labelledby],
 svg[aria-hidden="true"][aria-describedby],
-svg[role="presentation"][title],
-svg[role="presentation"][aria-label],
-svg[role="presentation"][aria-labelledby],
-svg[role="presentation"][aria-describedby] {
-  @include warning('decorative-svg', $self-closing: true);
+embed[type="image"][aria-hidden="true"][title],
+embed[type="image"][aria-hidden="true"][aria-label],
+embed[type="image"][aria-hidden="true"][aria-labelledby],
+embed[type="image"][aria-hidden="true"][aria-describedby], {
+  @include warning('decoration', $self-closing: true);
+}
+
+canvas[aria-hidden="true"][title],
+canvas[aria-hidden="true"][aria-label],
+canvas[aria-hidden="true"][aria-labelledby],
+canvas[aria-hidden="true"][aria-describedby],
+object[type="image"][aria-hidden="true"][title],
+object[type="image"][aria-hidden="true"][aria-label],
+object[type="image"][aria-hidden="true"][aria-labelledby],
+object[type="image"][aria-hidden="true"][aria-describedby] {
+  @include warning('decoration');
+}
+
+
+/*doc
+---
+title: "[role=presentation] shouldn't be used on image"
+name: presentation
+category: Warnings
+---
+
+##Description
+Any decorative image should be marked up with `[aria-hidden="true"]` (or empty `[alt]` if `<img>`).
+`[role=presentation]` shall do the trick but at the time of writing, its support is too low compared
+to empty `[alt]` or `[aria-hidden=true]`.
+
+##References
+* <http://references.modernisation.gouv.fr/referentiel/notes-techniques.html#nt-1-2>
+* <https://www.w3.org/WAI/tutorials/images/decorative/>
+
+
+##Selector
+```css_example
+img[role="presentation"],
+svg[role="presentation"],
+area[role="presentation"],
+embed[role="presentation"],
+canvas[role="presentation"],
+object[role="presentation"]
+```
+
+##Test
+```html_example
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     role="presentation">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+```
+*/
+img[role="presentation"],
+svg[role="presentation"],
+area[role="presentation"],
+embed[role="presentation"] {
+  @include warning('presentation', $self-closing: true);
+}
+
+canvas[role="presentation"],
+object[role="presentation"] {
+  @include warning('presentation');
+}
+
+
+/*doc
+---
+title: "A role is needed for svg"
+name: no-aria-role
+category: Warnings
+---
+
+##Description
+Any `<svg>` should either have `[aria-hidden="true"]` if decorative, or a `[role="img"]` if informative.
+
+##References
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
+
+##Selector
+```css_example
+svg:not([aria-hidden="true"]):not([role="img"])
+```
+
+##Test
+```html_example
+<svg width="12cm" height="4cm" viewBox="0 0 1200 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     aria-label="Decorative SVG, you punk!">
+  <rect x="400" y="100" width="400" height="200"
+        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+</svg><span>†</span>
+```
+*/
+svg:not([aria-hidden="true"]):not([role="img"]) {
+  @include warning('no-aria-role', $self-closing: true);
 }
 
 

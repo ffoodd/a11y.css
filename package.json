@@ -2,11 +2,11 @@
   "title": "a11y.css",
   "name": "a11y.css",
   "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
-  "version": "4.2.2",
+  "version": "4.3.0",
   "style": "css/a11y-en.css",
   "author": {
     "name": "Gaël Poupard",
-    "url": "http://www.ffoodd.fr",
+    "url": "https://www.ffoodd.fr",
     "email": "gael@ffoodd.fr"
   },
   "keywords": [
@@ -19,6 +19,8 @@
     "scss"
   ],
   "scripts": {
+    "prepublishOnly": "gulp translate",
+    "test": "gulp lints",
     "docs": "npm run docs:build && npm run docs:prepare && npm run docs:deploy",
     "docs:build": "gulp docs",
     "docs:prepare": "cp -r docs/Hologram/tests/* docs/build && rsync -avh docs/SassDoc/ docs/build && rm -rf docs/build/sass && rm -rf docs/build/js",
@@ -45,13 +47,15 @@
     "gulp-csslint": "latest",
     "gulp-hologram": "^1.2.3",
     "gulp-plumber": "latest",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
-    "gulp-sassport": "^0.4.0",
     "gulp-scss-lint": "latest",
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.8",
     "gulp-zip": "^4.0.0",
+    "rootbeer": "^1.0.5",
     "sassdoc": "^2.2.2",
-    "sassdoc-theme-alix": "^0.3.30"
+    "sassdoc-theme-alix": "^0.3.30",
+    "vinyl-source-stream": "^2.0.0"
   }
 }
