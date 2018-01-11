@@ -27,5 +27,10 @@
         "16": "icons/a11y-css_16.png",
         "48": "icons/a11y-css_48.png",
         "128": "icons/a11y-css_128.png"
-    }
+	},
+	"web_accessible_resources": [
+		"icons/info.svg",
+		"icons/ko.svg",
+		"icons/ok.svg"
+	]
 }

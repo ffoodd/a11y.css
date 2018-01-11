@@ -8,11 +8,14 @@ a11ycss.checkalts = {
 		empty: "EMPTY",
 		missing: "MISSING"
 	},
+	// string templates for pictograms
 	pics: {
-		ok:"<img src='../webextension/icons/ok.svg' alt='OK' class='{NAMESPACE}picto'>",
-		empty:"<img src='../webextension/icons/info.svg' alt='Empty' class='{NAMESPACE}picto'>",
-		missing:"<img src='../webextension/icons/ko.svg' alt='Missing' class='{NAMESPACE}picto'>"
+		ok:"<img src='' style='display:none;' alt='OK' class='{NAMESPACE}picto {NAMESPACE}picto_ok'>",
+		empty:"<img src='' style='display:none;' alt='Empty' class='{NAMESPACE}picto {NAMESPACE}picto_empty'>",
+		missing:"<img src='' style='display:none;' alt='Missing' class='{NAMESPACE}picto {NAMESPACE}picto_missing'>"
 	},
+
+	extensionpics: {},
 	// The reporter is a zone in the page where we gather thumbnails
 	buildReporter: function() {
 		var reporterid = this.namespace + 'reporter';
@@ -38,6 +41,7 @@ a11ycss.checkalts = {
 			div#${reporterid} figure {
 				margin:5px;
 				position:relative;
+				cursor:pointer;
 			}
 			div#${reporterid} img {
 				width:auto;
@@ -71,6 +75,7 @@ a11ycss.checkalts = {
 				</figcaption>
 			</figure>
 		`;
+
 		for (var i=0; i < imgs.length; i++) {
 			var tmptpl = tpl;
 			var tmpimg = imgs[i];
@@ -139,13 +144,39 @@ a11ycss.checkalts = {
 		});
 	},
 
+	// used for dev purposes
+	// @@TODO remove
+	testScript: function() {
+		// var ok = chrome.extension
+		// browser.runtime.onMessage.addListener((message) => {
+		// 	if(message.icons) {
+		// 		console.log("runtime message : ", message.icons);
+		// 	}
+		// });
+	},
+
 	init: function() {
 		this.buildReporter();
 		this.collectImages();
 		this.addBehaviour();
+		this.testScript();
+		// browser.runtime.onMessage.addListener((message) => {
+		// 	if (message.icons) {
+		// 		console.log(message.icons);
+		// 	}
+		// });
 	}
 };
 
-window.addEventListener('load', function () {
+// window.addEventListener('load', function () {
 	a11ycss.checkalts.init();
+// });
+
+// this does not work
+// console says "ReferenceError: browser is not defined"
+browser.runtime.onMessage.addListener((message) => {
+	if (message.icons) {
+		console.log(message.icons);
+	}
 });
+
