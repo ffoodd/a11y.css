@@ -162,6 +162,9 @@ a11ycss.checkalts = {
 	},
 
 	init: function() {
+		if (document.getElementById(this.namespace + 'reporter')) {
+			return;
+		}
 		this.buildReporter();
 		this.collectImages();
 		this.addBehaviour();
