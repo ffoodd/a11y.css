@@ -1,3 +1,6 @@
+// isolation
+(function () {
+
 var a11ycss = a11ycss || {};
 
 a11ycss.checkalts = {
@@ -171,3 +174,6 @@ browser.runtime.onMessage.addListener((message) => {
 		a11ycss.checkalts.updatePictos(message.icons);
 	}
 });
+
+})();
+// end isolation
