@@ -1,87 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>a11y.css</title>
 	<link rel="stylesheet" href="popup.css">
 </head>
+
 <body>
-<div id="home" class="">
-	<h1 id="h1Allycss" class="localizeMe"></h1>
-	<div class="util">
-		<button id="btnAllycss" class="localizeMe"></button>
-	</div>
+	<div id="home" class="">
+		<h1 id="h1Allycss" class="localizeMe"></h1>
 
-	<hr />
-	<h1 id="h1Others" class="localizeMe"></h1>
-	<div class="util">
-		<button id="btnOutline" class="localizeMe apply"></button>
-		<button id="btnShowLangAttribute" class="localizeMe"></button>
-		<button id="btnCheckalts" class="localizeMe"></button>
-	</div>
-</div>
+		<form id="a11ycssForm" class="util">
+			<div class="input-group">
+				<h2 id="a11ycssMinimumNoticeLevel" class="localizeMe"></h2>
+				<div class="radiocontainer">
+					<input type="radio" name="level" id="a11ycss1" value="advices" checked>
+					<label for="a11ycss1" id="a11ycssLevel_advices" class="localizeMe"></label>
+				</div>
+				<div class="radiocontainer">
+					<input type="radio" name="level" id="a11ycss2" value="obsolete">
+					<label for="a11ycss2" id="a11ycssLevel_obsolete" class="localizeMe"></label>
+				</div>
+				<div class="radiocontainer">
+					<input type="radio" name="level" id="a11ycss3" value="warning">
+					<label for="a11ycss3" id="a11ycssLevel_warning" class="localizeMe"></label>
+				</div>
+				<div class="radiocontainer">
+					<input type="radio" name="level" id="a11ycss4" value="error">
+					<label for="a11ycss4" id="a11ycssLevel_error" class="localizeMe"></label>
+				</div>
+			</div>
 
-<!-- container for the main attraction! -->
-<div id="allycss" class="hidden">
-	<h1 id="h1Allycss2" class="localizeMe"></h1>
-	<div class="util">
-		<button id="btnA11ycssBack" class="localizeMe"></button>
-	</div>
-	<hr />
-	<p class="">@@TODO : UI</p>
-	<hr />
+			<div class="button-group">
+				<button type="button" id="a11ycssBtnApply" class="localizeMe apply"></button>
+				<button type="button" id="a11ycssBtnClear" class="localizeMe unapply"></button>
+			</div>
+		</form>
 
-	<form id="a11ycssForm" class="util">
-		<!-- <div class="input-group">
-			<label for="languageSelector" id="a11ycssLanguageLabel" class="localizeMe"></label>
-			<select name="languageSelector" id="languageSelector">
-			</select>
-		</div> -->
-		<div class="input-group">
-			<h2 id="a11ycssMinimumNoticeLevel" class="localizeMe"></h2>
-			<div class="radiocontainer">
-			<input type="radio" name="level" id="a11ycss1" value="advices" checked>
-			<label for="a11ycss1" id="a11ycssLevel_advices" class="localizeMe"></label>
-			</div>
-			<div class="radiocontainer">
-			<input type="radio" name="level" id="a11ycss2" value="obsolete">
-			<label for="a11ycss2" id="a11ycssLevel_obsolete" class="localizeMe"></label>
-			</div>
-			<div class="radiocontainer">
-			<input type="radio" name="level" id="a11ycss3" value="warning">
-			<label for="a11ycss3" id="a11ycssLevel_warning" class="localizeMe"></label>
-			</div>
-			<div class="radiocontainer">
-			<input type="radio" name="level" id="a11ycss4" value="error">
-			<label for="a11ycss4" id="a11ycssLevel_error" class="localizeMe"></label>
-			</div>
+
+		<hr />
+		<h1 id="h1Others" class="localizeMe"></h1>
+		<div class="util">
+			<button id="btnOutline" class="localizeMe"></button>
 		</div>
-		<!-- <div class="input-group">
-			<h2 id="a11ycssSeparateLevels" class="localizeMe"></h2>
-			<div class="radiocontainer">
-				<input type="radio" name="level" id="a11ycssadvices-only" value="advices-only">
-				<label for="a11ycssadvices-only" id="a11ycssLevel_advices-only" class="localizeMe"></label>
-			</div>
-			<div class="radiocontainer">
-				<input type="radio" name="level" id="a11ycssobsolete-only" value="obsolete-only">
-				<label for="a11ycssobsolete-only" id="a11ycssLevel_obsolete-only" class="localizeMe"></label>
-			</div>
-			<div class="radiocontainer">
-				<input type="radio" name="level" id="a11ycsswarning-only" value="warning-only">
-				<label for="a11ycsswarning-only" id="a11ycssLevel_warning-only" class="localizeMe"></label>
-			</div>
-			<div class="radiocontainer">
-				<input type="radio" name="level" id="a11ycsserror-only" value="error-only">
-				<label for="a11ycsserror-only" id="a11ycssLevel_error-only" class="localizeMe"></label>
-			</div>
-		</div> -->
-		<div class="button-group">
-			<button type="button" id="a11ycssBtnApply" class="localizeMe apply"></button>
-			<button type="button" id="a11ycssBtnClear" class="localizeMe unapply"></button>
+		<div class="util">
+			<button id="btnShowLangAttribute" class="localizeMe"></button>
 		</div>
-	</form>
-</div>
+		<div class="util">
+			<button id="btnCheckalts" class="localizeMe"></button>
+		</div>
+	</div>
 
 	<!-- generic scripts  -->
 	<script src="../scripts/constants.js"></script>
@@ -89,10 +59,11 @@
 	<script src="../scripts/utils.js"></script>
 	<script src="popup.js"></script>
 	<!-- proper functions -->
-	<script src="../scripts/popuphandlers.js"></script>
+	<!-- <script src="../scripts/popuphandlers.js"></script> -->
 	<script src="../scripts/a11ycss.js"></script>
 	<script src="../scripts/outline.js"></script>
 	<script src="../scripts/showlangattribute.js"></script>
 	<script src="../scripts/checkalts.js"></script>
 </body>
+
 </html>
