@@ -8,14 +8,15 @@ a11ycss.checkalts = {
 	namespace: "a11ycss_checkalts_",
 	reporter: document.createElement('div'),
 	strings: {
-		empty: "EMPTY",
-		missing: "MISSING"
+		ok: "OK",
+		info: "empty",
+		ko: "missing"
 	},
 	// string templates for pictograms
 	pics: {
-		ok:"<img src='' alt='OK' class='{NAMESPACE}picto {NAMESPACE}picto_ok'>",
-		empty:"<img src='' alt='Empty' class='{NAMESPACE}picto {NAMESPACE}picto_info'>",
-		missing:"<img src='' alt='Missing' class='{NAMESPACE}picto {NAMESPACE}picto_ko'>"
+		ok:"<img src='' class='{NAMESPACE}picto {NAMESPACE}picto_ok'>",
+		empty:"<img src='' class='{NAMESPACE}picto {NAMESPACE}picto_info'>",
+		missing:"<img src='' class='{NAMESPACE}picto {NAMESPACE}picto_ko'>"
 	},
 
 	extensionpics: {},
@@ -87,17 +88,17 @@ a11ycss.checkalts = {
 			var tmppicto = '';
 
 			tmpimg.classList.add(this.namespace + "targetimage" + i);
-			
+
 			// populate strings
 			tmptpl = tmptpl.replace(`{TARGET}`, this.namespace + "targetimage" + i);
 			tmptpl = tmptpl.replace(`{SRC}`, tmpimg.src);
-			
+
 			if (tmpimg.getAttribute('alt') === null) {
-				tmptpl = tmptpl.replace(`{ALT}`, this.strings.missing);
+				tmptpl = tmptpl.replace(`{ALT}`, this.strings.ko);
 				tmptpl = tmptpl.replace(`{PICTOGRAM}`,
 					this.pics.missing.replace(/{NAMESPACE}/g,this.namespace) );
 			} else if(tmpimg.alt === '') {
-				tmptpl = tmptpl.replace(`{ALT}`, this.strings.empty);
+				tmptpl = tmptpl.replace(`{ALT}`, this.strings.info);
 				tmptpl = tmptpl.replace(`{PICTOGRAM}`,
 					this.pics.empty.replace(/{NAMESPACE}/g, this.namespace));
 			} else {
@@ -107,14 +108,14 @@ a11ycss.checkalts = {
 			}
 
 			if (tmpimg.getAttribute('title') === null) {
-				tmpstr = this.strings.missing;
+				tmpstr = this.strings.ko;
 			} else if (tmpimg.title === '') {
-				tmpstr = this.strings.empty;
+				tmpstr = this.strings.info;
 			} else {
 				tmpstr = "'" + tmpimg.title + "'";
 			}
 			tmptpl = tmptpl.replace(`{TITLE}`, tmpstr);
-			
+
 			str += tmptpl;
 			// end populate strings
 
@@ -148,6 +149,12 @@ a11ycss.checkalts = {
 		});
 	},
 
+	// this changes strings to locale if an array of strings was provided
+	// by the extension's call to the script
+	updateStrings: function (strings) {
+		this.strings = strings;
+	},
+
 	// this changes the pictos with icons stored in the webextension
 	updatePictos: function(icons) {
 		var keys = [ "info", "ko", "ok" ];
@@ -157,6 +164,7 @@ a11ycss.checkalts = {
 			for(var i = 0 ; i < elts.length ; i++) {
 				elts[i].src = icons[key.valueOf()];
 				elts[i].style = 'display:block;';
+				elts[i].alt = a11ycss.checkalts.strings[key.valueOf()];
 			}
 		}, this);
 	},
@@ -172,9 +180,15 @@ a11ycss.checkalts = {
 };
 
 browser.runtime.onMessage.addListener((message) => {
-	a11ycss.checkalts.init();
-	if (message.icons) {
-		a11ycss.checkalts.updatePictos(message.icons);
+	if (message.a11ycss_checkalts && message.a11ycss_checkalts === "checkalts") {
+		console.log(message);
+		if(message.strings) {
+			a11ycss.checkalts.updateStrings(message.strings);
+		}
+		a11ycss.checkalts.init();
+		if (message.icons) {
+			a11ycss.checkalts.updatePictos(message.icons);
+		}
 	}
 });
 
