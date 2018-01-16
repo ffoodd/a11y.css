@@ -3,13 +3,13 @@
 
     "name": "a11y.css",
     "description": "a11y.css provides warnings about possible risks and mistakes that exist in HTML code through a style sheet. This extension also provides several accessibility-related utilities.",
-    "version": "0.1",
+    "version": "1.0alpha",
     "applications": {
         "gecko": {
             "id": "a11y.css@ffoodd"
         }
     },
-    
+
     "permissions": [
         "activeTab",
         "storage"
