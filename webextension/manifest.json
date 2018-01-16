@@ -3,7 +3,7 @@
 
     "name": "a11y.css",
     "description": "a11y.css provides warnings about possible risks and mistakes that exist in HTML code through a style sheet. This extension also provides several accessibility-related utilities.",
-    "version": "1.0alpha",
+    "version": "0.0.0.1",
     "applications": {
         "gecko": {
             "id": "a11y.css@ffoodd"
@@ -31,6 +31,8 @@
 	"web_accessible_resources": [
 		"icons/info.svg",
 		"icons/ko.svg",
-		"icons/ok.svg"
+        "icons/ok.svg",
+        "scripts/injected/checkalts.js",
+        "css/*"
 	]
 }
