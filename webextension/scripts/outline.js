@@ -11,9 +11,6 @@ function addOutline() {
 		document.getElementsByTagName("head")[0].appendChild(stylesheet);
 	`;
 	BROWSER.tabs.executeScript({ code: code });
-	btnOutline.innerHTML = _t('btnOutlineRemove');
-	btnOutline.classList.remove('apply');
-	btnOutline.classList.add('unapply');
 }
 
 function removeOutline() {
@@ -28,7 +25,7 @@ function removeOutline() {
 }
 /**
  * Helper function for browser storage
- * @param {Boolean} bOutline 
+ * @param {Boolean} bOutline
  */
 function storeOutline(bOutline) {
 	let outline = { isSet: bOutline };
@@ -37,38 +34,6 @@ function storeOutline(bOutline) {
 }
 
 btnOutline.addEventListener('click', function() {
-	let gettingItem = browser.storage.local.get("outline");
-	gettingItem.then(
-		// when we got something
-		function (item) {
-			if (item && item.outline && item.outline.isSet) { // the outline was shown already
-				removeOutline();
-				storeOutline(false);
-			} else {
-				addOutline();
-				storeOutline(true);
-			}
-		},
-		// we got nothing
-		function () {
-			addOutline();
-			storeOutline(true);
-		}
-	);
+	addOutline();
 });
 
-// in case we already had stored something and want to go back to the state we had
-function outlineCheckAtLoad() {
-	let gettingItem = browser.storage.local.get("outline");
-	gettingItem.then(
-		// when we got something
-		function (item) {
-			if (item && item.outline && item.outline.isSet) { // the outline was shown already
-				addOutline();
-			}
-		},
-		// we got nothing
-		onError
-	);
-}
-outlineCheckAtLoad();
