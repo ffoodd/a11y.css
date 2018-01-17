@@ -8,6 +8,7 @@ module.exports = {
   sassdochtmldest: './docs/SassDoc/',
   webextension: './webextension/**/*',
   webextensioncsssource: './css/a11y-*_*.css',
+  webextensionmvcsssource: './css/a11y-!(*[*_]*).css',
   webextensioncssdest: './webextension/css',
   autoprefixer: { browsers: ['last 1 versions'] },
   scsslint: { config: 'configs/.scsslint.yml' },

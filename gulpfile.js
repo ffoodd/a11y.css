@@ -11,11 +11,12 @@ gulp.task('hologram', ['hologram-sass', 'hologram-js'], require('./tasks/hologra
 gulp.task('scss-lint', require('./tasks/scss-lint'));
 gulp.task('css-lint', require('./tasks/css-lint'));
 gulp.task('watch', require('./tasks/watch'));
-gulp.task('copy-css', require('./tasks/webextension-css'));
+gulp.task('copy-css', require('./tasks/webextension-cp-css'));
+gulp.task('move-css', require('./tasks/webextension-mv-css'));
 gulp.task('translate', require('./tasks/translate'));
 
 // Meta tasks
 gulp.task('docs', ['sassdoc', 'hologram']);
-gulp.task('webextension', ['copy-css'], require('./tasks/webextension'));
+gulp.task('webextension', ['copy-css', 'move-css'], require('./tasks/webextension'));
 gulp.task('lints', ['scss-lint', 'css-lint']);
 gulp.task('default', ['sass']);
