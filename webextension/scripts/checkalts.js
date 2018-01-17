@@ -1,11 +1,6 @@
 let btnCheckalts = document.getElementById('btnCheckalts');
 btnCheckalts.addEventListener('click', function () {
 
-	if (window.hasRun_btnCheckalts) {
-		return;
-	}
-	window.hasRun_btnCheckalts = true;
-
 	browser.tabs.executeScript({ file: "/scripts/injected/checkalts.js" }).then(() => {
 		let icons = [];
 		icons.ok = browser.extension.getURL("/icons/ok.svg");
