@@ -180,8 +180,7 @@ a11ycss.checkalts = {
 };
 
 browser.runtime.onMessage.addListener((message) => {
-	if (message.a11ycss_checkalts && message.a11ycss_checkalts === "checkalts") {
-		console.log(message);
+	if (message.a11ycss_action && message.a11ycss_action === "checkalts") {
 		if(message.strings) {
 			a11ycss.checkalts.updateStrings(message.strings);
 		}
