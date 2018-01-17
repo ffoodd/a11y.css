@@ -11,7 +11,7 @@ module.exports = {
   webextensioncssdest: './webextension/css',
   autoprefixer: { browsers: ['last 1 versions'] },
   scsslint: { config: 'configs/.scsslint.yml' },
-  locales: ['en','fr','ru','zh','pt-br'],
+  locales: ['en','fr','ru','zh','pt-br', 'gr'],
   localesdest: 'sass/locales/',
   sassdoc: {
     dest: 'docs/SassDoc',
