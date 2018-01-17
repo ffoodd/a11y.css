@@ -25,8 +25,12 @@
     "docs:build": "gulp docs",
     "docs:prepare": "cp -r docs/Hologram/tests/* docs/build && rsync -avh docs/SassDoc/ docs/build && rm -rf docs/build/sass && rm -rf docs/build/js",
     "docs:deploy": "git add docs/build && git commit -m 'chore: compile documentation' --allow-empty && git push origin :gh-pages && git subtree push --prefix docs/build origin gh-pages && echo 'Documentation successfully deployed'",
-    "webext": "npm run webext:prepare && npm run webext:package",
+    "webext": "npm run webext:prepare && npm run webext:all && npm run webext:package",
     "webext:prepare": "rm -rf webextension/css/a11y-*.css && cp -r css/a11y-*_*.css webextension/css",
+    "webext:cp": "cp -r css/a11y-??.css temp && cp -r css/a11y-?????.css temp",
+    "webext:rename": "cd temp && rename 's/a11y-(.{2,5}).*(.css)$/a11y-$1_all$2/' *.css && cd ..",
+    "webext:mv": "cp temp/*.css webextension/css",
+    "webext:all": "mkdir temp && npm run webext:cp && npm run webext:rename && npm run webext:mv && rm -rf temp",
     "webext:package": "cd webextension && zip -r -FS ../a11y-css-webextension.zip *"
   },
   "license": "MIT",
