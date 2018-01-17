@@ -1,8 +1,10 @@
 # Scripts documentation
 
+## File organisation
+
 The scripts are in webextension/scripts and are organised as follows:
 
-````
+```
 scripts                   Main folder for scripts
 |
 |-* constants.js          Constants for browsers
@@ -11,12 +13,30 @@ scripts                   Main folder for scripts
 |-* utils.js              What it says on the cover: utilities
 |-* [all other JS]        One script per functionality
 |
-|-- injected              Scripts that must be injected in the page to add behaviour in the page
+|-- injected              Content scripts
 ```
 
-So, for instance:
 
-1. Once the popup is shown, we click on “Check alts”
-2. `checkalts.js` is triggered
-3. `injected/checkalts.js` is injected into the page
+## API between the extension and the pages
 
+Each script that needs to execute a content script has to call it that way:
+
+```javascript
+browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+	browser.tabs.sendMessage(tabs[0].id, {
+		a11ycss_action: "checkalts",
+		// [… other parameters …]
+	});
+
+});
+```
+
+For instance this will be listened to by the injected content script checkalts.js, which will react accordingly:
+
+```javascript
+browser.runtime.onMessage.addListener((message) => {
+	if (message.a11ycss_action && message.a11ycss_action === "checkalts") {
+		// this is where the actions are going to be called
+	}
+});
+```
