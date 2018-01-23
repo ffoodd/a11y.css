@@ -60,7 +60,7 @@
     "gulp-zip": "^4.0.0",
     "rootbeer": "^1.0.5",
     "sassdoc": "^2.2.2",
-    "sassdoc-theme-alix": "^0.3.30",
+    "sassdoc-theme-alix": "^0.3.31",
     "vinyl-source-stream": "^2.0.0"
   }
 }
