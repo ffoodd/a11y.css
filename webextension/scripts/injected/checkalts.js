@@ -60,6 +60,9 @@ a11ycss.checkalts = {
 				width: auto;
 			}
 			div#${reporterid} code {
+				background: none;
+				border: 0;
+				color: inherit;
 				font-family: "Consolas", "Monaco", "Andale Mono", monospace;
 			}
 			div#${reporterid} img.${this.namespace}picto {
