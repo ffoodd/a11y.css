@@ -177,51 +177,6 @@ area:not([alt]),
 input[type="image"]:not([alt]) {
   @include error('no-alt', $self-closing: true);
 }
-/*doc
----
-title: "Check alternate text for images"
-name: check-alt
-category: Alt
----
-
-This page provides fake content with images, some have a correct `alt` attribute, some don't, some have an empty `alt`.
-This enables us to test the checkalts module.
-
-##No `alt`, no `title`
-```html_example
-<img src="checkalts/1.jpg" /><span>†</span>
-```
-
-##One `alt`, one `title`
-```html_example
-<img alt="A typewriter" title="Last day of August" src="checkalts/2.jpg" /><span>†</span>
-```
-
-##Empty `alt`, no `title`
-```html_example
-<img alt="" src="checkalts/3.jpg" /><span>†</span>
-```
-
-##One `alt`, no `title`
-```html_example
-<img src="checkalts/4.jpg" alt="Sunset" /><span>†</span>
-```
-
-##No `alt`, no `title`
-```html_example
-<img src="checkalts/5.jpg" /><span>†</span>
-```
-
-##One `alt`, no `title`
-```html_example
-<img alt="Irish river" src="checkalts/6.jpg" /><span>†</span>
-```
-
-##No `alt`, no `title`
-```html_example
-<img src="checkalts/7.jpg"><span>†</span>
-```
-*/
 
 
 /*doc

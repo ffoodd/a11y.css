@@ -106,7 +106,7 @@ main > * + * {
   overflow-x: hidden;
 }
 
-main > * + * > * {
+main > * + * > * + * {
   max-width: 40rem;
 }
 
@@ -795,6 +795,10 @@ a[target$="blank"]::after {
   display: inline-block;
   min-height: 1em;
   min-width: 1em;
+}
+
+#check-alt-0 {
+  display: none;
 }
 
 .skip {

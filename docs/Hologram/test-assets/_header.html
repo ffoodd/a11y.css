@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="static/doc.css">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <!-- CSS to be documented -->
-    <% if title != "" %>
+    <% if title != "" and title != "Check alternate text for images" %>
       <link rel="stylesheet" href="docs/a11y-en_<%= title.downcase %>-only.css" media="all">
     <% end %>
   </head>
@@ -33,6 +33,7 @@
           <li><a href="warnings.html" class="warnings">Warnings</a></li>
           <li><a href="obsolete.html" class="obsolete">Obsoletes</a></li>
           <li><a href="advices.html" class="advices">Advices</a></li>
+          <li><a href="check_alternate_text_for_images.html" class="alt">Check alt</a></li>
           <li><a href="docs.html" class="sassdoc"><b><abbr title="Application Programming Interface">API</abbr></b> Doc</a></li>
           <li>
             <a href="https://github.com/ffoodd/a11y.css">
@@ -54,9 +55,11 @@
           <p class="h2-like" id="toc-title">Table of content</p>
           <ol>
             <% @blocks.each do |block| %>
-              <li>
-                <a href="#<%= block[:name] %>"><%= block[:title] %></a>
-              </li>
+              <% if block[:title] != "" %>
+                <li>
+                  <a href="#<%= block[:name] %>"><%= block[:title] %></a>
+                </li>
+              <% end %>
             <% end %>
           </ol>
         </nav>
