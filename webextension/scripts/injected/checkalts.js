@@ -26,39 +26,49 @@ a11ycss.checkalts = {
 		this.reporter.id = reporterid;
 		var style = `
 			body {
-				margin-left:150px !important;
+				margin-left: 10rem !important;
 			}
 			div#${reporterid} {
-				z-index:20000;
-				position:fixed;
-				top:0;
-				left:0px;
-				width:150px;
-				height:100vh;
-				background:silver;
-				margin:0;
-				padding:0;
-				overflow:auto;
-				font-family:arial,helvetica,sans-serif;
-				font-size:.8rem;
+				background: #fcf9e9;
+				color: #3e4b55;
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+				font-size: .8rem;
+				height: 100vh;
+				left: 0;
+				margin: 0;
+				overflow: auto;
+				padding: 0;
+				position: fixed;
+				top: 0;
+				width: 10rem;
+				z-index: 2147483647;
 			}
 			div#${reporterid} figure {
-				margin:5px;
-				position:relative;
-				cursor:pointer;
+				border-radius: .25rem;
+				cursor: pointer;
+				margin: .5rem .25rem;
+				padding: .25rem;
+				position: relative;
+			}
+			div#${reporterid} figure:focus {
+				background: #fff;
+				outline: 1px solid #e5dec8;
 			}
 			div#${reporterid} img {
-				width:auto;
-				height:auto;
-				max-width:100%;
+				height: auto;
+				max-width: 100%;
+				width: auto;
+			}
+			div#${reporterid} code {
+				font-family: "Consolas", "Monaco", "Andale Mono", monospace;
 			}
 			div#${reporterid} img.${this.namespace}picto {
-				position:absolute;
-				top:0;
-				left:0;
-				width:32px;
-				height:32px;
-				display:none;
+				display: none;
+				height: 2rem;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 2rem;
 			}
 		`;
 		var s = document.createElement('style');
@@ -71,7 +81,7 @@ a11ycss.checkalts = {
 		var imgs = document.getElementsByTagName('img');
 		var str = '';
 		var tpl = `
-			<figure data-target="{TARGET}">
+			<figure data-target="{TARGET}" role="group">
 				{PICTOGRAM}
 				<img src="{SRC}" alt="">
 				<figcaption>
