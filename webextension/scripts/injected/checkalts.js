@@ -72,6 +72,7 @@ a11ycss.checkalts = {
 				position: absolute;
 				top: 0;
 				width: 2rem;
+				z-index: 1;
 			}
 		`;
 		var s = document.createElement('style');
