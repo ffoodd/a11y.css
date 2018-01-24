@@ -147,7 +147,7 @@ input:checked + label {
 }
 
 input:checked + label::before {
-	content: "🗸";
+	content: "✓";
 	font-weight: bold;
 	transform: translateX(-.25rem);
 }
