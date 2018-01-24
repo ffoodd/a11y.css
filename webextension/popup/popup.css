@@ -108,9 +108,9 @@ button:active {
 }
 
 [type="reset"] {
-	background: HighlightText;
+	background: #fff;
 	box-shadow: none;
-	color: ButtonText;
+	color: inherit;
 	outline: none;
 	text-shadow: none;
 }
