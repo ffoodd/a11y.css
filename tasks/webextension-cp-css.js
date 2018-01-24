@@ -4,7 +4,7 @@ var options = require('./helpers/options');
 var onError = require('./helpers/onError');
 
 module.exports = function () {
-  return gulp.src(options.webextensioncsssource)
+  return gulp.src([options.webextensioncsssource, options.webextensioncsslang])
     .pipe(plumber({ errorHandler: onError }))
     .pipe(gulp.dest(options.webextensioncssdest));
 };
