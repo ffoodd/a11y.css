@@ -189,6 +189,7 @@ category: Warnings
 ##Description
 Some nestings are forbidden, and do not have their own test case for now:
 
+* `<main>`  contained in any of `<nav>`, `<aside>`, `<footer>`, `<header>` or `<article>`;
 * `<option>` and `<optgroup>` outside a `<select>`;
 * `<legend>` outside a `<fieldset>`;
 * `<td>` or `<th>` outside a `<tr>`;
@@ -198,12 +199,18 @@ Some nestings are forbidden, and do not have their own test case for now:
 Maybe other invalid nestings to test. Stay tuned.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>.
+* <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
 ##Selector
 ```css_example
+nav main,
+aside main,
+footer main,
+header main,
+article main,
 :not(tr) > td,
 :not(tr) > th,
 colgroup *:not(col),
@@ -222,6 +229,11 @@ table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption)
 <legend>I'm an legend. Am I?</legend>
 ```
 */
+nav main,
+aside main,
+footer main,
+header main,
+article main,
 :not(tr) > td,
 :not(tr) > th,
 colgroup *:not(col),
