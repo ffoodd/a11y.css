@@ -381,6 +381,43 @@ fieldset > legend:not(:first-child) {
 
 /*doc
 ---
+title: "summary must be a details's:first-child"
+name: details
+category: Warnings
+---
+
+##Description
+`<summary>` must be a `<details>`'s`:first-child`.
+Always.
+
+##References
+* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
+* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-summary>
+* <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details>
+
+##Selector
+```css_example
+details > *:not(summary):first-child,
+details > summary:not(:first-child)
+```
+
+##Test
+```html_example
+<details>
+  <legend>I'm not a summary.</legend>
+</details>
+```
+*/
+details > *:not(summary):first-child,
+details > summary:not(:first-child) {
+  @include warning('details');
+}
+
+
+/*doc
+---
 title: "abbr should have a [title]"
 name: empty-title
 category: Warnings

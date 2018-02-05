@@ -80,6 +80,7 @@
   "warning:misplaced-div": "<div> внутри инлайнового элемента",
   "warning:sectioning-tags": "Некорректное употребление тега секций",
   "warning:fieldset": "<fieldset> должен начинаться с <legend>",
+  "warning:details": "<details> должен начинаться с <summary>",
   "warning:abbr": "Не указан [title]",
   "warning:empty-alt": "Пустой [alt]",
   "warning:no-aria-role": "вляется ли этот SVG декоративным?",

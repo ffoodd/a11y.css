@@ -80,6 +80,7 @@
   "warning:misplaced-div": "<div> in inline element",
   "warning:sectioning-tags": "Misused sectioning tag",
   "warning:fieldset": "<fieldset> must start with <legend>",
+  "warning:details": "<details> must start with <summary>",
   "warning:abbr": "Missing [title]",
   "warning:empty-alt": "Empty [alt]",
   "warning:no-aria-role": "Is this SVG decorative?",
