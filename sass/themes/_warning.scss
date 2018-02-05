@@ -84,7 +84,7 @@ category: Warnings
 ---
 
 ##Description
-`<dt>` and `<dd>` should be direct children of `<dl>`.
+`<div>`, `<dt>` and `<dd>` should be direct children of `<dl>`.
 Any other imbrication may be a crime somewhere.
 
 ##References
@@ -93,12 +93,13 @@ Any other imbrication may be a crime somewhere.
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318>
 * <http://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
+* <https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl>
 
 ##Selector
 ```css_example
 :not(dl) > dt,
 :not(dl) > dd,
-dl > :not(dt):not(dd)
+dl > :not(dt):not(dd):not(div)
 ```
 
 ##Test
@@ -110,7 +111,7 @@ dl > :not(dt):not(dd)
 */
 :not(dl) > dt,
 :not(dl) > dd,
-dl > :not(dt):not(dd) {
+dl > :not(dt):not(dd):not(div) {
   @include warning('invalid-def-nesting');
 }
 
