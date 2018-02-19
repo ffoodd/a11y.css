@@ -103,6 +103,7 @@ Many, many attributes are obsolete in HTML5. You should care!
 * <https://w3c.github.io/html/obsolete.html#non-conforming-features>
 * <https://www.w3.org/TR/html52/changes.html#features-removed>
 * <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
 
 ##Selector
 ```css_example
@@ -127,6 +128,9 @@ iframe[longdesc], img[longdesc],
 img[lowsrc],
 link[target],
 meta[scheme],
+meta[http-equiv="content-language"],
+meta[http-equiv="content-type"],
+meta[http-equiv="set-cookie"],
 object[archive],
 object[classid],
 object[code],
@@ -202,7 +206,6 @@ form[accept],
 head[profile],
 html[version],
 link[target],
-meta[scheme],
 param[type],
 param[valuetype],
 script[language],
@@ -279,4 +282,18 @@ iframe[scrolling],
 img[border], object[border],
 input[inputmode] {
   @include obsolete('attributes', $self-closing: true);
+}
+
+link[charset], link[methods],
+link[rev], link[urn],
+link[target],
+meta[scheme],
+meta[http-equiv="content-language"],
+meta[http-equiv="content-type"],
+meta[http-equiv="set-cookie"],
+script[language],
+script[event],
+script[for] {
+  @include obsolete('attributes', $self-closing: true, $head: true);
+  @include a11y-head($self-closing: true);
 }
