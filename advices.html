@@ -103,11 +103,17 @@
                 </li>
               
             
+<<<<<<< HEAD
               
                 <li>
                   <a href="#main">A second main tag</a>
                 </li>
               
+=======
+              <li>
+                <a href="#main">A second visible main tag</a>
+              </li>
+>>>>>>> 31cdc37c5d5a5d2d5d11501a759222ed310343e7
             
               
                 <li>
@@ -444,13 +450,17 @@ Otherwise you may annoy your users.</p>
   </div>
 </div>
 
-<h1 id="main" class="styleguide">A second main tag</h1>
+<h1 id="main" class="styleguide">A second visible main tag</h1>
 
 <h2>Description</h2>
-<p class="styleguide"><code class="styleguide">&lt;main&gt;</code> should be unique. Isn&#39;t that obvious?</p>
+<p class="styleguide">A single <code class="styleguide">&lt;main&gt;</code> should be visible at a time. Isn&#39;t that obvious?</p>
+<h2>Reference</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/TR/html52/changes.html#new-concepts">https://www.w3.org/TR/html52/changes.html#new-concepts</a></li>
+<li><a href="https://www.w3.org/TR/html52/grouping-content.html#elementdef-main">https://www.w3.org/TR/html52/grouping-content.html#elementdef-main</a></li>
+</ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">main</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:first-of-type</span><span class="o">)</span></code></pre>
+  <pre><code><span class="nt">main</span> <span class="o">~</span> <span class="nt">main</span><span class="nd">:not</span><span class="o">([</span><span class="nt">hidden</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
