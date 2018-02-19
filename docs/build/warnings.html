@@ -73,11 +73,21 @@
                 </li>
               
             
+<<<<<<< HEAD
               
                 <li>
                   <a href="#empty-alt">[alt] can be empty but has to be checked</a>
                 </li>
               
+=======
+              <li>
+                <a href="#details">summary must be a details&#39;s:first-child</a>
+              </li>
+            
+              <li>
+                <a href="#empty-alt">[alt] can be empty but has to be checked</a>
+              </li>
+>>>>>>> 31cdc37c5d5a5d2d5d11501a759222ed310343e7
             
               
                 <li>
@@ -406,6 +416,38 @@ See <a class="styleguide" href="https://github.com/ffoodd/a11y.css/wiki/Edge-cas
   <span class="nt">&lt;rect</span> <span class="na">x=</span><span class="s">"400"</span> <span class="na">y=</span><span class="s">"100"</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"200"</span>
         <span class="na">fill=</span><span class="s">"forestgreen"</span> <span class="na">stroke=</span><span class="s">"darkgreen"</span> <span class="na">stroke-width=</span><span class="s">"10"</span>  <span class="nt">/&gt;</span>
 <span class="nt">&lt;/svg&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="details" class="styleguide">summary must be a details&#39;s:first-child</h1>
+
+<h2>Description</h2>
+<p class="styleguide"><code class="styleguide">&lt;summary&gt;</code> must be a <code class="styleguide">&lt;details&gt;</code>&#39;s<code class="styleguide">:first-child</code>.
+Always.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
+<li><a href="http://www.w3.org/TR/WCAG20/#minimize-error-cues">http://www.w3.org/TR/WCAG20/#minimize-error-cues</a></li>
+<li><a href="https://www.w3.org/TR/html52/interactive-elements.html#elementdef-summary">https://www.w3.org/TR/html52/interactive-elements.html#elementdef-summary</a></li>
+<li><a href="https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details">https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">details</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:not</span><span class="o">(</span><span class="nt">summary</span><span class="o">)</span><span class="nd">:first-child</span><span class="o">,</span>
+<span class="nt">details</span> <span class="o">&gt;</span> <span class="nt">summary</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:first-child</span><span class="o">)</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <details>
+  <legend>I'm not a summary.</legend>
+</details>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;details&gt;</span>
+  <span class="nt">&lt;legend&gt;</span>I'm not a summary.<span class="nt">&lt;/legend&gt;</span>
+<span class="nt">&lt;/details&gt;</span></code></pre>
   </div>
 </div>
 
@@ -750,7 +792,7 @@ The only exception shall be bookmarklets.</p>
 <h1 id="invalid-def-nesting" class="styleguide">Invalid nesting in a definition list</h1>
 
 <h2>Description</h2>
-<p class="styleguide"><code class="styleguide">&lt;dt&gt;</code> and <code class="styleguide">&lt;dd&gt;</code> should be direct children of <code class="styleguide">&lt;dl&gt;</code>.
+<p class="styleguide"><code class="styleguide">&lt;div&gt;</code>, <code class="styleguide">&lt;dt&gt;</code> and <code class="styleguide">&lt;dd&gt;</code> should be direct children of <code class="styleguide">&lt;dl&gt;</code>.
 Any other imbrication may be a crime somewhere.</p>
 <h2>References</h2>
 <ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2</a></li>
@@ -758,12 +800,13 @@ Any other imbrication may be a crime somewhere.</p>
 <li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
 <li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318</a></li>
 <li><a href="http://www.w3.org/TR/html5/grouping-content.html#the-dl-element">http://www.w3.org/TR/html5/grouping-content.html#the-dl-element</a></li>
+<li><a href="https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl">https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nd">:not</span><span class="o">(</span><span class="nt">dl</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">dt</span><span class="o">,</span>
 <span class="nd">:not</span><span class="o">(</span><span class="nt">dl</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">dd</span><span class="o">,</span>
-<span class="nt">dl</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">dt</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">dd</span><span class="o">)</span></code></pre>
+<span class="nt">dl</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">dt</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">dd</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">div</span><span class="o">)</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -840,20 +883,27 @@ Any other imbrication may be a crime somewhere.</p>
 <h1 id="invalid-nesting" class="styleguide">Invalid nesting</h1>
 
 <h2>Description</h2>
-<p class="styleguide">Some nestings are forbidden, and do not have their own test case for now:</p><ul class="styleguide"><li><code class="styleguide">&lt;option&gt;</code> and <code class="styleguide">&lt;optgroup&gt;</code> outside a <code class="styleguide">&lt;select&gt;</code>;</li>
+<p class="styleguide">Some nestings are forbidden, and do not have their own test case for now:</p><ul class="styleguide"><li><code class="styleguide">&lt;main&gt;</code>  contained in any of <code class="styleguide">&lt;nav&gt;</code>, <code class="styleguide">&lt;aside&gt;</code>, <code class="styleguide">&lt;footer&gt;</code>, <code class="styleguide">&lt;header&gt;</code> or <code class="styleguide">&lt;article&gt;</code>;</li>
+<li><code class="styleguide">&lt;option&gt;</code> and <code class="styleguide">&lt;optgroup&gt;</code> outside a <code class="styleguide">&lt;select&gt;</code>;</li>
 <li><code class="styleguide">&lt;legend&gt;</code> outside a <code class="styleguide">&lt;fieldset&gt;</code>;</li>
 <li><code class="styleguide">&lt;td&gt;</code> or <code class="styleguide">&lt;th&gt;</code> outside a <code class="styleguide">&lt;tr&gt;</code>;</li>
 <li>direct children of a <code class="styleguide">&lt;table&gt;</code>;</li>
 <li><code class="styleguide">&lt;colgroup&gt;</code> containing anything else than <code class="styleguide">&lt;col&gt;</code>.</li>
 </ul><p class="styleguide">Maybe other invalid nestings to test. Stay tuned.</p>
 <h2>References</h2>
-<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2</a></li>
+<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2</a>.</li>
+<li><a href="https://www.w3.org/TR/html52/grouping-content.html#elementdef-main">https://www.w3.org/TR/html52/grouping-content.html#elementdef-main</a></li>
 <li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-parses">http://www.w3.org/TR/WCAG20/#ensure-compat-parses</a></li>
 <li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nd">:not</span><span class="o">(</span><span class="nt">tr</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">td</span><span class="o">,</span>
+  <pre><code><span class="nt">nav</span> <span class="nt">main</span><span class="o">,</span>
+<span class="nt">aside</span> <span class="nt">main</span><span class="o">,</span>
+<span class="nt">footer</span> <span class="nt">main</span><span class="o">,</span>
+<span class="nt">header</span> <span class="nt">main</span><span class="o">,</span>
+<span class="nt">article</span> <span class="nt">main</span><span class="o">,</span>
+<span class="nd">:not</span><span class="o">(</span><span class="nt">tr</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">td</span><span class="o">,</span>
 <span class="nd">:not</span><span class="o">(</span><span class="nt">tr</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">th</span><span class="o">,</span>
 <span class="nt">colgroup</span> <span class="o">*</span><span class="nd">:not</span><span class="o">(</span><span class="nt">col</span><span class="o">),</span>
 <span class="nd">:not</span><span class="o">(</span><span class="nt">colgroup</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">col</span><span class="o">,</span>

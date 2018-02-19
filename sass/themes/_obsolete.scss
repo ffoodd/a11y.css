@@ -12,6 +12,7 @@ Many, many tags are obsolete in HTML5. You should care!
 
 ##Reference
 * <http://www.w3.org/TR/html5/obsolete.html#obsolete>
+* <https://www.w3.org/TR/html52/changes.html#features-removed>
 * <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 
 ##Selector
@@ -42,7 +43,10 @@ marquee,
 multicol,
 nobr,
 spacer,
-tt
+tt,
+keygen,
+menu,
+menuitem
 ```
 
 ##Test
@@ -76,7 +80,10 @@ marquee,
 multicol,
 nobr,
 spacer,
-tt {
+tt,
+keygen,
+menu,
+menuitem {
   @include obsolete('tags');
 }
 
@@ -94,10 +101,13 @@ Many, many attributes are obsolete in HTML5. You should care!
 ##Reference
 * <http://www.w3.org/TR/html5/obsolete.html#obsolete>
 * <https://w3c.github.io/html/obsolete.html#non-conforming-features>
+* <https://www.w3.org/TR/html52/changes.html#features-removed>
 * <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
 
 ##Selector
 ```css_example
+[dropzone],
 a[charset], link[charset],
 a[coords],
 a[shape],
@@ -113,10 +123,14 @@ head[profile],
 html[version],
 input[ismap],
 input[usemap],
+input[inputmode],
 iframe[longdesc], img[longdesc],
 img[lowsrc],
 link[target],
 meta[scheme],
+meta[http-equiv="content-language"],
+meta[http-equiv="content-type"],
+meta[http-equiv="set-cookie"],
 object[archive],
 object[classid],
 object[code],
@@ -180,6 +194,7 @@ body[background], table[background], thead[background], tbody[background], tfoot
 <h3 align="right">I'm using [align]!</h3>
 ```
 */
+[dropzone],
 a[charset], link[charset],
 a[coords],
 a[shape],
@@ -191,7 +206,6 @@ form[accept],
 head[profile],
 html[version],
 link[target],
-meta[scheme],
 param[type],
 param[valuetype],
 script[language],
@@ -265,6 +279,21 @@ iframe[allowtransparency],
 iframe[frameborder],
 iframe[framespacing],
 iframe[scrolling],
-img[border], object[border] {
+img[border], object[border],
+input[inputmode] {
   @include obsolete('attributes', $self-closing: true);
+}
+
+link[charset], link[methods],
+link[rev], link[urn],
+link[target],
+meta[scheme],
+meta[http-equiv="content-language"],
+meta[http-equiv="content-type"],
+meta[http-equiv="set-cookie"],
+script[language],
+script[event],
+script[for] {
+  @include obsolete('attributes', $self-closing: true, $head: true);
+  @include a11y-head($self-closing: true);
 }

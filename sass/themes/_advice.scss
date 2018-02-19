@@ -65,17 +65,21 @@ category: Advices
 
 /*doc
 ---
-title: "A second main tag"
+title: "A second visible main tag"
 name: main
 category: Advices
 ---
 
 ##Description
-`<main>` should be unique. Isn't that obvious?
+A single `<main>` should be visible at a time. Isn't that obvious?
+
+##Reference
+* <https://www.w3.org/TR/html52/changes.html#new-concepts>
+* <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 
 ##Selector
 ```css_example
-main:not(:first-of-type)
+main ~ main:not([hidden])
 ```
 
 ##Test
@@ -84,7 +88,7 @@ main:not(:first-of-type)
 <main>No, It's me!</main>
 ```
 */
-main:not(:first-of-type) {
+main ~ main:not([hidden]) {
   @include advice('main');
 }
 
