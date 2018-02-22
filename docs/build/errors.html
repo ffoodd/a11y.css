@@ -297,6 +297,7 @@
               <p>
                 <label for="language">Language</label>
                 <select id="language" name="language">
+                  <option value="ar" lang="ar" dir="rtl">عربى</option>
                   <option value="fr" lang="fr">Français</option>
                   <option value="en" lang="en">English</option>
                   <option value="pt-br" lang="pt-br">Português</option>
@@ -729,7 +730,7 @@ before the <code class="styleguide">&lt;title&gt;</code> tag is the simplest way
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">head</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:first-child:not</span><span class="o">([</span><span class="nt">charset</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">head</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:first-child:not</span><span class="o">([</span><span class="nt">charset</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">http-equiv</span><span class="o">=</span><span class="err">"</span><span class="nt">Content-Type</span><span class="err">"</span><span class="o">][</span><span class="nt">content</span><span class="o">*=</span><span class="err">"</span><span class="nt">text</span><span class="o">/</span><span class="nt">html</span><span class="o">;</span> <span class="nt">charset</span><span class="err">"</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
