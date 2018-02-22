@@ -1,9 +1,8 @@
-{
+$messages: (
   "ui:error": "أخطاء",
   "ui:advice": "نصائح",
   "ui:warning": "تنبيهات",
   "ui:obsolete": "أساسي",
-
   "advice:empty-class": " غير متوفر[class]",
   "advice:empty-id": "رقم التعريف غير متوفر [id]",
   "advice:main": "استخدام ثاني لإظافة محتوى  <main>",
@@ -22,11 +21,10 @@
   "advice:video-audio": "نسخه بديله مفقوده",
   "advice:title": "[title] العنوان يجب أن يكون بديل مطابق للعنصر",
   "advice:time": "هل التاريخ صحيح؟",
-  "advice:th-scope":" طبق على العنصر؟ <th>هل",
+  "advice:th-scope": " طبق على العنصر؟ <th>هل",
   "advice:table-presentation": "مصصم كجدول",
   "advice:no-href": "رابط من غير هدف",
   "advice:no-https": "لا يوجد HTTPS",
-
   "error:tab-order": "توزيع شريط البحث",
   "error:empty-href": "المصدر غير موجود[href]",
   "error:empty-link": " الرابط غير موجود...",
@@ -69,7 +67,6 @@
   "error:role-combobox": "عنصر التمديد غير موجود [aria-expanded]",
   "error:role-scrollbar": "عناصر مفقوده في [role=scrollbar]",
   "error:nested-interactive": "عناصر التفاعل متداخله",
-
   "warning:style-attr": "تنسيقات النسق",
   "warning:invalid-nesting": "تداخل غير صحيح",
   "warning:invalid-list-nesting": "قائمه متداخله غير صحيحه <li>",
@@ -105,7 +102,6 @@
   "warning:unsecured-target": "الهدف غيرامن [target]",
   "warning:filename-alt": "إسم ملف بديل [alt]",
   "warning:no-aria-level": "لا [aria-level]",
-
   "obsolete:tags": "عنصرأساسي",
   "obsolete:attributes": "عنصرأساسي"
-}
+);
