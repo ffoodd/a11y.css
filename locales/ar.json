@@ -6,15 +6,15 @@
 
   "ui:warning" ":تنبيهات",
 
-  "ui:obsolete": "أساسي",
+  "ui:obsolete": "قديم",
 
 
 
   "advice:empty-class": " غير متوفر[class]",
 
-  "advice:empty-id": "رقم التعريف غير متوفر [id]",
+  "advice:empty-id": "رقم التعريف غير متوفر",
 
-  "advice:main": "استخدام ثاني لإظافة محتوى  <main>",
+  "advice:main": "استخدام ثاني لإظافة محتوى<main>",
 
   "advice:figcaption": "شرح او توضيح للشكل الثاني <figcaption>",
 
@@ -156,13 +156,13 @@
 
   "warning:figure-role": "<figure> شكل من غير دور [role=group]",
 
-  "warning:misplaced-div": "<div> عنصر داخل النسق",
+  "warning:misplaced-div": "<div> عنصر في وضع خاطئ",
 
   "warning:sectioning-tags": "استخدام شعار تقسيمي غير صحيح",
 
   "warning:fieldset": "<fieldset> legend يجب أن تبدأ ب  <legend>",
 
-  "warning:details": "<details> يجب أن تبدأ بملخص <summary>",
+  "warning:details": "<details> يجب أن تبدأ بملخص",
 
   "warning:abbr": "عنوان غير موجود [title]",
 
@@ -206,7 +206,7 @@
 
   "warning:nested-table": "جداول متداخله <table>s",
 
-  "warning:unsecured-target": "الهدف غيرامن [target]",
+  "warning:unsecured-target": "الهدف غيرأمن [target]",
 
   "warning:filename-alt": "إسم ملف بديل [alt]",
 
@@ -214,8 +214,8 @@
 
 
 
-  "obsolete:tags": "عنصرأساسي",
+  "obsolete:tags": "عنصر قديم",
 
-  "obsolete:attributes": "عنصرأساسي"
+  "obsolete:attributes": "عنصر قديم"
 
 }
