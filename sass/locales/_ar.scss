@@ -1,12 +1,11 @@
-{
+$messages: (
   "ui:error": "أخطاء",
   "ui:advice": "نصائح",
   "ui:warning": "تنبيهات",
-  "ui:obsolete": "قديم",
-
+  "ui:obsolete": "أساسي",
   "advice:empty-class": " غير متوفر[class]",
-  "advice:empty-id": "رقم التعريف غير متوفر",
-  "advice:main": "استخدام ثاني لإظافة محتوى<main>",
+  "advice:empty-id": "رقم التعريف غير متوفر [id]",
+  "advice:main": "استخدام ثاني لإظافة محتوى  <main>",
   "advice:figcaption": "شرح او توضيح للشكل الثاني <figcaption>",
   "advice:figcaption-order": "طلب خاطئ ل <figcaption>",
   "advice:target-blank": "رابط لفتح شريط بحث جديد",
@@ -22,11 +21,10 @@
   "advice:video-audio": "نسخه بديله مفقوده",
   "advice:title": "[title] العنوان يجب أن يكون بديل مطابق للعنصر",
   "advice:time": "هل التاريخ صحيح؟",
-  "advice:th-scope":" طبق على العنصر؟ <th>هل",
+  "advice:th-scope": " طبق على العنصر؟ <th>هل",
   "advice:table-presentation": "مصصم كجدول",
   "advice:no-href": "رابط من غير هدف",
   "advice:no-https": "لا يوجد HTTPS",
-
   "error:tab-order": "توزيع شريط البحث",
   "error:empty-href": "المصدر غير موجود[href]",
   "error:empty-link": " الرابط غير موجود...",
@@ -69,7 +67,6 @@
   "error:role-combobox": "عنصر التمديد غير موجود [aria-expanded]",
   "error:role-scrollbar": "عناصر مفقوده في [role=scrollbar]",
   "error:nested-interactive": "عناصر التفاعل متداخله",
-
   "warning:style-attr": "تنسيقات النسق",
   "warning:invalid-nesting": "تداخل غير صحيح",
   "warning:invalid-list-nesting": "قائمه متداخله غير صحيحه <li>",
@@ -77,10 +74,10 @@
   "warning:invalid-def-nesting": "غير صحيح <dl> طفل",
   "warning:invalid-figcaption-nesting": "<figcaption> شرح توضيحي خارج الشكل <figure>",
   "warning:figure-role": "<figure> شكل من غير دور [role=group]",
-  "warning:misplaced-div": "<div> عنصر في وضع خاطئ",
+  "warning:misplaced-div": "<div> عنصر داخل النسق",
   "warning:sectioning-tags": "استخدام شعار تقسيمي غير صحيح",
   "warning:fieldset": "<fieldset> legend يجب أن تبدأ ب  <legend>",
-  "warning:details": "<details> يجب أن تبدأ بملخص",
+  "warning:details": "<details> يجب أن تبدأ بملخص <summary>",
   "warning:abbr": "عنوان غير موجود [title]",
   "warning:empty-alt": " بديل غير موجود[alt]",
   "warning:no-aria-role": " هل تصميم الرسم البياني قابل للتطوير",
@@ -102,10 +99,9 @@
   "warning:empty-href": "[href=attr(href)]مصدر بديل غير موجود",
   "warning:href-js": "[href] بداية للجافا سكريبت:",
   "warning:nested-table": "جداول متداخله <table>s",
-  "warning:unsecured-target": "الهدف غيرأمن [target]",
+  "warning:unsecured-target": "الهدف غيرامن [target]",
   "warning:filename-alt": "إسم ملف بديل [alt]",
   "warning:no-aria-level": "لا [aria-level]",
-
-  "obsolete:tags": "عنصر قديم",
-  "obsolete:attributes": "عنصر قديم"
-}
+  "obsolete:tags": "عنصرأساسي",
+  "obsolete:attributes": "عنصرأساسي"
+);
