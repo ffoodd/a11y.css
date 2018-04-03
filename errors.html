@@ -1243,15 +1243,39 @@ the use of the fieldset and legend elements is not required.&quot;</p><p class="
 <div class="codeExample">
   <div class="exampleOutput">
     <form action="/">
-  <label for="option-1">Option N<sup>o</sup>1</label>
-  <input type="radio" id="option-1" name="options"><span>†</span>
+  <p>
+    <label for="option-1">Option N<sup>o</sup>1</label>
+    <input type="radio" id="option-1" name="options"><span>†</span>
+  </p>
+
+  <br>
+
+  <fieldset>
+    <legend>Trying within a fieldset, shouldn't match</legend>
+    <p>
+      <label for="option-2">Option N<sup>o</sup>2</label>
+      <input type="radio" id="option-2" name="options"><span>†</span>
+    </p>
+  </fieldset>
 </form>
 
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"option-1"</span><span class="nt">&gt;</span>Option N<span class="nt">&lt;sup&gt;</span>o<span class="nt">&lt;/sup&gt;</span>1<span class="nt">&lt;/label&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"option-1"</span> <span class="na">name=</span><span class="s">"options"</span><span class="nt">&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"option-1"</span><span class="nt">&gt;</span>Option N<span class="nt">&lt;sup&gt;</span>o<span class="nt">&lt;/sup&gt;</span>1<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"option-1"</span> <span class="na">name=</span><span class="s">"options"</span><span class="nt">&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/p&gt;</span>
+
+  <span class="nt">&lt;br&gt;</span>
+
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;legend&gt;</span>Trying within a fieldset, shouldn't match<span class="nt">&lt;/legend&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"option-2"</span><span class="nt">&gt;</span>Option N<span class="nt">&lt;sup&gt;</span>o<span class="nt">&lt;/sup&gt;</span>2<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"option-2"</span> <span class="na">name=</span><span class="s">"options"</span><span class="nt">&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre>
   </div>
 </div>
