@@ -1387,8 +1387,20 @@ This test could be a warning…
 ##Test
 ```html_example
 <form action="/">
-  <label for="option-1">Option N<sup>o</sup>1</label>
-  <input type="radio" id="option-1" name="options"><span>†</span>
+  <p>
+    <label for="option-1">Option N<sup>o</sup>1</label>
+    <input type="radio" id="option-1" name="options"><span>†</span>
+  </p>
+
+  <br>
+
+  <fieldset>
+    <legend>Trying within a fieldset, shouldn't match</legend>
+    <p>
+      <label for="option-2">Option N<sup>o</sup>2</label>
+      <input type="radio" id="option-2" name="options"><span>†</span>
+    </p>
+  </fieldset>
 </form>
 ```
 */

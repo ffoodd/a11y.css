@@ -263,8 +263,8 @@
   counter-increment: none !important;
   outline: 0 !important;
 
-  &::before,
-  + ::after {
+  &::after,
+  & + ::before {
     content: '' !important;
     display: none !important;
   }
