@@ -1,0 +1,153 @@
+/* MAIN COLOURS AND LAYOUT */
+body {
+	background-color: #f7f7f7;
+	background-image: radial-gradient(#0000001a 15%, transparent 16%), radial-gradient(#0000001a 15%, transparent 16%);
+	background-position: 0 0, .25rem .25rem;
+	background-size: .5rem .5rem;
+	box-sizing: border-box;
+	color: #3e4b55;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 75%;
+	margin: 0;
+	padding: 0;
+	width: 25em;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+#home {
+	background: #fcf9e9;
+	border: 1px solid #e5dec8;
+	border-radius: .25rem;
+	margin: .625rem;
+}
+
+h1 {
+	margin-top: 0;
+	padding: .5em;
+}
+
+h2 {
+	display: flex;
+	margin-left: -1rem;
+	margin-right: -1rem;
+}
+
+h2::after,
+h2::before {
+	background-color: #e5dec8;
+	background-image: radial-gradient(#0000001a 15%, transparent 16%),radial-gradient(#0000001a 15%, transparent 16%);
+	background-position: 0 0, .25rem .25rem;
+	background-size: .5rem .5rem;
+	content: "";
+	flex: 1;
+	margin: 0 0 0 .5rem;
+}
+
+h2::before {
+	flex: 0 1 1rem;
+	margin: 0 .5rem 0 0;
+}
+
+.util {
+	margin: 1rem;
+}
+
+.button-group {
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem;
+}
+
+hr {
+	visibility: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+/* BUTTONS and clickable things */
+button {
+	background-color: rebeccapurple;
+	background-image: linear-gradient(#ffffff1a, #0000001a);
+	border: 1px solid transparent;
+	border-radius: 0;
+	box-shadow: inset 0 1px #fff3, 0 .25em 0 -.1em #0003;
+	color: #fff;
+	margin: .5rem 0;
+	outline: 1px solid #0003;
+	outline-offset: -1px;
+	padding: .5em 1em .55em;
+	text-shadow: .05em .05em #0003;
+	transition: all 300ms;
+}
+
+button:hover,
+button:focus {
+	background-color: #528;
+	box-shadow: inset 0 1px #fff3, 0 .25em 0 -.1em #0000004d;
+}
+
+button:active {
+	box-shadow: inset 0 1px #0003;
+	transform: translate3d(.1em, .1em, 0);
+}
+
+[type="submit"] {
+	background-color: #008000;
+}
+
+[type="submit"]:hover,
+[type="submit"]:focus {
+	background-color: #007000;
+}
+
+[type="reset"] {
+	background: #fff;
+	box-shadow: none;
+	color: inherit;
+	outline: none;
+	text-shadow: none;
+}
+
+[type="reset"]:hover,
+[type="reset"]:focus {
+	background: none;
+	box-shadow: none;
+	color: black;
+}
+
+#btnA11ycssBack::before {
+	content: "← ";
+}
+
+#btnAllycss::after {
+	content: " →";
+}
+
+input[type=radio],
+input[type=checkbox] {
+	display: none;
+}
+
+label {
+	cursor: pointer;
+	display: flex;
+	padding: .25rem .25rem .25rem 1.25rem;
+}
+
+input:checked + label {
+	color: rebeccapurple;
+	transform: translateX(-.625rem);
+}
+
+input:checked + label::before {
+	content: "✓";
+	font-weight: bold;
+	transform: translateX(-.25rem);
+}

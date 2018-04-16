@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>a11y.css</title>
+	<link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+	<div id="home" class="">
+		<h1 id="h1Allycss" class="localizeMe"></h1>
+
+		<form id="a11ycssForm" class="util">
+			<div class="input-group">
+				<h2 id="a11ycssMinimumNoticeLevel" class="localizeMe"></h2>
+				<div class="radiocontainer">
+					<input type="radio" name="level" id="a11ycss1" value="all" checked>
+					<label for="a11ycss1" id="a11ycssLevel_all" class="localizeMe"></label>
+				</div>
+				<div class="radiocontainer">
+					<input type="radio" name="level" id="a11ycss2" value="obsolete">
+					<label for="a11ycss2" id="a11ycssLevel_obsolete" class="localizeMe"></label>
+				</div>
+				<div class="radiocontainer">
+					<input type="radio" name="level" id="a11ycss3" value="warning">
+					<label for="a11ycss3" id="a11ycssLevel_warning" class="localizeMe"></label>
+				</div>
+				<div class="radiocontainer">
+					<input type="radio" name="level" id="a11ycss4" value="error">
+					<label for="a11ycss4" id="a11ycssLevel_error" class="localizeMe"></label>
+				</div>
+			</div>
+
+			<div class="button-group">
+				<button type="reset" id="a11ycssBtnClear" class="localizeMe unapply"></button>
+				<button type="submit" id="a11ycssBtnApply" class="localizeMe apply"></button>
+			</div>
+		</form>
+
+
+		<hr />
+		<div class="util">
+			<h2 id="h1Others" class="localizeMe"></h2>
+			<button type="button" id="btnOutline" class="localizeMe"></button>
+			<button type="button" id="btnShowLangAttribute" class="localizeMe"></button>
+			<button type="button" id="btnCheckalts" class="localizeMe"></button>
+		</div>
+	</div>
+
+	<!-- generic scripts  -->
+	<script src="../scripts/constants.js"></script>
+	<script src="../scripts/locales.js"></script>
+	<script src="../scripts/utils.js"></script>
+	<script src="popup.js"></script>
+	<!-- proper functions -->
+	<!-- <script src="../scripts/popuphandlers.js"></script> -->
+	<script src="../scripts/a11ycss.js"></script>
+	<script src="../scripts/outline.js"></script>
+	<script src="../scripts/showlangattribute.js"></script>
+	<script src="../scripts/checkalts.js"></script>
+</body>
+
+</html>
