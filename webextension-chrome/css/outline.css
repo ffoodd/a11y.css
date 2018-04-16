@@ -1,0 +1,5 @@
+*:focus {
+	background: #d90b0b1a !important;
+	color: #d90b0b !important;
+	outline: 2px dotted currentColor !important;
+}

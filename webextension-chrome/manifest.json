@@ -1,0 +1,45 @@
+{
+	"manifest_version": 2,
+
+	"name": "a11y.css",
+	"description": "a11y.css provides warnings about possible risks and mistakes that exist in HTML code through a style sheet. This extension also provides several accessibility-related utilities.",
+	"version": "1.0.2",
+
+
+	"permissions": [
+		"activeTab",
+		"storage"
+	],
+
+	"browser_action": {
+		"default_title": "a11y.css",
+		"default_popup": "popup/index.html",
+		"default_icon": {
+			"19": "icons/a11y-css_19.png",
+			"38": "icons/a11y-css_38.png"
+		}
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"/scripts/injected/checkalts.js"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"icons": {
+		"16": "icons/a11y-css_16.png",
+		"48": "icons/a11y-css_48.png",
+		"128": "icons/a11y-css_128.png"
+	},
+	"web_accessible_resources": [
+		"icons/info.svg",
+		"icons/ko.svg",
+		"icons/ok.svg",
+		"scripts/injected/checkalts.js",
+		"css/*"
+	]
+}
