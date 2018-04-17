@@ -26,7 +26,7 @@ Eventually this will be a proper extension, but for the moment it's not packaged
 4. CLick on "Load Unpacked"
 5. Fetch the `webextension` folder containing manifest file.
 6. And *voilà*, the extension is running.
-   ![The “Chrome extension”](readme_images/chrome_extension.png)
+   ![The “Chrome extension”](readme_images/chrome_extension.PNG)
 ## Credits
 
 * A11y.css icon by [Gaël Poupard](http://www.ffoodd.fr/).
