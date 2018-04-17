@@ -25,6 +25,7 @@ Eventually this will be a proper extension, but for the moment it's not packaged
 3. Click “Developer mode” in the top right
 4. CLick on "Load Unpacked"
 5. Fetch the `webextension` folder containing manifest file.
+![The “Loading Chrome extension”](readme_images/chrome_extension_load.PNG)
 6. And *voilà*, the extension is running.
    ![The “Chrome extension”](readme_images/chrome_extension.PNG)
 ## Credits
