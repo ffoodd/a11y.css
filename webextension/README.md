@@ -19,10 +19,14 @@ Then you can run the Browser console `Ctrl+Shift+J` to see what's happening. You
 
 Eventually this will be a proper extension, but for the moment it's not packaged.
 
-1. Open `chrome://extensions/` in a new tab
-2. Click “Developer mode” in the top right
-3. Fetch the `manifest-chrome.json` file from the folder where you have copied the **a11y.css** project. Rename it to `manifest.json`
-4. And *voilà*, the extension is running.
+
+1. Fetch the `manifest-chrome.json` file from the folder where you have copied the **a11y.css** project and rename it to `manifest.json`
+2. Open `chrome://extensions/` in a new tab
+3. Click “Developer mode” in the top right
+4. CLick on "Load Unpacked"
+5. Fetch the `webextension` folder containing manifest file.
+6. And *voilà*, the extension is running.
+   ![The “Chrome extension”](readme_images/chrome_extension.png)
 ## Credits
 
 * A11y.css icon by [Gaël Poupard](http://www.ffoodd.fr/).
