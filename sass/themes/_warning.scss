@@ -191,6 +191,7 @@ category: Warnings
 Some nestings are forbidden, and do not have their own test case for now:
 
 * `<main>`  contained in any of `<nav>`, `<aside>`, `<footer>`, `<header>` or `<article>`;
+* `<address>`  containing any of `<address>`, `<nav>`, `<aside>`, `<section>`, `<footer>`, `<header>` or `<article>` — neither headings;
 * `<option>` and `<optgroup>` outside a `<select>`;
 * `<legend>` outside a `<fieldset>`;
 * `<td>` or `<th>` outside a `<tr>`;
@@ -202,6 +203,7 @@ Maybe other invalid nestings to test. Stay tuned.
 ##References
 * <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>.
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
+* <https://www.w3.org/TR/html52/grouping-content.html#the-address-element>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
@@ -222,7 +224,20 @@ optgroup > :not(option),
 :not(fieldset) > legend,
 select > :not(option):not(optgroup),
 :not(select):not(optgroup) > option,
-table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption)
+table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption),
+address h1,
+address h2,
+address h3,
+address h4,
+address h5,
+address h6,
+address nav,
+address aside,
+address header,
+address footer,
+address address,
+address article,
+address section
 ```
 
 ##Test
@@ -245,7 +260,20 @@ optgroup > :not(option),
 :not(fieldset) > legend,
 select > :not(option):not(optgroup),
 :not(select):not(optgroup) > option,
-table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption) {
+table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption),
+address h1,
+address h2,
+address h3,
+address h4,
+address h5,
+address h6,
+address nav,
+address aside,
+address header,
+address footer,
+address address,
+address article,
+address section {
   @include warning('invalid-nesting');
 }
 
