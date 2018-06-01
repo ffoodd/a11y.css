@@ -816,6 +816,7 @@ Any other imbrication may be a crime somewhere.</p>
 
 <h2>Description</h2>
 <p class="styleguide">Some nestings are forbidden, and do not have their own test case for now:</p><ul class="styleguide"><li><code class="styleguide">&lt;main&gt;</code>  contained in any of <code class="styleguide">&lt;nav&gt;</code>, <code class="styleguide">&lt;aside&gt;</code>, <code class="styleguide">&lt;footer&gt;</code>, <code class="styleguide">&lt;header&gt;</code> or <code class="styleguide">&lt;article&gt;</code>;</li>
+<li><code class="styleguide">&lt;address&gt;</code>  containing any of <code class="styleguide">&lt;address&gt;</code>, <code class="styleguide">&lt;nav&gt;</code>, <code class="styleguide">&lt;aside&gt;</code>, <code class="styleguide">&lt;section&gt;</code>, <code class="styleguide">&lt;footer&gt;</code>, <code class="styleguide">&lt;header&gt;</code> or <code class="styleguide">&lt;article&gt;</code> — neither headings;</li>
 <li><code class="styleguide">&lt;option&gt;</code> and <code class="styleguide">&lt;optgroup&gt;</code> outside a <code class="styleguide">&lt;select&gt;</code>;</li>
 <li><code class="styleguide">&lt;legend&gt;</code> outside a <code class="styleguide">&lt;fieldset&gt;</code>;</li>
 <li><code class="styleguide">&lt;td&gt;</code> or <code class="styleguide">&lt;th&gt;</code> outside a <code class="styleguide">&lt;tr&gt;</code>;</li>
@@ -825,6 +826,7 @@ Any other imbrication may be a crime somewhere.</p>
 <h2>References</h2>
 <ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2</a>.</li>
 <li><a href="https://www.w3.org/TR/html52/grouping-content.html#elementdef-main">https://www.w3.org/TR/html52/grouping-content.html#elementdef-main</a></li>
+<li><a href="https://www.w3.org/TR/html52/grouping-content.html#the-address-element">https://www.w3.org/TR/html52/grouping-content.html#the-address-element</a></li>
 <li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-parses">http://www.w3.org/TR/WCAG20/#ensure-compat-parses</a></li>
 <li><a href="http://www.w3.org/TR/WCAG20/#ensure-compat-rsv">http://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
 </ul>
@@ -845,7 +847,20 @@ Any other imbrication may be a crime somewhere.</p>
 <span class="nd">:not</span><span class="o">(</span><span class="nt">fieldset</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">legend</span><span class="o">,</span>
 <span class="nt">select</span> <span class="o">&gt;</span> <span class="nd">:not</span><span class="o">(</span><span class="nt">option</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">optgroup</span><span class="o">),</span>
 <span class="nd">:not</span><span class="o">(</span><span class="nt">select</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">optgroup</span><span class="o">)</span> <span class="o">&gt;</span> <span class="nt">option</span><span class="o">,</span>
-<span class="nt">table</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:not</span><span class="o">(</span><span class="nt">thead</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tfoot</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tbody</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tr</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">colgroup</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">caption</span><span class="o">)</span></code></pre>
+<span class="nt">table</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:not</span><span class="o">(</span><span class="nt">thead</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tfoot</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tbody</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">tr</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">colgroup</span><span class="o">)</span><span class="nd">:not</span><span class="o">(</span><span class="nt">caption</span><span class="o">),</span>
+<span class="nt">address</span> <span class="nt">h1</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">h2</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">h3</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">h4</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">h5</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">h6</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">nav</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">aside</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">header</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">footer</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">address</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">article</span><span class="o">,</span>
+<span class="nt">address</span> <span class="nt">section</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
