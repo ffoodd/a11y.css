@@ -783,6 +783,9 @@ a[target$="blank"]::after {
   content: "gr" !important;
 }
 
+#bookmarklet--link[href*="-ar"]::after {
+  content: "ar" !important;
+}
 
 .s, .nd { color: #07a }
 .na, .cssExample .nt { color: #667f1f }

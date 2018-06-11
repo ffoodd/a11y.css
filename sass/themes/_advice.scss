@@ -104,7 +104,7 @@ category: Advices
 `<figcaption>` should be single inside its parent. Check the spec!
 
 ##References
-* <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
+* <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
 ##Selector
 ```css_example
@@ -136,7 +136,7 @@ category: Advices
 `<figcaption>` should be first or last child. Nothing else.
 
 ##References
-* <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
+* <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
 ##Selector
 ```css_example
@@ -249,12 +249,12 @@ A link opening new tab or window should warn user about its behaviour.
 You could use a `[title]`, for example.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-2>
-* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
-* <http://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context>
-* <http://www.w3.org/TR/WCAG-TECHS/H33.html>
-* <http://www.w3.org/TR/WCAG-TECHS/H83.html>
-* <http://www.w3.org/TR/WCAG-TECHS/F22.html>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-2>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
+* <https://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context>
+* <https://www.w3.org/TR/WCAG-TECHS/H33.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H83.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F22.html>
 
 ##Selector
 ```css_example
@@ -282,10 +282,10 @@ category: Advices
 A link to a file should indicate the file format, the file size and if different from the main document, the file language.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-6>
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-7>
-* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
-* <http://www.w3.org/TR/WCAG-TECHS/H33.html>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-6>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-7>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
+* <https://www.w3.org/TR/WCAG-TECHS/H33.html>
 
 ##Selector
 ```css_example
@@ -337,8 +337,8 @@ category: Advices
 Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[contentinfo]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
-* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
 ##Selector
 ```css_example
@@ -373,8 +373,8 @@ category: Advices
 A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
-* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
 ##Selector
 ```css_example
@@ -417,8 +417,8 @@ category: Advices
 A `[required]` or `[aria-required]` should be visually understandable.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-10>
-* <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-10>
+* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 
 ##Selector
 ```css_example
@@ -460,8 +460,8 @@ category: Advices
 A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-13>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-13>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
 ##Selector
 ```css_example
@@ -525,11 +525,11 @@ category: Advices
 A `<video>` or `<audio>` needs a few things to be accessible, like a transcript, subtitles, controls. This kind of things.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-1>
-* <http://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt>
-* <http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-13>
-* <http://www.w3.org/TR/WCAG20/#media-equiv-text-doc>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-1>
+* <https://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt>
+* <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-13>
+* <https://www.w3.org/TR/WCAG20/#media-equiv-text-doc>
 
 ##Selector
 ```css_example
@@ -559,10 +559,10 @@ category: Advices
 A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-3>
-* <http://www.w3.org/TR/WCAG20/#text-equiv-all>
-* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <http://www.w3.org/TR/html51/semantics.html#alt>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-3>
+* <https://www.w3.org/TR/WCAG20/#text-equiv-all>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/html51/semantics.html#alt>
 
 ##Selector
 ```css_example
@@ -621,9 +621,9 @@ category: Advices
 A `[scope]` can be col or row (and nothing else) and it has to be relevant.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <http://www.w3.org/TR/WCAG-TECHS/H63.html>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG-TECHS/H63.html>
 
 ##Selector
 ```css_example
@@ -669,8 +669,8 @@ category: Advices
 A `[role="presentation"]` is a good idea for any `<table>` used for layout, but a bad thing for a data table. Double check this!
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ##Selector
 ```css_example
