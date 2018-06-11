@@ -105,6 +105,7 @@
   "warning:unsecured-target": "Επικίνδυνη τιμή ιδιότητας [target].",
   "warning:filename-alt": "Όνομα αρχείου στην ιδιότητα [alt].",
   "warning:no-aria-level": "Η ιδιότητα [aria-level] δεν βρέθηκε.",
+  "warning:mismatched-dir": "[lang] και [dir] ασυνεπή",
 
   "obsolete:tags": "Παρωχημένη ετικέτα.",
   "obsolete:attributes": "Παρωχημένη ιδιότητα."

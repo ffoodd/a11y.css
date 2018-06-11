@@ -105,6 +105,7 @@
   "warning:unsecured-target": "不安全的 [target]",
   "warning:filename-alt": "文件名 [alt]",
   "warning:no-aria-level": "缺少 [aria-level]",
+  "warning:mismatched-dir": "[lang] 和 [dir] 不一致",
 
   "obsolete:tags": "已废弃的元素",
   "obsolete:attributes": "已废弃的属性"
