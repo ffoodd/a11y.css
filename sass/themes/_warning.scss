@@ -1582,3 +1582,44 @@ label:not([for])
 label:not([for]) {
   @include warning('no-for');
 }
+
+
+/*doc
+---
+title: "Mismatching [dir] and [lang] attributes"
+name: mismatched-dir
+category: Warnings
+---
+
+##Description
+Some languages — like Arabic or Hebrew — requires a text direction switch usin `[dir="rtl"]`, as default text direction is left-to-right.
+This also requires to check any in-page language change (marked up with `[lang]`) in Arabic or Hebrew content to define `[dir]` too.
+
+##References
+* <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113>
+* <https://alphagov.github.io/accessibility-tool-audit/test-cases.html#languageofcontent>
+* <https://www.w3.org/International/questions/qa-html-dir>
+* <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
+* <https://w3c.github.io/html/dom.html#the-dir-attribute>
+
+##Selector
+```css_example
+[lang="ar"]:not([dir="rtl"]),
+[lang="he"]:not([dir="rtl"]),
+[lang="ar"] [lang]:not([dir="ltr"]),
+[lang="he"] [lang]:not([dir="ltr"]),
+[dir="rtl"]:not([lang="ar"]):not([lang="he"])
+```
+
+##Test
+```html_example
+<p dir="rtl" lang="en">Well, I'm kinda disoriented…</p>
+```
+*/
+[lang="ar"]:not([dir="rtl"]),
+[lang="he"]:not([dir="rtl"]),
+[lang="ar"] [lang]:not([dir="ltr"]),
+[lang="he"] [lang]:not([dir="ltr"]),
+[dir="rtl"]:not([lang="ar"]):not([lang="he"]) {
+  @include warning('mismatched-dir');
+}
