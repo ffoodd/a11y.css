@@ -12,11 +12,11 @@ category: Warnings
 The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also true.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
-* <http://www.w3.org/TR/html5/grouping-content.html#the-li-element>
+* <https://www.w3.org/TR/html5/grouping-content.html#the-li-element>
 
 ##Selector
 ```css_example
@@ -50,11 +50,11 @@ category: Warnings
 `<dt>` and `<dd>` should be direct adjacent siblings, and nothing else. Although multiple `<dd>` may follow a single `<dt>`.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
-* <http://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
+* <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
 ##Selector
 ```css_example
@@ -88,11 +88,11 @@ category: Warnings
 Any other imbrication may be a crime somewhere.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318>
-* <http://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
+* <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl>
 
 ##Selector
@@ -127,10 +127,10 @@ category: Warnings
 `<figcaption>` doesn't make sense outside a `<figure>`.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
-* <http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figcaption-element>
 
 ##Selector
 ```css_example
@@ -158,9 +158,9 @@ category: Warnings
 `<figure>` needs `[role="group"]` for accessibility reason.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-10>
-* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <http://www.w3.org/TR/html51/semantics.html#alt>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-10>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/html51/semantics.html#alt>
 
 ##Selector
 ```css_example
@@ -201,11 +201,11 @@ Some nestings are forbidden, and do not have their own test case for now:
 Maybe other invalid nestings to test. Stay tuned.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>.
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>.
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-address-element>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
 ##Selector
 ```css_example
@@ -340,7 +340,7 @@ They must not be used as wrappers!
 
 ##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252>
-* <http://www.w3.org/TR/html5/dom.html#sectioning-content>
+* <https://www.w3.org/TR/html5/dom.html#sectioning-content>
 
 ##Selector
 ```css_example
@@ -383,9 +383,9 @@ category: Warnings
 Always.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
 
 ##Selector
@@ -419,9 +419,9 @@ category: Warnings
 Always.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-summary>
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details>
 
@@ -456,12 +456,12 @@ Any abbreviation should give an explanation about its meaning, at least on its f
 
 ##References
 * BP160 OpQuast
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-4>
-* <http://www.w3.org/TR/WCAG20/#meaning-located>
-* <http://www.w3.org/TR/WCAG-TECHS/G70.html>
-* <http://www.w3.org/TR/WCAG-TECHS/G97.html>
-* <http://www.w3.org/TR/WCAG-TECHS/G102.html>
-* <http://www.w3.org/TR/WCAG-TECHS/H28.html>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-4>
+* <https://www.w3.org/TR/WCAG20/#meaning-located>
+* <https://www.w3.org/TR/WCAG-TECHS/G70.html>
+* <https://www.w3.org/TR/WCAG-TECHS/G97.html>
+* <https://www.w3.org/TR/WCAG-TECHS/G102.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H28.html>
 
 ##Selector
 ```css_example
@@ -495,14 +495,14 @@ That should be double-checked.
 
 ##References
 * BP160 OpQuast
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
-* <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
-* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <http://www.w3.org/TR/html51/semantics.html#alt>
-* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <http://www.w3.org/TR/WCAG-TECHS/H67.html>
-* <http://www.w3.org/TR/WCAG-TECHS/F39.html>
-* <http://www.w3.org/TR/WCAG-TECHS/F38.html>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/html51/semantics.html#alt>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 
 ##Selector
 ```css_example
@@ -541,14 +541,14 @@ category: Warnings
 A file name in `[alt]` is probably wrongly automated… and would never ever help any user.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
-* <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
-* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <http://www.w3.org/TR/html51/semantics.html#alt>
-* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <http://www.w3.org/TR/WCAG-TECHS/H67.html>
-* <http://www.w3.org/TR/WCAG-TECHS/F39.html>
-* <http://www.w3.org/TR/WCAG-TECHS/F38.html>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/html51/semantics.html#alt>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 
 ##Selector
 ```css_example
@@ -688,16 +688,16 @@ See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-c
 
 ##References
 * BP160 OpQuast
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
-* <http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
-* <http://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/wai-aria/roles#presentation>
-* <http://www.w3.org/TR/html51/semantics.html#alt>
-* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <http://www.w3.org/TR/WCAG-TECHS/H67.html>
-* <http://www.w3.org/TR/WCAG-TECHS/F39.html>
-* <http://www.w3.org/TR/WCAG-TECHS/F38.html>
-* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
+* <https://www.w3.org/TR/html51/semantics.html#alt>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
 ##Selector
 ```css_example
@@ -731,7 +731,7 @@ object[type="image"][aria-hidden="true"][aria-describedby],
 ##Test
 ```html_example
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     xmlns="https://www.w3.org/2000/svg" version="1.1"
      aria-hidden="true" title="Decorative SVG, you punk!">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
@@ -783,7 +783,7 @@ Any decorative image should be marked up with `[aria-hidden="true"]` (or empty `
 to empty `[alt]` or `[aria-hidden=true]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/referentiel/notes-techniques.html#nt-1-2>
+* <https://references.modernisation.gouv.fr/referentiel/notes-techniques.html#nt-1-2>
 * <https://www.w3.org/WAI/tutorials/images/decorative/>
 
 
@@ -800,7 +800,7 @@ object[role="presentation"]
 ##Test
 ```html_example
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     xmlns="https://www.w3.org/2000/svg" version="1.1"
      role="presentation">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
@@ -831,9 +831,9 @@ category: Warnings
 Any `<svg>` should either have `[aria-hidden="true"]` if decorative, or a `[role="img"]` if informative.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
-* <http://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <http://www.w3.org/TR/WCAG-TECHS/F65.html>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
 ##Selector
 ```css_example
@@ -843,7 +843,7 @@ svg:not([aria-hidden="true"]):not([role="img"])
 ##Test
 ```html_example
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg" version="1.1"
+     xmlns="https://www.w3.org/2000/svg" version="1.1"
      aria-label="Decorative SVG, you punk!">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
@@ -866,10 +866,10 @@ category: Warnings
 A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because it can be quite surprising for the user.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-18>
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-17>
-* <http://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
-* <http://www.punkchip.com/autoplay-is-bad-for-all-users/>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-18>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-17>
+* <https://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
+* <https://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
 ##Selector
 ```css_example
@@ -899,11 +899,11 @@ category: Warnings
 A time-based media like `<audio>` or `<video>` would be easier to use if `[controls]` are activated for the user.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-20>
-* <http://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
-* <http://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
-* <http://www.w3.org/TR/WCAG20/#keyboard-operation-trapping>
-* <http://www.w3.org/TR/WCAG-TECHS/G4.html>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-20>
+* <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
+* <https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
+* <https://www.w3.org/TR/WCAG20/#keyboard-operation-trapping>
+* <https://www.w3.org/TR/WCAG-TECHS/G4.html>
 
 ##Selector
 ```css_example
@@ -946,7 +946,7 @@ empty if they have at least one source specified through `[src]`.
 
 ##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
-* <http://www.w3.org/TR/html-markup/syntax.html#void-element>
+* <https://www.w3.org/TR/html-markup/syntax.html#void-element>
 * <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
 * <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
 * <https://css-tricks.com/almanac/selectors/b/blank/>
@@ -1005,8 +1005,8 @@ A lonely `<tr>` can be a symptom of a table used for layout.
 Should be double checked!
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ##Selector
 ```css_example
@@ -1048,8 +1048,8 @@ category: Warnings
 There's no good reason to nest data tables: thus it probably means we're facing a layout table…
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 * <https://www.w3.org/WAI/tutorials/tables/tips/>
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175>
 
@@ -1111,10 +1111,10 @@ category: Warnings
 And it must be the `:first-child`, by the way.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-4>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <http://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
-* <http://www.w3.org/TR/WCAG-TECHS/H39.html>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-4>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
+* <https://www.w3.org/TR/WCAG-TECHS/H39.html>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309>
 
 ##Selector
@@ -1160,9 +1160,9 @@ category: Warnings
 `<thead>`, `<tfoot>` and `<tbody>` must be in this order.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <http://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
+* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314>
 
 ##Selector
@@ -1261,9 +1261,9 @@ category: Warnings
 `<th>` strongly needs an `[id]` or a `[scope]`.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <http://www.w3.org/TR/WCAG20-TECHS/H43.html>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG20-TECHS/H43.html>
 
 ##Selector
 ```css_example
@@ -1309,7 +1309,7 @@ category: Warnings
 Believe me, this still have to be tested.
 
 ##References
-* <http://www.la-grange.net/2015/03/11/visible>
+* <https://www.la-grange.net/2015/03/11/visible>
 
 ##Selector
 ```css_example
@@ -1454,9 +1454,9 @@ Your styles should be driven by a CSS file. That's it.
 And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-1->
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-1->
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ##Selector
 ```css_example
@@ -1526,7 +1526,7 @@ Though `[aria-level]` is not required by ARIA specification, it's actually bette
 
 ##References
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-level>
-* <http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-1>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-1>
 * <https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css>
 * <https://www.w3.org/TR/wai-aria/roles#heading>
 * <https://www.w3.org/TR/WCAG-TECHS/ARIA12.html>
@@ -1560,14 +1560,14 @@ A `<label>` is labelling something, in theory.
 Although implicitly labelling form controls is accepted, it's probably better to double-check that form control is *really* nested in its `<label>`.
 
 ##References
-* <http://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
+* <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
 * <https://www.w3.org/WAI/tutorials/forms/labels/>
 * <https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/>
-* <http://www.w3.org/TR/WCAG20/#minimize-error-cues>
-* <http://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
-* <http://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
+* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 
 ##Selector
 ```css_example

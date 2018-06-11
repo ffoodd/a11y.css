@@ -39,7 +39,7 @@ $disabled-tests: ();
 /// @access private
 /// Every HTMl tag that do not allow generated content through pseudo-elements.
 /// @type List
-/// @link http://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element
+/// @link https://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element
 /// @link https://la-cascade.io/quest-ce-quun-element-remplace/
 $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, textarea, select, svg, audio, video, iframe;
 
@@ -48,13 +48,13 @@ $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, m
 /// @access private
 /// File formats used in a few selectors.
 /// @type List
-/// @link http://hugogiraudel.com/2013/07/15/understanding-sass-lists/
+/// @link https://hugogiraudel.com/2013/07/15/understanding-sass-lists/
 $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx, webp, apng, svg, svgz;
 
 /// List of interactive elements
 /// @access private
 /// Tags used in some selectors.
 /// @type List
-/// @link http://w3c.github.io/html/dom.html#interactive-content-2
-/// @link http://hugogiraudel.com/2013/07/15/understanding-sass-lists/
+/// @link https://w3c.github.io/html/dom.html#interactive-content-2
+/// @link https://hugogiraudel.com/2013/07/15/understanding-sass-lists/
 $interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'details', 'embed', 'iframe', 'img[usemap]', 'label', 'select', 'textarea', 'input[type]:not([hidden])';
