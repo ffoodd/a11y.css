@@ -106,6 +106,7 @@
   "warning:unsecured-target": "Unsafe [target]",
   "warning:filename-alt": "File name [alt]",
   "warning:no-aria-level": "No [aria-level]",
+  "warning:mismatched-dir": "Inconsistent [lang] and [dir]",
 
   "obsolete:tags": "Obsolete element",
   "obsolete:attributes": "Obsolete attribute"

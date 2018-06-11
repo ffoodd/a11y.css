@@ -106,6 +106,7 @@
   "warning:unsecured-target": "Небезопасный [target]",
   "warning:filename-alt": "Имя файла [alt]",
   "warning:no-aria-level": "Нет [aria-level]",
+  "warning:mismatched-dir": "[lang] и [dir] несовместимы",
 
   "obsolete:tags": "Устаревший элемент",
   "obsolete:attributes": "Устаревший атрибут"
