@@ -119,6 +119,10 @@
               </li>
             
               <li>
+                <a href="#mismatched-dir">Mismatching [dir] and [lang] attributes</a>
+              </li>
+            
+              <li>
                 <a href="#misplaced-div">Misplaced div</a>
               </li>
             
@@ -870,6 +874,37 @@ Any other imbrication may be a crime somewhere.</p>
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;legend&gt;</span>I'm an legend. Am I?<span class="nt">&lt;/legend&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="mismatched-dir" class="styleguide">Mismatching [dir] and [lang] attributes</h1>
+
+<h2>Description</h2>
+<p class="styleguide">Some languages — like Arabic or Hebrew — requires a text direction switch usin <code class="styleguide">[dir=&quot;rtl&quot;]</code>, as default text direction is left-to-right.
+This also requires to check any in-page language change (marked up with <code class="styleguide">[lang]</code>) in Arabic or Hebrew content to define <code class="styleguide">[dir]</code> too.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113">https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113</a></li>
+<li><a href="https://alphagov.github.io/accessibility-tool-audit/test-cases.html#languageofcontent">https://alphagov.github.io/accessibility-tool-audit/test-cases.html#languageofcontent</a></li>
+<li><a href="https://www.w3.org/International/questions/qa-html-dir">https://www.w3.org/International/questions/qa-html-dir</a></li>
+<li><a href="https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute">https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute</a></li>
+<li><a href="https://w3c.github.io/html/dom.html#the-dir-attribute">https://w3c.github.io/html/dom.html#the-dir-attribute</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="err">"</span><span class="nt">ar</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">dir</span><span class="o">=</span><span class="err">"</span><span class="nt">rtl</span><span class="err">"</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="err">"</span><span class="nt">he</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">dir</span><span class="o">=</span><span class="err">"</span><span class="nt">rtl</span><span class="err">"</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="err">"</span><span class="nt">ar</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">lang</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">dir</span><span class="o">=</span><span class="err">"</span><span class="nt">ltr</span><span class="err">"</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="err">"</span><span class="nt">he</span><span class="err">"</span><span class="o">]</span> <span class="o">[</span><span class="nt">lang</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">dir</span><span class="o">=</span><span class="err">"</span><span class="nt">ltr</span><span class="err">"</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">dir</span><span class="o">=</span><span class="err">"</span><span class="nt">rtl</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">lang</span><span class="o">=</span><span class="err">"</span><span class="nt">ar</span><span class="err">"</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">lang</span><span class="o">=</span><span class="err">"</span><span class="nt">he</span><span class="err">"</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p dir="rtl" lang="en">Well, I'm kinda disoriented…</p>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;p</span> <span class="na">dir=</span><span class="s">"rtl"</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>Well, I'm kinda disoriented…<span class="nt">&lt;/p&gt;</span></code></pre>
   </div>
 </div>
 
