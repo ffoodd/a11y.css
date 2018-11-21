@@ -1,5 +1,5 @@
 function getFileName () {
-  var base = 'https://rawgit.com/ffoodd/a11y.css/master/css/';
+  var base = 'https://ffoodd.github.io/a11y.css/css/';
   var prefix = 'a11y-';
   var lang = document.getElementById('language').value || 'en';
   var level = document.getElementById('minimum-level').value || 'advice';
