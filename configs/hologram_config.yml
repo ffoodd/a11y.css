@@ -27,7 +27,7 @@ code_example_renderers: ./../docs/Hologram/_code-example/code_example_renderers
 # folder. Typically this will include the css that you are trying to
 # document. May also include additional folders as needed.
 dependencies:
-  - ./../css/docs
+  - ./../css
 
 # Mark which category should be the index page
 # Alternatively, you may have an index.md in the documentation assets
