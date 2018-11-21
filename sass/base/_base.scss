@@ -12,6 +12,7 @@ body::after {
   background-size: 0.5em 100%;
   bottom: 1em;
   color: rgb(252, 249, 233);
+  contain: content;
   font: 700 18px/1.5 sans-serif;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   height: auto;
