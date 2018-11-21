@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <!-- CSS to be documented -->
     
-      <link rel="stylesheet" href="docs/a11y-en_advices-only.css" media="all">
+      <link rel="stylesheet" href="css/a11y-en_advices-only.css" media="all">
     
   </head>
   <body>
@@ -178,7 +178,7 @@
 
           <p>
             Just drag this to your bookmarks, and you'll be able to use <b>a11y.css</b> on any page:
-            <a id="bookmarklet--link" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();" class="bookmarklet">a11y.css</a>
+            <a id="bookmarklet--link" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://ffoodd.github.io/a11y.css/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();" class="bookmarklet">a11y.css</a>
           </p>
         </div>
       </aside>
@@ -195,10 +195,10 @@
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">main</span><span class="err">"</span><span class="o">]</span> <span class="o">~</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">main</span><span class="err">"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">search</span><span class="err">"</span><span class="o">]</span> <span class="o">~</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">search</span><span class="err">"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">banner</span><span class="err">"</span><span class="o">]</span> <span class="o">~</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">banner</span><span class="err">"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">contentinfo</span><span class="err">"</span><span class="o">]</span> <span class="o">~</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">contentinfo</span><span class="err">"</span><span class="o">]</span></code></pre>
+  <pre><code><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"main"</span><span class="o">]</span> <span class="o">~</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"main"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"search"</span><span class="o">]</span> <span class="o">~</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"search"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"banner"</span><span class="o">]</span> <span class="o">~</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"banner"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"contentinfo"</span><span class="o">]</span> <span class="o">~</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"contentinfo"</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -219,8 +219,8 @@
 <p class="styleguide"><code class="styleguide">[class]</code> shouldn&#39;t be present if empty. Something to improve, right?</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="o">[</span><span class="nt">class</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">]</span></code></pre>
+  <pre><code><span class="o">[</span><span class="nt">class</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">=</span><span class="s1">" "</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -239,8 +239,8 @@
 <p class="styleguide"><code class="styleguide">[id]</code> shouldn&#39;t be present if empty. You&#39;ll thank me later.</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="o">[</span><span class="nt">id</span><span class="o">=</span><span class="err">""</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">id</span><span class="o">=</span><span class="err">"</span> <span class="err">"</span><span class="o">]</span></code></pre>
+  <pre><code><span class="o">[</span><span class="nt">id</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">id</span><span class="o">=</span><span class="s1">" "</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -326,24 +326,24 @@
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="o">[</span><span class="nt">download</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.pdf</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.doc</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.png</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.jpg</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.gif</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp3</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mp4</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.mov</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.ogg</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.xls</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.txt</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.zip</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.rar</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.docx</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.webp</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.apng</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svg</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nc">.svgz</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">)</span></code></pre>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".pdf"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".doc"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".png"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".jpg"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".gif"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".mp3"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".mp4"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".mov"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".ogg"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".xls"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".txt"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".zip"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".rar"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".docx"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".webp"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".apng"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".svg"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">),</span>
+<span class="o">[</span><span class="nt">href</span><span class="err">$</span><span class="o">=</span><span class="s1">".svgz"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nt">link</span><span class="o">)</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -367,7 +367,7 @@
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="o">[</span><span class="nt">hidden</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:empty</span><span class="o">),</span>
-<span class="o">[</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="err">"</span><span class="nt">true</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:empty</span><span class="o">)</span></code></pre>
+<span class="o">[</span><span class="nt">aria-hidden</span><span class="o">=</span><span class="s1">"true"</span><span class="o">]</span><span class="nd">:not</span><span class="o">(</span><span class="nd">:empty</span><span class="o">)</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -387,7 +387,7 @@
 Otherwise you may annoy your users.</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="err">"</span><span class="nt">mailto</span><span class="err">"</span><span class="o">]</span></code></pre>
+  <pre><code><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="s1">"mailto"</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -435,8 +435,8 @@ Otherwise you may annoy your users.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="err">"</span><span class="nt">search</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">search</span><span class="err">"</span><span class="o">]),</span>
-<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="err">"</span><span class="nt">search</span><span class="err">"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">search</span><span class="err">"</span><span class="o">])</span></code></pre>
+  <pre><code><span class="o">[</span><span class="nt">id</span><span class="o">*=</span><span class="s1">"search"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"search"</span><span class="o">]),</span>
+<span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s1">"search"</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">role</span><span class="o">=</span><span class="s1">"search"</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -491,8 +491,8 @@ Otherwise you may annoy your users.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="o">[</span><span class="nt">src</span><span class="o">^=</span><span class="err">"</span><span class="nt">http</span><span class="o">:</span><span class="err">"</span><span class="o">],</span>
-<span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="err">"</span><span class="nt">http</span><span class="o">:</span><span class="err">"</span><span class="o">]</span></code></pre>
+  <pre><code><span class="o">[</span><span class="nt">src</span><span class="o">^=</span><span class="s1">"http:"</span><span class="o">],</span>
+<span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="s1">"http:"</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -563,7 +563,7 @@ Otherwise you may annoy your users.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">a</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">button</span><span class="err">"</span><span class="o">]</span></code></pre>
+  <pre><code><span class="nt">a</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"button"</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -586,7 +586,7 @@ Otherwise you may annoy your users.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="err">"</span><span class="nt">presentation</span><span class="err">"</span><span class="o">]</span></code></pre>
+  <pre><code><span class="nt">table</span><span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"presentation"</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -632,7 +632,7 @@ You could use a <code class="styleguide">[title]</code>, for example.</p>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="o">[</span><span class="nt">target</span><span class="err">$</span><span class="o">=</span><span class="err">"</span><span class="nt">blank</span><span class="err">"</span><span class="o">]</span></code></pre>
+  <pre><code><span class="o">[</span><span class="nt">target</span><span class="err">$</span><span class="o">=</span><span class="s1">"blank"</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -652,7 +652,7 @@ You could use a <code class="styleguide">[title]</code>, for example.</p>
 Otherwise you may make your users to call anubody.</p>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="err">"</span><span class="nt">tel</span><span class="err">"</span><span class="o">]</span></code></pre>
+  <pre><code><span class="o">[</span><span class="nt">href</span><span class="o">^=</span><span class="s1">"tel"</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
