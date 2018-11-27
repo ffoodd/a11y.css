@@ -38,21 +38,21 @@
   },
   "devDependencies": {
     "csslint-stylish": "0.0.6",
-    "fs-promise": "^0.5.0",
-    "gulp": "~3.9.0",
-    "gulp-autoprefixer": "^4.0.0",
+    "fs-promise": "^2.0.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-csslint": "latest",
     "gulp-hologram": "^1.2.3",
     "gulp-plumber": "latest",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.2.0",
+    "gulp-sass": "^4.0.2",
     "gulp-scss-lint": "latest",
-    "gulp-uglify": "^1.5.3",
+    "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
     "rootbeer": "^1.0.5",
     "sassdoc": "^2.2.2",
-    "sassdoc-theme-alix": "^0.3.30",
+    "sassdoc-theme-alix": "^0.4.0",
     "vinyl-source-stream": "^2.0.0"
   }
 }
