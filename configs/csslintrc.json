@@ -6,5 +6,8 @@
   "universal-selector": false,
   "compatible-vendor-prefixes": false,
   "gradients": false,
-  "order-alphabetical": false
+  "order-alphabetical": false,
+  "known-properties": false,
+  "qualified-headings": false,
+  "unique-headings": false
 }

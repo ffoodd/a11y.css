@@ -9,7 +9,7 @@ var onError = require('./helpers/onError');
 csslint.addFormatter('csslint-stylish');
 
 module.exports = function () {
-  gulp.src(options.destination + '/**/*.css')
+  gulp.src(options.destination + '/a11y-fr.css')
     .pipe(plumber({ errorHandler: onError }))
     .pipe(csslint(path.resolve(__dirname, '..', 'configs', 'csslintrc.json')))
     .pipe(csslint.formatter('stylish'));
