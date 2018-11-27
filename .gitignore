@@ -6,3 +6,4 @@ prepros.cfg
 /docs/Hologram/tests
 /docs/SassDoc/*
 *.log
+package-lock.json
