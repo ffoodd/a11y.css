@@ -25,7 +25,8 @@
     "docs:prepare": "cp -r docs/Hologram/tests/* docs/build && rsync -avh docs/SassDoc/ docs/build && rm -rf docs/build/sass && rm -rf docs/build/js",
     "docs:deploy": "git add docs/build && git commit -m 'chore: compile documentation' --allow-empty && git push origin :gh-pages && git subtree push --prefix docs/build origin gh-pages && echo 'Documentation successfully deployed'",
     "prepublishOnly": "gulp translate",
-    "test": "gulp lints"
+    "test": "gulp lints",
+    "gulp": "node node_modules/gulp/bin/gulp.js"
   },
   "license": "MIT",
   "homepage": "https://ffoodd.github.io/a11y.css",
