@@ -13,6 +13,8 @@
 ## Small fix January 2019 TODO
 
 1. Make the "check alts" into a toggle
-	* Make `reporterid` a global variable in the script
-	* Create a `toggleReporter()` function to either remove the div or build it
-	* in `init` replace `this.buildReporter();` with the toggle
+	* ~~Make `reporterid` a global variable in the script~~
+	* ~~Create a `toggleReporter()` function to either remove the div or build it~~
+	* ~~in `init` replace `this.buildReporter();` with the toggle~~
+2. LOCALISATION
+	* @ffoodd find translators to update `"btnCheckalts": "Afficher/masquer <code>img@alt</code>",`

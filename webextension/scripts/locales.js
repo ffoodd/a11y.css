@@ -59,7 +59,7 @@ const localeStrings = {
 		"altOK": "OK",
 		"btnAllycss": "Afficher a11y.css",
 		"btnA11ycssBack":"Retour",
-		"btnCheckalts": "Vérifier <code>img@alt</code>",
+		"btnCheckalts": "Afficher/masquer <code>img@alt</code>",
 		"btnOutline": "Encadrer le focus",
 		"btnOutlineRemove":"Retirer l'encadrement du focus",
 		"btnShowLangAttribute":"Afficher les langues",

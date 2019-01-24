@@ -7,6 +7,8 @@ a11ycss.checkalts = {
 	imgs : {},
 	namespace: "a11ycss_checkalts_",
 	reporter: document.createElement('div'),
+	reporterid: '{NAMESPACE}reporter',
+	cssid: '{NAMESPACE}css',
 	strings: {
 		ok: "OK",
 		info: "empty",
@@ -22,13 +24,12 @@ a11ycss.checkalts = {
 	extensionpics: {},
 	// The reporter is a zone in the page where we gather thumbnails
 	buildReporter: function() {
-		var reporterid = this.namespace + 'reporter';
-		this.reporter.id = reporterid;
+		this.reporter.id = this.reporterid;
 		var style = `
 			body {
 				margin-left: 10rem !important;
 			}
-			div#${reporterid} {
+			div#${this.reporter.id} {
 				background: #fcf9e9;
 				color: #3e4b55;
 				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -43,29 +44,29 @@ a11ycss.checkalts = {
 				width: 10rem;
 				z-index: 2147483647;
 			}
-			div#${reporterid} figure {
+			div#${this.reporter.id} figure {
 				border-radius: .25rem;
 				cursor: pointer;
 				margin: .5rem .25rem;
 				padding: .25rem;
 				position: relative;
 			}
-			div#${reporterid} figure:focus {
+			div#${this.reporter.id} figure:focus {
 				background: #fff;
 				outline: 1px solid #e5dec8;
 			}
-			div#${reporterid} img {
+			div#${this.reporter.id} img {
 				height: auto;
 				max-width: 100%;
 				width: auto;
 			}
-			div#${reporterid} code {
+			div#${this.reporter.id} code {
 				background: none;
 				border: 0;
 				color: inherit;
 				font-family: "Consolas", "Monaco", "Andale Mono", monospace;
 			}
-			div#${reporterid} img.${this.namespace}picto {
+			div#${this.reporter.id} img.${this.namespace}picto {
 				display: none;
 				height: 2rem;
 				left: 0;
@@ -76,6 +77,7 @@ a11ycss.checkalts = {
 			}
 		`;
 		var s = document.createElement('style');
+		s.id = this.cssid;
 		s.innerHTML = style;
 		document.getElementsByTagName('head').item(0).appendChild(s);
 		document.getElementsByTagName('body').item(0).appendChild(this.reporter);
@@ -83,6 +85,7 @@ a11ycss.checkalts = {
 	// we collect images and add information on them
 	collectImages: function() {
 		var imgs = document.getElementsByTagName('img');
+		console.log(imgs);
 		var str = '';
 		var tpl = `
 			<figure data-target="{TARGET}" role="group">
@@ -100,11 +103,12 @@ a11ycss.checkalts = {
 			var tmpimg = imgs[i];
 			var tmpstr = '';
 			var tmppicto = '';
-
-			tmpimg.classList.add(this.namespace + "targetimage" + i);
+			var tmptargetclass = this.namespace + "targetimage" + Date.now();
+			console.log(tmptargetclass);
+			tmpimg.classList.add(tmptargetclass);
 
 			// populate strings
-			tmptpl = tmptpl.replace(`{TARGET}`, this.namespace + "targetimage" + i);
+			tmptpl = tmptpl.replace(`{TARGET}`, tmptargetclass);
 			tmptpl = tmptpl.replace(`{SRC}`, tmpimg.src);
 
 			if (tmpimg.getAttribute('alt') === null) {
@@ -183,13 +187,25 @@ a11ycss.checkalts = {
 		}, this);
 	},
 
-	init: function() {
-		if (document.getElementById(this.namespace + 'reporter')) {
-			return;
+	toggleReporter: function() {
+		if( document.getElementById(this.reporterid) ) {
+			document.getElementById(this.reporterid).innerHTML = ''; // we have to empty it otherwise the next collectImages() will also list its children
+			document.getElementsByTagName('body').item(0).removeChild(document.getElementById(this.reporterid));
+			document.getElementsByTagName('head').item(0).removeChild(document.getElementById(this.cssid));
+		} else {
+			this.buildReporter();
+			this.collectImages();
+			this.addBehaviour();
 		}
-		this.buildReporter();
-		this.collectImages();
-		this.addBehaviour();
+	},
+
+	init: function() {
+		// if (document.getElementById(this.namespace + 'reporter')) {
+			// return;
+		// }
+		this.reporterid = this.reporterid.replace(/{NAMESPACE}/g,this.namespace);
+		this.cssid = this.cssid.replace(/{NAMESPACE}/g,this.namespace);
+		this.toggleReporter();
 	}
 };
 
