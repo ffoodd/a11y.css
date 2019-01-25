@@ -31,7 +31,7 @@ const localeStrings = {
 		"altOK":"OK",
 		"btnAllycss":"Show a11y.css",
 		"btnA11ycssBack":"Back",
-		"btnCheckalts":"Check <code>img@alt</code>",
+		"btnCheckalts":"Show/hide <code>img@alt</code>",
 		"btnOutline":"Outline focus",
 		"btnOutlineRemove":"Remove focus outline",
 		"btnShowLangAttribute":"Show languages used",
