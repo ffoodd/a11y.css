@@ -34,7 +34,8 @@
     "webext:mv": "cp temp/*.css webextension/css",
     "webext:all": "mkdir temp && npm run webext:cp && npm run webext:rename && npm run webext:mv && rm -rf temp",
     "webext:css": "npm run webext:prepare && npm run webext:all",
-    "webext:package": "cd webextension && zip -r -FS ../a11ycss-webextension.zip *"
+    "webext:manifest": "cp manifest-firefox.json webextension/manifest.json",
+    "webext:package": "npm run webext:manifest && cd webextension && zip -r -FS ../a11ycss-webextension-firefox.zip *"
   },
   "license": "MIT",
   "homepage": "https://ffoodd.github.io/a11y.css",
