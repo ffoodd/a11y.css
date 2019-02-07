@@ -4,9 +4,9 @@ var plumber = require('gulp-plumber');
 var options = require('./helpers/options');
 var onError = require('./helpers/onError');
 
-module.exports = function () {
+module.exports = function() {
   return gulp.src(options.webextension)
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(zip('a11ycss-webextension.zip'))
+    .pipe(zip('a11ycss-webextension-firefox.zip'))
     .pipe(gulp.dest('./'));
-};
+}

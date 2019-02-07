@@ -18,6 +18,8 @@ gulp.task('translate', require('./tasks/translate'));
 // Meta tasks
 gulp.task('docs', gulp.parallel('sassdoc', 'hologram'));
 gulp.task('webextension:css', gulp.series('copy-css', 'move-css'));
-gulp.task('webextension', gulp.series('webextension:css', require('./tasks/webextension')));
+gulp.task('webextension:firefox', gulp.series(require('./tasks/manifest-firefox'), require('./tasks/webextension-firefox')));
+gulp.task('webextension:chrome', gulp.series(require('./tasks/manifest-chrome'), require('./tasks/webextension-chrome')));
+gulp.task('webextension', gulp.series('webextension:css', gulp.series('webextension:firefox', 'webextension:chrome')));
 gulp.task('lints', gulp.series('scss-lint', 'css-lint'));
 gulp.task('default', gulp.series('sass'));

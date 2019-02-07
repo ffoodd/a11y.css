@@ -7,3 +7,4 @@ prepros.cfg
 /docs/SassDoc/*
 *.log
 .vscode
+/webextension/manifest.json
