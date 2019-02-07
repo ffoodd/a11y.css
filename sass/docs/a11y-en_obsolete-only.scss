@@ -1,8 +1,0 @@
-@charset 'UTF-8';
-
-@import '../locales/en';
-
-@import '../utils/all';
-@include set-minimum-level('obsolete');
-@import '../base/base';
-@import '../themes/obsolete';
