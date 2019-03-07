@@ -27,7 +27,6 @@ BROWSER.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
 		a11ycss_action: "checkalts",
 		// [… other parameters …]
 	});
-
 });
 ```
 

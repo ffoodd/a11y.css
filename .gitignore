@@ -8,7 +8,6 @@ prepros.cfg
 *.log
 .vscode
 webextension/manifest.json
-webextension/scripts/browser-polyfill.min.js
 webextension/css/a11y-en_advices-only.css
 webextension/css/a11y-en_errors-only.css
 webextension/css/a11y-en_obsolete-only.css
