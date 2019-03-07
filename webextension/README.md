@@ -2,9 +2,11 @@
 
 This is a port to WebExtension of the [a11y.css bookmarklet](../).
 
-## How to test it (Firefox)
+## How to test
 
-Eventually this will be a proper extension, but for the moment it's not packaged.
+When developping, you'll need to test an unpackaged version.
+
+### Firefox
 
 1. Open `about:debugging` in a new tab
 2. Click on “Load a temporary module”
@@ -15,19 +17,17 @@ Eventually this will be a proper extension, but for the moment it's not packaged
 
 Then you can run the Browser console `Ctrl+Shift+J` to see what's happening. You may see some errors that won't happen once the application will be properly packaged and distributed. Bear with us.
 
-## How to test it (Chrome)
-
-Eventually this will be a proper extension, but for the moment it's not packaged.
-
+### Chrome
 
 1. Fetch the `manifest-chrome.json` file from the folder where you have copied the **a11y.css** project and rename it to `manifest.json`
 2. Open `chrome://extensions/` in a new tab
 3. Click “Developer mode” in the top right
 4. CLick on "Load Unpacked"
 5. Fetch the `webextension` folder containing manifest file.
-![The “Loading Chrome extension”](readme_images/chrome_extension_load.png)
+   ![The “Loading Chrome extension”](readme_images/chrome_extension_load.png)
 6. And *voilà*, the extension is running.
    ![The “Chrome extension”](readme_images/chrome_extension.PNG)
+   
 ## Credits
 
-* A11y.css icon by [Gaël Poupard](http://www.ffoodd.fr/).
+* a11y.css icon by [Gaël Poupard](https://www.ffoodd.fr/).
