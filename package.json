@@ -35,7 +35,10 @@
     "webext:all": "mkdir temp && npm run webext:cp && npm run webext:rename && npm run webext:mv && rm -rf temp",
     "webext:css": "npm run webext:prepare && npm run webext:all",
     "webext:manifest": "cp manifest-firefox.json webextension/manifest.json",
-    "webext:package": "npm run webext:manifest && cd webextension && zip -r -FS ../a11ycss-webextension-firefox.zip *"
+    "webext:package": "npm run webext:manifest && cd webextension && zip -r -FS ../a11ycss-webextension-firefox.zip *",
+    "webext:polyfill": "cp node_modules/webextension-polyfill/dist/browser-polyfill.min.js webextension/scripts/",
+    "webext:manifest:chrome": "cp manifest-chrome.json webextension/manifest.json",
+    "webext:package:chrome": "npm run webext:polyfill && npm run webext:manifest:chrome && cd webextension && zip -r -FS ../a11ycss-webextension-chrome.zip *"
   },
   "license": "MIT",
   "homepage": "https://ffoodd.github.io/a11y.css",
@@ -64,6 +67,7 @@
     "rootbeer": "^1.0.5",
     "sassdoc": "^2.2.2",
     "sassdoc-theme-alix": "^0.4.0",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "webextension-polyfill": "^0.4.0"
   }
 }
