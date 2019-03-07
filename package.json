@@ -38,7 +38,7 @@
     "webext:package": "npm run webext:manifest && cd webextension && zip -r -FS ../a11ycss-webextension-firefox.zip *",
     "webext:polyfill": "cp node_modules/webextension-polyfill/dist/browser-polyfill.min.js webextension/scripts/",
     "webext:manifest:chrome": "cp manifest-chrome.json webextension/manifest.json",
-    "webext:package:chrome": "npm run webext:polyfill && npm run webext:manifest:chrome && cd webextension && zip -r -FS ../a11ycss-webextension-chrome.zip *"
+    "webext:package:chrome": "npm run webext:polyfill && npm run webext:manifest:chrome && cd webextension && zip -r -FS ../a11ycss-webextension-chrome.zip * && rm -rf scripts/browser-polyfill.min.js"
   },
   "license": "MIT",
   "homepage": "https://ffoodd.github.io/a11y.css",
@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "csslint-stylish": "0.0.6",
+    "del": "^4.0.0",
     "fs-promise": "^2.0.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",

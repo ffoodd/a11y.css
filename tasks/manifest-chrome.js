@@ -1,9 +1,5 @@
-var gulp = require('gulp');
-var zip  = require('gulp-zip');
-var plumber = require('gulp-plumber');
-var rename  = require('gulp-rename');
-var options = require('./helpers/options');
-var onError = require('./helpers/onError');
+var gulp   = require('gulp');
+var rename = require('gulp-rename');
 
 module.exports = function() {
   return gulp.src('./manifest-chrome.json')

@@ -15,11 +15,21 @@ gulp.task('copy-css', require('./tasks/webextension-cp-css'));
 gulp.task('move-css', require('./tasks/webextension-mv-css'));
 gulp.task('translate', require('./tasks/translate'));
 
+// Webextension
+gulp.task('webextension:css', gulp.series('copy-css', 'move-css'));
+gulp.task('webextension:firefox', gulp.series(
+  require('./tasks/manifest-firefox'),
+  require('./tasks/webextension-firefox')
+));
+gulp.task('webextension:chrome', gulp.series(
+  require('./tasks/mv-browser-polyfill'),
+  require('./tasks/manifest-chrome'),
+  require('./tasks/webextension-chrome'),
+  require('./tasks/rm-browser-polyfill'),
+));
+gulp.task('webextension', gulp.series('webextension:css', gulp.series('webextension:firefox', 'webextension:chrome')));
+
 // Meta tasks
 gulp.task('docs', gulp.parallel('sassdoc', 'hologram'));
-gulp.task('webextension:css', gulp.series('copy-css', 'move-css'));
-gulp.task('webextension:firefox', gulp.series(require('./tasks/manifest-firefox'), require('./tasks/webextension-firefox')));
-gulp.task('webextension:chrome', gulp.series(require('./tasks/manifest-chrome'), require('./tasks/webextension-chrome')));
-gulp.task('webextension', gulp.series('webextension:css', gulp.series('webextension:firefox', 'webextension:chrome')));
 gulp.task('lints', gulp.series('scss-lint', 'css-lint'));
 gulp.task('default', gulp.series('sass'));
