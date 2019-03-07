@@ -8,7 +8,7 @@ let level = document.getElementsByName('level');
  */
 function storeA11ycss(strLevel) {
 	let a11ycss = { level: strLevel };
-	let setting = BROWSER.storage.local.set({ a11ycss });
+	let setting = browser.storage.local.set({ a11ycss });
 	setting.then(null, onError); // just in case
 }
 
@@ -40,7 +40,7 @@ function addA11ycss() {
 		document.getElementsByTagName("head")[0].appendChild(stylesheet);
 	`;
 	console.log(code);
-	BROWSER.tabs.executeScript({ code: code });
+	browser.tabs.executeScript({ code: code });
 }
 
 function removeA11ycss() {
@@ -48,7 +48,7 @@ function removeA11ycss() {
 		var oldStylesheet = document.getElementById("${EXTENSION_PREFIX}stylechecker");
 		if ( oldStylesheet ) { stylesheet.parentNode.removeChild(oldStylesheet) }
 	`;
-	BROWSER.tabs.executeScript({ code: code });
+	browser.tabs.executeScript({ code: code });
 }
 
 document.getElementById("a11ycssBtnApply").addEventListener('click', function () {
@@ -62,7 +62,7 @@ document.getElementById("a11ycssBtnClear").addEventListener('click', function ()
 // on document load, if we have already chosen a level, give it back
 // (the first option is checked in the popup's HTML by default)
 function a11ycssOnload() {
-	let gettingItem = BROWSER.storage.local.get("a11ycss");
+	let gettingItem = browser.storage.local.get("a11ycss");
 	gettingItem.then(
 		// when we got something
 		function (item) {

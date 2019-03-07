@@ -10,7 +10,7 @@ function addOutline() {
 		stylesheet.id = "${EXTENSION_PREFIX}outline";
 		document.getElementsByTagName("head")[0].appendChild(stylesheet);
 	`;
-	BROWSER.tabs.executeScript({ code: code });
+	browser.tabs.executeScript({ code: code });
 }
 
 function removeOutline() {
@@ -18,7 +18,7 @@ function removeOutline() {
 	var outlineStylesheet = document.getElementById("${EXTENSION_PREFIX}outline");
 	if ( outlineStylesheet ) { outlineStylesheet.parentNode.removeChild(outlineStylesheet) }
 	`;
-	BROWSER.tabs.executeScript({ code: code });
+	browser.tabs.executeScript({ code: code });
 	btnOutline.innerHTML = _t('btnOutline');
 	btnOutline.classList.remove('unapply');
 	btnOutline.classList.add('apply');

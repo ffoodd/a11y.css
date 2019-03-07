@@ -10,5 +10,5 @@ btnShowLangAttribute.addEventListener('click', function () {
 		stylesheet.id = "${EXTENSION_PREFIX}showlangattribute";
 		document.getElementsByTagName("head")[0].appendChild(stylesheet);
 	`;
-	BROWSER.tabs.executeScript({ code: code });
+	browser.tabs.executeScript({ code: code });
 });

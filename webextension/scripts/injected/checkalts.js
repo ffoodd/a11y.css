@@ -2,13 +2,6 @@
 (function () {
 
 var a11ycss = a11ycss || {};
-// browser compatibility
-const BROWSER = chrome || browser;
-const BROWSER_STRING = chrome ? 'chrome' : 'browser';
-// const STORAGE = BROWSER.storage.sync || BROWSER.storage.local;
-
-// a11y.css web extension-specific constants
-const EXTENSION_PREFIX = 'a11ycss_';
 
 a11ycss.checkalts = {
 	imgs : {},
@@ -216,7 +209,7 @@ a11ycss.checkalts = {
 	}
 };
 
-BROWSER.runtime.onMessage.addListener((message) => {
+browser.runtime.onMessage.addListener((message) => {
 	if (message.a11ycss_action && message.a11ycss_action === "checkalts") {
 		if(message.strings) {
 			a11ycss.checkalts.updateStrings(message.strings);
