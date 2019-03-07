@@ -8,7 +8,7 @@ let level = document.getElementsByName('level');
  */
 function storeA11ycss(strLevel) {
 	let a11ycss = { level: strLevel };
-	let setting = browser.storage.local.set({ a11ycss });
+	let setting = BROWSER.storage.local.set({ a11ycss });
 	setting.then(null, onError); // just in case
 }
 
@@ -62,7 +62,7 @@ document.getElementById("a11ycssBtnClear").addEventListener('click', function ()
 // on document load, if we have already chosen a level, give it back
 // (the first option is checked in the popup's HTML by default)
 function a11ycssOnload() {
-	let gettingItem = browser.storage.local.get("a11ycss");
+	let gettingItem = BROWSER.storage.local.get("a11ycss");
 	gettingItem.then(
 		// when we got something
 		function (item) {

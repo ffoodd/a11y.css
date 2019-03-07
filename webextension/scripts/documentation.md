@@ -22,8 +22,8 @@ scripts                   Main folder for scripts
 Each script that needs to execute a content script has to call it that way:
 
 ```javascript
-browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-	browser.tabs.sendMessage(tabs[0].id, {
+BROWSER.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+	BROWSER.tabs.sendMessage(tabs[0].id, {
 		a11ycss_action: "checkalts",
 		// [… other parameters …]
 	});
@@ -34,7 +34,7 @@ browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
 For instance this will be listened to by the injected content script checkalts.js, which will react accordingly:
 
 ```javascript
-browser.runtime.onMessage.addListener((message) => {
+BROWSER.runtime.onMessage.addListener((message) => {
 	if (message.a11ycss_action && message.a11ycss_action === "checkalts") {
 		// this is where the actions are going to be called
 	}
