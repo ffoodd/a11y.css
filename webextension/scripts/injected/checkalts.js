@@ -180,6 +180,7 @@ a11ycss.checkalts = {
 		keys.forEach(function(key) {
 			var elts = document.getElementsByClassName(classPrefix + key);
 			for(var i = 0 ; i < elts.length ; i++) {
+				console.log(icons);
 				elts[i].src = icons[key.valueOf()];
 				elts[i].style = 'display:block;';
 				elts[i].alt = a11ycss.checkalts.strings[key.valueOf()];
@@ -209,7 +210,7 @@ a11ycss.checkalts = {
 	}
 };
 
-browser.runtime.onMessage.addListener((message) => {
+browser.runtime.onMessage.addListener(message => {
 	if (message.a11ycss_action && message.a11ycss_action === "checkalts") {
 		if(message.strings) {
 			a11ycss.checkalts.updateStrings(message.strings);
