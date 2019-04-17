@@ -21,8 +21,9 @@
 				"<all_urls>"
 			],
 			"js": [
-        "/scripts/browser-polyfill.min.js",
-				"/scripts/injected/checkalts.js"
+				"/scripts/browser-polyfill.min.js",
+				"/scripts/injected/checkalts.js",
+				"/scripts/injected/textspacing.js"
 			],
 			"run_at": "document_end"
 		}
