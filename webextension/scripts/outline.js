@@ -19,9 +19,6 @@ function removeOutline() {
 	if ( outlineStylesheet ) { outlineStylesheet.parentNode.removeChild(outlineStylesheet) }
 	`;
 	browser.tabs.executeScript({ code: code });
-	btnOutline.innerHTML = _t('btnOutline');
-	btnOutline.classList.remove('unapply');
-	btnOutline.classList.add('apply');
 }
 /**
  * Helper function for browser storage
@@ -35,4 +32,6 @@ function storeOutline(bOutline) {
 
 btnOutline.addEventListener('click', function() {
 	addOutline();
+	var checked = this.getAttribute('aria-checked') === 'true' || false;
+	this.setAttribute('aria-checked', !checked);
 });

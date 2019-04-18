@@ -17,4 +17,6 @@ btnCheckalts.addEventListener('click', function () {
 			strings: strings
 		});
 	});
+	var checked = this.getAttribute('aria-checked') === 'true' || false;
+	this.setAttribute('aria-checked', !checked);
 });

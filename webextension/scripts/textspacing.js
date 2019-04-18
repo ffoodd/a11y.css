@@ -5,4 +5,6 @@ btnTextspacing.addEventListener('click', function () {
 			a11ycss_action: "textspacing"
 		});
 	});
+	var checked = this.getAttribute('aria-checked') === 'true' || false;
+	this.setAttribute('aria-checked', !checked);
 });

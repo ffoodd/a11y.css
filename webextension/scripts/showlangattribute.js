@@ -11,4 +11,6 @@ btnShowLangAttribute.addEventListener('click', function () {
 		document.getElementsByTagName("head")[0].appendChild(stylesheet);
 	`;
 	browser.tabs.executeScript({ code: code });
+	var checked = this.getAttribute('aria-checked') === 'true' || false;
+	this.setAttribute('aria-checked', !checked);
 });
