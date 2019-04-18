@@ -6,7 +6,9 @@ const locales = [
 	"fr",
 	"pt-br",
 	"ru",
-	"zh"
+	"zh",
+	"gr",
+	"ar"
 ];
 
 // all locale strings needed for the script
