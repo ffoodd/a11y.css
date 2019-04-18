@@ -4,13 +4,14 @@ This is a port to WebExtension of the [a11y.css bookmarklet](../).
 
 ## How to test
 
-When developping, you'll need to test an unpackaged version.
+When developping, you'll need to test an unpackaged version. Before loading it to your browser, first run 
+`npm run webext` to package your work.
 
 ### Firefox
 
 1. Open `about:debugging` in a new tab
-2. Click on “Load a temporary module”
-3. Fetch the `manifest-mozilla.json` file from the folder where you have copied the **a11y.css** project. Rename it to `manifest.json`
+2. Click on "Load a temporary module"
+3. Fetch the `a11ycss-webextension-firefox.zip` file from the folder where you have copied the **a11y.css** project.
    ![The “About: debugging panel”](readme_images/about_debugging.png)
 4. And *voilà*, the extension is running.
    ![The icon in Firefox's toolbar, among other friends](readme_images/webext_icon_running.png)
@@ -19,15 +20,27 @@ Then you can run the Browser console `Ctrl+Shift+J` to see what's happening. You
 
 ### Chrome
 
-1. Fetch the `manifest-chrome.json` file from the folder where you have copied the **a11y.css** project and rename it to `manifest.json`
-2. Open `chrome://extensions/` in a new tab
-3. Click “Developer mode” in the top right
-4. CLick on "Load Unpacked"
-5. Fetch the `webextension` folder containing manifest file.
+1. Open `chrome://extensions/` in a new tab
+2. Click "Developer mode" in the top right
+3. CLick on "Load Unpacked"
+5. Fetch the `a11ycss-webextension-chrome.zip` file.
    ![The “Loading Chrome extension”](readme_images/chrome_extension_load.png)
 6. And *voilà*, the extension is running.
    ![The “Chrome extension”](readme_images/chrome_extension.PNG)
    
+## How to localize
+
+You may want to add some new content, needing texts, or to add support for a whole language.
+If so, there's two steps to go.
+
+### Localize text
+
+When adding any UI element in webextension's popup, you have to localize it. This is very, very simple: just put the `localizeMe` class to your HTML element and ensure it has an ID, and you're done!
+
+### Translate text
+
+There's a `locales.js` file in the `scripts` folder that handle every strings. For each string, you'll need to provide the targetted HTML element's ID as key, and webextension's popup will load your localized strings when needed.
+
 ## Credits
 
 * a11y.css icon by [Gaël Poupard](https://www.ffoodd.fr/).
