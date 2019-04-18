@@ -7,7 +7,7 @@
 
 ## Why?
 
-* CORS security prevent from running bookmarklets more and moer often
+* CORS security prevent from running bookmarklets more and more often
 * Extensions = easier scripting capacities (e.g. on/off on a set of tests)
 
 ## Small fix January 2019 TODO
