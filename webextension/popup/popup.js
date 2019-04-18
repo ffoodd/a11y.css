@@ -18,27 +18,22 @@ function setLocale() {
 	locale = localeNormalCase.toLowerCase();
 	// set lang of document
 	document.body.setAttribute('lang',localeNormalCase);
-	
+
 	// localise every element
 	var localizableElts = document.getElementsByClassName('localizeMe');
 	for(let i=0 ; i < localizableElts.length ; i++) {
 		localizableElts[i].innerHTML = _t(localizableElts[i].getAttribute('id'));
 	}
 
-	// localise a11ycss dropdown to choose language REMOVED FOR NOW
-	// var a11cssDropdown = ``;
-	// locales.forEach(function(key){
-	// 	// var str = localeStrings[key]["_LOCALE"];
-	// 	var str = _t("_LOCALE",key);
-	// 	a11cssDropdown += `<option value="${key}"`;
-	// 	if(locale === key) {
-	// 		a11cssDropdown += ` selected`;
-	// 	}
-	// 	a11cssDropdown += `>${str}</option>`;
-	// });
-	// console.log(a11cssDropdown);
-	// document.getElementById("languageSelector").innerHTML = a11cssDropdown;
+	var localizableEltsOn  = document.getElementsByClassName('localizeOn');
+	for(let i=0 ; i < localizableEltsOn.length ; i++) {
+		localizableEltsOn[i].innerHTML = _t('localizeOn');
+	}
 
+	var localizableEltsOff = document.getElementsByClassName('localizeOff');
+	for(let i=0 ; i < localizableEltsOff.length ; i++) {
+		localizableEltsOff[i].innerHTML = _t('localizeOff');
+	}
 }
 
 setLocale();
