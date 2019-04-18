@@ -29,6 +29,7 @@ a11ycss.checkalts = {
 			body {
 				margin-left: 10rem !important;
 			}
+
 			div#${this.reporter.id} {
 				background: #fcf9e9;
 				color: #3e4b55;
@@ -44,6 +45,7 @@ a11ycss.checkalts = {
 				width: 10rem;
 				z-index: 2147483647;
 			}
+
 			div#${this.reporter.id} figure {
 				border-radius: .25rem;
 				cursor: pointer;
@@ -51,21 +53,25 @@ a11ycss.checkalts = {
 				padding: .25rem;
 				position: relative;
 			}
+
 			div#${this.reporter.id} figure:focus {
 				background: #fff;
 				outline: 1px solid #e5dec8;
 			}
+
 			div#${this.reporter.id} img {
 				height: auto;
 				max-width: 100%;
 				width: auto;
 			}
+
 			div#${this.reporter.id} code {
 				background: none;
 				border: 0;
 				color: inherit;
 				font-family: "Consolas", "Monaco", "Andale Mono", monospace;
 			}
+
 			div#${this.reporter.id} img.${this.namespace}picto {
 				display: none;
 				height: 2rem;
@@ -92,8 +98,9 @@ a11ycss.checkalts = {
 				{PICTOGRAM}
 				<img src="{SRC}" alt="">
 				<figcaption>
-				<code>alt=</code><b>{ALT}</b><br>
-				<code>title=</code><b>{TITLE}</b>
+					<code>alt=</code><b>{ALT}</b>
+					<br>
+					<code>title=</code><b>{TITLE}</b>
 				</figcaption>
 			</figure>
 		`;
@@ -201,9 +208,6 @@ a11ycss.checkalts = {
 	},
 
 	init: function() {
-		// if (document.getElementById(this.namespace + 'reporter')) {
-			// return;
-		// }
 		this.reporterid = this.reporterid.replace(/{NAMESPACE}/g,this.namespace);
 		this.cssid = this.cssid.replace(/{NAMESPACE}/g,this.namespace);
 		this.toggleReporter();
