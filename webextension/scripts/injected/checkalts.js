@@ -91,7 +91,7 @@ a11ycss.checkalts = {
 	// we collect images and add information on them
 	collectImages: function() {
 		var imgs = document.getElementsByTagName('img');
-		console.log(imgs);
+		console.info(imgs);
 		var str = '';
 		var tpl = `
 			<figure data-target="{TARGET}" role="group">
@@ -187,7 +187,6 @@ a11ycss.checkalts = {
 		keys.forEach(function(key) {
 			var elts = document.getElementsByClassName(classPrefix + key);
 			for(var i = 0 ; i < elts.length ; i++) {
-				console.log(icons);
 				elts[i].src = icons[key.valueOf()];
 				elts[i].style = 'display:block;';
 				elts[i].alt = a11ycss.checkalts.strings[key.valueOf()];

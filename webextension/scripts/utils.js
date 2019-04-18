@@ -1,6 +1,6 @@
 /**
  * returns a localised string
- * @param {String} str 
+ * @param {String} str
  * @param {String} locale (optional)
  */
 function _t() {
@@ -12,17 +12,17 @@ function _t() {
 
 /**
  * Documents the error to the console
- * @param {Error} error 
+ * @param {Error} error
  */
 function onError(error) {
-	console.log(`A11Y.CSS ERROR: ${error}`);
+	console.error(`a11y.css error: ${error}`);
 }
 /**
  * Documents what we got from a STORAGE.get()
- * @param {Object} item 
+ * @param {Object} item
  */
 function onGot(item) {
-	console.log(`A11Y.CSS GOT`, item);
+	console.info(`a11y.css got`, item);
 }
 /**
  * Short-hand for showing/hiding an element
