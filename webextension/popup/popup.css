@@ -63,9 +63,27 @@ h2::before,
 }
 
 .button-group {
+	align-items: center;
 	display: flex;
 	justify-content: space-between;
-	margin: 1rem;
+	margin: 1rem 0 1rem .5rem;
+}
+
+.button-group span {
+	flex: 0 1 50%;
+	font-weight: bold;
+}
+
+.button-group button {
+	margin-left: 1em;
+}
+
+code {
+	border: 1px solid;
+	border-radius: 4px;
+	display: inline-block;
+	font-family: inherit;
+	padding: 2px;
 }
 
 hr {
@@ -135,6 +153,59 @@ button:active {
 	background: none;
 	box-shadow: none;
 	color: black;
+}
+
+/* ==================== */
+/* == Switch
+/* ==================== */
+button[role=switch] {
+	border: 0;
+	border-radius: 1rem;
+	box-sizing: content-box;
+	font: inherit;
+	height: 2rem;
+	line-height: 2rem;
+	outline-color: transparent;
+	padding: 0 2rem;
+	position: relative;
+	transition: all .3s cubic-bezier(0,.5,.5,1);
+	width: 4rem;
+}
+
+button[role=switch]::before {
+	background: #fff;
+	border-radius: 50%;
+	content: "";
+	position: absolute;
+	height: 1.75rem;
+	left: .125rem;
+	top: .125rem;
+	transform: none;
+	transition: transform .3s cubic-bezier(0,.5,.5,1) 0s;
+	width: 1.75rem;
+	will-change: transform;
+}
+
+button[role=switch][aria-checked=true] {
+	background-color: #008000;
+}
+
+button[role=switch][aria-checked=true]::before {
+	transform: translateX(6rem);
+}
+
+button[role=switch][aria-checked=true]:hover,
+button[role=switch][aria-checked=true]:focus {
+	background-color: #007000;
+}
+
+button[role=switch] > :first-child,
+button[role=switch][aria-checked=true] > :last-child {
+	display: none;
+}
+
+button[role=switch][aria-checked=true] > :first-child {
+	display: block;
 }
 
 #btnA11ycssBack::before {
