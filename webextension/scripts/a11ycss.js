@@ -52,10 +52,15 @@ function removeA11ycss() {
 }
 
 document.getElementById("a11ycssBtnApply").addEventListener('click', function () {
-	addA11ycss();
-});
-document.getElementById("a11ycssBtnClear").addEventListener('click', function () {
-	removeA11ycss();
+	var checked = this.getAttribute('aria-checked') === 'true' || false;
+
+	if (checked) {
+		removeA11ycss();
+	} else {
+		addA11ycss();
+	}
+	this.setAttribute('aria-checked', !checked);
+
 });
 // --------------------------------------
 

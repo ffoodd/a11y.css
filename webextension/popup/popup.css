@@ -11,7 +11,7 @@ body {
 	margin: 0;
 	min-width: 25em;
 	padding: 0;
-	width: 32em;
+	width: 24rem;
 }
 
 *,
@@ -28,15 +28,14 @@ body {
 }
 
 h1 {
-	margin-top: 0;
+	margin: 0 0 .25em;
 	padding: .5em;
 }
 
 h2,
 .h2 {
 	display: flex;
-	margin-left: -1rem;
-	margin-right: -1rem;
+	margin: 0 -1rem 1rem;
 }
 
 h2::after,
@@ -66,7 +65,12 @@ h2::before,
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
-	margin: 1rem 0 1rem .5rem;
+	margin: .5rem 0 0 .5rem;
+	padding: .5rem 0 0;
+}
+
+.button-group + .button-group {
+	border-top: 1px solid #e5dec8;
 }
 
 .button-group span {
@@ -177,12 +181,12 @@ button[role=switch]::before {
 	border-radius: 50%;
 	content: "";
 	position: absolute;
-	height: 1.75rem;
-	left: .125rem;
-	top: .125rem;
+	height: 1.5rem;
+	left: .25rem;
+	top: .25rem;
 	transform: none;
 	transition: transform .3s cubic-bezier(0,.5,.5,1) 0s;
-	width: 1.75rem;
+	width: 1.5rem;
 	will-change: transform;
 }
 
