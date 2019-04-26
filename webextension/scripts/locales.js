@@ -15,7 +15,7 @@ const locales = [
 const localeStrings = {
 	"en":{
 		"_LOCALE":"English",
-		"a11ycssBtnApply":"Apply",
+		"a11ycssBtnApply":"Show",
 		"a11ycssBtnClear":"Clear",
 		"a11ycssLanguageLabel":"Language",
 		"a11ycssLevel_all": "Everything",
@@ -46,7 +46,7 @@ const localeStrings = {
 	},
 	"fr":{
 		"_LOCALE":"Français",
-		"a11ycssBtnApply": "Appliquer",
+		"a11ycssBtnApply": "Afficher",
 		"a11ycssBtnClear": "Masquer",
 		"a11ycssLanguageLabel": "Langue",
 		"a11ycssLevel_all": "Tout",

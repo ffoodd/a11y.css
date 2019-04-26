@@ -73,6 +73,11 @@ h2::before,
 	border-top: 1px solid #e5dec8;
 }
 
+.input-group + .button-group {
+	margin: 0;
+	padding: 0;
+}
+
 .button-group span {
 	flex: 0 1 50%;
 	font-weight: bold;
@@ -124,6 +129,15 @@ button {
 	transition: all 300ms;
 }
 
+button::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
 button:hover,
 button:focus {
 	background-color: #528;
@@ -133,30 +147,6 @@ button:focus {
 button:active {
 	box-shadow: inset 0 1px #0003;
 	transform: translate3d(.1em, .1em, 0);
-}
-
-[type="submit"] {
-	background-color: #008000;
-}
-
-[type="submit"]:hover,
-[type="submit"]:focus {
-	background-color: #007000;
-}
-
-[type="reset"] {
-	background: #fff;
-	box-shadow: none;
-	color: inherit;
-	outline: none;
-	text-shadow: none;
-}
-
-[type="reset"]:hover,
-[type="reset"]:focus {
-	background: none;
-	box-shadow: none;
-	color: black;
 }
 
 /* ==================== */
@@ -170,10 +160,16 @@ button[role=switch] {
 	height: 2rem;
 	line-height: 2rem;
 	outline-color: transparent;
+	margin-left: auto;
 	padding: 0 2rem;
 	position: relative;
 	transition: all .3s cubic-bezier(0,.5,.5,1);
 	width: 4rem;
+}
+
+button[role=switch]:active,
+button[role=switch]:focus {
+	outline-color: transparent;
 }
 
 button[role=switch]::before {
