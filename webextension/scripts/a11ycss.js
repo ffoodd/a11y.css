@@ -1,5 +1,6 @@
 // collection of radio buttons
 let level = document.getElementsByName('level');
+let button = document.getElementById("a11ycssBtnApply");
 
 
 /**
@@ -7,21 +8,20 @@ let level = document.getElementsByName('level');
  * @param {String} strLevel
  */
 function storeA11ycss(strLevel) {
-	let a11ycss = { level: strLevel };
-	let setting = browser.storage.local.set({ a11ycss });
+	let a11ycssLevel = { level: strLevel };
+	let setting = browser.storage.local.set({ a11ycssLevel });
 	setting.then(null, onError); // just in case
 }
 
 // store choice when one radio button is chosen
 level.forEach(function (key) {
-	key.addEventListener('click', function (event ) {
+	key.addEventListener('click', function (event) {
 		storeA11ycss(event.target.value);
 	});
 });
 
 
 // --------------------------------------
-
 function addA11ycss() {
 	let currentLevel = '';
 	level.forEach(function (key) {
@@ -51,34 +51,53 @@ function removeA11ycss() {
 	browser.tabs.executeScript({ code: code });
 }
 
-document.getElementById("a11ycssBtnApply").addEventListener('click', function () {
-	var checked = this.getAttribute('aria-checked') === 'true' || false;
+function storeStatus(strStatus) {
+	let a11ycssStatus = { status: strStatus };
+	let setting = browser.storage.local.set({ a11ycssStatus });
+	setting.then(null, onError); // just in case
+}
 
+button.addEventListener('click', function () {
+	var checked = this.getAttribute('aria-checked') === 'true' || false;
 	if (checked) {
 		removeA11ycss();
+		storeStatus('false');
 	} else {
 		addA11ycss();
+		storeStatus('true');
 	}
 	this.setAttribute('aria-checked', !checked);
-
 });
 // --------------------------------------
 
 // on document load, if we have already chosen a level, give it back
 // (the first option is checked in the popup's HTML by default)
 function a11ycssOnload() {
-	let gettingItem = browser.storage.local.get("a11ycss");
-	gettingItem.then(
+	let getLevel = browser.storage.local.get("a11ycssLevel");
+	getLevel.then(
 		// when we got something
 		function (item) {
-			if (item && item.a11ycss && item.a11ycss.level) { // a level was set already
+			if (item && item.a11ycssLevel && item.a11ycssLevel.level) {
+				// a level was set already
 				level.forEach(function (key) {
-					if (key.value === item.a11ycss.level) {
+					if (key.value === item.a11ycssLevel.level) {
 						key.checked = true;
 					} else {
 						key.checked = false;
 					}
 				});
+			}
+		},
+		// we got nothing
+		onError
+	);
+
+	let getStatus = browser.storage.local.get("a11ycssStatus");
+	getStatus.then(
+		// when we got something
+		function (item) {
+			if (item && item.a11ycssStatus && item.a11ycssStatus.status) {
+				button.setAttribute('aria-checked', item.a11ycssStatus.status);
 			}
 		},
 		// we got nothing

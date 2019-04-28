@@ -20,18 +20,35 @@ function removeOutline() {
 	`;
 	browser.tabs.executeScript({ code: code });
 }
-/**
- * Helper function for browser storage
- * @param {Boolean} bOutline
- */
-function storeOutline(bOutline) {
-	let outline = { isSet: bOutline };
-	let setting = BROWSER.storage.local.set({ outline });
+
+function storeOutlineStatus(strStatus) {
+	let outlineStatus = { status: strStatus };
+	let setting = BROWSER.storage.local.set({ outlineStatus });
 	setting.then(null, onError); // just in case
 }
 
 btnOutline.addEventListener('click', function() {
-	addOutline();
 	var checked = this.getAttribute('aria-checked') === 'true' || false;
+	if (checked) {
+		removeOutline();
+	} else {
+		addOutline();
+	}
 	this.setAttribute('aria-checked', !checked);
+	storeOutlineStatus(!checked);
 });
+
+function outlineOnload() {
+	let getOutlineStatus = browser.storage.local.get("outlineStatus");
+	getOutlineStatus.then(
+		// when we got something
+		function (item) {
+			if (item && item.outlineStatus && item.outlineStatus.status) {
+				btnOutline.setAttribute('aria-checked', item.outlineStatus.status);
+			}
+		},
+		// we got nothing
+		onError
+	);
+}
+outlineOnload();
