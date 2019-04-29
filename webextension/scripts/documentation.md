@@ -9,7 +9,6 @@ scripts                   Main folder for scripts
 |
 |-* constants.js          Constants for browsers
 |-* locales.js            All strings
-|-* popuphandlers.js      Behaviours for the extension popup
 |-* utils.js              What it says on the cover: utilities
 |-* [all other JS]        One script per functionality
 |

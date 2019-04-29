@@ -24,10 +24,3 @@ function onError(error) {
 function onGot(item) {
 	console.info(`a11y.css got`, item);
 }
-/**
- * Short-hand for showing/hiding an element
- * @param {String} id : id of an element
- */
-function showHide(id) {
-	document.getElementById(id).classList.toggle('hidden');
-}
