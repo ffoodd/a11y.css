@@ -2,7 +2,6 @@
 let level = document.getElementsByName('level');
 let button = document.getElementById("a11ycssBtnApply");
 
-
 /**
  * Helper function for browser storage
  * @param {String} strLevel
@@ -40,6 +39,7 @@ function addA11ycss() {
 		document.getElementsByTagName("head")[0].appendChild(stylesheet);
 	`;
 	console.log(code);
+	getCurrentTab();
 	browser.tabs.executeScript({ code: code });
 }
 
@@ -73,6 +73,10 @@ button.addEventListener('click', function () {
 // on document load, if we have already chosen a level, give it back
 // (the first option is checked in the popup's HTML by default)
 function a11ycssOnload() {
+	browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+		console.log(tabs[0].id);
+	});
+
 	let getLevel = browser.storage.local.get("a11ycssLevel");
 	getLevel.then(
 		// when we got something
