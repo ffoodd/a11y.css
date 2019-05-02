@@ -1,9 +1,25 @@
 let btnTextspacing = document.getElementById('btnTextspacing');
 
 function storeTextSpacingStatus(strStatus) {
-	let textSpacingStatus = { status: strStatus };
-	let setting = BROWSER.storage.local.set({ textSpacingStatus });
-	setting.then(null, onError); // just in case
+	// Get a11y.css stored levels
+	let getStatus = browser.storage.local.get("textSpacingStatus");
+	getStatus.then(
+		// when we got something
+		(item) => {
+			if (item && item.textSpacingStatus) {
+				// Get current tab ID
+				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+					// Get current stored value
+					let textSpacingStatus = item.textSpacingStatus;
+					// Add or replace current tab's value
+					textSpacingStatus[tabs[0].id] = {"status": strStatus};
+					// Abnd set it back to the storage
+					let setting = browser.storage.local.set({ textSpacingStatus });
+					setting.then(null, onError); // just in case
+				});
+			}
+		}
+	);
 }
 
 btnTextspacing.addEventListener('click', function () {
@@ -18,12 +34,17 @@ btnTextspacing.addEventListener('click', function () {
 });
 
 function textSpacingOnload() {
-	let getTextSpacingStatus = browser.storage.local.get("textSpacingStatus");
-	getTextSpacingStatus.then(
+	let getStatus = browser.storage.local.get("textSpacingStatus");
+	getStatus.then(
 		// when we got something
 		function (item) {
-			if (item && item.textSpacingStatus && item.textSpacingStatus.status) {
-				btnTextspacing.setAttribute('aria-checked', item.textSpacingStatus.status);
+			if (item && item.textSpacingStatus) {
+				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+					// If a setting is found for this tab
+					if (item.textSpacingStatus[tabs[0].id]) {
+						btnTextspacing.setAttribute('aria-checked', item.textSpacingStatus[tabs[0].id].status);
+					}
+				});
 			}
 		},
 		// we got nothing

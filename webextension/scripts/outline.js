@@ -22,9 +22,25 @@ function removeOutline() {
 }
 
 function storeOutlineStatus(strStatus) {
-	let outlineStatus = { status: strStatus };
-	let setting = BROWSER.storage.local.set({ outlineStatus });
-	setting.then(null, onError); // just in case
+	// Get a11y.css stored levels
+	let getStatus = browser.storage.local.get("outlineStatus");
+	getStatus.then(
+		// when we got something
+		(item) => {
+			if (item && item.outlineStatus) {
+				// Get current tab ID
+				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+					// Get current stored value
+					let outlineStatus = item.outlineStatus;
+					// Add or replace current tab's value
+					outlineStatus[tabs[0].id] = {"status": strStatus};
+					// Abnd set it back to the storage
+					let setting = browser.storage.local.set({ outlineStatus });
+					setting.then(null, onError); // just in case
+				});
+			}
+		}
+	);
 }
 
 btnOutline.addEventListener('click', function() {
@@ -39,12 +55,17 @@ btnOutline.addEventListener('click', function() {
 });
 
 function outlineOnload() {
-	let getOutlineStatus = browser.storage.local.get("outlineStatus");
-	getOutlineStatus.then(
+	let getStatus = browser.storage.local.get("outlineStatus");
+	getStatus.then(
 		// when we got something
 		function (item) {
-			if (item && item.outlineStatus && item.outlineStatus.status) {
-				btnOutline.setAttribute('aria-checked', item.outlineStatus.status);
+			if (item && item.outlineStatus) {
+				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+					// If a setting is found for this tab
+					if (item.outlineStatus[tabs[0].id]) {
+						btnOutline.setAttribute('aria-checked', item.outlineStatus[tabs[0].id].status);
+					}
+				});
 			}
 		},
 		// we got nothing

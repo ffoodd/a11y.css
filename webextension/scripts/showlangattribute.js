@@ -1,9 +1,25 @@
 let btnShowLangAttribute = document.getElementById('btnShowLangAttribute');
 
 function storeShowLangStatus(strStatus) {
-	let showLangStatus = { status: strStatus };
-	let setting = BROWSER.storage.local.set({ showLangStatus });
-	setting.then(null, onError); // just in case
+	// Get a11y.css stored levels
+	let getStatus = browser.storage.local.get("showLangStatus");
+	getStatus.then(
+		// when we got something
+		(item) => {
+			if (item && item.showLangStatus) {
+				// Get current tab ID
+				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+					// Get current stored value
+					let showLangStatus = item.showLangStatus;
+					// Add or replace current tab's value
+					showLangStatus[tabs[0].id] = {"status": strStatus};
+					// Abnd set it back to the storage
+					let setting = browser.storage.local.set({ showLangStatus });
+					setting.then(null, onError); // just in case
+				});
+			}
+		}
+	);
 }
 
 function showLangAttribute() {
@@ -39,12 +55,17 @@ btnShowLangAttribute.addEventListener('click', function () {
 });
 
 function showLangOnload() {
-	let getShowLangStatus = browser.storage.local.get("showLangStatus");
-	getShowLangStatus.then(
+	let getStatus = browser.storage.local.get("showLangStatus");
+	getStatus.then(
 		// when we got something
 		function (item) {
-			if (item && item.showLangStatus && item.showLangStatus.status) {
-				btnShowLangAttribute.setAttribute('aria-checked', item.showLangStatus.status);
+			if (item && item.showLangStatus) {
+				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+					// If a setting is found for this tab
+					if (item.showLangStatus[tabs[0].id]) {
+						btnShowLangAttribute.setAttribute('aria-checked', item.showLangStatus[tabs[0].id].status);
+					}
+				});
 			}
 		},
 		// we got nothing

@@ -1,9 +1,25 @@
 let btnCheckalts = document.getElementById('btnCheckalts');
 
 function storeCheckAltsStatus(strStatus) {
-	let checkAltsStatus = { status: strStatus };
-	let setting = browser.storage.local.set({ checkAltsStatus });
-	setting.then(null, onError); // just in case
+	// Get a11y.css stored levels
+	let getStatus = browser.storage.local.get("checkAltsStatus");
+	getStatus.then(
+		// when we got something
+		(item) => {
+			if (item && item.checkAltsStatus) {
+				// Get current tab ID
+				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+					// Get current stored value
+					let checkAltsStatus = item.checkAltsStatus;
+					// Add or replace current tab's value
+					checkAltsStatus[tabs[0].id] = {"status": strStatus};
+					// Abnd set it back to the storage
+					let setting = browser.storage.local.set({ checkAltsStatus });
+					setting.then(null, onError); // just in case
+				});
+			}
+		}
+	);
 }
 
 btnCheckalts.addEventListener('click', function () {
@@ -30,12 +46,17 @@ btnCheckalts.addEventListener('click', function () {
 });
 
 function checkAltsOnload() {
-	let getCheckAltsStatus = browser.storage.local.get("checkAltsStatus");
-	getCheckAltsStatus.then(
+	let getStatus = browser.storage.local.get("checkAltsStatus");
+	getStatus.then(
 		// when we got something
 		function (item) {
-			if (item && item.checkAltsStatus && item.checkAltsStatus.status) {
-				btnCheckalts.setAttribute('aria-checked', item.checkAltsStatus.status);
+			if (item && item.checkAltsStatus) {
+				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+					// If a setting is found for this tab
+					if (item.checkAltsStatus[tabs[0].id]) {
+						btnCheckalts.setAttribute('aria-checked', item.checkAltsStatus[tabs[0].id].status);
+					}
+				});
 			}
 		},
 		// we got nothing
