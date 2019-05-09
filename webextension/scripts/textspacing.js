@@ -27,11 +27,15 @@ btnTextspacing.addEventListener('click', function () {
 		browser.tabs.sendMessage(tabs[0].id, {
 			a11ycss_action: "textspacing"
 		});
-	});
+	}).catch(onError);
 	var checked = this.getAttribute('aria-checked') === 'true' || false;
 	this.setAttribute('aria-checked', !checked);
 	storeTextSpacingStatus(!checked);
 });
+
+function onError(error) {
+    console.error(`Error: ${error}`);
+}
 
 function textSpacingOnload() {
 	let getStatus = browser.storage.local.get("textSpacingStatus");
