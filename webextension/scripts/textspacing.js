@@ -1,25 +1,23 @@
 let btnTextspacing = document.getElementById('btnTextspacing');
-let textSpacingStatus = [];
 
 function storeTextSpacingStatus(strStatus) {
 	// Get current tab ID
 	browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
 		// Get a11y.css stored status
-		let getStatus = browser.storage.local.get("textSpacingStatus");
-		getStatus.then(
+		browser.storage.local.get("textSpacingStatus").then(
 			// when we got something
 			(item) => {
+				let textSpacingStatus = [];
 				if (item && item.textSpacingStatus) {
-					let textSpacingStatus = item.textSpacingStatus;
+					textSpacingStatus = item.textSpacingStatus;
 				}
+				// Add or replace current tab's value
+				textSpacingStatus[tabs[0].id] = {"status": strStatus};
+				// And set it back to the storage
+				let setting = browser.storage.local.set({ textSpacingStatus });
+				setting.then(null, onError); // just in case
 			}
 		);
-		// Add or replace current tab's value
-		textSpacingStatus[tabs[0].id] = {"status": strStatus};
-		console.log(textSpacingStatus);
-		// And set it back to the storage
-		let setting = browser.storage.local.set({ textSpacingStatus });
-		setting.then(null, onError); // just in case
 	});
 }
 

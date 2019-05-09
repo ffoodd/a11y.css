@@ -9,22 +9,22 @@ let button = document.getElementById("a11ycssBtnApply");
 function storeA11ycss(strLevel) {
 	// Get current tab ID
 	browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-		let a11ycssLevel = [];
 		// Get a11y.css stored levels
 		let getLevel = browser.storage.local.get("a11ycssLevel");
 		getLevel.then(
 			// when we got something
 			(item) => {
+				let a11ycssLevel = [];
 				if (item && item.a11ycssLevel) {
-					let a11ycssLevel = item.a11ycssLevel;
+					a11ycssLevel = item.a11ycssLevel;
 				}
+				// Add or replace current tab's value
+				a11ycssLevel[tabs[0].id] = {"level": strLevel};
+				// And set it back to the storage
+				let setting = browser.storage.local.set({ a11ycssLevel });
+				setting.then(null, onError); // just in case
 			}
 		);
-		// Add or replace current tab's value
-		a11ycssLevel[tabs[0].id] = {"level": strLevel};
-		// And set it back to the storage
-		let setting = browser.storage.local.set({ a11ycssLevel });
-		setting.then(null, onError); // just in case
 	});
 }
 
@@ -69,22 +69,22 @@ function removeA11ycss() {
 function storeStatus(strStatus) {
 	// Get current tab ID
 	browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-		let a11ycssStatus = [];
 		// Get a11y.css stored levels
 		let getStatus = browser.storage.local.get("a11ycssStatus");
 		getStatus.then(
 			// when we got something
 			(item) => {
+				let a11ycssStatus = [];
 				if (item && item.a11ycssStatus) {
-					let a11ycssStatus = item.a11ycssStatus;
+					a11ycssStatus = item.a11ycssStatus;
 				}
+				// Add or replace current tab's value
+				a11ycssStatus[tabs[0].id] = {"status": strStatus};
+				// And set it back to the storage
+				let setting = browser.storage.local.set({ a11ycssStatus });
+				setting.then(null, onError); // just in case
 			}
 		);
-		// Add or replace current tab's value
-		a11ycssStatus[tabs[0].id] = {"status": strStatus};
-		// And set it back to the storage
-		let setting = browser.storage.local.set({ a11ycssStatus });
-		setting.then(null, onError); // just in case
 	});
 }
 

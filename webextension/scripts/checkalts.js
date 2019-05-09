@@ -3,22 +3,22 @@ let btnCheckalts = document.getElementById('btnCheckalts');
 function storeCheckAltsStatus(strStatus) {
 	// Get current tab ID
 	browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-		let checkAltsStatus = [];
 		// Get a11y.css stored status
 		let getStatus = browser.storage.local.get("checkAltsStatus");
 		getStatus.then(
 			// when we got something
 			(item) => {
+				let checkAltsStatus = [];
 				if (item && item.checkAltsStatus) {
-					let checkAltsStatus = item.checkAltsStatus;
+					checkAltsStatus = item.checkAltsStatus;
 				}
+				// Add or replace current tab's value
+				checkAltsStatus[tabs[0].id] = {"status": strStatus};
+				// And set it back to the storage
+				let setting = browser.storage.local.set({ checkAltsStatus });
+				setting.then(null, onError); // just in case
 			}
 		);
-		// Add or replace current tab's value
-		checkAltsStatus[tabs[0].id] = {"status": strStatus};
-		// And set it back to the storage
-		let setting = browser.storage.local.set({ checkAltsStatus });
-		setting.then(null, onError); // just in case
 	});
 }
 

@@ -3,22 +3,22 @@ let btnShowLangAttribute = document.getElementById('btnShowLangAttribute');
 function storeShowLangStatus(strStatus) {
 	// Get current tab ID
 	browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-		let showLangStatus = [];
 		// Get a11y.css stored status
 		let getStatus = browser.storage.local.get("showLangStatus");
 		getStatus.then(
 			// when we got something
 			(item) => {
+				let showLangStatus = [];
 				if (item && item.showLangStatus) {
-					let showLangStatus = item.showLangStatus;
+					showLangStatus = item.showLangStatus;
 				}
+				// Add or replace current tab's value
+				showLangStatus[tabs[0].id] = {"status": strStatus};
+				// And set it back to the storage
+				let setting = browser.storage.local.set({ showLangStatus });
+				setting.then(null, onError); // just in case
 			}
 		);
-		// Add or replace current tab's value
-		showLangStatus[tabs[0].id] = {"status": strStatus};
-		// And set it back to the storage
-		let setting = browser.storage.local.set({ showLangStatus });
-		setting.then(null, onError); // just in case
 	});
 }
 
