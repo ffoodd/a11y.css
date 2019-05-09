@@ -17,6 +17,7 @@ function _t() {
 function onError(error) {
 	console.error(`a11y.css error: ${error}`);
 }
+
 /**
  * Documents what we got from a STORAGE.get()
  * @param {Object} item

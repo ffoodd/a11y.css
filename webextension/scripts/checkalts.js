@@ -39,14 +39,11 @@ btnCheckalts.addEventListener('click', function () {
 			icons: icons,
 			strings: strings
 		});
-	}).catch(onError);
+	});
 	var checked = this.getAttribute('aria-checked') === 'true' || false;
 	this.setAttribute('aria-checked', !checked);
 	storeCheckAltsStatus(!checked);
 });
-function onError(error) {
-    console.error(`Error: ${error}`);
-}
 
 function checkAltsOnload() {
 	let getStatus = browser.storage.local.get("checkAltsStatus");
