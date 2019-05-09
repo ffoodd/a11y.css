@@ -1,25 +1,25 @@
 let btnCheckalts = document.getElementById('btnCheckalts');
 
 function storeCheckAltsStatus(strStatus) {
-	// Get a11y.css stored levels
-	let getStatus = browser.storage.local.get("checkAltsStatus");
-	getStatus.then(
-		// when we got something
-		(item) => {
-			if (item && item.checkAltsStatus) {
-				// Get current tab ID
-				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-					// Get current stored value
+	// Get current tab ID
+	browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+		let checkAltsStatus = [];
+		// Get a11y.css stored status
+		let getStatus = browser.storage.local.get("checkAltsStatus");
+		getStatus.then(
+			// when we got something
+			(item) => {
+				if (item && item.checkAltsStatus) {
 					let checkAltsStatus = item.checkAltsStatus;
-					// Add or replace current tab's value
-					checkAltsStatus[tabs[0].id] = {"status": strStatus};
-					// Abnd set it back to the storage
-					let setting = browser.storage.local.set({ checkAltsStatus });
-					setting.then(null, onError); // just in case
-				});
+				}
 			}
-		}
-	);
+		);
+		// Add or replace current tab's value
+		checkAltsStatus[tabs[0].id] = {"status": strStatus};
+		// And set it back to the storage
+		let setting = browser.storage.local.set({ checkAltsStatus });
+		setting.then(null, onError); // just in case
+	});
 }
 
 btnCheckalts.addEventListener('click', function () {
@@ -52,7 +52,7 @@ function checkAltsOnload() {
 	let getStatus = browser.storage.local.get("checkAltsStatus");
 	getStatus.then(
 		// when we got something
-		function (item) {
+		(item) => {
 			if (item && item.checkAltsStatus) {
 				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
 					// If a setting is found for this tab

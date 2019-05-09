@@ -1,25 +1,26 @@
 let btnTextspacing = document.getElementById('btnTextspacing');
+let textSpacingStatus = [];
 
 function storeTextSpacingStatus(strStatus) {
-	// Get a11y.css stored levels
-	let getStatus = browser.storage.local.get("textSpacingStatus");
-	getStatus.then(
-		// when we got something
-		(item) => {
-			if (item && item.textSpacingStatus) {
-				// Get current tab ID
-				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-					// Get current stored value
+	// Get current tab ID
+	browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+		// Get a11y.css stored status
+		let getStatus = browser.storage.local.get("textSpacingStatus");
+		getStatus.then(
+			// when we got something
+			(item) => {
+				if (item && item.textSpacingStatus) {
 					let textSpacingStatus = item.textSpacingStatus;
-					// Add or replace current tab's value
-					textSpacingStatus[tabs[0].id] = {"status": strStatus};
-					// Abnd set it back to the storage
-					let setting = browser.storage.local.set({ textSpacingStatus });
-					setting.then(null, onError); // just in case
-				});
+				}
 			}
-		}
-	);
+		);
+		// Add or replace current tab's value
+		textSpacingStatus[tabs[0].id] = {"status": strStatus};
+		console.log(textSpacingStatus);
+		// And set it back to the storage
+		let setting = browser.storage.local.set({ textSpacingStatus });
+		setting.then(null, onError); // just in case
+	});
 }
 
 btnTextspacing.addEventListener('click', function () {
@@ -41,8 +42,9 @@ function textSpacingOnload() {
 	let getStatus = browser.storage.local.get("textSpacingStatus");
 	getStatus.then(
 		// when we got something
-		function (item) {
+		(item) => {
 			if (item && item.textSpacingStatus) {
+				console.log(item.textSpacingStatus);
 				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
 					// If a setting is found for this tab
 					if (item.textSpacingStatus[tabs[0].id]) {

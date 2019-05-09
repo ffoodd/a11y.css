@@ -22,25 +22,25 @@ function removeOutline() {
 }
 
 function storeOutlineStatus(strStatus) {
-	// Get a11y.css stored levels
-	let getStatus = browser.storage.local.get("outlineStatus");
-	getStatus.then(
-		// when we got something
-		(item) => {
-			if (item && item.outlineStatus) {
-				// Get current tab ID
-				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
-					// Get current stored value
+	// Get current tab ID
+	browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+		let outlineStatus = [];
+		// Get a11y.css stored status
+		let getStatus = browser.storage.local.get("outlineStatus");
+		getStatus.then(
+			// when we got something
+			(item) => {
+				if (item && item.outlineStatus) {
 					let outlineStatus = item.outlineStatus;
-					// Add or replace current tab's value
-					outlineStatus[tabs[0].id] = {"status": strStatus};
-					// Abnd set it back to the storage
-					let setting = browser.storage.local.set({ outlineStatus });
-					setting.then(null, onError); // just in case
-				});
+				}
 			}
-		}
-	);
+		);
+		// Add or replace current tab's value
+		outlineStatus[tabs[0].id] = {"status": strStatus};
+		// And set it back to the storage
+		let setting = browser.storage.local.set({ outlineStatus });
+		setting.then(null, onError); // just in case
+	});
 }
 
 btnOutline.addEventListener('click', function() {
@@ -58,7 +58,7 @@ function outlineOnload() {
 	let getStatus = browser.storage.local.get("outlineStatus");
 	getStatus.then(
 		// when we got something
-		function (item) {
+		(item) => {
 			if (item && item.outlineStatus) {
 				browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
 					// If a setting is found for this tab
