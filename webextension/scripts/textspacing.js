@@ -32,22 +32,6 @@ btnTextspacing.addEventListener('click', function () {
 	storeTextSpacingStatus(!checked);
 });
 
-function textSpacingOnUpdated(tabId, changeInfo, tabInfo) {
-  if (changeInfo.url) {
-    let getStatus = browser.storage.local.get("textSpacingStatus");
-	getStatus.then(
-		// when we got something
-		(item) => {
-			if (item && item.textSpacingStatus && item.textSpacingStatus[tabId]) {
-				// Need to find a way to only remove current tab's value
-			}
-		}, onError
-	);
-  }
-}
-
-browser.tabs.onUpdated.addListener(textSpacingOnUpdated);
-
 function textSpacingOnload() {
 	let getStatus = browser.storage.local.get("textSpacingStatus");
 	getStatus.then(
