@@ -10,7 +10,8 @@
 	},
 	"permissions": [
 		"activeTab",
-		"storage"
+		"storage",
+		"tabs"
 	],
 	"browser_action": {
 		"default_title": "a11y.css",
@@ -19,6 +20,13 @@
 			"19": "icons/a11y-css_19.png",
 			"38": "icons/a11y-css_38.png"
 		}
+	},
+	"background": {
+		"scripts": [
+          "/scripts/browser-polyfill.min.js",
+          "/scripts/background/main.js"
+        ],
+        "persistent": true
 	},
 	"content_scripts": [
 		{
