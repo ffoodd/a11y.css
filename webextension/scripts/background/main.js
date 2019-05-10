@@ -2,6 +2,10 @@ function onError(error) {
 	console.error(`a11y.css error: ${error}`);
 }
 
+function onCleared() {
+  	console.info("a11y.css storage.local cleared");
+}
+
 function unsetStatuses(tabId, changeInfo, tabInfo) {
     if (changeInfo.url) {
         let getTextSpacingStatus = browser.storage.local.get("textSpacingStatus");
@@ -67,3 +71,10 @@ function unsetStatuses(tabId, changeInfo, tabInfo) {
 }
 
 browser.tabs.onUpdated.addListener(unsetStatuses);
+
+function unsetStorages() {
+	let clearStorage = browser.storage.local.clear();
+	clearStorage.then(onCleared, onError);
+}
+
+browser.runtime.onStartup.addListener(unsetStorages);
