@@ -2,7 +2,7 @@ function onError(error) {
 	console.error(`a11y.css error: ${error}`);
 }
 
-function statusesOnUpdated(tabId, changeInfo, tabInfo) {
+function unsetStatuses(tabId, changeInfo, tabInfo) {
     if (changeInfo.url) {
         let getTextSpacingStatus = browser.storage.local.get("textSpacingStatus");
         getTextSpacingStatus.then(
@@ -66,4 +66,4 @@ function statusesOnUpdated(tabId, changeInfo, tabInfo) {
     }
 }
 
-browser.tabs.onUpdated.addListener(statusesOnUpdated);
+browser.tabs.onUpdated.addListener(unsetStatuses);
