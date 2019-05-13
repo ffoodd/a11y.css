@@ -1,0 +1,132 @@
+@charset 'UTF-8';
+
+/*doc
+---
+title: ""
+name: check-alt-0
+category: WebExtension
+---
+
+The WebExtension provides some more tools requiring a bit of JavaScript:
+* Force focus;
+* Show `lang` attributes;
+* Check `alt` and `title` for `<img>`;
+* Increase text spacings.
+
+##Description
+This page provides fake content with:
+* language attributes,
+* images: some have a correct `alt` attribute, some don't, some have an empty `alt`.
+
+This enables us to test two  webextension's modules.
+
+##References for `alt` and `title` on `<img>`
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
+* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
+* <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
+* <https://www.w3.org/WAI/tutorials/images/decision-tree/>
+* <https://www.w3.org/TR/html51/semantics.html#alt>
+* <https://www.w3.org/TR/WCAG20/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG-TECHS/H36.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H37.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H24.html>
+* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
+* <https://www.w3.org/TR/WCAG-TECHS/F65.html>
+
+##References for text spacing
+* <https://www.w3.org/TR/WCAG21/#text-spacing>
+* <https://developer.paciellogroup.com/blog/2018/05/short-note-on-getting-spaced-out-with-sc-1-4-12-text-spacing/>.
+
+*/
+
+
+/*doc
+---
+title: "No alt, no title"
+name: check-alt-1
+category: WebExtension
+---
+
+```html_example
+<img src="static/checkalts/1.jpg" /><span>†</span>
+```
+*/
+
+
+/*doc
+---
+title: "One alt, one title"
+name: check-alt-2
+category: WebExtension
+---
+
+```html_example
+<img alt="A typewriter" title="Last day of August" src="static/checkalts/2.jpg" /><span>†</span>
+```
+*/
+
+
+/*doc
+---
+title: "Empty alt, no title"
+name: check-alt-3
+category: WebExtension
+---
+
+```html_example
+<img alt="" src="static/checkalts/3.jpg" /><span>†</span>
+```
+*/
+
+
+/*doc
+---
+title: "One alt, no title"
+name: check-alt-4
+category: WebExtension
+---
+
+```html_example
+<img src="static/checkalts/4.jpg" alt="Sunset" /><span>†</span>
+```
+*/
+
+
+/*doc
+---
+title: "[lang]"
+name: check-alt-6
+category: WebExtension
+---
+
+##Selector
+```css_example
+[lang]
+```
+
+##Test
+```html_example
+<p>Just testing languages. <span lang="fr">Voilà</span>.</p>
+```
+*/
+
+
+/*doc
+---
+title: "[hreflang]"
+name: check-alt-5
+category: WebExtension
+---
+
+##Selector
+```css_example
+[hreflang]
+```
+
+##Test
+```html_example
+<p>Here comes a simple to <a href="https://www.ffoodd.fr" hreflang="fr">my very own website</a>.</p>
+```
+*/
