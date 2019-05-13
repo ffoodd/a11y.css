@@ -1,6 +1,9 @@
 # README for a11y.css WebExtension
 
-This is a port to WebExtension of the [a11y.css bookmarklet](../).
+This is a port to WebExtension of the [a11y.css bookmarklet](../), because:
+
+* CORS security prevent from running bookmarklets more and more often,
+* WebExtension means easier scripting capabilities (e.g. on/off on a set of tests).
 
 ## How to test
 
@@ -43,4 +46,6 @@ There's a `locales.js` file in the `scripts` folder that handle every strings. F
 
 ## Credits
 
-* a11y.css icon by [Gaël Poupard](https://www.ffoodd.fr/).
+* Main developer: @notabene
+* Based on work by @ffoodd (a11y.css creator) and @ireade (first porting to an extension)
+* a11y.css icon by @ffoodd
