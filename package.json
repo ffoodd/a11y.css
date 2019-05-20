@@ -66,8 +66,8 @@
     "gulp-util": "^3.0.8",
     "gulp-zip": "^4.0.0",
     "rootbeer": "^1.0.5",
-    "sassdoc": "^2.2.2",
-    "sassdoc-theme-alix": "^0.4.0",
+    "sassdoc": "^2.7.0",
+    "sassdoc-theme-alix": "^0.5.0",
     "vinyl-source-stream": "^2.0.0",
     "webextension-polyfill": "^0.4.0"
   }
