@@ -6,4 +6,9 @@ prepros.cfg
 /docs/Hologram/tests
 /docs/SassDoc/*
 *.log
-package-lock.json
+.vscode
+webextension/manifest.json
+webextension/css/a11y-en_advices-only.css
+webextension/css/a11y-en_errors-only.css
+webextension/css/a11y-en_obsolete-only.css
+webextension/css/a11y-en_warnings-only.css

@@ -69,6 +69,7 @@
   "error:role-combobox": "Η ιδιότητα [aria-expanded] δεν βρέθηκε.",
   "error:role-scrollbar": "Έλλειψη επιπρόσθετων ιδιοτήτων στην ετικέτα τύπου [role=scrollbar].",
   "error:nested-interactive": "Εμφωλευμένες διαδραστικές ετικέτες.",
+  "error:show-lang": "attr(lang)",
 
   "warning:style-attr": "Εσωτερικά στυλ.",
   "warning:invalid-nesting": "Μη έγκυρη εμφώλευση.",

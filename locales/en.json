@@ -69,6 +69,7 @@
   "error:role-combobox": "Missing [aria-expanded]",
   "error:role-scrollbar": "Missing attributes on [role=scrollbar]",
   "error:nested-interactive": "Nested interactive elements",
+  "error:show-lang": "attr(lang)",
 
   "warning:style-attr": "Inline styles",
   "warning:invalid-nesting": "Invalid nesting",

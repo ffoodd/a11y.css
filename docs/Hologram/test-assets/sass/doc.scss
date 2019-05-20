@@ -106,7 +106,7 @@ main > * + * {
   overflow-x: hidden;
 }
 
-main > * + * > * {
+main > * + * > * + * {
   max-width: 40rem;
 }
 
@@ -382,7 +382,8 @@ h6 {
   margin: 2.8236em 0 1.4118em;
 }
 
-aside legend {
+aside legend,
+aside div .h2-like {
   font-size: 1.25em;
   font-weight: bold;
   margin: 0;
@@ -575,9 +576,22 @@ aside > div {
   border-radius: .25rem 0 0 .25rem;
   border-right: 0;
   box-shadow: inset 0 0 0 .25rem rgba( 0, 0, 0, .05 );
-  margin: 0 -2rem 0 -1rem;
+  margin: 0 -2rem 2rem -1rem;
   padding: 1rem;
   width: 18rem;
+}
+
+aside ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+aside img {
+  max-width: 100%;
 }
 
 aside fieldset {
@@ -654,11 +668,6 @@ aside fieldset p {
 
 form label {
   min-width: 1em;
-}
-
-a[target$="blank"]::after {
-  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAGFBMVEX///////////////////////////////8pK8DIAAAAAXRSTlMAQObYZgAAADZJREFUCJljKC8vYCsvZwBSDCCKgYHBHUKVu4Mo5gJ2IMUOFmBgLwZTTKlgCgjYUShxoAkgAADDIA8SMJqkyAAAAABJRU5ErkJggg==);
-  padding-left: .5em;
 }
 
 #bookmarklet--link {
@@ -798,6 +807,10 @@ a[target$="blank"]::after {
   display: inline-block;
   min-height: 1em;
   min-width: 1em;
+}
+
+#check-alt-0 {
+  display: none;
 }
 
 .skip {
