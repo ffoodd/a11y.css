@@ -8,6 +8,7 @@
           content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
     <link rel="stylesheet" href="static/doc.css">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
+    <link rel="preload" href="fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <!-- CSS to be documented -->
     
       <link rel="stylesheet" href="css/a11y-en_warnings-only.css" media="all">
@@ -33,7 +34,7 @@
           <li><a href="warnings.html" class="warnings">Warnings</a></li>
           <li><a href="obsolete.html" class="obsolete">Obsoletes</a></li>
           <li><a href="advices.html" class="advices">Advices</a></li>
-          <li><a href="check_alternate_text_for_images.html" class="alt">Check alt</a></li>
+          <li><a href="webextension.html" class="alt">WebExtension</a></li>
           <li><a href="docs.html" class="sassdoc"><b><abbr title="Application Programming Interface">API</abbr></b> Doc</a></li>
           <li>
             <a href="https://github.com/ffoodd/a11y.css">
@@ -73,21 +74,17 @@
                 </li>
               
             
-<<<<<<< HEAD
+              
+                <li>
+                  <a href="#details">summary must be a details&#39;s:first-child</a>
+                </li>
+              
+            
               
                 <li>
                   <a href="#empty-alt">[alt] can be empty but has to be checked</a>
                 </li>
               
-=======
-              <li>
-                <a href="#details">summary must be a details&#39;s:first-child</a>
-              </li>
-            
-              <li>
-                <a href="#empty-alt">[alt] can be empty but has to be checked</a>
-              </li>
->>>>>>> 31cdc37c5d5a5d2d5d11501a759222ed310343e7
             
               
                 <li>
@@ -155,21 +152,17 @@
                 </li>
               
             
-<<<<<<< HEAD
+              
+                <li>
+                  <a href="#mismatched-dir">Mismatching [dir] and [lang] attributes</a>
+                </li>
+              
+            
               
                 <li>
                   <a href="#misplaced-div">Misplaced div</a>
                 </li>
               
-=======
-              <li>
-                <a href="#mismatched-dir">Mismatching [dir] and [lang] attributes</a>
-              </li>
-            
-              <li>
-                <a href="#misplaced-div">Misplaced div</a>
-              </li>
->>>>>>> 5986a6855a6e9e5eca145276cb3472555c1b36d9
             
               
                 <li>
@@ -264,6 +257,22 @@
           </ol>
         </nav>
         
+
+        <div>
+          <p class="h2-like">Web extensions</p>
+          <ul>
+            <li>
+              <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
+                <img src="static/firefox.svg" width="100" height="37" alt="a11y.css Firefox add-on"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css Chrome extension">
+                <img src="static/chrome.svg" width="100" height="38" alt="a11y.css Chrome extension"/>
+              </a>
+            </li>
+          </ul>
+      </div>
 
         <div>
           <form action="/" id="bookmarklet">
@@ -1671,11 +1680,11 @@ This is not actually an accessibility related issue, but everything helping user
             </svg>
           </a>
         </p>
-        <p>® 2014 —&nbsp;2017 <strong>Gaël Poupard</strong></p>
+        <p>® 2014 —&nbsp;2019 <strong>Gaël Poupard</strong></p>
         <p>This project is distributed under license <a href="https://opensource.org/licenses/MIT" title="The MIT licence">MIT</a> and <a href="https://creativecommons.org/licenses/by/3.0/fr/" hreflang="fr" title="Explications de la licence">CC BY 3.0 FR</a>. <a class="end" href="#top">Back to top</a></p>
       </div>
     </footer>
 
-    <script src="static/js/docs.js"></script>
+    <script src="static/js/docs.js" async></script>
   </body>
 </html>

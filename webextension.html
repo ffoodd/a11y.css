@@ -2,13 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Check alternate text for images a11y.css</title>
+    <title>WebExtension a11y.css</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
           content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
     <link rel="stylesheet" href="static/doc.css">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
+    <link rel="preload" href="fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <!-- CSS to be documented -->
+    
+      <link rel="stylesheet" href="css/a11y-en_webextension-only.css" media="all">
     
   </head>
   <body>
@@ -24,14 +27,14 @@
         </svg>
       </a>
 
-      <nav role="navigation" aria-label="Main navigation" class="Index Check alternate text for images">
+      <nav role="navigation" aria-label="Main navigation" class="Index WebExtension">
         <ul>
           <li><a href="index.html" class="index">Home</a></li>
           <li><a href="errors.html" class="errors">Errors</a></li>
           <li><a href="warnings.html" class="warnings">Warnings</a></li>
           <li><a href="obsolete.html" class="obsolete">Obsoletes</a></li>
           <li><a href="advices.html" class="advices">Advices</a></li>
-          <li><a href="check_alternate_text_for_images.html" class="alt">Check alt</a></li>
+          <li><a href="webextension.html" class="alt">WebExtension</a></li>
           <li><a href="docs.html" class="sassdoc"><b><abbr title="Application Programming Interface">API</abbr></b> Doc</a></li>
           <li>
             <a href="https://github.com/ffoodd/a11y.css">
@@ -81,19 +84,13 @@
             
               
                 <li>
-                  <a href="#check-alt-5">No alt, no title</a>
+                  <a href="#check-alt-5">[hreflang]</a>
                 </li>
               
             
               
                 <li>
-                  <a href="#check-alt-6">One alt, no title</a>
-                </li>
-              
-            
-              
-                <li>
-                  <a href="#check-alt-7">No alt, no title</a>
+                  <a href="#check-alt-6">[lang]</a>
                 </li>
               
             
@@ -105,13 +102,13 @@
           <p class="h2-like">Web extensions</p>
           <ul>
             <li>
-              <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="Firefox add-on for a11y.css">
-                <img src="static/firefox.svg" width="100" height="37" alt="Firefox add-on for a11y.css"/>
+              <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
+                <img src="static/firefox.svg" width="100" height="37" alt="a11y.css Firefox add-on"/>
               </a>
             </li>
             <li>
-              <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="Chrome extension for a11y.css">
-                <img src="static/chrome.svg" width="100" height="38" alt="Chrome extension for a11y.css"/>
+              <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css Chrome extension">
+                <img src="static/chrome.svg" width="100" height="38" alt="a11y.css Chrome extension"/>
               </a>
             </li>
           </ul>
@@ -155,24 +152,35 @@
       </aside>
 
       <div id="content">
-        <h1>Check alternate text for images</h1>
+        <h1>WebExtension</h1>
 <h1 id="check-alt-0" class="styleguide"></h1>
-<p class="styleguide">This page provides fake content with images, some have a correct <code class="styleguide">alt</code> attribute, some don&#39;t, some have an empty <code class="styleguide">alt</code>.
-This enables us to test the checkalts module.</p>
-<h2>References</h2>
-<ul class="styleguide"><li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1</a></li>
-<li><a href="http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2">http://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2</a></li>
-<li><a href="http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/">http://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/</a></li>
-<li><a href="http://www.w3.org/WAI/tutorials/images/decision-tree/">http://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
-<li><a href="http://www.w3.org/TR/html51/semantics.html#alt">http://www.w3.org/TR/html51/semantics.html#alt</a></li>
-<li><a href="http://www.w3.org/TR/WCAG20/#text-equiv-all">http://www.w3.org/TR/WCAG20/#text-equiv-all</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/H36.html">http://www.w3.org/TR/WCAG-TECHS/H36.html</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/H37.html">http://www.w3.org/TR/WCAG-TECHS/H37.html</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/H24.html">http://www.w3.org/TR/WCAG-TECHS/H24.html</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/H67.html">http://www.w3.org/TR/WCAG-TECHS/H67.html</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/F39.html">http://www.w3.org/TR/WCAG-TECHS/F39.html</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/F38.html">http://www.w3.org/TR/WCAG-TECHS/F38.html</a></li>
-<li><a href="http://www.w3.org/TR/WCAG-TECHS/F65.html">http://www.w3.org/TR/WCAG-TECHS/F65.html</a></li>
+<p class="styleguide">The WebExtension provides some more tools requiring a bit of JavaScript:</p><ul class="styleguide"><li>Force focus;</li>
+<li>Show <code class="styleguide">lang</code> attributes;</li>
+<li>Check <code class="styleguide">alt</code> and <code class="styleguide">title</code> for <code class="styleguide">&lt;img&gt;</code>;</li>
+<li>Increase text spacings.</li>
+</ul>
+<h2>Description</h2>
+<p class="styleguide">This page provides fake content with:</p><ul class="styleguide"><li>language attributes,</li>
+<li>images: some have a correct <code class="styleguide">alt</code> attribute, some don&#39;t, some have an empty <code class="styleguide">alt</code>.</li>
+</ul><p class="styleguide">This enables us to test two  webextension&#39;s modules.</p>
+<h2>References for <code class="styleguide">alt</code> and <code class="styleguide">title</code> on <code class="styleguide">&lt;img&gt;</code></h2>
+<ul class="styleguide"><li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1</a></li>
+<li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2</a></li>
+<li><a href="https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/">https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/</a></li>
+<li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">https://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
+<li><a href="https://www.w3.org/TR/html51/semantics.html#alt">https://www.w3.org/TR/html51/semantics.html#alt</a></li>
+<li><a href="https://www.w3.org/TR/WCAG20/#text-equiv-all">https://www.w3.org/TR/WCAG20/#text-equiv-all</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H36.html">https://www.w3.org/TR/WCAG-TECHS/H36.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H37.html">https://www.w3.org/TR/WCAG-TECHS/H37.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H24.html">https://www.w3.org/TR/WCAG-TECHS/H24.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/H67.html">https://www.w3.org/TR/WCAG-TECHS/H67.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/F39.html">https://www.w3.org/TR/WCAG-TECHS/F39.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/F38.html">https://www.w3.org/TR/WCAG-TECHS/F38.html</a></li>
+<li><a href="https://www.w3.org/TR/WCAG-TECHS/F65.html">https://www.w3.org/TR/WCAG-TECHS/F65.html</a></li>
+</ul>
+<h2>References for text spacing</h2>
+<ul class="styleguide"><li><a href="https://www.w3.org/TR/WCAG21/#text-spacing">https://www.w3.org/TR/WCAG21/#text-spacing</a></li>
+<li><a href="https://developer.paciellogroup.com/blog/2018/05/short-note-on-getting-spaced-out-with-sc-1-4-12-text-spacing/">https://developer.paciellogroup.com/blog/2018/05/short-note-on-getting-spaced-out-with-sc-1-4-12-text-spacing/</a>.</li>
 </ul>
 <h1 id="check-alt-1" class="styleguide">No alt, no title</h1>
 <div class="codeExample">
@@ -218,36 +226,37 @@ This enables us to test the checkalts module.</p>
   </div>
 </div>
 
-<h1 id="check-alt-5" class="styleguide">No alt, no title</h1>
+<h1 id="check-alt-5" class="styleguide">[hreflang]</h1>
+
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">hreflang</span><span class="o">]</span></code></pre>
+</div>
+<h2>Test</h2>
 <div class="codeExample">
   <div class="exampleOutput">
-    <img src="static/checkalts/5.jpg" /><span>†</span>
+    <p>Here comes a simple to <a href="https://www.ffoodd.fr" hreflang="fr">my very own website</a>.</p>
 
   </div>
   <div class="codeBlock">
-    <pre><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"static/checkalts/5.jpg"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+    <pre><code><span class="nt">&lt;p&gt;</span>Here comes a simple to <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://www.ffoodd.fr"</span> <span class="na">hreflang=</span><span class="s">"fr"</span><span class="nt">&gt;</span>my very own website<span class="nt">&lt;/a&gt;</span>.<span class="nt">&lt;/p&gt;</span></code></pre>
   </div>
 </div>
 
-<h1 id="check-alt-6" class="styleguide">One alt, no title</h1>
-<div class="codeExample">
-  <div class="exampleOutput">
-    <img alt="Irish river" src="static/checkalts/6.jpg" /><span>†</span>
+<h1 id="check-alt-6" class="styleguide">[lang]</h1>
 
-  </div>
-  <div class="codeBlock">
-    <pre><code><span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"Irish river"</span> <span class="na">src=</span><span class="s">"static/checkalts/6.jpg"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
-  </div>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="o">[</span><span class="nt">lang</span><span class="o">]</span></code></pre>
 </div>
-
-<h1 id="check-alt-7" class="styleguide">No alt, no title</h1>
+<h2>Test</h2>
 <div class="codeExample">
   <div class="exampleOutput">
-    <img src="static/checkalts/7.jpg"><span>†</span>
+    <p>Just testing languages. <span lang="fr">Voilà</span>.</p>
 
   </div>
   <div class="codeBlock">
-    <pre><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"static/checkalts/7.jpg"</span><span class="nt">&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+    <pre><code><span class="nt">&lt;p&gt;</span>Just testing languages. <span class="nt">&lt;span</span> <span class="na">lang=</span><span class="s">"fr"</span><span class="nt">&gt;</span>Voilà<span class="nt">&lt;/span&gt;</span>.<span class="nt">&lt;/p&gt;</span></code></pre>
   </div>
 </div>
       </div>
@@ -265,11 +274,11 @@ This enables us to test the checkalts module.</p>
             </svg>
           </a>
         </p>
-        <p>® 2014 —&nbsp;2017 <strong>Gaël Poupard</strong></p>
+        <p>® 2014 —&nbsp;2019 <strong>Gaël Poupard</strong></p>
         <p>This project is distributed under license <a href="https://opensource.org/licenses/MIT" title="The MIT licence">MIT</a> and <a href="https://creativecommons.org/licenses/by/3.0/fr/" hreflang="fr" title="Explications de la licence">CC BY 3.0 FR</a>. <a class="end" href="#top">Back to top</a></p>
       </div>
     </footer>
 
-    <script src="static/js/docs.js"></script>
+    <script src="static/js/docs.js" async></script>
   </body>
 </html>
