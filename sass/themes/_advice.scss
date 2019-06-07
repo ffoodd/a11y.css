@@ -402,7 +402,7 @@ input[class*="search"]:not([role="search"]) {
 
 [role="search"] [id*="search"]:not([role="search"]),
 [role="search"] [class*="search"]:not([role="search"]) {
-  @include a11y-reset;
+  @extend %a11y-reset;
 }
 
 
@@ -510,7 +510,7 @@ A `[placeholder]` is not a label, is it?
 }
 
 label [placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include a11y-reset;
+  @extend %a11y-reset;
 }
 
 

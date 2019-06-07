@@ -973,7 +973,7 @@ body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(
 }
 
 svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
-  @include a11y-reset;
+  @extend %a11y-reset;
 }
 
 

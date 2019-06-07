@@ -1,0 +1,50 @@
+/// Common styles for messages.
+/// @access public
+%a11y-before {
+  border-radius: 0 !important;
+  color: #fff !important;
+  contain: content;
+  display: block !important;
+  font: 700 normal 14px/1.5 sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+  height: auto !important;
+  max-width: 100vw !important;
+  padding: 4px !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  text-transform: none !important;
+  transform: none !important;
+  white-space: pre !important;
+  width: auto !important;
+}
+
+/// Level specific styles for messages.
+/// @access public
+@each $theme in map-keys($themes) {
+  %a11y-#{$theme} {
+    counter-increment: unquote($theme) !important;
+    outline: 4px solid theme-conf($theme, 'color') !important;
+    outline-offset: -4px !important;
+  }
+}
+
+/// Provides a way to cancel a message.
+/// @access public
+%a11y-reset {
+  counter-increment: none !important;
+  outline: 0 !important;
+
+  &::after,
+  & + ::before {
+    content: '' !important;
+    display: none !important;
+  }
+}
+
+/// Ensure head child display.
+/// @access public
+%a11y-head {
+  display: block !important;
+}

@@ -479,7 +479,7 @@ button:not([type]):not([form]):not([formaction]):not([formtarget]) {
 }
 
 form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
-  @include a11y-reset;
+  @extend %a11y-reset;
 }
 
 /*doc
@@ -1353,7 +1353,7 @@ This test could be a warning…
 }
 
 fieldset [type="radio"] {
-  @include a11y-reset;
+  @extend %a11y-reset;
 }
 
 
