@@ -230,8 +230,6 @@
   #{$base-selector} {
     @extend %a11y-before;
     @include message($theme, $key);
-    background: theme-conf($theme, 'color') !important;
-    z-index: theme-conf($theme, 'index') !important;
   }
 }
 
