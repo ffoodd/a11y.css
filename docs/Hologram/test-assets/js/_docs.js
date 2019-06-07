@@ -51,8 +51,8 @@ function handleTocClick (event) {
   }
 }
 
-function handleFormSubmit (event) {
-  event.preventDefault();
+function handleFormSubmit(e) {
+  e.preventDefault();
 
   var link = document.getElementById('bookmarklet--link');
   link.setAttribute('href', getBookmarkletContent());
