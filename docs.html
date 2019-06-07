@@ -149,13 +149,40 @@
                 <li>
                   <a href="#undefined-mixin-a11y">a11y</a>
                 </li>
+                </ol>
+
+                
+              </li>
+              
+              
+
+              
+
+              
+              
+              <li>
+                <a href="#undefined-placeholder" class="h4-like">placeholders</a>
+                
+
+                <ol>
+                <li>
+                  <a href="#undefined-placeholder-a11y-before">a11y-before</a>
+                </li>
                 
 
                 
 
                 
                 <li>
-                  <a href="#undefined-mixin-a11y-reset">a11y-reset</a>
+                  <a href="#undefined-placeholder-a11y-reset">a11y-reset</a>
+                </li>
+                
+
+                
+
+                
+                <li>
+                  <a href="#undefined-placeholder-a11y-head">a11y-head</a>
                 </li>
                 </ol>
 
@@ -991,11 +1018,11 @@
 
 <code class="language-scss">@mixin a11y-head($self-closing: false) { 
   // Because it&#39;s in the &lt;head&gt;
-  display: block !important;
+  @extend %a11y-head;
 
   @if $self-closing {
     ~ link:last-of-type {
-      display: block !important;
+      @extend %a11y-head;
     }
   }
  }</code></pre>
@@ -1084,6 +1111,40 @@
   
 
 
+  
+    
+        
+        <h5>Requires</h5>
+        <ul>
+     
+
+     
+        <li>
+          <span>[placeholder]</span>
+          <a href="#undefined-placeholder-a11y-head"><code>a11y-head</code></a>
+          
+        </li>
+      
+    
+
+
+
+  
+    
+
+     
+        <li>
+          <span>[placeholder]</span>
+          <a href="#undefined-placeholder-a11y-head"><code>a11y-head</code></a>
+          
+        </li>
+      
+    
+
+
+
+
+  </ul>
 
 
 </article>
@@ -1462,11 +1523,9 @@ Either:</p>
 
 
 <code class="language-scss">@mixin a11y($theme, $key, $self-closing: false, $head: false) { 
-  $base-selector: &#39;&amp;::after&#39;;
+  @extend %a11y-#{$theme};
 
-  counter-increment: unquote($theme) !important;
-  outline: 4px solid theme-conf($theme, &#39;color&#39;) !important;
-  outline-offset: -4px !important;
+  $base-selector: &#39;&amp;::after&#39;;
 
   @if $self-closing {
     $base-selector: &#39;&amp; + ::before&#39;;
@@ -1477,16 +1536,15 @@ Either:</p>
   }
 
   #{$base-selector} {
-    @include a11y-before;
+    @extend %a11y-before;
     @include message($theme, $key);
     background: theme-conf($theme, &#39;color&#39;) !important;
-    color: #fff !important;
     z-index: theme-conf($theme, &#39;index&#39;) !important;
   }
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L237-L259">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L217-L236">
     View source on GitHub
     <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1617,7 +1675,128 @@ Either:</p>
 
 
   
+    
+        
+        <h5>Requires</h5>
+        <ul>
+     
 
+     
+        <li>
+          <span>[placeholder]</span>
+          <a href="#undefined-placeholder-a11y-before"><code>a11y-before</code></a>
+          
+        </li>
+      
+    
+
+
+
+
+  </ul>
+
+
+</article>
+          
+        </div>
+        
+        
+        
+        <div id="undefined-placeholder">
+
+          <h3>placeholders</h3>
+
+          
+          <article id="undefined-placeholder-a11y-before">
+  <h4>
+    a11y-before
+<a href="#undefined-placeholder-a11y-before">
+  <svg xmlns="https://www.w3.org/2000/svg" version="1" viewBox="0 0 92.096 100" role="img" aria-labelledby="anchor-a11y-before" height="15" width="14">
+    <title id="anchor-a11y-before">Anchor to a11y-before</title>
+    <path fill="currentColor" d="M46.342 19.45c-3.098 0-5.638-2.542-5.638-5.66 0-3.147 2.542-5.672 5.638-5.672 3.144 0 5.67 2.525 5.67 5.67-.002 3.12-2.527 5.663-5.67 5.663zm45.754 49.594l-3.018-18.808c-.35-1.758-1.885-3.097-3.715-3.097-1.115 0-2.098.47-2.82 1.23L68.64 61.42c-.23.195-.45.418-.65.696-1.306 1.782-.934 4.307.85 5.637.34.253.712.42 1.084.57l3.492 1.16C70.05 78.99 61.83 86.218 51.734 88.22l.022-61.74c4.95-2.107 8.37-7.008 8.37-12.692C60.126 6.163 53.966 0 46.338 0c-7.594 0-13.78 6.162-13.78 13.79 0 5.684 3.542 10.584 8.467 12.69l.022 61.837c-10.316-1.854-18.853-9.153-22.3-18.832l3.517-1.162c.374-.15.745-.316 1.094-.57 1.783-1.33 2.18-3.855.84-5.636-.2-.278-.396-.5-.642-.697L9.648 48.377c-.69-.76-1.703-1.236-2.797-1.236-1.85 0-3.41 1.34-3.74 3.1L.1 69.046c-.07.293-.094.618-.094.943 0 2.226 1.805 4.03 4.03 4.03.42 0 .818-.045 1.19-.173l3.27-1.062C13.684 88.573 28.554 100 46.096 100c17.54 0 32.42-11.43 37.613-27.243l3.26 1.084c.37.13.77.18 1.19.18 2.23 0 4.033-1.802 4.033-4.03 0-.322-.033-.65-.102-.94z"/>
+  </svg>
+</a>
+
+  </h4>
+
+  <div class="codeBlock scssSource">
+    <div class="language-scss">
+      <pre><code class="language-scss">%a11y-before { 
+  border-radius: 0 !important;
+  color: #fff !important;
+  contain: content;
+  display: block !important;
+  font: 700 normal 14px/1.5 sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, sans-serif !important;
+  height: auto !important;
+  max-width: 100vw !important;
+  padding: 4px !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  text-transform: none !important;
+  transform: none !important;
+  white-space: pre !important;
+  width: auto !important;
+ }</code>
+</pre>
+      
+<p class="viewSource">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_placeholders.scss#L3-L21">
+    View source on GitHub
+    <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
+      <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
+      <polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
+    </svg>
+  </a>
+</p>
+
+
+    </div>
+  </div>
+
+  
+  <h5>Description</h5>
+  <p><p>Common styles for messages.</p>
+</p>
+
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+    
+      
+      <h5>Used by</h5>
+      <ul>
+    
+
+    <li>
+      <span>[mixin]</span>
+      <a href="#undefined-mixin-a11y"><code>a11y</code></a>
+    </li>
+  
+
+
+
+
+  </ul>
 
 
   
@@ -1625,13 +1804,12 @@ Either:</p>
 
 
 
-
 </article>
           
-          <article id="undefined-mixin-a11y-reset">
+          <article id="undefined-placeholder-a11y-reset">
   <h4>
     a11y-reset
-<a href="#undefined-mixin-a11y-reset">
+<a href="#undefined-placeholder-a11y-reset">
   <svg xmlns="https://www.w3.org/2000/svg" version="1" viewBox="0 0 92.096 100" role="img" aria-labelledby="anchor-a11y-reset" height="15" width="14">
     <title id="anchor-a11y-reset">Anchor to a11y-reset</title>
     <path fill="currentColor" d="M46.342 19.45c-3.098 0-5.638-2.542-5.638-5.66 0-3.147 2.542-5.672 5.638-5.672 3.144 0 5.67 2.525 5.67 5.67-.002 3.12-2.527 5.663-5.67 5.663zm45.754 49.594l-3.018-18.808c-.35-1.758-1.885-3.097-3.715-3.097-1.115 0-2.098.47-2.82 1.23L68.64 61.42c-.23.195-.45.418-.65.696-1.306 1.782-.934 4.307.85 5.637.34.253.712.42 1.084.57l3.492 1.16C70.05 78.99 61.83 86.218 51.734 88.22l.022-61.74c4.95-2.107 8.37-7.008 8.37-12.692C60.126 6.163 53.966 0 46.338 0c-7.594 0-13.78 6.162-13.78 13.79 0 5.684 3.542 10.584 8.467 12.69l.022 61.837c-10.316-1.854-18.853-9.153-22.3-18.832l3.517-1.162c.374-.15.745-.316 1.094-.57 1.783-1.33 2.18-3.855.84-5.636-.2-.278-.396-.5-.642-.697L9.648 48.377c-.69-.76-1.703-1.236-2.797-1.236-1.85 0-3.41 1.34-3.74 3.1L.1 69.046c-.07.293-.094.618-.094.943 0 2.226 1.805 4.03 4.03 4.03.42 0 .818-.045 1.19-.173l3.27-1.062C13.684 88.573 28.554 100 46.096 100c17.54 0 32.42-11.43 37.613-27.243l3.26 1.084c.37.13.77.18 1.19.18 2.23 0 4.033-1.802 4.033-4.03 0-.322-.033-.65-.102-.94z"/>
@@ -1642,8 +1820,7 @@ Either:</p>
 
   <div class="codeBlock scssSource">
     <div class="language-scss">
-      <pre>
-<code class="language-scss">@mixin a11y-reset() { 
+      <pre><code class="language-scss">%a11y-reset { 
   counter-increment: none !important;
   outline: 0 !important;
 
@@ -1652,10 +1829,11 @@ Either:</p>
     content: &#39;&#39; !important;
     display: none !important;
   }
- }</code></pre>
+ }</code>
+</pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L263-L272">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_placeholders.scss#L35-L44">
     View source on GitHub
     <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1691,6 +1869,101 @@ Either:</p>
 
 
 
+
+
+  
+
+
+
+
+</article>
+          
+          <article id="undefined-placeholder-a11y-head">
+  <h4>
+    a11y-head
+<a href="#undefined-placeholder-a11y-head">
+  <svg xmlns="https://www.w3.org/2000/svg" version="1" viewBox="0 0 92.096 100" role="img" aria-labelledby="anchor-a11y-head" height="15" width="14">
+    <title id="anchor-a11y-head">Anchor to a11y-head</title>
+    <path fill="currentColor" d="M46.342 19.45c-3.098 0-5.638-2.542-5.638-5.66 0-3.147 2.542-5.672 5.638-5.672 3.144 0 5.67 2.525 5.67 5.67-.002 3.12-2.527 5.663-5.67 5.663zm45.754 49.594l-3.018-18.808c-.35-1.758-1.885-3.097-3.715-3.097-1.115 0-2.098.47-2.82 1.23L68.64 61.42c-.23.195-.45.418-.65.696-1.306 1.782-.934 4.307.85 5.637.34.253.712.42 1.084.57l3.492 1.16C70.05 78.99 61.83 86.218 51.734 88.22l.022-61.74c4.95-2.107 8.37-7.008 8.37-12.692C60.126 6.163 53.966 0 46.338 0c-7.594 0-13.78 6.162-13.78 13.79 0 5.684 3.542 10.584 8.467 12.69l.022 61.837c-10.316-1.854-18.853-9.153-22.3-18.832l3.517-1.162c.374-.15.745-.316 1.094-.57 1.783-1.33 2.18-3.855.84-5.636-.2-.278-.396-.5-.642-.697L9.648 48.377c-.69-.76-1.703-1.236-2.797-1.236-1.85 0-3.41 1.34-3.74 3.1L.1 69.046c-.07.293-.094.618-.094.943 0 2.226 1.805 4.03 4.03 4.03.42 0 .818-.045 1.19-.173l3.27-1.062C13.684 88.573 28.554 100 46.096 100c17.54 0 32.42-11.43 37.613-27.243l3.26 1.084c.37.13.77.18 1.19.18 2.23 0 4.033-1.802 4.033-4.03 0-.322-.033-.65-.102-.94z"/>
+  </svg>
+</a>
+
+  </h4>
+
+  <div class="codeBlock scssSource">
+    <div class="language-scss">
+      <pre><code class="language-scss">%a11y-head { 
+  display: block !important;
+ }</code>
+</pre>
+      
+<p class="viewSource">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_placeholders.scss#L48-L50">
+    View source on GitHub
+    <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
+      <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
+      <polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
+    </svg>
+  </a>
+</p>
+
+
+    </div>
+  </div>
+
+  
+  <h5>Description</h5>
+  <p><p>Ensure head child display.</p>
+</p>
+
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+    
+      
+      <h5>Used by</h5>
+      <ul>
+    
+
+    <li>
+      <span>[mixin]</span>
+      <a href="#messages-mixin-a11y-head"><code>a11y-head</code></a>
+    </li>
+  
+
+
+
+  
+
+    
+
+    <li>
+      <span>[mixin]</span>
+      <a href="#messages-mixin-a11y-head"><code>a11y-head</code></a>
+    </li>
+  
+
+
+
+
+  </ul>
 
 
   
