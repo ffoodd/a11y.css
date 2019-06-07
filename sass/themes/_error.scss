@@ -85,9 +85,6 @@ By the way, why would you use an empty link?
 * <https://www.w3.org/TR/WCAG-TECHS/H30.html>
 * <https://www.w3.org/TR/WCAG-TECHS/G91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
-* <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
-* <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
-* <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ##Selector
 ```css_example
@@ -95,16 +92,6 @@ a:empty[title=""],
 a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
 a:empty:not([title]):not([aria-label]):not([aria-labelledby])
-
-a:blank[title=""],
-a:blank[aria-label=""],
-a:blank[aria-labelledby=""],
-a:blank:not([title]):not([aria-label]):not([aria-labelledby])
-
-a:-moz-only-whitespace[title=""],
-a:-moz-only-whitespace[aria-label=""],
-a:-moz-only-whitespace[aria-labelledby=""],
-a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby])
 ```
 
 ##Test
@@ -117,20 +104,6 @@ a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
 a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
   @include error('empty-link');
-}
-
-a:blank[title=""],
-a:blank[aria-label=""],
-a:blank[aria-labelledby=""],
-a:blank:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false);
-}
-
-a:-moz-only-whitespace[title=""],
-a:-moz-only-whitespace[aria-label=""],
-a:-moz-only-whitespace[aria-labelledby=""],
-a:-moz-only-whitespace:not([title]):not([aria-label]):not([aria-labelledby]) {
-  @include error('empty-link', $self-closing: false);
 }
 
 
@@ -415,17 +388,10 @@ A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
-* <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
-* <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
-* <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ##Selector
 ```css_example
 button:empty:not([aria-label]):not([aria-labelledby]):not([title])
-
-button:blank:not([aria-label]):not([aria-labelledby]):not([title])
-
-button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title])
 ```
 
 ##Test
@@ -434,14 +400,6 @@ button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]
 ```
 */
 button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
-  @include error('empty-button');
-}
-
-button:blank:not([aria-label]):not([aria-labelledby]):not([title]) {
-  @include error('empty-button');
-}
-
-button:-moz-only-whitespace:not([aria-label]):not([aria-labelledby]):not([title]) {
   @include error('empty-button');
 }
 
@@ -1078,10 +1036,9 @@ category: Errors
 ---
 
 ##Description
-The `title>` tag is the first thing read aloud by screen readers — to announce the page&hellip; title — and also the first thing displayed on search engines' results pages.
+The `<title>` tag is the first thing read aloud by screen readers — to announce the page&hellip; title — and also the first thing displayed on search engines' results pages.
 
-We also use the `:blank` pseudo-class for the single space case, but at this time its support is very poor.
-We also use the `:-moz-only-whitespace` pseudo-class, which is an alias of `:blank`.
+We could use the `:blank` pseudo-class, but at this time its support is very poor. We could also use the `:-moz-only-whitespace` pseudo-class, but support is limited to Firefox and thus could invalidate our selectors stack…
 
 ##References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-5>
@@ -1100,8 +1057,6 @@ We also use the `:-moz-only-whitespace` pseudo-class, which is an alias of `:bla
 ##Selector
 ```css_example
 title:empty
-title:blank
-title:-moz-only-whitespace
 ```
 
 ##Test
@@ -1110,16 +1065,6 @@ title:-moz-only-whitespace
 ```
 */
 title:empty {
-  @include error('no-page-title');
-  @include a11y-head();
-}
-
-title:blank {
-  @include error('no-page-title');
-  @include a11y-head();
-}
-
-title:-moz-only-whitespace {
   @include error('no-page-title');
   @include a11y-head();
 }

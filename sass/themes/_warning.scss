@@ -941,8 +941,8 @@ empty if they have at least one source specified through `[src]`.
 
 * This test only targets tags in `<body>`, since most of head's tags should be empty.
 * `<button>` and `<a>` are also excluded since `button:empty` and `a:empty` are both covered by their own error.
-* We also use the `:blank` pseudo-class, but at this time its support is very poor.
-* We also use the `:-moz-only-whitespace` pseudo-class, which is an alias of `:blank`.
+
+We could use the `:blank` pseudo-class, but at this time its support is very poor. We could also use the `:-moz-only-whitespace` pseudo-class, but support is limited to Firefox and thus could invalidate our selectors stack…
 
 ##References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
@@ -954,8 +954,6 @@ empty if they have at least one source specified through `[src]`.
 ##Selector
 ```css_example
 body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
-body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
-body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
 ```
 
 ##Test
@@ -969,20 +967,6 @@ body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(butt
  */
 body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
   @include warning('empty-nodes');
-  /* 1 */
-  min-height: 1px;
-  min-width: 1px;
-}
-
-body *:blank:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
-  @include warning('empty-nodes', $self-closing: false);
-  /* 1 */
-  min-height: 1px;
-  min-width: 1px;
-}
-
-body *:-moz-only-whitespace:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
-  @include warning('empty-nodes', $self-closing: false);
   /* 1 */
   min-height: 1px;
   min-width: 1px;
