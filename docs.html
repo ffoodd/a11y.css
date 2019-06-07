@@ -1538,11 +1538,13 @@ Either:</p>
   #{$base-selector} {
     @extend %a11y-before;
     @include message($theme, $key);
+    background: theme-conf($theme, &#39;color&#39;) !important;
+    z-index: theme-conf($theme, &#39;index&#39;) !important;
   }
  }</code></pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L217-L234">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_mixins.scss#L217-L236">
     View source on GitHub
     <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1665,6 +1667,14 @@ Either:</p>
 
 
   
+
+
+
+  
+
+
+
+  
     
         
         <h5>Requires</h5>
@@ -1712,7 +1722,6 @@ Either:</p>
   <div class="codeBlock scssSource">
     <div class="language-scss">
       <pre><code class="language-scss">%a11y-before { 
-  background: var(--color) !important;
   border-radius: 0 !important;
   color: #fff !important;
   contain: content;
@@ -1730,12 +1739,11 @@ Either:</p>
   transform: none !important;
   white-space: pre !important;
   width: auto !important;
-  z-index: var(--layer) !important;
  }</code>
 </pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_placeholders.scss#L3-L23">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_placeholders.scss#L3-L21">
     View source on GitHub
     <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1825,7 +1833,7 @@ Either:</p>
 </pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_placeholders.scss#L39-L48">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_placeholders.scss#L35-L44">
     View source on GitHub
     <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
@@ -1890,7 +1898,7 @@ Either:</p>
 </pre>
       
 <p class="viewSource">
-  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_placeholders.scss#L52-L54">
+  <a href="https://github.com/ffoodd/a11y.css/tree/master/sass/utils/_placeholders.scss#L48-L50">
     View source on GitHub
     <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="(external link)" width="10" height="10">
       <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
