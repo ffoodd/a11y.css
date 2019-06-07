@@ -1137,7 +1137,7 @@ meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
 
 ##Test
 ```html_example
-<meta charset="Windows-1252" /><span>†</span>
+<meta charset="Windows-1252"/><span>†</span>
 ```
 */
 meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"]) {
@@ -1171,17 +1171,16 @@ before the `<title>` tag is the simplest way to cover it.
 
 ##Selector
 ```css_example
-head > *:first-child:not([charset]):not([http-equiv="Content-Type"][content*="text/html; charset"])
+head :first-child:not([charset])
 ```
 
 ##Test
 ```html_example
-<title>Charset isn't first child</title>
-<meta charset="utf-8" /><span>†</span>
+<iframe src="static/no-charset.html" title="Late charset a11y.css test-case" sandbox="allow-same-origin"></iframe>
 ```
 */
-head > *:first-child:not([charset]):not([http-equiv="Content-Type"][content*="text/html; charset"]) {
-  @include error('late-charset', $self-closing: true, $head: true);
+head :first-child:not([charset]) {
+  @include error('late-charset', $self-closing: false, $head: true);
   @include a11y-head($self-closing: true);
 }
 

@@ -426,17 +426,10 @@ Use <code class="styleguide">[disabled]</code> and <code class="styleguide">[rea
 <li><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">https://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
 <li><a href="https://www.w3.org/TR/WCAG-TECHS/H91.html">https://www.w3.org/TR/WCAG-TECHS/H91.html</a></li>
 <li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193</a></li>
-<li><a href="https://drafts.csswg.org/selectors-4/#the-blank-pseudo">https://drafts.csswg.org/selectors-4/#the-blank-pseudo</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace">https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace</a></li>
-<li><a href="https://css-tricks.com/almanac/selectors/b/blank/">https://css-tricks.com/almanac/selectors/b/blank/</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">button</span><span class="nd">:empty:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span>
-
-<span class="nt">button</span><span class="nd">:blank:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span>
-
-<span class="nt">button</span><span class="nd">:-moz-only-whitespace:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">button</span><span class="nd">:empty:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -545,26 +538,13 @@ By the way, why would you use an empty link?</p>
 <li><a href="https://www.w3.org/TR/WCAG-TECHS/H30.html">https://www.w3.org/TR/WCAG-TECHS/H30.html</a></li>
 <li><a href="https://www.w3.org/TR/WCAG-TECHS/G91.html">https://www.w3.org/TR/WCAG-TECHS/G91.html</a></li>
 <li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193</a></li>
-<li><a href="https://drafts.csswg.org/selectors-4/#the-blank-pseudo">https://drafts.csswg.org/selectors-4/#the-blank-pseudo</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace">https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace</a></li>
-<li><a href="https://css-tricks.com/almanac/selectors/b/blank/">https://css-tricks.com/almanac/selectors/b/blank/</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
 <span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
 <span class="nt">a</span><span class="nd">:empty</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:empty:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span>
-
-<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:blank</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:blank:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span>
-
-<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">aria-label</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:-moz-only-whitespace</span><span class="o">[</span><span class="nt">aria-labelledby</span><span class="o">=</span><span class="s1">""</span><span class="o">],</span>
-<span class="nt">a</span><span class="nd">:-moz-only-whitespace:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
+<span class="nt">a</span><span class="nd">:empty:not</span><span class="o">([</span><span class="nt">title</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-label</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">aria-labelledby</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
@@ -600,11 +580,11 @@ By the way, why would you use an empty link?</p>
 <h2>Test</h2>
 <div class="codeExample">
   <div class="exampleOutput">
-    <meta charset="Windows-1252" /><span>†</span>
+    <meta charset="Windows-1252"/><span>†</span>
 
   </div>
   <div class="codeBlock">
-    <pre><code><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"Windows-1252"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+    <pre><code><span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"Windows-1252"</span><span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
   </div>
 </div>
 
@@ -747,18 +727,16 @@ before the <code class="styleguide">&lt;title&gt;</code> tag is the simplest way
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">head</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:first-child:not</span><span class="o">([</span><span class="nt">charset</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">http-equiv</span><span class="o">=</span><span class="s1">"Content-Type"</span><span class="o">][</span><span class="nt">content</span><span class="o">*=</span><span class="s1">"text/html; charset"</span><span class="o">])</span></code></pre>
+  <pre><code><span class="nt">head</span> <span class="nd">:first-child:not</span><span class="o">([</span><span class="nt">charset</span><span class="o">])</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
   <div class="exampleOutput">
-    <title>Charset isn't first child</title>
-<meta charset="utf-8" /><span>†</span>
+    <iframe src="static/no-charset.html" title="Late charset a11y.css test-case" sandbox="allow-same-origin"></iframe>
 
   </div>
   <div class="codeBlock">
-    <pre><code><span class="nt">&lt;title&gt;</span>Charset isn't first child<span class="nt">&lt;/title&gt;</span>
-<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
+    <pre><code><span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"static/no-charset.html"</span> <span class="na">title=</span><span class="s">"Late charset a11y.css test-case"</span> <span class="na">sandbox=</span><span class="s">"allow-same-origin"</span><span class="nt">&gt;&lt;/iframe&gt;</span></code></pre>
   </div>
 </div>
 
@@ -1054,8 +1032,7 @@ If image is decorative, please use <code class="styleguide">[role=presentation]<
 <h1 id="no-page-title" class="styleguide">Empty title tag</h1>
 
 <h2>Description</h2>
-<p class="styleguide">The <code class="styleguide">title&gt;</code> tag is the first thing read aloud by screen readers — to announce the page&hellip; title — and also the first thing displayed on search engines&#39; results pages.</p><p class="styleguide">We also use the <code class="styleguide">:blank</code> pseudo-class for the single space case, but at this time its support is very poor.
-We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-class, which is an alias of <code class="styleguide">:blank</code>.</p>
+<p class="styleguide">The <code class="styleguide">&lt;title&gt;</code> tag is the first thing read aloud by screen readers — to announce the page&hellip; title — and also the first thing displayed on search engines&#39; results pages.</p><p class="styleguide">We could use the <code class="styleguide">:blank</code> pseudo-class, but at this time its support is very poor. We could also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-class, but support is limited to Firefox and thus could invalidate our selectors stack…</p>
 <h2>References</h2>
 <ul class="styleguide"><li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-5">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-5</a></li>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/glossaire.html#titrePage">https://references.modernisation.gouv.fr/rgaa/glossaire.html#titrePage</a></li>
@@ -1072,9 +1049,7 @@ We also use the <code class="styleguide">:-moz-only-whitespace</code> pseudo-cla
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
-  <pre><code><span class="nt">title</span><span class="nd">:empty</span>
-<span class="nt">title</span><span class="nd">:blank</span>
-<span class="nt">title</span><span class="nd">:-moz-only-whitespace</span></code></pre>
+  <pre><code><span class="nt">title</span><span class="nd">:empty</span></code></pre>
 </div>
 <h2>Test</h2>
 <div class="codeExample">
