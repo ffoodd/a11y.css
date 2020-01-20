@@ -50,8 +50,10 @@
     "url": "https://github.com/ffoodd/a11y.css/issues"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
     "csslint-stylish": "0.0.6",
     "del": "^4.1.1",
+    "front-matter": "^3.1.0",
     "fs-promise": "^2.0.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
@@ -68,6 +70,7 @@
     "rootbeer": "^1.0.5",
     "sassdoc": "^2.7.0",
     "sassdoc-theme-alix": "^0.5.0",
+    "showdown": "^1.9.1",
     "vinyl-source-stream": "^2.0.0",
     "webextension-polyfill": "^0.4.0"
   },
