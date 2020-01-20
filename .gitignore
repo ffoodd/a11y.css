@@ -5,6 +5,8 @@ node_modules
 prepros.cfg
 /docs/Hologram/tests
 /docs/SassDoc/*
+_site/
+src/_data/sass
 *.log
 .vscode
 .DS_Store
