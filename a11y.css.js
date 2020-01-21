@@ -2,11 +2,49 @@ const fs = require('fs')
 const path = require('path')
 const showdown = require('showdown')
 const fm = require('front-matter')
+const postcss = require('postcss')
+const atImport = require('postcss-import')
+const uglify = require('uglify-js')
+const cssnano = require('cssnano')
 
-const INPUT_DIRECTORY = './sass/themes/'
-const OUTPUT_DIRECTORY = './src/_data/sass/'
+const DIRECTORIES = {
+  sass: {
+    input: './sass/themes/',
+    output: './src/_data/sass/'
+  },
+  assets: {
+    css: {
+      input: './src/assets/css/',
+    },
+    js: {
+      input: './src/assets/js/'
+    }
+  },
+  static: './src/static/'
+}
 
-const processSassDocumentation = (file) => {
+DIRECTORIES.assets.css.output = DIRECTORIES.static
+DIRECTORIES.assets.js.output = DIRECTORIES.static
+
+const parseAssets = () => {
+  const CSS_INPUT = DIRECTORIES.assets.css.input + 'docs.css'
+  const CSS = fs.readFileSync(CSS_INPUT, 'utf8')
+  const JS = fs.readFileSync(DIRECTORIES.assets.js.input + 'docs.js', 'utf8')
+
+  // Parse and write CSS output file
+  postcss([atImport, cssnano])
+    .process(CSS, {
+      from: CSS_INPUT
+    })
+    .then(result => {
+      fs.writeFileSync(DIRECTORIES.assets.css.output + 'docs.css', result.css)
+    })
+
+  // Uglify and write JS output file
+  fs.writeFileSync(DIRECTORIES.assets.js.output + 'docs.js', uglify.minify(JS).code)
+}
+
+const processSassDocumentation = file => {
   const inputFileExtension = path.extname(file)
   const inputFilename = path.basename(file, inputFileExtension)
   const excludeFiles = ['_all']
@@ -24,13 +62,13 @@ const processSassDocumentation = (file) => {
   })
 
   // Avoid crash if output directory does not exists
-  if (!fs.existsSync(OUTPUT_DIRECTORY)) {
-    fs.mkdirSync(OUTPUT_DIRECTORY)
+  if (!fs.existsSync(DIRECTORIES.sass.output)) {
+    fs.mkdirSync(DIRECTORIES.sass.output)
   }
 
   // Write Eleventy data files
   fs.writeFileSync(
-    `${OUTPUT_DIRECTORY}/${inputFilename.replace('_', '')}.json`,
+    `${DIRECTORIES.sass.output}/${inputFilename.replace('_', '')}.json`,
     JSON.stringify(comments, null, 2)
   )
 }
@@ -53,13 +91,14 @@ const generateJsonDocumentation = () => {
    * @note This is an experimental feature and requires Node v12.10.0 at least
    * @see https://nodejs.org/api/fs.html#fs_fs_rmdirsync_path_options
    */
-  fs.rmdirSync(OUTPUT_DIRECTORY, { recursive: true })
+  fs.rmdirSync(DIRECTORIES.sass.output, { recursive: true })
 
-  fs.readdirSync(INPUT_DIRECTORY).forEach(file => {
-    processSassDocumentation(INPUT_DIRECTORY + file)
+  fs.readdirSync(DIRECTORIES.sass.input).forEach(file => {
+    processSassDocumentation(DIRECTORIES.sass.input + file)
   })
 }
 
 module.exports = function () {
+  parseAssets()
   generateJsonDocumentation()
 }
