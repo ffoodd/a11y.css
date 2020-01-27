@@ -247,14 +247,16 @@ header nav a:hover::after,
 header nav a:hover::before,
 header nav a:focus::after,
 header nav a:focus::before,
-[class="Index "] .index::after,
-[class="Index "] .index::before,
-.Errors .errors::after,
-.Errors .errors::before,
-.Obsolete .obsolete::after,
-.Obsolete .obsolete::before,
-.Advices .advices::after,
-.Advices .advices::before {
+header nav a[aria-current="page"]::after,
+header nav a[aria-current="page"]::before,
+.index[aria-current="page"]::after,
+.index[aria-current="page"]::before,
+.errors[aria-current="page"]::after,
+.errors[aria-current="page"]::before,
+.obsolete[aria-current="page"]::after,
+.obsolete[aria-current="page"]::before,
+.advices[aria-current="page"]::after,
+.advices[aria-current="page"]::before {
   opacity: .1;
   transform: translate3d( -50%, -50%, 0 ) scale( 1 );
 }
@@ -263,38 +265,38 @@ header nav a:focus::before,
 .warnings:hover::before,
 .warnings:focus::after,
 .warnings:focus::before,
-.Warnings .warnings::after,
-.Warnings .warnings::before {
+.warnings[aria-current="page"]::after,
+.warnings[aria-current="page"]::before {
   color: #ffce00;
   opacity: .3;
   transform: translate3d( -50%, -50%, 0 ) scale( 1 ) rotate( 45deg );
 }
 
-[class="Index "] .index {
+.index[aria-current="page"] {
   color: #039be5;
 }
 
 .errors:hover,
 .errors:focus,
-.Errors .errors {
+.errors[aria-current="page"] {
   color: #911;
 }
 
 .warnings:hover,
 .warnings:focus,
-.Warnings .warnings {
+.warnings[aria-current="page"] {
   color: black;
 }
 
 .obsolete:hover,
 .obsolete:focus,
-.Obsolete .obsolete {
+.obsolete[aria-current="page"] {
   color: RoyalBlue;
 }
 
 .advices:hover,
 .advices:focus,
-.Advices .advices {
+.advices[aria-current="page"] {
   color: OliveDrab;
 }
 

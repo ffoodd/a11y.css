@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} a11y.css</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
+    <link rel="stylesheet" href="/static/docs.css">
+    <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
+    <link rel="preload" href="/static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    {% block css %}{% endblock %}
+  </head>
+  <body>
+    <a href="#toc" class="skip">Skip to table of content</a>
+    <a href="#content" class="skip">Skip to content</a>
+    {% include "partials/header.njk" %}
+    <main role="main">
+      <aside>
+        {% block sidebar %}{% endblock %}
+
+        <div>
+          <p class="h2-like">Web extensions</p>
+          <ul>
+            <li>
+              <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
+                <img src="/static/firefox.svg" width="100" height="37" alt="a11y.css Firefox add-on"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css Chrome extension">
+                <img src="/static/chrome.svg" width="100" height="38" alt="a11y.css Chrome extension"/>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <form action="/" id="bookmarklet">
+            <fieldset>
+              <legend>Bookmarlet generator</legend>
+              <p>
+                <label for="minimum-level">Minimum level</label>
+                <select id="minimum-level" name="minimum-level">
+                  <option value="advice">Advices</option>
+                  <option value="obsolete">Obsoletes</option>
+                  <option value="warning">Warnings</option>
+                  <option value="error">Errors</option>
+                </select>
+              </p>
+              <p>
+                <label for="language">Language</label>
+                <select id="language" name="language">
+                  <option value="ar" lang="ar" dir="rtl">عربى</option>
+                  <option value="fr" lang="fr">Français</option>
+                  <option value="en" lang="en">English</option>
+                  <option value="pt-br" lang="pt-br">Português</option>
+                  <option value="ru" lang="ru">русский</option>
+                  <option value="zh" lang="zh">中文</option>
+                  <option value="gr" lang="gr">ελληνικά</option>
+                </select>
+              </p>
+            </fieldset>
+
+            <button type="submit">Generate <span>the</span> bookmarklet</button>
+          </form>
+
+          <p>
+            Just drag this to your bookmarks, and you'll be able to use <b>a11y.css</b> on any page:
+            <a id="bookmarklet--link" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://ffoodd.github.io/a11y.css/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();" class="bookmarklet">a11y.css</a>
+          </p>
+        </div>
+      </aside>
+
+      <div id="content">
+        {% block content %}{% endblock %}
+        {{ content | safe }}
+      </div>
+    </main>
+    {% include "partials/footer.njk" %}
+    <script src="/static/docs.js"></script>
+  </body>
+</html>

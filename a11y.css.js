@@ -8,6 +8,9 @@ const uglify = require('uglify-js')
 const cssnano = require('cssnano')
 
 const DIRECTORIES = {
+  css: {
+    input: './css/'
+  },
   sass: {
     input: './sass/themes/',
     output: './src/_data/sass/'
@@ -25,8 +28,26 @@ const DIRECTORIES = {
 
 DIRECTORIES.assets.css.output = DIRECTORIES.static
 DIRECTORIES.assets.js.output = DIRECTORIES.static
+DIRECTORIES.css.output = DIRECTORIES.static + 'css/'
 
 const parseAssets = () => {
+  /**
+   * We need some of a11y.css compiled stylesheets to be available in the templates
+   * 1. Avoid crash if output directory does not exists
+   * 2. Then copy/paste all the files (manually for now, because of naming inconsistencies)
+   */
+  if (!fs.existsSync(DIRECTORIES.css.output)) {
+    fs.mkdirSync(DIRECTORIES.css.output)
+  }
+
+  fs.copyFileSync(DIRECTORIES.css.input + 'a11y-en_advices-only.css', DIRECTORIES.css.output + 'a11y-en_advices-only.css')
+  fs.copyFileSync(DIRECTORIES.css.input + 'a11y-en_errors-only.css', DIRECTORIES.css.output + 'a11y-en_errors-only.css')
+  fs.copyFileSync(DIRECTORIES.css.input + 'a11y-en_obsolete-only.css', DIRECTORIES.css.output + 'a11y-en_obsoletes-only.css')
+  fs.copyFileSync(DIRECTORIES.css.input + 'a11y-en_warnings-only.css', DIRECTORIES.css.output + 'a11y-en_warnings-only.css')
+
+  /**
+   * Process docs styles and scripts
+   */
   const CSS_INPUT = DIRECTORIES.assets.css.input + 'docs.css'
   const CSS = fs.readFileSync(CSS_INPUT, 'utf8')
   const JS = fs.readFileSync(DIRECTORIES.assets.js.input + 'docs.js', 'utf8')
