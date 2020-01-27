@@ -34,42 +34,6 @@
             </li>
           </ul>
         </div>
-
-        <div>
-          <form action="/" id="bookmarklet">
-            <fieldset>
-              <legend>Bookmarlet generator</legend>
-              <p>
-                <label for="minimum-level">Minimum level</label>
-                <select id="minimum-level" name="minimum-level">
-                  <option value="advice">Advices</option>
-                  <option value="obsolete">Obsoletes</option>
-                  <option value="warning">Warnings</option>
-                  <option value="error">Errors</option>
-                </select>
-              </p>
-              <p>
-                <label for="language">Language</label>
-                <select id="language" name="language">
-                  <option value="ar" lang="ar" dir="rtl">عربى</option>
-                  <option value="fr" lang="fr">Français</option>
-                  <option value="en" lang="en">English</option>
-                  <option value="pt-br" lang="pt-br">Português</option>
-                  <option value="ru" lang="ru">русский</option>
-                  <option value="zh" lang="zh">中文</option>
-                  <option value="gr" lang="gr">ελληνικά</option>
-                </select>
-              </p>
-            </fieldset>
-
-            <button type="submit">Generate <span>the</span> bookmarklet</button>
-          </form>
-
-          <p>
-            Just drag this to your bookmarks, and you'll be able to use <b>a11y.css</b> on any page:
-            <a id="bookmarklet--link" href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://ffoodd.github.io/a11y.css/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();" class="bookmarklet">a11y.css</a>
-          </p>
-        </div>
       </aside>
 
       <div id="content">
