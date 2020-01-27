@@ -430,62 +430,6 @@ aside div .h2-like {
   margin: 0;
 }
 
-aside button {
-  background-color: #7b30b1;
-  background-image:
-    linear-gradient(
-      rgba( 255, 255, 255, .1 ),
-      rgba( 0, 0, 0, .1 )
-    );
-  border: 1px solid transparent;
-  box-shadow:
-    inset 0 1px rgba( 255, 255, 255, .2 ),
-    0 .25em 0 -.1em rgba( 0, 0, 0, .2 );
-  color: white;
-  display: inline-block;
-  margin: .5em auto;
-  outline: 1px solid rgba( 0, 0, 0, .15 );
-  outline-offset: -1px;
-  padding: .5em 1em .55em;
-  position: relative;
-  text-align: center;
-  text-shadow: .05em .05em rgba( 0, 0, 0, .2 );
-  top: 0;
-  transition: all 300ms;
-}
-
-aside button:hover,
-aside button:focus,
-aside button:active {
-  background-color: rebeccaPurple;
-  box-shadow:
-    inset 0 1px rgba( 255, 255, 255, .2 ),
-    0 .25em 0 -.1em rgba( 0, 0, 0, .25 );
-}
-
-aside button:active {
-  top: .125em;
-}
-
-aside button span {
-  background-image:
-    linear-gradient(
-      to right,
-      rgba( 255, 255, 255, .3 ) 0%,
-      rgba( 255, 255, 255, .3 ) 20%,
-      transparent 20%,
-      transparent 80%,
-      rgba( 255, 255, 255, .3 ) 80%,
-      rgba( 255, 255, 255, .3 ) 100%
-    );
-  background-position: 0 60%;
-  background-repeat: no-repeat;
-  background-size: 100% 1px;
-  font-size: small;
-  font-weight: lighter;
-  padding: 0 1em;
-}
-
 li p,
 li ul {
   margin-top: 0;
