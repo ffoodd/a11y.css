@@ -600,11 +600,11 @@ aside fieldset p {
   margin: .25em 0 .5em;
 }
 
-[class="active-test"] {
+[id="toc"] [aria-current="true"] {
   position: relative;
 }
 
-[class="active-test"]::before {
+[id="toc"] [aria-current="true"]::before {
   content: "➜";
   left: -2.5em;
   position: absolute;
