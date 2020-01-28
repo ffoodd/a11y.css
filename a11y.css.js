@@ -4,7 +4,7 @@ const showdown = require('showdown')
 const fm = require('front-matter')
 const postcss = require('postcss')
 const atImport = require('postcss-import')
-const uglify = require('uglify-js')
+const uglify = require('uglify-es')
 const cssnano = require('cssnano')
 
 const DIRECTORIES = {
