@@ -8,24 +8,24 @@ name: invalid-list-nesting
 category: Warnings
 ---
 
-##Description
+### Description
 The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also true.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
 * <https://www.w3.org/TR/html5/grouping-content.html#the-li-element>
 
-##Selector
+### Selector
 ```css_example
 ul > :not(li),
 ol > :not(li),
 :not(ul):not(ol) > li
 ```
 
-##Test
+### Test
 ```html_example
 <ul>
   <p>I feel like I'm lost.</p>
@@ -46,23 +46,23 @@ name: invalid-def
 category: Warnings
 ---
 
-##Description
+### Description
 `<dt>` and `<dd>` should be direct adjacent siblings, and nothing else. Although multiple `<dd>` may follow a single `<dt>`.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
 * <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
-##Selector
+### Selector
 ```css_example
 dt + :not(dd),
 :not(dt):not(dd) + dd
 ```
 
-##Test
+### Test
 ```html_example
 <dl>
   <dt>I need a definition, don't you think?</dt>
@@ -83,11 +83,11 @@ name: invalid-def-nesting
 category: Warnings
 ---
 
-##Description
+### Description
 `<div>`, `<dt>` and `<dd>` should be direct children of `<dl>`.
 Any other imbrication may be a crime somewhere.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
@@ -95,14 +95,14 @@ Any other imbrication may be a crime somewhere.
 * <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl>
 
-##Selector
+### Selector
 ```css_example
 :not(dl) > dt,
 :not(dl) > dd,
 dl > :not(dt):not(dd):not(div)
 ```
 
-##Test
+### Test
 ```html_example
 <dl>
   <li>I'm a list item.</li>
@@ -123,21 +123,21 @@ name: invalid-figcaption-nesting
 category: Warnings
 ---
 
-##Description
+### Description
 `<figcaption>` doesn't make sense outside a `<figure>`.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figcaption-element>
 
-##Selector
+### Selector
 ```css_example
 :not(figure) > figcaption
 ```
 
-##Test
+### Test
 ```html_example
 <figcaption>I'm captionning something, isn't it?</figcaption>
 ```
@@ -154,20 +154,20 @@ name: figure-role
 category: Warnings
 ---
 
-##Description
+### Description
 `<figure>` needs `[role="group"]` for accessibility reason.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-10>
 * <https://www.w3.org/WAI/tutorials/images/groups/>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figure-element>
 
-##Selector
+### Selector
 ```css_example
 figure:not([role="group"])
 ```
 
-##Test
+### Test
 ```html_example
 <figure>
   <img src="static/ffoodd.png" width="144" height="144" alt="Figcaption test"/>
@@ -187,7 +187,7 @@ name: invalid-nesting
 category: Warnings
 ---
 
-##Description
+### Description
 Some nestings are forbidden, and do not have their own test case for now:
 
 * `<main>`  contained in any of `<nav>`, `<aside>`, `<footer>`, `<header>` or `<article>`;
@@ -200,14 +200,14 @@ Some nestings are forbidden, and do not have their own test case for now:
 
 Maybe other invalid nestings to test. Stay tuned.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>.
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-address-element>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
-##Selector
+### Selector
 ```css_example
 nav main,
 aside main,
@@ -240,7 +240,7 @@ address article,
 address section
 ```
 
-##Test
+### Test
 ```html_example
 <legend>I'm an legend. Am I?</legend>
 ```
@@ -285,14 +285,14 @@ name: misplaced-div
 category: Warnings
 ---
 
-##Description
+### Description
 Did you know that you shouldn't add a `<div>` inside any inline element?
 You could use a `<span>` instead.
 
-##References
+### Referencess
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326>
 
-##Selector
+### Selector
 ```css_example
 b div,
 i div,
@@ -307,7 +307,7 @@ label div,
 strong div
 ```
 
-##Test
+### Test
 ```html_example
 <b><div>Hey ya!</div></b>
 ```
@@ -334,15 +334,15 @@ name: sectioning-tags
 category: Warnings
 ---
 
-##Description
+### Description
 `<section>`, `<aside>`, `<article>` are sectioning tags.
 They must not be used as wrappers!
 
-##References
+### Referencess
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252>
 * <https://www.w3.org/TR/html5/dom.html#sectioning-content>
 
-##Selector
+### Selector
 ```css_example
 aside > aside:first-child,
 article > aside:first-child,
@@ -353,7 +353,7 @@ article > section:first-child,
 article > article:first-child
 ```
 
-##Test
+### Test
 ```html_example
 <aside>
   <section>I'm wrapping, you know.</section>
@@ -378,23 +378,23 @@ name: fieldset
 category: Warnings
 ---
 
-##Description
+### Description
 `<legend>` must be a `<fieldset>`'s`:first-child`.
 Always.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
 
-##Selector
+### Selector
 ```css_example
 fieldset > *:not(legend):first-child,
 fieldset > legend:not(:first-child)
 ```
 
-##Test
+### Test
 ```html_example
 <fieldset>
   <label>I'm not a legend.</label>
@@ -414,24 +414,24 @@ name: details
 category: Warnings
 ---
 
-##Description
+### Description
 `<summary>` must be a `<details>`'s`:first-child`.
 Always.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-summary>
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details>
 
-##Selector
+### Selector
 ```css_example
 details > *:not(summary):first-child,
 details > summary:not(:first-child)
 ```
 
-##Test
+### Test
 ```html_example
 <details>
   <legend>I'm not a summary.</legend>
@@ -451,10 +451,10 @@ name: empty-title
 category: Warnings
 ---
 
-##Description
+### Description
 Any abbreviation should give an explanation about its meaning, at least on its first occurrence.
 
-##References
+### Referencess
 * BP160 OpQuast
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-4>
 * <https://www.w3.org/TR/WCAG20/#meaning-located>
@@ -463,14 +463,14 @@ Any abbreviation should give an explanation about its meaning, at least on its f
 * <https://www.w3.org/TR/WCAG-TECHS/G102.html>
 * <https://www.w3.org/TR/WCAG-TECHS/H28.html>
 
-##Selector
+### Selector
 ```css_example
 abbr:not([title]),
 abbr[title=" "],
 abbr[title=""]
 ```
 
-##Test
+### Test
 ```html_example
 <p>Do you know about <abbr>W3C</abbr>?</p>
 ```
@@ -489,11 +489,11 @@ name: empty-alt
 category: Warnings
 ---
 
-##Description
+### Description
 An alternative has to be empty when image is decorative only. In any other case, `[alt]` must be defined.
 That should be double-checked.
 
-##References
+### Referencess
 * BP160 OpQuast
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
@@ -504,7 +504,7 @@ That should be double-checked.
 * <https://www.w3.org/TR/WCAG-TECHS/F39.html>
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 
-##Selector
+### Selector
 ```css_example
 img[alt=""],
 area[alt=""],
@@ -513,7 +513,7 @@ embed[type="image"][alt=""],
 object[type="image"][alt=""]
 ```
 
-##Test
+### Test
 ```html_example
 <img alt="" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
@@ -537,10 +537,10 @@ name: filename-alt
 category: Warnings
 ---
 
-##Description
+### Description
 A file name in `[alt]` is probably wrongly automated… and would never ever help any user.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
@@ -550,7 +550,7 @@ A file name in `[alt]` is probably wrongly automated… and would never ever hel
 * <https://www.w3.org/TR/WCAG-TECHS/F39.html>
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 
-##Selector
+### Selector
 ```css_example
 img[alt$=".pdf"],
 area[alt$=".pdf"],
@@ -644,7 +644,7 @@ embed[type="image"][alt$=".svgz"],
 object[type="image"][alt$=".svgz"]
 ```
 
-##Test
+### Test
 ```html_example
 <img alt="static/ffoodd.png" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
@@ -673,7 +673,7 @@ name: decoration
 category: Warnings
 ---
 
-##Description
+### Description
 Any decorative image — with `[aria-hidden="true"]` or empty `[alt]` — shouldn't have any of those:
 
 * `[title]`;
@@ -686,7 +686,7 @@ Any decorative image — with `[aria-hidden="true"]` or empty `[alt]` — should
 This test currently can't check if any `<title>` nor `<desc>` child is present since `<svg>` is a replaced elements.
 See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues) on a11y.css' wiki.
 
-##References
+### Referencess
 * BP160 OpQuast
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
@@ -699,7 +699,7 @@ See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-c
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
-##Selector
+### Selector
 ```css_example
 img[alt=""][title],
 img[alt=""][aria-label],
@@ -728,7 +728,7 @@ object[type="image"][aria-hidden="true"][aria-labelledby],
 object[type="image"][aria-hidden="true"][aria-describedby],
 ```
 
-##Test
+### Test
 ```html_example
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="https://www.w3.org/2000/svg" version="1.1"
@@ -777,17 +777,17 @@ name: presentation
 category: Warnings
 ---
 
-##Description
+### Description
 Any decorative image should be marked up with `[aria-hidden="true"]` (or empty `[alt]` if `<img>`).
 `[role=presentation]` shall do the trick but at the time of writing, its support is too low compared
 to empty `[alt]` or `[aria-hidden=true]`.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/referentiel/notes-techniques.html#nt-1-2>
 * <https://www.w3.org/WAI/tutorials/images/decorative/>
 
 
-##Selector
+### Selector
 ```css_example
 img[role="presentation"],
 svg[role="presentation"],
@@ -797,7 +797,7 @@ canvas[role="presentation"],
 object[role="presentation"]
 ```
 
-##Test
+### Test
 ```html_example
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="https://www.w3.org/2000/svg" version="1.1"
@@ -827,20 +827,20 @@ name: no-aria-role
 category: Warnings
 ---
 
-##Description
+### Description
 Any `<svg>` should either have `[aria-hidden="true"]` if decorative, or a `[role="img"]` if informative.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
-##Selector
+### Selector
 ```css_example
 svg:not([aria-hidden="true"]):not([role="img"])
 ```
 
-##Test
+### Test
 ```html_example
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="https://www.w3.org/2000/svg" version="1.1"
@@ -862,22 +862,22 @@ name: autoplay
 category: Warnings
 ---
 
-##Description
+### Description
 A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because it can be quite surprising for the user.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-18>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-17>
 * <https://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
 * <https://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
-##Selector
+### Selector
 ```css_example
 video[autoplay],
 audio[autoplay]
 ```
 
-##Test
+### Test
 ```html_example
 <video autoplay controls src=""></video><span>†</span>
 ```
@@ -895,23 +895,23 @@ name: controls
 category: Warnings
 ---
 
-##Description
+### Description
 A time-based media like `<audio>` or `<video>` would be easier to use if `[controls]` are activated for the user.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-20>
 * <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
 * <https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
 * <https://www.w3.org/TR/WCAG20/#keyboard-operation-trapping>
 * <https://www.w3.org/TR/WCAG-TECHS/G4.html>
 
-##Selector
+### Selector
 ```css_example
 video:not([controls]),
 audio:not([controls])
 ```
 
-##Test
+### Test
 ```html_example
 <video src=""></video><span>†</span>
 ```
@@ -929,7 +929,7 @@ name: empty-nodes
 category: Warnings
 ---
 
-##Description
+### Description
 Obviously void elements are empty, as well as `<iframe>` and `<textarea>` could be `:empty`.
 Any other `:empty` tag that is not hidden is probably useless, and should be deleted.
 
@@ -944,19 +944,19 @@ empty if they have at least one source specified through `[src]`.
 
 We could use the `:blank` pseudo-class, but at this time its support is very poor. We could also use the `:-moz-only-whitespace` pseudo-class, but support is limited to Firefox and thus could invalidate our selectors stack…
 
-##References
+### Referencess
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
 * <https://www.w3.org/TR/html-markup/syntax.html#void-element>
 * <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
 * <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
-##Selector
+### Selector
 ```css_example
 body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
 ```
 
-##Test
+### Test
 ```html_example
 <p id="empty-node_code"></p>
 ```
@@ -984,21 +984,21 @@ name: table-layout
 category: Warnings
 ---
 
-##Description
+### Description
 A lonely `<tr>` can be a symptom of a table used for layout.
 Should be double checked!
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
-##Selector
+### Selector
 ```css_example
 table:not([role="presentation"]) > tr:only-child,
 table:not([role="presentation"]) > tbody > tr:only-child
 ```
 
-##Test
+### Test
 ```html_example
 <table>
   <caption>I'm a caption :3</caption>
@@ -1028,21 +1028,21 @@ name: nested-table
 category: Warnings
 ---
 
-##Description
+### Description
 There's no good reason to nest data tables: thus it probably means we're facing a layout table…
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 * <https://www.w3.org/WAI/tutorials/tables/tips/>
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175>
 
-##Selector
+### Selector
 ```css_example
 table table
 ```
 
-##Test
+### Test
 ```html_example
 <table>
   <caption>I'm a caption :3</caption>
@@ -1090,24 +1090,24 @@ name: table-caption
 category: Warnings
 ---
 
-##Description
+### Description
 `<caption>` is needed for data `<table>`.
 And it must be the `:first-child`, by the way.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-4>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
 * <https://www.w3.org/TR/WCAG-TECHS/H39.html>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309>
 
-##Selector
+### Selector
 ```css_example
 table:not([role="presentation"]) > caption:not(:first-child),
 table:not([role="presentation"]) > *:first-child:not(caption)
 ```
 
-##Test
+### Test
 ```html_example
 <table>
   <thead>
@@ -1140,16 +1140,16 @@ name: table-structure
 category: Warnings
 ---
 
-##Description
+### Description
 `<thead>`, `<tfoot>` and `<tbody>` must be in this order.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314>
 
-##Selector
+### Selector
 ```css_example
 table > tfoot ~ thead,
 table > tbody ~ tfoot,
@@ -1159,7 +1159,7 @@ table > tbody ~ colgroup,
 table > tbody ~ colgroup
 ```
 
-##Test
+### Test
 ```html_example
 <table>
   <caption>I'm a caption</caption>
@@ -1202,16 +1202,16 @@ name: missing-thead
 category: Warnings
 ---
 
-##Description
+### Description
 `<thead>` is strongly needed if `<tbody>` is present.
 
-##Selector
+### Selector
 ```css_example
 table:not([role="presentation"]) > caption + tbody,
 table:not([role="presentation"]) > tbody:first-child
 ```
 
-##Test
+### Test
 ```html_example
 <table>
   <caption>Missing thead</caption>
@@ -1241,20 +1241,20 @@ name: th-no-scope
 category: Warnings
 ---
 
-##Description
+### Description
 `<th>` strongly needs an `[id]` or a `[scope]`.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20-TECHS/H43.html>
 
-##Selector
+### Selector
 ```css_example
 th:not([scope]):not([id])
 ```
 
-##Test
+### Test
 ```html_example
 <table>
   <caption>Need for a [scope] or [id]</caption>
@@ -1289,13 +1289,13 @@ name: spacer-gif
 category: Warnings
 ---
 
-##Description
+### Description
 Believe me, this still have to be tested.
 
-##References
+### Referencess
 * <https://www.la-grange.net/2015/03/11/visible>
 
-##Selector
+### Selector
 ```css_example
 img[src*="1px.gif"]:not([role="presentation"]),
 img[src*="1x1.gif"]:not([role="presentation"]),
@@ -1306,7 +1306,7 @@ img[src*="transparent.gif"]:not([role="presentation"]),
 img[src*="pixel-1x1-clear.gif"]:not([role="presentation"])
 ```
 
-##Test
+### Test
 ```html_example
 <img src="static/spacer.gif" alt="Spacer.gif" width="100" height="100"/><span>†</span>
 ```
@@ -1329,10 +1329,10 @@ name: oops
 category: Warnings
 ---
 
-##Description
+### Description
 Don't laugh, shit happens.
 
-##Selector
+### Selector
 ```css_example
 [id*="NaN"],
 [id*="null"],
@@ -1342,7 +1342,7 @@ Don't laugh, shit happens.
 [class*="undefined"]
 ```
 
-##Test
+### Test
 ```html_example
 <p class="undefined">Oups, something went wrong.</p>
 ```
@@ -1374,20 +1374,20 @@ name: href-js
 category: Warnings
 ---
 
-##Description
+### Description
 The `[href]` attribute should not start with "javascript".
 Should probably be a `<button>` or at least a `[role="button"]`, don't you think?
 The only exception shall be bookmarklets.
 
-##References
+### Referencess
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
-##Selector
+### Selector
 ```css_example
 a[href^="javascript"]:not([role="button"])
 ```
 
-##Test
+### Test
 ```html_example
 <a href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">Please use my bookmarklet ;)</a>
 ```
@@ -1404,19 +1404,19 @@ name: empty-href
 category: Warnings
 ---
 
-##Description
+### Description
 The `[href]` attribute is only containing `#`.
 Should probably be a `<button>` or at least a `[role="button"]`, don't you think?
 
-##References
+### Referencess
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
-##Selector
+### Selector
 ```css_example
 a[href="#"]:not([role="button"])
 ```
 
-##Test
+### Test
 ```html_example
 <a href="#">Oh boy, I don't mean anything</a>
 ```
@@ -1433,21 +1433,21 @@ name: style-attr
 category: Warnings
 ---
 
-##Description
+### Description
 Your styles should be driven by a CSS file. That's it.
 And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-1->
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
-##Selector
+### Selector
 ```css_example
 [style]
 ```
 
-##Test
+### Test
 ```html_example
 <div style="color: red;">I'm red. I really feel dirty.</div>
 ```
@@ -1468,25 +1468,25 @@ name: unsecured-target
 category: Warnings
 ---
 
-##Description
+### Description
 `[target="_blank"]` links might be used for phishing.
 This is not actually an accessibility related issue, but everything helping users is welcome.
 
-##References*
+### Referencess*
 * <https://mathiasbynens.github.io/rel-noopener/>
 * <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noopener>
 * <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noreferrer>
 * <https://dev.to/ben/the-targetblank-vulnerability-by-example>
 * <https://twitter.com/KittyGiraudel/status/801475801397030912>
 
-##Selector
+### Selector
 ```css_example
 [target$="blank"]:not([rel]),
 [target$="blank"]:not([rel*="noopener"]),
 [target$="blank"]:not([rel*="noreferrer"])
 ```
 
-##Test
+### Test
 ```html_example
 <a href="/" target="_blank">I feel vulnerable…</a>
 ```
@@ -1505,10 +1505,10 @@ name: no-aria-level
 category: Warnings
 ---
 
-##Description
+### Description
 Though `[aria-level]` is not required by ARIA specification, it's actually better to specify it.
 
-##References
+### Referencess
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-level>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-1>
 * <https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css>
@@ -1517,12 +1517,12 @@ Though `[aria-level]` is not required by ARIA specification, it's actually bette
 * <https://www.w3.org/TR/WCAG-TECHS/G141.html>
 * <https://www.w3.org/TR/WCAG-TECHS/H42.html>
 
-##Selector
+### Selector
 ```css_example
 [role="heading"]:not([aria-level])
 ```
 
-##Test
+### Test
 ```html_example
 <strong role="heading">Heading with undefined level</strong>
 ```
@@ -1539,11 +1539,11 @@ name: no-for
 category: Warnings
 ---
 
-##Description
+### Description
 A `<label>` is labelling something, in theory.
 Although implicitly labelling form controls is accepted, it's probably better to double-check that form control is *really* nested in its `<label>`.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
@@ -1553,12 +1553,12 @@ Although implicitly labelling form controls is accepted, it's probably better to
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 
-##Selector
+### Selector
 ```css_example
 label:not([for])
 ```
 
-##Test
+### Test
 ```html_example
 <label>Guess what?</label>
 ```
@@ -1575,17 +1575,17 @@ name: mismatched-dir
 category: Warnings
 ---
 
-##Description
+### Description
 Some languages — like Arabic or Hebrew — requires a text direction switch usin `[dir="rtl"]`, as default text direction is left-to-right.
 This also requires to check any in-page language change (marked up with `[lang]`) in Arabic or Hebrew content to define `[dir]` too.
 
-##References
+### Referencess
 * <https://alphagov.github.io/accessibility-tool-audit/test-cases.html#languageofcontent>
 * <https://www.w3.org/International/questions/qa-html-dir>
 * <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
 * <https://w3c.github.io/html/dom.html#the-dir-attribute>
 
-##Selector
+### Selector
 ```css_example
 [lang="ar"]:not([dir="rtl"]),
 [lang="he"]:not([dir="rtl"]),
@@ -1594,7 +1594,7 @@ This also requires to check any in-page language change (marked up with `[lang]`
 [dir="rtl"]:not([lang="ar"]):not([lang="he"])
 ```
 
-##Test
+### Test
 ```html_example
 <p dir="rtl" lang="en">Well, I'm kinda disoriented…</p>
 ```
