@@ -43,16 +43,16 @@ name: empty-class
 category: Advices
 ---
 
-##Description
+### Description
 `[class]` shouldn't be present if empty. Something to improve, right?
 
-##Selector
+### Selector
 ```css_example
 [class=""],
 [class=" "]
 ```
 
-##Test
+### Test
 ```html_example
 <b class="">Why is there a class here?</b>
 ```
@@ -74,16 +74,16 @@ name: empty-id
 category: Advices
 ---
 
-##Description
+### Description
 `[id]` shouldn't be present if empty. You'll thank me later.
 
-##Selector
+### Selector
 ```css_example
 [id=""],
 [id=" "]
 ```
 
-##Test
+### Test
 ```html_example
 <i id="">Wait. Why is my ID empty?</i>
 ```
@@ -105,19 +105,19 @@ name: main
 category: Advices
 ---
 
-##Description
+### Description
 A single `<main>` should be visible at a time. Isn't that obvious?
 
-##Reference
+### References
 * <https://www.w3.org/TR/html52/changes.html#new-concepts>
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 
-##Selector
+### Selector
 ```css_example
 main ~ main:not([hidden])
 ```
 
-##Test
+### Test
 ```html_example
 <main>I'm the main content!</main>
 <main>No, It's me!</main>
@@ -135,18 +135,18 @@ name: figcaption
 category: Advices
 ---
 
-##Description
+### Description
 `<figcaption>` should be single inside its parent. Check the spec!
 
-##References
+### Referencess
 * <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
-##Selector
+### Selector
 ```css_example
 figcaption:not(:first-of-type)
 ```
 
-##Test
+### Test
 ```html_example
 <figure role="group">
   <figcaption>I'm the caption.</figcaption>
@@ -167,18 +167,18 @@ name: figcaption-order
 category: Advices
 ---
 
-##Description
+### Description
 `<figcaption>` should be first or last child. Nothing else.
 
-##References
+### Referencess
 * <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
-##Selector
+### Selector
 ```css_example
 figcaption:not(:first-child):not(:last-child)
 ```
 
-##Test
+### Test
 ```html_example
 <figure role="group">
   <img src="static/ffoodd.png" alt="Needed" width="144" height="144" />
@@ -199,16 +199,16 @@ name: mailto
 category: Advices
 ---
 
-##Description
+### Description
 A `<href="mailto:">` should contain a valid email.
 Otherwise you may annoy your users.
 
-##Selector
+### Selector
 ```css_example
 [href^="mailto"]
 ```
 
-##Test
+### Test
 ```html_example
 <a href="mailto:myself">Surpri-ise!</a>
 ```
@@ -225,16 +225,16 @@ name: tel
 category: Advices
 ---
 
-##Description
+### Description
 A `<href="tel:">` should contain a valid phone number.
 Otherwise you may make your users to call anubody.
 
-##Selector
+### Selector
 ```css_example
 [href^="tel"]
 ```
 
-##Test
+### Test
 ```html_example
 <a href="tel:012345678">Who will I call?</a>
 ```
@@ -251,18 +251,18 @@ name: role-button
 category: Advices
 ---
 
-##Description
+### Description
 Obviously, a button role on a link is probably not so hard to move to an authentic button tag, isn't it?
 
-##References
+### Referencess
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174>
 
-##Selector
+### Selector
 ```css_example
 a[role="button"]
 ```
 
-##Test
+### Test
 ```html_example
 <a href="/" role="button">Submit</a>
 ```
@@ -279,11 +279,11 @@ name: target-blank
 category: Advices
 ---
 
-##Description
+### Description
 A link opening new tab or window should warn user about its behaviour.
 You could use a `[title]`, for example.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-2>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <https://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context>
@@ -291,12 +291,12 @@ You could use a `[title]`, for example.
 * <https://www.w3.org/TR/WCAG-TECHS/H83.html>
 * <https://www.w3.org/TR/WCAG-TECHS/F22.html>
 
-##Selector
+### Selector
 ```css_example
 [target$="blank"]
 ```
 
-##Test
+### Test
 ```html_example
 <a href="/" target="_blank" rel="noopener noreferrer">New tab</a>
 ```
@@ -313,16 +313,16 @@ name: file-format
 category: Advices
 ---
 
-##Description
+### Description
 A link to a file should indicate the file format, the file size and if different from the main document, the file language.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-6>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-7>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <https://www.w3.org/TR/WCAG-TECHS/H33.html>
 
-##Selector
+### Selector
 ```css_example
 [download],
 [href$=".pdf"]:not(link),
@@ -345,7 +345,7 @@ A link to a file should indicate the file format, the file size and if different
 [href$=".svgz"]:not(link)
 ```
 
-##Test
+### Test
 ```html_example
 <a href="/file.png">Wanna file?</a>
 ```
@@ -368,14 +368,14 @@ name: duplicate-roles
 category: Advices
 ---
 
-##Description
+### Description
 Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[contentinfo]`.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
-##Selector
+### Selector
 ```css_example
 [role="main"] ~ [role="main"],
 [role="search"] ~ [role="search"],
@@ -383,7 +383,7 @@ Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[c
 [role="contentinfo"] ~ [role="contentinfo"]
 ```
 
-##Test
+### Test
 ```html_example
 <main role="main"><br /></main>
 <div role="main"><br /></div>
@@ -404,20 +404,20 @@ name: missing-role
 category: Advices
 ---
 
-##Description
+### Description
 A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
-##Selector
+### Selector
 ```css_example
 [id*="search"]:not([role="search"]),
 [class*="search"]:not([role="search"])
 ```
 
-##Test
+### Test
 ```html_example
 <form class="search" action="">
   <label for="field">Search</label>
@@ -448,20 +448,20 @@ name: required
 category: Advices
 ---
 
-##Description
+### Description
 A `[required]` or `[aria-required]` should be visually understandable.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-10>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 
-##Selector
+### Selector
 ```css_example
 [required],
 [aria-required]
 ```
 
-##Test
+### Test
 ```html_example
 <form action="">
   <label for="field">Fied</label>
@@ -491,20 +491,20 @@ name: hidden
 category: Advices
 ---
 
-##Description
+### Description
 A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-13>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
-##Selector
+### Selector
 ```css_example
 [hidden]:not(:empty),
 [aria-hidden="true"]:not(:empty)
 ```
 
-##Test
+### Test
 ```html_example
 <a href="/" aria-hidden="true">Important thing!</a>
 ```
@@ -527,15 +527,15 @@ name: placeholder
 category: Advices
 ---
 
-##Description
+### Description
 A `[placeholder]` is not a label, is it?
 
-##Selector
+### Selector
 ```css_example
 [placeholder]:not([title]):not([aria-label]):not([aria-labelledby])
 ```
 
-##Test
+### Test
 ```html_example
 <input type="text" placeholder="Look Ma, no label!" id="test"><span>†</span>
 ```
@@ -556,23 +556,23 @@ name: video-audio
 category: Advices
 ---
 
-##Description
+### Description
 A `<video>` or `<audio>` needs a few things to be accessible, like a transcript, subtitles, controls. This kind of things.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-1>
 * <https://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt>
 * <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-13>
 * <https://www.w3.org/TR/WCAG20/#media-equiv-text-doc>
 
-##Selector
+### Selector
 ```css_example
 video,
 audio
 ```
 
-##Test
+### Test
 ```html_example
 <video src="/" controls></video><span>†</span>
 ```
@@ -590,23 +590,23 @@ name: title
 category: Advices
 ---
 
-##Description
+### Description
 A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-3>
 * <https://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 
-##Selector
+### Selector
 ```css_example
 img[alt][title],
 area[alt][title],
 svg[aria-label][title]
 ```
 
-##Test
+### Test
 ```html_example
 <img src="static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144"><span>†</span>
 ```
@@ -625,16 +625,16 @@ name: time
 category: Advices
 ---
 
-##Description
+### Description
 A `<time>` or `[datetime]` content should be an understandable and well formated date.
 
-##Selector
+### Selector
 ```css_example
 time,
 [datetime]
 ```
 
-##Test
+### Test
 ```html_example
 <time>Yesterday</time>
 ```
@@ -652,20 +652,20 @@ name: th-scope
 category: Advices
 ---
 
-##Description
+### Description
 A `[scope]` can be col or row (and nothing else) and it has to be relevant.
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG-TECHS/H63.html>
 
-##Selector
+### Selector
 ```css_example
 th[scope]
 ```
 
-##Test
+### Test
 ```html_example
 <table>
   <caption>I'm a caption</caption>
@@ -700,19 +700,19 @@ name: table-presentation
 category: Advices
 ---
 
-##Description
+### Description
 A `[role="presentation"]` is a good idea for any `<table>` used for layout, but a bad thing for a data table. Double check this!
 
-##References
+### Referencess
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
-##Selector
+### Selector
 ```css_example
 table[role="presentation"]
 ```
 
-##Test
+### Test
 ```html_example
 <table role="presentation">
   <tr>
@@ -738,20 +738,20 @@ name: no-href
 category: Advices
 ---
 
-##Description
+### Description
 Yet it's valid to skip the `[href]` attribute on a link, it's probably better to double check, isn't it?
 
-##References
+### Referencess
 * <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
-##Selector
+### Selector
 ```css_example
 a:not([href])
 ```
 
-##Test
+### Test
 ```html_example
 <a>Who am I? Where do I link?</a>
 ```
@@ -768,22 +768,22 @@ name: no-https
 category: Advices
 ---
 
-##Description
+### Description
 When possible, try to use HTTPS.
 
-##References
+### Referencess
 * <https://twitter.com/fvsch/status/921748801542639616>
 * <https://transparencyreport.google.com/https/overview?hl=en>
 * <https://letsencrypt.org/>
 * <https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels>
 
-##Selector
+### Selector
 ```css_example
 [src^="http:"],
 [href^="http:"]
 ```
 
-##Test
+### Test
 ```html_example
 <a href="http://www.ffoodd.fr/">My target's protocol isn't secured</a>
 ```
