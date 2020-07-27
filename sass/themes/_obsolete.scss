@@ -7,15 +7,15 @@ name: tags
 category: Obsolete
 ---
 
-##Description
+### Description
 Many, many tags are obsolete in HTML5. You should care!
 
-##Reference
+### References
 * <https://www.w3.org/TR/html5/obsolete.html#obsolete>
 * <https://www.w3.org/TR/html52/changes.html#features-removed>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 
-##Selector
+### Selector
 ```css_example
 applet,
 acronym,
@@ -49,7 +49,7 @@ menu,
 menuitem
 ```
 
-##Test
+### Test
 ```html_example
 <acronym title="World Wide Web Consortium">W3C</acronym>
 ```
@@ -95,17 +95,17 @@ name: attributes
 category: Obsolete
 ---
 
-##Description
+### Description
 Many, many attributes are obsolete in HTML5. You should care!
 
-##Reference
+### References
 * <https://www.w3.org/TR/html5/obsolete.html#obsolete>
 * <https://w3c.github.io/html/obsolete.html#non-conforming-features>
 * <https://www.w3.org/TR/html52/changes.html#features-removed>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
 
-##Selector
+### Selector
 ```css_example
 [dropzone],
 a[charset], link[charset],
@@ -189,7 +189,7 @@ td[nowrap], th[nowrap],
 body[background], table[background], thead[background], tbody[background], tfoot[background], tr[background], td[background], th[background]
 ```
 
-##Test
+### Test
 ```html_example
 <h3 align="right">I'm using [align]!</h3>
 ```

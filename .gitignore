@@ -5,6 +5,10 @@ node_modules
 prepros.cfg
 /docs/Hologram/tests
 /docs/SassDoc/*
+_site/
+src/_data/sass
+src/static/docs.css
+src/static/docs.js
 *.log
 .vscode
 webextension/manifest.json

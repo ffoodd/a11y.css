@@ -1,0 +1,29 @@
+---
+pagination:
+  data: themes
+  size: 1
+  alias: themePage
+permalink: "{{ themePage.title | slug }}/"
+---
+{% extends "layouts/base.njk" %}
+{% import "./_includes/components/utils.njk" as utils %}
+
+{% set theme = sass[themePage.theme] %}
+
+{% block css %}
+  <link rel="stylesheet" href="/static/css/a11y-en_{{ themePage.title | lower }}-only.css" media="all">
+{% endblock %}
+
+{% block title %}{{ themePage.title }}{% endblock %}
+
+{% block sidebar %}
+  {{ utils.toc(theme) }}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ themePage.title }}</h1>
+  {{ utils.writeSassDoc(theme) }}
+{% endblock %}
+
+
+

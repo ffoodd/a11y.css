@@ -1,0 +1,27 @@
+{% macro writeSassDoc(theme) %}
+<ul>
+  {% for t in theme %}
+    <li>
+      <article>
+        <h2 id="{{ t.attributes.name }}">{{ t.attributes.title }}</h2>
+        {{ t.body | safe }}
+      </article>
+    </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro toc(theme) %}
+<nav role="navigation" aria-labelledby="toc-title" id="toc">
+  <p class="h2-like" id="toc-title">Table of content</p>
+  <ol>
+    {% for t in theme %}
+      {% if t.attributes.title != '' %}
+      <li>
+        <a href="#{{ t.attributes.name }}">{{ t.attributes.title }}</a>
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ol>
+</nav>
+{% endmacro %}

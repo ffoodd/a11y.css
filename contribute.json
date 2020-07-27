@@ -21,7 +21,7 @@
     "json",
     "sass",
     "sassdoc",
-    "hologram",
+    "eleventy",
     "accessibility",
     "html"
   ]

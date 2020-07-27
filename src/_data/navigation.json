@@ -1,0 +1,42 @@
+[
+  {
+    "label": "Home",
+    "href": "/",
+    "htmlClass": "index"
+  },
+  {
+    "label": "Errors",
+    "href": "/errors/",
+    "htmlClass": "errors"
+  },
+  {
+    "label": "Warnings",
+    "href": "/warnings/",
+    "htmlClass": "warnings"
+  },
+  {
+    "label": "Obsoletes",
+    "href": "/obsoletes/",
+    "htmlClass": "obsolete"
+  },
+  {
+    "label": "Advices",
+    "href": "/advices/",
+    "htmlClass": "advices"
+  },
+  {
+    "label": "WebExtension",
+    "href": "/webextension/",
+    "htmlClass": "webextension"
+  },
+  {
+    "label": "<b><abbr title=\"Application Programming Interface\">API</abbr></b> Doc",
+    "href": "/docs/",
+    "htmlClass": "sassdoc"
+  },
+  {
+    "label": "On <b>Github</b>",
+    "href": "https://github.com/ffoodd/a11y.css",
+    "external": true
+  }
+]

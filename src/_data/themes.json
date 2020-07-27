@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Advices",
+    "theme": "advice"
+  },
+  {
+    "title": "Errors",
+    "theme": "error"
+  },
+  {
+    "title": "Obsoletes",
+    "theme": "obsolete"
+  },
+  {
+    "title": "Warnings",
+    "theme": "warning"
+  },
+  {
+    "title": "WebExtension",
+    "theme": "webextension"
+  }
+]
