@@ -1,14 +1,10 @@
 {% macro writeSassDoc(theme) %}
-<ul>
   {% for t in theme %}
-    <li>
-      <article>
-        <h2 id="{{ t.attributes.name }}">{{ t.attributes.title }}</h2>
-        {{ t.body | safe }}
-      </article>
-    </li>
+    <article>
+      <h2 id="{{ t.attributes.name }}">{{ t.attributes.title }}</h2>
+      {{ t.body | safe }}
+    </article>
   {% endfor %}
-</ul>
 {% endmacro %}
 
 {% macro toc(theme) %}

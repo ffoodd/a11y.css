@@ -1,8 +1,7 @@
 ---
+title: a11y.css
 layout: "templates/page"
 ---
-
-# a11y.css
 
 ## Introduction
 
@@ -11,8 +10,6 @@ Pronounced "Alix".
 This <abbr title="Cascading StyleSheet" aria-label="Cascading StyleSheet">CSS</abbr> file intends to warn developers about <b>possible risks and mistakes</b> that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.
 
 ## How to use?
-
-### WebExtension
 
 Either you're using <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" target="_blank" rel="noopener noreferrer">Firefox&nbsp;<span class="sr-only">(external link)</span>{% include "icons/external-link.svg" %}</a> or <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" target="_blank" rel="noopener noreferrer">Chrome&nbsp;<span class="sr-only">(external link)</span>{% include "icons/external-link.svg" %}</a>, you're invited to install and use a11y.css's webextension.
 
