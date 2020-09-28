@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "csslint-stylish": "0.0.6",
     "cssnano": "^4.1.10",
     "del": "^4.1.1",

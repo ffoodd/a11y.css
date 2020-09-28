@@ -47,13 +47,13 @@ category: Advices
 `[class]` shouldn't be present if empty. Something to improve, right?
 
 ### Selector
-```css_example
+``` css
 [class=""],
 [class=" "]
 ```
 
 ### Test
-```html_example
+``` html
 <b class="">Why is there a class here?</b>
 ```
 */
@@ -78,13 +78,13 @@ category: Advices
 `[id]` shouldn't be present if empty. You'll thank me later.
 
 ### Selector
-```css_example
+``` css
 [id=""],
 [id=" "]
 ```
 
 ### Test
-```html_example
+``` html
 <i id="">Wait. Why is my ID empty?</i>
 ```
 */
@@ -113,12 +113,12 @@ A single `<main>` should be visible at a time. Isn't that obvious?
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 
 ### Selector
-```css_example
+``` css
 main ~ main:not([hidden])
 ```
 
 ### Test
-```html_example
+``` html
 <main>I'm the main content!</main>
 <main>No, It's me!</main>
 ```
@@ -142,12 +142,12 @@ category: Advices
 * <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
 ### Selector
-```css_example
+``` css
 figcaption:not(:first-of-type)
 ```
 
 ### Test
-```html_example
+``` html
 <figure role="group">
   <figcaption>I'm the caption.</figcaption>
   <img src="static/ffoodd.png" alt="Needed" width="144" height="144" />
@@ -174,12 +174,12 @@ category: Advices
 * <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
 ### Selector
-```css_example
+``` css
 figcaption:not(:first-child):not(:last-child)
 ```
 
 ### Test
-```html_example
+``` html
 <figure role="group">
   <img src="static/ffoodd.png" alt="Needed" width="144" height="144" />
   <figcaption>I'm the caption.</figcaption>
@@ -204,12 +204,12 @@ A `<href="mailto:">` should contain a valid email.
 Otherwise you may annoy your users.
 
 ### Selector
-```css_example
+``` css
 [href^="mailto"]
 ```
 
 ### Test
-```html_example
+``` html
 <a href="mailto:myself">Surpri-ise!</a>
 ```
 */
@@ -230,12 +230,12 @@ A `<href="tel:">` should contain a valid phone number.
 Otherwise you may make your users to call anubody.
 
 ### Selector
-```css_example
+``` css
 [href^="tel"]
 ```
 
 ### Test
-```html_example
+``` html
 <a href="tel:012345678">Who will I call?</a>
 ```
 */
@@ -258,12 +258,12 @@ Obviously, a button role on a link is probably not so hard to move to an authent
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174>
 
 ### Selector
-```css_example
+``` css
 a[role="button"]
 ```
 
 ### Test
-```html_example
+``` html
 <a href="/" role="button">Submit</a>
 ```
 */
@@ -292,12 +292,12 @@ You could use a `[title]`, for example.
 * <https://www.w3.org/TR/WCAG-TECHS/F22.html>
 
 ### Selector
-```css_example
+``` css
 [target$="blank"]
 ```
 
 ### Test
-```html_example
+``` html
 <a href="/" target="_blank" rel="noopener noreferrer">New tab</a>
 ```
 */
@@ -323,7 +323,7 @@ A link to a file should indicate the file format, the file size and if different
 * <https://www.w3.org/TR/WCAG-TECHS/H33.html>
 
 ### Selector
-```css_example
+``` css
 [download],
 [href$=".pdf"]:not(link),
 [href$=".doc"]:not(link),
@@ -346,7 +346,7 @@ A link to a file should indicate the file format, the file size and if different
 ```
 
 ### Test
-```html_example
+``` html
 <a href="/file.png">Wanna file?</a>
 ```
 */
@@ -376,7 +376,7 @@ Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[c
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
 ### Selector
-```css_example
+``` css
 [role="main"] ~ [role="main"],
 [role="search"] ~ [role="search"],
 [role="banner"] ~ [role="banner"],
@@ -384,7 +384,7 @@ Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[c
 ```
 
 ### Test
-```html_example
+``` html
 <main role="main"><br /></main>
 <div role="main"><br /></div>
 ```
@@ -412,13 +412,13 @@ A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
 ### Selector
-```css_example
+``` css
 [id*="search"]:not([role="search"]),
 [class*="search"]:not([role="search"])
 ```
 
 ### Test
-```html_example
+``` html
 <form class="search" action="">
   <label for="field">Search</label>
   <input type="search" id="field" /><span>†</span>
@@ -456,13 +456,13 @@ A `[required]` or `[aria-required]` should be visually understandable.
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 
 ### Selector
-```css_example
+``` css
 [required],
 [aria-required]
 ```
 
 ### Test
-```html_example
+``` html
 <form action="">
   <label for="field">Fied</label>
   <textarea id="field" required></textarea><span>†</span>
@@ -499,13 +499,13 @@ A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
 ### Selector
-```css_example
+``` css
 [hidden]:not(:empty),
 [aria-hidden="true"]:not(:empty)
 ```
 
 ### Test
-```html_example
+``` html
 <a href="/" aria-hidden="true">Important thing!</a>
 ```
 */
@@ -531,12 +531,12 @@ category: Advices
 A `[placeholder]` is not a label, is it?
 
 ### Selector
-```css_example
+``` css
 [placeholder]:not([title]):not([aria-label]):not([aria-labelledby])
 ```
 
 ### Test
-```html_example
+``` html
 <input type="text" placeholder="Look Ma, no label!" id="test"><span>†</span>
 ```
 */
@@ -567,13 +567,13 @@ A `<video>` or `<audio>` needs a few things to be accessible, like a transcript,
 * <https://www.w3.org/TR/WCAG20/#media-equiv-text-doc>
 
 ### Selector
-```css_example
+``` css
 video,
 audio
 ```
 
 ### Test
-```html_example
+``` html
 <video src="/" controls></video><span>†</span>
 ```
 */
@@ -600,14 +600,14 @@ A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 
 ### Selector
-```css_example
+``` css
 img[alt][title],
 area[alt][title],
 svg[aria-label][title]
 ```
 
 ### Test
-```html_example
+``` html
 <img src="static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144"><span>†</span>
 ```
 */
@@ -629,13 +629,13 @@ category: Advices
 A `<time>` or `[datetime]` content should be an understandable and well formated date.
 
 ### Selector
-```css_example
+``` css
 time,
 [datetime]
 ```
 
 ### Test
-```html_example
+``` html
 <time>Yesterday</time>
 ```
 */
@@ -661,12 +661,12 @@ A `[scope]` can be col or row (and nothing else) and it has to be relevant.
 * <https://www.w3.org/TR/WCAG-TECHS/H63.html>
 
 ### Selector
-```css_example
+``` css
 th[scope]
 ```
 
 ### Test
-```html_example
+``` html
 <table>
   <caption>I'm a caption</caption>
   <thead>
@@ -708,12 +708,12 @@ A `[role="presentation"]` is a good idea for any `<table>` used for layout, but 
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ### Selector
-```css_example
+``` css
 table[role="presentation"]
 ```
 
 ### Test
-```html_example
+``` html
 <table role="presentation">
   <tr>
     <td>First cell</td>
@@ -747,12 +747,12 @@ Yet it's valid to skip the `[href]` attribute on a link, it's probably better to
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
 ### Selector
-```css_example
+``` css
 a:not([href])
 ```
 
 ### Test
-```html_example
+``` html
 <a>Who am I? Where do I link?</a>
 ```
 */
@@ -778,13 +778,13 @@ When possible, try to use HTTPS.
 * <https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels>
 
 ### Selector
-```css_example
+``` css
 [src^="http:"],
 [href^="http:"]
 ```
 
 ### Test
-```html_example
+``` html
 <a href="http://www.ffoodd.fr/">My target's protocol isn't secured</a>
 ```
 */

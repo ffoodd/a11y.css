@@ -19,14 +19,14 @@ The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also
 * <https://www.w3.org/TR/html5/grouping-content.html#the-li-element>
 
 ### Selector
-```css_example
+``` css
 ul > :not(li),
 ol > :not(li),
 :not(ul):not(ol) > li
 ```
 
 ### Test
-```html_example
+``` html
 <ul>
   <p>I feel like I'm lost.</p>
 </ul>
@@ -57,13 +57,13 @@ category: Warnings
 * <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
 ### Selector
-```css_example
+``` css
 dt + :not(dd),
 :not(dt):not(dd) + dd
 ```
 
 ### Test
-```html_example
+``` html
 <dl>
   <dt>I need a definition, don't you think?</dt>
   <li>I'm a list item.</li>
@@ -96,14 +96,14 @@ Any other imbrication may be a crime somewhere.
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl>
 
 ### Selector
-```css_example
+``` css
 :not(dl) > dt,
 :not(dl) > dd,
 dl > :not(dt):not(dd):not(div)
 ```
 
 ### Test
-```html_example
+``` html
 <dl>
   <li>I'm a list item.</li>
 </dl>
@@ -133,12 +133,12 @@ category: Warnings
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figcaption-element>
 
 ### Selector
-```css_example
+``` css
 :not(figure) > figcaption
 ```
 
 ### Test
-```html_example
+``` html
 <figcaption>I'm captionning something, isn't it?</figcaption>
 ```
 */
@@ -163,12 +163,12 @@ category: Warnings
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figure-element>
 
 ### Selector
-```css_example
+``` css
 figure:not([role="group"])
 ```
 
 ### Test
-```html_example
+``` html
 <figure>
   <img src="static/ffoodd.png" width="144" height="144" alt="Figcaption test"/>
   <figcaption>I'm a figcaption</figcaption>
@@ -208,7 +208,7 @@ Maybe other invalid nestings to test. Stay tuned.
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
 ### Selector
-```css_example
+``` css
 nav main,
 aside main,
 footer main,
@@ -241,7 +241,7 @@ address section
 ```
 
 ### Test
-```html_example
+``` html
 <legend>I'm an legend. Am I?</legend>
 ```
 */
@@ -293,7 +293,7 @@ You could use a `<span>` instead.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326>
 
 ### Selector
-```css_example
+``` css
 b div,
 i div,
 q div,
@@ -308,7 +308,7 @@ strong div
 ```
 
 ### Test
-```html_example
+``` html
 <b><div>Hey ya!</div></b>
 ```
 */
@@ -343,7 +343,7 @@ They must not be used as wrappers!
 * <https://www.w3.org/TR/html5/dom.html#sectioning-content>
 
 ### Selector
-```css_example
+``` css
 aside > aside:first-child,
 article > aside:first-child,
 aside > article:first-child,
@@ -354,7 +354,7 @@ article > article:first-child
 ```
 
 ### Test
-```html_example
+``` html
 <aside>
   <section>I'm wrapping, you know.</section>
 </aside>
@@ -389,13 +389,13 @@ Always.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
 
 ### Selector
-```css_example
+``` css
 fieldset > *:not(legend):first-child,
 fieldset > legend:not(:first-child)
 ```
 
 ### Test
-```html_example
+``` html
 <fieldset>
   <label>I'm not a legend.</label>
 </fieldset>
@@ -426,13 +426,13 @@ Always.
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details>
 
 ### Selector
-```css_example
+``` css
 details > *:not(summary):first-child,
 details > summary:not(:first-child)
 ```
 
 ### Test
-```html_example
+``` html
 <details>
   <legend>I'm not a summary.</legend>
 </details>
@@ -464,14 +464,14 @@ Any abbreviation should give an explanation about its meaning, at least on its f
 * <https://www.w3.org/TR/WCAG-TECHS/H28.html>
 
 ### Selector
-```css_example
+``` css
 abbr:not([title]),
 abbr[title=" "],
 abbr[title=""]
 ```
 
 ### Test
-```html_example
+``` html
 <p>Do you know about <abbr>W3C</abbr>?</p>
 ```
 */
@@ -505,7 +505,7 @@ That should be double-checked.
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 
 ### Selector
-```css_example
+``` css
 img[alt=""],
 area[alt=""],
 input[type="image"][alt=""],
@@ -514,7 +514,7 @@ object[type="image"][alt=""]
 ```
 
 ### Test
-```html_example
+``` html
 <img alt="" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
 */
@@ -551,7 +551,7 @@ A file name in `[alt]` is probably wrongly automated… and would never ever hel
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 
 ### Selector
-```css_example
+``` css
 img[alt$=".pdf"],
 area[alt$=".pdf"],
 input[type="image"][alt$=".pdf"],
@@ -645,7 +645,7 @@ object[type="image"][alt$=".svgz"]
 ```
 
 ### Test
-```html_example
+``` html
 <img alt="static/ffoodd.png" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
 */
@@ -700,7 +700,7 @@ See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-c
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
 ### Selector
-```css_example
+``` css
 img[alt=""][title],
 img[alt=""][aria-label],
 img[alt=""][aria-labelledby],
@@ -729,7 +729,7 @@ object[type="image"][aria-hidden="true"][aria-describedby],
 ```
 
 ### Test
-```html_example
+``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="https://www.w3.org/2000/svg" version="1.1"
      aria-hidden="true" title="Decorative SVG, you punk!">
@@ -788,7 +788,7 @@ to empty `[alt]` or `[aria-hidden=true]`.
 
 
 ### Selector
-```css_example
+``` css
 img[role="presentation"],
 svg[role="presentation"],
 area[role="presentation"],
@@ -798,7 +798,7 @@ object[role="presentation"]
 ```
 
 ### Test
-```html_example
+``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="https://www.w3.org/2000/svg" version="1.1"
      role="presentation">
@@ -836,12 +836,12 @@ Any `<svg>` should either have `[aria-hidden="true"]` if decorative, or a `[role
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
 ### Selector
-```css_example
+``` css
 svg:not([aria-hidden="true"]):not([role="img"])
 ```
 
 ### Test
-```html_example
+``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="https://www.w3.org/2000/svg" version="1.1"
      aria-label="Decorative SVG, you punk!">
@@ -872,13 +872,13 @@ A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because 
 * <https://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
 ### Selector
-```css_example
+``` css
 video[autoplay],
 audio[autoplay]
 ```
 
 ### Test
-```html_example
+``` html
 <video autoplay controls src=""></video><span>†</span>
 ```
 */
@@ -906,13 +906,13 @@ A time-based media like `<audio>` or `<video>` would be easier to use if `[contr
 * <https://www.w3.org/TR/WCAG-TECHS/G4.html>
 
 ### Selector
-```css_example
+``` css
 video:not([controls]),
 audio:not([controls])
 ```
 
 ### Test
-```html_example
+``` html
 <video src=""></video><span>†</span>
 ```
 */
@@ -952,12 +952,12 @@ We could use the `:blank` pseudo-class, but at this time its support is very poo
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ### Selector
-```css_example
+``` css
 body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
 ```
 
 ### Test
-```html_example
+``` html
 <p id="empty-node_code"></p>
 ```
 */
@@ -993,13 +993,13 @@ Should be double checked!
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ### Selector
-```css_example
+``` css
 table:not([role="presentation"]) > tr:only-child,
 table:not([role="presentation"]) > tbody > tr:only-child
 ```
 
 ### Test
-```html_example
+``` html
 <table>
   <caption>I'm a caption :3</caption>
   <thead>
@@ -1038,12 +1038,12 @@ There's no good reason to nest data tables: thus it probably means we're facing 
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175>
 
 ### Selector
-```css_example
+``` css
 table table
 ```
 
 ### Test
-```html_example
+``` html
 <table>
   <caption>I'm a caption :3</caption>
   <thead>
@@ -1102,13 +1102,13 @@ And it must be the `:first-child`, by the way.
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309>
 
 ### Selector
-```css_example
+``` css
 table:not([role="presentation"]) > caption:not(:first-child),
 table:not([role="presentation"]) > *:first-child:not(caption)
 ```
 
 ### Test
-```html_example
+``` html
 <table>
   <thead>
     <tr>
@@ -1150,7 +1150,7 @@ category: Warnings
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314>
 
 ### Selector
-```css_example
+``` css
 table > tfoot ~ thead,
 table > tbody ~ tfoot,
 table > tbody ~ thead,
@@ -1160,7 +1160,7 @@ table > tbody ~ colgroup
 ```
 
 ### Test
-```html_example
+``` html
 <table>
   <caption>I'm a caption</caption>
   <thead>
@@ -1206,13 +1206,13 @@ category: Warnings
 `<thead>` is strongly needed if `<tbody>` is present.
 
 ### Selector
-```css_example
+``` css
 table:not([role="presentation"]) > caption + tbody,
 table:not([role="presentation"]) > tbody:first-child
 ```
 
 ### Test
-```html_example
+``` html
 <table>
   <caption>Missing thead</caption>
   <tbody>
@@ -1250,12 +1250,12 @@ category: Warnings
 * <https://www.w3.org/TR/WCAG20-TECHS/H43.html>
 
 ### Selector
-```css_example
+``` css
 th:not([scope]):not([id])
 ```
 
 ### Test
-```html_example
+``` html
 <table>
   <caption>Need for a [scope] or [id]</caption>
   <thead>
@@ -1296,7 +1296,7 @@ Believe me, this still have to be tested.
 * <https://www.la-grange.net/2015/03/11/visible>
 
 ### Selector
-```css_example
+``` css
 img[src*="1px.gif"]:not([role="presentation"]),
 img[src*="1x1.gif"]:not([role="presentation"]),
 img[src*="clear.gif"]:not([role="presentation"]),
@@ -1307,7 +1307,7 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"])
 ```
 
 ### Test
-```html_example
+``` html
 <img src="static/spacer.gif" alt="Spacer.gif" width="100" height="100"/><span>†</span>
 ```
 */
@@ -1333,7 +1333,7 @@ category: Warnings
 Don't laugh, shit happens.
 
 ### Selector
-```css_example
+``` css
 [id*="NaN"],
 [id*="null"],
 [class*="NaN"],
@@ -1343,7 +1343,7 @@ Don't laugh, shit happens.
 ```
 
 ### Test
-```html_example
+``` html
 <p class="undefined">Oups, something went wrong.</p>
 ```
 */
@@ -1383,12 +1383,12 @@ The only exception shall be bookmarklets.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
 ### Selector
-```css_example
+``` css
 a[href^="javascript"]:not([role="button"])
 ```
 
 ### Test
-```html_example
+``` html
 <a href="javascript:(function(){a11ycss=document.createElement('LINK');a11ycss.href='https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css';a11ycss.rel='stylesheet';a11ycss.media='all';document.body.appendChild(a11ycss);})();">Please use my bookmarklet ;)</a>
 ```
 */
@@ -1412,12 +1412,12 @@ Should probably be a `<button>` or at least a `[role="button"]`, don't you think
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
 ### Selector
-```css_example
+``` css
 a[href="#"]:not([role="button"])
 ```
 
 ### Test
-```html_example
+``` html
 <a href="#">Oh boy, I don't mean anything</a>
 ```
 */
@@ -1443,12 +1443,12 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ### Selector
-```css_example
+``` css
 [style]
 ```
 
 ### Test
-```html_example
+``` html
 <div style="color: red;">I'm red. I really feel dirty.</div>
 ```
 */
@@ -1480,14 +1480,14 @@ This is not actually an accessibility related issue, but everything helping user
 * <https://twitter.com/KittyGiraudel/status/801475801397030912>
 
 ### Selector
-```css_example
+``` css
 [target$="blank"]:not([rel]),
 [target$="blank"]:not([rel*="noopener"]),
 [target$="blank"]:not([rel*="noreferrer"])
 ```
 
 ### Test
-```html_example
+``` html
 <a href="/" target="_blank">I feel vulnerable…</a>
 ```
 */
@@ -1518,12 +1518,12 @@ Though `[aria-level]` is not required by ARIA specification, it's actually bette
 * <https://www.w3.org/TR/WCAG-TECHS/H42.html>
 
 ### Selector
-```css_example
+``` css
 [role="heading"]:not([aria-level])
 ```
 
 ### Test
-```html_example
+``` html
 <strong role="heading">Heading with undefined level</strong>
 ```
 */
@@ -1554,12 +1554,12 @@ Although implicitly labelling form controls is accepted, it's probably better to
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 
 ### Selector
-```css_example
+``` css
 label:not([for])
 ```
 
 ### Test
-```html_example
+``` html
 <label>Guess what?</label>
 ```
 */
@@ -1586,7 +1586,7 @@ This also requires to check any in-page language change (marked up with `[lang]`
 * <https://w3c.github.io/html/dom.html#the-dir-attribute>
 
 ### Selector
-```css_example
+``` css
 [lang="ar"]:not([dir="rtl"]),
 [lang="he"]:not([dir="rtl"]),
 [lang="ar"] [lang]:not([dir="ltr"]),
@@ -1595,7 +1595,7 @@ This also requires to check any in-page language change (marked up with `[lang]`
 ```
 
 ### Test
-```html_example
+``` html
 <p dir="rtl" lang="en">Well, I'm kinda disoriented…</p>
 ```
 */

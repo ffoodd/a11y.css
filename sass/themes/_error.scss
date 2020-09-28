@@ -31,7 +31,7 @@ map[name*=" "]
 [lang*=" "],
 map[name*=" "] {
   @include error('attribute-whitespace');
-  
+
   @include void-tags {
     @include error('attribute-whitespace', $self-closing: true);
   }
@@ -60,7 +60,7 @@ The `[tabindex]` attribute should never be greater than 0.
 ```
 
 ### Test
-```html_example
+```html
 <button tabindex="1" type="button">Positive tabindex is bad</button>
 ```
 */
@@ -89,13 +89,13 @@ The `[href]` attribute, if present, should not be empty. A link *to* something, 
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
 ### Selector
-```css_example
+```css
 a[href=""],
 a[href=" "]
 ```
 
 ### Test
-```html_example
+```html
 <a href=" ">Who am I? Where do I link?</a>
 ```
 */
@@ -126,7 +126,7 @@ By the way, why would you use an empty link?
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ### Selector
-```css_example
+``` css
 a:empty[title=""],
 a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
@@ -134,7 +134,7 @@ a:empty:not([title]):not([aria-label]):not([aria-labelledby])
 ```
 
 ### Test
-```html_example
+``` html
 <a href="/" class="inbl w-20" id="empty-link_code"></a>
 ```
 */
@@ -167,7 +167,7 @@ An `<img>` must have an `[alt]`. Always.
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
 ### Selector
-```css_example
+``` css
 img[alt=" "],
 area[alt=" "],
 input[type="image"][alt=" "],
@@ -177,7 +177,7 @@ input[type="image"]:not([alt])
 ```
 
 ### Test
-```html_example
+``` html
 <img src="static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
 */
@@ -210,13 +210,13 @@ If image is decorative, please use `[role=presentation]` instead.
 * <https://www.w3.org/TR/wai-aria/roles#textalternativecomputation>
 
 ### Selector
-```css_example
+``` css
 [role="img"]:not([aria-label]):not([aria-labelledby]),
 svg[role="img"]:not([aria-label]):not([aria-labelledby])
 ```
 
 ### Test
-```html_example
+``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
      xmlns="https://www.w3.org/2000/svg" version="1.1" role="img">
   <rect x="400" y="100" width="400" height="200"
@@ -248,7 +248,7 @@ An `<img>` must have an `[src]` or an `[srcset]`, and it should be a valid one. 
 * <https://scottjehl.github.io/picturefill/>
 
 ### Selector
-```css_example
+``` css
 img:not([src]):not([srcset]),
 img[src=""],
 img[src=" "],
@@ -270,7 +270,7 @@ input[type="image"][srcset="/"]
 ```
 
 ### Test
-```html_example
+``` html
 <img alt="Missing src" width="144" height="144"/>
 ```
 */
@@ -324,13 +324,13 @@ A `<label>` with a `[for]` attribute should label something with an `[id]` attri
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 
 ### Selector
-```css_example
+``` css
 label[for=""],
 label[for=" "]
 ```
 
 ### Test
-```html_example
+``` html
 <label for=" ">Guess what?</label>
 ```
 */
@@ -358,14 +358,14 @@ How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` 
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
 
 ### Selector
-```css_example
+``` css
 input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
 textarea:not([id]):not([aria-label]):not([aria-labelledby]),
 select:not([id]):not([aria-label]):not([aria-labelledby])
 ```
 
 ### Test
-```html_example
+``` html
 <input type="text" /><span>†</span>
 ```
 */
@@ -393,14 +393,14 @@ You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-la
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
 
 ### Selector
-```css_example
+``` css
 input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
 input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
 input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])
 ```
 
 ### Test
-```html_example
+``` html
 <input type="submit" /><span>†</span>
 ```
 */
@@ -429,12 +429,12 @@ A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ### Selector
-```css_example
+``` css
 button:empty:not([aria-label]):not([aria-labelledby]):not([title])
 ```
 
 ### Test
-```html_example
+``` html
 <button type="button"></button>
 ```
 */
@@ -461,14 +461,14 @@ category: Errors
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ### Selector
-```css_example
+``` css
 button[title=""],
 button[aria-label=""],
 button[aria-labelledby=""]
 ```
 
 ### Test
-```html_example
+``` html
 <button title="" type="button">Test</button>
 ```
 */
@@ -504,12 +504,12 @@ If it doesn't submit anything, it should have the `[type="button"]`.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189>
 
 ### Selector
-```css_example
+``` css
 button:not([type]):not([form]):not([formaction]):not([formtarget])
 ```
 
 ### Test
-```html_example
+``` html
 <button>I just don't know what todo with myself</button>
 ```
 */
@@ -540,7 +540,7 @@ If a `<button>`'s`[type]` is either `"reset"` or `"button"`, it should not use t
 * <https://www.w3.org/TR/html5/forms.html#the-button-element>
 
 ### Selector
-```css_example
+``` css
 button[type="reset"][formmethod],
 button[type="reset"][formaction],
 button[type="reset"][formtarget],
@@ -554,7 +554,7 @@ button[type="button"][formnovalidate]
 ```
 
 ### Test
-```html_example
+``` html
 <button type="button" formmethod="GET">I have a method!</button>
 ```
 */
@@ -584,12 +584,12 @@ Use `[disabled]` and `[readonly]`.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122>
 
 ### Selector
-```css_example
+``` css
 button[class*="disabled"]:not([disabled]):not([readonly])
 ```
 
 ### Test
-```html_example
+``` html
 <button class="is-disabled" type="button">To be or not to be (disabled)?</button>
 ```
 */
@@ -613,14 +613,14 @@ category: Errors
 * <https://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
 
 ### Selector
-```css_example
+``` css
 input:not([type]),
 input[type=" "],
 input[type=""]
 ```
 
 ### Test
-```html_example
+``` html
 <label for="No-type">No type</label>
 <input value="Whatever you want" id="No-type"/><span>†</span>
 ```
@@ -648,12 +648,12 @@ category: Errors
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
 ### Selector
-```css_example
+``` css
 optgroup:not([label])
 ```
 
 ### Test
-```html_example
+``` html
 <form action="/">
     <label for="optgroup-test">Oh, hey</label>
     <select id="optgroup-test">
@@ -690,14 +690,14 @@ category: Errors
 * <https://www.w3.org/TR/WCAG-TECHS/H64.html>
 
 ### Selector
-```css_example
+``` css
 iframe:not([title]),
 iframe[title=" "],
 iframe[title=""]
 ```
 
 ### Test
-```html_example
+``` html
 <iframe src="static/no-title.html" sandbox="allow-same-origin"></iframe><span>†</span>
 ```
 */
@@ -722,14 +722,14 @@ category: Errors
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214>
 
 ### Selector
-```css_example
+``` css
 form:not([action]),
 form[action=" "],
 form[action=""]
 ```
 
 ### Test
-```html_example
+``` html
 <form>
   <label for="input">Guess what do we do with your datas?</label>
   <input id="input" type="text" />
@@ -770,14 +770,14 @@ category: Errors
 * <https://codepen.io/matuzo/project/editor/ZyrVee>
 
 ### Selector
-```css_example
+``` css
 html:not([lang]),
 html[lang*=" "],
 html[lang=""]
 ```
 
 ### Test
-```html_example
+``` html
 <iframe title="No language defined a11y.css test-case" src="static/no-lang.html" sandbox="allow-same-origin"></iframe>
 ```
 */
@@ -814,7 +814,7 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 * <https://www.w3.org/Translations/WCAG20-fr/#content-structure-separation-programmatic>
 
 ### Selector
-```css_example
+``` css
 table[role="presentation"] th,
 table[role="presentation"] thead,
 table[role="presentation"] tfoot,
@@ -826,7 +826,7 @@ table[role="presentation"] [headers]
 ```
 
 ### Test
-```html_example
+``` html
 <table role="presentation">
   <caption>I do not mean anything!</caption>
   <tbody>
@@ -867,13 +867,13 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ### Selector
-```css_example
+``` css
 :not(img):not(object):not(embed):not(svg):not(canvas)[width],
 :not(img):not(object):not(embed):not(svg):not(canvas)[height]
 ```
 
 ### Test
-```html_example
+``` html
 <p width="20">Damned! I feel sooo strait :(</p>
 ```
 */
@@ -904,7 +904,7 @@ Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS eve
 * <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener>
 
 ### Selector
-```css_example
+``` css
 [onafterprint], [onbeforeprint], [onbeforeunload],
 [onerror], [onhaschange], [onload], [onmessage],
 [onoffline], [ononline], [onpagehide], [onpageshow],
@@ -929,7 +929,7 @@ Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS eve
 ```
 
 ### Test
-```html_example
+``` html
 <span onclick="alert('You clicked!');">Click click click</span>
 ```
 */
@@ -975,7 +975,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 * <https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html>
 
 ### Selector
-```css_example
+``` css
 [id^="1"],
 [id^="2"],
 [id^="3"],
@@ -1021,7 +1021,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 ```
 
 ### Test
-```html_example
+``` html
 <div id="2">Hello! My ID is 2.</div>
 ```
 */
@@ -1101,12 +1101,12 @@ We could use the `:blank` pseudo-class, but at this time its support is very poo
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ### Selector
-```css_example
+``` css
 title:empty
 ```
 
 ### Test
-```html_example
+``` html
 <title></title>
 ```
 */
@@ -1135,14 +1135,14 @@ User should be able to zoom in or out the page to improve readability and comfor
 * <https://adrianroselli.com/2015/10/dont-disable-zoom.html>
 
 ### Selector
-```css_example
+``` css
 meta[name="viewport"][content*="maximum-scale"],
 meta[name="viewport"][content*="minimum-scale"],
 meta[name="viewport"][content*="user-scalable=no"]
 ```
 
 ### Test
-```html_example
+``` html
 <iframe src="static/viewport.html" sandbox="allow-same-origin" title="Wrong viewport instruction example"></iframe><span>†</span>
 ```
 */
@@ -1177,12 +1177,12 @@ Moreover it avoids some security issues exploiting some other charsets…
 * <https://www.w3.org/International/tutorials/tutorial-char-enc/>
 
 ### Selector
-```css_example
+``` css
 meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
 ```
 
 ### Test
-```html_example
+``` html
 <meta charset="Windows-1252"/><span>†</span>
 ```
 */
@@ -1216,12 +1216,12 @@ before the `<title>` tag is the simplest way to cover it.
 * <https://michaelthelin.se/security/2014/06/08/web-security-cross-site-scripting-attacks-using-utf-7.html>
 
 ### Selector
-```css_example
+``` css
 head :first-child:not([charset])
 ```
 
 ### Test
-```html_example
+``` html
 <iframe src="static/no-charset.html" title="Late charset a11y.css test-case" sandbox="allow-same-origin"></iframe>
 ```
 */
@@ -1248,12 +1248,12 @@ The `[dir]` attribute — used to specify the element’s text directionality �
 * <https://w3c.github.io/html/dom.html#the-dir-attribute>
 
 ### Selector
-```css_example
+``` css
 [dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"])
 ```
 
 ### Test
-```html_example
+``` html
 <p dir="wtf">Well, I'm kinda disoriented…</p>
 ```
 */
@@ -1285,12 +1285,12 @@ This is opinionated: in a perfect world, `[accesskey]` could be used wisely. Yup
 * <https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html>
 
 ### Selector
-```css_example
+``` css
 [accesskey]
 ```
 
 ### Test
-```html_example
+``` html
 <a id="key" name="key" accesskey="1">Skip to this link using <kbd>1</kbd></a>
 ```
 */
@@ -1318,13 +1318,13 @@ thus is needed.
 * <https://www.w3.org/TR/WCAG-TECHS/H71.html>
 
 ### Selector
-```css_example
+``` css
 [type="radio"]:not([name]),
 [type="checkbox"]:not(:only-of-type):not([name])
 ```
 
 ### Test
-```html_example
+``` html
 <form action="/">
   <fieldset>
     <legend>Options</legend>
@@ -1370,12 +1370,12 @@ This test could be a warning…
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
 
 ### Selector
-```css_example
+``` css
 [type="radio"]
 ```
 
 ### Test
-```html_example
+``` html
 <form action="/">
   <p>
     <label for="option-1">Option N<sup>o</sup>1</label>
@@ -1432,14 +1432,14 @@ Also `[aria-valuetext]` is welcome, even though it's not required by ARIA specif
 * <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role>
 
 ### Selector
-```css_example
+``` css
 [role="slider"]:not([aria-valuemin]),
 [role="slider"]:not([aria-valuemax]),
 [role="slider"]:not([aria-valuenow])
 ```
 
 ### Test
-```html_example
+``` html
 <label for="slider">Slider</label>
 <input id="slider" role="slider" type="range" /><span>†</span>
 ```
@@ -1477,14 +1477,14 @@ category: Errors
 * <https://oaa-accessibility.org/example/33/>
 
 ### Selector
-```css_example
+``` css
 [role="spinbutton"]:not([aria-valuemin]),
 [role="spinbutton"]:not([aria-valuemax]),
 [role="spinbutton"]:not([aria-valuenow])
 ```
 
 ### Test
-```html_example
+``` html
 <label for="spinbutton">Spinbutton</label>
 <input id="spinbutton" role="spinbutton" type="range" /><span>†</span>
 ```
@@ -1520,12 +1520,12 @@ category: Errors
 * <https://oaa-accessibility.org/examples/role/76/>
 
 ### Selector
-```css_example
+``` css
 [role="checkbox"]:not([aria-checked])
 ```
 
 ### Test
-```html_example
+``` html
 <img src="static/ffoodd.png" alt="Checkbox" role="checkbox" width="36" height="36"/><span>†</span>
 ```
 */
@@ -1554,12 +1554,12 @@ category: Errors
 * <https://oaa-accessibility.org/examples/role/77/>
 
 ### Selector
-```css_example
+``` css
 [role="combobox"]:not([aria-expanded])
 ```
 
 ### Test
-```html_example
+``` html
 <input type="text" aria-label="Combobox" role="combobox" id="combobox"><span>†</span>
 ```
 */
@@ -1597,7 +1597,7 @@ Some properties are required to comply the `[role="scrollbar"]` pattern:
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-orientation>
 
 ### Selector
-```css_example
+``` css
 [role="scrollbar"]:not([aria-controls]),
 [role="scrollbar"]:not([aria-valuemin]),
 [role="scrollbar"]:not([aria-valuemax]),
@@ -1606,7 +1606,7 @@ Some properties are required to comply the `[role="scrollbar"]` pattern:
 ```
 
 ### Test
-```html_example
+``` html
 <div role="scrollbar">↓</div>
 ```
 */
@@ -1644,7 +1644,7 @@ An interactive element should not be contained in another interactive element (e
 * <https://w3c.github.io/html/sec-forms.html#the-label-element>
 
 ### Selector
-```css_example
+``` css
 a a[href],
 button a[href],
 a audio[controls],
@@ -1676,7 +1676,7 @@ progress progress
 ```
 
 ### Test
-```html_example
+``` html
 <a href="https://www.ffoodd.fr">
   <button type=button">Oh wait, what should I trigger?</button>
 </a>

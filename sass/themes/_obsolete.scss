@@ -16,7 +16,7 @@ Many, many tags are obsolete in HTML5. You should care!
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 
 ### Selector
-```css_example
+``` css
 applet,
 acronym,
 bgsound,
@@ -50,7 +50,7 @@ menuitem
 ```
 
 ### Test
-```html_example
+``` html
 <acronym title="World Wide Web Consortium">W3C</acronym>
 ```
 */
@@ -106,7 +106,7 @@ Many, many attributes are obsolete in HTML5. You should care!
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
 
 ### Selector
-```css_example
+``` css
 [dropzone],
 a[charset], link[charset],
 a[coords],
@@ -190,7 +190,7 @@ body[background], table[background], thead[background], tbody[background], tfoot
 ```
 
 ### Test
-```html_example
+``` html
 <h3 align="right">I'm using [align]!</h3>
 ```
 */
