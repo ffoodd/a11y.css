@@ -16,30 +16,32 @@
     <a href="#content" class="skip">Skip to content</a>
     {% include "partials/header.njk" %}
 
-    <aside role="complementary">
-      {% block sidebar %}{% endblock %}
+    <div class="main">
+      <aside>
+        {% block sidebar %}{% endblock %}
 
-      <div class="box">
-        <p class="h2-like">Web extensions</p>
-        <ul>
-          <li>
-            <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
-              <img src="/static/firefox.svg" width="150" height="55" alt="a11y.css Firefox add-on"/>
-            </a>
-          </li>
-          <li>
-            <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css Chrome extension">
-              <img src="/static/chrome.svg" width="150" height="57" alt="a11y.css Chrome extension"/>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </aside>
+        <div class="box">
+          <p class="h2-like">Web extensions</p>
+          <ul>
+            <li>
+              <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
+                <img src="/static/firefox.svg" width="150" height="55" alt="a11y.css Firefox add-on"/>
+              </a>
+            </li>
+            <li>
+              <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css Chrome extension">
+                <img src="/static/chrome.svg" width="150" height="57" alt="a11y.css Chrome extension"/>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
 
-    <main role="main">
-      {% block content %}{% endblock %}
-      {{ content | safe }}
-    </main>
+      <main>
+        {% block content %}{% endblock %}
+        {{ content | safe }}
+      </main>
+    </div>
     {% include "partials/footer.njk" %}
     <script src="/static/docs.js"></script>
   </body>
