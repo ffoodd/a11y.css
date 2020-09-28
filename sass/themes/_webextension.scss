@@ -51,7 +51,7 @@ name: check-alt-1
 category: WebExtension
 ---
 
-```html_example
+``` html
 <img src="static/checkalts/1.jpg" /><span>†</span>
 ```
 */
@@ -64,7 +64,7 @@ name: check-alt-2
 category: WebExtension
 ---
 
-```html_example
+``` html
 <img alt="A typewriter" title="Last day of August" src="static/checkalts/2.jpg" /><span>†</span>
 ```
 */
@@ -77,7 +77,7 @@ name: check-alt-3
 category: WebExtension
 ---
 
-```html_example
+``` html
 <img alt="" src="static/checkalts/3.jpg" /><span>†</span>
 ```
 */
@@ -90,7 +90,7 @@ name: check-alt-4
 category: WebExtension
 ---
 
-```html_example
+``` html
 <img src="static/checkalts/4.jpg" alt="Sunset" /><span>†</span>
 ```
 */
@@ -104,12 +104,12 @@ category: WebExtension
 ---
 
 ### Selector
-```css_example
+``` css
 [lang]
 ```
 
 ### Test
-```html_example
+``` html
 <p>Just testing languages. <span lang="fr">Voilà</span>.</p>
 ```
 */
@@ -123,12 +123,12 @@ category: WebExtension
 ---
 
 ### Selector
-```css_example
+``` css
 [hreflang]
 ```
 
 ### Test
-```html_example
+``` html
 <p>Here comes a simple to <a href="https://www.ffoodd.fr" hreflang="fr">my very own website</a>.</p>
 ```
 */
