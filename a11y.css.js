@@ -99,10 +99,11 @@ const parseSassComment = comment => {
   comment = comment.replace(/(\/\*doc|\*\/)/g, '').trim()
 
   const content = fm(comment)
+  const htmlOutput = new showdown.Converter().makeHtml(content.body)
 
   return {
     attributes: content.attributes,
-    body: new showdown.Converter().makeHtml(content.body)
+    body: htmlOutput
   }
 }
 
