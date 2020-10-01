@@ -104,14 +104,13 @@ const parseSassComment = comment => {
 
   const htmlRegex = /(<code class="html language-html">(.[\s\S]+?)<\/code>)/gm
   let htmlContent = processedContent.match(htmlRegex)
-  let processedHTML = prism.highlight(htmlContent, prism.languages.html, 'html')
+  let processedHTML = prism.highlight(String(htmlContent), prism.languages.html, 'html')
   const cssRegex = /(<code class="css language-css">(.[\s\S]+?)<\/code>)/gm
   let cssContent = processedContent.match(cssRegex)
-  let processedCSS = prism.highlight(cssContent, prism.languages.css, 'css')
+  let processedCSS = prism.highlight(String(cssContent), prism.languages.css, 'css')
 
   processedContent = processedContent.replace(htmlRegex, processedHTML)
   processedContent = processedContent.replace(cssRegex, processedCSS)
-  console.log(processedContent)
 
   return {
     attributes: content.attributes,
