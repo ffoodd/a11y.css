@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const showdown = require('showdown')
 const fm = require('front-matter')
+const prism = require('prismjs')
 const postcss = require('postcss')
 const atImport = require('postcss-import')
 const uglify = require('uglify-es')
@@ -99,11 +100,22 @@ const parseSassComment = comment => {
   comment = comment.replace(/(\/\*doc|\*\/)/g, '').trim()
 
   const content = fm(comment)
-  const htmlOutput = new showdown.Converter().makeHtml(content.body)
+  let processedContent = new showdown.Converter().makeHtml(content.body)
+
+  const htmlRegex = /(<code class="html language-html">(.[\s\S]+?)<\/code>)/gm
+  let htmlContent = processedContent.match(htmlRegex)
+  let processedHTML = prism.highlight(htmlContent, prism.languages.html, 'html')
+  const cssRegex = /(<code class="css language-css">(.[\s\S]+?)<\/code>)/gm
+  let cssContent = processedContent.match(cssRegex)
+  let processedCSS = prism.highlight(cssContent, prism.languages.css, 'css')
+
+  processedContent = processedContent.replace(htmlRegex, processedHTML)
+  processedContent = processedContent.replace(cssRegex, processedCSS)
+  console.log(processedContent)
 
   return {
     attributes: content.attributes,
-    body: htmlOutput
+    body: processedContent
   }
 }
 
