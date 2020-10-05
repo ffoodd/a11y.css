@@ -2,6 +2,7 @@
 
 @import "normalize.css";
 @import "fira-sans.css";
+@import "prism.css";
 
 /* =======================
  * = a11y.css' docs styles
@@ -388,17 +389,17 @@ table {
 }
 
 pre {
-  border: 0;
-  color: #032C36;
+  color: #807373;
   direction: ltr;
-  font-family: "Consolas", "Monaco", "Andale Mono", monospace;
-  font-size: small;
-  tab-size: 2;
+  font-family: monospace;
+  hyphens: none;
+  tab-size: 4;
   overflow-x: auto;
   text-align: left;
-  text-shadow: 0 1px #fff;
   white-space: pre;
   word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
 }
 
 p code,
@@ -533,55 +534,48 @@ aside img {
   position: absolute;
 }
 
-.codeExample,
-.codeBlock.cssExample {
+h3 + pre {
+  background: #fff;
   border: 1px solid #e5dec8;
   border-radius: 4px;
   margin: 1em 0;
+  padding: 1em;
+  position: relative;
 }
 
-.cssExample::before,
-.codeExample::before {
+h3 + pre > code {
+  display: block;
+  margin: 3em 0 1em;
+}
+
+h3 + pre > code::before {
   background: #fcf9e9;
   border: 1px solid #e5dec8;
   border-radius: 4px 0 4px 0;
   color: #7b6e50;
   content: "Example";
-  display: inline-block;
+  font-family: Fira Sans,Helvetica Neue,Arial,Nimbus Sans L,sans-serif,Segoe UI Emoji,Segoe UI Symbol;
   font-style: italic;
-  padding: .25em .5em;
-  transform: translate3d(-1px, -1px, 0);
+  left: -1px;
+  padding: .5em 1em;
+  position: absolute;
+  top: -1px;
 }
 
-.cssExample::before {
+h3 + pre > code[class*="css"]::before {
   content: "CSS";
-  margin-bottom: -1em;
-  transform: translate3d( calc( -1em - 1px ),  calc( -1em - 1px ), 0);
 }
 
-.codeBlock,
-.exampleOutput {
-  padding: 1em;
-}
-
+/*
 .codeBlock {
   background: #fffef9;
   border-top: 1px solid #e5dec8;
   border-radius: 0 0 4px 4px;
-}
-
-.codeExample {
-  background: #fff;
-}
+}*/
 
 form label {
   min-width: 1em;
 }
-
-.s, .nd { color: #07a }
-.na, .cssExample .nt { color: #667f1f }
-.nt, .cssExample .err + .nt { color: #905 }
-.o, .err { color: #807373 }
 
 #empty-link_code,
 #empty-title_code,
