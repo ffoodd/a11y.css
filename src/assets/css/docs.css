@@ -303,7 +303,7 @@ h2[id]::before {
   background: #f3f0e0;
   bottom: 0;
   content: "";
-  left: -3rem;
+  left: -2rem;
   position: absolute;
   top: 0;
   z-index: -2;
