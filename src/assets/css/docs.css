@@ -534,21 +534,27 @@ aside img {
   position: absolute;
 }
 
-h3 + pre {
+.pre {
+  background: #fffef9;
+  border-top: 1px solid #e5dec8;
+  border-radius: 0 0 4px 4px;
+  position: relative;
+}
+
+.pre pre {
   background: #fff;
   border: 1px solid #e5dec8;
   border-radius: 4px;
   margin: 1em 0;
   padding: 1em;
-  position: relative;
 }
 
-h3 + pre > code {
+.pre code {
   display: block;
   margin: 3em 0 1em;
 }
 
-h3 + pre > code::before {
+.pre code::before {
   background: #fcf9e9;
   border: 1px solid #e5dec8;
   border-radius: 4px 0 4px 0;
@@ -562,16 +568,9 @@ h3 + pre > code::before {
   top: -1px;
 }
 
-h3 + pre > code[class*="css"]::before {
+.pre code[class*="css"]::before {
   content: "CSS";
 }
-
-/*
-.codeBlock {
-  background: #fffef9;
-  border-top: 1px solid #e5dec8;
-  border-radius: 0 0 4px 4px;
-}*/
 
 form label {
   min-width: 1em;
