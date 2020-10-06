@@ -102,9 +102,12 @@ const parseSassComment = comment => {
   const content = fm(comment)
   let processedContent = new showdown.Converter().makeHtml(content.body)
 
+
   const htmlRegex = /((?<=<code class="html language-html">)(.[\s\S]+?)(?=<\/code>))/gm
   let htmlContent = processedContent.match(htmlRegex)
-  let processedHTML = prism.highlight(String(htmlContent), prism.languages.html, 'html')
+  htmlContent = String(htmlContent).replace(/(&lt;)+/g, '<')
+  htmlContent = htmlContent.replace(/(&gt;)+/g, '>')
+  let processedHTML = prism.highlight(htmlContent, prism.languages.html, 'html')
   const cssRegex = /((?<=<code class="css language-css">)(.[\s\S]+?)(?=<\/code>))/gm
   let cssContent = processedContent.match(cssRegex)
   let processedCSS = prism.highlight(String(cssContent), prism.languages.css, 'css')
