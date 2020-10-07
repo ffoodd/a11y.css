@@ -11,7 +11,7 @@ category: Warnings
 ### Description
 The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also true.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
@@ -49,7 +49,7 @@ category: Warnings
 ### Description
 `<dt>` and `<dd>` should be direct adjacent siblings, and nothing else. Although multiple `<dd>` may follow a single `<dt>`.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
@@ -87,7 +87,7 @@ category: Warnings
 `<div>`, `<dt>` and `<dd>` should be direct children of `<dl>`.
 Any other imbrication may be a crime somewhere.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
@@ -126,7 +126,7 @@ category: Warnings
 ### Description
 `<figcaption>` doesn't make sense outside a `<figure>`.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
@@ -157,7 +157,7 @@ category: Warnings
 ### Description
 `<figure>` needs `[role="group"]` for accessibility reason.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-10>
 * <https://www.w3.org/WAI/tutorials/images/groups/>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figure-element>
@@ -170,7 +170,7 @@ figure:not([role="group"])
 ### Test
 ``` html
 <figure>
-  <img src="static/ffoodd.png" width="144" height="144" alt="Figcaption test"/>
+  <img src="/static/ffoodd.png" width="144" height="144" alt="Figcaption test"/>
   <figcaption>I'm a figcaption</figcaption>
 </figure>
 ```
@@ -200,7 +200,7 @@ Some nestings are forbidden, and do not have their own test case for now:
 
 Maybe other invalid nestings to test. Stay tuned.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>.
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-address-element>
@@ -289,7 +289,7 @@ category: Warnings
 Did you know that you shouldn't add a `<div>` inside any inline element?
 You could use a `<span>` instead.
 
-### Referencess
+### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326>
 
 ### Selector
@@ -338,7 +338,7 @@ category: Warnings
 `<section>`, `<aside>`, `<article>` are sectioning tags.
 They must not be used as wrappers!
 
-### Referencess
+### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252>
 * <https://www.w3.org/TR/html5/dom.html#sectioning-content>
 
@@ -382,7 +382,7 @@ category: Warnings
 `<legend>` must be a `<fieldset>`'s`:first-child`.
 Always.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
@@ -418,7 +418,7 @@ category: Warnings
 `<summary>` must be a `<details>`'s`:first-child`.
 Always.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-6>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
@@ -454,7 +454,7 @@ category: Warnings
 ### Description
 Any abbreviation should give an explanation about its meaning, at least on its first occurrence.
 
-### Referencess
+### References
 * BP160 OpQuast
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-4>
 * <https://www.w3.org/TR/WCAG20/#meaning-located>
@@ -493,7 +493,7 @@ category: Warnings
 An alternative has to be empty when image is decorative only. In any other case, `[alt]` must be defined.
 That should be double-checked.
 
-### Referencess
+### References
 * BP160 OpQuast
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
@@ -515,7 +515,7 @@ object[type="image"][alt=""]
 
 ### Test
 ``` html
-<img alt="" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
+<img alt="" src="/static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
 */
 img[alt=""],
@@ -540,7 +540,7 @@ category: Warnings
 ### Description
 A file name in `[alt]` is probably wrongly automated… and would never ever help any user.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
@@ -646,7 +646,7 @@ object[type="image"][alt$=".svgz"]
 
 ### Test
 ``` html
-<img alt="static/ffoodd.png" src="static/ffoodd.png" width="144" height="144" /><span>†</span>
+<img alt="/static/ffoodd.png" src="/static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
 */
 $alt: ();
@@ -686,7 +686,7 @@ Any decorative image — with `[aria-hidden="true"]` or empty `[alt]` — should
 This test currently can't check if any `<title>` nor `<desc>` child is present since `<svg>` is a replaced elements.
 See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues) on a11y.css' wiki.
 
-### Referencess
+### References
 * BP160 OpQuast
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
@@ -782,7 +782,7 @@ Any decorative image should be marked up with `[aria-hidden="true"]` (or empty `
 `[role=presentation]` shall do the trick but at the time of writing, its support is too low compared
 to empty `[alt]` or `[aria-hidden=true]`.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/referentiel/notes-techniques.html#nt-1-2>
 * <https://www.w3.org/WAI/tutorials/images/decorative/>
 
@@ -830,7 +830,7 @@ category: Warnings
 ### Description
 Any `<svg>` should either have `[aria-hidden="true"]` if decorative, or a `[role="img"]` if informative.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
@@ -865,7 +865,7 @@ category: Warnings
 ### Description
 A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because it can be quite surprising for the user.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-18>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-17>
 * <https://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
@@ -898,7 +898,7 @@ category: Warnings
 ### Description
 A time-based media like `<audio>` or `<video>` would be easier to use if `[controls]` are activated for the user.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-20>
 * <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
 * <https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
@@ -944,7 +944,7 @@ empty if they have at least one source specified through `[src]`.
 
 We could use the `:blank` pseudo-class, but at this time its support is very poor. We could also use the `:-moz-only-whitespace` pseudo-class, but support is limited to Firefox and thus could invalidate our selectors stack…
 
-### Referencess
+### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
 * <https://www.w3.org/TR/html-markup/syntax.html#void-element>
 * <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
@@ -988,7 +988,7 @@ category: Warnings
 A lonely `<tr>` can be a symptom of a table used for layout.
 Should be double checked!
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
@@ -1031,7 +1031,7 @@ category: Warnings
 ### Description
 There's no good reason to nest data tables: thus it probably means we're facing a layout table…
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 * <https://www.w3.org/WAI/tutorials/tables/tips/>
@@ -1094,7 +1094,7 @@ category: Warnings
 `<caption>` is needed for data `<table>`.
 And it must be the `:first-child`, by the way.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-4>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
@@ -1143,7 +1143,7 @@ category: Warnings
 ### Description
 `<thead>`, `<tfoot>` and `<tbody>` must be in this order.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
@@ -1244,7 +1244,7 @@ category: Warnings
 ### Description
 `<th>` strongly needs an `[id]` or a `[scope]`.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20-TECHS/H43.html>
@@ -1292,7 +1292,7 @@ category: Warnings
 ### Description
 Believe me, this still have to be tested.
 
-### Referencess
+### References
 * <https://www.la-grange.net/2015/03/11/visible>
 
 ### Selector
@@ -1308,7 +1308,7 @@ img[src*="pixel-1x1-clear.gif"]:not([role="presentation"])
 
 ### Test
 ``` html
-<img src="static/spacer.gif" alt="Spacer.gif" width="100" height="100"/><span>†</span>
+<img src="/static/spacer.gif" alt="Spacer.gif" width="100" height="100"/><span>†</span>
 ```
 */
 img[src*="1px.gif"]:not([role="presentation"]),
@@ -1379,7 +1379,7 @@ The `[href]` attribute should not start with "javascript".
 Should probably be a `<button>` or at least a `[role="button"]`, don't you think?
 The only exception shall be bookmarklets.
 
-### Referencess
+### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
 ### Selector
@@ -1408,7 +1408,7 @@ category: Warnings
 The `[href]` attribute is only containing `#`.
 Should probably be a `<button>` or at least a `[role="button"]`, don't you think?
 
-### Referencess
+### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
 ### Selector
@@ -1437,7 +1437,7 @@ category: Warnings
 Your styles should be driven by a CSS file. That's it.
 And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-1->
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
@@ -1472,7 +1472,7 @@ category: Warnings
 `[target="_blank"]` links might be used for phishing.
 This is not actually an accessibility related issue, but everything helping users is welcome.
 
-### Referencess*
+### References*
 * <https://mathiasbynens.github.io/rel-noopener/>
 * <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noopener>
 * <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noreferrer>
@@ -1508,7 +1508,7 @@ category: Warnings
 ### Description
 Though `[aria-level]` is not required by ARIA specification, it's actually better to specify it.
 
-### Referencess
+### References
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-level>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-9-1>
 * <https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css>
@@ -1543,7 +1543,7 @@ category: Warnings
 A `<label>` is labelling something, in theory.
 Although implicitly labelling form controls is accepted, it's probably better to double-check that form control is *really* nested in its `<label>`.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
@@ -1579,7 +1579,7 @@ category: Warnings
 Some languages — like Arabic or Hebrew — requires a text direction switch usin `[dir="rtl"]`, as default text direction is left-to-right.
 This also requires to check any in-page language change (marked up with `[lang]`) in Arabic or Hebrew content to define `[dir]` too.
 
-### Referencess
+### References
 * <https://alphagov.github.io/accessibility-tool-audit/test-cases.html#languageofcontent>
 * <https://www.w3.org/International/questions/qa-html-dir>
 * <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>

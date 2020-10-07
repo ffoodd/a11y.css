@@ -29,7 +29,7 @@
 .token.char,
 .token.builtin,
 .token.inserted {
-  color: #9a6e3a;
+  color: #667f1f;
 }
 
 .token.operator,
@@ -43,7 +43,7 @@
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #dd4a68;
+  color: #07a;
 }
 
 .token.function,

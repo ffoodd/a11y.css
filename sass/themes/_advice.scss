@@ -138,7 +138,7 @@ category: Advices
 ### Description
 `<figcaption>` should be single inside its parent. Check the spec!
 
-### Referencess
+### References
 * <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
 ### Selector
@@ -150,7 +150,7 @@ figcaption:not(:first-of-type)
 ``` html
 <figure role="group">
   <figcaption>I'm the caption.</figcaption>
-  <img src="static/ffoodd.png" alt="Needed" width="144" height="144" />
+  <img src="/static/ffoodd.png" alt="Needed" width="144" height="144" />
   <figcaption>I'm the caption too.</figcaption>
 </figure>
 ```
@@ -170,7 +170,7 @@ category: Advices
 ### Description
 `<figcaption>` should be first or last child. Nothing else.
 
-### Referencess
+### References
 * <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
 ### Selector
@@ -181,7 +181,7 @@ figcaption:not(:first-child):not(:last-child)
 ### Test
 ``` html
 <figure role="group">
-  <img src="static/ffoodd.png" alt="Needed" width="144" height="144" />
+  <img src="/static/ffoodd.png" alt="Needed" width="144" height="144" />
   <figcaption>I'm the caption.</figcaption>
   <p>I'm something else. Oh, wait.</p>
 </figure>
@@ -254,7 +254,7 @@ category: Advices
 ### Description
 Obviously, a button role on a link is probably not so hard to move to an authentic button tag, isn't it?
 
-### Referencess
+### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174>
 
 ### Selector
@@ -283,7 +283,7 @@ category: Advices
 A link opening new tab or window should warn user about its behaviour.
 You could use a `[title]`, for example.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-2>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <https://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context>
@@ -316,7 +316,7 @@ category: Advices
 ### Description
 A link to a file should indicate the file format, the file size and if different from the main document, the file language.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-6>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-7>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
@@ -371,7 +371,7 @@ category: Advices
 ### Description
 Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[contentinfo]`.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
@@ -407,7 +407,7 @@ category: Advices
 ### Description
 A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
@@ -451,7 +451,7 @@ category: Advices
 ### Description
 A `[required]` or `[aria-required]` should be visually understandable.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-10>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 
@@ -494,7 +494,7 @@ category: Advices
 ### Description
 A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-13>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
@@ -559,7 +559,7 @@ category: Advices
 ### Description
 A `<video>` or `<audio>` needs a few things to be accessible, like a transcript, subtitles, controls. This kind of things.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-1>
 * <https://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt>
 * <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
@@ -593,7 +593,7 @@ category: Advices
 ### Description
 A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-3>
 * <https://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
@@ -608,7 +608,7 @@ svg[aria-label][title]
 
 ### Test
 ``` html
-<img src="static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144"><span>†</span>
+<img src="/static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144"><span>†</span>
 ```
 */
 img[alt][title],
@@ -655,7 +655,7 @@ category: Advices
 ### Description
 A `[scope]` can be col or row (and nothing else) and it has to be relevant.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG-TECHS/H63.html>
@@ -703,7 +703,7 @@ category: Advices
 ### Description
 A `[role="presentation"]` is a good idea for any `<table>` used for layout, but a bad thing for a data table. Double check this!
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
@@ -741,7 +741,7 @@ category: Advices
 ### Description
 Yet it's valid to skip the `[href]` attribute on a link, it's probably better to double check, isn't it?
 
-### Referencess
+### References
 * <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
@@ -771,7 +771,7 @@ category: Advices
 ### Description
 When possible, try to use HTTPS.
 
-### Referencess
+### References
 * <https://twitter.com/fvsch/status/921748801542639616>
 * <https://transparencyreport.google.com/https/overview?hl=en>
 * <https://letsencrypt.org/>
