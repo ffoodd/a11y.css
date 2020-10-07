@@ -298,6 +298,10 @@ h2[id] {
   z-index: 1;
 }
 
+article:nth-of-type(10) ~ article h2[id] {
+  padding: 0 0 0 2ch;
+}
+
 h2[id]::after,
 h2[id]::before {
   background: #f3f0e0;
@@ -389,7 +393,7 @@ table {
 }
 
 pre {
-  color: #807373;
+  color: #032c36;
   direction: ltr;
   font-family: monospace;
   hyphens: none;
@@ -536,22 +540,29 @@ aside img {
 
 .pre {
   background: #fffef9;
-  border-top: 1px solid #e5dec8;
-  border-radius: 0 0 4px 4px;
+  border: 1px solid #e5dec8;
+  border-radius: 4px;
   position: relative;
 }
 
-.pre pre {
+.pre > div {
   background: #fff;
-  border: 1px solid #e5dec8;
-  border-radius: 4px;
-  margin: 1em 0;
+  margin: 2em 0;
   padding: 1em;
 }
 
-.pre code {
+.pre pre {
+  margin: 0;
+  padding: 1em;
+}
+
+.pre pre:not(:first-child) {
+  border-top: 1px solid #e5dec8;
+}
+
+.pre pre:only-child code {
   display: block;
-  margin: 3em 0 1em;
+  margin: 2em 0 0;
 }
 
 .pre code::before {

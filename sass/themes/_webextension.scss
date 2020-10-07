@@ -22,7 +22,7 @@ This page provides fake content with:
 
 This enables us to test two  webextension's modules.
 
-### Referencess for `alt` and `title` on `<img>`
+### References for `alt` and `title` on `<img>`
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
@@ -37,7 +37,7 @@ This enables us to test two  webextension's modules.
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
-### Referencess for text spacing
+### References for text spacing
 * <https://www.w3.org/TR/WCAG21/#text-spacing>
 * <https://developer.paciellogroup.com/blog/2018/05/short-note-on-getting-spaced-out-with-sc-1-4-12-text-spacing/>.
 
@@ -52,7 +52,7 @@ category: WebExtension
 ---
 
 ``` html
-<img src="static/checkalts/1.jpg" /><span>†</span>
+<img src="/static/checkalts/1.jpg" /><span>†</span>
 ```
 */
 
@@ -65,7 +65,7 @@ category: WebExtension
 ---
 
 ``` html
-<img alt="A typewriter" title="Last day of August" src="static/checkalts/2.jpg" /><span>†</span>
+<img alt="A typewriter" title="Last day of August" src="/static/checkalts/2.jpg" /><span>†</span>
 ```
 */
 
@@ -78,7 +78,7 @@ category: WebExtension
 ---
 
 ``` html
-<img alt="" src="static/checkalts/3.jpg" /><span>†</span>
+<img alt="" src="/static/checkalts/3.jpg" /><span>†</span>
 ```
 */
 
@@ -91,7 +91,7 @@ category: WebExtension
 ---
 
 ``` html
-<img src="static/checkalts/4.jpg" alt="Sunset" /><span>†</span>
+<img src="/static/checkalts/4.jpg" alt="Sunset" /><span>†</span>
 ```
 */
 

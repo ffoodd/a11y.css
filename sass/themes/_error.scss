@@ -83,7 +83,7 @@ category: Errors
 ### Description
 The `[href]` attribute, if present, should not be empty. A link *to* something, right?
 
-### Referencess
+### References
 * <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
@@ -116,7 +116,7 @@ category: Errors
 An empty link should have a label, within `[title]`, `[aria-label]` or targeted by `[aria-labelledby]`.
 By the way, why would you use an empty link?
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-6-5>
 * <https://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
@@ -156,7 +156,7 @@ category: Errors
 ### Description
 An `<img>` must have an `[alt]`. Always.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
@@ -178,7 +178,7 @@ input[type="image"]:not([alt])
 
 ### Test
 ``` html
-<img src="static/ffoodd.png" width="144" height="144" /><span>†</span>
+<img src="/static/ffoodd.png" width="144" height="144" /><span>†</span>
 ```
 */
 img[alt=" "],
@@ -202,7 +202,7 @@ category: Errors
 `[role=img]` should either have `[aria-label]` or `[aria-labelledby]`.
 If image is decorative, please use `[role=presentation]` instead.
 
-### Referencess
+### References
 * <https://www.w3.org/TR/wai-aria/roles#img>
 * <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
@@ -243,7 +243,7 @@ category: Errors
 ### Description
 An `<img>` must have an `[src]` or an `[srcset]`, and it should be a valid one. Obviously.
 
-### Referencess
+### References
 * <https://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src>
 * <https://scottjehl.github.io/picturefill/>
 
@@ -313,7 +313,7 @@ category: Errors
 ### Description
 A `<label>` with a `[for]` attribute should label something with an `[id]` attribute, obviously.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
@@ -350,7 +350,7 @@ category: Errors
 ### Description
 How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-1>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
@@ -387,7 +387,7 @@ category: Errors
 How to label a `[reset]`, `[submit]` or `[button]` type input?
 You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
@@ -421,7 +421,7 @@ category: Errors
 ### Description
 A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]` or `[title]`. Those attributes, if present, should not be empty.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
@@ -453,7 +453,7 @@ category: Errors
 ### Description
 `[aria-label]`, `[aria-labelledby]` or `[title]` on a `<button>` must not be empty.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
@@ -499,7 +499,7 @@ However outside a form, if it's intended to send a form it should mention it wit
 
 If it doesn't submit anything, it should have the `[type="button"]`.
 
-### Referencess
+### References
 * <https://www.w3.org/TR/html5/forms.html#the-button-element>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189>
 
@@ -536,7 +536,7 @@ If a `<button>`'s`[type]` is either `"reset"` or `"button"`, it should not use t
 * `[formenctype]`;
 * `[formnovalidate]`.
 
-### Referencess
+### References
 * <https://www.w3.org/TR/html5/forms.html#the-button-element>
 
 ### Selector
@@ -580,7 +580,7 @@ category: Errors
 A `<button>` styled to be disabled should be disabled *for real*.
 Use `[disabled]` and `[readonly]`.
 
-### Referencess
+### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L122>
 
 ### Selector
@@ -608,7 +608,7 @@ category: Errors
 ### Description
 `<input>` needs a `[type]` in order to tell the user what kind of data is wanted.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-11>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
 
@@ -642,7 +642,7 @@ category: Errors
 ### Description
 `<optgroup>` needs a `[label]` to explain what's inside the group.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-8>
 * <https://www.w3.org/TR/WCAG-TECHS/H85.html>
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
@@ -684,7 +684,7 @@ category: Errors
 ### Description
 `<iframe>` needs a `[title]` in order to tell the user what to expect inside the iframe.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-2-1>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H64.html>
@@ -698,7 +698,7 @@ iframe[title=""]
 
 ### Test
 ``` html
-<iframe src="static/no-title.html" sandbox="allow-same-origin"></iframe><span>†</span>
+<iframe src="/static/no-title.html" sandbox="allow-same-origin"></iframe><span>†</span>
 ```
 */
 iframe:not([title]),
@@ -718,7 +718,7 @@ category: Errors
 ### Description
 `<form>` should do something, isnt'it? Well, `[action]` is meant to define what.
 
-### Referencess
+### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L214>
 
 ### Selector
@@ -755,7 +755,7 @@ category: Errors
 ### Description
 `<html>` must indicate to User Agents the human language used in the document.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-3>
 * <https://references.modernisation.gouv.fr/rgaa-accessibilite/glossaire.html#langue-par-dfaut>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-4>
@@ -778,7 +778,7 @@ html[lang=""]
 
 ### Test
 ``` html
-<iframe title="No language defined a11y.css test-case" src="static/no-lang.html" sandbox="allow-same-origin"></iframe>
+<iframe title="No language defined a11y.css test-case" src="/static/no-lang.html" sandbox="allow-same-origin"></iframe>
 ```
 */
 html:not([lang]),
@@ -807,7 +807,7 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 * `[headers]`;
 * `[colgroup]`.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-8>
 * <https://www.w3.org/TR/WCAG-TECHS/F46.html>
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
@@ -860,7 +860,7 @@ category: Errors
 `[width]` and `[height]` are presentation informations.
 Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#presentation>
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-1->
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
@@ -899,7 +899,7 @@ category: Errors
 Javascript event attributes (such as `[onmouseover]`) should not be used.
 Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS event listeners.
 
-### Referencess
+### References
 * <https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes>
 * <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener>
 
@@ -969,7 +969,7 @@ category: Errors
 Did you know that some characters should be avoided as first characters in class names and identifiers?
 Yep. Digits, two hyphens, or hyphen followed by a digit.
 
-### Referencess
+### References
 * <https://www.w3.org/TR/2011/REC-css3-selectors-20110929/#w3cselgrammar>
 * <https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/>
 * <https://www.w3.org/Style/CSS/Test/CSS3/Selectors/current/html/tests/css3-modsel-175a.html>
@@ -1086,7 +1086,7 @@ The `<title>` tag is the first thing read aloud by screen readers — to announc
 
 We could use the `:blank` pseudo-class, but at this time its support is very poor. We could also use the `:-moz-only-whitespace` pseudo-class, but support is limited to Firefox and thus could invalidate our selectors stack…
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-5>
 * <https://references.modernisation.gouv.fr/rgaa/glossaire.html#titrePage>
 * <https://www.w3.org/TR/html5/document-metadata.html#the-title-element>
@@ -1126,7 +1126,7 @@ category: Errors
 ### Description
 User should be able to zoom in or out the page to improve readability and comfort; this is usually allowed by the viewport `<meta>`.
 
-### Referencess
+### References
 * <https://bitsofco.de/linting-html-using-css/>
 * <https://dequeuniversity.com/rules/axe/2.1/meta-viewport>
 * <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-scale>
@@ -1143,7 +1143,7 @@ meta[name="viewport"][content*="user-scalable=no"]
 
 ### Test
 ``` html
-<iframe src="static/viewport.html" sandbox="allow-same-origin" title="Wrong viewport instruction example"></iframe><span>†</span>
+<iframe src="/static/viewport.html" sandbox="allow-same-origin" title="Wrong viewport instruction example"></iframe><span>†</span>
 ```
 */
 meta[name="viewport"][content*="maximum-scale"],
@@ -1167,7 +1167,7 @@ Using `utf-8` character encoding is recommended by the W3C itself:
 
 Moreover it avoids some security issues exploiting some other charsets…
 
-### Referencess
+### References
 * <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
 * <https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
@@ -1209,7 +1209,7 @@ As explained on the Mozilla Developer Network:
 It's also meant to prevent an old security exploit using UTF-7. Declaring the charset
 before the `<title>` tag is the simplest way to cover it.
 
-### Referencess
+### References
 * <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
 * <https://w3c.github.io/html/document-metadata.html#charset>
@@ -1222,7 +1222,7 @@ head :first-child:not([charset])
 
 ### Test
 ``` html
-<iframe src="static/no-charset.html" title="Late charset a11y.css test-case" sandbox="allow-same-origin"></iframe>
+<iframe src="/static/no-charset.html" title="Late charset a11y.css test-case" sandbox="allow-same-origin"></iframe>
 ```
 */
 head :first-child:not([charset]) {
@@ -1241,7 +1241,7 @@ category: Errors
 ### Description
 The `[dir]` attribute — used to specify the element’s text directionality — only accepts three values: `rtl`, `ltr` and `auto`.
 
-### Referencess
+### References
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113>
 * <https://www.w3.org/International/questions/qa-html-dir>
 * <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
@@ -1276,7 +1276,7 @@ the browser, browser extension and even user's settings…
 
 This is opinionated: in a perfect world, `[accesskey]` could be used wisely. Yup. Could be.
 
-### Referencess
+### References
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159>
 * <https://www.cs.tut.fi/~jkorpela/forms/accesskey.html>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey>
@@ -1310,7 +1310,7 @@ category: Errors
 Inputs with a type of `radio` or `checkbox` are usually grouped. The `[name]` attribute is meant to programmatically associate them,
 thus is needed.
 
-### Referencess
+### References
 * <https://www.w3.org/WAI/tutorials/forms/grouping/>
 * <https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox>
 * <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
@@ -1362,7 +1362,7 @@ the use of the fieldset and legend elements is not required."
 
 This test could be a warning…
 
-### Referencess
+### References
 * <https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons>
 * <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
 * <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
@@ -1419,7 +1419,7 @@ category: Errors
 
 Also `[aria-valuetext]` is welcome, even though it's not required by ARIA specification.
 
-### Referencess
+### References
 * <https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378>
 * <https://www.w3.org/TR/wai-aria/roles#slider>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
@@ -1469,7 +1469,7 @@ category: Errors
 * `[aria-valuemax]`
 * `[aria-valuenow]`
 
-### Referencess
+### References
 * <https://www.w3.org/TR/wai-aria/roles#spinbutton>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuenow>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
@@ -1514,7 +1514,7 @@ category: Errors
 * `[aria-valuemax]`
 * `[aria-valuenow]`
 
-### Referencess
+### References
 * <https://www.w3.org/TR/wai-aria/roles#checkbox>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-checked>
 * <https://oaa-accessibility.org/examples/role/76/>
@@ -1526,7 +1526,7 @@ category: Errors
 
 ### Test
 ``` html
-<img src="static/ffoodd.png" alt="Checkbox" role="checkbox" width="36" height="36"/><span>†</span>
+<img src="/static/ffoodd.png" alt="Checkbox" role="checkbox" width="36" height="36"/><span>†</span>
 ```
 */
 [role="checkbox"]:not([aria-checked]) {
@@ -1548,7 +1548,7 @@ category: Errors
 ### Description
 `[aria-expanded]` is required on `[role="combobox"]`.
 
-### Referencess
+### References
 * <https://www.w3.org/TR/wai-aria/roles#combobox>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-expanded>
 * <https://oaa-accessibility.org/examples/role/77/>
@@ -1588,7 +1588,7 @@ Some properties are required to comply the `[role="scrollbar"]` pattern:
 * `[aria-valuenow]`
 * `[aria-orientation]`
 
-### Referencess
+### References
 * <https://www.w3.org/TR/wai-aria/roles#scrollbar>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-controls>
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-valuemin>
@@ -1630,7 +1630,7 @@ category: Errors
 An interactive element should not be contained in another interactive element (e.g. `<a>` in `<button>`).
 
 
-### Referencess
+### References
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
