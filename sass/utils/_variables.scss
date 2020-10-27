@@ -1,13 +1,56 @@
 @charset 'UTF-8';
 
+/*doc
+---
+title: "Themes"
+name: themes
+category: Docs
+subcategory: Variables
+type: Map
+---
 
-/// This map holds configuration for all themes.
-/// Each theme has an icon, a color and a z-index, and a background offset.
-/// @type Map
-/// @prop {Map} theme
-/// @prop {Color} theme.color  - Theme color
-/// @prop {Number} theme.index - Theme z-index
-/// @prop {Length} theme.background-offset - Theme background-offset
+``` scss
+$themes: (
+  'error': (
+    'color': #d90b0b,
+    'index': 2147483647,
+    'background-offset': 1.4em
+  ),
+  'warning': (
+    'color': #f50,
+    'index': 2147483646,
+    'background-offset': 2.9em
+  ),
+  'obsolete': (
+    'color': royalblue,
+    'index': 2147483645,
+    'background-offset': 4.4em
+  ),
+  'advice': (
+    'color': green,
+    'index': 2147483644,
+    'background-offset': 5.9em
+  ),
+);
+```
+
+##### Description
+This map holds configuration for all themes. Each theme has an icon, a color and a z-index, and a background offset.
+
+##### Map structure
+
+| Name                      | Description               | Type     | Value |
+|---------------------------|---------------------------|----------|-------|
+| `theme`                   | —                         | `Map`    | —     |
+| `theme.color`             | Theme color               | `Color`  | —     |
+| `theme.index`             | Theme `z-index`           | `Number` | —     |
+| `theme.background-offset` | Theme `background-offset` | `Length` | —     |
+
+##### Used by
+
+- [`set-minimum-level` mixin](#congifuration-mixin-set-minimum-level)
+- [`base-content` mixin](#congifuration-mixin-base-content)
+*/
 $themes: (
   'error': (
     'color': #d90b0b,
