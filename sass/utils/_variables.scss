@@ -48,8 +48,8 @@ This map holds configuration for all themes. Each theme has an icon, a color and
 
 ##### Used by
 
-- [`set-minimum-level` mixin](#congifuration-mixin-set-minimum-level)
-- [`base-content` mixin](#congifuration-mixin-base-content)
+- [`set-minimum-level()` mixin](#congifuration-mixin-set-minimum-level)
+- [`base-content()` mixin](#congifuration-mixin-base-content)
 */
 $themes: (
   'error': (
@@ -74,8 +74,24 @@ $themes: (
   ),
 );
 
-/// Map of disabled tests, referred by their key
-/// @type List
+
+/*doc
+---
+title: "Disabled tests"
+name: disabled-tests
+category: Docs
+subcategory: Variables
+type: List
+---
+
+##### Description
+
+Map of disabled tests, referred by their key.
+
+##### Used by
+
+- [`disable-tests()` mixin](#messages-mixin-disable-tests)
+*/
 $disabled-tests: ();
 
 /// List of self-closing tags & replaced elements
