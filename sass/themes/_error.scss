@@ -18,7 +18,7 @@ The `[tabindex]` attribute should never be greater than 0.
 
 ##Selector
 ```css_example
-[tabindex]:not([tabindex="0"]):not([tabindex="-1"])
+[tabindex]:not([tabindex="0"]):not([tabindex^="-"])
 ```
 
 ##Test
@@ -26,7 +26,7 @@ The `[tabindex]` attribute should never be greater than 0.
 <button tabindex="1" type="button">Positive tabindex is bad</button>
 ```
 */
-[tabindex]:not([tabindex="0"]):not([tabindex="-1"]) {
+[tabindex]:not([tabindex="0"]):not([tabindex^="-"]) {
   @include error('tab-order');
 
   @include void-tags {
