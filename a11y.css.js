@@ -16,6 +16,10 @@ const DIRECTORIES = {
     input: './sass/themes/',
     output: './src/_data/sass/'
   },
+  api: {
+    input: './sass/utils/',
+    output: './src/_data/api/'
+  },
   assets: {
     css: {
       input: './src/assets/css/',
@@ -131,9 +135,14 @@ const generateJsonDocumentation = () => {
    * @see https://nodejs.org/api/fs.html#fs_fs_rmdirsync_path_options
    */
   fs.rmdirSync(DIRECTORIES.sass.output, { recursive: true })
+  fs.rmdirSync(DIRECTORIES.api.output, { recursive: true })
 
   fs.readdirSync(DIRECTORIES.sass.input).forEach(file => {
     processSassDocumentation(DIRECTORIES.sass.input + file)
+  })
+
+  fs.readdirSync(DIRECTORIES.api.input).forEach(file => {
+    processSassDocumentation(DIRECTORIES.api.input + file)
   })
 }
 

@@ -84,6 +84,10 @@ subcategory: Variables
 type: List
 ---
 
+``` scss
+$disabled-tests: ();
+```
+
 ##### Description
 
 Map of disabled tests, referred by their key.
@@ -94,26 +98,84 @@ Map of disabled tests, referred by their key.
 */
 $disabled-tests: ();
 
-/// List of self-closing tags & replaced elements
-/// @access private
-/// Every HTMl tag that do not allow generated content through pseudo-elements.
-/// @type List
-/// @link https://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element
-/// @link https://la-cascade.io/quest-ce-quun-element-remplace/
+
+/*doc
+---
+title: "List of self-closing tags & replaced elements"
+name: void-tags
+category: Docs
+subcategory: Variables
+type: List
+---
+
+``` scss
+$void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, textarea, select, svg, audio, video, iframe;
+```
+
+##### Description
+
+Every HTMl tag that do not allow generated content through pseudo-elements.
+
+##### Used by
+
+- [`void-tags()` mixin](#mixin-void-tags)
+
+##### References
+
+* <https://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element>
+* <https://la-cascade.io/quest-ce-quun-element-remplace/>
+*/
 $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, textarea, select, svg, audio, video, iframe;
 
 
-/// List of file formats
-/// @access private
-/// File formats used in a few selectors.
-/// @type List
-/// @link https://kittygiraudel.com/2013/07/15/understanding-sass-lists/
+/*doc
+---
+title: "List of file formats"
+name: file-formats
+category: Docs
+subcategory: Variables
+type: List
+---
+
+``` scss
+$formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx, webp, apng, svg, svgz;
+```
+
+##### Description
+
+File formats used in a few selectors.
+
+##### Used by
+
+- ["Linking to a file" advice]()
+- ["[alt] containing file name" warning]()
+*/
 $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx, webp, apng, svg, svgz;
 
-/// List of interactive elements
-/// @access private
-/// Tags used in some selectors.
-/// @type List
-/// @link https://w3c.github.io/html/dom.html#interactive-content-2
-/// @link https://kittygiraudel.com/2013/07/15/understanding-sass-lists/
+
+/*doc
+---
+title: "List of interactive elements"
+name: interactive-elements
+category: Docs
+subcategory: Variables
+type: List
+---
+
+``` scss
+$interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'details', 'embed', 'iframe', 'img[usemap]', 'label', 'select', 'textarea', 'input[type]:not([hidden])';
+```
+
+##### Description
+
+Tags used in some selectors.
+
+##### Used by
+
+- ["Nested interactive elements" error]()
+
+##### References
+
+* <https://w3c.github.io/html/dom.html#interactive-content-2>
+*/
 $interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'details', 'embed', 'iframe', 'img[usemap]', 'label', 'select', 'textarea', 'input[type]:not([hidden])';
