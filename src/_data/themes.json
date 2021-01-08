@@ -18,5 +18,9 @@
   {
     "title": "WebExtension",
     "theme": "webextension"
+  },
+  {
+    "title": "API",
+    "theme": "variables"
   }
 ]
