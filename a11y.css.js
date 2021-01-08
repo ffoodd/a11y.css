@@ -3,6 +3,8 @@ const path = require('path')
 const showdown = require('showdown')
 const fm = require('front-matter')
 const prism = require('prismjs')
+const loadLanguages = require('prismjs/components/');
+loadLanguages(['scss']);
 const postcss = require('postcss')
 const atImport = require('postcss-import')
 const uglify = require('uglify-es')
@@ -99,15 +101,45 @@ const processSassDocumentation = file => {
   )
 }
 
+/*const processApiDocumentation = file => {
+  const inputFileExtension = path.extname(file)
+  const inputFilename = path.basename(file, inputFileExtension)
+  const excludeFiles = ['_all']
+
+  // Exclude files that we don't want to process
+  if (inputFileExtension !== '.scss' || excludeFiles.includes(inputFilename)) {
+    return
+  }
+
+  const content = fs.readFileSync(file, 'utf8')
+  const commentBlockRegex = /\/\*doc(.)*?\*\//gs
+
+  const comments = Array.from(content.matchAll(commentBlockRegex), data => {
+    return parseSassComment(data[0])
+  })
+
+  // Avoid crash if output directory does not exists
+  if (!fs.existsSync(DIRECTORIES.api.output)) {
+    fs.mkdirSync(DIRECTORIES.api.output)
+  }
+
+  // Write Eleventy data files
+  fs.writeFileSync(
+    `${DIRECTORIES.api.output}/${inputFilename.replace('_', '')}.json`,
+    JSON.stringify(comments, null, 2)
+  )
+}*/
+
 const parseSassComment = comment => {
   // Remove CSS comments syntax
   comment = comment.replace(/(\/\*doc|\*\/)/g, '').trim()
 
   const content = fm(comment)
-  let processedContent = new showdown.Converter().makeHtml(content.body)
+  let processedContent = new showdown.Converter({tables: true}).makeHtml(content.body)
 
   const markupRegex = /((<pre><code class="html language-html">)(.[\s\S]+?)(\/code><\/pre>))/gm
   const stylesRegex = /((<pre><code class="css language-css">)(.[\s\S]+?)(\/code><\/pre>))/gm
+  const sassRegex = /((<pre><code class="scss language-scss">)(.[\s\S]+?)(\/code><\/pre>))/gm
 
   const htmlRegex = /((?<=<code class="html language-html">)(.[\s\S]+?)(?=<\/code>))/gm
   let htmlContent = processedContent.match(htmlRegex)
@@ -119,8 +151,13 @@ const parseSassComment = comment => {
   let cssContent = processedContent.match(cssRegex)
   let processedCSS = prism.highlight(String(cssContent), prism.languages.css, 'css')
 
+  const scssRegex = /((?<=<code class="scss language-scss">)(.[\s\S]+?)(?=<\/code>))/gm
+  let scssContent = processedContent.match(scssRegex)
+  let processedSCSS = prism.highlight(String(scssContent), prism.languages.scss, 'scss')
+
   processedContent = processedContent.replace(markupRegex, `<div class="pre"><div>${htmlContent}</div><pre><code class="html language-html">${processedHTML}</code></pre></div>`)
   processedContent = processedContent.replace(stylesRegex, `<div class="pre"><pre><code class="css language-css">${processedCSS}</code></pre></div>`)
+  processedContent = processedContent.replace(sassRegex, `<div class="pre"><pre><code class="scss language-scss">${processedSCSS}</code></pre></div>`)
 
   return {
     attributes: content.attributes,

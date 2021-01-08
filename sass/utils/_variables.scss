@@ -34,10 +34,11 @@ $themes: (
 );
 ```
 
-##### Description
+### Description
+
 This map holds configuration for all themes. Each theme has an icon, a color and a z-index, and a background offset.
 
-##### Map structure
+#### Map structure
 
 | Name                      | Description               | Type     | Value |
 |---------------------------|---------------------------|----------|-------|
@@ -46,7 +47,7 @@ This map holds configuration for all themes. Each theme has an icon, a color and
 | `theme.index`             | Theme `z-index`           | `Number` | —     |
 | `theme.background-offset` | Theme `background-offset` | `Length` | —     |
 
-##### Used by
+#### Used by
 
 - [`set-minimum-level()` mixin](#congifuration-mixin-set-minimum-level)
 - [`base-content()` mixin](#congifuration-mixin-base-content)
@@ -88,11 +89,11 @@ type: List
 $disabled-tests: ();
 ```
 
-##### Description
+### Description
 
 Map of disabled tests, referred by their key.
 
-##### Used by
+#### Used by
 
 - [`disable-tests()` mixin](#messages-mixin-disable-tests)
 */
@@ -101,7 +102,7 @@ $disabled-tests: ();
 
 /*doc
 ---
-title: "List of self-closing tags & replaced elements"
+title: "Void tags"
 name: void-tags
 category: Docs
 subcategory: Variables
@@ -112,15 +113,15 @@ type: List
 $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, textarea, select, svg, audio, video, iframe;
 ```
 
-##### Description
+### Description
 
-Every HTMl tag that do not allow generated content through pseudo-elements.
+Every HTML tag that do not allow generated content through pseudo-elements.
 
-##### Used by
+#### Used by
 
 - [`void-tags()` mixin](#mixin-void-tags)
 
-##### References
+#### References
 
 * <https://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element>
 * <https://la-cascade.io/quest-ce-quun-element-remplace/>
@@ -130,7 +131,7 @@ $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, m
 
 /*doc
 ---
-title: "List of file formats"
+title: "File formats"
 name: file-formats
 category: Docs
 subcategory: Variables
@@ -141,11 +142,11 @@ type: List
 $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx, webp, apng, svg, svgz;
 ```
 
-##### Description
+### Description
 
 File formats used in a few selectors.
 
-##### Used by
+#### Used by
 
 - ["Linking to a file" advice]()
 - ["[alt] containing file name" warning]()
@@ -155,7 +156,7 @@ $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, 
 
 /*doc
 ---
-title: "List of interactive elements"
+title: "Interactive elements"
 name: interactive-elements
 category: Docs
 subcategory: Variables
@@ -166,15 +167,15 @@ type: List
 $interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'details', 'embed', 'iframe', 'img[usemap]', 'label', 'select', 'textarea', 'input[type]:not([hidden])';
 ```
 
-##### Description
+### Description
 
 Tags used in some selectors.
 
-##### Used by
+#### Used by
 
 - ["Nested interactive elements" error]()
 
-##### References
+#### References
 
 * <https://w3c.github.io/html/dom.html#interactive-content-2>
 */

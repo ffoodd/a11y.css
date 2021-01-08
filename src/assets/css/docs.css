@@ -583,6 +583,10 @@ aside img {
   content: "CSS";
 }
 
+.pre code[class*="scss"]::before {
+  content: "Sass";
+}
+
 form label {
   min-width: 1em;
 }
