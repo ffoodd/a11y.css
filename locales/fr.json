@@ -26,6 +26,7 @@
   "advice:table-presentation": "Tableau de mise en forme",
   "advice:no-href": "Lien sans cible",
   "advice:no-https": "Pas de HTTPS",
+  "advice:select-option-not-empty": "<select> should have empty [value] on first <option>",
 
   "error:tab-order": "Ordre de tabulation perturbé",
   "error:empty-href": "[href] vide",

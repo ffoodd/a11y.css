@@ -26,6 +26,7 @@
   "advice:table-presentation": "Diseño con tablas",
   "advice:no-href": "Enlace sin destino",
   "advice:no-https": "No HTTPS",
+  "advice:select-option-not-empty": "<select> debe tener el primer <option> con [value] vacío",
 
   "error:tab-order": "Orden de pestaña disruptivo",
   "error:empty-href": "[href] vacío",
