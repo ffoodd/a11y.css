@@ -3,6 +3,41 @@
 
 /*doc
 ---
+title: "Required <select> should have first <option> with empty [value]"
+name: empty-option-on-select
+category: Advices
+---
+
+##Description
+The first child `option` element of a `select` element with a `[required]` attribute, and without a `[multiple]` attribute, and without a `[size]` attribute whose value is greater than 1, must have either an empty value attribute, or must have no text content. Consider either adding a placeholder option label, or adding a size attribute with a value equal to the number of option elements.
+
+##References
+* <https://twitter.com/WebPlatformNews/status/1346492730223058946>
+* <https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option>
+* <https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet>
+
+##Selector
+```css_example
+select[required]:not([multiple])[size="1"],
+select[required]:not([multiple]):not([size])
+```
+
+##Test
+```html_example
+<select name="slices" required>
+  <option value="1">Cheese</option>
+  <option value="2">Salami</option>
+</select><span>†</span>
+```
+*/
+select[required]:not([multiple])[size="1"],
+select[required]:not([multiple]):not([size]) {
+  @include advice('select-option-not-empty', $self-closing: true);
+}
+
+
+/*doc
+---
 title: "Empty [class] attribute"
 name: empty-class
 category: Advices

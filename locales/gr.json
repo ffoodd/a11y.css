@@ -26,6 +26,7 @@
   "advice:table-presentation": "Δεδομένα σε πίνακα διάταξης.",
   "advice:no-href": "Σύνδεσμος χωρίς διεύθυνση.",
   "advice:no-https": "Ο σύνδεσμος δεν είναι HTTPS.",
+  "advice:select-option-not-empty": "<select> should have empty [value] on first <option>",
 
   "error:tab-order": "[tabindex] > 0",
   "error:empty-href": "Κενή ιδιότητα [href].",
