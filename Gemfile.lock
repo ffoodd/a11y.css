@@ -5,7 +5,7 @@ GEM
       redcarpet (>= 2.2, < 4.0)
       rouge (>= 1.5)
     rake (11.1.2)
-    redcarpet (3.3.4)
+    redcarpet (3.5.1)
     rouge (1.10.1)
     sass (3.4.22)
     scss_lint (0.48.0)
