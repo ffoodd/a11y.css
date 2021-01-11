@@ -26,7 +26,7 @@
   "advice:table-presentation": "Layout table",
   "advice:no-href": "Link sem destino",
   "advice:no-https": "Sem HTTPS",
-  "advice:select-option-not-empty": "<select> should have empty [value] on first <option>",
+  "advice:select-option-not-empty": "<select required> should start with <option value=\"\">",
 
   "error:tab-order": "Interrupção da ordem da aba",
   "error:empty-href": "Vazio [href]",

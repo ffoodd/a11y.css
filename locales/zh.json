@@ -26,7 +26,7 @@
   "advice:table-presentation": "确认这个 [table] 元素是用于布局而非展示数据",
   "advice:no-href": "缺少 [href]",
   "advice:no-https": "缺少 HTTPS",
-  "advice:select-option-not-empty": "<select> should have empty [value] on first <option>",
+  "advice:select-option-not-empty": "<select required> should start with <option value=\"\">",
 
   "error:tab-order": "标签页位置不正确",
   "error:empty-href": "[href] 为空",

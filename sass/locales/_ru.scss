@@ -25,7 +25,7 @@ $messages: (
   "advice:table-presentation": "Таблица используемая для разметки страницы",
   "advice:no-href": "Пропущен [href] у ссылки",
   "advice:no-https": "Нет HTTPS",
-  "advice:select-option-not-empty": "<select> should have empty [value] on first <option>",
+  "advice:select-option-not-empty": "<select required> should start with <option value=\"\">",
   "error:tab-order": "Некорректное значение tabindex",
   "error:empty-href": "Пустой атрибут [href]",
   "error:empty-link": "Пустая ссылка…",
