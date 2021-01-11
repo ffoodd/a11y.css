@@ -9,7 +9,7 @@ category: Advices
 ---
 
 ## Description
-A `<select required>` element, which isn't neither `[multiple]` nor `[size]` greater than `1`, should start with an empty `<option>`. That being said, you may use a placeholder content for this option but must ensure to use an empty `[value]` attribute; or set a `[size]` attributes to the `<select>`, which value should equal to the number of `<option>`s.
+A `<select required>` element, which isn't `[multiple]` and whose `[size]` isn't greater than `1`, should start with an empty `<option>`. That being said, you may use a placeholder content for this option but must ensure to use an empty `[value]` attribute; or set a `[size]` attribute to the `<select>`, which value should equal to the number of `<option>`s.
 
 ## References
 * <https://twitter.com/WebPlatformNews/status/1346492730223058946>
