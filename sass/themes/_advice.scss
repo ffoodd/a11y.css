@@ -3,26 +3,26 @@
 
 /*doc
 ---
-title: "Required <select> should have first <option> with empty [value]"
+title: "<select required> should start with an empty <option>'s [value]"
 name: empty-option-on-select
 category: Advices
 ---
 
-##Description
-The first child `option` element of a `select` element with a `[required]` attribute, and without a `[multiple]` attribute, and without a `[size]` attribute whose value is greater than 1, must have either an empty value attribute, or must have no text content. Consider either adding a placeholder option label, or adding a size attribute with a value equal to the number of option elements.
+## Description
+A `<select required>` element, which isn't neither `[multiple]` nor `[size]` greater than `1`, should start with an empty `<option>`. That being said, you may use a placeholder content for this option but must ensure to use an empty `[value]` attribute; or set a `[size]` attributes to the `<select>`, which value should equal to the number of `<option>`s.
 
-##References
+## References
 * <https://twitter.com/WebPlatformNews/status/1346492730223058946>
 * <https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option>
 * <https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet>
 
-##Selector
+## Selector
 ```css_example
 select[required]:not([multiple])[size="1"],
 select[required]:not([multiple]):not([size])
 ```
 
-##Test
+## Test
 ```html_example
 <select name="slices" required>
   <option value="1">Cheese</option>

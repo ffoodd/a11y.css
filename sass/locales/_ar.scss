@@ -25,7 +25,7 @@ $messages: (
   "advice:table-presentation": "مصصم كجدول",
   "advice:no-href": "رابط من غير هدف",
   "advice:no-https": "لا يوجد HTTPS",
-  "advice:select-option-not-empty": "<select> should have empty [value] on first <option>",
+  "advice:select-option-not-empty": "<select required> should start with <option value=\"\">",
   "error:tab-order": "توزيع شريط البحث",
   "error:empty-href": "المصدر غير موجود[href]",
   "error:empty-link": " الرابط غير موجود...",

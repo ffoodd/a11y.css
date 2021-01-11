@@ -25,7 +25,7 @@ $messages: (
   "advice:table-presentation": "Diseño con tablas",
   "advice:no-href": "Enlace sin destino",
   "advice:no-https": "No HTTPS",
-  "advice:select-option-not-empty": "<select> debe tener el primer <option> con [value] vacío",
+  "advice:select-option-not-empty": "<select required> debe empezar con <option value=\"\">",
   "error:tab-order": "Orden de pestaña disruptivo",
   "error:empty-href": "[href] vacío",
   "error:empty-link": "Enlace vacío…",
