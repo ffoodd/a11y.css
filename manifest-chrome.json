@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "a11y.css",
 	"description": "a11y.css provides warnings about possible risks and mistakes that exist in HTML.",
-	"version": "1.0.8",
+	"version": "1.1.0",
 	"permissions": [
 		"activeTab",
 		"storage",
