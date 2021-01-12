@@ -8,7 +8,8 @@ const locales = [
 	"ru",
 	"zh",
 	"gr",
-	"ar"
+	"ar",
+	"es"
 ];
 
 // all locale strings needed for the script
