@@ -71,5 +71,7 @@
     "vinyl-source-stream": "^2.0.0",
     "webextension-polyfill": "^0.4.0"
   },
-  "browserslist": ["last 1 versions"]
+  "browserslist": [
+    "last 1 versions"
+  ]
 }
