@@ -76,6 +76,12 @@
             
               
                 <li>
+                  <a href="#empty-option-on-select">&lt;select required&gt; should start with an empty &lt;option&gt;&#39;s [value]</a>
+                </li>
+              
+            
+              
+                <li>
                   <a href="#figcaption">A second figcaption tag</a>
                 </li>
               
@@ -231,6 +237,7 @@
                   <option value="ru" lang="ru">русский</option>
                   <option value="zh" lang="zh">中文</option>
                   <option value="gr" lang="gr">ελληνικά</option>
+                  <option value="es" lang="es">Español</option>
                 </select>
               </p>
             </fieldset>
@@ -312,6 +319,37 @@
   </div>
   <div class="codeBlock">
     <pre><code><span class="nt">&lt;i</span> <span class="na">id=</span><span class="s">""</span><span class="nt">&gt;</span>Wait. Why is my ID empty?<span class="nt">&lt;/i&gt;</span></code></pre>
+  </div>
+</div>
+
+<h1 id="empty-option-on-select" class="styleguide">&lt;select required&gt; should start with an empty &lt;option&gt;&#39;s [value]</h1>
+
+<h2>Description</h2>
+<p class="styleguide">A <code class="styleguide">&lt;select required&gt;</code> element, which isn&#39;t <code class="styleguide">[multiple]</code> and whose <code class="styleguide">[size]</code> isn&#39;t greater than <code class="styleguide">1</code>, should start with an empty <code class="styleguide">&lt;option&gt;</code>. That being said, you may use a placeholder content for this option but must ensure to use an empty <code class="styleguide">[value]</code> attribute; or set a <code class="styleguide">[size]</code> attribute to the <code class="styleguide">&lt;select&gt;</code>, which value should equal to the number of <code class="styleguide">&lt;option&gt;</code>s.</p>
+<h2>References</h2>
+<ul class="styleguide"><li><a href="https://twitter.com/WebPlatformNews/status/1346492730223058946">https://twitter.com/WebPlatformNews/status/1346492730223058946</a></li>
+<li><a href="https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option">https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option</a></li>
+<li><a href="https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet">https://validator.w3.org/nu/?showsource=yes&amp;doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet</a></li>
+</ul>
+<h2>Selector</h2>
+<div class="codeBlock cssExample">
+  <pre><code><span class="nt">select</span><span class="o">[</span><span class="nt">required</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">multiple</span><span class="o">])[</span><span class="nt">size</span><span class="o">=</span><span class="s1">"1"</span><span class="o">],</span>
+<span class="nt">select</span><span class="o">[</span><span class="nt">required</span><span class="o">]</span><span class="nd">:not</span><span class="o">([</span><span class="nt">multiple</span><span class="o">])</span><span class="nd">:not</span><span class="o">([</span><span class="nt">size</span><span class="o">])</span></code></pre>
+</div>
+<h2>Test</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <select name="slices" required>
+  <option value="1">Cheese</option>
+  <option value="2">Salami</option>
+</select><span>†</span>
+
+  </div>
+  <div class="codeBlock">
+    <pre><code><span class="nt">&lt;select</span> <span class="na">name=</span><span class="s">"slices"</span> <span class="na">required</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">&gt;</span>Cheese<span class="nt">&lt;/option&gt;</span>
+  <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"2"</span><span class="nt">&gt;</span>Salami<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;&lt;span&gt;</span>†<span class="nt">&lt;/span&gt;</span></code></pre>
   </div>
 </div>
 
