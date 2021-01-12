@@ -788,6 +788,10 @@ form label {
   content: "ru" !important;
 }
 
+#bookmarklet--link[href*="-es"]::after {
+  content: "es" !important;
+}
+
 #bookmarklet--link[href*="-gr"]::after {
   content: "gr" !important;
 }
