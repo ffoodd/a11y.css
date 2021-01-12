@@ -9,6 +9,6 @@ module.exports = function () {
   return gulp.src(options.source)
     .pipe(plumber({ errorHandler: onError }))
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(autoprefixer(options.autoprefixer))
+    .pipe(autoprefixer())
     .pipe(gulp.dest(options.destination));
 };
