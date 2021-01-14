@@ -172,7 +172,7 @@
             
               
                 <li>
-                  <a href="#no-lang">No language defined</a>
+                  <a href="#no-lang">No valid language defined</a>
                 </li>
               
             
@@ -1002,7 +1002,7 @@ If image is decorative, please use <code class="styleguide">[role=presentation]<
   </div>
 </div>
 
-<h1 id="no-lang" class="styleguide">No language defined</h1>
+<h1 id="no-lang" class="styleguide">No valid language defined</h1>
 
 <h2>Description</h2>
 <p class="styleguide"><code class="styleguide">&lt;html&gt;</code> must indicate to User Agents the human language used in the document.</p>
@@ -1012,11 +1012,14 @@ If image is decorative, please use <code class="styleguide">[role=presentation]<
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-4">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-4</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id">https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id</a></li>
 <li><a href="https://www.w3.org/TR/WCAG-TECHS/H57.html">https://www.w3.org/TR/WCAG-TECHS/H57.html</a></li>
+<li><a href="https://html.spec.whatwg.org/#attr-lang">https://html.spec.whatwg.org/#attr-lang</a></li>
+<li><a href="https://tools.ietf.org/html/bcp47#section-2.1.1">https://tools.ietf.org/html/bcp47#section-2.1.1</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang</a></li>
 </ul>
 <h2>Selector</h2>
 <div class="codeBlock cssExample">
   <pre><code><span class="nt">html</span><span class="nd">:not</span><span class="o">([</span><span class="nt">lang</span><span class="o">]),</span>
-<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="s1">" "</span><span class="o">],</span>
+<span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">*=</span><span class="s1">" "</span><span class="o">],</span>
 <span class="nt">html</span><span class="o">[</span><span class="nt">lang</span><span class="o">=</span><span class="s1">""</span><span class="o">]</span></code></pre>
 </div>
 <h2>Test</h2>
