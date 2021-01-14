@@ -709,7 +709,7 @@ form[action=""] {
 
 /*doc
 ---
-title: "No language defined"
+title: "No valid language defined"
 name: no-lang
 category: Errors
 ---
@@ -723,11 +723,14 @@ category: Errors
 * <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-4>
 * <https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id>
 * <https://www.w3.org/TR/WCAG-TECHS/H57.html>
+* <https://html.spec.whatwg.org/#attr-lang>
+* <https://tools.ietf.org/html/bcp47#section-2.1.1>
+* <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang>
 
 ##Selector
 ```css_example
 html:not([lang]),
-html[lang=" "],
+html[lang*=" "],
 html[lang=""]
 ```
 
@@ -737,7 +740,7 @@ html[lang=""]
 ```
 */
 html:not([lang]),
-html[lang=" "],
+html[lang*=" "],
 html[lang=""] {
   @include error('no-lang');
 }
