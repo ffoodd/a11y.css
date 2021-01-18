@@ -71,6 +71,7 @@
   "error:role-scrollbar": "Faltan atributos en [role=scrollbar]",
   "error:nested-interactive": "Elementos interactivos anidados",
   "error:show-lang": "attr(lang)",
+  "error:attribute-whitespace": "Atributo no puede contener espacio en blanco",
 
   "warning:style-attr": "Estilos inline",
   "warning:invalid-nesting": "Anidamiento inválido",

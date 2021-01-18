@@ -70,6 +70,7 @@
   "error:role-combobox": "عنصر التمديد غير موجود [aria-expanded]",
   "error:role-scrollbar": "عناصر مفقوده في [role=scrollbar]",
   "error:nested-interactive": "عناصر التفاعل متداخله",
+  "error:attribute-whitespace": "Attribute can't contain whitespace",
 
   "warning:style-attr": "تنسيقات التصميم",
   "warning:invalid-nesting": "تداخل غير صحيح",
