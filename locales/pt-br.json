@@ -71,6 +71,7 @@
   "error:role-scrollbar": "Faltando altributos [role=scrollbar]",
   "error:nested-interactive": "Elementos interativos aninhados",
   "error:show-lang": "attr(lang)",
+  "error:attribute-whitespace": "Attribute can't contain whitespace",
 
   "warning:style-attr": "Inline styles",
   "warning:invalid-nesting": "Inválido nesting",
