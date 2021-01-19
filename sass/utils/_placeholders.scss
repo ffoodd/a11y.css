@@ -6,6 +6,8 @@ category: Docs
 subcategory: Placeholders
 ---
 
+### Source
+
 ``` scss
 %a11y-before {
   border-radius: 0 !important;
@@ -64,6 +66,8 @@ category: Docs
 subcategory: Placeholders
 ---
 
+### Source
+
 ``` scss
 @each $theme in map-keys($themes) {
   %a11y-#{$theme} {
@@ -98,6 +102,8 @@ name: message-cancellation
 category: Docs
 subcategory: Placeholders
 ---
+
+### Source
 
 ``` scss
 %a11y-reset {
@@ -138,6 +144,8 @@ name: head-children
 category: Docs
 subcategory: Placeholders
 ---
+
+### Source
 
 ``` scss
 %a11y-head {

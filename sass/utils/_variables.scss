@@ -9,6 +9,8 @@ subcategory: Variables
 type: Map
 ---
 
+### Source
+
 ``` scss
 $themes: (
   'error': (
@@ -85,6 +87,8 @@ subcategory: Variables
 type: List
 ---
 
+### Source
+
 ``` scss
 $disabled-tests: ();
 ```
@@ -108,6 +112,8 @@ category: Docs
 subcategory: Variables
 type: List
 ---
+
+### Source
 
 ``` scss
 $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, textarea, select, svg, audio, video, iframe;
@@ -138,6 +144,8 @@ subcategory: Variables
 type: List
 ---
 
+### Source
+
 ``` scss
 $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx, webp, apng, svg, svgz;
 ```
@@ -162,6 +170,8 @@ category: Docs
 subcategory: Variables
 type: List
 ---
+
+### Source
 
 ``` scss
 $interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'details', 'embed', 'iframe', 'img[usemap]', 'label', 'select', 'textarea', 'input[type]:not([hidden])';
