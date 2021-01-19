@@ -8,7 +8,7 @@ category: Errors
 ---
 
 ## Description
-Some HTML attributes should not contain any whitespace, as any `[id]` or `[lang]` attribute, or `map[name]`.
+Some HTML attributes should not contain any whitespace —namely `[id]`, `[lang]` and `map[name]`.
 
 ## Reference
 * <https://html.spec.whatwg.org/#the-id-attribute>
@@ -31,6 +31,10 @@ map[name*=" "]
 [lang*=" "],
 map[name*=" "] {
   @include error('attribute-whitespace');
+  
+  @include void-tags {
+    @include error('attribute-whitespace', $self-closing: true);
+  }
 }
 
 
