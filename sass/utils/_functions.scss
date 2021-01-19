@@ -9,6 +9,8 @@ category: Docs
 subcategory: Functions
 ---
 
+### Source
+
 ``` scss
 @function message($theme, $key) {
   $message-key: $theme + ':' + $key;
@@ -59,6 +61,8 @@ name: theme-conf
 category: Docs
 subcategory: Functions
 ---
+
+### Source
 
 ``` scss
 @function theme-conf($theme, $key) {
@@ -116,6 +120,8 @@ category: Docs
 subcategory: Functions
 ---
 
+### Source
+
 ``` scss
 @function is-level-enough($level) {
   $levels: map-keys($themes);
@@ -155,6 +161,8 @@ name: replace-attr
 category: Docs
 subcategory: Functions
 ---
+
+### Source
 
 ``` scss
 @function replace-attr($message) {

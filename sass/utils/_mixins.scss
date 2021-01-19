@@ -1,16 +1,56 @@
 @charset "UTF-8";
 
-/// Defines the minimum level used by `a11y.css`.
-/// Either:
-/// * `error` for errors only;
-/// * `warning` for errors and warnings;
-/// * `obsolete` for everything but advices;
-/// * `advice` for everything.
-/// @access public
-/// @param {String} $level
-/// @output Nothing
-/// @example scss - Defines the minimum level to `error` to display only errors.
-///   @include set-minimum-level('error');
+
+/*doc
+---
+title: "Retrieve message from translation map"
+name: set-minimum-level
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin set-minimum-level($level) {
+  $level: to-lower-case($level);
+  $levels: map-keys($themes);
+
+  @if not index($levels, $level) {
+    $default-level: nth($levels, -1);
+    $level: $default-level;
+
+    @warn 'Level `#{$level}` does not exist. '
+      + 'Please choose one of `#{inspect($levels)}`. '
+      + 'Falling back on `#{$default-level}`';
+  }
+
+  $minimum-level: $level !global;
+}
+```
+
+### Description
+
+Defines the minimum level used by `a11y.css`.
+
+Either:
+* `error` for errors only;
+* `warning` for errors and warnings;
+* `obsolete` for everything but advices;
+* `advice` for everything.
+
+### Parameters
+
+| Name     | Description                                       | Type     | Default value |
+| -------- | ------------------------------------------------- | -------- | ------------- |
+| `$level` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
+
+### Example
+
+``` scss
+@include set-minimum-level('error');
+```
+*/
 @mixin set-minimum-level($level) {
   $level: to-lower-case($level);
   $levels: map-keys($themes);
@@ -28,42 +68,102 @@
 }
 
 
-/// Get a message from the translation map based on the defined language.
-/// The message contains the icon associated to the message type.
-/// @access private
-/// @group messages
-/// @param {String} $theme - Theme name
-/// @param {String} $key - Key name
-/// @output `content`, with `!important`
-/// @example scss - Get message for `nav` from `advice` category when language is set to `en`
-/// .selector {
-///   @include message('advice', 'nav');
-/// }
-/// @example css - Resulting CSS
-/// .selector {
-///   content: 'Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?';
-/// }
+/*doc
+---
+title: "Get a message"
+name: message
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin message($theme, $key) {
+  content: replace-attr(quote("#{message($theme, $key)}")) !important;
+}
+```
+
+### Description
+
+Get a message from the translation map based on the defined language.
+
+### Parameters
+
+| Name     | Description                                       | Type     | Default value |
+| -------- | ------------------------------------------------- | -------- | ------------- |
+| `$theme` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
+| `$key`   | Message name. Should match a test identifier.     | `String` | —             |
+
+### Output
+
+`content` property, with `!important`.
+
+### Example
+
+``` scss
+.selector {
+  @include message('advice', 'nav');
+}
+```
+
+``` css
+.selector {
+  content: 'Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?';
+}
+```
+*/
 @mixin message($theme, $key) {
   content: replace-attr(quote("#{message($theme, $key)}")) !important;
 }
 
 
-/// Extends selector with self-closing tags & replaced elements
-/// Notice the `&` before the selector, and `$self-closing: true` argument.
-/// @access private
-/// @output `selectors` extended with void tags
-/// @example scss - Apply a test to void tags
-///  .selector {
-///    @include advice('nav')
-///
-///    @include void-tags {
-///      @include advice('nav', $self-closing: true);
-///    }
-///  }
-/// @example css - `.selector` extended
-///  area .selector, base .selector, br .selector, col .selector, command .selector, embed .selector, hr .selector, img .selector, input .selector, keygen .selector, link .selector, meta .selector, param .selector, source .selector, track .selector, wbr .selector, textarea .selector, select .selector, svg .selector, audio .selector, video .selector, iframe .selector {
-///    content: "\2665\00A0 Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
-///  }
+/*doc
+---
+title: "Extends selector with void tags"
+name: void-tags
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin void-tags {
+  @at-root #{selector-unify($void-tags, &)} {
+    @content;
+  }
+}
+
+```
+
+### Description
+
+Extends selector with self-closing tags & replaced elements.
+Notice the `&` before the selector, and `$self-closing: true` argument.
+
+### Output
+
+`selectors` extended with void tags.
+
+### Example
+
+``` scss
+.selector {
+  @include advice('nav')
+
+  @include void-tags {
+    @include advice('nav', $self-closing: true);
+  }
+}
+```
+
+``` css
+area .selector, base .selector, br .selector, col .selector, command .selector, embed .selector, hr .selector, img .selector, input .selector, keygen .selector, link .selector, meta .selector, param .selector, source .selector, track .selector, wbr .selector, textarea .selector, select .selector, svg .selector, audio .selector, video .selector, iframe .selector {
+  content: "Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
+}
+```
+*/
 @mixin void-tags {
   @at-root #{selector-unify($void-tags, &)} {
     @content;
@@ -71,13 +171,40 @@
 }
 
 
-/// Theme mixin including everything needed for the `$theme`,
-/// and including a message in a pseudo-element.
-/// @access private
-/// @param {String} $theme - Theme
-/// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
+/*doc
+---
+title: "Defines a test message"
+name: item
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin item($theme, $key, $self-closing: false, $head: false) {
+  $message-key: $theme + ':' + $key;
+  $is-disabled: index($disabled-tests, $message-key);
+
+  @if is-level-enough($theme) and not $is-disabled {
+    @include a11y($theme, $key, $self-closing, $head);
+  }
+}
+```
+
+### Description
+
+Theme mixin including everything needed for the `$theme`, and checking test is not disabled.
+
+### Parameters
+
+| Name            | Description                                                | Type      | Default value |
+| --------------- | ---------------------------------------------------------- | --------- | ------------- |
+| `$theme`        | Either `advice`, `error`, `warning` or `obsolete`          | `String`  | —             |
+| `$key`          | Key used to fetch message in `$messages` map.              | `String`  | —             |
+| `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
+*/
 @mixin item($theme, $key, $self-closing: false, $head: false) {
   $message-key: $theme + ':' + $key;
   $is-disabled: index($disabled-tests, $message-key);
@@ -88,60 +215,164 @@
 }
 
 
-/// Defines an error
-/// @group messages
-/// @access public
-/// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
-/// @example scss - Define an error
-/// .selector {
-///   @include error("no-src");
-/// }
+/*doc
+---
+title: "Defines an error"
+name: error
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin error($key, $self-closing: false, $head: false) {
+  @include item('error', $key, $self-closing, $head);
+}
+```
+
+### Description
+
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
+### Parameters
+
+| Name            | Description                                                | Type      | Default value |
+| --------------- | ---------------------------------------------------------- | --------- | ------------- |
+| `$key`          | Key used to fetch message in `$messages` map.              | `String`  | —             |
+| `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
+
+### Example
+
+``` scss
+.selector {
+  @include error("no-src");
+}
+```
+*/
 @mixin error($key, $self-closing: false, $head: false) {
   @include item('error', $key, $self-closing, $head);
 }
 
 
-/// Defines a warning
-/// @group messages
-/// @access public
-/// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
-/// @example scss - Define an warning
-/// .selector {
-///   @include warning("abbr");
-/// }
+/*doc
+---
+title: "Defines a warning"
+name: warning
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin warning($key, $self-closing: false, $head: false) {
+  @include item('warning', $key, $self-closing, $head);
+}
+```
+
+### Description
+
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
+### Parameters
+
+| Name            | Description                                                | Type      | Default value |
+| --------------- | ---------------------------------------------------------- | --------- | ------------- |
+| `$key`          | Key used to fetch message in `$messages` map.              | `String`  | —             |
+| `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
+
+### Example
+
+``` scss
+.selector {
+  @include warning("abbr");
+}
+```
+*/
 @mixin warning($key, $self-closing: false, $head: false) {
   @include item('warning', $key, $self-closing, $head);
 }
 
 
-/// Defines an obsolete thing
-/// @group messages
-/// @access public
-/// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
-/// @example scss - Define an obsolete
-/// .selector {
-///   @include obsolete("any");
-/// }
+/*doc
+---
+title: "Defines an obsolete thing"
+name: obsolete
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin obsolete($key, $self-closing: false, $head: false) {
+  @include item('obsolete', $key, $self-closing, $head);
+}
+```
+
+### Description
+
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
+### Parameters
+
+| Name            | Description                                                | Type      | Default value |
+| --------------- | ---------------------------------------------------------- | --------- | ------------- |
+| `$key`          | Key used to fetch message in `$messages` map.              | `String`  | —             |
+| `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
+
+### Example
+
+``` scss
+.selector {
+  @include obsolete("any");
+}
+```
+*/
 @mixin obsolete($key, $self-closing: false, $head: false) {
   @include item('obsolete', $key, $self-closing, $head);
 }
 
-/// Defines an advice
-/// @group messages
-/// @access public
-/// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
-/// @example scss - Define an advice
-/// .selector {
-///   @include advice("nav");
-/// }
+/*doc
+---
+title: "Defines an advice"
+name: advice
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin advice($key, $self-closing: false, $head: false) {
+  @include item('advice', $key, $self-closing, $head);
+}
+```
+
+### Description
+
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
+### Parameters
+
+| Name            | Description                                                | Type      | Default value |
+| --------------- | ---------------------------------------------------------- | --------- | ------------- |
+| `$key`          | Key used to fetch message in `$messages` map.              | `String`  | —             |
+| `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
+
+### Example
+
+``` scss
+.selector {
+  @include advice("nav");
+}
+```
+*/
 @mixin advice($key, $self-closing: false, $head: false) {
   @include item('advice', $key, $self-closing, $head);
 }
