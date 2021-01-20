@@ -20,7 +20,7 @@ const DIRECTORIES = {
   },
   api: {
     input: './sass/utils/',
-    output: './src/_data/api/'
+    output: './src/_data/sass/'
   },
   assets: {
     css: {
@@ -101,7 +101,7 @@ const processSassDocumentation = file => {
   )
 }
 
-/*const processApiDocumentation = file => {
+const processApiDocumentation = file => {
   const inputFileExtension = path.extname(file)
   const inputFilename = path.basename(file, inputFileExtension)
   const excludeFiles = ['_all']
@@ -123,12 +123,8 @@ const processSassDocumentation = file => {
     fs.mkdirSync(DIRECTORIES.api.output)
   }
 
-  // Write Eleventy data files
-  fs.writeFileSync(
-    `${DIRECTORIES.api.output}/${inputFilename.replace('_', '')}.json`,
-    JSON.stringify(comments, null, 2)
-  )
-}*/
+  return JSON.stringify(comments, null, 2)
+}
 
 const parseSassComment = comment => {
   // Remove CSS comments syntax
@@ -178,9 +174,16 @@ const generateJsonDocumentation = () => {
     processSassDocumentation(DIRECTORIES.sass.input + file)
   })
 
-  fs.readdirSync(DIRECTORIES.api.input).forEach(file => {
-    processSassDocumentation(DIRECTORIES.api.input + file)
+  let contentAPI = {}
+  fs.readdirSync(DIRECTORIES.api.input).forEach((file, index) => {
+    contentAPI[index] = processApiDocumentation(DIRECTORIES.api.input + file)
   })
+
+  // Write Eleventy data files
+  fs.writeFileSync(
+    `${DIRECTORIES.api.output}/api.json`,
+    JSON.stringify(contentAPI, null, 2)
+  )
 }
 
 module.exports = function () {
