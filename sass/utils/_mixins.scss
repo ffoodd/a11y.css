@@ -337,6 +337,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
   @include item('obsolete', $key, $self-closing, $head);
 }
 
+
 /*doc
 ---
 title: "Defines an advice"
@@ -378,12 +379,41 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 }
 
 
-/// Disable specific tests
-/// @group messages
-/// @access public
-/// @param {Arglist} $keys - Keys of tests to disable
-/// @example scss - Disable a specific test
-///  @include disable-tests('error:tab-order', 'advice:empty-class');
+/*doc
+---
+title: "Disable specific tests"
+name: disable-tests
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin disable-tests($keys...) {
+  @each $key in $keys {
+    $disabled-tests: append($disabled-tests, $key) !global;
+  }
+}
+```
+
+### Description
+
+Disable specific tests. Each test key should match an entry in locales `$messages` map,
+made of a level and a test identifier separated by a double-colon, e.g. `error:tab-order`.
+
+### Parameters
+
+| Name    | Description               | Type   | Default value |
+| ------- | ------------------------- | ------ | ------------- |
+| `$keys` | Keys of tests to disable. | `List` | —             |
+
+### Example
+
+``` scss
+@include disable-tests('error:tab-order', 'advice:empty-class');
+```
+*/
 @mixin disable-tests($keys...) {
   @each $key in $keys {
     $disabled-tests: append($disabled-tests, $key) !global;
@@ -391,12 +421,47 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 }
 
 
-/// Display messages on &lt;head>'s tags
-/// @group messages
-/// @access public
-/// @param {Bool} $self-closing [false] - Whether or not to display selector's target or last link tag
-/// @example scss - Display messages on &lt;head>’s tags
-///  @include a11y-head()
+/*doc
+---
+title: "Display messages on &lt;head>'s tags"
+name: a11y-head
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin a11y-head($self-closing: false) {
+  // Because it's in the <head>
+  @extend %a11y-head;
+
+  @if $self-closing {
+    ~ link:last-of-type {
+      @extend %a11y-head;
+    }
+  }
+}
+```
+
+### Description
+
+Display messages on &lt;head>'s tags.
+
+### Parameters
+
+| Name            | Description                                         | Type      | Default value |
+| --------------- | --------------------------------------------------- | --------- | ------------- |
+| `$self-closing` | Whether to use message on self or on last `<link>`. | `Boolean` | `false`             |
+
+### Example
+
+``` scss
+.selector {
+  @include a11y-head();
+}
+```
+*/
 @mixin a11y-head($self-closing: false) {
   // Because it's in the <head>
   @extend %a11y-head;
@@ -409,12 +474,62 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 }
 
 
-/// Defines `head::after`’s `content` and `background-image` depending on `$minimum-level`.
-/// @param {String} $minimum-level - Inheriting minimum level
-/// @output `content` and `background-image`
-/// @access public
-/// @example scss - Display counters on <head>'s ::after
-///  @include base-content($minimum-level);
+/*doc
+---
+title: "Display messages on &lt;head>'s tags"
+name: base-content
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin base-content($minimum-level) {
+  $background: ();
+  $content: ();
+
+  // @note Line breaks can be triggered by «\A» within the message content.
+  // @see issue #7, solution from @7studio
+  @each $theme in map-keys($themes) {
+    @if is-level-enough($theme) {
+      $background-offset: theme-conf($theme, 'background-offset');
+      $background-theme:
+        transparent $background-offset,
+        theme-conf($theme, 'color') $background-offset,
+        theme-conf($theme, 'color') ($background-offset + 0.2em),
+        transparent ($background-offset + 0.2em);
+      $background: append($background, $background-theme, 'comma');
+      $content-theme: quote(message('ui', $theme)) ': ' #{counter(unquote($theme))} '\A ';
+      $content: append($content, $content-theme);
+    }
+  }
+
+  background-image: linear-gradient(to bottom, transparent, $background, transparent 100%);
+  content: $content;
+}
+```
+
+### Description
+
+Defines `body::after`’s `content` and `background-image` depending on `$minimum-level`.
+
+### Parameters
+
+| Name             | Description               | Type     | Default value |
+| ---------------- | ------------------------- | -------- | ------------- |
+| `$minimum-level` | Inheriting minimum level. | `String` | —             |
+
+### Outputs
+
+`content` and `background-image` on `body::after`.
+
+### Example
+
+``` scss
+@include base-content($minimum-level);
+```
+*/
 @mixin base-content($minimum-level) {
   $background: ();
   $content: ();
@@ -440,11 +555,58 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 }
 
 
-/// Main mixin to display a message.
-/// @param {String} $theme - Theme
-/// @param {String} $key - Key used to fetch message in `$messages` map
-/// @param {Bool} $self-closing [false] - Whether or not to use message on self or next node
-/// @param {Bool} $head [false] - Whether or not a self-closing tag sits in document's head
+/*doc
+---
+title: "Main mixin to display a message."
+name: a11y
+category: Docs
+subcategory: Mixins
+---
+
+### Source
+
+``` scss
+@mixin a11y($theme, $key, $self-closing: false, $head: false) {
+  @extend %a11y-#{$theme};
+
+  $base-selector: '&::after';
+
+  @if $self-closing {
+    $base-selector: '& + ::before';
+  }
+
+  @if $head {
+    $base-selector: '& ~ link:last-of-type::before';
+  }
+
+  #{$base-selector} {
+    @extend %a11y-before;
+    @include message($theme, $key);
+    background: theme-conf($theme, 'color') !important;
+    z-index: theme-conf($theme, 'index') !important;
+  }
+}
+```
+
+### Description
+
+Main mixin to display a message.
+
+### Parameters
+
+| Name            | Description                                                 | Type      | Default value |
+| --------------- | ----------------------------------------------------------- | --------- | ------------- |
+| `$theme`        | Inheriting minimum level.                                   | `String`  | —             |
+| `$key`          | Key used to fetch message in `$messages` map.               | `String`  | —             |
+| `$self-closing` | Whether or not to use message on self or next node.         | `Boolean` | `false`       |
+| `$head`         | Whether or not a self-closing tag sits in document's head.  | `Boolean` | `false`       |
+
+### Example
+
+``` scss
+@include a11y($theme, $key, $self-closing, $head);
+```
+*/
 @mixin a11y($theme, $key, $self-closing: false, $head: false) {
   @extend %a11y-#{$theme};
 
