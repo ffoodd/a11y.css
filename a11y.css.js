@@ -102,15 +102,6 @@ const processSassDocumentation = file => {
 }
 
 const processApiDocumentation = file => {
-  const inputFileExtension = path.extname(file)
-  const inputFilename = path.basename(file, inputFileExtension)
-  const excludeFiles = ['_all']
-
-  // Exclude files that we don't want to process
-  if (inputFileExtension !== '.scss' || excludeFiles.includes(inputFilename)) {
-    return
-  }
-
   const content = fs.readFileSync(file, 'utf8')
   const commentBlockRegex = /\/\*doc(.)*?\*\//gs
 
@@ -174,9 +165,13 @@ const generateJsonDocumentation = () => {
     processSassDocumentation(DIRECTORIES.sass.input + file)
   })
 
-  let contentAPI = {}
-  fs.readdirSync(DIRECTORIES.api.input).forEach((file, index) => {
-    contentAPI[index] = processApiDocumentation(DIRECTORIES.api.input + file)
+  let contentAPI = []
+  fs.readdirSync(DIRECTORIES.api.input).forEach((file) => {
+    if (['_all'].includes(path.basename(file, '.scss'))) {
+      return
+    }
+
+    contentAPI = contentAPI.concat(processApiDocumentation(DIRECTORIES.api.input + file))
   })
 
   // Write Eleventy data files
