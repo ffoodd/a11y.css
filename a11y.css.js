@@ -123,7 +123,7 @@ const processApiDocumentation = file => {
     fs.mkdirSync(DIRECTORIES.api.output)
   }
 
-  return JSON.stringify(comments, null, 2)
+  return comments
 }
 
 const parseSassComment = comment => {
