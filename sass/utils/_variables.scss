@@ -48,7 +48,7 @@ $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, m
 /// @access private
 /// File formats used in a few selectors.
 /// @type List
-/// @link https://hugogiraudel.com/2013/07/15/understanding-sass-lists/
+/// @link https://kittygiraudel.com/2013/07/15/understanding-sass-lists/
 $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx, webp, apng, svg, svgz;
 
 /// List of interactive elements
@@ -56,5 +56,5 @@ $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, 
 /// Tags used in some selectors.
 /// @type List
 /// @link https://w3c.github.io/html/dom.html#interactive-content-2
-/// @link https://hugogiraudel.com/2013/07/15/understanding-sass-lists/
+/// @link https://kittygiraudel.com/2013/07/15/understanding-sass-lists/
 $interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'details', 'embed', 'iframe', 'img[usemap]', 'label', 'select', 'textarea', 'input[type]:not([hidden])';
