@@ -7,6 +7,7 @@ prepros.cfg
 /docs/SassDoc/*
 *.log
 .vscode
+.DS_Store
 webextension/manifest.json
 webextension/css/a11y-en_advices-only.css
 webextension/css/a11y-en_errors-only.css
