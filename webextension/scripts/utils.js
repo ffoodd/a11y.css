@@ -4,10 +4,11 @@
  * @param {String} locale (optional)
  */
 function _t() {
-	var args = _t.arguments;
-	var str = args[0] ? args[0] : "";
-	var localestr = (args[1] && args[1].length > 0) ? args[1] : locale;
-	return (localeStrings[localestr] && localeStrings[localestr][str]) ? localeStrings[localestr][str] : '???';
+	const args = _t.arguments;
+	const str = args[0] || '';
+	const localestr = (args[1] && args[1].length > 0) ? args[1] : locale;
+	const defaultLocale = 'en';
+	return (localeStrings[localestr] && localeStrings[localestr][str]) ? localeStrings[localestr][str] : localeStrings[defaultLocale][str];
 }
 
 /**
