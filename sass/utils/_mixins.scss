@@ -9,6 +9,14 @@ category: Docs
 subcategory: Mixins
 ---
 
+Defines the minimum level used by `a11y.css`.
+
+Either:
+* `error` for errors only;
+* `warning` for errors and warnings;
+* `obsolete` for everything but advices;
+* `advice` for everything.
+
 ### Source
 
 ``` scss
@@ -28,16 +36,6 @@ subcategory: Mixins
   $minimum-level: $level !global;
 }
 ```
-
-### Description
-
-Defines the minimum level used by `a11y.css`.
-
-Either:
-* `error` for errors only;
-* `warning` for errors and warnings;
-* `obsolete` for everything but advices;
-* `advice` for everything.
 
 ### Parameters
 
@@ -76,6 +74,8 @@ category: Docs
 subcategory: Mixins
 ---
 
+Get a message from the translation map based on the defined language and output it in the `content` property.
+
 ### Source
 
 ``` scss
@@ -84,20 +84,12 @@ subcategory: Mixins
 }
 ```
 
-### Description
-
-Get a message from the translation map based on the defined language.
-
 ### Parameters
 
 | Name     | Description                                       | Type     | Default value |
 | -------- | ------------------------------------------------- | -------- | ------------- |
 | `$theme` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
 | `$key`   | Message name. Should match a test identifier.     | `String` | —             |
-
-### Output
-
-`content` property, with `!important`.
 
 ### Example
 
@@ -126,6 +118,9 @@ category: Docs
 subcategory: Mixins
 ---
 
+Extends selector with self-closing tags & replaced elements.
+Notice the `&` before the selector, and `$self-closing: true` argument.
+
 ### Source
 
 ``` scss
@@ -136,15 +131,6 @@ subcategory: Mixins
 }
 
 ```
-
-### Description
-
-Extends selector with self-closing tags & replaced elements.
-Notice the `&` before the selector, and `$self-closing: true` argument.
-
-### Output
-
-`selectors` extended with void tags.
 
 ### Example
 
@@ -179,6 +165,8 @@ category: Docs
 subcategory: Mixins
 ---
 
+Theme mixin including everything needed for the `$theme`, and checking test is not disabled.
+
 ### Source
 
 ``` scss
@@ -191,10 +179,6 @@ subcategory: Mixins
   }
 }
 ```
-
-### Description
-
-Theme mixin including everything needed for the `$theme`, and checking test is not disabled.
 
 ### Parameters
 
@@ -223,6 +207,8 @@ category: Docs
 subcategory: Mixins
 ---
 
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
 ### Source
 
 ``` scss
@@ -230,10 +216,6 @@ subcategory: Mixins
   @include item('error', $key, $self-closing, $head);
 }
 ```
-
-### Description
-
-Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ### Parameters
 
@@ -264,6 +246,8 @@ category: Docs
 subcategory: Mixins
 ---
 
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
 ### Source
 
 ``` scss
@@ -271,10 +255,6 @@ subcategory: Mixins
   @include item('warning', $key, $self-closing, $head);
 }
 ```
-
-### Description
-
-Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ### Parameters
 
@@ -305,6 +285,8 @@ category: Docs
 subcategory: Mixins
 ---
 
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
 ### Source
 
 ``` scss
@@ -312,10 +294,6 @@ subcategory: Mixins
   @include item('obsolete', $key, $self-closing, $head);
 }
 ```
-
-### Description
-
-Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ### Parameters
 
@@ -346,6 +324,8 @@ category: Docs
 subcategory: Mixins
 ---
 
+Level related mixins use `item()` mixin with a hardcoded theme name.
+
 ### Source
 
 ``` scss
@@ -353,10 +333,6 @@ subcategory: Mixins
   @include item('advice', $key, $self-closing, $head);
 }
 ```
-
-### Description
-
-Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ### Parameters
 
@@ -387,6 +363,9 @@ category: Docs
 subcategory: Mixins
 ---
 
+Disable specific tests. Each test key should match an entry in locales `$messages` map,
+made of a level and a test identifier separated by a double-colon, e.g. `error:tab-order`.
+
 ### Source
 
 ``` scss
@@ -396,11 +375,6 @@ subcategory: Mixins
   }
 }
 ```
-
-### Description
-
-Disable specific tests. Each test key should match an entry in locales `$messages` map,
-made of a level and a test identifier separated by a double-colon, e.g. `error:tab-order`.
 
 ### Parameters
 
@@ -429,6 +403,8 @@ category: Docs
 subcategory: Mixins
 ---
 
+Display messages on `<head>`'s tags.
+
 ### Source
 
 ``` scss
@@ -443,10 +419,6 @@ subcategory: Mixins
   }
 }
 ```
-
-### Description
-
-Display messages on `<head>`'s tags.
 
 ### Parameters
 
@@ -482,6 +454,8 @@ category: Docs
 subcategory: Mixins
 ---
 
+Defines `body::after`’s `content` and `background-image` depending on `$minimum-level`.
+
 ### Source
 
 ``` scss
@@ -510,19 +484,11 @@ subcategory: Mixins
 }
 ```
 
-### Description
-
-Defines `body::after`’s `content` and `background-image` depending on `$minimum-level`.
-
 ### Parameters
 
 | Name             | Description               | Type     | Default value |
 | ---------------- | ------------------------- | -------- | ------------- |
 | `$minimum-level` | Inheriting minimum level. | `String` | —             |
-
-### Outputs
-
-`content` and `background-image` on `body::after`.
 
 ### Example
 
@@ -563,6 +529,8 @@ category: Docs
 subcategory: Mixins
 ---
 
+Main mixin to display a message.
+
 ### Source
 
 ``` scss
@@ -587,10 +555,6 @@ subcategory: Mixins
   }
 }
 ```
-
-### Description
-
-Main mixin to display a message.
 
 ### Parameters
 
@@ -627,4 +591,3 @@ Main mixin to display a message.
     z-index: theme-conf($theme, 'index') !important;
   }
 }
-

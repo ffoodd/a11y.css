@@ -113,15 +113,13 @@ subcategory: Variables
 type: List
 ---
 
+Every HTML tag that do not allow generated content through pseudo-elements.
+
 ### Source
 
 ``` scss
 $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, textarea, select, svg, audio, video, iframe;
 ```
-
-### Description
-
-Every HTML tag that do not allow generated content through pseudo-elements.
 
 #### Used by
 
@@ -144,15 +142,13 @@ subcategory: Variables
 type: List
 ---
 
+File formats used in a few selectors.
+
 ### Source
 
 ``` scss
 $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx, webp, apng, svg, svgz;
 ```
-
-### Description
-
-File formats used in a few selectors.
 
 #### Used by
 
@@ -171,15 +167,13 @@ subcategory: Variables
 type: List
 ---
 
+Tags used in some selectors.
+
 ### Source
 
 ``` scss
 $interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'details', 'embed', 'iframe', 'img[usemap]', 'label', 'select', 'textarea', 'input[type]:not([hidden])';
 ```
-
-### Description
-
-Tags used in some selectors.
 
 #### Used by
 
