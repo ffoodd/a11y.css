@@ -60,7 +60,7 @@ const parseAssets = () => {
   const JS = fs.readFileSync(DIRECTORIES.assets.js.input + 'docs.js', 'utf8')
 
   // Parse and write CSS output file
-  postcss([atImport, cssnano])
+  postcss([atImport])
     .process(CSS, {
       from: CSS_INPUT
     })
