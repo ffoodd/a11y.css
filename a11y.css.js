@@ -9,6 +9,7 @@ const postcss = require('postcss')
 const atImport = require('postcss-import')
 const uglify = require('uglify-es')
 const cssnano = require('cssnano')
+const autoprefixer = require('autoprefixer')
 
 const DIRECTORIES = {
   css: {
@@ -60,7 +61,7 @@ const parseAssets = () => {
   const JS = fs.readFileSync(DIRECTORIES.assets.js.input + 'docs.js', 'utf8')
 
   // Parse and write CSS output file
-  postcss([atImport])
+  postcss([atImport, autoprefixer])
     .process(CSS, {
       from: CSS_INPUT
     })
