@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
+    "autoprefixer": "^9.8.5",
     "csslint-stylish": "0.0.6",
     "cssnano": "^4.1.10",
     "del": "^4.1.1",
@@ -68,7 +69,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
     "gulp-zip": "^4.0.0",
-    "postcss": "^7.0.26",
+    "postcss": "^8.2.13",
     "postcss-import": "^12.0.1",
     "prismjs": "^1.21.0",
     "rootbeer": "^1.0.5",
