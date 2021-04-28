@@ -6,6 +6,8 @@ category: Docs
 subcategory: Placeholders
 ---
 
+Common styles for messages, mostly resetting text styles and preventing layout quirks.
+
 ### Source
 
 ``` scss
@@ -29,10 +31,6 @@ subcategory: Placeholders
   width: auto !important;
 }
 ```
-
-### Description
-
-Common styles for messages, mostly resetting text styles and preventing layout quirks.
 
 #### Used by
 
@@ -66,6 +64,8 @@ category: Docs
 subcategory: Placeholders
 ---
 
+Level-specific styles for messages, incrementing `counter` and enforcing `outline`.
+
 ### Source
 
 ``` scss
@@ -77,10 +77,6 @@ subcategory: Placeholders
   }
 }
 ```
-
-### Description
-
-Level-specific styles for messages, incrementing `counter` and enforcing `outline`.
 
 #### Used by
 
@@ -103,6 +99,8 @@ category: Docs
 subcategory: Placeholders
 ---
 
+Provides a way to cancel a message by resetting its core properties.
+
 ### Source
 
 ``` scss
@@ -117,10 +115,6 @@ subcategory: Placeholders
   }
 }
 ```
-
-### Description
-
-Provides a way to cancel a message by resetting its core properties.
 
 #### Used by
 
@@ -145,6 +139,8 @@ category: Docs
 subcategory: Placeholders
 ---
 
+Displays elements in `<head>`, to allow their messages to appear.
+
 ### Source
 
 ``` scss
@@ -152,10 +148,6 @@ subcategory: Placeholders
   display: block !important;
 }
 ```
-
-### Description
-
-Displays elements in `<head>`, to allow their messages to appear.
 
 #### Used by
 

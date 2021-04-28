@@ -9,6 +9,8 @@ category: Docs
 subcategory: Functions
 ---
 
+Retrieve message from translation map.
+
 ### Source
 
 ``` scss
@@ -23,20 +25,12 @@ subcategory: Functions
 }
 ```
 
-### Description
-
-Retrieve message from translation map.
-
 ### Parameters
 
 | Name     | Description                                       | Type     | Default value |
 | -------- | ------------------------------------------------- | -------- | ------------- |
 | `$theme` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
 | `$key`   | Key to find message for                           | `String` | —             |
-
-### Returns
-
-`String`
 
 #### Used by
 
@@ -62,6 +56,8 @@ category: Docs
 subcategory: Functions
 ---
 
+Helper function to easily access a theme configuration.
+
 ### Source
 
 ``` scss
@@ -70,20 +66,12 @@ subcategory: Functions
 }
 ```
 
-### Description
-
-Helper function to easily access a theme configuration.
-
 ### Parameters
 
 | Name     | Description                                          | Type     | Default value |
 | -------- | ---------------------------------------------------- | -------- | ------------- |
 | `$theme` | Either `advice`, `error`, `warning` or `obsolete`    | `String` | —             |
 | `$key`   | Data to get: `color`, `index` or `background-offset` | `String` | —             |
-
-### Returns
-
-`*`
 
 ### Example
 
@@ -120,6 +108,8 @@ category: Docs
 subcategory: Functions
 ---
 
+Test whether `$level` is high enough to be displayed by comparing its index to `$minimum-level`'s.
+
 ### Source
 
 ``` scss
@@ -129,19 +119,11 @@ subcategory: Functions
 }
 ```
 
-### Description
-
-Test whether `$level` is high enough to be displayed by comparing its index to `$minimum-level`'s.
-
 ### Parameters
 
 | Name     | Description                                       | Type     | Default value |
 | -------- | ------------------------------------------------- | -------- | ------------- |
 | `$level` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
-
-### Returns
-
-`Boolean`
 
 #### Used by
 
@@ -161,6 +143,8 @@ name: replace-attr
 category: Docs
 subcategory: Functions
 ---
+
+Ensures CSS `attr()` function will render the expected value, instead of being output as a string.
 
 ### Source
 
@@ -192,19 +176,11 @@ subcategory: Functions
 }
 ```
 
-### Description
-
-Ensures CSS `attr()` function will render the expected value, instead of being output as a string.
-
 ### Parameters
 
 | Name       | Description       | Type     | Default value |
 | ---------- | ----------------- | -------- | ------------- |
 | `$message` | Message to escape | `String` | —             |
-
-### Returns
-
-`String`
 
 ### Example
 
