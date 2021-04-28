@@ -3,7 +3,7 @@
 
 /*doc
 ---
-title: "Retrieve message from translation map"
+title: "Set minimum level"
 name: set-minimum-level
 category: Docs
 subcategory: Mixins
@@ -173,7 +173,7 @@ area .selector, base .selector, br .selector, col .selector, command .selector, 
 
 /*doc
 ---
-title: "Defines a test message"
+title: "Set a message"
 name: item
 category: Docs
 subcategory: Mixins
@@ -217,7 +217,7 @@ Theme mixin including everything needed for the `$theme`, and checking test is n
 
 /*doc
 ---
-title: "Defines an error"
+title: "Define an error"
 name: error
 category: Docs
 subcategory: Mixins
@@ -258,7 +258,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 /*doc
 ---
-title: "Defines a warning"
+title: "Define a warning"
 name: warning
 category: Docs
 subcategory: Mixins
@@ -299,7 +299,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 /*doc
 ---
-title: "Defines an obsolete thing"
+title: "Define an obsolete thing"
 name: obsolete
 category: Docs
 subcategory: Mixins
@@ -340,7 +340,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 /*doc
 ---
-title: "Defines an advice"
+title: "Define an advice"
 name: advice
 category: Docs
 subcategory: Mixins
@@ -381,7 +381,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 /*doc
 ---
-title: "Disable specific tests"
+title: "Disable test(s)"
 name: disable-tests
 category: Docs
 subcategory: Mixins
@@ -423,7 +423,7 @@ made of a level and a test identifier separated by a double-colon, e.g. `error:t
 
 /*doc
 ---
-title: "Display messages on <head>'s tags"
+title: "Display messages in <head>"
 name: a11y-head
 category: Docs
 subcategory: Mixins
@@ -557,7 +557,7 @@ Defines `body::after`’s `content` and `background-image` depending on `$minimu
 
 /*doc
 ---
-title: "Main mixin to display a message."
+title: "Display a message"
 name: a11y
 category: Docs
 subcategory: Mixins
