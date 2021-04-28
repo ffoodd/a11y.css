@@ -8,7 +8,6 @@ loadLanguages(['scss']);
 const postcss = require('postcss')
 const atImport = require('postcss-import')
 const uglify = require('uglify-es')
-const cssnano = require('cssnano')
 const autoprefixer = require('autoprefixer')
 
 const DIRECTORIES = {
