@@ -122,29 +122,41 @@ const parseSassComment = comment => {
   comment = comment.replace(/(\/\*doc|\*\/)/g, '').trim()
 
   const content = fm(comment)
-  let processedContent = new showdown.Converter({tables: true}).makeHtml(content.body)
+  let processedContent = new showdown.Converter({
+    tables: true,
+    customizedHeaderId: true,
+    ghCompatibleHeaderId: true
+  }).makeHtml(content.body)
 
+  // HTML code blocks
   const markupRegex = /((<pre><code class="html language-html">)(.[\s\S]+?)(\/code><\/pre>))/gm
-  const stylesRegex = /((<pre><code class="css language-css">)(.[\s\S]+?)(\/code><\/pre>))/gm
-  const sassRegex = /((<pre><code class="scss language-scss">)(.[\s\S]+?)(\/code><\/pre>))/gm
-
   const htmlRegex = /((?<=<code class="html language-html">)(.[\s\S]+?)(?=<\/code>))/gm
   let htmlContent = processedContent.match(htmlRegex)
   htmlContent = String(htmlContent).replace(/(&lt;)+/g, '<')
   htmlContent = htmlContent.replace(/(&gt;)+/g, '>')
   let processedHTML = prism.highlight(htmlContent, prism.languages.html, 'html')
+  processedContent = processedContent.replace(markupRegex, `<div class="pre"><div>${htmlContent}</div><pre><code class="html language-html">${processedHTML}</code></pre></div>`)
 
+  // CSS code blocks
+  const stylesRegex = /((<pre><code class="css language-css">)(.[\s\S]+?)(\/code><\/pre>))/gm
   const cssRegex = /((?<=<code class="css language-css">)(.[\s\S]+?)(?=<\/code>))/gm
   let cssContent = processedContent.match(cssRegex)
   let processedCSS = prism.highlight(String(cssContent), prism.languages.css, 'css')
+  processedContent = processedContent.replace(stylesRegex, `<div class="pre"><pre><code class="css language-css">${processedCSS}</code></pre></div>`)
 
+  // SCSS code blocks
+  const scssBlockRegex = /((<pre><code class="scss language-scss">)(.[\s\S]+?)(\/code><\/pre>))/gm
   const scssRegex = /((?<=<code class="scss language-scss">)(.[\s\S]+?)(?=<\/code>))/gm
   let scssContent = processedContent.match(scssRegex)
   let processedSCSS = prism.highlight(String(scssContent), prism.languages.scss, 'scss')
+  processedContent = processedContent.replace(scssBlockRegex, `<div class="pre"><pre><code class="scss language-scss">${processedSCSS}</code></pre></div>`)
 
-  processedContent = processedContent.replace(markupRegex, `<div class="pre"><div>${htmlContent}</div><pre><code class="html language-html">${processedHTML}</code></pre></div>`)
-  processedContent = processedContent.replace(stylesRegex, `<div class="pre"><pre><code class="css language-css">${processedCSS}</code></pre></div>`)
-  processedContent = processedContent.replace(sassRegex, `<div class="pre"><pre><code class="scss language-scss">${processedSCSS}</code></pre></div>`)
+  // Sass code blocks
+  const sassBlockRegex = /((<pre><code class="sass language-sass">)(.[\s\S]+?)(\/code><\/pre>))/gm
+  const sassRegex = /((?<=<code class="sass language-sass">)(.[\s\S]+?)(?=<\/code>))/gm
+  const sassContent = processedContent.match(sassRegex)
+  let processedSASS = prism.highlight(String(sassContent), prism.languages.scss, 'scss')
+  processedContent = processedContent.replace(sassBlockRegex, `<div class="pre"><pre><code class="scss language-scss">${processedSASS}</code></pre></div>`)
 
   return {
     attributes: content.attributes,

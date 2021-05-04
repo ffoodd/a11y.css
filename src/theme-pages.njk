@@ -11,7 +11,9 @@ permalink: "{{ themePage.title | slug }}/"
 {% set theme = sass[themePage.theme] %}
 
 {% block css %}
-  <link rel="stylesheet" href="/static/css/a11y-en_{{ themePage.title | lower }}-only.css" media="all">
+  {% if 'API' != themePage.title %}
+    <link rel="stylesheet" href="/static/css/a11y-en_{{ themePage.title | lower }}-only.css" media="all">
+  {% endif %}
 {% endblock %}
 
 {% block title %}{{ themePage.title }}{% endblock %}

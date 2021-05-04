@@ -299,7 +299,7 @@ h2[id] {
   z-index: 1;
 }
 
-article:nth-of-type(10) ~ article h2[id] {
+article:nth-of-type(9) ~ article h2[id] {
   padding: 0 0 0 2ch;
 }
 
