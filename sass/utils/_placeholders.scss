@@ -8,7 +8,7 @@ subcategory: Placeholders
 
 Common styles for messages, mostly resetting text styles and preventing layout quirks.
 
-### Source
+### Source {messages-common-styles-source}
 
 ``` scss
 %a11y-before {
@@ -32,7 +32,7 @@ Common styles for messages, mostly resetting text styles and preventing layout q
 }
 ```
 
-#### Used by
+#### Used by {messages-common-styles-usedby}
 
 - [`a11y()` mixin](#messages-mixin-a11y)
 */
@@ -66,7 +66,7 @@ subcategory: Placeholders
 
 Level-specific styles for messages, incrementing `counter` and enforcing `outline`.
 
-### Source
+### Source {messages-level-styles-source}
 
 ``` scss
 @each $theme in map-keys($themes) {
@@ -78,7 +78,7 @@ Level-specific styles for messages, incrementing `counter` and enforcing `outlin
 }
 ```
 
-#### Used by
+#### Used by {messages-level-styles-usedby}
 
 - [`a11y()` mixin](#messages-mixin-a11y)
 */
@@ -101,7 +101,7 @@ subcategory: Placeholders
 
 Provides a way to cancel a message by resetting its core properties.
 
-### Source
+### Source {message-cancellation-source}
 
 ``` scss
 %a11y-reset {
@@ -116,7 +116,7 @@ Provides a way to cancel a message by resetting its core properties.
 }
 ```
 
-#### Used by
+#### Used by {message-cancellation-usedby}
 
 - Some tests directly // @TODO list tests right here
 */
@@ -141,7 +141,7 @@ subcategory: Placeholders
 
 Displays elements in `<head>`, to allow their messages to appear.
 
-### Source
+### Source {head-children-source}
 
 ``` scss
 %a11y-head {
@@ -149,7 +149,7 @@ Displays elements in `<head>`, to allow their messages to appear.
 }
 ```
 
-#### Used by
+#### Used by {head-children-usedby}
 
 - [`a11y-head()` mixin](#messages-mixin-a11y-head)
 */

@@ -9,7 +9,9 @@ subcategory: Variables
 type: Map
 ---
 
-### Source
+This map holds configuration for all themes. Each theme has an icon, a color and a z-index, and a background offset.
+
+### Source {themes-source}
 
 ``` scss
 $themes: (
@@ -36,11 +38,7 @@ $themes: (
 );
 ```
 
-### Description
-
-This map holds configuration for all themes. Each theme has an icon, a color and a z-index, and a background offset.
-
-#### Map structure
+### Map structure {themes-map-structure}
 
 | Name                      | Description               | Type     | Value |
 |---------------------------|---------------------------|----------|-------|
@@ -49,7 +47,7 @@ This map holds configuration for all themes. Each theme has an icon, a color and
 | `theme.index`             | Theme `z-index`           | `Number` | —     |
 | `theme.background-offset` | Theme `background-offset` | `Length` | —     |
 
-#### Used by
+### Used by {themes-usedby}
 
 - [`set-minimum-level()` mixin](#congifuration-mixin-set-minimum-level)
 - [`base-content()` mixin](#congifuration-mixin-base-content)
@@ -87,17 +85,15 @@ subcategory: Variables
 type: List
 ---
 
-### Source
+Map of disabled tests, referred by their key.
+
+### Source {disabled-tests-source}
 
 ``` scss
 $disabled-tests: ();
 ```
 
-### Description
-
-Map of disabled tests, referred by their key.
-
-#### Used by
+#### Used by {disabled-tests-usedby}
 
 - [`disable-tests()` mixin](#messages-mixin-disable-tests)
 */
@@ -115,17 +111,17 @@ type: List
 
 Every HTML tag that do not allow generated content through pseudo-elements.
 
-### Source
+### Source {void-tags-source}
 
 ``` scss
 $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, textarea, select, svg, audio, video, iframe;
 ```
 
-#### Used by
+#### Used by {void-tags-usedby}
 
 - [`void-tags()` mixin](#mixin-void-tags)
 
-#### References
+#### References {void-tags-references}
 
 * <https://thenewcode.com/461/What-The-Heck-Is-A-Replaced-Element>
 * <https://la-cascade.io/quest-ce-quun-element-remplace/>
@@ -144,13 +140,13 @@ type: List
 
 File formats used in a few selectors.
 
-### Source
+### Source {file-formats-source}
 
 ``` scss
 $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx, webp, apng, svg, svgz;
 ```
 
-#### Used by
+#### Used by {file-formats-usedby}
 
 - ["Linking to a file" advice]()
 - ["[alt] containing file name" warning]()
@@ -169,17 +165,17 @@ type: List
 
 Tags used in some selectors.
 
-### Source
+### Source {interactive-elements-source}
 
 ``` scss
 $interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'details', 'embed', 'iframe', 'img[usemap]', 'label', 'select', 'textarea', 'input[type]:not([hidden])';
 ```
 
-#### Used by
+#### Used by {interactive-elements-usedby}
 
 - ["Nested interactive elements" error]()
 
-#### References
+#### References {interactive-elements-references}
 
 * <https://w3c.github.io/html/dom.html#interactive-content-2>
 */

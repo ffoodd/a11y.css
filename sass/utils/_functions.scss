@@ -11,7 +11,7 @@ subcategory: Functions
 
 Retrieve message from translation map.
 
-### Source
+### Source {get-translations-source}
 
 ``` scss
 @function message($theme, $key) {
@@ -25,14 +25,14 @@ Retrieve message from translation map.
 }
 ```
 
-### Parameters
+### Parameters {get-translations-parameters}
 
 | Name     | Description                                       | Type     | Default value |
 | -------- | ------------------------------------------------- | -------- | ------------- |
 | `$theme` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
 | `$key`   | Key to find message for                           | `String` | —             |
 
-#### Used by
+#### Used by  {get-translations-usedby}
 
 - [`base-content()` mixin](#messages-mixin-base-content)
 - [`message()` mixin](#messages-mixin-message)
@@ -58,7 +58,7 @@ subcategory: Functions
 
 Helper function to easily access a theme configuration.
 
-### Source
+### Source {get-theme-configuration-source}
 
 ``` scss
 @function theme-conf($theme, $key) {
@@ -66,18 +66,18 @@ Helper function to easily access a theme configuration.
 }
 ```
 
-### Parameters
+### Parameters {get-theme-configuration-parameters}
 
 | Name     | Description                                          | Type     | Default value |
 | -------- | ---------------------------------------------------- | -------- | ------------- |
 | `$theme` | Either `advice`, `error`, `warning` or `obsolete`    | `String` | —             |
 | `$key`   | Data to get: `color`, `index` or `background-offset` | `String` | —             |
 
-### Example
+### Example {get-theme-configuration-example}
 
 Get color from error theme.
 
-``` scss
+``` sass
 .selector {
   color: theme-conf('error', 'color');
 }
@@ -89,7 +89,7 @@ Get color from error theme.
 }
 ```
 
-#### Used by
+#### Used by {get-theme-configuration-usedby}
 
 - [`base-content()` mixin](#messages-mixin-base-content)
 - [`a11y()` mixin](#messages-mixin-a11y)
@@ -110,7 +110,7 @@ subcategory: Functions
 
 Test whether `$level` is high enough to be displayed by comparing its index to `$minimum-level`'s.
 
-### Source
+### Source {check-level-source}
 
 ``` scss
 @function is-level-enough($level) {
@@ -119,13 +119,13 @@ Test whether `$level` is high enough to be displayed by comparing its index to `
 }
 ```
 
-### Parameters
+### Parameters {check-level-parameters}
 
 | Name     | Description                                       | Type     | Default value |
 | -------- | ------------------------------------------------- | -------- | ------------- |
 | `$level` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
 
-#### Used by
+#### Used by {check-level-usedby}
 
 - [`base-content()` mixin](#messages-mixin-base-content)
 - [`item()` mixin](#messages-mixin-item)
@@ -146,7 +146,7 @@ subcategory: Functions
 
 Ensures CSS `attr()` function will render the expected value, instead of being output as a string.
 
-### Source
+### Source {escape-attr-source}
 
 ``` scss
 @function replace-attr($message) {
@@ -176,15 +176,15 @@ Ensures CSS `attr()` function will render the expected value, instead of being o
 }
 ```
 
-### Parameters
+### Parameters {escape-attr-parameters}
 
 | Name       | Description       | Type     | Default value |
 | ---------- | ----------------- | -------- | ------------- |
 | `$message` | Message to escape | `String` | —             |
 
-### Example
+### Example {escape-attr-example}
 
-``` scss
+``` sass
 .selector {
   content: replace-attr("ARIA role attr(role) should be unique, but this one is the second!");
 }
@@ -196,7 +196,7 @@ Ensures CSS `attr()` function will render the expected value, instead of being o
 }
 ```
 
-#### Used by
+#### Used by {escape-attr-usedby}
 
 - [`message()` mixin](#messages-mixin-message)
 */
