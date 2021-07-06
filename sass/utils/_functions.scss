@@ -11,7 +11,7 @@ subcategory: Functions
 
 Retrieve message from translation map.
 
-### Source {get-translations-source}
+#### Source {get-translations-source}
 
 ``` scss
 @function message($theme, $key) {
@@ -25,17 +25,17 @@ Retrieve message from translation map.
 }
 ```
 
-### Parameters {get-translations-parameters}
+#### Parameters {get-translations-parameters}
 
 | Name     | Description                                       | Type     | Default value |
 | -------- | ------------------------------------------------- | -------- | ------------- |
 | `$theme` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
 | `$key`   | Key to find message for                           | `String` | —             |
 
-#### Used by  {get-translations-usedby}
+##### Used by  {get-translations-usedby}
 
-- [`base-content()` mixin](#messages-mixin-base-content)
-- [`message()` mixin](#messages-mixin-message)
+- [`base-content()` mixin](#base-content)
+- [`message()` mixin](#message)
 */
 @function message($theme, $key) {
   $message-key: $theme + ':' + $key;
@@ -58,7 +58,7 @@ subcategory: Functions
 
 Helper function to easily access a theme configuration.
 
-### Source {get-theme-configuration-source}
+#### Source {get-theme-configuration-source}
 
 ``` scss
 @function theme-conf($theme, $key) {
@@ -66,14 +66,14 @@ Helper function to easily access a theme configuration.
 }
 ```
 
-### Parameters {get-theme-configuration-parameters}
+#### Parameters {get-theme-configuration-parameters}
 
 | Name     | Description                                          | Type     | Default value |
 | -------- | ---------------------------------------------------- | -------- | ------------- |
 | `$theme` | Either `advice`, `error`, `warning` or `obsolete`    | `String` | —             |
 | `$key`   | Data to get: `color`, `index` or `background-offset` | `String` | —             |
 
-### Example {get-theme-configuration-example}
+#### Example {get-theme-configuration-example}
 
 Get color from error theme.
 
@@ -89,11 +89,11 @@ Get color from error theme.
 }
 ```
 
-#### Used by {get-theme-configuration-usedby}
+##### Used by {get-theme-configuration-usedby}
 
-- [`base-content()` mixin](#messages-mixin-base-content)
-- [`a11y()` mixin](#messages-mixin-a11y)
-- [`%a11y-#{$theme}` placeholder](#messages-placeholder-level-styles)
+- [`base-content()` mixin](#base-content)
+- [`a11y()` mixin](#a11y)
+- [`%a11y-#{$theme}` placeholder](#level-styles)
 */
 @function theme-conf($theme, $key) {
   @return map-get(map-get($themes, $theme), $key);
@@ -110,7 +110,7 @@ subcategory: Functions
 
 Test whether `$level` is high enough to be displayed by comparing its index to `$minimum-level`'s.
 
-### Source {check-level-source}
+#### Source {check-level-source}
 
 ``` scss
 @function is-level-enough($level) {
@@ -119,16 +119,16 @@ Test whether `$level` is high enough to be displayed by comparing its index to `
 }
 ```
 
-### Parameters {check-level-parameters}
+#### Parameters {check-level-parameters}
 
 | Name     | Description                                       | Type     | Default value |
 | -------- | ------------------------------------------------- | -------- | ------------- |
 | `$level` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
 
-#### Used by {check-level-usedby}
+##### Used by {check-level-usedby}
 
-- [`base-content()` mixin](#messages-mixin-base-content)
-- [`item()` mixin](#messages-mixin-item)
+- [`base-content()` mixin](#base-content)
+- [`item()` mixin](#item)
 */
 @function is-level-enough($level) {
   $levels: map-keys($themes);
@@ -146,7 +146,7 @@ subcategory: Functions
 
 Ensures CSS `attr()` function will render the expected value, instead of being output as a string.
 
-### Source {escape-attr-source}
+#### Source {escape-attr-source}
 
 ``` scss
 @function replace-attr($message) {
@@ -176,13 +176,13 @@ Ensures CSS `attr()` function will render the expected value, instead of being o
 }
 ```
 
-### Parameters {escape-attr-parameters}
+#### Parameters {escape-attr-parameters}
 
 | Name       | Description       | Type     | Default value |
 | ---------- | ----------------- | -------- | ------------- |
 | `$message` | Message to escape | `String` | —             |
 
-### Example {escape-attr-example}
+#### Example {escape-attr-example}
 
 ``` sass
 .selector {
@@ -196,9 +196,9 @@ Ensures CSS `attr()` function will render the expected value, instead of being o
 }
 ```
 
-#### Used by {escape-attr-usedby}
+##### Used by {escape-attr-usedby}
 
-- [`message()` mixin](#messages-mixin-message)
+- [`message()` mixin](#message)
 */
 @function replace-attr($message) {
   $has-attr: str-index($message, 'attr(');

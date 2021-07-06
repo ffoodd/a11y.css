@@ -21,6 +21,24 @@
   },
   {
     "title": "API",
-    "theme": "api"
+    "theme": "api",
+    "subthemes":  [
+      {
+        "title": "Functions",
+        "theme": "functions"
+      },
+      {
+        "title": "Mixins",
+        "theme": "mixins"
+      },
+      {
+        "title": "Placeholders",
+        "theme": "placeholders"
+      },
+      {
+        "title": "Variables",
+        "theme": "variables"
+      }
+    ]
   }
 ]

@@ -8,7 +8,7 @@ subcategory: Placeholders
 
 Common styles for messages, mostly resetting text styles and preventing layout quirks.
 
-### Source {messages-common-styles-source}
+#### Source {messages-common-styles-source}
 
 ``` scss
 %a11y-before {
@@ -32,9 +32,9 @@ Common styles for messages, mostly resetting text styles and preventing layout q
 }
 ```
 
-#### Used by {messages-common-styles-usedby}
+##### Used by {messages-common-styles-usedby}
 
-- [`a11y()` mixin](#messages-mixin-a11y)
+- [`a11y()` mixin](#a11y)
 */
 %a11y-before {
   border-radius: 0 !important;
@@ -66,7 +66,7 @@ subcategory: Placeholders
 
 Level-specific styles for messages, incrementing `counter` and enforcing `outline`.
 
-### Source {messages-level-styles-source}
+#### Source {messages-level-styles-source}
 
 ``` scss
 @each $theme in map-keys($themes) {
@@ -78,9 +78,9 @@ Level-specific styles for messages, incrementing `counter` and enforcing `outlin
 }
 ```
 
-#### Used by {messages-level-styles-usedby}
+##### Used by {messages-level-styles-usedby}
 
-- [`a11y()` mixin](#messages-mixin-a11y)
+- [`a11y()` mixin](#a11y)
 */
 @each $theme in map-keys($themes) {
   %a11y-#{$theme} {
@@ -101,7 +101,7 @@ subcategory: Placeholders
 
 Provides a way to cancel a message by resetting its core properties.
 
-### Source {message-cancellation-source}
+#### Source {message-cancellation-source}
 
 ``` scss
 %a11y-reset {
@@ -116,9 +116,13 @@ Provides a way to cancel a message by resetting its core properties.
 }
 ```
 
-#### Used by {message-cancellation-usedby}
+##### Used by {message-cancellation-usedby}
 
-- Some tests directly // @TODO list tests right here
+- [Missing `[role="search"]` advice](/advices/#missing-role)
+- [`[placeholder]` can't replace a `label` advice](/advices/#placeholder)
+- [Most of DOM nodes shouldn't be `:empty` warning](/warnings/#empty-nodes)
+- [Form `button` error](/errors/#not-form-button)
+- [`[type="radio"]` outside a `fieldset` error](/errors/#radio-group)
 */
 %a11y-reset {
   counter-increment: none !important;
@@ -141,7 +145,7 @@ subcategory: Placeholders
 
 Displays elements in `<head>`, to allow their messages to appear.
 
-### Source {head-children-source}
+#### Source {head-children-source}
 
 ``` scss
 %a11y-head {
@@ -149,9 +153,9 @@ Displays elements in `<head>`, to allow their messages to appear.
 }
 ```
 
-#### Used by {head-children-usedby}
+##### Used by {head-children-usedby}
 
-- [`a11y-head()` mixin](#messages-mixin-a11y-head)
+- [`a11y-head()` mixin](#a11y-head)
 */
 %a11y-head {
   display: block !important;

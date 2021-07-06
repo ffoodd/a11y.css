@@ -540,7 +540,7 @@ aside div {
   width: 18rem;
 }
 
-aside ul {
+.box ul {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -549,7 +549,7 @@ aside ul {
   padding: 0;
 }
 
-aside li + li {
+.box li + li {
   margin-left: 2rem;
 }
 
@@ -560,6 +560,21 @@ aside img {
 [id="toc"] ol {
   list-style-position: outside;
   padding: 0;
+}
+
+[id="toc"] ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+[id="toc"] ul > li > a {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+[id="toc"] ul ol {
+  margin-bottom: 2em;
+  margin-top: .75em;
 }
 
 [id="toc"] li {
@@ -581,6 +596,15 @@ aside img {
   border: 1px solid #e5dec8;
   border-radius: 4px;
   position: relative;
+}
+
+.pre + .pre {
+  border-radius: 0 0 4px 4px;
+  margin-top: -4px;
+}
+
+.pre + .pre code::before {
+  border-top-left-radius: 0;
 }
 
 .pre > div {
