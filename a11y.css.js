@@ -148,6 +148,7 @@ const parseSassComment = comment => {
   const scssBlockRegex = /((<pre><code class="scss language-scss">)(.[\s\S]+?)(\/code><\/pre>))/gm
   const scssRegex = /((?<=<code class="scss language-scss">)(.[\s\S]+?)(?=<\/code>))/gm
   let scssContent = processedContent.match(scssRegex)
+  scssContent = String(scssContent).replace(/(&amp;)+/g, '&')
   let processedSCSS = prism.highlight(String(scssContent), prism.languages.scss, 'scss')
   processedContent = processedContent.replace(scssBlockRegex, `<div class="pre"><pre><code class="scss language-scss">${processedSCSS}</code></pre></div>`)
 
