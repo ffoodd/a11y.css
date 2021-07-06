@@ -17,7 +17,7 @@ Either:
 * `obsolete` for everything but advices;
 * `advice` for everything.
 
-### Source {set-minimum-level-source}
+#### Source {set-minimum-level-source}
 
 ``` scss
 @mixin set-minimum-level($level) {
@@ -37,13 +37,13 @@ Either:
 }
 ```
 
-### Parameters {set-minimum-level-parameters}
+#### Parameters {set-minimum-level-parameters}
 
 | Name     | Description                                       | Type     | Default value |
 | -------- | ------------------------------------------------- | -------- | ------------- |
 | `$level` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
 
-### Example {set-minimum-level-example}
+#### Example {set-minimum-level-example}
 
 ``` sass
 @include set-minimum-level('error');
@@ -76,7 +76,7 @@ subcategory: Mixins
 
 Get a message from the translation map based on the defined language and output it in the `content` property.
 
-### Source {get-message-source}
+#### Source {get-message-source}
 
 ``` scss
 @mixin message($theme, $key) {
@@ -84,14 +84,14 @@ Get a message from the translation map based on the defined language and output 
 }
 ```
 
-### Parameters {get-message-parameters}
+#### Parameters {get-message-parameters}
 
 | Name     | Description                                       | Type     | Default value |
 | -------- | ------------------------------------------------- | -------- | ------------- |
 | `$theme` | Either `advice`, `error`, `warning` or `obsolete` | `String` | —             |
 | `$key`   | Message name. Should match a test identifier.     | `String` | —             |
 
-### Example {get-message-example}
+#### Example {get-message-example}
 
 ``` sass
 .selector {
@@ -121,7 +121,7 @@ subcategory: Mixins
 Extends selector with self-closing tags & replaced elements.
 Notice the `&` before the selector, and `$self-closing: true` argument.
 
-### Source {void-tags-source}
+#### Source {void-tags-source}
 
 ``` scss
 @mixin void-tags {
@@ -132,7 +132,7 @@ Notice the `&` before the selector, and `$self-closing: true` argument.
 
 ```
 
-### Example {void-tags-example}
+#### Example {void-tags-example}
 
 ``` sass
 .selector {
@@ -167,7 +167,7 @@ subcategory: Mixins
 
 Theme mixin including everything needed for the `$theme`, and checking test is not disabled.
 
-### Source {item-source}
+#### Source {item-source}
 
 ``` scss
 @mixin item($theme, $key, $self-closing: false, $head: false) {
@@ -180,7 +180,7 @@ Theme mixin including everything needed for the `$theme`, and checking test is n
 }
 ```
 
-### Parameters {item-parameters}
+#### Parameters {item-parameters}
 
 | Name            | Description                                                | Type      | Default value |
 | --------------- | ---------------------------------------------------------- | --------- | ------------- |
@@ -209,7 +209,7 @@ subcategory: Mixins
 
 Level related mixins use `item()` mixin with a hardcoded theme name.
 
-### Source {error-source}
+#### Source {error-source}
 
 ``` scss
 @mixin error($key, $self-closing: false, $head: false) {
@@ -217,7 +217,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 }
 ```
 
-### Parameters {error-parameters}
+#### Parameters {error-parameters}
 
 | Name            | Description                                                | Type      | Default value |
 | --------------- | ---------------------------------------------------------- | --------- | ------------- |
@@ -225,7 +225,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 | `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
 | `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
 
-### Example {error-example}
+#### Example {error-example}
 
 ``` sass
 .selector {
@@ -248,7 +248,7 @@ subcategory: Mixins
 
 Level related mixins use `item()` mixin with a hardcoded theme name.
 
-### Source {warning-source}
+#### Source {warning-source}
 
 ``` scss
 @mixin warning($key, $self-closing: false, $head: false) {
@@ -256,7 +256,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 }
 ```
 
-### Parameters {warning-parameters}
+#### Parameters {warning-parameters}
 
 | Name            | Description                                                | Type      | Default value |
 | --------------- | ---------------------------------------------------------- | --------- | ------------- |
@@ -264,7 +264,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 | `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
 | `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
 
-### Example {warning-example}
+#### Example {warning-example}
 
 ``` sass
 .selector {
@@ -287,7 +287,7 @@ subcategory: Mixins
 
 Level related mixins use `item()` mixin with a hardcoded theme name.
 
-### Source {obsolete-source}
+#### Source {obsolete-source}
 
 ``` scss
 @mixin obsolete($key, $self-closing: false, $head: false) {
@@ -295,7 +295,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 }
 ```
 
-### Parameters {obsolete-parameters}
+#### Parameters {obsolete-parameters}
 
 | Name            | Description                                                | Type      | Default value |
 | --------------- | ---------------------------------------------------------- | --------- | ------------- |
@@ -303,7 +303,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 | `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
 | `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
 
-### Example {obsolete-example}
+#### Example {obsolete-example}
 
 ``` sass
 .selector {
@@ -326,7 +326,7 @@ subcategory: Mixins
 
 Level related mixins use `item()` mixin with a hardcoded theme name.
 
-### Source {advice-source}
+#### Source {advice-source}
 
 ``` scss
 @mixin advice($key, $self-closing: false, $head: false) {
@@ -334,7 +334,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 }
 ```
 
-### Parameters {advice-parameters}
+#### Parameters {advice-parameters}
 
 | Name            | Description                                                | Type      | Default value |
 | --------------- | ---------------------------------------------------------- | --------- | ------------- |
@@ -342,7 +342,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 | `$self-closing` | Whether to use message on self or on next node.            | `Boolean` | `false`       |
 | `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
 
-### Example {advice-example}
+#### Example {advice-example}
 
 ``` sass
 .selector {
@@ -366,7 +366,7 @@ subcategory: Mixins
 Disable specific tests. Each test key should match an entry in locales `$messages` map,
 made of a level and a test identifier separated by a double-colon, e.g. `error:tab-order`.
 
-### Source {disable-tests-source}
+#### Source {disable-tests-source}
 
 ``` scss
 @mixin disable-tests($keys...) {
@@ -376,13 +376,13 @@ made of a level and a test identifier separated by a double-colon, e.g. `error:t
 }
 ```
 
-### Parameters {disable-tests-parameters}
+#### Parameters {disable-tests-parameters}
 
 | Name    | Description               | Type   | Default value |
 | ------- | ------------------------- | ------ | ------------- |
 | `$keys` | Keys of tests to disable. | `List` | —             |
 
-### Example {disable-tests-example}
+#### Example {disable-tests-example}
 
 ``` sass
 @include disable-tests('error:tab-order', 'advice:empty-class');
@@ -405,7 +405,7 @@ subcategory: Mixins
 
 Display messages on `<head>`'s tags.
 
-### Source {a11y-head-source}
+#### Source {a11y-head-source}
 
 ``` scss
 @mixin a11y-head($self-closing: false) {
@@ -420,13 +420,13 @@ Display messages on `<head>`'s tags.
 }
 ```
 
-### Parameters {a11y-head-parameters}
+#### Parameters {a11y-head-parameters}
 
 | Name            | Description                                         | Type      | Default value |
 | --------------- | --------------------------------------------------- | --------- | ------------- |
 | `$self-closing` | Whether to use message on self or on last `<link>`. | `Boolean` | `false`             |
 
-### Example {a11y-head-example}
+#### Example {a11y-head-example}
 
 ``` sass
 .selector {
@@ -456,7 +456,7 @@ subcategory: Mixins
 
 Defines `body::after`’s `content` and `background-image` depending on `$minimum-level`.
 
-### Source {base-content-source}
+#### Source {base-content-source}
 
 ``` scss
 @mixin base-content($minimum-level) {
@@ -484,13 +484,13 @@ Defines `body::after`’s `content` and `background-image` depending on `$minimu
 }
 ```
 
-### Parameters {base-content-parameters}
+#### Parameters {base-content-parameters}
 
 | Name             | Description               | Type     | Default value |
 | ---------------- | ------------------------- | -------- | ------------- |
 | `$minimum-level` | Inheriting minimum level. | `String` | —             |
 
-### Example {base-content-example}
+#### Example {base-content-example}
 
 ``` sass
 @include base-content($minimum-level);
@@ -531,7 +531,7 @@ subcategory: Mixins
 
 Main mixin to display a message.
 
-### Source {a11y-source}
+#### Source {a11y-source}
 
 ``` scss
 @mixin a11y($theme, $key, $self-closing: false, $head: false) {
@@ -556,7 +556,7 @@ Main mixin to display a message.
 }
 ```
 
-### Parameters {a11y-parameters}
+#### Parameters {a11y-parameters}
 
 | Name            | Description                                                 | Type      | Default value |
 | --------------- | ----------------------------------------------------------- | --------- | ------------- |
@@ -565,7 +565,7 @@ Main mixin to display a message.
 | `$self-closing` | Whether or not to use message on self or next node.         | `Boolean` | `false`       |
 | `$head`         | Whether or not a self-closing tag sits in document's head.  | `Boolean` | `false`       |
 
-### Example {a11y-example}
+#### Example {a11y-example}
 
 ``` sass
 @include a11y($theme, $key, $self-closing, $head);

@@ -19,12 +19,12 @@ permalink: "{{ themePage.title | slug }}/"
 {% block title %}{{ themePage.title }}{% endblock %}
 
 {% block sidebar %}
-  {{ utils.toc(theme) }}
+  {{ utils.toc(theme, themePage.subthemes) }}
 {% endblock %}
 
 {% block content %}
   <h1>{{ themePage.title }}</h1>
-  {{ utils.writeSassDoc(theme) }}
+  {{ utils.writeSassDoc(theme, themePage.subthemes) }}
 {% endblock %}
 
 
