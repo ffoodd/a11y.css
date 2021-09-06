@@ -3,11 +3,12 @@ const a11yCSS = require('./a11y.css')
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(a11yCSS)
 
-  eleventyConfig.addPassthroughCopy('src/static')
+  eleventyConfig.addPassthroughCopy('site/static')
 
   return {
     dir: {
-      input: 'src'
+      input: 'site',
+      output: 'docs'
     },
     markdownTemplateEngine: 'njk'
   }
