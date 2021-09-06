@@ -4,7 +4,6 @@ a11y.css
 Pronounced *Alix*. Because it’s simpler.
 
 [![GitHub version](https://badge.fury.io/gh/ffoodd%2Fa11y.css.svg)](https://badge.fury.io/gh/ffoodd%2Fa11y.css)
-[![Build Status](https://travis-ci.org/ffoodd/a11y.css.svg?branch=master)](https://travis-ci.org/ffoodd/a11y.css)
 
 ## Introduction
 

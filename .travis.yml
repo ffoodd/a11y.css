@@ -1,9 +1,0 @@
-language: node_js
-node_js:
-  - "12"
-before_script:
-  - npm install -g gulp-cli
-script: gulp
-addons:
-  code_climate:
-    repo_token: 2951cdd2c6bcae2d8c267f440c05a823a5a208d6f46f8933853c9a862509f06c

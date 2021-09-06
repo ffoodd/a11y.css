@@ -16,21 +16,21 @@ const DIRECTORIES = {
   },
   sass: {
     input: './sass/themes/',
-    output: './src/_data/sass/'
+    output: './site/_data/sass/'
   },
   api: {
     input: './sass/utils/',
-    output: './src/_data/sass/'
+    output: './site/_data/sass/'
   },
   assets: {
     css: {
-      input: './src/assets/css/',
+      input: './site/assets/css/',
     },
     js: {
-      input: './src/assets/js/'
+      input: './site/assets/js/'
     }
   },
-  static: './src/static/'
+  static: './site/static/'
 }
 
 DIRECTORIES.assets.css.output = DIRECTORIES.static

@@ -1,0 +1,1 @@
+function Toc(){const e=document.getElementById("toc");if(!e)return;const t=e.querySelectorAll("a");function n(){const n=e.querySelector(`a[href="${document.location.hash}"]`);n&&(t.forEach(e=>e.removeAttribute("aria-current")),n.setAttribute("aria-current","true"))}n(),window.addEventListener("hashchange",n)}document.addEventListener("DOMContentLoaded",Toc);
