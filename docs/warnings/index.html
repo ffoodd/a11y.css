@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="/static/docs.css">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <link rel="preload" href="/static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-
-
+    
+  
     <link rel="stylesheet" href="/static/css/a11y-en_warnings-only.css" media="all">
-
+  
 
   </head>
   <body>
@@ -28,69 +28,69 @@
   </a>
   <nav role="navigation" aria-label="Main navigation">
   <ul>
-
+    
       <li>
         <a href="/" class="index">
           Home
-
+          
         </a>
       </li>
-
+    
       <li>
         <a href="/errors/" class="errors">
           Errors
-
+          
         </a>
       </li>
-
+    
       <li>
         <a href="/warnings/" class="warnings" aria-current="page">
           Warnings
-
+          
         </a>
       </li>
-
+    
       <li>
         <a href="/obsoletes/" class="obsolete">
           Obsoletes
-
+          
         </a>
       </li>
-
+    
       <li>
         <a href="/advices/" class="advices">
           Advices
-
+          
         </a>
       </li>
-
+    
       <li>
         <a href="/webextension/" class="webextension">
           WebExtension
-
+          
         </a>
       </li>
-
+    
       <li>
         <a href="/api/" class="sassdoc">
           <b><abbr title="Application Programming Interface">API</abbr></b> Doc
-
+          
         </a>
       </li>
-
+    
       <li>
         <a href="https://github.com/ffoodd/a11y.css">
           On <b>Github</b>
-
+          
             <span class="sr-only">&nbsp;(external link)</span>
             <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" width="10" height="10">
   <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
   <polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
 </svg>
-
+          
         </a>
       </li>
-
+    
   </ul>
 </nav>
 
@@ -99,219 +99,219 @@
 
     <div class="main">
       <aside>
-
-
+        
+  
 <nav role="navigation" aria-labelledby="toc-title" id="toc">
   <p class="h2-like" id="toc-title">Table of content</p>
-
+  
     <ol>
-
-
+      
+        
         <li>
           <a href="#invalid-list-nesting">Invalid nesting in a list</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#invalid-def">Invalid sibling in a definition list</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#invalid-def-nesting">Invalid nesting in a definition list</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#invalid-figcaption-nesting">figcaption outside a figure</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#figure-role">figure without the group ARIA role</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#invalid-nesting">Invalid nesting</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#misplaced-div">Misplaced div</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#sectioning-tags">Misused sectioning tags</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#fieldset">legend must be a fieldset&#39;s:first-child</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#details">summary must be a details&#39;s:first-child</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#empty-title">abbr should have a [title]</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#empty-alt">[alt] can be empty but has to be checked</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#filename-alt">[alt] containing file name</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#decoration">Decorative image shouldn&#39;t have an accessible name</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#presentation">[role=presentation] shouldn&#39;t be used on image</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#no-aria-role">A role is needed for svg</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#autoplay">[autoplay] should probably not be used</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#controls">[controls] would be helpful</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#empty-nodes">Most of DOM nodes shouldn&#39;t be :empty</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#table-layout">A single line table may be used for layout</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#nested-table">Nested tables</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#table-caption">Every data table must have a caption</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#table-structure">Invalid table structure</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#missing-thead">Missing head for data table</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#th-no-scope">th without [scope] or [id]</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#spacer-gif">spacer.gif used</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#oops">Bad computed value</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#href-js">JS [href]</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#empty-href"># [href]</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#style-attr">[style] attribute</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#unsecured-target">Unsecured [target=_blank]</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#no-aria-level">Missing [aria-level]</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#no-for">A label without a [for] attribute</a>
         </li>
-
-
-
+        
+      
+        
         <li>
           <a href="#mismatched-dir">Mismatching [dir] and [lang] attributes</a>
         </li>
-
-
+        
+      
     </ol>
-
+  
 </nav>
 
 
@@ -334,11 +334,11 @@
       </aside>
 
       <main>
-
+        
   <h1>Warnings</h1>
-
-
-
+  
+  
+      
         <article>
           <h2 id="invalid-list-nesting">Invalid nesting in a list</h2>
           <h3 id="description">Description</h3>
@@ -365,7 +365,7 @@ ol &amp;gt<span class="token punctuation">;</span> <span class="token punctuatio
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="invalid-def">Invalid sibling in a definition list</h2>
           <h3 id="description">Description</h3>
@@ -393,7 +393,7 @@ ol &amp;gt<span class="token punctuation">;</span> <span class="token punctuatio
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dl</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="invalid-def-nesting">Invalid nesting in a definition list</h2>
           <h3 id="description">Description</h3>
@@ -422,7 +422,7 @@ dl &amp;gt<span class="token punctuation">;</span> <span class="token punctuatio
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dl</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="invalid-figcaption-nesting">figcaption outside a figure</h2>
           <h3 id="description">Description</h3>
@@ -442,7 +442,7 @@ dl &amp;gt<span class="token punctuation">;</span> <span class="token punctuatio
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">></span></span>I'm captionning something, isn't it?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="figure-role">figure without the group ARIA role</h2>
           <h3 id="description">Description</h3>
@@ -462,12 +462,12 @@ dl &amp;gt<span class="token punctuation">;</span> <span class="token punctuatio
   <figcaption>I'm a figcaption</figcaption>
 </figure>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">site</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/ffoodd.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Figcaption test<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/ffoodd.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Figcaption test<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">></span></span>I'm a figcaption<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="invalid-nesting">Invalid nesting</h2>
           <h3 id="description">Description</h3>
@@ -526,7 +526,7 @@ address section
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">></span></span>I'm an legend. Am I?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="misplaced-div">Misplaced div</h2>
           <h3 id="description">Description</h3>
@@ -554,7 +554,7 @@ strong div
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>Hey ya!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="sectioning-tags">Misused sectioning tags</h2>
           <h3 id="description">Description</h3>
@@ -583,7 +583,7 @@ article &amp;gt<span class="token punctuation">;</span> <span class="token prope
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="fieldset">legend must be a fieldset&#39;s:first-child</h2>
           <h3 id="description">Description</h3>
@@ -609,7 +609,7 @@ fieldset &amp;gt<span class="token punctuation">;</span> <span class="token prop
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="details">summary must be a details&#39;s:first-child</h2>
           <h3 id="description">Description</h3>
@@ -636,7 +636,7 @@ details &amp;gt<span class="token punctuation">;</span> <span class="token prope
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>details</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="empty-title">abbr should have a [title]</h2>
           <h3 id="description">Description</h3>
@@ -661,7 +661,7 @@ abbr[title=<span class="token string">""</span>]
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Do you know about <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>abbr</span><span class="token punctuation">></span></span>W3C<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>abbr</span><span class="token punctuation">></span></span>?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="empty-alt">[alt] can be empty but has to be checked</h2>
           <h3 id="description">Description</h3>
@@ -688,10 +688,10 @@ object[type=<span class="token string">"image"</span>][alt=<span class="token st
 </code></pre></div>
 <h3 id="test">Test</h3>
 <div class="pre"><div><img alt="" src="/static/ffoodd.png" width="144" height="144" /><span>†</span>
-</div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">site</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/ffoodd.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/ffoodd.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="filename-alt">[alt] containing file name</h2>
           <h3 id="description">Description</h3>
@@ -801,10 +801,10 @@ object[type=<span class="token string">"image"</span>][alt$=<span class="token s
 </code></pre></div>
 <h3 id="test">Test</h3>
 <div class="pre"><div><img alt="/static/ffoodd.png" src="/static/ffoodd.png" width="144" height="144" /><span>†</span>
-</div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/ffoodd.png<span class="token punctuation">"</span></span> <span class="token attr-name">site</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/ffoodd.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/ffoodd.png<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/ffoodd.png<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="decoration">Decorative image shouldn&#39;t have an accessible name</h2>
           <h3 id="description">Description</h3>
@@ -875,7 +875,7 @@ object[type=<span class="token string">"image"</span>][aria-hidden=<span class="
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="presentation">[role=presentation] shouldn&#39;t be used on image</h2>
           <h3 id="description">Description</h3>
@@ -910,7 +910,7 @@ object[role=<span class="token string">"presentation"</span>]
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="no-aria-role">A role is needed for svg</h2>
           <h3 id="description">Description</h3>
@@ -939,7 +939,7 @@ object[role=<span class="token string">"presentation"</span>]
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="autoplay">[autoplay] should probably not be used</h2>
           <h3 id="description">Description</h3>
@@ -957,10 +957,10 @@ audio[autoplay]
 </code></pre></div>
 <h3 id="test">Test</h3>
 <div class="pre"><div><video autoplay controls src=""></video><span>†</span>
-</div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">autoplay</span> <span class="token attr-name">controls</span> <span class="token attr-name">site</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">autoplay</span> <span class="token attr-name">controls</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="controls">[controls] would be helpful</h2>
           <h3 id="description">Description</h3>
@@ -979,18 +979,18 @@ audio[autoplay]
 </code></pre></div>
 <h3 id="test">Test</h3>
 <div class="pre"><div><video src=""></video><span>†</span>
-</div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">site</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="empty-nodes">Most of DOM nodes shouldn&#39;t be :empty</h2>
           <h3 id="description">Description</h3>
 <p>Obviously void elements are empty, as well as <code>&lt;iframe&gt;</code> and <code>&lt;textarea&gt;</code> could be <code>:empty</code>.
 Any other <code>:empty</code> tag that is not hidden is probably useless, and should be deleted.</p>
-<p>Please note that it's disabled for tags owning a source through <code>[site]</code>. It's pretty opinionated,
+<p>Please note that it's disabled for tags owning a source through <code>[src]</code>. It's pretty opinionated,
 but it's meant to avoid false positives on tags such as <code>&lt;video&gt;</code> or <code>&lt;audio&gt;</code> which may be
-empty if they have at least one source specified through <code>[site]</code>.</p>
+empty if they have at least one source specified through <code>[src]</code>.</p>
 <h3 id="notes">Notes</h3>
 <ul>
 <li>This test only targets tags in <code>&lt;body&gt;</code>, since most of head's tags should be empty.</li>
@@ -1006,14 +1006,14 @@ empty if they have at least one source specified through <code>[site]</code>.</p
 <li><a href="https://css-tricks.com/almanac/selectors/b/blank/">https://css-tricks.com/almanac/selectors/b/blank/</a></li>
 </ul>
 <h3 id="selector">Selector</h3>
-<div class="pre"><pre><code class="css language-css">body *<span class="token punctuation">:</span><span class="token property">empty</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[hidden]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-hidden]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[site]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>button<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>iframe<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>textarea<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>area<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>br<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>col<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>embed<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>hr<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>keygen<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>meta<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>param<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>track<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>wbr<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span>
+<div class="pre"><pre><code class="css language-css">body *<span class="token punctuation">:</span><span class="token property">empty</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[hidden]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-hidden]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[src]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>button<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>iframe<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>textarea<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>area<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>br<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>col<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>embed<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>hr<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>keygen<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>meta<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>param<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>track<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>wbr<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span>
 </code></pre></div>
 <h3 id="test">Test</h3>
 <div class="pre"><div><p id="empty-node_code"></p>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>empty-node_code<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="table-layout">A single line table may be used for layout</h2>
           <h3 id="description">Description</h3>
@@ -1057,7 +1057,7 @@ Should be double checked!</p>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="nested-table">Nested tables</h2>
           <h3 id="description">Description</h3>
@@ -1139,7 +1139,7 @@ Should be double checked!</p>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="table-caption">Every data table must have a caption</h2>
           <h3 id="description">Description</h3>
@@ -1192,7 +1192,7 @@ And it must be the <code>:first-child</code>, by the way.</p>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="table-structure">Invalid table structure</h2>
           <h3 id="description">Description</h3>
@@ -1259,7 +1259,7 @@ table &amp;gt<span class="token punctuation">;</span> tbody ~ colgroup
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="missing-thead">Missing head for data table</h2>
           <h3 id="description">Description</h3>
@@ -1297,7 +1297,7 @@ table &amp;gt<span class="token punctuation">;</span> tbody ~ colgroup
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="th-no-scope">th without [scope] or [id]</h2>
           <h3 id="description">Description</h3>
@@ -1352,7 +1352,7 @@ table &amp;gt<span class="token punctuation">;</span> tbody ~ colgroup
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="spacer-gif">spacer.gif used</h2>
           <h3 id="description">Description</h3>
@@ -1362,20 +1362,20 @@ table &amp;gt<span class="token punctuation">;</span> tbody ~ colgroup
 <li><a href="https://www.la-grange.net/2015/03/11/visible">https://www.la-grange.net/2015/03/11/visible</a></li>
 </ul>
 <h3 id="selector">Selector</h3>
-<div class="pre"><pre><code class="css language-css">img[site*=<span class="token string">"1px.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
-img[site*=<span class="token string">"1x1.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
-img[site*=<span class="token string">"clear.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
-img[site*=<span class="token string">"spacer.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
-img[site*=<span class="token string">"dotclear.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
-img[site*=<span class="token string">"transparent.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
-img[site*=<span class="token string">"pixel-1x1-clear.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span>
+<div class="pre"><pre><code class="css language-css">img[src*=<span class="token string">"1px.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+img[src*=<span class="token string">"1x1.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+img[src*=<span class="token string">"clear.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+img[src*=<span class="token string">"spacer.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+img[src*=<span class="token string">"dotclear.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+img[src*=<span class="token string">"transparent.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+img[src*=<span class="token string">"pixel-1x1-clear.gif"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span>
 </code></pre></div>
 <h3 id="test">Test</h3>
 <div class="pre"><div><img src="/static/spacer.gif" alt="Spacer.gif" width="100" height="100"/><span>†</span>
-</div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">site</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/spacer.gif<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Spacer.gif<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+</div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/spacer.gif<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Spacer.gif<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="oops">Bad computed value</h2>
           <h3 id="description">Description</h3>
@@ -1393,7 +1393,7 @@ img[site*=<span class="token string">"pixel-1x1-clear.gif"</span>]<span class="t
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>undefined<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Oups, something went wrong.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="href-js">JS [href]</h2>
           <h3 id="description">Description</h3>
@@ -1412,7 +1412,7 @@ The only exception shall be bookmarklets.</p>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>javascript:(function(){a11ycss=document.createElement(<span class="token punctuation">'</span>LINK<span class="token punctuation">'</span>);a11ycss.href=<span class="token punctuation">'</span>https://rawgit.com/ffoodd/a11y.css/master/css/a11y-en.css<span class="token punctuation">'</span>;a11ycss.rel=<span class="token punctuation">'</span>stylesheet<span class="token punctuation">'</span>;a11ycss.media=<span class="token punctuation">'</span>all<span class="token punctuation">'</span>;document.body.appendChild(a11ycss);})();<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Please use my bookmarklet ;)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="empty-href"># [href]</h2>
           <h3 id="description">Description</h3>
@@ -1430,7 +1430,7 @@ Should probably be a <code>&lt;button&gt;</code> or at least a <code>[role="butt
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Oh boy, I don't mean anything<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="style-attr">[style] attribute</h2>
           <h3 id="description">Description</h3>
@@ -1450,7 +1450,7 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>I'm red. I really feel dirty.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="unsecured-target">Unsecured [target=_blank]</h2>
           <h3 id="description">Description</h3>
@@ -1474,7 +1474,7 @@ This is not actually an accessibility related issue, but everything helping user
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>I feel vulnerable…<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="no-aria-level">Missing [aria-level]</h2>
           <h3 id="description">Description</h3>
@@ -1497,7 +1497,7 @@ This is not actually an accessibility related issue, but everything helping user
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>heading<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Heading with undefined level<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="no-for">A label without a [for] attribute</h2>
           <h3 id="description">Description</h3>
@@ -1522,7 +1522,7 @@ Although implicitly labelling form controls is accepted, it's probably better to
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span><span class="token punctuation">></span></span>Guess what?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
-
+      
         <article>
           <h2 id="mismatched-dir">Mismatching [dir] and [lang] attributes</h2>
           <h3 id="description">Description</h3>
@@ -1547,11 +1547,11 @@ This also requires to check any in-page language change (marked up with <code>[l
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">dir</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>rtl<span class="token punctuation">"</span></span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Well, I'm kinda disoriented…<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
+      
+    
 
 
-
-
-
+        
       </main>
     </div>
     <footer class="main">

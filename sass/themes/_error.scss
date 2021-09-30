@@ -887,7 +887,6 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 }
 
 
-
 /*doc
 ---
 title: "Javascript events attributes"
@@ -1112,7 +1111,7 @@ title:empty
 */
 title:empty {
   @include error('no-page-title');
-  @include a11y-head();
+  @include a11y-head;
 }
 
 

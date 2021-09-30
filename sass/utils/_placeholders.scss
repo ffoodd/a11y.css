@@ -70,7 +70,7 @@ Level-specific styles for messages, incrementing `counter` and enforcing `outlin
 
 ``` scss
 @each $theme in map-keys($themes) {
-  %a11y-#{$theme} {
+  %a11y-#​{$theme} {
     counter-increment: unquote($theme) !important;
     outline: 4px solid theme-conf($theme, 'color') !important;
     outline-offset: -4px !important;
