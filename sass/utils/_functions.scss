@@ -18,7 +18,7 @@ Retrieve message from translation map.
   $message-key: $theme + ':' + $key;
 
   @if not map-has-key($messages, $message-key) {
-    @error 'No key `#{$message-key}` found.';
+    @error 'No key `#​{$message-key}` found.';
   }
 
   @return map-get($messages, $message-key);
@@ -93,7 +93,7 @@ Get color from error theme.
 
 - [`base-content()` mixin](#base-content)
 - [`a11y()` mixin](#a11y)
-- [`%a11y-#{$theme}` placeholder](#level-styles)
+- [`%a11y-#​{$theme}` placeholder](#level-styles)
 */
 @function theme-conf($theme, $key) {
   @return map-get(map-get($themes, $theme), $key);

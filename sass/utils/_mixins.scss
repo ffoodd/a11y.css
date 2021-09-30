@@ -28,9 +28,9 @@ Either:
     $default-level: nth($levels, -1);
     $level: $default-level;
 
-    @warn 'Level `#{$level}` does not exist. '
-      + 'Please choose one of `#{inspect($levels)}`. '
-      + 'Falling back on `#{$default-level}`';
+    @warn 'Level `#​{$level}` does not exist. '
+      + 'Please choose one of `#​{inspect($levels)}`. '
+      + 'Falling back on `#​{$default-level}`';
   }
 
   $minimum-level: $level !global;
@@ -80,7 +80,7 @@ Get a message from the translation map based on the defined language and output 
 
 ``` scss
 @mixin message($theme, $key) {
-  content: replace-attr(quote("#{message($theme, $key)}")) !important;
+  content: replace-attr(quote("#​{message($theme, $key)}")) !important;
 }
 ```
 
@@ -125,7 +125,7 @@ Notice the `&` before the selector, and `$self-closing: true` argument.
 
 ``` scss
 @mixin void-tags {
-  @at-root #{selector-unify($void-tags, &)} {
+  @at-root #​{selector-unify($void-tags, &)} {
     @content;
   }
 }
@@ -474,7 +474,7 @@ Defines `body::after`’s `content` and `background-image` depending on `$minimu
         theme-conf($theme, 'color') ($background-offset + 0.2em),
         transparent ($background-offset + 0.2em);
       $background: append($background, $background-theme, 'comma');
-      $content-theme: quote(message('ui', $theme)) ': ' #{counter(unquote($theme))} '\A ';
+      $content-theme: quote(message('ui', $theme)) ': ' #​{counter(unquote($theme))} '\A ';
       $content: append($content, $content-theme);
     }
   }
@@ -535,7 +535,7 @@ Main mixin to display a message.
 
 ``` scss
 @mixin a11y($theme, $key, $self-closing: false, $head: false) {
-  @extend %a11y-#{$theme};
+  @extend %a11y-#​{$theme};
 
   $base-selector: '&::after';
 
@@ -547,7 +547,7 @@ Main mixin to display a message.
     $base-selector: '& ~ link:last-of-type::before';
   }
 
-  #{$base-selector} {
+  #​{$base-selector} {
     @extend %a11y-before;
     @include message($theme, $key);
     background: theme-conf($theme, 'color') !important;

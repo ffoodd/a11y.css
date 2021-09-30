@@ -7,7 +7,7 @@
   "author": {
     "name": "Gaël Poupard",
     "url": "https://www.ffoodd.fr",
-    "email": "gael+github@ffoodd.fr"
+    "email": "gael+npm@ffoodd.fr"
   },
   "keywords": [
     "a11y",
@@ -19,23 +19,25 @@
     "scss"
   ],
   "scripts": {
+    "start": "eleventy --serve",
     "docs": "eleventy",
-    "docs:serve": "eleventy --serve",
-    "prepublishOnly": "npm run gulp translate",
-    "test": "npm run gulp lints",
-    "gulp": "node node_modules/gulp/bin/gulp.js",
-    "webext": "npm run webext:css && npm run webext:package:firefox && npm run webext:package:chrome",
-    "webext:prepare": "rm -rf webextension/css/a11y-*.css && cp -r css/a11y-*_*.css webextension/css && cp -r css/webextension/show-lang.css webextension/css",
+    "build": "sass sass/:css/ --style compressed",
+    "postbuild": "postcss ./css/**/*.css --use autoprefixer",
+    "prepublishOnly": "npm run build",
+    "test": "stylelint \"./sass/**/*.scss\"",
+    "watch": "sass --watch sass/:css/ --style compressed",
+    "prewebext": "rm -rf webextension/css/a11y-*.css && cp -r css/a11y-*_*.css webextension/css && cp -r css/webextension/show-lang.css webextension/css",
+    "webext": "npm run webext:polyfill && npm run webext:all",
+    "postwebext": "npm run webext:firefox && npm run webext:chrome",
     "webext:polyfill": "cp node_modules/webextension-polyfill/dist/browser-polyfill.min.js webextension/scripts/",
     "webext:cp": "cp -r css/a11y-??.css temp && cp -r css/a11y-?????.css temp",
     "webext:rename": "cd temp && rename 's/a11y-(.{2,5}).*(.css)$/a11y-$1_all$2/' *.css && cd ..",
     "webext:mv": "cp temp/*.css webextension/css",
     "webext:all": "mkdir temp && npm run webext:cp && npm run webext:rename && npm run webext:mv && rm -rf temp",
-    "webext:css": "npm run webext:prepare && npm run webext:polyfill && npm run webext:all",
-    "webext:manifest:firefox": "cp manifest-firefox.json webextension/manifest.json",
-    "webext:package:firefox": "npm run webext:manifest:firefox && cd webextension && zip -r -FS ../a11ycss-webextension-firefox.zip *",
-    "webext:manifest:chrome": "cp manifest-chrome.json webextension/manifest.json",
-    "webext:package:chrome": "npm run webext:manifest:chrome && cd webextension && zip -r -FS ../a11ycss-webextension-chrome.zip *"
+    "prewebext:firefox": "cp manifest-firefox.json webextension/manifest.json",
+    "webext:firefox": "cd webextension && zip -r -FS ../a11ycss-webextension-firefox.zip *",
+    "prewebext:chrome": "cp manifest-chrome.json webextension/manifest.json",
+    "webext:chrome": "cd webextension && zip -r -FS ../a11ycss-webextension-chrome.zip *"
   },
   "license": "MIT",
   "homepage": "https://ffoodd.github.io/a11y.css",
@@ -46,30 +48,24 @@
   "bugs": {
     "url": "https://github.com/ffoodd/a11y.css/issues"
   },
+  "browserslist": [
+    "last 1 versions"
+  ],
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
-    "autoprefixer": "^9.8.5",
-    "csslint-stylish": "0.0.6",
+    "autoprefixer": "^9.8.8",
     "cssnano": "^4.1.10",
-    "del": "^4.1.1",
     "front-matter": "^3.1.0",
-    "fs-promise": "^2.0.3",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-csslint": "latest",
-    "gulp-plumber": "latest",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.2",
-    "gulp-scss-lint": "latest",
-    "gulp-util": "^3.0.8",
-    "gulp-zip": "^4.0.0",
     "postcss": "^8.2.13",
+    "postcss-cli": "^9.0.1",
     "postcss-import": "^12.0.1",
     "prismjs": "^1.21.0",
-    "rootbeer": "^1.0.5",
+    "sass": "^1.43.3",
     "showdown": "^1.9.1",
+    "stylelint": "^14.0.0",
+    "stylelint-config-recommended": "^6.0.0",
+    "stylelint-config-standard-scss": "^2.0.0",
     "uglify-es": "^3.3.9",
-    "vinyl-source-stream": "^2.0.0",
     "webextension-polyfill": "^0.4.0"
   },
   "browserslist": [
