@@ -171,8 +171,8 @@ const generateJsonDocumentation = () => {
    * @note This is an experimental feature and requires Node v12.10.0 at least
    * @see https://nodejs.org/api/fs.html#fs_fs_rmdirsync_path_options
    */
-  fs.rmdirSync(DIRECTORIES.sass.output, { recursive: true })
-  fs.rmdirSync(DIRECTORIES.api.output, { recursive: true })
+  fs.rm(DIRECTORIES.sass.output, { recursive: true })
+  fs.rm(DIRECTORIES.api.output, { recursive: true })
 
   fs.readdirSync(DIRECTORIES.sass.input).forEach(file => {
     processSassDocumentation(DIRECTORIES.sass.input + file)

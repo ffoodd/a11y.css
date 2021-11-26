@@ -19,8 +19,9 @@
     "scss"
   ],
   "scripts": {
-    "start": "eleventy --serve",
-    "docs": "eleventy",
+    "start": "npx @11ty/eleventy --serve",
+    "docs": "npx @11ty/eleventy",
+    "docs:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
     "build": "sass sass/:css/ --style compressed",
     "postbuild": "postcss ./css/**/*.css --use autoprefixer",
     "prepublishOnly": "npm run build",
@@ -52,16 +53,16 @@
     "last 1 versions"
   ],
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^0.12.1",
     "autoprefixer": "^9.8.8",
-    "cssnano": "^4.1.10",
+    "cssnano": "^5.0.12",
     "front-matter": "^3.1.0",
     "postcss": "^8.2.13",
     "postcss-cli": "^9.0.1",
     "postcss-import": "^12.0.1",
     "prismjs": "^1.21.0",
     "sass": "^1.43.3",
-    "showdown": "^1.9.1",
+    "showdown": "^1.9.0",
     "stylelint": "^14.0.0",
     "stylelint-config-recommended": "^6.0.0",
     "stylelint-config-standard-scss": "^2.0.0",
