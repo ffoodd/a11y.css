@@ -568,7 +568,7 @@
 <ul>
 <li><a href="#base-content"><code>base-content()</code> mixin</a></li>
 <li><a href="#a11y"><code>a11y()</code> mixin</a></li>
-<li><a href="#level-styles"><code>%a11y-{$theme}</code> placeholder</a></li>
+<li><a href="#level-styles"><code>%a11y-#​{$theme}</code> placeholder</a></li>
 </ul>
               </article>
             
@@ -751,9 +751,9 @@
     <span class="token property"><span class="token variable">$default-level</span></span><span class="token punctuation">:</span> <span class="token function">nth</span><span class="token punctuation">(</span><span class="token variable">$levels</span><span class="token punctuation">,</span> -1<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token property"><span class="token variable">$level</span></span><span class="token punctuation">:</span> <span class="token variable">$default-level</span><span class="token punctuation">;</span>
 
-    <span class="token keyword">@warn</span> <span class="token string">'Level `$level` does not exist. '</span>
-      <span class="token operator">+</span> <span class="token string">'Please choose one of `inspect($levels)`. '</span>
-      <span class="token operator">+</span> <span class="token string">'Falling back on `$default-level`'</span><span class="token punctuation">;</span>
+    <span class="token keyword">@warn</span> <span class="token string">'Level `#​{$level}` does not exist. '</span>
+      <span class="token operator">+</span> <span class="token string">'Please choose one of `#​{inspect($levels)}`. '</span>
+      <span class="token operator">+</span> <span class="token string">'Falling back on `#​{$default-level}`'</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
   <span class="token property"><span class="token variable">$minimum-level</span></span><span class="token punctuation">:</span> <span class="token variable">$level</span> !global<span class="token punctuation">;</span>
@@ -790,7 +790,7 @@
                 <p>Get a message from the translation map based on the defined language and output it in the <code>content</code> property.</p>
 <h4 id="get-message-source">Source</h4>
 <div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">message</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">replace-attr</span><span class="token punctuation">(</span><span class="token function">quote</span><span class="token punctuation">(</span><span class="token string">"{message($theme, $key)}"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">replace-attr</span><span class="token punctuation">(</span><span class="token function">quote</span><span class="token punctuation">(</span><span class="token string">"#​{message($theme, $key)}"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
 <h4 id="get-message-parameters">Parameters</h4>
@@ -837,7 +837,7 @@
 Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true</code> argument.</p>
 <h4 id="void-tags-source">Source</h4>
 <div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token selector">void-tags </span><span class="token punctuation">{</span>
-  <span class="token atrule"><span class="token rule">@at-root</span></span> <span class="token punctuation">{</span><span class="token function">selector-unify</span><span class="token punctuation">(</span><span class="token variable">$void-tags</span><span class="token punctuation">,</span> &amp;<span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token punctuation">{</span>
+  <span class="token atrule"><span class="token rule">@at-root</span> #​<span class="token punctuation">{</span><span class="token function">selector-unify</span><span class="token punctuation">(</span><span class="token variable">$void-tags</span><span class="token punctuation">,</span> &amp;<span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token punctuation">{</span>
     <span class="token keyword">@content</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -1204,7 +1204,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
         <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token variable">$background-offset</span> <span class="token operator">+</span> 0.2em<span class="token punctuation">)</span><span class="token punctuation">,</span>
         transparent <span class="token punctuation">(</span><span class="token variable">$background-offset</span> <span class="token operator">+</span> 0.2em<span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token property"><span class="token variable">$background</span></span><span class="token punctuation">:</span> <span class="token function">append</span><span class="token punctuation">(</span><span class="token variable">$background</span><span class="token punctuation">,</span> <span class="token variable">$background-theme</span><span class="token punctuation">,</span> <span class="token string">'comma'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token property"><span class="token variable">$content-theme</span></span><span class="token punctuation">:</span> <span class="token function">quote</span><span class="token punctuation">(</span><span class="token function">message</span><span class="token punctuation">(</span><span class="token string">'ui'</span><span class="token punctuation">,</span> <span class="token variable">$theme</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token string">': '</span> <span class="token punctuation">{</span><span class="token function">counter</span><span class="token punctuation">(</span><span class="token function">unquote</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token string">'\A '</span><span class="token punctuation">;</span>
+      <span class="token property"><span class="token variable">$content-theme</span></span><span class="token punctuation">:</span> <span class="token function">quote</span><span class="token punctuation">(</span><span class="token function">message</span><span class="token punctuation">(</span><span class="token string">'ui'</span><span class="token punctuation">,</span> <span class="token variable">$theme</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token string">': '</span> #​<span class="token punctuation">{</span><span class="token function">counter</span><span class="token punctuation">(</span><span class="token function">unquote</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token string">'\A '</span><span class="token punctuation">;</span>
       <span class="token property"><span class="token variable">$content</span></span><span class="token punctuation">:</span> <span class="token function">append</span><span class="token punctuation">(</span><span class="token variable">$content</span><span class="token punctuation">,</span> <span class="token variable">$content-theme</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
@@ -1244,7 +1244,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <p>Main mixin to display a message.</p>
 <h4 id="a11y-source">Source</h4>
 <div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">a11y</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">@extend</span> <span class="token placeholder selector">%a11y-</span><span class="token punctuation">{</span><span class="token variable">$theme</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">@extend</span> <span class="token placeholder selector">%a11y-</span>#​<span class="token punctuation">{</span><span class="token variable">$theme</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
   <span class="token property"><span class="token variable">$base-selector</span></span><span class="token punctuation">:</span> <span class="token string">'&amp;::after'</span><span class="token punctuation">;</span>
 
@@ -1256,7 +1256,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
     <span class="token property"><span class="token variable">$base-selector</span></span><span class="token punctuation">:</span> <span class="token string">'&amp; ~ link:last-of-type::before'</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
-  <span class="token punctuation">{</span><span class="token variable">$base-selector</span><span class="token punctuation">}</span> <span class="token punctuation">{</span>
+  #​<span class="token punctuation">{</span><span class="token variable">$base-selector</span><span class="token punctuation">}</span> <span class="token punctuation">{</span>
     <span class="token keyword">@extend</span> <span class="token placeholder selector">%a11y-before</span><span class="token punctuation">;</span>
     <span class="token keyword">@include</span> <span class="token function">message</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
@@ -1400,7 +1400,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <p>Level-specific styles for messages, incrementing <code>counter</code> and enforcing <code>outline</code>.</p>
 <h4 id="messages-level-styles-source">Source</h4>
 <div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@each</span> <span class="token variable">$theme</span> in <span class="token function">map-keys</span><span class="token punctuation">(</span><span class="token variable">$themes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token placeholder selector">%a11y-</span><span class="token punctuation">{</span><span class="token variable">$theme</span><span class="token punctuation">}</span> <span class="token punctuation">{</span>
+  <span class="token placeholder selector">%a11y-</span>#​<span class="token punctuation">{</span><span class="token variable">$theme</span><span class="token punctuation">}</span> <span class="token punctuation">{</span>
     <span class="token property">counter-increment</span><span class="token punctuation">:</span> <span class="token function">unquote</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
     <span class="token property">outline</span><span class="token punctuation">:</span> 4px solid <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
     <span class="token property">outline-offset</span><span class="token punctuation">:</span> -4px <span class="token important">!important</span><span class="token punctuation">;</span>

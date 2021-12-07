@@ -21,7 +21,7 @@
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
     "docs": "npx @11ty/eleventy",
-    "docs:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
+    "docs:debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "build": "sass sass/:css/ --style compressed --no-source-map",
     "postbuild": "postcss ./css/**/*.css --use autoprefixer",
     "prepublishOnly": "npm run build",

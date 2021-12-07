@@ -108,6 +108,12 @@
       
         
         <li>
+          <a href="#attribute-whitespace">Attribute should not contain whitespace</a>
+        </li>
+        
+      
+        
+        <li>
           <a href="#tab-order">[tabindex] &gt; 0</a>
         </li>
         
@@ -216,7 +222,7 @@
       
         
         <li>
-          <a href="#no-lang">No language defined</a>
+          <a href="#no-lang">No valid language defined</a>
         </li>
         
       
@@ -358,6 +364,26 @@
   
       
         <article>
+          <h2 id="attribute-whitespace">Attribute should not contain whitespace</h2>
+          <h2 id="description">Description</h2>
+<p>Some HTML attributes should not contain any whitespace —namely <code>[id]</code>, <code>[lang]</code> and <code>map[name]</code>.</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://html.spec.whatwg.org/#the-id-attribute">https://html.spec.whatwg.org/#the-id-attribute</a></li>
+<li><a href="https://html.spec.whatwg.org/#the-map-element">https://html.spec.whatwg.org/#the-map-element</a></li>
+<li><a href="https://tools.ietf.org/html/bcp47#section-2.1.1">https://tools.ietf.org/html/bcp47#section-2.1.1</a></li>
+</ul>
+<h2 id="selector">Selector</h2>
+<pre><code class="css_example language-css_example">[id*=" "],
+[lang*=" "],
+map[name*=" "]
+</code></pre>
+<h2 id="test">Test</h2>
+<pre><code class="html_example language-html_example">&lt;p id="my id"&gt;This is my beautiful element with an ID&lt;/p&gt;
+</code></pre>
+        </article>
+      
+        <article>
           <h2 id="tab-order">[tabindex] &gt; 0</h2>
           <h3 id="description">Description</h3>
 <p>The <code>[tabindex]</code> attribute should never be greater than 0.</p>
@@ -369,8 +395,8 @@
 <li><a href="https://www.scottohara.me/blog/2019/05/25/tabindex.html">https://www.scottohara.me/blog/2019/05/25/tabindex.html</a></li>
 </ul>
 <h3 id="selector">Selector</h3>
-<div class="pre"><pre><code class="css language-css">[tabindex]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[tabindex=<span class="token string">"0"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[tabindex=<span class="token string">"-1"</span>]<span class="token punctuation">)</span>
-</code></pre></div>
+<pre><code class="css_example language-css_example">[tabindex]:not([tabindex="0"]):not([tabindex^="-"])
+</code></pre>
 <h3 id="test">Test</h3>
 <div class="pre"><div><button tabindex="1" type="button">Positive tabindex is bad</button>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Positive tabindex is bad<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
@@ -820,7 +846,7 @@ form[action=<span class="token string">""</span>]
         </article>
       
         <article>
-          <h2 id="no-lang">No language defined</h2>
+          <h2 id="no-lang">No valid language defined</h2>
           <h3 id="description">Description</h3>
 <p><code>&lt;html&gt;</code> must indicate to User Agents the human language used in the document.</p>
 <h3 id="references">References</h3>
@@ -830,10 +856,17 @@ form[action=<span class="token string">""</span>]
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-4">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-4</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id">https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id</a></li>
 <li><a href="https://www.w3.org/TR/WCAG-TECHS/H57.html">https://www.w3.org/TR/WCAG-TECHS/H57.html</a></li>
+<li><a href="https://html.spec.whatwg.org/#attr-lang">https://html.spec.whatwg.org/#attr-lang</a></li>
+<li><a href="https://tools.ietf.org/html/bcp47#section-2.1.1">https://tools.ietf.org/html/bcp47#section-2.1.1</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG21/Understanding/language-of-page">https://www.w3.org/WAI/WCAG21/Understanding/language-of-page</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html">https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html</a></li>
+<li><a href="https://www.matuzo.at/blog/lang-attribute/">https://www.matuzo.at/blog/lang-attribute/</a></li>
+<li><a href="https://codepen.io/matuzo/project/editor/ZyrVee">https://codepen.io/matuzo/project/editor/ZyrVee</a></li>
 </ul>
 <h3 id="selector">Selector</h3>
 <div class="pre"><pre><code class="css language-css"><span class="token property">html</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[lang]<span class="token punctuation">)</span><span class="token punctuation">,</span>
-html[lang=<span class="token string">" "</span>]<span class="token punctuation">,</span>
+html[lang*=<span class="token string">" "</span>]<span class="token punctuation">,</span>
 html[lang=<span class="token string">""</span>]
 </code></pre></div>
 <h3 id="test">Test</h3>

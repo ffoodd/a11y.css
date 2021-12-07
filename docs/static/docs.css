@@ -671,8 +671,11 @@ header nav a::before {
   opacity: 0;
   position: absolute;
   top: 50%;
+  transition: opacity 300ms, -webkit-transform 300ms;
   transition: transform 300ms, opacity 300ms;
-  transform: translate3d( -50%, -50%, 0 ) scale( .2 );
+  transition: transform 300ms, opacity 300ms, -webkit-transform 300ms;
+  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( .2 );
+          transform: translate3d( -50%, -50%, 0 ) scale( .2 );
   width: calc( 100% - .5em );
 }
 
@@ -680,7 +683,8 @@ header nav a::after {
   background: currentColor;
   border: 0;
   height: 2.5rem;
-  transform: translate3d( -50%, -50%, 0 ) scale( .8 );
+  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( .8 );
+          transform: translate3d( -50%, -50%, 0 ) scale( .8 );
   width: calc( 100% - 1em );
 }
 
@@ -710,11 +714,13 @@ header nav a::after {
 }
 
 .warnings::after {
-  transform: translate3d( -50%, -50%, 0 ) scale( .8 ) rotate( 45deg );
+  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( .8 ) rotate( 45deg );
+          transform: translate3d( -50%, -50%, 0 ) scale( .8 ) rotate( 45deg );
 }
 
 .warnings::before {
-  transform: translate3d( -50%, -50%, 0 ) scale( .2 ) rotate( 45deg );
+  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( .2 ) rotate( 45deg );
+          transform: translate3d( -50%, -50%, 0 ) scale( .2 ) rotate( 45deg );
 }
 
 header nav a:hover::after,
@@ -732,7 +738,8 @@ header nav a[aria-current="page"]::before,
 .advices[aria-current="page"]::after,
 .advices[aria-current="page"]::before {
   opacity: .1;
-  transform: translate3d( -50%, -50%, 0 ) scale( 1 );
+  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( 1 );
+          transform: translate3d( -50%, -50%, 0 ) scale( 1 );
 }
 
 .warnings:hover::after,
@@ -743,7 +750,8 @@ header nav a[aria-current="page"]::before,
 .warnings[aria-current="page"]::before {
   color: #ffce00;
   opacity: .3;
-  transform: translate3d( -50%, -50%, 0 ) scale( 1 ) rotate( 45deg );
+  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( 1 ) rotate( 45deg );
+          transform: translate3d( -50%, -50%, 0 ) scale( 1 ) rotate( 45deg );
 }
 
 .index[aria-current="page"] {
@@ -1355,10 +1363,12 @@ footer p:last-child {
 
 @media only screen and (min-width: 25em) and (max-width: 57.5em) {
   [id="toc"] {
-    -moz-columns: 2;
-         columns: 2;
-    -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    -webkit-columns: 2;
+       -moz-columns: 2;
+            columns: 2;
+    -webkit-column-gap: 3rem;
+       -moz-column-gap: 3rem;
+            column-gap: 3rem;
   }
 }
 
