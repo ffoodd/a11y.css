@@ -2,9 +2,17 @@ name: Bundlewatch
 
 on:
   push:
+    paths:
+      - 'sass/**'
     branches-ignore:
       - "dependabot/**"
   pull_request:
+    types:
+      - opened
+      - synchronize
+    branches:
+      - main
+      - "!dependabot/**"
 
 env:
   FORCE_COLOR: 2
