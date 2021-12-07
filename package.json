@@ -4,6 +4,7 @@
   "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
   "version": "5.1.0",
   "style": "css/a11y-en.css",
+  "sass": "sass/a11y-en.scss",
   "author": {
     "name": "Gaël Poupard",
     "url": "https://www.ffoodd.fr",
@@ -26,6 +27,7 @@
     "postbuild": "postcss ./css/**/*.css --use autoprefixer",
     "prepublishOnly": "npm run build",
     "test": "stylelint \"./sass/**/*.scss\"",
+    "bundlewatch": "bundlewatch --config .bundlewatch.config.json",
     "watch": "sass --watch sass/:css/ --style compressed",
     "prewebext": "rm -rf webextension/css/a11y-*.css && cp -r css/a11y-*_*.css webextension/css && cp -r css/webextension/show-lang.css webextension/css",
     "webext": "npm run webext:polyfill && npm run webext:all",
@@ -55,6 +57,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "autoprefixer": "^9.8.8",
+    "bundlewatch": "^0.3.2",
     "cssnano": "^5.0.12",
     "front-matter": "^3.1.0",
     "postcss": "^8.2.13",
@@ -69,7 +72,24 @@
     "uglify-es": "^3.3.9",
     "webextension-polyfill": "^0.4.0"
   },
-  "browserslist": [
-    "last 1 versions"
-  ]
+  "bundlewatch": {
+    "files": [
+      {
+        "path": "./css/a11y-en_error.css",
+        "maxSize": "72 kB"
+      },
+      {
+        "path": "./css/a11y-en_warning.css",
+        "maxSize": "110 kB"
+      },
+      {
+        "path": "./css/a11y-en_obsolete.css",
+        "maxSize": "125 kB"
+      },
+      {
+        "path": "./css/a11y-en.css",
+        "maxSize": "145 kB"
+      }
+    ]
+  }
 }
