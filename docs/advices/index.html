@@ -108,6 +108,12 @@
       
         
         <li>
+          <a href="#empty-option-on-select">&lt;select required&gt; should start with an empty &lt;option&gt;&#39;s [value]</a>
+        </li>
+        
+      
+        
+        <li>
           <a href="#empty-class">Empty [class] attribute</a>
         </li>
         
@@ -266,6 +272,28 @@
   <h1>Advices</h1>
   
   
+      
+        <article>
+          <h2 id="empty-option-on-select">&lt;select required&gt; should start with an empty &lt;option&gt;&#39;s [value]</h2>
+          <h2 id="description">Description</h2>
+<p>A <code>&lt;select required&gt;</code> element, which isn't <code>[multiple]</code> and whose <code>[size]</code> isn't greater than <code>1</code>, should start with an empty <code>&lt;option&gt;</code>. That being said, you may use a placeholder content for this option but must ensure to use an empty <code>[value]</code> attribute; or set a <code>[size]</code> attribute to the <code>&lt;select&gt;</code>, which value should equal to the number of <code>&lt;option&gt;</code>s.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://twitter.com/WebPlatformNews/status/1346492730223058946">https://twitter.com/WebPlatformNews/status/1346492730223058946</a></li>
+<li><a href="https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option">https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option</a></li>
+<li><a href="https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet">https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet</a></li>
+</ul>
+<h2 id="selector">Selector</h2>
+<pre><code class="css_example language-css_example">select[required]:not([multiple])[size="1"],
+select[required]:not([multiple]):not([size])
+</code></pre>
+<h2 id="test">Test</h2>
+<pre><code class="html_example language-html_example">&lt;select name="slices" required&gt;
+  &lt;option value="1"&gt;Cheese&lt;/option&gt;
+  &lt;option value="2"&gt;Salami&lt;/option&gt;
+&lt;/select&gt;&lt;span&gt;†&lt;/span&gt;
+</code></pre>
+        </article>
       
         <article>
           <h2 id="empty-class">Empty [class] attribute</h2>
