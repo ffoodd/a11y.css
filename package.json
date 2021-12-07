@@ -27,7 +27,7 @@
     "postbuild": "postcss ./css/**/*.css --use autoprefixer",
     "prepublishOnly": "npm run build",
     "test": "stylelint \"./sass/**/*.scss\"",
-    "bundlewatch": "bundlewatch --config .bundlewatch.config.json",
+    "bundlewatch": "bundlewatch",
     "watch": "sass --watch sass/:css/ --style compressed",
     "prewebext": "rm -rf webextension/css/a11y-*.css && cp -r css/a11y-*_*.css webextension/css && cp -r css/webextension/show-lang.css webextension/css",
     "webext": "npm run webext:polyfill && npm run webext:all",
