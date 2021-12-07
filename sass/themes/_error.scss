@@ -218,7 +218,7 @@ svg[role="img"]:not([aria-label]):not([aria-labelledby])
 ### Test
 ``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="https://www.w3.org/2000/svg" version="1.1" role="img">
+     xmlns="http://www.w3.org/2000/svg" role="img">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
 </svg><span>†</span>
