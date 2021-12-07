@@ -731,7 +731,7 @@ object[type="image"][aria-hidden="true"][aria-describedby],
 ### Test
 ``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="https://www.w3.org/2000/svg" version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
      aria-hidden="true" title="Decorative SVG, you punk!">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
@@ -800,7 +800,7 @@ object[role="presentation"]
 ### Test
 ``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="https://www.w3.org/2000/svg" version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
      role="presentation">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
@@ -843,7 +843,7 @@ svg:not([aria-hidden="true"]):not([role="img"])
 ### Test
 ``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="https://www.w3.org/2000/svg" version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
      aria-label="Decorative SVG, you punk!">
   <rect x="400" y="100" width="400" height="200"
         fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
