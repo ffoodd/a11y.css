@@ -76,19 +76,19 @@
     "files": [
       {
         "path": "./css/a11y-en_error.css",
-        "maxSize": "72 kB"
+        "maxSize": "7.5 kB"
       },
       {
         "path": "./css/a11y-en_warning.css",
-        "maxSize": "110 kB"
+        "maxSize": "13.5 kB"
       },
       {
         "path": "./css/a11y-en_obsolete.css",
-        "maxSize": "125 kB"
+        "maxSize": "17.5 kB"
       },
       {
         "path": "./css/a11y-en.css",
-        "maxSize": "145 kB"
+        "maxSize": "21.5 kB"
       }
     ]
   }
