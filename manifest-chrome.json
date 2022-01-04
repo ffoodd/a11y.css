@@ -5,8 +5,7 @@
 	"version": "1.2.0",
 	"permissions": [
 		"activeTab",
-		"storage",
-		"tabs"
+		"storage"
 	],
 	"browser_action": {
 		"default_title": "a11y.css",
