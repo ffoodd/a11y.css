@@ -7,22 +7,22 @@ name: attribute-whitespace
 category: Errors
 ---
 
-## Description
+### Description
 Some HTML attributes should not contain any whitespace —namely `[id]`, `[lang]` and `map[name]`.
 
-## Reference
+### Reference
 * <https://html.spec.whatwg.org/#the-id-attribute>
 * <https://html.spec.whatwg.org/#the-map-element>
 * <https://tools.ietf.org/html/bcp47#section-2.1.1>
 
-## Selector
+### Selector
 ```css_example
 [id*=" "],
 [lang*=" "],
 map[name*=" "]
 ```
 
-## Test
+### Test
 ```html_example
 <p id="my id">This is my beautiful element with an ID</p>
 ```
