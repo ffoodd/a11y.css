@@ -128,6 +128,9 @@ const parseSassComment = comment => {
     ghCompatibleHeaderId: true
   }).makeHtml(content.body)
 
+  const headingsRegex = /(<h([2-5]).*>(.*)<\/h[2-5]>)/gim
+  processedContent = processedContent.replace(headingsRegex, `<h$2>$3</h$2>`)
+
   // HTML code blocks
   const markupRegex = /((<pre><code class="html language-html">)(.[\s\S]+?)(\/code><\/pre>))/gm
   const htmlRegex = /((?<=<code class="html language-html">)(.[\s\S]+?)(?=<\/code>))/gm

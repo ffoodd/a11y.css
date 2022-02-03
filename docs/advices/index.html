@@ -275,19 +275,19 @@
       
         <article>
           <h2 id="empty-option-on-select">&lt;select required&gt; should start with an empty &lt;option&gt;&#39;s [value]</h2>
-          <h2 id="description">Description</h2>
+          <h2>Description</h2>
 <p>A <code>&lt;select required&gt;</code> element, which isn't <code>[multiple]</code> and whose <code>[size]</code> isn't greater than <code>1</code>, should start with an empty <code>&lt;option&gt;</code>. That being said, you may use a placeholder content for this option but must ensure to use an empty <code>[value]</code> attribute; or set a <code>[size]</code> attribute to the <code>&lt;select&gt;</code>, which value should equal to the number of <code>&lt;option&gt;</code>s.</p>
-<h2 id="references">References</h2>
+<h2>References</h2>
 <ul>
 <li><a href="https://twitter.com/WebPlatformNews/status/1346492730223058946">https://twitter.com/WebPlatformNews/status/1346492730223058946</a></li>
 <li><a href="https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option">https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option</a></li>
 <li><a href="https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet">https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet</a></li>
 </ul>
-<h2 id="selector">Selector</h2>
+<h2>Selector</h2>
 <pre><code class="css_example language-css_example">select[required]:not([multiple])[size="1"],
 select[required]:not([multiple]):not([size])
 </code></pre>
-<h2 id="test">Test</h2>
+<h2>Test</h2>
 <pre><code class="html_example language-html_example">&lt;select name="slices" required&gt;
   &lt;option value="1"&gt;Cheese&lt;/option&gt;
   &lt;option value="2"&gt;Salami&lt;/option&gt;
@@ -297,13 +297,13 @@ select[required]:not([multiple]):not([size])
       
         <article>
           <h2 id="empty-class">Empty [class] attribute</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p><code>[class]</code> shouldn't be present if empty. Something to improve, right?</p>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[class=<span class="token string">""</span>]<span class="token punctuation">,</span>
 [class=<span class="token string">" "</span>]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><b class="">Why is there a class here?</b>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>b</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Why is there a class here?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>b</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -311,13 +311,13 @@ select[required]:not([multiple]):not([size])
       
         <article>
           <h2 id="empty-id">Empty [id] attribute</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p><code>[id]</code> shouldn't be present if empty. You'll thank me later.</p>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[id=<span class="token string">""</span>]<span class="token punctuation">,</span>
 [id=<span class="token string">" "</span>]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><i id="">Wait. Why is my ID empty?</i>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Wait. Why is my ID empty?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -325,17 +325,17 @@ select[required]:not([multiple]):not([size])
       
         <article>
           <h2 id="main">A second visible main tag</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A single <code>&lt;main&gt;</code> should be visible at a time. Isn't that obvious?</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://www.w3.org/TR/html52/changes.html#new-concepts">https://www.w3.org/TR/html52/changes.html#new-concepts</a></li>
 <li><a href="https://www.w3.org/TR/html52/grouping-content.html#elementdef-main">https://www.w3.org/TR/html52/grouping-content.html#elementdef-main</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">main ~ <span class="token property">main</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[hidden]<span class="token punctuation">)</span>
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><main>I'm the main content!</main>
 <main>No, It's me!</main>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">></span></span>I'm the main content!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span>
@@ -345,16 +345,16 @@ select[required]:not([multiple]):not([size])
       
         <article>
           <h2 id="figcaption">A second figcaption tag</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p><code>&lt;figcaption&gt;</code> should be single inside its parent. Check the spec!</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element">https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css"><span class="token property">figcaption</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>first-of-type<span class="token punctuation">)</span>
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><figure role="group">
   <figcaption>I'm the caption.</figcaption>
   <img src="/static/ffoodd.png" alt="Needed" width="144" height="144" />
@@ -370,16 +370,16 @@ select[required]:not([multiple]):not([size])
       
         <article>
           <h2 id="figcaption-order">figcaption order</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p><code>&lt;figcaption&gt;</code> should be first or last child. Nothing else.</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element">https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css"><span class="token property">figcaption</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>first-child<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>last-child<span class="token punctuation">)</span>
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><figure role="group">
   <img src="/static/ffoodd.png" alt="Needed" width="144" height="144" />
   <figcaption>I'm the caption.</figcaption>
@@ -395,13 +395,13 @@ select[required]:not([multiple]):not([size])
       
         <article>
           <h2 id="mailto">An email link should be valid</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A <code>&lt;href="mailto:"&gt;</code> should contain a valid email.
 Otherwise you may annoy your users.</p>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[href^=<span class="token string">"mailto"</span>]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><a href="mailto:myself">Surpri-ise!</a>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mailto:myself<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Surpri-ise!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -409,13 +409,13 @@ Otherwise you may annoy your users.</p>
       
         <article>
           <h2 id="tel">A phone link should call a real number</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A <code>&lt;href="tel:"&gt;</code> should contain a valid phone number.
 Otherwise you may make your users to call anubody.</p>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[href^=<span class="token string">"tel"</span>]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><a href="tel:012345678">Who will I call?</a>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>tel:012345678<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Who will I call?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -423,16 +423,16 @@ Otherwise you may make your users to call anubody.</p>
       
         <article>
           <h2 id="role-button">button [role] on a link</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>Obviously, a button role on a link is probably not so hard to move to an authentic button tag, isn't it?</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">a[role=<span class="token string">"button"</span>]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><a href="/" role="button">Submit</a>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -440,10 +440,10 @@ Otherwise you may make your users to call anubody.</p>
       
         <article>
           <h2 id="target-blank">Link opening new tab</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A link opening new tab or window should warn user about its behaviour.
 You could use a <code>[title]</code>, for example.</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-2">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-2</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs">https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs</a></li>
@@ -452,10 +452,10 @@ You could use a <code>[title]</code>, for example.</p>
 <li><a href="https://www.w3.org/TR/WCAG-TECHS/H83.html">https://www.w3.org/TR/WCAG-TECHS/H83.html</a></li>
 <li><a href="https://www.w3.org/TR/WCAG-TECHS/F22.html">https://www.w3.org/TR/WCAG-TECHS/F22.html</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[target$=<span class="token string">"blank"</span>]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><a href="/" target="_blank" rel="noopener noreferrer">New tab</a>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>noopener noreferrer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>New tab<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -463,16 +463,16 @@ You could use a <code>[title]</code>, for example.</p>
       
         <article>
           <h2 id="file-format">Linking to a file</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A link to a file should indicate the file format, the file size and if different from the main document, the file language.</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-6">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-6</a></li>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-7">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-13-7</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs">https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs</a></li>
 <li><a href="https://www.w3.org/TR/WCAG-TECHS/H33.html">https://www.w3.org/TR/WCAG-TECHS/H33.html</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[download]<span class="token punctuation">,</span>
 [href$=<span class="token string">".pdf"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span><span class="token punctuation">,</span>
 [href$=<span class="token string">".doc"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -493,7 +493,7 @@ You could use a <code>[title]</code>, for example.</p>
 [href$=<span class="token string">".svg"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span><span class="token punctuation">,</span>
 [href$=<span class="token string">".svgz"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span>
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><a href="/file.png">Wanna file?</a>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/file.png<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Wanna file?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -501,20 +501,20 @@ You could use a <code>[title]</code>, for example.</p>
       
         <article>
           <h2 id="duplicate-roles">Duplicated roles</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>Some ARIA roles should be unique: at least <code>[main]</code>, <code>[search]</code>, <code>[banner]</code>, <code>[contentinfo]</code>.</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip">https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[role=<span class="token string">"main"</span>] ~ [role=<span class="token string">"main"</span>]<span class="token punctuation">,</span>
 [role=<span class="token string">"search"</span>] ~ [role=<span class="token string">"search"</span>]<span class="token punctuation">,</span>
 [role=<span class="token string">"banner"</span>] ~ [role=<span class="token string">"banner"</span>]<span class="token punctuation">,</span>
 [role=<span class="token string">"contentinfo"</span>] ~ [role=<span class="token string">"contentinfo"</span>]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><main role="main"><br /></main>
 <div role="main"><br /></div>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span>
@@ -524,18 +524,18 @@ You could use a <code>[title]</code>, for example.</p>
       
         <article>
           <h2 id="missing-role">May have a search [role]?</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A <code>[class]</code> or <code>[id]</code> containing search may carry the search ARIA <code>[role]</code>.</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-10</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip">https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[id*=<span class="token string">"search"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"search"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
 [class*=<span class="token string">"search"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"search"</span>]<span class="token punctuation">)</span>
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><form class="search" action="">
   <label for="field">Search</label>
   <input type="search" id="field" /><span>†</span>
@@ -549,18 +549,18 @@ You could use a <code>[title]</code>, for example.</p>
       
         <article>
           <h2 id="required">Does this look like [required]?</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A <code>[required]</code> or <code>[aria-required]</code> should be visually understandable.</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-10">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-10</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#minimize-error-cues">https://www.w3.org/TR/WCAG20/#minimize-error-cues</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[required]<span class="token punctuation">,</span>
 [aria-required]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><form action="">
   <label for="field">Fied</label>
   <textarea id="field" required></textarea><span>†</span>
@@ -574,18 +574,18 @@ You could use a <code>[title]</code>, for example.</p>
       
         <article>
           <h2 id="hidden">Not :empty [hidden] things</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A <code>[hidden]</code> or <code>[aria-hidden]</code> may not be a good idea if hiding content.</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-13">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-13</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">https://www.w3.org/TR/WCAG20/#ensure-compat-rsv</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[hidden]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>empty<span class="token punctuation">)</span><span class="token punctuation">,</span>
 [aria-hidden=<span class="token string">"true"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>empty<span class="token punctuation">)</span>
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><a href="/" aria-hidden="true">Important thing!</a>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">aria-hidden</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Important thing!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -593,12 +593,12 @@ You could use a <code>[title]</code>, for example.</p>
       
         <article>
           <h2 id="placeholder">Placeholder can&#39;t replace a label</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A <code>[placeholder]</code> is not a label, is it?</p>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[placeholder]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[title]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-labelledby]<span class="token punctuation">)</span>
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><input type="text" placeholder="Look Ma, no label!" id="test"><span>†</span>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Look Ma, no label!<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -606,9 +606,9 @@ You could use a <code>[title]</code>, for example.</p>
       
         <article>
           <h2 id="video-audio">video or audio things</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A <code>&lt;video&gt;</code> or <code>&lt;audio&gt;</code> needs a few things to be accessible, like a transcript, subtitles, controls. This kind of things.</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-1">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-1</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt">https://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt</a></li>
@@ -616,11 +616,11 @@ You could use a <code>[title]</code>, for example.</p>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-13">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-4-13</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#media-equiv-text-doc">https://www.w3.org/TR/WCAG20/#media-equiv-text-doc</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">video<span class="token punctuation">,</span>
 audio
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><video src="/" controls></video><span>†</span>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">controls</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -628,21 +628,21 @@ audio
       
         <article>
           <h2 id="title">[title] should be equal to alternative</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A <code>[title]</code> on any graphic content should be equal to <code>[aria-label]</code> or <code>[alt]</code>.</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-3">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-3</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#text-equiv-all">https://www.w3.org/TR/WCAG20/#text-equiv-all</a></li>
 <li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">https://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
 <li><a href="https://www.w3.org/TR/html51/semantics.html#alt">https://www.w3.org/TR/html51/semantics.html#alt</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">img[alt][title]<span class="token punctuation">,</span>
 area[alt][title]<span class="token punctuation">,</span>
 svg[aria-label][title]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><img src="/static/ffoodd.png" alt="I'm an alternative text!" title="I'm a title!" height="144" width="144"><span>†</span>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/ffoodd.png<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>I<span class="token punctuation">'</span>m an alternative text!<span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>I<span class="token punctuation">'</span>m a title!<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>144<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -650,13 +650,13 @@ svg[aria-label][title]
       
         <article>
           <h2 id="time">Date and time should be understandable</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A <code>&lt;time&gt;</code> or <code>[datetime]</code> content should be an understandable and well formated date.</p>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">time<span class="token punctuation">,</span>
 [datetime]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><time>Yesterday</time>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>time</span><span class="token punctuation">></span></span>Yesterday<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>time</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -664,18 +664,18 @@ svg[aria-label][title]
       
         <article>
           <h2 id="th-scope">[scope] should be either col or row</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A <code>[scope]</code> can be col or row (and nothing else) and it has to be relevant.</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-7</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic</a></li>
 <li><a href="https://www.w3.org/TR/WCAG-TECHS/H63.html">https://www.w3.org/TR/WCAG-TECHS/H63.html</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">th[scope]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><table>
   <caption>I'm a caption</caption>
   <thead>
@@ -719,17 +719,17 @@ svg[aria-label][title]
       
         <article>
           <h2 id="table-presentation">Layout table in use</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>A <code>[role="presentation"]</code> is a good idea for any <code>&lt;table&gt;</code> used for layout, but a bad thing for a data table. Double check this!</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3">https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-3</a></li>
 <li><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence">https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">table[role=<span class="token string">"presentation"</span>]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><table role="presentation">
   <tr>
     <td>First cell</td>
@@ -755,18 +755,18 @@ svg[aria-label][title]
       
         <article>
           <h2 id="no-href">No [href]</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>Yet it's valid to skip the <code>[href]</code> attribute on a link, it's probably better to double check, isn't it?</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements">https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements</a></li>
 <li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161</a></li>
 <li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css"><span class="token property">a</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[href]<span class="token punctuation">)</span>
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><a>Who am I? Where do I link?</a>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span>Who am I? Where do I link?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre></div>
@@ -774,20 +774,20 @@ svg[aria-label][title]
       
         <article>
           <h2 id="no-https">Non HTTPS URL</h2>
-          <h3 id="description">Description</h3>
+          <h3>Description</h3>
 <p>When possible, try to use HTTPS.</p>
-<h3 id="references">References</h3>
+<h3>References</h3>
 <ul>
 <li><a href="https://twitter.com/fvsch/status/921748801542639616">https://twitter.com/fvsch/status/921748801542639616</a></li>
 <li><a href="https://transparencyreport.google.com/https/overview?hl=en">https://transparencyreport.google.com/https/overview?hl=en</a></li>
 <li><a href="https://letsencrypt.org/">https://letsencrypt.org/</a></li>
 <li><a href="https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels">https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels</a></li>
 </ul>
-<h3 id="selector">Selector</h3>
+<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css">[src^=<span class="token string">"http:"</span>]<span class="token punctuation">,</span>
 [href^=<span class="token string">"http:"</span>]
 </code></pre></div>
-<h3 id="test">Test</h3>
+<h3>Test</h3>
 <div class="pre"><div><a href="http://www.ffoodd.fr/">My target's protocol isn't secured</a>
 </div><pre><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.ffoodd.fr/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>My target's protocol isn't secured<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 </code></pre></div>
