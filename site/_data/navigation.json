@@ -6,32 +6,32 @@
   },
   {
     "label": "Errors",
-    "href": "/errors/",
+    "href": "/errors.html",
     "htmlClass": "errors"
   },
   {
     "label": "Warnings",
-    "href": "/warnings/",
+    "href": "/warnings.html",
     "htmlClass": "warnings"
   },
   {
     "label": "Obsoletes",
-    "href": "/obsoletes/",
+    "href": "/obsoletes.html",
     "htmlClass": "obsolete"
   },
   {
     "label": "Advices",
-    "href": "/advices/",
+    "href": "/advices.html",
     "htmlClass": "advices"
   },
   {
     "label": "WebExtension",
-    "href": "/webextension/",
+    "href": "/webextension.html",
     "htmlClass": "webextension"
   },
   {
     "label": "<b><abbr title=\"Application Programming Interface\">API</abbr></b> Doc",
-    "href": "/api/",
+    "href": "/docs.html",
     "htmlClass": "sassdoc"
   },
   {

@@ -3,7 +3,7 @@ pagination:
   data: themes
   size: 1
   alias: themePage
-permalink: "{{ themePage.title | slug }}/"
+permalink: "{{ themePage.title | slug }}.html"
 ---
 {% extends "layouts/base.njk" %}
 {% import "./_includes/components/utils.njk" as utils %}
@@ -11,7 +11,7 @@ permalink: "{{ themePage.title | slug }}/"
 {% set theme = sass[themePage.theme] %}
 
 {% block css %}
-  {% if 'API' != themePage.title %}
+  {% if 'docs' != themePage.title %}
     <link rel="stylesheet" href="/static/css/a11y-en_{{ themePage.title | lower }}-only.css" media="all">
   {% endif %}
 {% endblock %}
