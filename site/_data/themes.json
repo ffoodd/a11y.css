@@ -20,7 +20,7 @@
     "theme": "webextension"
   },
   {
-    "title": "API",
+    "title": "Docs",
     "theme": "api",
     "subthemes":  [
       {
