@@ -1,5 +1,5 @@
 ---
-title: a11y.css
+title: Documentation
 layout: "templates/page"
 ---
 
