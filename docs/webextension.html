@@ -18,7 +18,7 @@
   <body>
     <a href="#toc" class="skip">Skip to table of content</a>
     <a href="#content" class="skip">Skip to content</a>
-    <header class="main" id="top">
+    <header role="banner" id="top">
   <a href="/">
     <svg xmlns="http://www.w3.org/2000/svg" width="90" height="89.905" viewBox="0 0 180 179.81" role="img" aria-labelledby="titre">
       <title id="titre">a11y.css</title>
@@ -97,9 +97,8 @@
 </header>
 
 
-    <div class="main">
-      <aside>
-        
+    <aside role="complementary">
+      
   
 <nav role="navigation" aria-labelledby="toc-title" id="toc">
   <p class="h2-like" id="toc-title">Table of content</p>
@@ -150,25 +149,25 @@
 
 
 
-        <div class="box">
-          <p class="h2-like">Web extensions</p>
-          <ul>
-            <li>
-              <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
-                <img src="/static/firefox.svg" width="150" height="55" alt="a11y.css Firefox add-on"/>
-              </a>
-            </li>
-            <li>
-              <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css Chrome extension">
-                <img src="/static/chrome.svg" width="150" height="57" alt="a11y.css Chrome extension"/>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </aside>
+      <div class="box">
+        <p class="h2-like">Web extensions</p>
+        <ul>
+          <li>
+            <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
+              <img src="/static/firefox.svg" width="150" height="55" alt="a11y.css Firefox add-on"/>
+            </a>
+          </li>
+          <li>
+            <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css Chrome extension">
+              <img src="/static/chrome.svg" width="150" height="57" alt="a11y.css Chrome extension"/>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
 
-      <main>
-        
+    <main role="main">
+      
   <h1>WebExtension</h1>
   
   
@@ -265,12 +264,10 @@
     
 
 
-        
-      </main>
-    </div>
-    <footer class="main">
-  <div>
-    <p class="builtWith box">
+      
+    </main>
+    <footer role="contentinfo">
+  <p class="builtWith box">
       Built with
       <a href="https://www.11ty.dev/">
         Eleventy
@@ -290,9 +287,10 @@
 </svg>
       </a>
     </p>
-    <p>® 2014 —&nbsp;2022 <strong>Gaël Poupard</strong></p>
-    <p>This project is distributed under license <a href="https://opensource.org/licenses/MIT" title="The MIT licence">MIT</a> and <a href="https://creativecommons.org/licenses/by/3.0/fr/" hreflang="fr" title="Explications de la licence">CC BY 3.0 FR</a>. <a class="end" href="#top">Back to top</a></p>
-  </div>
+    <div>
+      <p>® 2014 —&nbsp;2022 <strong>Gaël Poupard</strong></p>
+      <p>This project is distributed under license <a href="https://opensource.org/licenses/MIT" title="The MIT licence">MIT</a> and <a href="https://creativecommons.org/licenses/by/3.0/fr/" hreflang="fr" title="Explications de la licence">CC BY 3.0 FR</a>. <a class="end" href="#top">Back to top</a></p>
+    </div>
 </footer>
 
     <script src="/static/docs.js"></script>
