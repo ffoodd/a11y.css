@@ -20,9 +20,9 @@
     "scss"
   ],
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "docs": "npx @11ty/eleventy",
-    "docs:debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "start": "eleventy --serve",
+    "docs": "eleventy",
+    "docs:debug": "DEBUG=Eleventy* eleventy",
     "build": "sass sass/:css/ --style compressed --no-source-map",
     "postbuild": "postcss ./css/**/*.css --use autoprefixer",
     "prepublishOnly": "npm run build",
