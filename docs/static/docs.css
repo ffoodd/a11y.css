@@ -540,15 +540,6 @@ textarea {
 
 html {
   box-sizing: border-box;
-  color: #3e4b55;
-  font-family:
-    Fira Sans,
-    Helvetica Neue,
-    Arial,
-    Nimbus Sans L,
-    sans-serif,
-    Segoe UI Emoji,
-    Segoe UI Symbol;
 }
 
 *,
@@ -561,6 +552,15 @@ body {
   background-color: #f7f7f7;
   background-image: url("data:image/svg+xml,%3Csvg width='56' height='28' viewBox='0 0 56 28' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M56 26c-2.813 0-5.456.726-7.752 2H56v-2zm-26 2h4.087C38.707 20.783 46.795 16 56 16v-2c-.672 0-1.339.024-1.999.07L54 14a2 2 0 0 1 2-2v-2a4 4 0 0 0-3.98 3.602 28.087 28.087 0 0 0-2.793-3.862A7.994 7.994 0 0 1 56 6V4a9.988 9.988 0 0 0-8.17 4.232 28.156 28.156 0 0 0-3.03-2.634A13.979 13.979 0 0 1 56 0h-7.752a16.078 16.078 0 0 0-5.09 4.454 27.941 27.941 0 0 0-3.536-1.936c.63-.896 1.33-1.738 2.095-2.518H39.03c-.46.557-.893 1.137-1.297 1.737A27.787 27.787 0 0 0 33.723.585c.12-.196.24-.392.364-.585H30l-.001.07A28.406 28.406 0 0 0 26 .07L26 0h-4.087c.124.193.245.389.364.585a27.787 27.787 0 0 0-4.009 1.152c-.404-.6-.837-1.18-1.297-1.737h-2.688c.764.78 1.466 1.622 2.095 2.518-1.23.562-2.41 1.21-3.536 1.936A16.078 16.078 0 0 0 7.752 0H0c4.58 0 8.645 2.199 11.2 5.598a28.156 28.156 0 0 0-3.03 2.634A9.988 9.988 0 0 0 0 4v2a7.994 7.994 0 0 1 6.773 3.74 28.087 28.087 0 0 0-2.793 3.862A4 4 0 0 0 0 10v2a2 2 0 0 1 1.999 2.07C1.339 14.024.672 14 0 14v2c9.205 0 17.292 4.783 21.913 12H26a2 2 0 1 1 4 0zM7.752 28C5.456 26.726 2.812 26 0 26v2h7.752zM56 20c-6.832 0-12.936 3.114-16.971 8h2.688A19.94 19.94 0 0 1 56 22v-2zm-39.029 8C12.936 23.114 6.831 20 0 20v2a19.94 19.94 0 0 1 14.283 6h2.688zm15.01-.398a28.087 28.087 0 0 1 2.792-3.862A7.994 7.994 0 0 0 28 20a7.994 7.994 0 0 0-6.773 3.74 28.087 28.087 0 0 1 2.793 3.862 4 4 0 0 1 7.96 0zm14.287-11.865C42.318 9.864 35.61 6 28 6c-7.61 0-14.318 3.864-18.268 9.737a27.787 27.787 0 0 0-4.009-1.152C10.275 7.043 18.548 2 28 2c9.452 0 17.725 5.043 22.277 12.585a27.787 27.787 0 0 0-4.009 1.152zm-5.426 2.717a27.941 27.941 0 0 1 3.536-1.936C40.76 11.367 34.773 8 28 8s-12.76 3.367-16.378 8.518c1.23.562 2.41 1.21 3.536 1.936C18.075 14.537 22.741 12 28 12s9.925 2.537 12.842 6.454zm-4.672 3.778a28.156 28.156 0 0 1 3.03-2.634A13.979 13.979 0 0 0 28 14c-4.58 0-8.645 2.199-11.2 5.598a28.156 28.156 0 0 1 3.03 2.634A9.988 9.988 0 0 1 28 18a9.988 9.988 0 0 1 8.17 4.232z' fill='%23f3f3f3' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
   background-size: 6rem 3rem;
+  color: #3e4b55;
+  font-family:
+    Fira Sans,
+    Helvetica Neue,
+    Arial,
+    Nimbus Sans L,
+    sans-serif,
+    Segoe UI Emoji,
+    Segoe UI Symbol;
   counter-reset: titles;
   display: grid;
   grid-template-columns: minmax(15rem, 33vw) 1fr;
@@ -586,7 +586,7 @@ main {
 }
 
 main > * + * {
-  max-width: 40rem; /* @todo use ch */
+  max-width: 70ch;
 }
 
 footer {
@@ -601,29 +601,28 @@ footer div {
   justify-content: space-between;
 }
 
-header > a {
+[id="logo"] {
   color: #483d23;
   padding-right: 1rem;
   text-align: right;
 }
 
-header > a:hover,
-header > a:focus {
+[id="logo"]:is(:hover, :focus) {
   color: #911;
 }
 
-header nav {
+.nav {
   align-self: center;
 }
 
-header nav ul {
+.nav ul {
   display: flex;
   flex-flow: row wrap;
   list-style: none;
   padding: 0;
 }
 
-header nav a {
+.nav a {
   display: inline-block;
   padding: .75em 1em;
   position: relative;
@@ -637,125 +636,80 @@ header nav a {
  * @see http://tympanus.net/Development/CreativeLinkEffects/#cl-effect-12
  */
 
-header nav a::after,
-header nav a::before {
-  border: 2px solid;
-  border-radius: .25rem;
+.nav a::after,
+.nav a::before {
+  --scale: .2;
+  border: 2px solid var(--background, currentColor);
+  border-radius: var(--radius, .25rem);
   content: "";
-  height: 3rem;
+  height: var(--size, 3rem);
   left: 50%;
   opacity: 0;
   position: absolute;
   top: 50%;
-  transition: opacity 300ms, -webkit-transform 300ms;
-  transition: transform 300ms, opacity 300ms;
-  transition: transform 300ms, opacity 300ms, -webkit-transform 300ms;
-  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( .2 );
-          transform: translate3d( -50%, -50%, 0 ) scale( .2 );
-  width: calc( 100% - .5em );
+  transition: opacity .3s, -webkit-transform .3s;
+  transition: transform .3s, opacity .3s;
+  transition: transform .3s, opacity .3s, -webkit-transform .3s;
+  -webkit-transform: translate3d( -50%, -50%, 0 ) scale(var(--scale)) rotate(var(--turn, 0deg));
+          transform: translate3d( -50%, -50%, 0 ) scale(var(--scale)) rotate(var(--turn, 0deg));
+  width: var(--size, var(--width, calc( 100% - .5em )));
+  z-index: -1;
 }
 
-header nav a::after {
-  background: currentColor;
+.nav a::after {
+  --scale: .8;
+  background: var(--background, currentColor);
   border: 0;
-  height: 2.5rem;
-  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( .8 );
-          transform: translate3d( -50%, -50%, 0 ) scale( .8 );
-  width: calc( 100% - 1em );
+  height: var(--size, 2.5rem);
+  width: var(--size, var(--after-width, calc( 100% - 1em )));
 }
 
-.warnings::before,
-.obsolete::before {
-  width: 3rem;
+.index {
+  --color: #039be5;
 }
 
-.warnings::after,
-.obsolete::after {
-  width: 2.5rem;
-}
-
-.errors::before {
-  height: 4rem;
-  width: 4rem;
+.errors {
+  --radius: 50%;
+  --size: 4rem;
+  --color: #911;
 }
 
 .errors::after {
-  height: 3.25rem;
-  width: 3.25rem;
+  --size: 3.25rem;
 }
 
-.errors::after,
-.errors::before {
-  border-radius: 50%;
+.warnings {
+  --turn: 45deg;
+  --color: #000;
+  --width: 3rem;
+  --after-width: 2.5rem;
+  --background: #ffce00;
 }
 
-.warnings::after {
-  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( .8 ) rotate( 45deg );
-          transform: translate3d( -50%, -50%, 0 ) scale( .8 ) rotate( 45deg );
+.obsolete {
+  --color: RoyalBlue;
+  --width: 3rem;
+  --after-width: 2.5rem;
 }
 
-.warnings::before {
-  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( .2 ) rotate( 45deg );
-          transform: translate3d( -50%, -50%, 0 ) scale( .2 ) rotate( 45deg );
+.advices {
+  --color: OliveDrab;
 }
 
-header nav a:hover::after,
-header nav a:hover::before,
-header nav a:focus::after,
-header nav a:focus::before,
-header nav a[aria-current="page"]::after,
-header nav a[aria-current="page"]::before,
-.index[aria-current="page"]::after,
-.index[aria-current="page"]::before,
-.errors[aria-current="page"]::after,
-.errors[aria-current="page"]::before,
-.obsolete[aria-current="page"]::after,
-.obsolete[aria-current="page"]::before,
-.advices[aria-current="page"]::after,
-.advices[aria-current="page"]::before {
+.nav a:is(:hover, :focus, [aria-current="page"]) {
+  color: var(--color, #3462af);
+}
+
+.nav a:where(:hover, :focus, [aria-current="page"])::after,
+.nav a:where(:hover, :focus, [aria-current="page"])::before {
+  --scale: 1;
   opacity: .1;
-  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( 1 );
-          transform: translate3d( -50%, -50%, 0 ) scale( 1 );
 }
 
-.warnings:hover::after,
-.warnings:hover::before,
-.warnings:focus::after,
-.warnings:focus::before,
-.warnings[aria-current="page"]::after,
-.warnings[aria-current="page"]::before {
-  color: #ffce00;
+.warnings:is(:hover, :focus, [aria-current="page"])::after,
+.warnings:is(:hover, :focus, [aria-current="page"])::before {
+  --color: #ffce00;
   opacity: .3;
-  -webkit-transform: translate3d( -50%, -50%, 0 ) scale( 1 ) rotate( 45deg );
-          transform: translate3d( -50%, -50%, 0 ) scale( 1 ) rotate( 45deg );
-}
-
-.index[aria-current="page"] {
-  color: #039be5;
-}
-
-.errors:hover,
-.errors:focus,
-.errors[aria-current="page"] {
-  color: #911;
-}
-
-.warnings:hover,
-.warnings:focus,
-.warnings[aria-current="page"] {
-  color: black;
-}
-
-.obsolete:hover,
-.obsolete:focus,
-.obsolete[aria-current="page"] {
-  color: RoyalBlue;
-}
-
-.advices:hover,
-.advices:focus,
-.advices[aria-current="page"] {
-  color: OliveDrab;
 }
 
 aside {
@@ -770,7 +724,7 @@ aside > * {
 }
 
 /**
- * Echelle typographique
+ * Échelle typographique
  */
 
 p,
@@ -790,7 +744,7 @@ textarea {
 h1, h2, h3,
 h4, h5, h6,
 strong, b, legend,
-.h2-like {
+.h3-like {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
@@ -805,14 +759,11 @@ h1 {
 h2[id] {
   background-color: #fcf9e9;
   counter-increment: titles;
-  display: inline-block;
-  max-width: 60rem;
   font-size: 3em;
   line-height: 1;
   margin: 1em 0 .5em;
   padding: 0 0 0 1.25ch;
   position: relative;
-  width: auto;
   z-index: 1;
 }
 
@@ -822,13 +773,10 @@ article:nth-of-type(9) ~ article h2[id] {
 
 h2[id]::after,
 h2[id]::before {
-  background: #f3f0e0;
   bottom: 0;
   content: "";
-  left: -2rem;
   position: absolute;
   top: 0;
-  z-index: -2;
 }
 
 h2[id]::before {
@@ -838,8 +786,10 @@ h2[id]::before {
     radial-gradient( rgba( 0, 0, 0, .05 ) 15%, transparent 16%);
   background-position: 0 0, .25rem .25rem;
   background-size: .5rem .5rem;
+  left: -2rem;
   min-width: 15rem;
   width: 67vw;
+  z-index: -2;
 }
 
 h2[id]::after {
@@ -855,7 +805,7 @@ h2[id]::after {
 }
 
 h3,
-.h2-like {
+.h3-like {
   font-size: 2em;
   line-height: 1.5;
   margin: 1.5em 0 .75em;
@@ -879,14 +829,13 @@ h6 {
   margin: 2.8236em 0 1.4118em;
 }
 
-aside div .h2-like {
+aside div .h3-like {
   font-size: 1.25em;
   font-weight: bold;
   margin: 0;
 }
 
-li p,
-li ul {
+li :is(p, ul) {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -926,8 +875,7 @@ thead th {
   color: #483d23;
 }
 
-tbody th,
-tbody td {
+tbody :is(th, td) {
   border-bottom: 1px solid #e5dec8;
   color: #7b6e50;
 }
@@ -965,10 +913,7 @@ pre {
   word-wrap: normal;
 }
 
-p code,
-ul code,
-th code,
-td code {
+:is(p, ul, th, td) code {
   border: 1px solid;
   border-radius: .2em;
   display: inline-block;
@@ -1000,16 +945,14 @@ blockquote p {
   display: inline;
 }
 
-blockquote em,
-blockquote code,
-blockquote strong {
+blockquote :is(em, code, strong) {
   color: #483d23;
   font-style: normal;
 }
 
 /* Liens */
 
-a:link {
+a {
   color: #3462af;
 }
 
@@ -1017,10 +960,9 @@ main a:visited {
   color: #7b30b1;
 }
 
-a:hover,
-a:focus {
+a:is(:hover, :focus) {
   color: #093785;
-  outline: none;
+  outline-color: transparent;
   text-decoration: none;
 }
 
@@ -1173,6 +1115,8 @@ form label {
   display: none;
 }
 
+/* @todo Use :focus-within and :focus-visible */
+
 .skip {
   opacity: 0;
   position: absolute;
@@ -1184,23 +1128,12 @@ form label {
 }
 
 .builtWith {
-  background: white;
-  border: 1px solid lightGray;
-  border-radius: 0 0 .25rem .25rem;
   border-top: 0;
-  box-shadow: inset 0 0 0 .25rem rgba( 0, 0, 0, .05 );
   margin: -2rem 0 0 auto;
   padding: 1rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-
-.builtWith a,
-.builtWith a * {
-  text-align: right;
-  display: inline-block;
-  vertical-align: middle;
 }
 
 /*
@@ -1279,7 +1212,7 @@ form label {
     order: 0;
   }
 
-  aside .h2-like {
+  aside .h3-like {
     margin-top: 1rem;
   }
 
