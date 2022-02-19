@@ -25,9 +25,9 @@
 
 {% macro toc(theme, subthemes) %}
 <nav role="navigation" aria-labelledby="toc-title" id="toc">
-  <p class="h3-like" id="toc-title">Table of content</p>
+  <p class="box-title" id="toc-title">Table of content</p>
   {% if subthemes %}
-    <ul>
+    <ul class="list-unstyled">
       {% for s in subthemes %}
         {% if s.title != '' %}
         <li>
