@@ -19,7 +19,7 @@ Either:
 
 #### Source {set-minimum-level-source}
 
-``` scss
+```scss
 @mixin set-minimum-level($level) {
   $level: to-lower-case($level);
   $levels: map-keys($themes);
@@ -45,7 +45,7 @@ Either:
 
 #### Example {set-minimum-level-example}
 
-``` sass
+```sass
 @include set-minimum-level('error');
 ```
 */
@@ -78,7 +78,7 @@ Get a message from the translation map based on the defined language and output 
 
 #### Source {get-message-source}
 
-``` scss
+```scss
 @mixin message($theme, $key) {
   content: replace-attr(quote("#​{message($theme, $key)}")) !important;
 }
@@ -93,13 +93,13 @@ Get a message from the translation map based on the defined language and output 
 
 #### Example {get-message-example}
 
-``` sass
+```sass
 .selector {
   @include message('advice', 'nav');
 }
 ```
 
-``` css
+```css
 .selector {
   content: 'Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?';
 }
@@ -123,7 +123,7 @@ Notice the `&` before the selector, and `$self-closing: true` argument.
 
 #### Source {void-tags-source}
 
-``` scss
+```scss
 @mixin void-tags {
   @at-root #​{selector-unify($void-tags, &)} {
     @content;
@@ -134,7 +134,7 @@ Notice the `&` before the selector, and `$self-closing: true` argument.
 
 #### Example {void-tags-example}
 
-``` sass
+```sass
 .selector {
   @include advice('nav')
 
@@ -144,7 +144,7 @@ Notice the `&` before the selector, and `$self-closing: true` argument.
 }
 ```
 
-``` css
+```css
 area .selector, base .selector, br .selector, col .selector, command .selector, embed .selector, hr .selector, img .selector, input .selector, keygen .selector, link .selector, meta .selector, param .selector, source .selector, track .selector, wbr .selector, textarea .selector, select .selector, svg .selector, audio .selector, video .selector, iframe .selector {
   content: "Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
 }
@@ -169,7 +169,7 @@ Theme mixin including everything needed for the `$theme`, and checking test is n
 
 #### Source {item-source}
 
-``` scss
+```scss
 @mixin item($theme, $key, $self-closing: false, $head: false) {
   $message-key: $theme + ':' + $key;
   $is-disabled: index($disabled-tests, $message-key);
@@ -211,7 +211,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 #### Source {error-source}
 
-``` scss
+```scss
 @mixin error($key, $self-closing: false, $head: false) {
   @include item('error', $key, $self-closing, $head);
 }
@@ -227,7 +227,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 #### Example {error-example}
 
-``` sass
+```sass
 .selector {
   @include error("no-src");
 }
@@ -250,7 +250,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 #### Source {warning-source}
 
-``` scss
+```scss
 @mixin warning($key, $self-closing: false, $head: false) {
   @include item('warning', $key, $self-closing, $head);
 }
@@ -266,7 +266,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 #### Example {warning-example}
 
-``` sass
+```sass
 .selector {
   @include warning("abbr");
 }
@@ -289,7 +289,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 #### Source {obsolete-source}
 
-``` scss
+```scss
 @mixin obsolete($key, $self-closing: false, $head: false) {
   @include item('obsolete', $key, $self-closing, $head);
 }
@@ -305,7 +305,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 #### Example {obsolete-example}
 
-``` sass
+```sass
 .selector {
   @include obsolete("any");
 }
@@ -328,7 +328,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 #### Source {advice-source}
 
-``` scss
+```scss
 @mixin advice($key, $self-closing: false, $head: false) {
   @include item('advice', $key, $self-closing, $head);
 }
@@ -344,7 +344,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 #### Example {advice-example}
 
-``` sass
+```sass
 .selector {
   @include advice("nav");
 }
@@ -368,7 +368,7 @@ made of a level and a test identifier separated by a double-colon, e.g. `error:t
 
 #### Source {disable-tests-source}
 
-``` scss
+```scss
 @mixin disable-tests($keys...) {
   @each $key in $keys {
     $disabled-tests: append($disabled-tests, $key) !global;
@@ -384,7 +384,7 @@ made of a level and a test identifier separated by a double-colon, e.g. `error:t
 
 #### Example {disable-tests-example}
 
-``` sass
+```sass
 @include disable-tests('error:tab-order', 'advice:empty-class');
 ```
 */
@@ -407,7 +407,7 @@ Display messages on `<head>`'s tags.
 
 #### Source {a11y-head-source}
 
-``` scss
+```scss
 @mixin a11y-head($self-closing: false) {
   // Because it's in the <head>
   @extend %a11y-head;
@@ -428,7 +428,7 @@ Display messages on `<head>`'s tags.
 
 #### Example {a11y-head-example}
 
-``` sass
+```sass
 .selector {
   @include a11y-head();
 }
@@ -458,7 +458,7 @@ Defines `body::after`’s `content` and `background-image` depending on `$minimu
 
 #### Source {base-content-source}
 
-``` scss
+```scss
 @mixin base-content($minimum-level) {
   $background: ();
   $content: ();
@@ -492,7 +492,7 @@ Defines `body::after`’s `content` and `background-image` depending on `$minimu
 
 #### Example {base-content-example}
 
-``` sass
+```sass
 @include base-content($minimum-level);
 ```
 */
@@ -533,7 +533,7 @@ Main mixin to display a message.
 
 #### Source {a11y-source}
 
-``` scss
+```scss
 @mixin a11y($theme, $key, $self-closing: false, $head: false) {
   @extend %a11y-#​{$theme};
 
@@ -567,7 +567,7 @@ Main mixin to display a message.
 
 #### Example {a11y-example}
 
-``` sass
+```sass
 @include a11y($theme, $key, $self-closing, $head);
 ```
 */

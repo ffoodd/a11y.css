@@ -10,7 +10,7 @@ Common styles for messages, mostly resetting text styles and preventing layout q
 
 #### Source {messages-common-styles-source}
 
-``` scss
+```scss
 %a11y-before {
   border-radius: 0 !important;
   color: #fff !important;
@@ -68,7 +68,7 @@ Level-specific styles for messages, incrementing `counter` and enforcing `outlin
 
 #### Source {messages-level-styles-source}
 
-``` scss
+```scss
 @each $theme in map-keys($themes) {
   %a11y-#​{$theme} {
     counter-increment: unquote($theme) !important;
@@ -103,7 +103,7 @@ Provides a way to cancel a message by resetting its core properties.
 
 #### Source {message-cancellation-source}
 
-``` scss
+```scss
 %a11y-reset {
   counter-increment: none !important;
   outline: 0 !important;
@@ -147,7 +147,7 @@ Displays elements in `<head>`, to allow their messages to appear.
 
 #### Source {head-children-source}
 
-``` scss
+```scss
 %a11y-head {
   display: block !important;
 }
