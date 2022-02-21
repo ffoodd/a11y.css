@@ -480,7 +480,7 @@
                 <h3 id="Functions-message">Get translations</h3>
                 <p>Retrieve message from translation map.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@function</span> <span class="token function">message</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@function</span> <span class="token function">message</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token property"><span class="token variable">$message-key</span></span><span class="token punctuation">:</span> <span class="token variable">$theme</span> <span class="token operator">+</span> <span class="token string">':'</span> <span class="token operator">+</span> <span class="token variable">$key</span><span class="token punctuation">;</span>
 
   <span class="token keyword">@if</span> <span class="token operator">not</span> <span class="token function">map-has-key</span><span class="token punctuation">(</span><span class="token variable">$messages</span><span class="token punctuation">,</span> <span class="token variable">$message-key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -528,7 +528,7 @@
                 <h3 id="Functions-theme-conf">Get theme configuration</h3>
                 <p>Helper function to easily access a theme configuration.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@function</span> <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@function</span> <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@return</span> <span class="token function">map-get</span><span class="token punctuation">(</span><span class="token function">map-get</span><span class="token punctuation">(</span><span class="token variable">$themes</span><span class="token punctuation">,</span> <span class="token variable">$theme</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -559,12 +559,12 @@
 </table>
 <h4>Example</h4>
 <p>Get color from error theme.</p>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector">.selector </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector">.selector </span><span class="token punctuation">{</span>
   <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
-<div class="pre"><pre><code class="css language-css"><span class="token selector">.selector</span> <span class="token punctuation">{</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> #911<span class="token punctuation">;</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token selector"><span class="token class">.selector</span></span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode color">#911</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
 <h5>Used by</h5>
@@ -581,7 +581,7 @@
                 <h3 id="Functions-is-level-enough">Check level to display</h3>
                 <p>Test whether <code>$level</code> is high enough to be displayed by comparing its index to <code>$minimum-level</code>'s.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@function</span> <span class="token function">is-level-enough</span><span class="token punctuation">(</span><span class="token variable">$level</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@function</span> <span class="token function">is-level-enough</span><span class="token punctuation">(</span><span class="token variable">$level</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token property"><span class="token variable">$levels</span></span><span class="token punctuation">:</span> <span class="token function">map-keys</span><span class="token punctuation">(</span><span class="token variable">$themes</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">@return</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token variable">$levels</span><span class="token punctuation">,</span> <span class="token variable">$level</span><span class="token punctuation">)</span> &amp;lt<span class="token punctuation">;</span>= <span class="token function">index</span><span class="token punctuation">(</span><span class="token variable">$levels</span><span class="token punctuation">,</span> <span class="token variable">$minimum-level</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -618,7 +618,7 @@
                 <h3 id="Functions-replace-attr">Escape attr()</h3>
                 <p>Ensures CSS <code>attr()</code> function will render the expected value, instead of being output as a string.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@function</span> <span class="token function">replace-attr</span><span class="token punctuation">(</span><span class="token variable">$message</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@function</span> <span class="token function">replace-attr</span><span class="token punctuation">(</span><span class="token variable">$message</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token property"><span class="token variable">$has-attr</span></span><span class="token punctuation">:</span> <span class="token function">str-index</span><span class="token punctuation">(</span><span class="token variable">$message</span><span class="token punctuation">,</span> <span class="token string">'attr('</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property"><span class="token variable">$first-paren</span></span><span class="token punctuation">:</span> <span class="token function">str-index</span><span class="token punctuation">(</span><span class="token variable">$message</span><span class="token punctuation">,</span> <span class="token string">')'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -626,8 +626,8 @@
     <span class="token keyword">@return</span> <span class="token variable">$message</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 
-  <span class="token property"><span class="token variable">$first-chunk</span></span><span class="token punctuation">:</span> <span class="token function">str-slice</span><span class="token punctuation">(</span><span class="token variable">$message</span><span class="token punctuation">,</span> 1<span class="token punctuation">,</span> <span class="token variable">$has-attr</span> <span class="token operator">-</span> 1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token property"><span class="token variable">$last-chunk</span></span><span class="token punctuation">:</span> <span class="token function">str-slice</span><span class="token punctuation">(</span><span class="token variable">$message</span><span class="token punctuation">,</span> <span class="token variable">$first-paren</span> <span class="token operator">+</span> 1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property"><span class="token variable">$first-chunk</span></span><span class="token punctuation">:</span> <span class="token function">str-slice</span><span class="token punctuation">(</span><span class="token variable">$message</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token variable">$has-attr</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property"><span class="token variable">$last-chunk</span></span><span class="token punctuation">:</span> <span class="token function">str-slice</span><span class="token punctuation">(</span><span class="token variable">$message</span><span class="token punctuation">,</span> <span class="token variable">$first-paren</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token property"><span class="token variable">$result</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -664,11 +664,11 @@
 </tbody>
 </table>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector">.selector </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector">.selector </span><span class="token punctuation">{</span>
   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">replace-attr</span><span class="token punctuation">(</span><span class="token string">"ARIA role attr(role) should be unique, but this one is the second!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
-<div class="pre"><pre><code class="css language-css"><span class="token selector">.selector</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token selector"><span class="token class">.selector</span></span> <span class="token punctuation">{</span>
   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"ARIA role "</span> <span class="token function">attr</span><span class="token punctuation">(</span>role<span class="token punctuation">)</span> <span class="token string">"should be unique, but this one is the second!"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -746,12 +746,12 @@
 <li><code>advice</code> for everything.</li>
 </ul>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">set-minimum-level</span><span class="token punctuation">(</span><span class="token variable">$level</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token function">set-minimum-level</span><span class="token punctuation">(</span><span class="token variable">$level</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token property"><span class="token variable">$level</span></span><span class="token punctuation">:</span> <span class="token function">to-lower-case</span><span class="token punctuation">(</span><span class="token variable">$level</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property"><span class="token variable">$levels</span></span><span class="token punctuation">:</span> <span class="token function">map-keys</span><span class="token punctuation">(</span><span class="token variable">$themes</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
   <span class="token keyword">@if</span> <span class="token operator">not</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token variable">$levels</span><span class="token punctuation">,</span> <span class="token variable">$level</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token property"><span class="token variable">$default-level</span></span><span class="token punctuation">:</span> <span class="token function">nth</span><span class="token punctuation">(</span><span class="token variable">$levels</span><span class="token punctuation">,</span> -1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property"><span class="token variable">$default-level</span></span><span class="token punctuation">:</span> <span class="token function">nth</span><span class="token punctuation">(</span><span class="token variable">$levels</span><span class="token punctuation">,</span> <span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token property"><span class="token variable">$level</span></span><span class="token punctuation">:</span> <span class="token variable">$default-level</span><span class="token punctuation">;</span>
 
     <span class="token keyword">@warn</span> <span class="token string">'Level `#​{$level}` does not exist. '</span>
@@ -782,7 +782,7 @@
 </tbody>
 </table>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@include</span> <span class="token function">set-minimum-level</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@include</span> <span class="token function">set-minimum-level</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div>
               </article>
             
@@ -792,7 +792,7 @@
                 <h3 id="Mixins-message">Get a message</h3>
                 <p>Get a message from the translation map based on the defined language and output it in the <code>content</code> property.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">message</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token function">message</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">replace-attr</span><span class="token punctuation">(</span><span class="token function">quote</span><span class="token punctuation">(</span><span class="token string">"#​{message($theme, $key)}"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -822,11 +822,11 @@
 </tbody>
 </table>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector">.selector </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector">.selector </span><span class="token punctuation">{</span>
   <span class="token keyword">@include</span> <span class="token function">message</span><span class="token punctuation">(</span><span class="token string">'advice'</span><span class="token punctuation">,</span> <span class="token string">'nav'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
-<div class="pre"><pre><code class="css language-css"><span class="token selector">.selector</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token selector"><span class="token class">.selector</span></span> <span class="token punctuation">{</span>
   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">'Did you know the &amp;lt;nav&amp;gt; tag is exclusively restricted to primary and secondary navigation area?'</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -839,14 +839,14 @@
                 <p>Extends selector with self-closing tags &amp; replaced elements.
 Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true</code> argument.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token selector">void-tags </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token selector">void-tags </span><span class="token punctuation">{</span>
   <span class="token atrule"><span class="token rule">@at-root</span> #​<span class="token punctuation">{</span><span class="token function">selector-unify</span><span class="token punctuation">(</span><span class="token variable">$void-tags</span><span class="token punctuation">,</span> &amp;<span class="token punctuation">)</span><span class="token punctuation">}</span></span> <span class="token punctuation">{</span>
     <span class="token keyword">@content</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector">.selector </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector">.selector </span><span class="token punctuation">{</span>
   <span class="token keyword">@include</span> <span class="token function">advice</span><span class="token punctuation">(</span><span class="token string">'nav'</span><span class="token punctuation">)</span>
 
   <span class="token keyword">@include</span> <span class="token selector">void-tags </span><span class="token punctuation">{</span>
@@ -854,7 +854,7 @@ Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
-<div class="pre"><pre><code class="css language-css"><span class="token selector">area .selector, base .selector, br .selector, col .selector, command .selector, embed .selector, hr .selector, img .selector, input .selector, keygen .selector, link .selector, meta .selector, param .selector, source .selector, track .selector, wbr .selector, textarea .selector, select .selector, svg .selector, audio .selector, video .selector, iframe .selector</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token selector">area <span class="token class">.selector</span><span class="token punctuation">,</span> base <span class="token class">.selector</span><span class="token punctuation">,</span> br <span class="token class">.selector</span><span class="token punctuation">,</span> col <span class="token class">.selector</span><span class="token punctuation">,</span> command <span class="token class">.selector</span><span class="token punctuation">,</span> embed <span class="token class">.selector</span><span class="token punctuation">,</span> hr <span class="token class">.selector</span><span class="token punctuation">,</span> img <span class="token class">.selector</span><span class="token punctuation">,</span> input <span class="token class">.selector</span><span class="token punctuation">,</span> keygen <span class="token class">.selector</span><span class="token punctuation">,</span> link <span class="token class">.selector</span><span class="token punctuation">,</span> meta <span class="token class">.selector</span><span class="token punctuation">,</span> param <span class="token class">.selector</span><span class="token punctuation">,</span> source <span class="token class">.selector</span><span class="token punctuation">,</span> track <span class="token class">.selector</span><span class="token punctuation">,</span> wbr <span class="token class">.selector</span><span class="token punctuation">,</span> textarea <span class="token class">.selector</span><span class="token punctuation">,</span> select <span class="token class">.selector</span><span class="token punctuation">,</span> svg <span class="token class">.selector</span><span class="token punctuation">,</span> audio <span class="token class">.selector</span><span class="token punctuation">,</span> video <span class="token class">.selector</span><span class="token punctuation">,</span> iframe <span class="token class">.selector</span></span> <span class="token punctuation">{</span>
   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">"Did you know the &amp;lt;nav&amp;gt; tag is exclusively restricted to primary and secondary navigation area?"</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -866,7 +866,7 @@ Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true
                 <h3 id="Mixins-item">Set a message</h3>
                 <p>Theme mixin including everything needed for the <code>$theme</code>, and checking test is not disabled.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">item</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token function">item</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token property"><span class="token variable">$message-key</span></span><span class="token punctuation">:</span> <span class="token variable">$theme</span> <span class="token operator">+</span> <span class="token string">':'</span> <span class="token operator">+</span> <span class="token variable">$key</span><span class="token punctuation">;</span>
   <span class="token property"><span class="token variable">$is-disabled</span></span><span class="token punctuation">:</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token variable">$disabled-tests</span><span class="token punctuation">,</span> <span class="token variable">$message-key</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -920,7 +920,7 @@ Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true
                 <h3 id="Mixins-error">Define an error</h3>
                 <p>Level related mixins use <code>item()</code> mixin with a hardcoded theme name.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">error</span><span class="token punctuation">(</span><span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token function">error</span><span class="token punctuation">(</span><span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@include</span> <span class="token function">item</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token variable">$self-closing</span><span class="token punctuation">,</span> <span class="token variable">$head</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -956,7 +956,7 @@ Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true
 </tbody>
 </table>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector">.selector </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector">.selector </span><span class="token punctuation">{</span>
   <span class="token keyword">@include</span> <span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"no-src"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -968,7 +968,7 @@ Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true
                 <h3 id="Mixins-warning">Define a warning</h3>
                 <p>Level related mixins use <code>item()</code> mixin with a hardcoded theme name.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">warning</span><span class="token punctuation">(</span><span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token function">warning</span><span class="token punctuation">(</span><span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@include</span> <span class="token function">item</span><span class="token punctuation">(</span><span class="token string">'warning'</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token variable">$self-closing</span><span class="token punctuation">,</span> <span class="token variable">$head</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -1004,7 +1004,7 @@ Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true
 </tbody>
 </table>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector">.selector </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector">.selector </span><span class="token punctuation">{</span>
   <span class="token keyword">@include</span> <span class="token function">warning</span><span class="token punctuation">(</span><span class="token string">"abbr"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -1016,7 +1016,7 @@ Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true
                 <h3 id="Mixins-obsolete">Define an obsolete thing</h3>
                 <p>Level related mixins use <code>item()</code> mixin with a hardcoded theme name.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">obsolete</span><span class="token punctuation">(</span><span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token function">obsolete</span><span class="token punctuation">(</span><span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@include</span> <span class="token function">item</span><span class="token punctuation">(</span><span class="token string">'obsolete'</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token variable">$self-closing</span><span class="token punctuation">,</span> <span class="token variable">$head</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -1052,7 +1052,7 @@ Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true
 </tbody>
 </table>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector">.selector </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector">.selector </span><span class="token punctuation">{</span>
   <span class="token keyword">@include</span> <span class="token function">obsolete</span><span class="token punctuation">(</span><span class="token string">"any"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -1064,7 +1064,7 @@ Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true
                 <h3 id="Mixins-advice">Define an advice</h3>
                 <p>Level related mixins use <code>item()</code> mixin with a hardcoded theme name.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">advice</span><span class="token punctuation">(</span><span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token function">advice</span><span class="token punctuation">(</span><span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@include</span> <span class="token function">item</span><span class="token punctuation">(</span><span class="token string">'advice'</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token variable">$self-closing</span><span class="token punctuation">,</span> <span class="token variable">$head</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -1100,7 +1100,7 @@ Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true
 </tbody>
 </table>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector">.selector </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector">.selector </span><span class="token punctuation">{</span>
   <span class="token keyword">@include</span> <span class="token function">advice</span><span class="token punctuation">(</span><span class="token string">"nav"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -1113,7 +1113,7 @@ Notice the <code>&amp;</code> before the selector, and <code>$self-closing: true
                 <p>Disable specific tests. Each test key should match an entry in locales <code>$messages</code> map,
 made of a level and a test identifier separated by a double-colon, e.g. <code>error:tab-order</code>.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">disable-tests</span><span class="token punctuation">(</span><span class="token variable">$keys</span>...<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token function">disable-tests</span><span class="token punctuation">(</span><span class="token variable">$keys</span>...<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@each</span> <span class="token selector"><span class="token variable">$key</span> in <span class="token variable">$keys</span> </span><span class="token punctuation">{</span>
     <span class="token property"><span class="token variable">$disabled-tests</span></span><span class="token punctuation">:</span> <span class="token function">append</span><span class="token punctuation">(</span><span class="token variable">$disabled-tests</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">)</span> !global<span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
@@ -1139,7 +1139,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
 </tbody>
 </table>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@include</span> <span class="token function">disable-tests</span><span class="token punctuation">(</span><span class="token string">'error:tab-order'</span><span class="token punctuation">,</span> <span class="token string">'advice:empty-class'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@include</span> <span class="token function">disable-tests</span><span class="token punctuation">(</span><span class="token string">'error:tab-order'</span><span class="token punctuation">,</span> <span class="token string">'advice:empty-class'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div>
               </article>
             
@@ -1149,7 +1149,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Mixins-a11y-head">Display messages in &lt;head&gt;</h3>
                 <p>Display messages on <code>&lt;head&gt;</code>'s tags.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">a11y-head</span><span class="token punctuation">(</span><span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token function">a11y-head</span><span class="token punctuation">(</span><span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment">// Because it's in the &amp;lt;head&amp;gt;</span>
   <span class="token keyword">@extend</span> <span class="token placeholder selector">%a11y-head</span><span class="token punctuation">;</span>
 
@@ -1180,7 +1180,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
 </tbody>
 </table>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector">.selector </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector">.selector </span><span class="token punctuation">{</span>
   <span class="token keyword">@include</span> <span class="token function">a11y-head</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -1192,7 +1192,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Mixins-base-content">Display counters ::after &lt;body&gt;</h3>
                 <p>Defines <code>body::after</code>’s <code>content</code> and <code>background-image</code> depending on <code>$minimum-level</code>.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">base-content</span><span class="token punctuation">(</span><span class="token variable">$minimum-level</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token function">base-content</span><span class="token punctuation">(</span><span class="token variable">$minimum-level</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token property"><span class="token variable">$background</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property"><span class="token variable">$content</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1202,17 +1202,17 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
     <span class="token keyword">@if</span> <span class="token function">is-level-enough</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token property"><span class="token variable">$background-offset</span></span><span class="token punctuation">:</span> <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token string">'background-offset'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token property"><span class="token variable">$background-theme</span></span><span class="token punctuation">:</span>
-        transparent <span class="token variable">$background-offset</span><span class="token punctuation">,</span>
+        <span class="token color">transparent</span> <span class="token variable">$background-offset</span><span class="token punctuation">,</span>
         <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">)</span> <span class="token variable">$background-offset</span><span class="token punctuation">,</span>
-        <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token variable">$background-offset</span> <span class="token operator">+</span> 0.2em<span class="token punctuation">)</span><span class="token punctuation">,</span>
-        transparent <span class="token punctuation">(</span><span class="token variable">$background-offset</span> <span class="token operator">+</span> 0.2em<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token variable">$background-offset</span> <span class="token operator">+</span> <span class="token number">0.2</span><span class="token unit">em</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token color">transparent</span> <span class="token punctuation">(</span><span class="token variable">$background-offset</span> <span class="token operator">+</span> <span class="token number">0.2</span><span class="token unit">em</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token property"><span class="token variable">$background</span></span><span class="token punctuation">:</span> <span class="token function">append</span><span class="token punctuation">(</span><span class="token variable">$background</span><span class="token punctuation">,</span> <span class="token variable">$background-theme</span><span class="token punctuation">,</span> <span class="token string">'comma'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       <span class="token property"><span class="token variable">$content-theme</span></span><span class="token punctuation">:</span> <span class="token function">quote</span><span class="token punctuation">(</span><span class="token function">message</span><span class="token punctuation">(</span><span class="token string">'ui'</span><span class="token punctuation">,</span> <span class="token variable">$theme</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token string">': '</span> #​<span class="token punctuation">{</span><span class="token function">counter</span><span class="token punctuation">(</span><span class="token function">unquote</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token string">'\A '</span><span class="token punctuation">;</span>
       <span class="token property"><span class="token variable">$content</span></span><span class="token punctuation">:</span> <span class="token function">append</span><span class="token punctuation">(</span><span class="token variable">$content</span><span class="token punctuation">,</span> <span class="token variable">$content-theme</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 
-  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> transparent<span class="token punctuation">,</span> <span class="token variable">$background</span><span class="token punctuation">,</span> transparent 100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span>to bottom<span class="token punctuation">,</span> <span class="token color">transparent</span><span class="token punctuation">,</span> <span class="token variable">$background</span><span class="token punctuation">,</span> <span class="token color">transparent</span> <span class="token number">100</span><span class="token unit">%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token property">content</span><span class="token punctuation">:</span> <span class="token variable">$content</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -1236,7 +1236,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
 </tbody>
 </table>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@include</span> <span class="token function">base-content</span><span class="token punctuation">(</span><span class="token variable">$minimum-level</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@include</span> <span class="token function">base-content</span><span class="token punctuation">(</span><span class="token variable">$minimum-level</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div>
               </article>
             
@@ -1246,7 +1246,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Mixins-a11y">Display a message</h3>
                 <p>Main mixin to display a message.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@mixin</span> <span class="token function">a11y</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@mixin</span> <span class="token function">a11y</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$self-closing</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$head</span></span><span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@extend</span> <span class="token placeholder selector">%a11y-</span>#​<span class="token punctuation">{</span><span class="token variable">$theme</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
   <span class="token property"><span class="token variable">$base-selector</span></span><span class="token punctuation">:</span> <span class="token string">'&amp;::after'</span><span class="token punctuation">;</span>
@@ -1305,7 +1305,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
 </tbody>
 </table>
 <h4>Example</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@include</span> <span class="token function">a11y</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token variable">$self-closing</span><span class="token punctuation">,</span> <span class="token variable">$head</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@include</span> <span class="token function">a11y</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token variable">$key</span><span class="token punctuation">,</span> <span class="token variable">$self-closing</span><span class="token punctuation">,</span> <span class="token variable">$head</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div>
               </article>
             
@@ -1370,16 +1370,16 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Placeholders-messages-common-styles">Messages common styles</h3>
                 <p>Common styles for messages, mostly resetting text styles and preventing layout quirks.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector"><span class="token placeholder">%a11y-before</span> </span><span class="token punctuation">{</span>
-  <span class="token property">border-radius</span><span class="token punctuation">:</span> 0 <span class="token important">!important</span><span class="token punctuation">;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> #fff <span class="token important">!important</span><span class="token punctuation">;</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector"><span class="token placeholder">%a11y-before</span> </span><span class="token punctuation">{</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode color">#fff</span> <span class="token important">!important</span><span class="token punctuation">;</span>
   <span class="token property">contain</span><span class="token punctuation">:</span> content<span class="token punctuation">;</span>
   <span class="token property">display</span><span class="token punctuation">:</span> block <span class="token important">!important</span><span class="token punctuation">;</span>
-  <span class="token property">font</span><span class="token punctuation">:</span> 700 normal 14px/1.5 sans-serif <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">font</span><span class="token punctuation">:</span> <span class="token number">700</span> normal <span class="token number">14</span><span class="token unit">px</span>/<span class="token number">1.5</span> sans-serif <span class="token important">!important</span><span class="token punctuation">;</span>
   <span class="token property">font-family</span><span class="token punctuation">:</span> -apple-system<span class="token punctuation">,</span> BlinkMacSystemFont<span class="token punctuation">,</span> <span class="token string">"Segoe UI"</span><span class="token punctuation">,</span> Roboto<span class="token punctuation">,</span> Oxygen-Sans<span class="token punctuation">,</span> Ubuntu<span class="token punctuation">,</span> Cantarell<span class="token punctuation">,</span> <span class="token string">"Helvetica Neue"</span><span class="token punctuation">,</span> sans-serif <span class="token important">!important</span><span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> auto <span class="token important">!important</span><span class="token punctuation">;</span>
-  <span class="token property">max-width</span><span class="token punctuation">:</span> 100vw <span class="token important">!important</span><span class="token punctuation">;</span>
-  <span class="token property">padding</span><span class="token punctuation">:</span> 4px <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">max-width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">vw</span> <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token unit">px</span> <span class="token important">!important</span><span class="token punctuation">;</span>
   <span class="token property">pointer-events</span><span class="token punctuation">:</span> none <span class="token important">!important</span><span class="token punctuation">;</span>
   <span class="token property">position</span><span class="token punctuation">:</span> absolute <span class="token important">!important</span><span class="token punctuation">;</span>
   <span class="token property">text-decoration</span><span class="token punctuation">:</span> none <span class="token important">!important</span><span class="token punctuation">;</span>
@@ -1402,11 +1402,11 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Placeholders-messages-level-styles">Level-specific messages styles</h3>
                 <p>Level-specific styles for messages, incrementing <code>counter</code> and enforcing <code>outline</code>.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token keyword">@each</span> <span class="token variable">$theme</span> in <span class="token function">map-keys</span><span class="token punctuation">(</span><span class="token variable">$themes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token keyword">@each</span> <span class="token variable">$theme</span> in <span class="token function">map-keys</span><span class="token punctuation">(</span><span class="token variable">$themes</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token placeholder selector">%a11y-</span>#​<span class="token punctuation">{</span><span class="token variable">$theme</span><span class="token punctuation">}</span> <span class="token punctuation">{</span>
     <span class="token property">counter-increment</span><span class="token punctuation">:</span> <span class="token function">unquote</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
-    <span class="token property">outline</span><span class="token punctuation">:</span> 4px solid <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
-    <span class="token property">outline-offset</span><span class="token punctuation">:</span> -4px <span class="token important">!important</span><span class="token punctuation">;</span>
+    <span class="token property">outline</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token unit">px</span> solid <span class="token function">theme-conf</span><span class="token punctuation">(</span><span class="token variable">$theme</span><span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
+    <span class="token property">outline-offset</span><span class="token punctuation">:</span> <span class="token number">-4</span><span class="token unit">px</span> <span class="token important">!important</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -1422,9 +1422,9 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Placeholders-message-cancellation">Cancel a message</h3>
                 <p>Provides a way to cancel a message by resetting its core properties.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector"><span class="token placeholder">%a11y-reset</span> </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector"><span class="token placeholder">%a11y-reset</span> </span><span class="token punctuation">{</span>
   <span class="token property">counter-increment</span><span class="token punctuation">:</span> none <span class="token important">!important</span><span class="token punctuation">;</span>
-  <span class="token property">outline</span><span class="token punctuation">:</span> 0 <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">outline</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token important">!important</span><span class="token punctuation">;</span>
 
   <span class="token selector"><span class="token parent important">&amp;</span>::after,
   <span class="token parent important">&amp;</span> + ::before </span><span class="token punctuation">{</span>
@@ -1449,7 +1449,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Placeholders-head-children">Display &lt;head&gt; children</h3>
                 <p>Displays elements in <code>&lt;head&gt;</code>, to allow their messages to appear.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token selector"><span class="token placeholder">%a11y-head</span> </span><span class="token punctuation">{</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token selector"><span class="token placeholder">%a11y-head</span> </span><span class="token punctuation">{</span>
   <span class="token property">display</span><span class="token punctuation">:</span> block <span class="token important">!important</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div>
@@ -1520,26 +1520,26 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Variables-themes">Themes</h3>
                 <p>This map holds configuration for all themes. Each theme has an icon, a color and a z-index, and a background offset.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token property"><span class="token variable">$themes</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token property"><span class="token variable">$themes</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
   <span class="token string">'error'</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
-    <span class="token string">'color'</span><span class="token punctuation">:</span> #d90b0b<span class="token punctuation">,</span>
-    <span class="token string">'index'</span><span class="token punctuation">:</span> 2147483647<span class="token punctuation">,</span>
-    <span class="token string">'background-offset'</span><span class="token punctuation">:</span> 1.4em
+    <span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token hexcode color">#d90b0b</span><span class="token punctuation">,</span>
+    <span class="token string">'index'</span><span class="token punctuation">:</span> <span class="token number">2147483647</span><span class="token punctuation">,</span>
+    <span class="token string">'background-offset'</span><span class="token punctuation">:</span> <span class="token number">1.4</span><span class="token unit">em</span>
   <span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token string">'warning'</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
-    <span class="token string">'color'</span><span class="token punctuation">:</span> #f50<span class="token punctuation">,</span>
-    <span class="token string">'index'</span><span class="token punctuation">:</span> 2147483646<span class="token punctuation">,</span>
-    <span class="token string">'background-offset'</span><span class="token punctuation">:</span> 2.9em
+    <span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token hexcode color">#f50</span><span class="token punctuation">,</span>
+    <span class="token string">'index'</span><span class="token punctuation">:</span> <span class="token number">2147483646</span><span class="token punctuation">,</span>
+    <span class="token string">'background-offset'</span><span class="token punctuation">:</span> <span class="token number">2.9</span><span class="token unit">em</span>
   <span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token string">'obsolete'</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
-    <span class="token string">'color'</span><span class="token punctuation">:</span> royalblue<span class="token punctuation">,</span>
-    <span class="token string">'index'</span><span class="token punctuation">:</span> 2147483645<span class="token punctuation">,</span>
-    <span class="token string">'background-offset'</span><span class="token punctuation">:</span> 4.4em
+    <span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token color">royalblue</span><span class="token punctuation">,</span>
+    <span class="token string">'index'</span><span class="token punctuation">:</span> <span class="token number">2147483645</span><span class="token punctuation">,</span>
+    <span class="token string">'background-offset'</span><span class="token punctuation">:</span> <span class="token number">4.4</span><span class="token unit">em</span>
   <span class="token punctuation">)</span><span class="token punctuation">,</span>
   <span class="token string">'advice'</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
-    <span class="token string">'color'</span><span class="token punctuation">:</span> green<span class="token punctuation">,</span>
-    <span class="token string">'index'</span><span class="token punctuation">:</span> 2147483644<span class="token punctuation">,</span>
-    <span class="token string">'background-offset'</span><span class="token punctuation">:</span> 5.9em
+    <span class="token string">'color'</span><span class="token punctuation">:</span> <span class="token color">green</span><span class="token punctuation">,</span>
+    <span class="token string">'index'</span><span class="token punctuation">:</span> <span class="token number">2147483644</span><span class="token punctuation">,</span>
+    <span class="token string">'background-offset'</span><span class="token punctuation">:</span> <span class="token number">5.9</span><span class="token unit">em</span>
   <span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div>
@@ -1593,7 +1593,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Variables-disabled-tests">Disabled tests</h3>
                 <p>Map of disabled tests, referred by their key.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token property"><span class="token variable">$disabled-tests</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token property"><span class="token variable">$disabled-tests</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div>
 <h5>Used by</h5>
 <ul>
@@ -1607,7 +1607,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Variables-void-tags">Void tags</h3>
                 <p>Every HTML tag that do not allow generated content through pseudo-elements.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token property"><span class="token variable">$void-tags</span></span><span class="token punctuation">:</span> area<span class="token punctuation">,</span> base<span class="token punctuation">,</span> br<span class="token punctuation">,</span> col<span class="token punctuation">,</span> command<span class="token punctuation">,</span> embed<span class="token punctuation">,</span> hr<span class="token punctuation">,</span> img<span class="token punctuation">,</span> input<span class="token punctuation">,</span> keygen<span class="token punctuation">,</span> link<span class="token punctuation">,</span> meta<span class="token punctuation">,</span> param<span class="token punctuation">,</span> source<span class="token punctuation">,</span> track<span class="token punctuation">,</span> wbr<span class="token punctuation">,</span> textarea<span class="token punctuation">,</span> select<span class="token punctuation">,</span> svg<span class="token punctuation">,</span> audio<span class="token punctuation">,</span> video<span class="token punctuation">,</span> iframe<span class="token punctuation">;</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token property"><span class="token variable">$void-tags</span></span><span class="token punctuation">:</span> area<span class="token punctuation">,</span> base<span class="token punctuation">,</span> br<span class="token punctuation">,</span> col<span class="token punctuation">,</span> command<span class="token punctuation">,</span> embed<span class="token punctuation">,</span> hr<span class="token punctuation">,</span> img<span class="token punctuation">,</span> input<span class="token punctuation">,</span> keygen<span class="token punctuation">,</span> link<span class="token punctuation">,</span> meta<span class="token punctuation">,</span> param<span class="token punctuation">,</span> source<span class="token punctuation">,</span> track<span class="token punctuation">,</span> wbr<span class="token punctuation">,</span> textarea<span class="token punctuation">,</span> select<span class="token punctuation">,</span> svg<span class="token punctuation">,</span> audio<span class="token punctuation">,</span> video<span class="token punctuation">,</span> iframe<span class="token punctuation">;</span>
 </code></pre></div>
 <h5>Used by</h5>
 <ul>
@@ -1626,7 +1626,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Variables-file-formats">File formats</h3>
                 <p>File formats used in a few selectors.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token property"><span class="token variable">$formats</span></span><span class="token punctuation">:</span> pdf<span class="token punctuation">,</span> doc<span class="token punctuation">,</span> png<span class="token punctuation">,</span> jpg<span class="token punctuation">,</span> gif<span class="token punctuation">,</span> ics<span class="token punctuation">,</span> mp3<span class="token punctuation">,</span> mp4<span class="token punctuation">,</span> mov<span class="token punctuation">,</span> ogg<span class="token punctuation">,</span> xls<span class="token punctuation">,</span> txt<span class="token punctuation">,</span> zip<span class="token punctuation">,</span> rar<span class="token punctuation">,</span> docx<span class="token punctuation">,</span> webp<span class="token punctuation">,</span> apng<span class="token punctuation">,</span> svg<span class="token punctuation">,</span> svgz<span class="token punctuation">;</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token property"><span class="token variable">$formats</span></span><span class="token punctuation">:</span> pdf<span class="token punctuation">,</span> doc<span class="token punctuation">,</span> png<span class="token punctuation">,</span> jpg<span class="token punctuation">,</span> gif<span class="token punctuation">,</span> ics<span class="token punctuation">,</span> mp3<span class="token punctuation">,</span> mp4<span class="token punctuation">,</span> mov<span class="token punctuation">,</span> ogg<span class="token punctuation">,</span> xls<span class="token punctuation">,</span> txt<span class="token punctuation">,</span> zip<span class="token punctuation">,</span> rar<span class="token punctuation">,</span> docx<span class="token punctuation">,</span> webp<span class="token punctuation">,</span> apng<span class="token punctuation">,</span> svg<span class="token punctuation">,</span> svgz<span class="token punctuation">;</span>
 </code></pre></div>
 <h5>Used by</h5>
 <ul>
@@ -1641,7 +1641,7 @@ made of a level and a test identifier separated by a double-colon, e.g. <code>er
                 <h3 id="Variables-interactive-elements">Interactive elements</h3>
                 <p>Tags used in some selectors.</p>
 <h4>Source</h4>
-<div class="pre"><pre><code class="scss language-scss"><span class="token property"><span class="token variable">$interactive</span></span><span class="token punctuation">:</span> <span class="token string">'a[href]'</span><span class="token punctuation">,</span> <span class="token string">'audio[controls]'</span><span class="token punctuation">,</span> <span class="token string">'video[controls]'</span><span class="token punctuation">,</span> <span class="token string">'button'</span><span class="token punctuation">,</span> <span class="token string">'details'</span><span class="token punctuation">,</span> <span class="token string">'embed'</span><span class="token punctuation">,</span> <span class="token string">'iframe'</span><span class="token punctuation">,</span> <span class="token string">'img[usemap]'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">,</span> <span class="token string">'select'</span><span class="token punctuation">,</span> <span class="token string">'textarea'</span><span class="token punctuation">,</span> <span class="token string">'input[type]:not([hidden])'</span><span class="token punctuation">;</span>
+<div class="pre"><pre><code class="scss language-scss" data-language="Sass"><span class="token property"><span class="token variable">$interactive</span></span><span class="token punctuation">:</span> <span class="token string">'a[href]'</span><span class="token punctuation">,</span> <span class="token string">'audio[controls]'</span><span class="token punctuation">,</span> <span class="token string">'video[controls]'</span><span class="token punctuation">,</span> <span class="token string">'button'</span><span class="token punctuation">,</span> <span class="token string">'details'</span><span class="token punctuation">,</span> <span class="token string">'embed'</span><span class="token punctuation">,</span> <span class="token string">'iframe'</span><span class="token punctuation">,</span> <span class="token string">'img[usemap]'</span><span class="token punctuation">,</span> <span class="token string">'label'</span><span class="token punctuation">,</span> <span class="token string">'select'</span><span class="token punctuation">,</span> <span class="token string">'textarea'</span><span class="token punctuation">,</span> <span class="token string">'input[type]:not([hidden])'</span><span class="token punctuation">;</span>
 </code></pre></div>
 <h5>Used by</h5>
 <ul>

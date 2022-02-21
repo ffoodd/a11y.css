@@ -19,7 +19,7 @@ The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also
 * <https://www.w3.org/TR/html5/grouping-content.html#the-li-element>
 
 ### Selector
-``` css
+```css
 ul > :not(li),
 ol > :not(li),
 :not(ul):not(ol) > li
@@ -57,7 +57,7 @@ category: Warnings
 * <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
 ### Selector
-``` css
+```css
 dt + :not(dd),
 :not(dt):not(dd) + dd
 ```
@@ -96,7 +96,7 @@ Any other imbrication may be a crime somewhere.
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl>
 
 ### Selector
-``` css
+```css
 :not(dl) > dt,
 :not(dl) > dd,
 dl > :not(dt):not(dd):not(div)
@@ -133,7 +133,7 @@ category: Warnings
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figcaption-element>
 
 ### Selector
-``` css
+```css
 :not(figure) > figcaption
 ```
 
@@ -163,7 +163,7 @@ category: Warnings
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figure-element>
 
 ### Selector
-``` css
+```css
 figure:not([role="group"])
 ```
 
@@ -208,7 +208,7 @@ Maybe other invalid nestings to test. Stay tuned.
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
 ### Selector
-``` css
+```css
 nav main,
 aside main,
 footer main,
@@ -293,7 +293,7 @@ You could use a `<span>` instead.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L326>
 
 ### Selector
-``` css
+```css
 b div,
 i div,
 q div,
@@ -343,7 +343,7 @@ They must not be used as wrappers!
 * <https://www.w3.org/TR/html5/dom.html#sectioning-content>
 
 ### Selector
-``` css
+```css
 aside > aside:first-child,
 article > aside:first-child,
 aside > article:first-child,
@@ -389,7 +389,7 @@ Always.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
 
 ### Selector
-``` css
+```css
 fieldset > *:not(legend):first-child,
 fieldset > legend:not(:first-child)
 ```
@@ -426,7 +426,7 @@ Always.
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details>
 
 ### Selector
-``` css
+```css
 details > *:not(summary):first-child,
 details > summary:not(:first-child)
 ```
@@ -464,7 +464,7 @@ Any abbreviation should give an explanation about its meaning, at least on its f
 * <https://www.w3.org/TR/WCAG-TECHS/H28.html>
 
 ### Selector
-``` css
+```css
 abbr:not([title]),
 abbr[title=" "],
 abbr[title=""]
@@ -505,7 +505,7 @@ That should be double-checked.
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 
 ### Selector
-``` css
+```css
 img[alt=""],
 area[alt=""],
 input[type="image"][alt=""],
@@ -551,7 +551,7 @@ A file name in `[alt]` is probably wrongly automated… and would never ever hel
 * <https://www.w3.org/TR/WCAG-TECHS/F38.html>
 
 ### Selector
-``` css
+```css
 img[alt$=".pdf"],
 area[alt$=".pdf"],
 input[type="image"][alt$=".pdf"],
@@ -700,7 +700,7 @@ See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-c
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
 ### Selector
-``` css
+```css
 img[alt=""][title],
 img[alt=""][aria-label],
 img[alt=""][aria-labelledby],
@@ -788,7 +788,7 @@ to empty `[alt]` or `[aria-hidden=true]`.
 
 
 ### Selector
-``` css
+```css
 img[role="presentation"],
 svg[role="presentation"],
 area[role="presentation"],
@@ -836,7 +836,7 @@ Any `<svg>` should either have `[aria-hidden="true"]` if decorative, or a `[role
 * <https://www.w3.org/TR/WCAG-TECHS/F65.html>
 
 ### Selector
-``` css
+```css
 svg:not([aria-hidden="true"]):not([role="img"])
 ```
 
@@ -872,7 +872,7 @@ A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because 
 * <https://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
 ### Selector
-``` css
+```css
 video[autoplay],
 audio[autoplay]
 ```
@@ -906,7 +906,7 @@ A time-based media like `<audio>` or `<video>` would be easier to use if `[contr
 * <https://www.w3.org/TR/WCAG-TECHS/G4.html>
 
 ### Selector
-``` css
+```css
 video:not([controls]),
 audio:not([controls])
 ```
@@ -952,7 +952,7 @@ We could use the `:blank` pseudo-class, but at this time its support is very poo
 * <https://css-tricks.com/almanac/selectors/b/blank/>
 
 ### Selector
-``` css
+```css
 body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
 ```
 
@@ -993,7 +993,7 @@ Should be double checked!
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ### Selector
-``` css
+```css
 table:not([role="presentation"]) > tr:only-child,
 table:not([role="presentation"]) > tbody > tr:only-child
 ```
@@ -1038,7 +1038,7 @@ There's no good reason to nest data tables: thus it probably means we're facing 
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175>
 
 ### Selector
-``` css
+```css
 table table
 ```
 
@@ -1102,7 +1102,7 @@ And it must be the `:first-child`, by the way.
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309>
 
 ### Selector
-``` css
+```css
 table:not([role="presentation"]) > caption:not(:first-child),
 table:not([role="presentation"]) > *:first-child:not(caption)
 ```
@@ -1150,7 +1150,7 @@ category: Warnings
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314>
 
 ### Selector
-``` css
+```css
 table > tfoot ~ thead,
 table > tbody ~ tfoot,
 table > tbody ~ thead,
@@ -1206,7 +1206,7 @@ category: Warnings
 `<thead>` is strongly needed if `<tbody>` is present.
 
 ### Selector
-``` css
+```css
 table:not([role="presentation"]) > caption + tbody,
 table:not([role="presentation"]) > tbody:first-child
 ```
@@ -1250,7 +1250,7 @@ category: Warnings
 * <https://www.w3.org/TR/WCAG20-TECHS/H43.html>
 
 ### Selector
-``` css
+```css
 th:not([scope]):not([id])
 ```
 
@@ -1296,7 +1296,7 @@ Believe me, this still have to be tested.
 * <https://www.la-grange.net/2015/03/11/visible>
 
 ### Selector
-``` css
+```css
 img[src*="1px.gif"]:not([role="presentation"]),
 img[src*="1x1.gif"]:not([role="presentation"]),
 img[src*="clear.gif"]:not([role="presentation"]),
@@ -1333,7 +1333,7 @@ category: Warnings
 Don't laugh, shit happens.
 
 ### Selector
-``` css
+```css
 [id*="NaN"],
 [id*="null"],
 [class*="NaN"],
@@ -1383,7 +1383,7 @@ The only exception shall be bookmarklets.
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
 ### Selector
-``` css
+```css
 a[href^="javascript"]:not([role="button"])
 ```
 
@@ -1412,7 +1412,7 @@ Should probably be a `<button>` or at least a `[role="button"]`, don't you think
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
 ### Selector
-``` css
+```css
 a[href="#"]:not([role="button"])
 ```
 
@@ -1443,7 +1443,7 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ### Selector
-``` css
+```css
 [style]
 ```
 
@@ -1480,7 +1480,7 @@ This is not actually an accessibility related issue, but everything helping user
 * <https://twitter.com/KittyGiraudel/status/801475801397030912>
 
 ### Selector
-``` css
+```css
 [target$="blank"]:not([rel]),
 [target$="blank"]:not([rel*="noopener"]),
 [target$="blank"]:not([rel*="noreferrer"])
@@ -1518,7 +1518,7 @@ Though `[aria-level]` is not required by ARIA specification, it's actually bette
 * <https://www.w3.org/TR/WCAG-TECHS/H42.html>
 
 ### Selector
-``` css
+```css
 [role="heading"]:not([aria-level])
 ```
 
@@ -1554,7 +1554,7 @@ Although implicitly labelling form controls is accepted, it's probably better to
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 
 ### Selector
-``` css
+```css
 label:not([for])
 ```
 
@@ -1586,7 +1586,7 @@ This also requires to check any in-page language change (marked up with `[lang]`
 * <https://w3c.github.io/html/dom.html#the-dir-attribute>
 
 ### Selector
-``` css
+```css
 [lang="ar"]:not([dir="rtl"]),
 [lang="he"]:not([dir="rtl"]),
 [lang="ar"] [lang]:not([dir="ltr"]),

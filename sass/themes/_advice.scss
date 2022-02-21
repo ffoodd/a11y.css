@@ -17,13 +17,13 @@ A `<select required>` element, which isn't `[multiple]` and whose `[size]` isn't
 * <https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet>
 
 ## Selector
-```css_example
+```css
 select[required]:not([multiple])[size="1"],
 select[required]:not([multiple]):not([size])
 ```
 
 ## Test
-```html_example
+```html
 <select name="slices" required>
   <option value="1">Cheese</option>
   <option value="2">Salami</option>
@@ -47,7 +47,7 @@ category: Advices
 `[class]` shouldn't be present if empty. Something to improve, right?
 
 ### Selector
-``` css
+```css
 [class=""],
 [class=" "]
 ```
@@ -78,7 +78,7 @@ category: Advices
 `[id]` shouldn't be present if empty. You'll thank me later.
 
 ### Selector
-``` css
+```css
 [id=""],
 [id=" "]
 ```
@@ -113,7 +113,7 @@ A single `<main>` should be visible at a time. Isn't that obvious?
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 
 ### Selector
-``` css
+```css
 main ~ main:not([hidden])
 ```
 
@@ -142,7 +142,7 @@ category: Advices
 * <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
 ### Selector
-``` css
+```css
 figcaption:not(:first-of-type)
 ```
 
@@ -174,7 +174,7 @@ category: Advices
 * <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
 
 ### Selector
-``` css
+```css
 figcaption:not(:first-child):not(:last-child)
 ```
 
@@ -204,7 +204,7 @@ A `<href="mailto:">` should contain a valid email.
 Otherwise you may annoy your users.
 
 ### Selector
-``` css
+```css
 [href^="mailto"]
 ```
 
@@ -230,7 +230,7 @@ A `<href="tel:">` should contain a valid phone number.
 Otherwise you may make your users to call anubody.
 
 ### Selector
-``` css
+```css
 [href^="tel"]
 ```
 
@@ -258,7 +258,7 @@ Obviously, a button role on a link is probably not so hard to move to an authent
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L174>
 
 ### Selector
-``` css
+```css
 a[role="button"]
 ```
 
@@ -292,7 +292,7 @@ You could use a `[title]`, for example.
 * <https://www.w3.org/TR/WCAG-TECHS/F22.html>
 
 ### Selector
-``` css
+```css
 [target$="blank"]
 ```
 
@@ -323,7 +323,7 @@ A link to a file should indicate the file format, the file size and if different
 * <https://www.w3.org/TR/WCAG-TECHS/H33.html>
 
 ### Selector
-``` css
+```css
 [download],
 [href$=".pdf"]:not(link),
 [href$=".doc"]:not(link),
@@ -376,7 +376,7 @@ Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[c
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
 ### Selector
-``` css
+```css
 [role="main"] ~ [role="main"],
 [role="search"] ~ [role="search"],
 [role="banner"] ~ [role="banner"],
@@ -412,7 +412,7 @@ A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
 
 ### Selector
-``` css
+```css
 [id*="search"]:not([role="search"]),
 [class*="search"]:not([role="search"])
 ```
@@ -456,7 +456,7 @@ A `[required]` or `[aria-required]` should be visually understandable.
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 
 ### Selector
-``` css
+```css
 [required],
 [aria-required]
 ```
@@ -499,7 +499,7 @@ A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 
 ### Selector
-``` css
+```css
 [hidden]:not(:empty),
 [aria-hidden="true"]:not(:empty)
 ```
@@ -530,7 +530,7 @@ category: Advices
 A `[placeholder]` is not a label, is it?
 
 ### Selector
-``` css
+```css
 [placeholder]:not([title]):not([aria-label]):not([aria-labelledby])
 ```
 
@@ -566,7 +566,7 @@ A `<video>` or `<audio>` needs a few things to be accessible, like a transcript,
 * <https://www.w3.org/TR/WCAG20/#media-equiv-text-doc>
 
 ### Selector
-``` css
+```css
 video,
 audio
 ```
@@ -599,7 +599,7 @@ A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 
 ### Selector
-``` css
+```css
 img[alt][title],
 area[alt][title],
 svg[aria-label][title]
@@ -628,7 +628,7 @@ category: Advices
 A `<time>` or `[datetime]` content should be an understandable and well formated date.
 
 ### Selector
-``` css
+```css
 time,
 [datetime]
 ```
@@ -660,7 +660,7 @@ A `[scope]` can be col or row (and nothing else) and it has to be relevant.
 * <https://www.w3.org/TR/WCAG-TECHS/H63.html>
 
 ### Selector
-``` css
+```css
 th[scope]
 ```
 
@@ -707,7 +707,7 @@ A `[role="presentation"]` is a good idea for any `<table>` used for layout, but 
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
 ### Selector
-``` css
+```css
 table[role="presentation"]
 ```
 
@@ -746,7 +746,7 @@ Yet it's valid to skip the `[href]` attribute on a link, it's probably better to
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
 ### Selector
-``` css
+```css
 a:not([href])
 ```
 
@@ -777,7 +777,7 @@ When possible, try to use HTTPS.
 * <https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels>
 
 ### Selector
-``` css
+```css
 [src^="http:"],
 [href^="http:"]
 ```

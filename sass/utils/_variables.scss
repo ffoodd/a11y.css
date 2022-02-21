@@ -13,7 +13,7 @@ This map holds configuration for all themes. Each theme has an icon, a color and
 
 #### Source {themes-source}
 
-``` scss
+```scss
 $themes: (
   'error': (
     'color': #d90b0b,
@@ -89,7 +89,7 @@ Map of disabled tests, referred by their key.
 
 #### Source {disabled-tests-source}
 
-``` scss
+```scss
 $disabled-tests: ();
 ```
 
@@ -113,7 +113,7 @@ Every HTML tag that do not allow generated content through pseudo-elements.
 
 #### Source {void-tags-source}
 
-``` scss
+```scss
 $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, textarea, select, svg, audio, video, iframe;
 ```
 
@@ -142,7 +142,7 @@ File formats used in a few selectors.
 
 #### Source {file-formats-source}
 
-``` scss
+```scss
 $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx, webp, apng, svg, svgz;
 ```
 
@@ -167,7 +167,7 @@ Tags used in some selectors.
 
 #### Source {interactive-elements-source}
 
-``` scss
+```scss
 $interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'details', 'embed', 'iframe', 'img[usemap]', 'label', 'select', 'textarea', 'input[type]:not([hidden])';
 ```
 

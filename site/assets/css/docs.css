@@ -145,6 +145,7 @@ h1 {
 h2[id] {
   background-color: #fcf9e9;
   counter-increment: titles;
+  display: inline-block;
   font-size: 3em;
   line-height: 1;
   margin: 1em 0 .5em;
@@ -277,7 +278,7 @@ pre {
   color: #032c36;
   direction: ltr;
   font-family: monospace;
-  font-size: small;
+  font-size: .875rem;
   hyphens: none;
   tab-size: 4;
   overflow-x: auto;
@@ -530,7 +531,7 @@ aside img {
 }
 
 /* Code blocks */
-pre {
+.pre {
   background: #fffef9;
   border: 1px solid #e5dec8;
   border-radius: .25rem;
@@ -548,7 +549,7 @@ pre {
 
 .pre > div {
   background: #fff;
-  margin: 2em 0;
+  margin: 2em 0 0;
   padding: 1em;
 }
 
@@ -563,7 +564,7 @@ pre {
 
 .pre pre:only-child code {
   display: block;
-  margin: 2em 0 0;
+  margin: 2.5em 0 0;
 }
 
 .pre code::before {
@@ -571,7 +572,7 @@ pre {
   border: 1px solid #e5dec8;
   border-radius: .25rem 0 .25rem 0;
   color: #7b6e50;
-  content: "Example";
+  content: attr(data-language);
   font-family: var(--font-stack);
   font-style: italic;
   left: -1px;
@@ -580,18 +581,10 @@ pre {
   top: -1px;
 }
 
-.pre code[class*="css"]::before {
-  content: "CSS";
-}
-
-.pre code[class*="scss"]::before {
-  content: "Sass";
-}
-
 /* Footer */
 .builtWith {
   border-top: 0;
-  margin: -2rem 0 0 auto;
+  margin: -2rem 2rem 0 auto;
   padding: 1rem;
   width: fit-content;
 }

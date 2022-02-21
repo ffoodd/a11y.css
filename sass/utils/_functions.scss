@@ -13,7 +13,7 @@ Retrieve message from translation map.
 
 #### Source {get-translations-source}
 
-``` scss
+```scss
 @function message($theme, $key) {
   $message-key: $theme + ':' + $key;
 
@@ -60,7 +60,7 @@ Helper function to easily access a theme configuration.
 
 #### Source {get-theme-configuration-source}
 
-``` scss
+```scss
 @function theme-conf($theme, $key) {
   @return map-get(map-get($themes, $theme), $key);
 }
@@ -77,13 +77,13 @@ Helper function to easily access a theme configuration.
 
 Get color from error theme.
 
-``` sass
+```sass
 .selector {
   color: theme-conf('error', 'color');
 }
 ```
 
-``` css
+```css
 .selector {
   color: #911;
 }
@@ -112,7 +112,7 @@ Test whether `$level` is high enough to be displayed by comparing its index to `
 
 #### Source {check-level-source}
 
-``` scss
+```scss
 @function is-level-enough($level) {
   $levels: map-keys($themes);
   @return index($levels, $level) <= index($levels, $minimum-level);
@@ -148,7 +148,7 @@ Ensures CSS `attr()` function will render the expected value, instead of being o
 
 #### Source {escape-attr-source}
 
-``` scss
+```scss
 @function replace-attr($message) {
   $has-attr: str-index($message, 'attr(');
   $first-paren: str-index($message, ')');
@@ -184,13 +184,13 @@ Ensures CSS `attr()` function will render the expected value, instead of being o
 
 #### Example {escape-attr-example}
 
-``` sass
+```sass
 .selector {
   content: replace-attr("ARIA role attr(role) should be unique, but this one is the second!");
 }
 ```
 
-``` css
+```css
 .selector {
   content: "ARIA role " attr(role) "should be unique, but this one is the second!";
 }
