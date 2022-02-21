@@ -813,8 +813,8 @@ iframe[title=<span class="token string">" "</span>]<span class="token punctuatio
 iframe[title=<span class="token string">""</span>]
 </code></pre></div>
 <h3>Test</h3>
-<div class="pre"><div><iframe src="/static/no-title.html" sandbox="allow-same-origin"></iframe><span>†</span>
-</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/no-title.html<span class="token punctuation">"</span></span> <span class="token attr-name">sandbox</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>allow-same-origin<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<div class="pre"><div><iframe srcdoc="<!DOCTYPE html><title>Missing [title]</title>"></iframe><span>†</span>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">srcdoc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&lt;!DOCTYPE html>&lt;title>Missing [title]&lt;/title><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
       
@@ -872,8 +872,36 @@ html[lang*=<span class="token string">" "</span>]<span class="token punctuation"
 html[lang=<span class="token string">""</span>]
 </code></pre></div>
 <h3>Test</h3>
-<div class="pre"><div><iframe title="No language defined a11y.css test-case" src="/static/no-lang.html" sandbox="allow-same-origin"></iframe>
-</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>No language defined a11y.css test-case<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/no-lang.html<span class="token punctuation">"</span></span> <span class="token attr-name">sandbox</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>allow-same-origin<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+<div class="pre"><div><iframe title="No language defined example" srcdoc="<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset='utf-8'/>
+      <title>Je ne parle pas Français</title>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
+    </head>
+    <body>
+      <ul>
+        <li>Speak French?</li>
+        <li>Habla usted francés?</li>
+        <li>Sprechen Sie Französisch?</li>
+    </ul>">
+</iframe>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>No language defined example<span class="token punctuation">"</span></span> <span class="token attr-name">srcdoc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&lt;!DOCTYPE html>
+  &lt;html>
+    &lt;head>
+      &lt;meta charset=<span class="token punctuation">'</span>utf-8<span class="token punctuation">'</span>/>
+      &lt;title>Je ne parle pas Français&lt;/title>
+      &lt;style>html{font:.75rem sans-serif}&lt;/style>
+      &lt;link rel=<span class="token punctuation">'</span>stylesheet<span class="token punctuation">'</span> type=<span class="token punctuation">'</span>text/css<span class="token punctuation">'</span> href=<span class="token punctuation">'</span>https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css<span class="token punctuation">'</span>>
+    &lt;/head>
+    &lt;body>
+      &lt;ul>
+        &lt;li>Speak French?&lt;/li>
+        &lt;li>Habla usted francés?&lt;/li>
+        &lt;li>Sprechen Sie Französisch?&lt;/li>
+    &lt;/ul><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
       
@@ -1099,8 +1127,30 @@ meta[name=<span class="token string">"viewport"</span>][content*=<span class="to
 meta[name=<span class="token string">"viewport"</span>][content*=<span class="token string">"user-scalable=no"</span>]
 </code></pre></div>
 <h3>Test</h3>
-<div class="pre"><div><iframe src="/static/viewport.html" sandbox="allow-same-origin" title="Wrong viewport instruction example"></iframe><span>†</span>
-</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/viewport.html<span class="token punctuation">"</span></span> <span class="token attr-name">sandbox</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>allow-same-origin<span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Wrong viewport instruction example<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<div class="pre"><div><iframe title="Wrong viewport instruction example" srcdoc="<!DOCTYPE html>
+  <html lang='en'>
+    <head>
+      <meta charset='utf-8'/>
+      <title>Wrong viewport instruction</title>
+      <meta name='viewport' content='user-scalable=no'/>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
+    </head>
+    <body>
+      <h1>Wrong <code>viewport</code> instruction</h1>">
+</iframe>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Wrong viewport instruction example<span class="token punctuation">"</span></span> <span class="token attr-name">srcdoc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&lt;!DOCTYPE html>
+  &lt;html lang=<span class="token punctuation">'</span>en<span class="token punctuation">'</span>>
+    &lt;head>
+      &lt;meta charset=<span class="token punctuation">'</span>utf-8<span class="token punctuation">'</span>/>
+      &lt;title>Wrong viewport instruction&lt;/title>
+      &lt;meta name=<span class="token punctuation">'</span>viewport<span class="token punctuation">'</span> content=<span class="token punctuation">'</span>user-scalable=no<span class="token punctuation">'</span>/>
+      &lt;style>html{font:.75rem sans-serif}&lt;/style>
+      &lt;link rel=<span class="token punctuation">'</span>stylesheet<span class="token punctuation">'</span> type=<span class="token punctuation">'</span>text/css<span class="token punctuation">'</span> href=<span class="token punctuation">'</span>https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css<span class="token punctuation">'</span>>
+    &lt;/head>
+    &lt;body>
+      &lt;h1>Wrong &lt;code>viewport&lt;/code> instruction&lt;/h1><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
       
@@ -1153,8 +1203,26 @@ before the <code>&lt;title&gt;</code> tag is the simplest way to cover it.</p>
 <div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">head</span> <span class="token punctuation">:</span><span class="token property">first-child</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[charset]<span class="token punctuation">)</span>
 </code></pre></div>
 <h3>Test</h3>
-<div class="pre"><div><iframe src="/static/no-charset.html" title="Late charset a11y.css test-case" sandbox="allow-same-origin"></iframe>
-</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/no-charset.html<span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Late charset a11y.css test-case<span class="token punctuation">"</span></span> <span class="token attr-name">sandbox</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>allow-same-origin<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
+<div class="pre"><div><iframe title="Late charset example" srcdoc="<!DOCTYPE html>
+  <html lang=en>
+    <head>
+      <title>Oups !</title>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel=stylesheet type=text/css href=https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css>
+    </head>
+    <body>
+      <h1>How am I encoded, buddy?</h1>">
+</iframe>
+</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Late charset example<span class="token punctuation">"</span></span> <span class="token attr-name">srcdoc</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&lt;!DOCTYPE html>
+  &lt;html lang=en>
+    &lt;head>
+      &lt;title>Oups !&lt;/title>
+      &lt;style>html{font:.75rem sans-serif}&lt;/style>
+      &lt;link rel=stylesheet type=text/css href=https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css>
+    &lt;/head>
+    &lt;body>
+      &lt;h1>How am I encoded, buddy?&lt;/h1><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
 </code></pre></div>
         </article>
       

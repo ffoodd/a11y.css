@@ -698,7 +698,7 @@ iframe[title=""]
 
 ### Test
 ``` html
-<iframe src="/static/no-title.html" sandbox="allow-same-origin"></iframe><span>†</span>
+<iframe srcdoc="<!DOCTYPE html><title>Missing [title]</title>"></iframe><span>†</span>
 ```
 */
 iframe:not([title]),
@@ -778,7 +778,21 @@ html[lang=""]
 
 ### Test
 ``` html
-<iframe title="No language defined a11y.css test-case" src="/static/no-lang.html" sandbox="allow-same-origin"></iframe>
+<iframe title="No language defined example" srcdoc="<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset='utf-8'/>
+      <title>Je ne parle pas Français</title>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
+    </head>
+    <body>
+      <ul>
+        <li>Speak French?</li>
+        <li>Habla usted francés?</li>
+        <li>Sprechen Sie Französisch?</li>
+    </ul>">
+</iframe>
 ```
 */
 html:not([lang]),
@@ -1142,7 +1156,18 @@ meta[name="viewport"][content*="user-scalable=no"]
 
 ### Test
 ``` html
-<iframe src="/static/viewport.html" sandbox="allow-same-origin" title="Wrong viewport instruction example"></iframe><span>†</span>
+<iframe title="Wrong viewport instruction example" srcdoc="<!DOCTYPE html>
+  <html lang='en'>
+    <head>
+      <meta charset='utf-8'/>
+      <title>Wrong viewport instruction</title>
+      <meta name='viewport' content='user-scalable=no'/>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
+    </head>
+    <body>
+      <h1>Wrong <code>viewport</code> instruction</h1>">
+</iframe>
 ```
 */
 meta[name="viewport"][content*="maximum-scale"],
@@ -1221,7 +1246,16 @@ head :first-child:not([charset])
 
 ### Test
 ``` html
-<iframe src="/static/no-charset.html" title="Late charset a11y.css test-case" sandbox="allow-same-origin"></iframe>
+<iframe title="Late charset example" srcdoc="<!DOCTYPE html>
+  <html lang=en>
+    <head>
+      <title>Oups !</title>
+      <style>html{font:.75rem sans-serif}</style>
+      <link rel=stylesheet type=text/css href=https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css>
+    </head>
+    <body>
+      <h1>How am I encoded, buddy?</h1>">
+</iframe>
 ```
 */
 head :first-child:not([charset]) {
