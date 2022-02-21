@@ -283,7 +283,7 @@ pre {
   color: #032c36;
   direction: ltr;
   font-family: monospace;
-  font-size: 1em;
+  font-size: .875rem;
   -webkit-hyphens: none;
       -ms-hyphens: none;
           hyphens: none;
@@ -569,7 +569,7 @@ aside img {
 
 .pre > div {
   background: #fff;
-  margin: 2.5em 0;
+  margin: 2em 0 0;
   padding: 1em;
 }
 
