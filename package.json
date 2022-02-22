@@ -20,7 +20,7 @@
     "scss"
   ],
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "eleventy --serve && npm run watch",
     "docs": "eleventy",
     "docs:debug": "DEBUG=Eleventy* eleventy",
     "build": "sass sass/:css/ --style compressed --no-source-map",
@@ -74,7 +74,7 @@
   },
   "stylelint": {
     "extends": "stylelint-config-standard-scss",
-    "rules":  {
+    "rules": {
       "no-invalid-position-at-import-rule": null,
       "comment-whitespace-inside": null,
       "string-quotes": null,
