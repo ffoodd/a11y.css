@@ -47,11 +47,6 @@ const parseAssets = () => {
     fs.mkdirSync(DIRECTORIES.css.output)
   }
 
-  fs.copyFileSync(DIRECTORIES.css.input + 'a11y-en_advices-only.css', DIRECTORIES.css.output + 'a11y-en_advices-only.css')
-  fs.copyFileSync(DIRECTORIES.css.input + 'a11y-en_errors-only.css', DIRECTORIES.css.output + 'a11y-en_errors-only.css')
-  fs.copyFileSync(DIRECTORIES.css.input + 'a11y-en_obsolete-only.css', DIRECTORIES.css.output + 'a11y-en_obsoletes-only.css')
-  fs.copyFileSync(DIRECTORIES.css.input + 'a11y-en_warnings-only.css', DIRECTORIES.css.output + 'a11y-en_warnings-only.css')
-
   /**
    * Process docs styles and scripts
    */
