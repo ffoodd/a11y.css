@@ -6,9 +6,9 @@ const prism = require('prismjs')
 const loadLanguages = require('prismjs/components/');
 loadLanguages(['scss', 'css-extras']);
 const postcss = require('postcss')
-const atImport = require('postcss-import')
 const uglify = require('uglify-es')
 const autoprefixer = require('autoprefixer')
+const cssnano = require('cssnano')
 
 const DIRECTORIES = {
   css: {
@@ -60,7 +60,7 @@ const parseAssets = () => {
   const JS = fs.readFileSync(DIRECTORIES.assets.js.input + 'docs.js', 'utf8')
 
   // Parse and write CSS output file
-  postcss([atImport, autoprefixer])
+  postcss([autoprefixer, cssnano])
     .process(CSS, {
       from: CSS_INPUT
     })
