@@ -12,7 +12,11 @@ permalink: "{{ themePage.title | slug }}.html"
 
 {% block css %}
   {% if 'docs' != themePage.title %}
-    <link rel="stylesheet" href="/static/css/a11y-en_{{ themePage.title | lower }}-only.css" media="all">
+    {% set level = themePage.title %}
+    {% if 'obsoletes' != themePage.title %}
+      {% set level = 'obsolete' %}
+    {% endif %}
+    <link rel="stylesheet" href="/static/css/a11y-en_{{ level | lower }}-only.css" media="all">
   {% endif %}
 {% endblock %}
 
