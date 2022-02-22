@@ -24,7 +24,7 @@
     "docs": "eleventy",
     "docs:debug": "DEBUG=Eleventy* eleventy",
     "build": "sass sass/:css/ --style compressed --no-source-map",
-    "postbuild": "postcss ./css/**/*.css --use autoprefixer",
+    "postbuild": "postcss css/*.css css/webextension/*.css -r --no-map --use autoprefixer cssnano",
     "prepublishOnly": "npm run build",
     "test": "stylelint \"./sass/**/*.scss\"",
     "bundlewatch": "bundlewatch",
