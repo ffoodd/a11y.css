@@ -606,6 +606,12 @@ form label {
   display: none;
 }
 
+header svg[aria-hidden="true"]:not(:empty),
+footer svg[aria-hidden="true"]:not(:empty) {
+  counter-increment: unset !important;
+  outline: none !important;
+}
+
 /* Helpers */
 .list-unstyled {
   list-style: none;
