@@ -107,11 +107,11 @@
     "files": [
       {
         "path": "./css/a11y-en_error.css",
-        "maxSize": "7.5 kB"
+        "maxSize": "7.75 kB"
       },
       {
         "path": "./css/a11y-en_warning.css",
-        "maxSize": "13.5 kB"
+        "maxSize": "13.75 kB"
       },
       {
         "path": "./css/a11y-en_obsolete.css",
