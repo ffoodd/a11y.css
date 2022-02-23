@@ -5,7 +5,7 @@ function Toc () {
     return
   }
 
-  const tocLinks = toc.querySelectorAll('a')
+  const tocLink = toc.querySelector('a[aria-current]')
 
   function setActiveTocLink () {
     const activeTocLink = toc.querySelector(`a[href="${document.location.hash}"]`)
@@ -14,7 +14,7 @@ function Toc () {
       return
     }
 
-    tocLinks.forEach(link => link.removeAttribute('aria-current'))
+    tocLink.removeAttribute('aria-current')
     activeTocLink.setAttribute('aria-current', 'true')
   }
 

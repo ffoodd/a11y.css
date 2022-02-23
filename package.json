@@ -23,8 +23,10 @@
     "start": "concurrently --kill-others \"npm:watch:*\"",
     "docs": "eleventy",
     "docs:debug": "DEBUG=Eleventy* eleventy",
-    "watch:docs": "eleventy --serve",
+    "docs:js": "uglifyjs site/assets/js/docs.js -o site/static/docs.js -c -m",
     "docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano --no-map",
+    "watch:docs": "eleventy --serve",
+    "watch:docs:js": "nodemon --watch site/assets/js/ --ext js --exec \"npm run docs:js\"",
     "watch:docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano -w --no-map",
     "build": "sass sass/:css/ --style compressed --no-source-map",
     "postbuild": "postcss css/*.css css/webextension/*.css -r -u autoprefixer cssnano --no-map",
@@ -64,6 +66,7 @@
     "concurrently": "^7.0.0",
     "cssnano": "^5.0.12",
     "front-matter": "^3.1.0",
+    "nodemon": "^2.0.15",
     "postcss": "^8.2.13",
     "postcss-cli": "^9.0.1",
     "prismjs": "^1.21.0",
@@ -72,7 +75,7 @@
     "stylelint": "^14.0.0",
     "stylelint-config-recommended": "^6.0.0",
     "stylelint-config-standard-scss": "^2.0.0",
-    "uglify-es": "^3.3.9",
+    "uglify-js": "^3.15.1",
     "webextension-polyfill": "^0.4.0"
   },
   "stylelint": {

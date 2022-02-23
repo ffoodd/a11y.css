@@ -10,6 +10,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`)
 
   eleventyConfig.addWatchTarget('site/static/docs.css')
+  eleventyConfig.addWatchTarget('site/static/docs.js')
 
   eleventyConfig.setBrowserSyncConfig({
     ui: false,
