@@ -7,9 +7,6 @@ const loadLanguages = require('prismjs/components/');
 loadLanguages(['scss', 'css-extras']);
 
 const DIRECTORIES = {
-  css: {
-    input: './css/'
-  },
   sass: {
     input: './sass/themes/',
     output: './site/_data/sass/'
@@ -17,17 +14,8 @@ const DIRECTORIES = {
   api: {
     input: './sass/utils/',
     output: './site/_data/sass/'
-  },
-  assets: {
-    js: {
-      input: './site/assets/js/'
-    }
-  },
-  static: './site/static/'
+  }
 }
-
-DIRECTORIES.assets.js.output = DIRECTORIES.static
-DIRECTORIES.css.output = DIRECTORIES.static + 'css/'
 
 const processSassDocumentation = file => {
   const inputFileExtension = path.extname(file)
