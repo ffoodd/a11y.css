@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
           content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
-    <link rel="stylesheet" href="/static/docs.css">
+    <link rel="stylesheet" href="/static/docs.css?v={% version %}">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <link rel="preload" href="/static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     {% block css %}{% endblock %}
@@ -43,6 +43,6 @@
       {{ content | safe }}
     </main>
     {% include "partials/footer.njk" %}
-    <script src="/static/docs.js"></script>
+    <script src="/static/docs.js?v={% version %}"></script>
   </body>
 </html>
