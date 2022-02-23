@@ -5,7 +5,6 @@ const fm = require('front-matter')
 const prism = require('prismjs')
 const loadLanguages = require('prismjs/components/');
 loadLanguages(['scss', 'css-extras']);
-const uglify = require('uglify-es')
 
 const DIRECTORIES = {
   css: {
@@ -29,16 +28,6 @@ const DIRECTORIES = {
 
 DIRECTORIES.assets.js.output = DIRECTORIES.static
 DIRECTORIES.css.output = DIRECTORIES.static + 'css/'
-
-const parseAssets = () => {
-  /**
-   * Process docs styles and scripts
-   */
-  const JS = fs.readFileSync(DIRECTORIES.assets.js.input + 'docs.js', 'utf8')
-
-  // Uglify and write JS output file
-  fs.writeFileSync(DIRECTORIES.assets.js.output + 'docs.js', uglify.minify(JS).code)
-}
 
 const processSassDocumentation = file => {
   const inputFileExtension = path.extname(file)
@@ -166,6 +155,5 @@ const generateJsonDocumentation = () => {
 }
 
 module.exports = function () {
-  parseAssets()
   generateJsonDocumentation()
 }
