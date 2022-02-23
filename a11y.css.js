@@ -5,10 +5,7 @@ const fm = require('front-matter')
 const prism = require('prismjs')
 const loadLanguages = require('prismjs/components/');
 loadLanguages(['scss', 'css-extras']);
-const postcss = require('postcss')
 const uglify = require('uglify-es')
-const autoprefixer = require('autoprefixer')
-const cssnano = require('cssnano')
 
 const DIRECTORIES = {
   css: {
@@ -23,9 +20,6 @@ const DIRECTORIES = {
     output: './site/_data/sass/'
   },
   assets: {
-    css: {
-      input: './site/assets/css/',
-    },
     js: {
       input: './site/assets/js/'
     }
@@ -33,35 +27,14 @@ const DIRECTORIES = {
   static: './site/static/'
 }
 
-DIRECTORIES.assets.css.output = DIRECTORIES.static
 DIRECTORIES.assets.js.output = DIRECTORIES.static
 DIRECTORIES.css.output = DIRECTORIES.static + 'css/'
 
 const parseAssets = () => {
   /**
-   * We need some of a11y.css compiled stylesheets to be available in the templates
-   * 1. Avoid crash if output directory does not exists
-   * 2. Then copy/paste all the files (manually for now, because of naming inconsistencies)
-   */
-  if (!fs.existsSync(DIRECTORIES.css.output)) {
-    fs.mkdirSync(DIRECTORIES.css.output)
-  }
-
-  /**
    * Process docs styles and scripts
    */
-  const CSS_INPUT = DIRECTORIES.assets.css.input + 'docs.css'
-  const CSS = fs.readFileSync(CSS_INPUT, 'utf8')
   const JS = fs.readFileSync(DIRECTORIES.assets.js.input + 'docs.js', 'utf8')
-
-  // Parse and write CSS output file
-  postcss([autoprefixer, cssnano])
-    .process(CSS, {
-      from: CSS_INPUT
-    })
-    .then(result => {
-      fs.writeFileSync(DIRECTORIES.assets.css.output + 'docs.css', result.css)
-    })
 
   // Uglify and write JS output file
   fs.writeFileSync(DIRECTORIES.assets.js.output + 'docs.js', uglify.minify(JS).code)
