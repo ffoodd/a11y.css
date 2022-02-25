@@ -7,7 +7,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy('site/static')
   eleventyConfig.addPassthroughCopy({'css/a11y-en_*-only.css': 'static/css'})
-  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`)
+  eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`)
   eleventyConfig.addShortcode('version', () => `${Date.now()}`)
 
   eleventyConfig.addWatchTarget('site/static/docs.css')
