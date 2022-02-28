@@ -1207,7 +1207,7 @@ meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
 
 ### Test
 ``` html
-<meta charset="Windows-1252"/><span>†</span>
+<meta charset="Windows-1252"/><link>†</link>
 ```
 */
 meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"]) {
