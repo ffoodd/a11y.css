@@ -1,10 +1,5 @@
 [
   {
-    "label": "Home",
-    "href": "/",
-    "htmlClass": "index"
-  },
-  {
     "label": "Errors",
     "href": "/errors.html",
     "htmlClass": "errors"
