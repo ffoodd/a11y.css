@@ -30,7 +30,7 @@
     "watch:docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano -w --no-map",
     "build": "sass sass/:css/ --style compressed --no-source-map",
     "postbuild": "postcss css/*.css css/webextension/*.css -r -u autoprefixer cssnano --no-map",
-    "watch:css": "sass --watch sass/:css/ --style compressed",
+    "watch:css": "sass --watch sass/:css/ --style compressed --no-source-map",
     "prepublishOnly": "npm run build",
     "test": "stylelint \"./sass/**/*.scss\"",
     "bundlewatch": "bundlewatch",
