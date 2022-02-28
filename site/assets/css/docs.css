@@ -654,6 +654,13 @@ aside img {
   top: -1px;
 }
 
+.pre img,
+.pre svg,
+.pre input,
+.pre iframe {
+  vertical-align: bottom;
+}
+
 /* Footer */
 .builtWith {
   border-top: 0;
