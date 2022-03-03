@@ -7,8 +7,6 @@ Pronounced *Alix*. Because it’s simpler.
 
 ## Introduction
 
-Pronounced "Alix".
-
 This CSS file intends to warn developers about *possible risks and mistakes* that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.
 
 When activating the stylesheet, a tip should appear beside each incriminated elements, displaying what’s going on.
