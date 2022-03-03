@@ -21,7 +21,7 @@
   ],
   "scripts": {
     "start": "concurrently --kill-others \"npm:watch:*\"",
-    "docs": "eleventy",
+    "docs": "npm run docs:js && npm run docs:css && eleventy",
     "docs:debug": "DEBUG=Eleventy* eleventy",
     "docs:js": "uglifyjs site/assets/js/docs.js -o site/static/docs.js -c -m",
     "docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano --no-map",
