@@ -2,7 +2,7 @@
   <ul class="list-unstyled">
     {% for link in navigation %}
       <li>
-        <a href="{{ link.href }}"{% if link.htmlClass %} class="{{ link.htmlClass }}"{% endif %}{% if page.url == link.href %} aria-current="page"{% endif %}>
+        <a href="./{{ link.href }}"{% if link.htmlClass %} class="{{ link.htmlClass }}"{% endif %}{% if page.url == link.href %} aria-current="page"{% endif %}>
           {{ link.label | safe }}
           {% if link.external %}
             <span class="sr-only">&nbsp;(external link)</span>
