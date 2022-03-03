@@ -206,7 +206,7 @@ iframe {
   }
 
   aside > * {
-    max-width: 15rem;
+    width: 15rem;
   }
 }
 
