@@ -12,8 +12,8 @@ permalink: "{{ themePage.title | slug }}.html"
 
 {% block css %}
   {% if 'docs' != themePage.title %}
-    <link rel="stylesheet" href="/static/css/a11y-en_{{ themePage.title | lower }}-only.css">
-    <link rel="stylesheet" href="/static/css/a11y-light.min.css">
+    <link rel="stylesheet" href="./static/css/a11y-en_{{ themePage.title | lower }}-only.css">
+    <link rel="stylesheet" href="./static/css/a11y-light.min.css">
   {% endif %}
 {% endblock %}
 
