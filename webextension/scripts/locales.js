@@ -77,7 +77,7 @@ const localeStrings = {
 		"h1Allycss2": "a11y.css : réglages",
 		"h1Others": "Autres outils",
 	},
-		"pl":{
+	"pl":{
 		"_LOCALE":"Polski",
 		"a11ycssBtnApply":"Pokaż",
 		"a11ycssBtnClear":"Wyczyść",
@@ -96,7 +96,7 @@ const localeStrings = {
 		"altMissing":"brak",
 		"altOK":"OK",
 		"localizeOn": "Wł.",
-		"localizeOff": "\wył.",
+		"localizeOff": "Wył.",
 		"a11ycssBtnApply-label": "Pokaż a11y.css",
 		"btnAllycss":"Pokaż a11y.css",
 		"btnA11ycssBack":"Wstecz",
