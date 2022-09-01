@@ -56,7 +56,7 @@ The `[tabindex]` attribute should never be greater than 0.
 
 ### Selector
 ```css
-[tabindex]:not([tabindex="0"]):not([tabindex^="-"])
+[tabindex]:not([tabindex="0"], [tabindex^="-"])
 ```
 
 ### Test
@@ -64,7 +64,7 @@ The `[tabindex]` attribute should never be greater than 0.
 <button tabindex="1" type="button">Positive tabindex is bad</button>
 ```
 */
-[tabindex]:not([tabindex="0"]):not([tabindex^="-"]) {
+[tabindex]:not([tabindex="0"], [tabindex^="-"]) {
   @include error('tab-order');
 
   @include void-tags {
@@ -130,7 +130,7 @@ By the way, why would you use an empty link?
 a:empty[title=""],
 a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
-a:empty:not([title]):not([aria-label]):not([aria-labelledby])
+a:empty:not([title], [aria-label], [aria-labelledby])
 ```
 
 ### Test
@@ -141,7 +141,7 @@ a:empty:not([title]):not([aria-label]):not([aria-labelledby])
 a:empty[title=""],
 a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
-a:empty:not([title]):not([aria-label]):not([aria-labelledby]) {
+a:empty:not([title], [aria-label], [aria-labelledby]) {
   @include error('empty-link');
 }
 
@@ -211,8 +211,8 @@ If image is decorative, please use `[role=presentation]` instead.
 
 ### Selector
 ```css
-[role="img"]:not([aria-label]):not([aria-labelledby]),
-svg[role="img"]:not([aria-label]):not([aria-labelledby])
+[role="img"]:not([aria-label], [aria-labelledby]),
+svg[role="img"]:not([aria-label], [aria-labelledby])
 ```
 
 ### Test
@@ -224,11 +224,11 @@ svg[role="img"]:not([aria-label]):not([aria-labelledby])
 </svg><span>†</span>
 ```
 */
-[role="img"]:not([aria-label]):not([aria-labelledby]) {
+[role="img"]:not([aria-label], [aria-labelledby]) {
   @include error('no-aria-label');
 }
 
-svg[role="img"]:not([aria-label]):not([aria-labelledby]) {
+svg[role="img"]:not([aria-label], [aria-labelledby]) {
   @include error('no-aria-label', $self-closing: true);
 }
 
@@ -249,7 +249,7 @@ An `<img>` must have an `[src]` or an `[srcset]`, and it should be a valid one. 
 
 ### Selector
 ```css
-img:not([src]):not([srcset]),
+img:not([src], [srcset]),
 img[src=""],
 img[src=" "],
 img[src="#"],
@@ -258,7 +258,7 @@ img[srcset=""],
 img[srcset=" "],
 img[srcset="#"],
 img[srcset="/"],
-input[type="image"]:not([src]):not([srcset]),
+input[type="image"]:not([src], [srcset]),
 input[type="image"][src=""],
 input[type="image"][src=" "],
 input[type="image"][src="#"],
@@ -274,8 +274,8 @@ input[type="image"][srcset="/"]
 <img alt="Missing src" width="144" height="144"/>
 ```
 */
-img:not([src]):not([srcset]),
-input[type="image"]:not([src]):not([srcset]) {
+img:not([src], [srcset]),
+input[type="image"]:not([src], [srcset]) {
   @include error('no-src');
 }
 
@@ -359,9 +359,9 @@ How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` 
 
 ### Selector
 ```css
-input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
-textarea:not([id]):not([aria-label]):not([aria-labelledby]),
-select:not([id]):not([aria-label]):not([aria-labelledby])
+input:not([type="button"], [type="submit"], [type="hidden"], [type="reset"], [type="image"], [id], [aria-label], [title], [aria-labelledby]),
+textarea:not([id], [aria-label], [aria-labelledby]),
+select:not([id], [aria-label], [aria-labelledby])
 ```
 
 ### Test
@@ -369,9 +369,9 @@ select:not([id]):not([aria-label]):not([aria-labelledby])
 <input type="text" /><span>†</span>
 ```
 */
-input:not([type="button"]):not([type="submit"]):not([type="hidden"]):not([type="reset"]):not([type="image"]):not([id]):not([aria-label]):not([title]):not([aria-labelledby]),
-textarea:not([id]):not([aria-label]):not([aria-labelledby]),
-select:not([id]):not([aria-label]):not([aria-labelledby]) {
+input:not([type="button"], [type="submit"], [type="hidden"], [type="reset"], [type="image"], [id], [aria-label], [title], [aria-labelledby]),
+textarea:not([id], [aria-label], [aria-labelledby]),
+select:not([id], [aria-label], [aria-labelledby]) {
   @include error('no-id', $self-closing: true);
 }
 
@@ -394,9 +394,9 @@ You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-la
 
 ### Selector
 ```css
-input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
-input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
-input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby])
+input[type="reset"]:not([value], [title], [aria-label], [aria-labelledby]),
+input[type="submit"]:not([value], [title], [aria-label], [aria-labelledby]),
+input[type="button"]:not([value], [title], [aria-label], [aria-labelledby])
 ```
 
 ### Test
@@ -404,9 +404,9 @@ input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-label
 <input type="submit" /><span>†</span>
 ```
 */
-input[type="reset"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
-input[type="submit"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]),
-input[type="button"]:not([value]):not([title]):not([aria-label]):not([aria-labelledby]) {
+input[type="reset"]:not([value], [title], [aria-label], [aria-labelledby]),
+input[type="submit"]:not([value], [title], [aria-label], [aria-labelledby]),
+input[type="button"]:not([value], [title], [aria-label], [aria-labelledby]) {
   @include error('no-value', $self-closing: true);
 }
 
@@ -430,7 +430,7 @@ A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]
 
 ### Selector
 ```css
-button:empty:not([aria-label]):not([aria-labelledby]):not([title])
+button:empty:not([aria-label], [aria-labelledby], [title])
 ```
 
 ### Test
@@ -438,7 +438,7 @@ button:empty:not([aria-label]):not([aria-labelledby]):not([title])
 <button type="button"></button>
 ```
 */
-button:empty:not([aria-label]):not([aria-labelledby]):not([title]) {
+button:empty:not([aria-label], [aria-labelledby], [title]) {
   @include error('empty-button');
 }
 
@@ -505,7 +505,7 @@ If it doesn't submit anything, it should have the `[type="button"]`.
 
 ### Selector
 ```css
-button:not([type]):not([form]):not([formaction]):not([formtarget])
+button:not([type], [form], [formaction], [formtarget])
 ```
 
 ### Test
@@ -513,11 +513,11 @@ button:not([type]):not([form]):not([formaction]):not([formtarget])
 <button>I just don't know what todo with myself</button>
 ```
 */
-button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+button:not([type], [form], [formaction], [formtarget]) {
   @include error('not-form-button');
 }
 
-form button:not([type]):not([form]):not([formaction]):not([formtarget]) {
+form button:not([type], [form], [formaction], [formtarget]) {
   @extend %a11y-reset;
 }
 
@@ -585,7 +585,7 @@ Use `[disabled]` and `[readonly]`.
 
 ### Selector
 ```css
-button[class*="disabled"]:not([disabled]):not([readonly])
+button[class*="disabled"]:not([disabled], [readonly])
 ```
 
 ### Test
@@ -593,7 +593,7 @@ button[class*="disabled"]:not([disabled]):not([readonly])
 <button class="is-disabled" type="button">To be or not to be (disabled)?</button>
 ```
 */
-button[class*="disabled"]:not([disabled]):not([readonly]) {
+button[class*="disabled"]:not([disabled], [readonly]) {
   @include error('disabled-button');
 }
 
@@ -882,8 +882,8 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 ### Selector
 ```css
-:not(img):not(object):not(embed):not(svg):not(canvas)[width],
-:not(img):not(object):not(embed):not(svg):not(canvas)[height]
+:not(img, object, embed, svg, canvas)[width],
+:not(img, object, embed, svg, canvas)[height]
 ```
 
 ### Test
@@ -891,8 +891,8 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 <p width="20">Damned! I feel sooo strait :(</p>
 ```
 */
-:not(img):not(object):not(embed):not(svg):not(canvas)[width],
-:not(img):not(object):not(embed):not(svg):not(canvas)[height] {
+:not(img, object, embed, svg, canvas)[width],
+:not(img, object, embed, svg, canvas)[height] {
   @include error('dimensions');
 
   @include void-tags {
@@ -1202,7 +1202,7 @@ Moreover it avoids some security issues exploiting some other charsets…
 
 ### Selector
 ```css
-meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
+meta[charset]:not([charset="utf-8"], [charset="UTF-8"])
 ```
 
 ### Test
@@ -1210,7 +1210,7 @@ meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"])
 <meta charset="Windows-1252"/><link>†</link>
 ```
 */
-meta[charset]:not([charset="utf-8"]):not([charset="UTF-8"]) {
+meta[charset]:not([charset="utf-8"], [charset="UTF-8"]) {
   @include error('incorrect-charset', $self-closing: true, $head: true);
   @include a11y-head($self-closing: true);
 }
@@ -1282,7 +1282,7 @@ The `[dir]` attribute — used to specify the element’s text directionality �
 
 ### Selector
 ```css
-[dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"])
+[dir]:not([dir="rtl"], [dir="ltr"], [dir="auto"])
 ```
 
 ### Test
@@ -1290,7 +1290,7 @@ The `[dir]` attribute — used to specify the element’s text directionality �
 <p dir="wtf">Well, I'm kinda disoriented…</p>
 ```
 */
-[dir]:not([dir="rtl"]):not([dir="ltr"]):not([dir="auto"]) {
+[dir]:not([dir="rtl"], [dir="ltr"], [dir="auto"]) {
   @include error('invalid-dir');
 }
 
@@ -1353,7 +1353,7 @@ thus is needed.
 ### Selector
 ```css
 [type="radio"]:not([name]),
-[type="checkbox"]:not(:only-of-type):not([name])
+[type="checkbox"]:not(:only-of-type, [name])
 ```
 
 ### Test
@@ -1374,7 +1374,7 @@ thus is needed.
 ```
 */
 [type="radio"]:not([name]),
-[type="checkbox"]:not(:only-of-type):not([name]) {
+[type="checkbox"]:not(:only-of-type, [name]) {
   @include error('inputs-group', $self-closing: true);
 }
 

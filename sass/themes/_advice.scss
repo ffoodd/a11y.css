@@ -19,7 +19,7 @@ A `<select required>` element, which isn't `[multiple]` and whose `[size]` isn't
 ## Selector
 ```css
 select[required]:not([multiple])[size="1"],
-select[required]:not([multiple]):not([size])
+select[required]:not([multiple], [size])
 ```
 
 ## Test
@@ -31,7 +31,7 @@ select[required]:not([multiple]):not([size])
 ```
 */
 select[required]:not([multiple])[size="1"],
-select[required]:not([multiple]):not([size]) {
+select[required]:not([multiple], [size]) {
   @include advice('select-option-not-empty', $self-closing: true);
 }
 
@@ -175,7 +175,7 @@ category: Advices
 
 ### Selector
 ```css
-figcaption:not(:first-child):not(:last-child)
+figcaption:not(:first-child, :last-child)
 ```
 
 ### Test
@@ -187,7 +187,7 @@ figcaption:not(:first-child):not(:last-child)
 </figure>
 ```
 */
-figcaption:not(:first-child):not(:last-child) {
+figcaption:not(:first-child, :last-child) {
   @include advice('figcaption-order');
 }
 
@@ -531,7 +531,7 @@ A `[placeholder]` is not a label, is it?
 
 ### Selector
 ```css
-[placeholder]:not([title]):not([aria-label]):not([aria-labelledby])
+[placeholder]:not([title], [aria-label], [aria-labelledby])
 ```
 
 ### Test
@@ -539,11 +539,11 @@ A `[placeholder]` is not a label, is it?
 <input type="text" placeholder="Look Ma, no label!" id="test"><span>†</span>
 ```
 */
-[placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
+[placeholder]:not([title], [aria-label], [aria-labelledby]) {
   @include advice('placeholder', $self-closing: true);
 }
 
-label [placeholder]:not([title]):not([aria-label]):not([aria-labelledby]) {
+label [placeholder]:not([title], [aria-label], [aria-labelledby]) {
   @extend %a11y-reset;
 }
 

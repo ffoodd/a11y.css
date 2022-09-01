@@ -22,7 +22,7 @@ The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also
 ```css
 ul > :not(li),
 ol > :not(li),
-:not(ul):not(ol) > li
+:not(ul, ol) > li
 ```
 
 ### Test
@@ -34,7 +34,7 @@ ol > :not(li),
 */
 ul > :not(li),
 ol > :not(li),
-:not(ul):not(ol) > li {
+:not(ul, ol) > li {
   @include warning('invalid-list-nesting');
 }
 
@@ -59,7 +59,7 @@ category: Warnings
 ### Selector
 ```css
 dt + :not(dd),
-:not(dt):not(dd) + dd
+:not(dt, dd) + dd
 ```
 
 ### Test
@@ -71,7 +71,7 @@ dt + :not(dd),
 ```
 */
 dt + :not(dd),
-:not(dt):not(dd) + dd {
+:not(dt, dd) + dd {
   @include warning('invalid-def');
 }
 
@@ -99,7 +99,7 @@ Any other imbrication may be a crime somewhere.
 ```css
 :not(dl) > dt,
 :not(dl) > dd,
-dl > :not(dt):not(dd):not(div)
+dl > :not(dt, dd, div)
 ```
 
 ### Test
@@ -111,7 +111,7 @@ dl > :not(dt):not(dd):not(div)
 */
 :not(dl) > dt,
 :not(dl) > dd,
-dl > :not(dt):not(dd):not(div) {
+dl > :not(dt, dd, div) {
   @include warning('invalid-def-nesting');
 }
 
@@ -218,13 +218,13 @@ article main,
 :not(tr) > th,
 colgroup *:not(col),
 :not(colgroup) > col,
-tr > :not(td):not(th),
+tr > :not(td, th),
 optgroup > :not(option),
 :not(select) > optgroup,
 :not(fieldset) > legend,
-select > :not(option):not(optgroup),
-:not(select):not(optgroup) > option,
-table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption),
+select > :not(option, optgroup),
+:not(select, optgroup) > option,
+table > *:not(thead, tfoot, tbody, tr, colgroup, caption),
 address h1,
 address h2,
 address h3,
@@ -254,13 +254,13 @@ article main,
 :not(tr) > th,
 colgroup *:not(col),
 :not(colgroup) > col,
-tr > :not(td):not(th),
+tr > :not(td, th),
 optgroup > :not(option),
 :not(select) > optgroup,
 :not(fieldset) > legend,
-select > :not(option):not(optgroup),
-:not(select):not(optgroup) > option,
-table > *:not(thead):not(tfoot):not(tbody):not(tr):not(colgroup):not(caption),
+select > :not(option, optgroup),
+:not(select, optgroup) > option,
+table > *:not(thead, tfoot, tbody, tr, colgroup, caption),
 address h1,
 address h2,
 address h3,
@@ -837,7 +837,7 @@ Any `<svg>` should either have `[aria-hidden="true"]` if decorative, or a `[role
 
 ### Selector
 ```css
-svg:not([aria-hidden="true"]):not([role="img"])
+svg:not([aria-hidden="true"], [role="img"])
 ```
 
 ### Test
@@ -850,7 +850,7 @@ svg:not([aria-hidden="true"]):not([role="img"])
 </svg><span>†</span>
 ```
 */
-svg:not([aria-hidden="true"]):not([role="img"]) {
+svg:not([aria-hidden="true"], [role="img"]) {
   @include warning('no-aria-role', $self-closing: true);
 }
 
@@ -953,7 +953,7 @@ We could use the `:blank` pseudo-class, but at this time its support is very poo
 
 ### Selector
 ```css
-body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title)
+body *:empty:not([hidden], [aria-hidden], [src], button, a, iframe, textarea, area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, title)
 ```
 
 ### Test
@@ -965,14 +965,14 @@ body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(
  * 1. An empty tag without dimensions isn't hoverable :/
  * @note Won't do anything for inline elements.
  */
-body *:empty:not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr):not(title) {
+body *:empty:not([hidden], [aria-hidden], [src], button, a, iframe, textarea, area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, title) {
   @include warning('empty-nodes');
   /* 1 */
   min-height: 1px;
   min-width: 1px;
 }
 
-svg *:empty:not(title):not(desc):not([hidden]):not([aria-hidden]):not([src]):not(button):not(a):not(iframe):not(textarea):not(area):not(base):not(br):not(col):not(command):not(embed):not(hr):not(img):not(input):not(keygen):not(link):not(meta):not(param):not(source):not(track):not(wbr) {
+svg *:empty:not(title, desc, [hidden], [aria-hidden], [src], button, a, iframe, textarea, area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr) {
   @extend %a11y-reset;
 }
 
@@ -1251,7 +1251,7 @@ category: Warnings
 
 ### Selector
 ```css
-th:not([scope]):not([id])
+th:not([scope], [id])
 ```
 
 ### Test
@@ -1277,7 +1277,7 @@ th:not([scope]):not([id])
 </table>
 ```
 */
-th:not([scope]):not([id]) {
+th:not([scope], [id]) {
   @include warning('th-no-scope');
 }
 
@@ -1591,7 +1591,7 @@ This also requires to check any in-page language change (marked up with `[lang]`
 [lang="he"]:not([dir="rtl"]),
 [lang="ar"] [lang]:not([dir="ltr"]),
 [lang="he"] [lang]:not([dir="ltr"]),
-[dir="rtl"]:not([lang="ar"]):not([lang="he"])
+[dir="rtl"]:not([lang="ar"], [lang="he"])
 ```
 
 ### Test
@@ -1603,6 +1603,6 @@ This also requires to check any in-page language change (marked up with `[lang]`
 [lang="he"]:not([dir="rtl"]),
 [lang="ar"] [lang]:not([dir="ltr"]),
 [lang="he"] [lang]:not([dir="ltr"]),
-[dir="rtl"]:not([lang="ar"]):not([lang="he"]) {
+[dir="rtl"]:not([lang="ar"], [lang="he"]) {
   @include warning('mismatched-dir');
 }
