@@ -50,7 +50,7 @@ The `[tabindex]` attribute should never be greater than 0.
 
 ### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-12-13>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-12-13>
 * <https://www.w3.org/TR/WCAG-TECHS/F44.html>
 * <https://www.scottohara.me/blog/2019/05/25/tabindex.html>
 
@@ -117,7 +117,7 @@ An empty link should have a label, within `[title]`, `[aria-label]` or targeted 
 By the way, why would you use an empty link?
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-6-5>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-6-5>
 * <https://www.w3.org/TR/WCAG20/#text-equiv-all>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
@@ -157,7 +157,7 @@ category: Errors
 An `<img>` must have an `[alt]`. Always.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-1-1>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-1-1>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 * <https://www.w3.org/TR/WCAG20/#text-equiv-all>
@@ -314,7 +314,7 @@ category: Errors
 A `<label>` with a `[for]` attribute should label something with an `[id]` attribute, obviously.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#test-11-1-2>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#test-11-1-2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
 * <https://www.w3.org/TR/WCAG-TECHS/H44.html>
 * <https://www.w3.org/WAI/tutorials/forms/labels/>
@@ -351,7 +351,7 @@ category: Errors
 How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-1>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-11-1>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
@@ -388,7 +388,7 @@ How to label a `[reset]`, `[submit]` or `[button]` type input?
 You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
 
@@ -422,8 +422,8 @@ category: Errors
 A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]` or `[title]`. Those attributes, if present, should not be empty.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#formulaires>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
@@ -454,8 +454,8 @@ category: Errors
 `[aria-label]`, `[aria-labelledby]` or `[title]` on a `<button>` must not be empty.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#formulaire>
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-9>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#formulaires>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-11-9>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H91.html>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
@@ -609,7 +609,7 @@ category: Errors
 `<input>` needs a `[type]` in order to tell the user what kind of data is wanted.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-11>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-11-11>
 * <https://www.w3.org/TR/WCAG20/#minimize-error-suggestions>
 
 ### Selector
@@ -643,7 +643,7 @@ category: Errors
 `<optgroup>` needs a `[label]` to explain what's inside the group.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-11-8>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-11-8>
 * <https://www.w3.org/TR/WCAG-TECHS/H85.html>
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
@@ -685,7 +685,7 @@ category: Errors
 `<iframe>` needs a `[title]` in order to tell the user what to expect inside the iframe.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-2-1>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-2-1>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/WCAG-TECHS/H64.html>
 
@@ -756,9 +756,9 @@ category: Errors
 `<html>` must indicate to User Agents the human language used in the document.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-3>
-* <https://references.modernisation.gouv.fr/rgaa-accessibilite/glossaire.html#langue-par-dfaut>
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-4>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-8-3>
+* <https://rgaa.tanaguru.com/rgaa3-glossaire.html#langue-par-defaut>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-8-4>
 * <https://www.w3.org/TR/WCAG20/#meaning-doc-lang-id>
 * <https://www.w3.org/TR/WCAG-TECHS/H57.html>
 * <https://html.spec.whatwg.org/#attr-lang>
@@ -822,7 +822,7 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 * `[colgroup]`.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-5-8>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-5-8>
 * <https://www.w3.org/TR/WCAG-TECHS/F46.html>
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/F49>
 * <https://www.w3.org/Translations/WCAG20-fr/#content-structure-separation-programmatic>
@@ -875,8 +875,8 @@ category: Errors
 Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#presentation>
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-10-1->
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#presentation>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-10-1->
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
 * <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
 
@@ -1100,8 +1100,8 @@ The `<title>` tag is the first thing read aloud by screen readers — to announc
 We could use the `:blank` pseudo-class, but at this time its support is very poor. We could also use the `:-moz-only-whitespace` pseudo-class, but support is limited to Firefox and thus could invalidate our selectors stack…
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-5>
-* <https://references.modernisation.gouv.fr/rgaa/glossaire.html#titrePage>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-8-5>
+* <https://rgaa.tanaguru.com/rgaa3-glossaire.html#titre-de-page>
 * <https://www.w3.org/TR/html5/document-metadata.html#the-title-element>
 * <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title>
 * <https://www.w3.org/WAI/WCAG20/quickref/#qr-navigation-mechanisms-title>
@@ -1660,7 +1660,7 @@ An interactive element should not be contained in another interactive element (e
 
 
 ### References
-* <https://references.modernisation.gouv.fr/rgaa/criteres.html#crit-8-2>
+* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-8-2>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
 * <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
 * <https://www.w3.org/TR/xhtml1/#prohibitions>
