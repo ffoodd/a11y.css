@@ -1,7 +1,0 @@
-# EditorConfig is awesome: http://EditorConfig.org
-# 
-
-# 4 space indentation
-[*]
-indent_style = tab
-indent_size = 4
