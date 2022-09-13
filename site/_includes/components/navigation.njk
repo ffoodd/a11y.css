@@ -1,15 +1,15 @@
 <nav role="navigation" aria-label="Main navigation" class="nav">
   <ul class="list-unstyled">
-    {% for link in navigation %}
+    {%- for link in navigation %}
       <li>
         <a href="{% if not link.external %}.{% endif %}{{ link.href }}"{% if link.htmlClass %} class="{{ link.htmlClass }}"{% endif %}{% if page.url == link.href %} aria-current="page"{% endif %}>
-          {{ link.label | safe }}
-          {% if link.external %}
+          {{- link.label | safe -}}
+          {%- if link.external -%}
             <span class="sr-only">&nbsp;(external link)</span>
             {% include "icons/external-link.svg" %}
-          {% endif %}
+          {%- endif %}
         </a>
       </li>
-    {% endfor %}
+    {%- endfor %}
   </ul>
 </nav>

@@ -11,16 +11,17 @@ permalink: "{{ themePage.title | slug }}.html"
 {% set theme = sass[themePage.theme] %}
 
 {% block css %}
-  {% if 'docs' != themePage.title %}
+  {%- set title = themePage.title | lower -%}
+  {%- if 'docs' !== title and 'webextension' !== title -%}
     <link rel="stylesheet" href="./static/css/a11y-en_{{ themePage.title | lower }}-only.css">
-    <link rel="stylesheet" href="./static/css/a11y-light.min.css">
-  {% endif %}
+  {%- endif -%}
+  <link rel="stylesheet" href="./static/css/a11y-light.min.css">
 {% endblock %}
 
 {% block title %}{{ themePage.title }}{% endblock %}
 
 {% block sidebar %}
-  {{ utils.toc(theme, themePage.subthemes) }}
+  {{- utils.toc(theme, themePage.subthemes) -}}
 {% endblock %}
 
 {% block content %}
