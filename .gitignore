@@ -1,5 +1,4 @@
 .sass-cache
-*.map
 node_modules
 .idea
 _site/
