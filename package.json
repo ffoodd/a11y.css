@@ -28,7 +28,7 @@
     "watch:docs": "eleventy --serve",
     "watch:docs:js": "nodemon --watch site/assets/js/ --ext js --exec \"npm run docs:js\"",
     "watch:docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano -w ",
-    "build": "sass sass/:css/ --style compressed ",
+    "build": "sass sass/:css/ --style compressed",
     "postbuild": "postcss css/*.css -r -u autoprefixer cssnano",
     "watch:css": "sass --watch sass/:css/ --style compressed",
     "prepublishOnly": "npm run build",
@@ -94,15 +94,15 @@
     "files": [
       {
         "path": "./css/a11y-en_error.css",
-        "maxSize": "7.75 kB"
+        "maxSize": "8.5 kB"
       },
       {
         "path": "./css/a11y-en_warning.css",
-        "maxSize": "13.75 kB"
+        "maxSize": "14.75 kB"
       },
       {
         "path": "./css/a11y-en_obsolete.css",
-        "maxSize": "17.5 kB"
+        "maxSize": "18.25 kB"
       },
       {
         "path": "./css/a11y-en.css",
