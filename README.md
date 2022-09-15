@@ -18,7 +18,7 @@ When activating the stylesheet, a tip should appear beside each incriminated ele
 
 ### WebExtension
 
-Either you're using [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/) or [Chrome](https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=en), you're invited to install and use a11y.css's webextension.
+Either you're using [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/) or [Chrome](https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=en), you're invited to install and use [a11y.css's webextension — which has its own repository](https://github.com/ffoodd/a11y.css-webextension).
 
 It provides some nice features not included in the main CSS file (for now), such as:
 
