@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
           content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
-    <link rel="stylesheet" href="./static/docs.css?v=1663270994127">
+    <link rel="stylesheet" href="./static/docs.css?v=1663309802735">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="./static/css/a11y-en_warnings-only.css"><link rel="stylesheet" href="./static/css/a11y-light.min.css">
@@ -208,9 +208,9 @@
 <li><a href="https://www.w3.org/TR/html5/grouping-content.html#the-li-element">https://www.w3.org/TR/html5/grouping-content.html#the-li-element</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS">ul &amp;gt<span class="token punctuation">;</span> <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">,</span>
-ol &amp;gt<span class="token punctuation">;</span> <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>ul<span class="token punctuation">,</span> ol<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> li
+<div class="pre"><pre><code class="css language-css" data-language="CSS">ul > <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">,</span>
+ol > <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>ul<span class="token punctuation">,</span> ol<span class="token punctuation">)</span> > li
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><ul>
@@ -263,9 +263,9 @@ Any other imbrication may be a crime somewhere.</p>
 <li><a href="https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl">https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>dl<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> dt<span class="token punctuation">,</span>
-<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>dl<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> dd<span class="token punctuation">,</span>
-dl &amp;gt<span class="token punctuation">;</span> <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>dt<span class="token punctuation">,</span> dd<span class="token punctuation">,</span> div<span class="token punctuation">)</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>dl<span class="token punctuation">)</span> > dt<span class="token punctuation">,</span>
+<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>dl<span class="token punctuation">)</span> > dd<span class="token punctuation">,</span>
+dl > <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>dt<span class="token punctuation">,</span> dd<span class="token punctuation">,</span> div<span class="token punctuation">)</span>
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><dl>
@@ -288,7 +288,7 @@ dl &amp;gt<span class="token punctuation">;</span> <span class="token punctuatio
 <li><a href="https://www.w3.org/TR/html52/grouping-content.html#the-figcaption-element">https://www.w3.org/TR/html52/grouping-content.html#the-figcaption-element</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>figure<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> figcaption
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>figure<span class="token punctuation">)</span> > figcaption
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><figcaption>I'm captionning something, isn't it?</figcaption>
@@ -347,17 +347,17 @@ aside main<span class="token punctuation">,</span>
 footer main<span class="token punctuation">,</span>
 header main<span class="token punctuation">,</span>
 article main<span class="token punctuation">,</span>
-<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>tr<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> td<span class="token punctuation">,</span>
-<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>tr<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> th<span class="token punctuation">,</span>
+<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>tr<span class="token punctuation">)</span> > td<span class="token punctuation">,</span>
+<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>tr<span class="token punctuation">)</span> > th<span class="token punctuation">,</span>
 colgroup *<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>col<span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>colgroup<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> col<span class="token punctuation">,</span>
-tr &amp;gt<span class="token punctuation">;</span> <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>td<span class="token punctuation">,</span> th<span class="token punctuation">)</span><span class="token punctuation">,</span>
-optgroup &amp;gt<span class="token punctuation">;</span> <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>select<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> optgroup<span class="token punctuation">,</span>
-<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>fieldset<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> legend<span class="token punctuation">,</span>
-select &amp;gt<span class="token punctuation">;</span> <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>option<span class="token punctuation">,</span> optgroup<span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>select<span class="token punctuation">,</span> optgroup<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> option<span class="token punctuation">,</span>
-table &amp;gt<span class="token punctuation">;</span> *<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>thead<span class="token punctuation">,</span> tfoot<span class="token punctuation">,</span> tbody<span class="token punctuation">,</span> tr<span class="token punctuation">,</span> colgroup<span class="token punctuation">,</span> caption<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>colgroup<span class="token punctuation">)</span> > col<span class="token punctuation">,</span>
+tr > <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>td<span class="token punctuation">,</span> th<span class="token punctuation">)</span><span class="token punctuation">,</span>
+optgroup > <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>select<span class="token punctuation">)</span> > optgroup<span class="token punctuation">,</span>
+<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>fieldset<span class="token punctuation">)</span> > legend<span class="token punctuation">,</span>
+select > <span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>option<span class="token punctuation">,</span> optgroup<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>select<span class="token punctuation">,</span> optgroup<span class="token punctuation">)</span> > option<span class="token punctuation">,</span>
+table > *<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>thead<span class="token punctuation">,</span> tfoot<span class="token punctuation">,</span> tbody<span class="token punctuation">,</span> tr<span class="token punctuation">,</span> colgroup<span class="token punctuation">,</span> caption<span class="token punctuation">)</span><span class="token punctuation">,</span>
 address h1<span class="token punctuation">,</span>
 address h2<span class="token punctuation">,</span>
 address h3<span class="token punctuation">,</span>
@@ -415,13 +415,13 @@ They must not be used as wrappers!</p>
 <li><a href="https://www.w3.org/TR/html5/dom.html#sectioning-content">https://www.w3.org/TR/html5/dom.html#sectioning-content</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS">aside &amp;gt<span class="token punctuation">;</span> <span class="token property">aside</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
-article &amp;gt<span class="token punctuation">;</span> <span class="token property">aside</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
-aside &amp;gt<span class="token punctuation">;</span> <span class="token property">article</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
-aside &amp;gt<span class="token punctuation">;</span> <span class="token property">section</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
-section &amp;gt<span class="token punctuation">;</span> <span class="token property">section</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
-article &amp;gt<span class="token punctuation">;</span> <span class="token property">section</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
-article &amp;gt<span class="token punctuation">;</span> <span class="token property">article</span><span class="token punctuation">:</span>first-child
+<div class="pre"><pre><code class="css language-css" data-language="CSS">aside > <span class="token property">aside</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
+article > <span class="token property">aside</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
+aside > <span class="token property">article</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
+aside > <span class="token property">section</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
+section > <span class="token property">section</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
+article > <span class="token property">section</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
+article > <span class="token property">article</span><span class="token punctuation">:</span>first-child
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><aside>
@@ -445,8 +445,8 @@ Always.</p>
 <li><a href="https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218">https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS">fieldset &amp;gt<span class="token punctuation">;</span> *<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>legend<span class="token punctuation">)</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
-fieldset &amp;gt<span class="token punctuation">;</span> <span class="token property">legend</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>first-child<span class="token punctuation">)</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">fieldset > *<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>legend<span class="token punctuation">)</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
+fieldset > <span class="token property">legend</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>first-child<span class="token punctuation">)</span>
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><fieldset>
@@ -471,8 +471,8 @@ Always.</p>
 <li><a href="https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details">https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS">details &amp;gt<span class="token punctuation">;</span> *<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>summary<span class="token punctuation">)</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
-details &amp;gt<span class="token punctuation">;</span> <span class="token property">summary</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>first-child<span class="token punctuation">)</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">details > *<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>summary<span class="token punctuation">)</span><span class="token punctuation">:</span>first-child<span class="token punctuation">,</span>
+details > <span class="token property">summary</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>first-child<span class="token punctuation">)</span>
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><details>
@@ -862,8 +862,8 @@ Should be double checked!</p>
 <li><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence">https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> <span class="token property">tr</span><span class="token punctuation">:</span>only-child<span class="token punctuation">,</span>
-<span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> tbody &amp;gt<span class="token punctuation">;</span> <span class="token property">tr</span><span class="token punctuation">:</span>only-child
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> > <span class="token property">tr</span><span class="token punctuation">:</span>only-child<span class="token punctuation">,</span>
+<span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> > tbody > <span class="token property">tr</span><span class="token punctuation">:</span>only-child
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><table>
@@ -989,8 +989,8 @@ And it must be the <code>:first-child</code>, by the way.</p>
 <li><a href="https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309">https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> <span class="token property">caption</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>first-child<span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> *<span class="token punctuation">:</span><span class="token property">first-child</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>caption<span class="token punctuation">)</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> > <span class="token property">caption</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span><span class="token punctuation">:</span>first-child<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> > *<span class="token punctuation">:</span><span class="token property">first-child</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>caption<span class="token punctuation">)</span>
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><table>
@@ -1039,12 +1039,12 @@ And it must be the <code>:first-child</code>, by the way.</p>
 <li><a href="https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314">https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS">table &amp;gt<span class="token punctuation">;</span> tfoot ~ thead<span class="token punctuation">,</span>
-table &amp;gt<span class="token punctuation">;</span> tbody ~ tfoot<span class="token punctuation">,</span>
-table &amp;gt<span class="token punctuation">;</span> tbody ~ thead<span class="token punctuation">,</span>
-table &amp;gt<span class="token punctuation">;</span> tfoot ~ colgroup<span class="token punctuation">,</span>
-table &amp;gt<span class="token punctuation">;</span> tbody ~ colgroup<span class="token punctuation">,</span>
-table &amp;gt<span class="token punctuation">;</span> tbody ~ colgroup
+<div class="pre"><pre><code class="css language-css" data-language="CSS">table > tfoot ~ thead<span class="token punctuation">,</span>
+table > tbody ~ tfoot<span class="token punctuation">,</span>
+table > tbody ~ thead<span class="token punctuation">,</span>
+table > tfoot ~ colgroup<span class="token punctuation">,</span>
+table > tbody ~ colgroup<span class="token punctuation">,</span>
+table > tbody ~ colgroup
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><table>
@@ -1098,8 +1098,8 @@ table &amp;gt<span class="token punctuation">;</span> tbody ~ colgroup
           <h3>Description</h3>
 <p><code>&lt;thead&gt;</code> is strongly needed if <code>&lt;tbody&gt;</code> is present.</p>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> caption <span class="token operator">+</span> tbody<span class="token punctuation">,</span>
-<span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> &amp;gt<span class="token punctuation">;</span> <span class="token property">tbody</span><span class="token punctuation">:</span>first-child
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> > caption <span class="token operator">+</span> tbody<span class="token punctuation">,</span>
+<span class="token property">table</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"presentation"</span>]<span class="token punctuation">)</span> > <span class="token property">tbody</span><span class="token punctuation">:</span>first-child
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><table>
@@ -1398,6 +1398,6 @@ This also requires to check any in-page language change (marked up with <code>[l
     </div>
 </footer>
 
-    <script src="./static/docs.js?v=1663270994129"></script>
+    <script src="./static/docs.js?v=1663309802736"></script>
   </body>
 </html>

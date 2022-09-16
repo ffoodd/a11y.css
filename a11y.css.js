@@ -89,6 +89,7 @@ const parseSassComment = comment => {
   const stylesRegex = /((<pre><code class="css language-css">)(.[\s\S]+?)(\/code><\/pre>))/gm
   const cssRegex = /((?<=<code class="css language-css">)(.[\s\S]+?)(?=<\/code>))/gm
   let cssContent = processedContent.match(cssRegex)
+  cssContent = String(cssContent).replace(/(&gt;)+/g, '>')
   let processedCSS = prism.highlight(String(cssContent), prism.languages.css, 'css-extras')
   processedContent = processedContent.replace(stylesRegex, `<div class="pre"><pre><code class="css language-css" data-language="CSS">${processedCSS}</code></pre></div>`)
 
@@ -97,6 +98,7 @@ const parseSassComment = comment => {
   const scssRegex = /((?<=<code class="scss language-scss">)(.[\s\S]+?)(?=<\/code>))/gm
   let scssContent = processedContent.match(scssRegex)
   scssContent = String(scssContent).replace(/(&amp;)+/g, '&')
+  scssContent = String(scssContent).replace(/(&gt;)+/g, '>')
   let processedSCSS = prism.highlight(String(scssContent), prism.languages.scss, 'scss')
   processedContent = processedContent.replace(scssBlockRegex, `<div class="pre"><pre><code class="scss language-scss" data-language="Sass">${processedSCSS}</code></pre></div>`)
 
