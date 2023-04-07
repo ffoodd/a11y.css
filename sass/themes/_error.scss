@@ -592,10 +592,9 @@ button[class*="disabled"]:not([disabled]):not([readonly])
 <button class="is-disabled" type="button">To be or not to be (disabled)?</button>
 ```
 */
-button[class*="disabled"]:not([disabled]):not([readonly]) {
+button[class*="disabled"]:not([disabled], [readonly]) {
   @include error('disabled-button');
 }
-
 
 /*doc
 ---
