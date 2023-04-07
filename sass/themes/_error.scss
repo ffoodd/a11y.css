@@ -51,7 +51,7 @@ The `[tabindex]` attribute should never be greater than 0.
 ### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
 * <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-12-13>
-* <https://www.w3.org/TR/WCAG-TECHS/F44.html>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F44>
 * <https://www.scottohara.me/blog/2019/05/25/tabindex.html>
 
 ### Selector
@@ -118,11 +118,11 @@ By the way, why would you use an empty link?
 
 ### References
 * <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-6-5>
-* <https://www.w3.org/TR/WCAG20/#text-equiv-all>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-link>
-* <https://www.w3.org/TR/WCAG-TECHS/H30.html>
-* <https://www.w3.org/TR/WCAG-TECHS/G91.html>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
+* <https://www.w3.org/TR/WCAG21/#link-purpose-in-context>
+* <https://www.w3.org/TR/WCAG21/#link-purpose-link-only>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H30>
+* <https://www.w3.org/WAI/WCAG21/Techniques/general/G91>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ### Selector
@@ -160,7 +160,7 @@ An `<img>` must have an `[alt]`. Always.
 * <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-1-1>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
-* <https://www.w3.org/TR/WCAG20/#text-equiv-all>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
 * <https://www.w3.org/TR/WCAG-TECHS/H36.html>
 * <https://www.w3.org/TR/WCAG-TECHS/H37.html>
 * <https://www.w3.org/TR/WCAG-TECHS/H24.html>
