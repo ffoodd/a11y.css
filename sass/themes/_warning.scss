@@ -12,9 +12,9 @@ category: Warnings
 The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also true.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-8-2>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
 * <https://www.w3.org/TR/html5/grouping-content.html#the-li-element>
 
@@ -50,9 +50,9 @@ category: Warnings
 `<dt>` and `<dd>` should be direct adjacent siblings, and nothing else. Although multiple `<dd>` may follow a single `<dt>`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-8-2>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
 * <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 
@@ -88,9 +88,9 @@ category: Warnings
 Any other imbrication may be a crime somewhere.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-8-2>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318>
 * <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl>
@@ -127,9 +127,9 @@ category: Warnings
 `<figcaption>` doesn't make sense outside a `<figure>`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-8-2>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figcaption-element>
 
 ### Selector
@@ -158,7 +158,7 @@ category: Warnings
 `<figure>` needs `[role="group"]` for accessibility reason.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-1-10>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-10>
 * <https://www.w3.org/WAI/tutorials/images/groups/>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figure-element>
 
@@ -201,11 +201,11 @@ Some nestings are forbidden, and do not have their own test case for now:
 Maybe other invalid nestings to test. Stay tuned.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-8-2>.
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>.
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-address-element>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 
 ### Selector
 ```css
@@ -383,9 +383,9 @@ category: Warnings
 Always.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-11-6>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-11-6>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
+* <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
 
 ### Selector
@@ -419,9 +419,9 @@ category: Warnings
 Always.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-11-6>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-11-6>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
+* <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-summary>
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details>
 
@@ -456,12 +456,11 @@ Any abbreviation should give an explanation about its meaning, at least on its f
 
 ### References
 * BP160 OpQuast
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-9-4>
-* <https://www.w3.org/TR/WCAG20/#meaning-located>
-* <https://www.w3.org/TR/WCAG-TECHS/G70.html>
-* <https://www.w3.org/TR/WCAG-TECHS/G97.html>
-* <https://www.w3.org/TR/WCAG-TECHS/G102.html>
-* <https://www.w3.org/TR/WCAG-TECHS/H28.html>
+* <https://www.w3.org/TR/WCAG21/#abbreviations>
+* <https://www.w3.org/WAI/WCAG21/Techniques/general/G70>
+* <https://www.w3.org/WAI/WCAG21/Techniques/general/G97>
+* <https://www.w3.org/WAI/WCAG21/Techniques/general/G102>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H28>
 
 ### Selector
 ```css
@@ -495,14 +494,14 @@ That should be double-checked.
 
 ### References
 * BP160 OpQuast
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-1-2>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H67>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F39>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F38>
 
 ### Selector
 ```css
@@ -541,14 +540,14 @@ category: Warnings
 A file name in `[alt]` is probably wrongly automated… and would never ever help any user.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-1-2>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H67>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F39>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F38>
 
 ### Selector
 ```css
@@ -688,16 +687,16 @@ See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-c
 
 ### References
 * BP160 OpQuast
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-1-2>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
 * <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/wai-aria/roles#presentation>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <https://www.w3.org/TR/WCAG-TECHS/H67.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F39.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F38.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F65.html>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H67>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F39>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F38>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F65>
 
 ### Selector
 ```css
@@ -783,7 +782,7 @@ Any decorative image should be marked up with `[aria-hidden="true"]` (or empty `
 to empty `[alt]` or `[aria-hidden=true]`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-notes-techniques.html#crit-1-2>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
 * <https://www.w3.org/WAI/tutorials/images/decorative/>
 
 
@@ -831,9 +830,9 @@ category: Warnings
 Any `<svg>` should either have `[aria-hidden="true"]` if decorative, or a `[role="img"]` if informative.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-1-2>
-* <https://www.w3.org/TR/2008/REC-WCAG20-20081211/#text-equiv-all>
-* <https://www.w3.org/TR/WCAG-TECHS/F65.html>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F65>
 
 ### Selector
 ```css
@@ -866,9 +865,9 @@ category: Warnings
 A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because it can be quite surprising for the user.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-4-18>
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-13-17>
-* <https://www.w3.org/TR/WCAG20/#visual-audio-contrast-dis-audio>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-4-18>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-13-17>
+* <https://www.w3.org/TR/WCAG21/#audio-control>
 * <https://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
 ### Selector
@@ -899,11 +898,11 @@ category: Warnings
 A time-based media like `<audio>` or `<video>` would be easier to use if `[controls]` are activated for the user.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-4-20>
-* <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
-* <https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable>
-* <https://www.w3.org/TR/WCAG20/#keyboard-operation-trapping>
-* <https://www.w3.org/TR/WCAG-TECHS/G4.html>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-4-20>
+* <https://www.w3.org/TR/WCAG21/#audio-description-or-media-alternative-prerecorded>
+* <https://www.w3.org/TR/WCAG21/#keyboard>
+* <https://www.w3.org/TR/WCAG21/#no-keyboard-trap>
+* <https://www.w3.org/WAI/WCAG21/Techniques/general/G4>
 
 ### Selector
 ```css
@@ -989,8 +988,8 @@ A lonely `<tr>` can be a symptom of a table used for layout.
 Should be double checked!
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-5-3>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-5-3>
+* <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
 
 ### Selector
 ```css
@@ -1032,8 +1031,8 @@ category: Warnings
 There's no good reason to nest data tables: thus it probably means we're facing a layout table…
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-5-3>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-5-3>
+* <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
 * <https://www.w3.org/WAI/tutorials/tables/tips/>
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175>
 
@@ -1095,10 +1094,10 @@ category: Warnings
 And it must be the `:first-child`, by the way.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-5-4>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-5-4>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
 * <https://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
-* <https://www.w3.org/TR/WCAG-TECHS/H39.html>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H39>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309>
 
 ### Selector
@@ -1144,9 +1143,9 @@ category: Warnings
 `<thead>`, `<tfoot>` and `<tbody>` must be in this order.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-8-2>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-parses>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>
+* <https://www.w3.org/TR/WCAG21/#parsing>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314>
 
 ### Selector
@@ -1245,9 +1244,9 @@ category: Warnings
 `<th>` strongly needs an `[id]` or a `[scope]`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-5-7>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <https://www.w3.org/TR/WCAG20-TECHS/H43.html>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-5-7>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H43>
 
 ### Selector
 ```css
@@ -1438,9 +1437,9 @@ Your styles should be driven by a CSS file. That's it.
 And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-10-1->
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-10-1>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
+* <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
 
 ### Selector
 ```css
@@ -1510,12 +1509,12 @@ Though `[aria-level]` is not required by ARIA specification, it's actually bette
 
 ### References
 * <https://www.w3.org/TR/wai-aria/states_and_properties#aria-level>
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-9-1>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-9-1>
 * <https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css>
 * <https://www.w3.org/TR/wai-aria/roles#heading>
-* <https://www.w3.org/TR/WCAG-TECHS/ARIA12.html>
-* <https://www.w3.org/TR/WCAG-TECHS/G141.html>
-* <https://www.w3.org/TR/WCAG-TECHS/H42.html>
+* <https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA12>
+* <https://www.w3.org/WAI/WCAG21/Techniques/general/G141>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H42>
 
 ### Selector
 ```css
@@ -1544,14 +1543,14 @@ A `<label>` is labelling something, in theory.
 Although implicitly labelling form controls is accepted, it's probably better to double-check that form control is *really* nested in its `<label>`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#test-11-1-2>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#test-11-1-2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
-* <https://www.w3.org/TR/WCAG-TECHS/H44.html>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H44>
 * <https://www.w3.org/WAI/tutorials/forms/labels/>
 * <https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/>
-* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
+* <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
+* <https://www.w3.org/TR/WCAG21/#headings-and-labels>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
 
 ### Selector
 ```css

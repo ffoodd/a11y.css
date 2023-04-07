@@ -284,12 +284,12 @@ A link opening new tab or window should warn user about its behaviour.
 You could use a `[title]`, for example.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-13-2>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
-* <https://www.w3.org/TR/WCAG20/#consistent-behavior-no-extreme-changes-context>
-* <https://www.w3.org/TR/WCAG-TECHS/H33.html>
-* <https://www.w3.org/TR/WCAG-TECHS/H83.html>
-* <https://www.w3.org/TR/WCAG-TECHS/F22.html>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-13-2>
+* <https://www.w3.org/TR/WCAG21/#link-purpose-in-context>
+* <https://www.w3.org/TR/WCAG21/#change-on-request>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H33>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H83>
+* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F22>
 
 ### Selector
 ```css
@@ -317,10 +317,9 @@ category: Advices
 A link to a file should indicate the file format, the file size and if different from the main document, the file language.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-13-6>
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-13-7>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs>
-* <https://www.w3.org/TR/WCAG-TECHS/H33.html>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-13-3>
+* <https://www.w3.org/TR/WCAG21/#link-purpose-in-context>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H33>
 
 ### Selector
 ```css
@@ -372,8 +371,8 @@ category: Advices
 Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[contentinfo]`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-12-10>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-12-10>
+* <https://www.w3.org/TR/WCAG21/#bypass-blocks>
 
 ### Selector
 ```css
@@ -408,8 +407,8 @@ category: Advices
 A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-12-10>
-* <https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-12-10>
+* <https://www.w3.org/TR/WCAG21/#bypass-blocks>
 
 ### Selector
 ```css
@@ -452,8 +451,8 @@ category: Advices
 A `[required]` or `[aria-required]` should be visually understandable.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-11-10>
-* <https://www.w3.org/TR/WCAG20/#minimize-error-cues>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-11-10>
+* <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
 
 ### Selector
 ```css
@@ -495,8 +494,8 @@ category: Advices
 A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-10-13>
-* <https://www.w3.org/TR/WCAG20/#ensure-compat-rsv>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-10-8>
+* <https://www.w3.org/TR/WCAG21/#name-role-value>
 
 ### Selector
 ```css
@@ -559,11 +558,11 @@ category: Advices
 A `<video>` or `<audio>` needs a few things to be accessible, like a transcript, subtitles, controls. This kind of things.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-4-1>
-* <https://www.w3.org/TR/WCAG20/#media-equiv-av-only-alt>
-* <https://www.w3.org/TR/WCAG20/#media-equiv-audio-desc>
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-4-13>
-* <https://www.w3.org/TR/WCAG20/#media-equiv-text-doc>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-4-1>
+* <https://www.w3.org/TR/WCAG21/#audio-only-and-video-only-prerecorded>
+* <https://www.w3.org/TR/WCAG21/#audio-description-or-media-alternative-prerecorded>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-4-13>
+* <https://www.w3.org/TR/WCAG21/#media-alternative-prerecorded>
 
 ### Selector
 ```css
@@ -593,8 +592,8 @@ category: Advices
 A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-1-3>
-* <https://www.w3.org/TR/WCAG20/#text-equiv-all>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-3>
+* <https://www.w3.org/TR/WCAG21/#non-text-content>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 
@@ -655,9 +654,9 @@ category: Advices
 A `[scope]` can be col or row (and nothing else) and it has to be relevant.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-5-7>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic>
-* <https://www.w3.org/TR/WCAG-TECHS/H63.html>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-5-7>
+* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
+* <https://www.w3.org/WAI/WCAG21/Techniques/html/H63>
 
 ### Selector
 ```css
@@ -703,8 +702,8 @@ category: Advices
 A `[role="presentation"]` is a good idea for any `<table>` used for layout, but a bad thing for a data table. Double check this!
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa3-criteres.html#crit-5-3>
-* <https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence>
+* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-5-3>
+* <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
 
 ### Selector
 ```css
