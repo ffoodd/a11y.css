@@ -1541,11 +1541,7 @@ category: Errors
 ---
 
 ### Description
-`[role="spinbutton"]` requires a few attributes:
-
-* `[aria-valuemin]`
-* `[aria-valuemax]`
-* `[aria-valuenow]`
+`[role="checkbox"]` requires an attribute: `[aria-checked]`
 
 ### References
 * <https://www.w3.org/TR/wai-aria/roles#checkbox>
