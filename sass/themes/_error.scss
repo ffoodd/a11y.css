@@ -584,7 +584,7 @@ Use `[disabled]` and `[readonly]`.
 
 ### Selector
 ```css
-button[class*="disabled"]:not([disabled]):not([readonly])
+button[class*="disabled"]:not([disabled], [readonly])
 ```
 
 ### Test
