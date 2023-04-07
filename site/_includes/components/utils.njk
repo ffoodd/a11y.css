@@ -1,60 +1,60 @@
-{% macro writeSassDoc(theme, subthemes) %}
-  {% if subthemes %}
-      {% for s in subthemes %}
-        {% if s.title != '' %}
+{%- macro writeSassDoc(theme, subthemes) %}
+  {%- if subthemes %}
+      {%- for s in subthemes %}
+        {%- if s.title != '' %}
           <h2 id="{{ s.theme }}">{{ s.title }}</h2>
-          {% for t in theme %}
-            {% if t.attributes.subcategory == s.title %}
+          {%- for t in theme %}
+            {%- if t.attributes.subcategory == s.title %}
               <article>
                 <h3 id="{{ s.title }}-{{ t.attributes.name }}">{{ t.attributes.title }}</h3>
                 {{ t.body | safe }}
               </article>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-      {% endfor %}
-    {% else %}
-      {% for t in theme %}
+            {%- endif %}
+          {%- endfor %}
+        {%- endif %}
+      {%- endfor %}
+    {%- else %}
+      {%- for t in theme %}
         <article>
           <h2 id="{{ t.attributes.name }}">{{ t.attributes.title }}</h2>
           {{ t.body | safe }}
         </article>
-      {% endfor %}
-    {% endif %}
-{% endmacro %}
+      {%- endfor %}
+    {%- endif %}
+{%- endmacro %}
 
 {% macro toc(theme, subthemes) %}
 <nav role="navigation" aria-labelledby="toc-title" id="toc">
   <p class="box-title" id="toc-title">Table of content</p>
   {% if subthemes %}
     <ul class="list-unstyled">
-      {% for s in subthemes %}
-        {% if s.title != '' %}
+      {%- for s in subthemes %}
+        {%- if s.title != '' %}
         <li>
           <a href="#{{ s.theme }}">{{ s.title }}</a>
           <ol>
-            {% for t in theme %}
-              {% if t.attributes.title != '' and t.attributes.subcategory == s.title %}
+            {%- for t in theme %}
+              {%- if t.attributes.title != '' and t.attributes.subcategory == s.title %}
               <li>
                 <a href="#{{ s.title }}-{{ t.attributes.name }}">{{ t.attributes.title }}</a>
               </li>
-              {% endif %}
-            {% endfor %}
+              {%- endif %}
+            {%- endfor %}
           </ol>
         </li>
-        {% endif %}
-      {% endfor %}
+        {%- endif %}
+      {%- endfor %}
     </ul>
   {% else %}
     <ol>
-      {% for t in theme %}
-        {% if t.attributes.title != '' %}
+      {%- for t in theme %}
+        {%- if t.attributes.title != '' %}
         <li>
           <a href="#{{ t.attributes.name }}">{{ t.attributes.title }}</a>
         </li>
-        {% endif %}
-      {% endfor %}
+        {%- endif %}
+      {%- endfor %}
     </ol>
-  {% endif %}
+  {%- endif %}
 </nav>
-{% endmacro %}
+{% endmacro -%}

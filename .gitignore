@@ -1,5 +1,4 @@
 .sass-cache
-*.map
 node_modules
 .idea
 _site/
@@ -10,11 +9,6 @@ site/static/docs.js
 *.log
 .vscode
 .DS_Store
-webextension/manifest.json
-webextension/css/a11y-en_advices-only.css
-webextension/css/a11y-en_errors-only.css
-webextension/css/a11y-en_obsolete-only.css
-webextension/css/a11y-en_warnings-only.css
 
 # While working on 11ty refactor
 _site/

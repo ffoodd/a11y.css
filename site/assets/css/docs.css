@@ -238,10 +238,10 @@ h1 {
 h2[id] {
   background-color: #fcf9e9;
   counter-increment: titles;
-  display: inline-block;
   font-size: var(--h2);
   padding: 0 0 0 1.25ch;
   position: relative;
+  width: max-content;
   z-index: 1;
 }
 

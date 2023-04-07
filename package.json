@@ -24,28 +24,16 @@
     "docs": "npm run docs:js && npm run docs:css && eleventy",
     "docs:debug": "DEBUG=Eleventy* eleventy",
     "docs:js": "uglifyjs site/assets/js/docs.js -o site/static/docs.js -c -m",
-    "docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano --no-map",
+    "docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano -m",
     "watch:docs": "eleventy --serve",
     "watch:docs:js": "nodemon --watch site/assets/js/ --ext js --exec \"npm run docs:js\"",
-    "watch:docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano -w --no-map",
-    "build": "sass sass/:css/ --style compressed --no-source-map",
-    "postbuild": "postcss css/*.css css/webextension/*.css -r -u autoprefixer cssnano --no-map",
-    "watch:css": "sass --watch sass/:css/ --style compressed --no-source-map",
+    "watch:docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano -m -w",
+    "build": "sass sass/:css/ -c -s compressed --source-map --no-error-css",
+    "postbuild": "postcss css/*.css -r -u autoprefixer cssnano -m",
+    "watch:css": "sass sass/:css/ -c -s compressed --source-map --no-error-css -w",
     "prepublishOnly": "npm run build",
     "test": "stylelint \"./sass/**/*.scss\"",
-    "bundlewatch": "bundlewatch",
-    "prewebext": "rm -rf webextension/css/a11y-*.css && cp -r css/a11y-*_*.css webextension/css && cp -r css/webextension/show-lang.css webextension/css",
-    "webext": "npm run webext:polyfill && npm run webext:all",
-    "postwebext": "npm run webext:firefox && npm run webext:chrome",
-    "webext:polyfill": "cp node_modules/webextension-polyfill/dist/browser-polyfill.min.js webextension/scripts/",
-    "webext:cp": "cp -r css/a11y-??.css temp && cp -r css/a11y-?????.css temp",
-    "webext:rename": "cd temp && rename 's/a11y-(.{2,5}).*(.css)$/a11y-$1_all$2/' *.css && cd ..",
-    "webext:mv": "cp temp/*.css webextension/css",
-    "webext:all": "mkdir temp && npm run webext:cp && npm run webext:rename && npm run webext:mv && rm -rf temp",
-    "prewebext:firefox": "cp manifest-firefox.json webextension/manifest.json",
-    "webext:firefox": "cd webextension && zip -r -FS ../a11ycss-webextension-firefox.zip *",
-    "prewebext:chrome": "cp manifest-chrome.json webextension/manifest.json",
-    "webext:chrome": "cd webextension && zip -r -FS ../a11ycss-webextension-chrome.zip *"
+    "bundlewatch": "bundlewatch"
   },
   "license": "MIT",
   "homepage": "https://ffoodd.github.io/a11y.css",
@@ -75,8 +63,7 @@
     "stylelint": "^14.11.0",
     "stylelint-config-recommended": "^9.0.0",
     "stylelint-config-standard-scss": "^5.0.0",
-    "uglify-js": "^3.17.0",
-    "webextension-polyfill": "^0.10.0"
+    "uglify-js": "^3.17.0"
   },
   "stylelint": {
     "extends": "stylelint-config-standard-scss",
@@ -107,19 +94,19 @@
     "files": [
       {
         "path": "./css/a11y-en_error.css",
-        "maxSize": "7.75 kB"
+        "maxSize": "7.5 kB"
       },
       {
         "path": "./css/a11y-en_warning.css",
-        "maxSize": "13.75 kB"
+        "maxSize": "13.5 kB"
       },
       {
         "path": "./css/a11y-en_obsolete.css",
-        "maxSize": "17.5 kB"
+        "maxSize": "17 kB"
       },
       {
         "path": "./css/a11y-en.css",
-        "maxSize": "21.5 kB"
+        "maxSize": "20.5 kB"
       }
     ]
   }
