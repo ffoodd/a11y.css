@@ -495,7 +495,7 @@ That should be double-checked.
 ### References
 * BP160 OpQuast
 * <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
-* <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
+* <https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lattribut-alt-des-balises-img-et-input-typeimage/>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 * <https://www.w3.org/TR/WCAG21/#non-text-content>
@@ -541,7 +541,7 @@ A file name in `[alt]` is probably wrongly automated… and would never ever hel
 
 ### References
 * <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
-* <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/>
+* <https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lattribut-alt-des-balises-img-et-input-typeimage/>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 * <https://www.w3.org/TR/WCAG21/#non-text-content>
@@ -688,9 +688,9 @@ See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-c
 ### References
 * BP160 OpQuast
 * <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
-* <https://www.accede-web.com/notices/html-css-javascript/6-images-icones/6-3-balise-img/#ancre-01>
+* <https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lattribut-alt-des-balises-img-et-input-typeimage/#ancre-01>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <https://www.w3.org/TR/wai-aria/roles#presentation>
+* <https://www.w3.org/TR/wai-aria-1.2/#presentation>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 * <https://www.w3.org/TR/WCAG21/#non-text-content>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H67>
@@ -868,7 +868,7 @@ A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because 
 * <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-4-18>
 * <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-13-17>
 * <https://www.w3.org/TR/WCAG21/#audio-control>
-* <https://www.punkchip.com/autoplay-is-bad-for-all-users/>
+* <http://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
 ### Selector
 ```css
@@ -1508,10 +1508,10 @@ category: Warnings
 Though `[aria-level]` is not required by ARIA specification, it's actually better to specify it.
 
 ### References
-* <https://www.w3.org/TR/wai-aria/states_and_properties#aria-level>
+* <https://www.w3.org/TR/wai-aria-1.2/#aria-level>
 * <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-9-1>
 * <https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css>
-* <https://www.w3.org/TR/wai-aria/roles#heading>
+* <https://www.w3.org/TR/wai-aria-1.2/#heading>
 * <https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA12>
 * <https://www.w3.org/WAI/WCAG21/Techniques/general/G141>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H42>
