@@ -52,7 +52,7 @@
     "autoprefixer": "^10.4.8",
     "bundlewatch": "^0.3.3",
     "concurrently": "^7.3.0",
-    "cssnano": "^5.1.13",
+    "cssnano": "^6.0.0",
     "front-matter": "^4.0.2",
     "nodemon": "^2.0.19",
     "postcss": "^8.4.16",
@@ -60,9 +60,9 @@
     "prismjs": "^1.29.0",
     "sass": "^1.54.8",
     "showdown": "^2.1.0",
-    "stylelint": "^14.11.0",
-    "stylelint-config-recommended": "^9.0.0",
-    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint": "^15.6.0",
+    "stylelint-config-recommended": "^12.0.0",
+    "stylelint-config-standard-scss": "^9.0.0",
     "uglify-js": "^3.17.0"
   },
   "stylelint": {
