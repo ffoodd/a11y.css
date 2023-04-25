@@ -10,17 +10,14 @@ body::after {
   background-position: 0.5em 0;
   background-repeat: no-repeat;
   background-size: 0.5em 100%;
-  bottom: 1em;
   color: rgb(252, 249, 233);
   contain: content;
   font: 700 18px/1.5 sans-serif;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   height: auto;
-  left: 1em;
+  inset: auto auto 1em 1em;
   padding: .75em 1em .75em 1.5em;
   position: fixed;
-  right: auto;
-  top: auto;
   width: auto;
   white-space: pre;
   z-index: 2147483647;
