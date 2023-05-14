@@ -12,7 +12,7 @@ category: Warnings
 The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also true.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.2>
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
@@ -50,7 +50,7 @@ category: Warnings
 `<dt>` and `<dd>` should be direct adjacent siblings, and nothing else. Although multiple `<dd>` may follow a single `<dt>`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.2>
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
@@ -88,7 +88,7 @@ category: Warnings
 Any other imbrication may be a crime somewhere.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.2>
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318>
@@ -127,7 +127,7 @@ category: Warnings
 `<figcaption>` doesn't make sense outside a `<figure>`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.2>
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figcaption-element>
@@ -158,7 +158,7 @@ category: Warnings
 `<figure>` needs `[role="group"]` for accessibility reason.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-10>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.10>
 * <https://www.w3.org/WAI/tutorials/images/groups/>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-figure-element>
 
@@ -201,7 +201,7 @@ Some nestings are forbidden, and do not have their own test case for now:
 Maybe other invalid nestings to test. Stay tuned.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>.
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.2>.
 * <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
 * <https://www.w3.org/TR/html52/grouping-content.html#the-address-element>
 * <https://www.w3.org/TR/WCAG21/#parsing>
@@ -383,7 +383,7 @@ category: Warnings
 Always.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-11-6>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.6>
 * <https://www.w3.org/TR/WCAG21/#info-and-relationships>
 * <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L218>
@@ -419,7 +419,7 @@ category: Warnings
 Always.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-11-6>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.6>
 * <https://www.w3.org/TR/WCAG21/#info-and-relationships>
 * <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
 * <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-summary>
@@ -494,7 +494,7 @@ That should be double-checked.
 
 ### References
 * BP160 OpQuast
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.2>
 * <https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lattribut-alt-des-balises-img-et-input-typeimage/>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
@@ -540,7 +540,7 @@ category: Warnings
 A file name in `[alt]` is probably wrongly automated… and would never ever help any user.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.2>
 * <https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lattribut-alt-des-balises-img-et-input-typeimage/>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
@@ -687,7 +687,7 @@ See [Edge cases and known issues](https://github.com/ffoodd/a11y.css/wiki/Edge-c
 
 ### References
 * BP160 OpQuast
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.2>
 * <https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lattribut-alt-des-balises-img-et-input-typeimage/#ancre-01>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/wai-aria-1.2/#presentation>
@@ -782,7 +782,7 @@ Any decorative image should be marked up with `[aria-hidden="true"]` (or empty `
 to empty `[alt]` or `[aria-hidden=true]`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.2>
 * <https://www.w3.org/WAI/tutorials/images/decorative/>
 
 
@@ -830,7 +830,7 @@ category: Warnings
 Any `<svg>` should either have `[aria-hidden="true"]` if decorative, or a `[role="img"]` if informative.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-2>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.2>
 * <https://www.w3.org/TR/WCAG21/#non-text-content>
 * <https://www.w3.org/WAI/WCAG21/Techniques/failures/F65>
 
@@ -865,8 +865,8 @@ category: Warnings
 A time-based media like `<audio>` or `<video>` should not `[autoplay]`, because it can be quite surprising for the user.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-4-18>
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-13-17>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.18>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#13.17>
 * <https://www.w3.org/TR/WCAG21/#audio-control>
 * <http://www.punkchip.com/autoplay-is-bad-for-all-users/>
 
@@ -898,7 +898,7 @@ category: Warnings
 A time-based media like `<audio>` or `<video>` would be easier to use if `[controls]` are activated for the user.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-4-20>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.20>
 * <https://www.w3.org/TR/WCAG21/#audio-description-or-media-alternative-prerecorded>
 * <https://www.w3.org/TR/WCAG21/#keyboard>
 * <https://www.w3.org/TR/WCAG21/#no-keyboard-trap>
@@ -988,7 +988,7 @@ A lonely `<tr>` can be a symptom of a table used for layout.
 Should be double checked!
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-5-3>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#5.3>
 * <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
 
 ### Selector
@@ -1031,7 +1031,7 @@ category: Warnings
 There's no good reason to nest data tables: thus it probably means we're facing a layout table…
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-5-3>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#5.3>
 * <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
 * <https://www.w3.org/WAI/tutorials/tables/tips/>
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L175>
@@ -1094,7 +1094,7 @@ category: Warnings
 And it must be the `:first-child`, by the way.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-5-4>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#5.4>
 * <https://www.w3.org/TR/WCAG21/#info-and-relationships>
 * <https://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H39>
@@ -1143,7 +1143,7 @@ category: Warnings
 `<thead>`, `<tfoot>` and `<tbody>` must be in this order.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.2>
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L314>
@@ -1244,7 +1244,7 @@ category: Warnings
 `<th>` strongly needs an `[id]` or a `[scope]`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-5-7>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#5.7>
 * <https://www.w3.org/TR/WCAG21/#info-and-relationships>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H43>
 
@@ -1437,7 +1437,7 @@ Your styles should be driven by a CSS file. That's it.
 And no, JS shouldn't manipulate styles: it's better to play with classes, for example.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-10-1>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#10.1>
 * <https://www.w3.org/TR/WCAG21/#info-and-relationships>
 * <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
 
@@ -1509,7 +1509,7 @@ Though `[aria-level]` is not required by ARIA specification, it's actually bette
 
 ### References
 * <https://www.w3.org/TR/wai-aria-1.2/#aria-level>
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-9-1>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#9.1>
 * <https://github.com/DISIC/rgaa_methodologie/blob/master/Check-css/check-heading.css>
 * <https://www.w3.org/TR/wai-aria-1.2/#heading>
 * <https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA12>

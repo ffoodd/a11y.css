@@ -116,7 +116,7 @@ An empty link should have a label, within `[title]`, `[aria-label]` or targeted 
 By the way, why would you use an empty link?
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-6-5>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#6.5>
 * <https://www.w3.org/TR/WCAG21/#non-text-content>
 * <https://www.w3.org/TR/WCAG21/#link-purpose-in-context>
 * <https://www.w3.org/TR/WCAG21/#link-purpose-link-only>
@@ -156,7 +156,7 @@ category: Errors
 An `<img>` must have an `[alt]`. Always.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-1-1>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.1>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://www.w3.org/TR/html51/semantics.html#alt>
 * <https://www.w3.org/TR/WCAG21/#non-text-content>
@@ -349,7 +349,7 @@ category: Errors
 How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-11-1>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.1>
 * <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
 * <https://www.w3.org/TR/WCAG21/#headings-and-labels>
 * <https://www.w3.org/TR/WCAG21/#info-and-relationships>
@@ -386,7 +386,7 @@ How to label a `[reset]`, `[submit]` or `[button]` type input?
 You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-labelledby]`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-11-9>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.9>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H91>
 
@@ -421,7 +421,7 @@ A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]
 
 ### References
 * <https://rgaa.tanaguru.com/rgaa4-criteres.html#formulaires>
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-11-9>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.9>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H91>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
@@ -453,7 +453,7 @@ category: Errors
 
 ### References
 * <https://rgaa.tanaguru.com/rgaa4-criteres.html#formulaires>
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-11-9>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.9>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H91>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
@@ -606,7 +606,7 @@ category: Errors
 `<input>` needs a `[type]` in order to tell the user what kind of data is wanted.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-11-11>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.11>
 * <https://www.w3.org/TR/WCAG21/#error-suggestion>
 
 ### Selector
@@ -640,7 +640,7 @@ category: Errors
 `<optgroup>` needs a `[label]` to explain what's inside the group.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-11-8>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.8>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H85>
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
@@ -682,7 +682,7 @@ category: Errors
 `<iframe>` needs a `[title]` in order to tell the user what to expect inside the iframe.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-2-1>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#2.1>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H64>
 
@@ -753,9 +753,9 @@ category: Errors
 `<html>` must indicate to User Agents the human language used in the document.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-3>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.3>
 * <https://rgaa.tanaguru.com/rgaa4-glossaire.html#glossaire-61>
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-4>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.4>
 * <https://www.w3.org/TR/WCAG21/#language-of-page>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H57>
 * <https://html.spec.whatwg.org/#attr-lang>
@@ -819,7 +819,7 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 * `[colgroup]`.
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-5-8>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#5.8>
 * <https://www.w3.org/WAI/WCAG21/Techniques/failures/F46>
 * <https://www.w3.org/WAI/WCAG21/Techniques/failures/F49>
 * <https://www.w3.org/TR/WCAG21/#info-and-relationships>
@@ -873,7 +873,7 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 ### References
 * <https://rgaa.tanaguru.com/rgaa4-criteres.html#presentation>
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-10-1>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#10.1>
 * <https://www.w3.org/TR/WCAG21/#info-and-relationships>
 * <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
 
@@ -1097,7 +1097,7 @@ The `<title>` tag is the first thing read aloud by screen readers — to announc
 We could use the `:blank` pseudo-class, but at this time its support is very poor. We could also use the `:-moz-only-whitespace` pseudo-class, but support is limited to Firefox and thus could invalidate our selectors stack…
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-5>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.5>
 * <https://rgaa.tanaguru.com/rgaa4-glossaire.html#glossaire-115>
 * <https://www.w3.org/TR/html5/document-metadata.html#the-title-element>
 * <https://www.w3.org/TR/WCAG21/#page-titled>
@@ -1652,7 +1652,7 @@ An interactive element should not be contained in another interactive element (e
 
 
 ### References
-* <https://rgaa.tanaguru.com/rgaa4-criteres.html#crit-8-2>
+* <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.2>
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://www.w3.org/TR/xhtml1/#prohibitions>
