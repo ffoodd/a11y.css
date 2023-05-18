@@ -42,4 +42,4 @@ jobs:
           paths: docs
           recurse: true
           verbosity: error
-          skip: "docs/*, https://opensource.org, https://codepen.io"
+          skip: "docs/*, https://opensource.org, https://codepen.io, https://twitter.com"
