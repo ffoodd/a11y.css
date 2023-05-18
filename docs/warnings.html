@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
           content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
-    <link rel="stylesheet" href="./static/docs.css?v=1684088454884">
+    <link rel="stylesheet" href="./static/docs.css?v=1684432947462">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="./static/css/a11y-en_warnings-only.css"><link rel="stylesheet" href="./static/css/a11y-light.min.css">
@@ -301,7 +301,7 @@ dl > <span class="token punctuation">:</span><span class="token function">not</s
 <p><code>&lt;figure&gt;</code> needs <code>[role="group"]</code> for accessibility reason.</p>
 <h3>References</h3>
 <ul>
-<li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.10">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.10</a></li>
+<li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.9">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.9</a></li>
 <li><a href="https://www.w3.org/WAI/tutorials/images/groups/">https://www.w3.org/WAI/tutorials/images/groups/</a></li>
 <li><a href="https://www.w3.org/TR/html52/grouping-content.html#the-figure-element">https://www.w3.org/TR/html52/grouping-content.html#the-figure-element</a></li>
 </ul>
@@ -489,7 +489,7 @@ details > <span class="token property">summary</span><span class="token punctuat
 <p>Any abbreviation should give an explanation about its meaning, at least on its first occurrence.</p>
 <h3>References</h3>
 <ul>
-<li><a href="https://checklists.opquast.com/fr/assurance-qualite-web/la-premiere-occurrence-dune-abreviation-ou-dun-acronyme-dans-le-corps-de-chaque-page-donne-acces-a-sa-signification">Rule 5 Opquast</a></li>
+<li><a href="https://checklists.opquast.com/en/web-quality-assurance/the-first-occurrence-of-an-abbreviation-or-an-acronym-in-the-body-of-any-page-provides-an-explanation-of-its-meaning">Opquast - Rule 5</a></li>
 <li><a href="https://www.w3.org/TR/WCAG21/#abbreviations">https://www.w3.org/TR/WCAG21/#abbreviations</a></li>
 <li><a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G70">https://www.w3.org/WAI/WCAG21/Techniques/general/G70</a></li>
 <li><a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G97">https://www.w3.org/WAI/WCAG21/Techniques/general/G97</a></li>
@@ -513,7 +513,7 @@ abbr[title=<span class="token string">""</span>]
 That should be double-checked.</p>
 <h3>References</h3>
 <ul>
-<li>BP160 OpQuast</li>
+<li><a href="https://checklists.opquast.com/en/web-quality-assurance/each-decorative-image-has-an-appropriate-text-alternative">Opquast - Rule 111</a></li>
 <li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.2">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.2</a></li>
 <li><a href="https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lattribut-alt-des-balises-img-et-input-typeimage/">https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lattribut-alt-des-balises-img-et-input-typeimage/</a></li>
 <li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">https://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
@@ -663,7 +663,7 @@ object[type=<span class="token string">"image"</span>][alt$=<span class="token s
 See <a href="https://github.com/ffoodd/a11y.css/wiki/Edge-cases-and-known-issues">Edge cases and known issues</a> on a11y.css' wiki.</p>
 <h3>References</h3>
 <ul>
-<li>BP160 OpQuast</li>
+<li><a href="https://checklists.opquast.com/en/web-quality-assurance/each-decorative-image-has-an-appropriate-text-alternative">Opquast - Rule 111</a></li>
 <li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.2">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.2</a></li>
 <li><a href="https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lattribut-alt-des-balises-img-et-input-typeimage/#ancre-01">https://www.accede-web.com/notices/html-et-css/images-et-icones/gerer-lattribut-alt-des-balises-img-et-input-typeimage/#ancre-01</a></li>
 <li><a href="https://www.w3.org/WAI/tutorials/images/decision-tree/">https://www.w3.org/WAI/tutorials/images/decision-tree/</a></li>
@@ -785,8 +785,8 @@ object[role=<span class="token string">"presentation"</span>]
 <p>A time-based media like <code>&lt;audio&gt;</code> or <code>&lt;video&gt;</code> should not <code>[autoplay]</code>, because it can be quite surprising for the user.</p>
 <h3>References</h3>
 <ul>
-<li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.18">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.18</a></li>
-<li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#13.17">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#13.17</a></li>
+<li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.10">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.10</a></li>
+<li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#13.8">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#13.8</a></li>
 <li><a href="https://www.w3.org/TR/WCAG21/#audio-control">https://www.w3.org/TR/WCAG21/#audio-control</a></li>
 <li><a href="http://www.punkchip.com/autoplay-is-bad-for-all-users/">http://www.punkchip.com/autoplay-is-bad-for-all-users/</a></li>
 </ul>
@@ -805,7 +805,8 @@ audio[autoplay]
 <p>A time-based media like <code>&lt;audio&gt;</code> or <code>&lt;video&gt;</code> would be easier to use if <code>[controls]</code> are activated for the user.</p>
 <h3>References</h3>
 <ul>
-<li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.20">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.20</a></li>
+<li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.11">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.11</a></li>
+<li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.12">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.12</a></li>
 <li><a href="https://www.w3.org/TR/WCAG21/#audio-description-or-media-alternative-prerecorded">https://www.w3.org/TR/WCAG21/#audio-description-or-media-alternative-prerecorded</a></li>
 <li><a href="https://www.w3.org/TR/WCAG21/#keyboard">https://www.w3.org/TR/WCAG21/#keyboard</a></li>
 <li><a href="https://www.w3.org/TR/WCAG21/#no-keyboard-trap">https://www.w3.org/TR/WCAG21/#no-keyboard-trap</a></li>
@@ -1397,6 +1398,6 @@ This also requires to check any in-page language change (marked up with <code>[l
     </div>
 </footer>
 
-    <script src="./static/docs.js?v=1684088454885"></script>
+    <script src="./static/docs.js?v=1684432947463"></script>
   </body>
 </html>
