@@ -15,7 +15,7 @@ CSS files are available in French, English, Spanish, Greek, Arabic, Portuguese, 
 
 ### Web Extension
 
-Either you're using <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" target="_blank" rel="noopener noreferrer">Firefox&nbsp;<span class="sr-only">(external link)</span>{% include "icons/external-link.svg" %}</a>
+Either you're using <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" target="_blank" rel="noopener noreferrer">Firefox&nbsp;<span class="sr-only">(external link)</span>{% include "icons/external-link.svg" %}</a>, <a href="https://microsoftedge.microsoft.com/addons/detail/a11ycss/lkehmahcnhddkdaemngepjckgcjnidpe" target="_blank" rel="noopener noreferrer">Edge&nbsp;<span class="sr-only">(external link)</span>{% include "icons/external-link.svg" %}</a>
 or <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" target="_blank" rel="noopener noreferrer">Chrome&nbsp;<span class="sr-only">(external link)</span>{% include "icons/external-link.svg" %}</a>, 
 you're invited to install and use <a href="https://github.com/ffoodd/a11y.css-webextension" target="_blank" rel="noopener noreferrer">a11y.css's webextension — which has its own repository&nbsp;<span class="sr-only">(external link)</span>{% include "icons/external-link.svg" %}</a>.
 
