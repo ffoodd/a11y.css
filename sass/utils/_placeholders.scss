@@ -34,7 +34,7 @@ Common styles for messages, mostly resetting text styles and preventing layout q
 
 ##### Used by {messages-common-styles-usedby}
 
-- [`a11y()` mixin](#a11y)
+- [`a11y()` mixin](#Mixins-a11y)
 */
 %a11y-before {
   border-radius: 0 !important;
@@ -80,7 +80,7 @@ Level-specific styles for messages, incrementing `counter` and enforcing `outlin
 
 ##### Used by {messages-level-styles-usedby}
 
-- [`a11y()` mixin](#a11y)
+- [`a11y()` mixin](#Mixins-a11y)
 */
 @each $theme in map-keys($themes) {
   %a11y-#{$theme} {
@@ -118,11 +118,11 @@ Provides a way to cancel a message by resetting its core properties.
 
 ##### Used by {message-cancellation-usedby}
 
-- [Missing `[role="search"]` advice](/advices/#missing-role)
-- [`[placeholder]` can't replace a `label` advice](/advices/#placeholder)
-- [Most of DOM nodes shouldn't be `:empty` warning](/warnings/#empty-nodes)
-- [Form `button` error](/errors/#not-form-button)
-- [`[type="radio"]` outside a `fieldset` error](/errors/#radio-group)
+- [Missing `[role="search"]` advice](/advices.html#missing-role)
+- [`[placeholder]` can't replace a `label` advice](/advices.html#placeholder)
+- [Most of DOM nodes shouldn't be `:empty` warning](/warnings.html#empty-nodes)
+- [Form `button` error](/errors.html#not-form-button)
+- [`[type="radio"]` outside a `fieldset` error](/errors.html#radio-group)
 */
 %a11y-reset {
   counter-increment: none !important;
@@ -155,7 +155,7 @@ Displays elements in `<head>`, to allow their messages to appear.
 
 ##### Used by {head-children-usedby}
 
-- [`a11y-head()` mixin](#a11y-head)
+- [`a11y-head()` mixin](#Mixins-a11y-head)
 */
 %a11y-head {
   display: block !important;

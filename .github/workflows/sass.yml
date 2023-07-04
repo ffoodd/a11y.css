@@ -23,7 +23,7 @@ permissions:
   contents: read
 
 jobs:
-  css:
+  sass:
     runs-on: ubuntu-latest
 
     steps:

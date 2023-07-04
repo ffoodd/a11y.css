@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="sr-only-focusable" id="skip-links">
-      <a href="#toc">Skip to table of content</a>
+      {% if title != 'a11y.css’ documentation' -%}<a href="#toc">Skip to table of content</a>{%- endif %}
       <a href="#content">Skip to content</a>
     </div>
     {% include "partials/header.njk" %}
