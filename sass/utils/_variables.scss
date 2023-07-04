@@ -49,8 +49,8 @@ $themes: (
 
 #### Used by {themes-usedby}
 
-- [`set-minimum-level()` mixin](#set-minimum-level)
-- [`base-content()` mixin](#base-content)
+- [`set-minimum-level()` mixin](#Mixins-set-minimum-level)
+- [`base-content()` mixin](#Mixins-base-content)
 */
 $themes: (
   'error': (
@@ -95,7 +95,7 @@ $disabled-tests: ();
 
 ##### Used by {disabled-tests-usedby}
 
-- [`disable-tests()` mixin](#disable-tests)
+- [`disable-tests()` mixin](#Mixins-disable-tests)
 */
 $disabled-tests: ();
 
@@ -119,7 +119,7 @@ $void-tags: area, base, br, col, command, embed, hr, img, input, keygen, link, m
 
 ##### Used by {void-tags-usedby}
 
-- [`void-tags()` mixin](#void-tags)
+- [`void-tags()` mixin](#Mixins-void-tags)
 
 ##### References {void-tags-references}
 
@@ -148,8 +148,8 @@ $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, 
 
 ##### Used by {file-formats-usedby}
 
-- ["Linking to a file" advice](/advices/#file-format)
-- ["`[alt]` containing file name" warning](/warnings/#filename-alt)
+- ["Linking to a file" advice](/advices.html#file-format)
+- ["`[alt]` containing file name" warning](/warnings.html#filename-alt)
 */
 $formats: pdf, doc, png, jpg, gif, ics, mp3, mp4, mov, ogg, xls, txt, zip, rar, docx, webp, apng, svg, svgz;
 
@@ -173,7 +173,7 @@ $interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'detail
 
 ##### Used by {interactive-elements-usedby}
 
-- ["Nested interactive elements" error](/errors/#nested-interactive)
+- ["Nested interactive elements" error](/errors.html#nested-interactive)
 
 ##### References {interactive-elements-references}
 

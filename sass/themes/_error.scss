@@ -13,7 +13,6 @@ Some HTML attributes should not contain any whitespace —namely `[id]`, `[lang]
 ### Reference
 * <https://html.spec.whatwg.org/#the-id-attribute>
 * <https://html.spec.whatwg.org/#the-map-element>
-* <https://tools.ietf.org/html/bcp47#section-2.1.1>
 
 ### Selector
 ```css
@@ -83,7 +82,7 @@ category: Errors
 The `[href]` attribute, if present, should not be empty. A link *to* something, right?
 
 ### References
-* <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
+* <https://html.spec.whatwg.org/multipage/links.html#links-created-by-a-and-area-elements>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
@@ -158,7 +157,7 @@ An `<img>` must have an `[alt]`. Always.
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.1>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <https://www.w3.org/TR/html51/semantics.html#alt>
+* <https://html.spec.whatwg.org/multipage/images.html#alt>
 * <https://www.w3.org/TR/WCAG21/#non-text-content>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H36>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H37>
@@ -242,7 +241,7 @@ category: Errors
 An `<img>` must have an `[src]` or an `[srcset]`, and it should be a valid one. Obviously.
 
 ### References
-* <https://html.spec.whatwg.org/multipage/embedded-content-0.html#attr-img-src>
+* <https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-src>
 * <https://scottjehl.github.io/picturefill/>
 
 ### Selector
@@ -759,7 +758,6 @@ category: Errors
 * <https://www.w3.org/TR/WCAG21/#language-of-page>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H57>
 * <https://html.spec.whatwg.org/#attr-lang>
-* <https://tools.ietf.org/html/bcp47#section-2.1.1>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang>
 * <https://www.w3.org/WAI/WCAG21/Understanding/language-of-page>
 * <https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html>
@@ -911,7 +909,7 @@ Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS eve
 
 ### References
 * <https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes>
-* <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget.addEventListener>
+* <https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener>
 
 ### Selector
 ```css
@@ -1099,7 +1097,7 @@ We could use the `:blank` pseudo-class, but at this time its support is very poo
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.5>
 * <https://accessibilite.numerique.gouv.fr/methode/glossaire/#titre-de-page>
-* <https://html.spec.whatwg.org/multipage/document-metadata.html#the-title-element>
+* <https://html.spec.whatwg.org/multipage/semantics.html#the-title-element>
 * <https://www.w3.org/TR/WCAG21/#page-titled>
 * <https://www.w3.org/WAI/WCAG21/quickref/#page-titled>
 * <https://www.w3.org/WAI/WCAG21/Understanding/page-titled.html>
@@ -1190,7 +1188,7 @@ Moreover it avoids some security issues exploiting some other charsets…
 
 ### References
 * <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
-* <https://html.spec.whatwg.org/multipage/document-metadata.html#attr-meta-charset>
+* <https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-charset>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
 * <https://validator.w3.org/docs/help.html#faq-charset>
 * <https://www.w3.org/TR/WCAG21/#readable>
@@ -1341,9 +1339,9 @@ thus is needed.
 
 ### References
 * <https://www.w3.org/WAI/tutorials/forms/grouping/>
-* <https://www.w3.org/TR/html/sec-forms.html#checkbox-state-typecheckbox>
-* <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
-* <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
+* <https://html.spec.whatwg.org/multipage/forms.html#checkbox-state-typecheckbox>
+* <https://html.spec.whatwg.org/multipage/forms.html#radio-button-state-typeradio>
+* <https://html.spec.whatwg.org/multipage/forms.html#element-attrdef-formelements-name>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H71>
 
 ### Selector
@@ -1393,8 +1391,8 @@ This test could be a warning…
 
 ### References
 * <https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons>
-* <https://www.w3.org/TR/html/sec-forms.html#radio-button-state-typeradio>
-* <https://www.w3.org/TR/html/sec-forms.html#element-attrdef-formelements-name>
+* <https://html.spec.whatwg.org/multipage/forms.html#radio-button-state-typeradio>
+* <https://html.spec.whatwg.org/multipage/forms.html#element-attrdef-formelements-name>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H71>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H44>
 
@@ -1454,10 +1452,10 @@ Also `[aria-valuetext]` is welcome, even though it's not required by ARIA specif
 * <https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow>
 * <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin>
 * <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax>
-* <https://www.paciellogroup.com/blog/2008/05/aria-slider-part-1/>
-* <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-2/>
-* <https://www.paciellogroup.com/blog/2008/06/aria-slider-part-3/>
-* <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role>
+* <https://www.tpgi.com/aria-slider-part-1/>
+* <https://www.tpgi.com/aria-slider-part-2/>
+* <https://www.tpgi.com/aria-slider-part-3/>
+* <https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/slider_role>
 
 ### Selector
 ```css

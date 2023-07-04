@@ -12,7 +12,6 @@ category: Advices
 A `<select required>` element, which isn't `[multiple]` and whose `[size]` isn't greater than `1`, should start with an empty `<option>`. That being said, you may use a placeholder content for this option but must ensure to use an empty `[value]` attribute; or set a `[size]` attribute to the `<select>`, which value should equal to the number of `<option>`s.
 
 ## References
-* <https://twitter.com/WebPlatformNews/status/1346492730223058946>
 * <https://html.spec.whatwg.org/multipage/form-elements.html#placeholder-label-option>
 * <https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fjsbin.com%2Ftozopid%2Fquiet>
 
@@ -109,7 +108,6 @@ category: Advices
 A single `<main>` should be visible at a time. Isn't that obvious?
 
 ### References
-* <https://html.spec.whatwg.org/multipage/changes.html#new-concepts>
 * <https://html.spec.whatwg.org/multipage/grouping-content.html#elementdef-main>
 
 ### Selector
@@ -139,7 +137,7 @@ category: Advices
 `<figcaption>` should be single inside its parent. Check the spec!
 
 ### References
-* <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
+* <https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element>
 
 ### Selector
 ```css
@@ -171,7 +169,7 @@ category: Advices
 `<figcaption>` should be first or last child. Nothing else.
 
 ### References
-* <https://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-figure-element>
+* <https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element>
 
 ### Selector
 ```css
@@ -595,7 +593,7 @@ A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.3>
 * <https://www.w3.org/TR/WCAG21/#non-text-content>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <https://www.w3.org/TR/html51/semantics.html#alt>
+* <https://html.spec.whatwg.org/multipage/images.html#alt>
 
 ### Selector
 ```css
@@ -740,7 +738,7 @@ category: Advices
 Yet it's valid to skip the `[href]` attribute on a link, it's probably better to double check, isn't it?
 
 ### References
-* <https://www.w3.org/TR/html/links.html#links-created-by-a-and-area-elements>
+* <https://html.spec.whatwg.org/multipage/links.html#links-created-by-a-and-area-elements>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L161>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L165>
 
@@ -770,10 +768,9 @@ category: Advices
 When possible, try to use HTTPS.
 
 ### References
-* <https://twitter.com/fvsch/status/921748801542639616>
 * <https://transparencyreport.google.com/https/overview?hl=en>
 * <https://letsencrypt.org/>
-* <https://checklists.opquast.com/oqs-v3/criteria/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels>
+* <https://checklists.opquast.com/fr/assurance-qualite-web/les-echanges-de-donnees-sensibles-sont-securises-et-signales-comme-tels>
 
 ### Selector
 ```css

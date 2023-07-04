@@ -34,8 +34,8 @@ Retrieve message from translation map.
 
 ##### Used by  {get-translations-usedby}
 
-- [`base-content()` mixin](#base-content)
-- [`message()` mixin](#message)
+- [`base-content()` mixin](#Mixins-base-content)
+- [`message()` mixin](#Mixins-message)
 */
 @function message($theme, $key) {
   $message-key: $theme + ':' + $key;
@@ -91,9 +91,9 @@ Get color from error theme.
 
 ##### Used by {get-theme-configuration-usedby}
 
-- [`base-content()` mixin](#base-content)
-- [`a11y()` mixin](#a11y)
-- [`%a11y-#​{$theme}` placeholder](#level-styles)
+- [`base-content()` mixin](#Mixins-base-content)
+- [`a11y()` mixin](#Mixins-a11y)
+- [`%a11y-#​{$theme}` placeholder](#Placeholders-messages-level-styles)
 */
 @function theme-conf($theme, $key) {
   @return map-get(map-get($themes, $theme), $key);
@@ -127,8 +127,8 @@ Test whether `$level` is high enough to be displayed by comparing its index to `
 
 ##### Used by {check-level-usedby}
 
-- [`base-content()` mixin](#base-content)
-- [`item()` mixin](#item)
+- [`base-content()` mixin](#Mixins-base-content)
+- [`item()` mixin](#Mixins-item)
 */
 @function is-level-enough($level) {
   $levels: map-keys($themes);
@@ -198,7 +198,7 @@ Ensures CSS `attr()` function will render the expected value, instead of being o
 
 ##### Used by {escape-attr-usedby}
 
-- [`message()` mixin](#message)
+- [`message()` mixin](#Mixins-message)
 */
 @function replace-attr($message) {
   $has-attr: str-index($message, 'attr(');
