@@ -43,10 +43,5 @@ jobs:
       - name: Build docs
         run: npm run docs
 
-      - name: Run linkinator
-        uses: JustinBeckwith/linkinator-action@v1
-        with:
-          paths: docs
-          recurse: true
-          verbosity: error
-          skip: "docs/*, https://opensource.org, https://codepen.io, https://twitter.com"
+      - name: Check links
+        run: npm run docs:lint

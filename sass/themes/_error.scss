@@ -242,7 +242,7 @@ category: Errors
 An `<img>` must have an `[src]` or an `[srcset]`, and it should be a valid one. Obviously.
 
 ### References
-* <https://www.w3.org/TR/html5/embedded-content-0.html#attr-img-src>
+* <https://html.spec.whatwg.org/multipage/embedded-content-0.html#attr-img-src>
 * <https://scottjehl.github.io/picturefill/>
 
 ### Selector
@@ -498,7 +498,7 @@ However outside a form, if it's intended to send a form it should mention it wit
 If it doesn't submit anything, it should have the `[type="button"]`.
 
 ### References
-* <https://www.w3.org/TR/html5/forms.html#the-button-element>
+* <https://html.spec.whatwg.org/multipage/forms.html#the-button-element>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L189>
 
 ### Selector
@@ -535,7 +535,7 @@ If a `<button>`'s`[type]` is either `"reset"` or `"button"`, it should not use t
 * `[formnovalidate]`.
 
 ### References
-* <https://www.w3.org/TR/html5/forms.html#the-button-element>
+* <https://html.spec.whatwg.org/multipage/forms.html#the-button-element>
 
 ### Selector
 ```css
@@ -1099,7 +1099,7 @@ We could use the `:blank` pseudo-class, but at this time its support is very poo
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.5>
 * <https://accessibilite.numerique.gouv.fr/methode/glossaire/#titre-de-page>
-* <https://www.w3.org/TR/html5/document-metadata.html#the-title-element>
+* <https://html.spec.whatwg.org/multipage/document-metadata.html#the-title-element>
 * <https://www.w3.org/TR/WCAG21/#page-titled>
 * <https://www.w3.org/WAI/WCAG21/quickref/#page-titled>
 * <https://www.w3.org/WAI/WCAG21/Understanding/page-titled.html>
@@ -1190,7 +1190,7 @@ Moreover it avoids some security issues exploiting some other charsets…
 
 ### References
 * <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
-* <https://www.w3.org/TR/html5/document-metadata.html#attr-meta-charset>
+* <https://html.spec.whatwg.org/multipage/document-metadata.html#attr-meta-charset>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
 * <https://validator.w3.org/docs/help.html#faq-charset>
 * <https://www.w3.org/TR/WCAG21/#readable>
@@ -1233,7 +1233,7 @@ before the `<title>` tag is the simplest way to cover it.
 ### References
 * <https://bitsofco.de/linting-html-using-css/#incorrectcharacterset>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
-* <https://w3c.github.io/html/document-metadata.html#charset>
+* <https://html.spec.whatwg.org/multipage/semantics.html#charset>
 
 ### Selector
 ```css
@@ -1274,7 +1274,7 @@ The `[dir]` attribute — used to specify the element’s text directionality �
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L113>
 * <https://www.w3.org/International/questions/qa-html-dir>
 * <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
-* <https://w3c.github.io/html/dom.html#the-dir-attribute>
+* <https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute>
 
 ### Selector
 ```css
@@ -1309,7 +1309,7 @@ This is opinionated: in a perfect world, `[accesskey]` could be used wisely. Yup
 * <https://github.com/karlgroves/diagnostic.css/blob/39ede15ff46bd59af9f8f30efb04cbb45b6c1ba5/diagnostic.css#L159>
 * <https://jkorpela.fi/forms/accesskey.html>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey>
-* <https://w3c.github.io/html/editing.html#element-attrdef-global-accesskey>
+* <https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute>
 * <https://john.foliot.ca/more-reasons-why-we-dont-use-accesskeys/>
 * <https://www.alsacreations.com/article/lire/568-Accesskey-le-grand-echec-de-l-accessibilite-du-Web.html>
 
@@ -1656,13 +1656,13 @@ An interactive element should not be contained in another interactive element (e
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://www.w3.org/TR/xhtml1/#prohibitions>
-* <https://w3c.github.io/html/dom.html#interactive-content-2>
-* <https://w3c.github.io/html/sec-forms.html#the-form-element>
-* <https://w3c.github.io/html/sec-forms.html#the-progress-element>
-* <https://w3c.github.io/html/sec-forms.html#the-meter-element>
-* <https://w3c.github.io/html/sec-forms.html#the-button-element>
-* <https://w3c.github.io/html/textlevel-semantics.html#the-a-element>
-* <https://w3c.github.io/html/sec-forms.html#the-label-element>
+* <https://html.spec.whatwg.org/multipage/dom.html#interactive-content-2>
+* <https://html.spec.whatwg.org/multipage/forms.html#the-form-element>
+* <https://html.spec.whatwg.org/multipage/forms.html#the-progress-element>
+* <https://html.spec.whatwg.org/multipage/forms.html#the-meter-element>
+* <https://html.spec.whatwg.org/multipage/forms.html#the-button-element>
+* <https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element>
+* <https://html.spec.whatwg.org/multipage/forms.html#the-label-element>
 
 ### Selector
 ```css
