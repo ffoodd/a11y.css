@@ -177,6 +177,6 @@ $interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'detail
 
 ##### References {interactive-elements-references}
 
-* <https://w3c.github.io/html/dom.html#interactive-content-2>
+* <https://html.spec.whatwg.org/multipage/dom.html#non-conforming-featuresdom.html#interactive-content-2>
 */
 $interactive: 'a[href]', 'audio[controls]', 'video[controls]', 'button', 'details', 'embed', 'iframe', 'img[usemap]', 'label', 'select', 'textarea', 'input[type]:not([hidden])';

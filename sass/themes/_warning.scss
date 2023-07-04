@@ -16,7 +16,7 @@ The only child allowed in `<ul>` and `<ol>` is `<li>` - and the converse is also
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L313>
-* <https://www.w3.org/TR/html5/grouping-content.html#the-li-element>
+* <https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element>
 
 ### Selector
 ```css
@@ -54,7 +54,7 @@ category: Warnings
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L312>
-* <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
+* <https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element>
 
 ### Selector
 ```css
@@ -92,8 +92,8 @@ Any other imbrication may be a crime somewhere.
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L318>
-* <https://www.w3.org/TR/html5/grouping-content.html#the-dl-element>
-* <https://www.w3.org/TR/html52/grouping-content.html#elementdef-dl>
+* <https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element>
+* <https://html.spec.whatwg.org/multipage/grouping-content.html#elementdef-dl>
 
 ### Selector
 ```css
@@ -130,7 +130,7 @@ category: Warnings
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.2>
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
-* <https://www.w3.org/TR/html52/grouping-content.html#the-figcaption-element>
+* <https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element>
 
 ### Selector
 ```css
@@ -160,7 +160,7 @@ category: Warnings
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.9>
 * <https://www.w3.org/WAI/tutorials/images/groups/>
-* <https://www.w3.org/TR/html52/grouping-content.html#the-figure-element>
+* <https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element>
 
 ### Selector
 ```css
@@ -202,8 +202,8 @@ Maybe other invalid nestings to test. Stay tuned.
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.2>.
-* <https://www.w3.org/TR/html52/grouping-content.html#elementdef-main>
-* <https://www.w3.org/TR/html52/grouping-content.html#the-address-element>
+* <https://html.spec.whatwg.org/multipage/grouping-content.html#elementdef-main>
+* <https://html.spec.whatwg.org/multipage/grouping-content.html#the-address-element>
 * <https://www.w3.org/TR/WCAG21/#parsing>
 * <https://www.w3.org/TR/WCAG21/#name-role-value>
 
@@ -340,7 +340,7 @@ They must not be used as wrappers!
 
 ### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L252>
-* <https://www.w3.org/TR/html5/dom.html#sectioning-content>
+* <https://html.spec.whatwg.org/multipage/dom.html#sectioning-content>
 
 ### Selector
 ```css
@@ -422,8 +422,8 @@ Always.
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.6>
 * <https://www.w3.org/TR/WCAG21/#info-and-relationships>
 * <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
-* <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-summary>
-* <https://www.w3.org/TR/html52/interactive-elements.html#elementdef-details>
+* <https://html.spec.whatwg.org/multipage/interactive-elements.html#elementdef-summary>
+* <https://html.spec.whatwg.org/multipage/interactive-elements.html#elementdef-details>
 
 ### Selector
 ```css
@@ -946,7 +946,7 @@ We could use the `:blank` pseudo-class, but at this time its support is very poo
 
 ### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L243>
-* <https://www.w3.org/TR/html-markup/syntax.html#void-element>
+* <https://html.spec.whatwg.org/multipage/syntax.html#void-elements>
 * <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
 * <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
 * <https://css-tricks.com/almanac/selectors/b/blank/>
@@ -1097,7 +1097,7 @@ And it must be the `:first-child`, by the way.
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#5.4>
 * <https://www.w3.org/TR/WCAG21/#info-and-relationships>
-* <https://www.w3.org/TR/html5/tabular-data.html#the-caption-element>
+* <https://html.spec.whatwg.org/multipage/tables.html#the-caption-element>
 * <https://www.w3.org/WAI/WCAG21/Techniques/html/H39>
 * <https://github.com/imbrianj/debugCSS/blob/e04b489388870dd214aa1c1c1a07f6811210c8ef/debugCSS.css#L309>
 
@@ -1583,7 +1583,7 @@ This also requires to check any in-page language change (marked up with `[lang]`
 * <https://alphagov.github.io/accessibility-tool-audit/test-cases.html#languageofcontent>
 * <https://www.w3.org/International/questions/qa-html-dir>
 * <https://www.w3.org/International/articles/inline-bidi-markup/#dirattribute>
-* <https://w3c.github.io/html/dom.html#the-dir-attribute>
+* <https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute>
 
 ### Selector
 ```css
