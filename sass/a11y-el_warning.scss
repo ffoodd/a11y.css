@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-@import 'locales/gr';
+@import 'locales/el';
 
 @import 'utils/all';
-@include set-minimum-level('obsolete');
+@include set-minimum-level('warning');
 @import 'base/base';
 @import 'themes/all';
