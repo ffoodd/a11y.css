@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
           content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
-    <link rel="stylesheet" href="./static/docs.css?v=1688670540722">
+    <link rel="stylesheet" href="./static/docs.css?v=1690620346337">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="./static/css/a11y-en_errors-only.css"><link rel="stylesheet" href="./static/css/a11y-light.min.css">
@@ -325,7 +325,7 @@ input[type=<span class="token string">"image"</span>]<span class="token punctuat
         <article>
           <h2 id="no-aria-label">Missing label for [role=img]</h2>
           <h3>Description</h3>
-<p><code>[role=img]</code> should either have <code>[aria-label]</code> or <code>[aria-labelledby]</code>.
+<p><code>[role=img]</code> without <code>[aria-hidden=true]</code> should either have <code>[aria-label]</code> or <code>[aria-labelledby]</code>.
 If image is decorative, please use <code>[role=presentation]</code> instead.</p>
 <h3>References</h3>
 <ul>
@@ -335,8 +335,8 @@ If image is decorative, please use <code>[role=presentation]</code> instead.</p>
 <li><a href="https://www.w3.org/TR/wai-aria-1.2/#presentation">https://www.w3.org/TR/wai-aria-1.2/#presentation</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"img"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">,</span> [aria-labelledby]<span class="token punctuation">)</span><span class="token punctuation">,</span>
-svg[role=<span class="token string">"img"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">,</span> [aria-labelledby]<span class="token punctuation">)</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS">[role=<span class="token string">"img"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-hidden=<span class="token string">"true"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">,</span> [aria-labelledby]<span class="token punctuation">)</span><span class="token punctuation">,</span>
+svg[role=<span class="token string">"img"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-hidden=<span class="token string">"true"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[aria-label]<span class="token punctuation">,</span> [aria-labelledby]<span class="token punctuation">)</span>
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><svg width="12cm" height="4cm" viewBox="0 0 1200 400"
@@ -1397,6 +1397,6 @@ progress progress
     </div>
 </footer>
 
-    <script src="./static/docs.js?v=1688670540723"></script>
+    <script src="./static/docs.js?v=1690620346338"></script>
   </body>
 </html>
