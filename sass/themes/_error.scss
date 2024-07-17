@@ -49,7 +49,7 @@ The `[tabindex]` attribute should never be greater than 0.
 
 ### References
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L337>
-* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F44>
+* <https://www.w3.org/WAI/WCAG22/Techniques/failures/F44>
 * <https://www.scottohara.me/blog/2019/05/25/tabindex.html>
 
 ### Selector
@@ -116,11 +116,11 @@ By the way, why would you use an empty link?
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#6.2>
-* <https://www.w3.org/TR/WCAG21/#non-text-content>
-* <https://www.w3.org/TR/WCAG21/#link-purpose-in-context>
-* <https://www.w3.org/TR/WCAG21/#link-purpose-link-only>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H30>
-* <https://www.w3.org/WAI/WCAG21/Techniques/general/G91>
+* <https://www.w3.org/TR/WCAG22/#non-text-content>
+* <https://www.w3.org/TR/WCAG22/#link-purpose-in-context>
+* <https://www.w3.org/TR/WCAG22/#link-purpose-link-only>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H30>
+* <https://www.w3.org/WAI/WCAG22/Techniques/general/G91>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ### Selector
@@ -158,11 +158,11 @@ An `<img>` must have an `[alt]`. Always.
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.1>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://html.spec.whatwg.org/multipage/images.html#alt>
-* <https://www.w3.org/TR/WCAG21/#non-text-content>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H36>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H37>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H24>
-* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F65>
+* <https://www.w3.org/TR/WCAG22/#non-text-content>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H36>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H37>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H24>
+* <https://www.w3.org/WAI/WCAG22/Techniques/failures/F65>
 
 ### Selector
 ```css
@@ -201,10 +201,10 @@ category: Errors
 If image is decorative, please use `[role=presentation]` instead.
 
 ### References
-* <https://www.w3.org/TR/wai-aria-1.2/#img>
-* <https://www.w3.org/TR/WCAG21/#non-text-content>
+* <https://www.w3.org/TR/wai-aria-1.3/#img>
+* <https://www.w3.org/TR/WCAG22/#non-text-content>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
-* <https://www.w3.org/TR/wai-aria-1.2/#presentation>
+* <https://www.w3.org/TR/wai-aria-1.3/#presentation>
 
 ### Selector
 ```css
@@ -313,12 +313,12 @@ A `<label>` with a `[for]` attribute should label something with an `[id]` attri
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.1.2>
 * <https://github.com/DISIC/rgaa_referentiel_en/blob/44e2bee0c710e37ca49901b1e6b8fae9b553fd5d/criteria.html#L3981>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H44>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H44>
 * <https://www.w3.org/WAI/tutorials/forms/labels/>
 * <https://make.wordpress.org/accessibility/2017/01/16/testing-form-functionality-with-different-assistive-technology/>
-* <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
-* <https://www.w3.org/TR/WCAG21/#headings-and-labels>
-* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
+* <https://www.w3.org/TR/WCAG22/#labels-or-instructions>
+* <https://www.w3.org/TR/WCAG22/#headings-and-labels>
+* <https://www.w3.org/TR/WCAG22/#info-and-relationships>
 
 ### Selector
 ```css
@@ -349,10 +349,10 @@ How to label a field? You have a few choices: `[id]`, `[title]`, `[aria-label]` 
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.1>
-* <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
-* <https://www.w3.org/TR/WCAG21/#headings-and-labels>
-* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H44>
+* <https://www.w3.org/TR/WCAG22/#labels-or-instructions>
+* <https://www.w3.org/TR/WCAG22/#headings-and-labels>
+* <https://www.w3.org/TR/WCAG22/#info-and-relationships>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H44>
 
 ### Selector
 ```css
@@ -386,8 +386,8 @@ You still have a few choices: `[value]`, `[title]`, `[aria-label]` and `[aria-la
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.9>
-* <https://www.w3.org/TR/WCAG21/#name-role-value>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H91>
+* <https://www.w3.org/TR/WCAG22/#name-role-value>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H91>
 
 ### Selector
 ```css
@@ -421,8 +421,8 @@ A `<button>` should either have content or an `[aria-label]`, `[aria-labelledby]
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.9>
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11>
-* <https://www.w3.org/TR/WCAG21/#name-role-value>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H91>
+* <https://www.w3.org/TR/WCAG22/#name-role-value>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H91>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ### Selector
@@ -453,8 +453,8 @@ category: Errors
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.9>
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11>
-* <https://www.w3.org/TR/WCAG21/#name-role-value>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H91>
+* <https://www.w3.org/TR/WCAG22/#name-role-value>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H91>
 * <https://github.com/Heydon/REVENGE.CSS/blob/master/revenge.css#L193>
 
 ### Selector
@@ -606,7 +606,7 @@ category: Errors
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.11>
-* <https://www.w3.org/TR/WCAG21/#error-suggestion>
+* <https://www.w3.org/TR/WCAG22/#error-suggestion>
 
 ### Selector
 ```css
@@ -640,7 +640,7 @@ category: Errors
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.8>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H85>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H85>
 * <https://www.w3.org/TR/2014/NOTE-WCAG20-TECHS-20140916/H85>
 
 ### Selector
@@ -682,8 +682,8 @@ category: Errors
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#2.1>
-* <https://www.w3.org/TR/WCAG21/#name-role-value>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H64>
+* <https://www.w3.org/TR/WCAG22/#name-role-value>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H64>
 
 ### Selector
 ```css
@@ -755,12 +755,12 @@ category: Errors
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.3>
 * <https://accessibilite.numerique.gouv.fr/methode/glossaire/#langue-par-defaut>
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.4>
-* <https://www.w3.org/TR/WCAG21/#language-of-page>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H57>
+* <https://www.w3.org/TR/WCAG22/#language-of-page>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H57>
 * <https://html.spec.whatwg.org/#attr-lang>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang>
-* <https://www.w3.org/WAI/WCAG21/Understanding/language-of-page>
-* <https://www.w3.org/WAI/WCAG21/Understanding/language-of-parts.html>
+* <https://www.w3.org/WAI/WCAG22/Understanding/language-of-page>
+* <https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts.html>
 * <https://www.matuzo.at/blog/lang-attribute/>
 * <https://codepen.io/matuzo/project/editor/ZyrVee>
 
@@ -818,9 +818,9 @@ However, semantics tags and attributes aiming to organize datas mustn't be used.
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#5.8>
-* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F46>
-* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F49>
-* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
+* <https://www.w3.org/WAI/WCAG22/Techniques/failures/F46>
+* <https://www.w3.org/WAI/WCAG22/Techniques/failures/F49>
+* <https://www.w3.org/TR/WCAG22/#info-and-relationships>
 
 ### Selector
 ```css
@@ -872,8 +872,8 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#10>
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#10.1>
-* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
-* <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
+* <https://www.w3.org/TR/WCAG22/#info-and-relationships>
+* <https://www.w3.org/TR/WCAG22/#meaningful-sequence>
 
 ### Selector
 ```css
@@ -1098,12 +1098,12 @@ We could use the `:blank` pseudo-class, but at this time its support is very poo
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.5>
 * <https://accessibilite.numerique.gouv.fr/methode/glossaire/#titre-de-page>
 * <https://html.spec.whatwg.org/multipage/semantics.html#the-title-element>
-* <https://www.w3.org/TR/WCAG21/#page-titled>
-* <https://www.w3.org/WAI/WCAG21/quickref/#page-titled>
-* <https://www.w3.org/WAI/WCAG21/Understanding/page-titled.html>
-* <https://www.w3.org/WAI/WCAG21/Techniques/general/G88>
-* <https://www.w3.org/WAI/WCAG21/Techniques/general/G127>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H25>
+* <https://www.w3.org/TR/WCAG22/#page-titled>
+* <https://www.w3.org/WAI/WCAG22/quickref/#page-titled>
+* <https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html>
+* <https://www.w3.org/WAI/WCAG22/Techniques/general/G88>
+* <https://www.w3.org/WAI/WCAG22/Techniques/general/G127>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H25>
 * <https://drafts.csswg.org/selectors-4/#the-blank-pseudo>
 * <https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-only-whitespace>
 * <https://css-tricks.com/almanac/selectors/b/blank/>
@@ -1137,8 +1137,8 @@ User should be able to zoom in or out the page to improve readability and comfor
 ### References
 * <https://bitsofco.de/linting-html-using-css/>
 * <https://dequeuniversity.com/rules/axe/2.1/meta-viewport>
-* <https://www.w3.org/TR/WCAG21/#resize-text>
-* <https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html>
+* <https://www.w3.org/TR/WCAG22/#resize-text>
+* <https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html>
 * <https://www.accede-web.com/notices/html-et-css/bonnes-pratiques/ne-pas-brider-le-zoom-avec-la-propriete-user-scalable/>
 * <https://adrianroselli.com/2015/10/dont-disable-zoom.html>
 
@@ -1191,7 +1191,7 @@ Moreover it avoids some security issues exploiting some other charsets…
 * <https://html.spec.whatwg.org/multipage/semantics.html#attr-meta-charset>
 * <https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta>
 * <https://validator.w3.org/docs/help.html#faq-charset>
-* <https://www.w3.org/TR/WCAG21/#readable>
+* <https://www.w3.org/TR/WCAG22/#readable>
 * <https://validator.w3.org/i18n-checker/>
 * <https://www.w3.org/International/tutorials/tutorial-char-enc/>
 
@@ -1342,7 +1342,7 @@ thus is needed.
 * <https://html.spec.whatwg.org/multipage/forms.html#checkbox-state-typecheckbox>
 * <https://html.spec.whatwg.org/multipage/forms.html#radio-button-state-typeradio>
 * <https://html.spec.whatwg.org/multipage/forms.html#element-attrdef-formelements-name>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H71>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H71>
 
 ### Selector
 ```css
@@ -1393,8 +1393,8 @@ This test could be a warning…
 * <https://www.w3.org/WAI/tutorials/forms/grouping/#radio-buttons>
 * <https://html.spec.whatwg.org/multipage/forms.html#radio-button-state-typeradio>
 * <https://html.spec.whatwg.org/multipage/forms.html#element-attrdef-formelements-name>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H71>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H44>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H71>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H44>
 
 ### Selector
 ```css
@@ -1448,10 +1448,10 @@ Also `[aria-valuetext]` is welcome, even though it's not required by ARIA specif
 
 ### References
 * <https://github.com/imbrianj/debugCSS/blob/master/debugCSS.css#L378>
-* <https://www.w3.org/TR/wai-aria-1.2/#slider>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax>
+* <https://www.w3.org/TR/wai-aria-1.3/#slider>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-valuemax>
 * <https://www.tpgi.com/aria-slider-part-1/>
 * <https://www.tpgi.com/aria-slider-part-2/>
 * <https://www.tpgi.com/aria-slider-part-3/>
@@ -1496,10 +1496,10 @@ category: Errors
 * `[aria-valuenow]`
 
 ### References
-* <https://www.w3.org/TR/wai-aria-1.2/#spinbutton>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax>
+* <https://www.w3.org/TR/wai-aria-1.3/#spinbutton>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-valuemax>
 
 ### Selector
 ```css
@@ -1536,8 +1536,8 @@ category: Errors
 `[role="checkbox"]` requires an attribute: `[aria-checked]`
 
 ### References
-* <https://www.w3.org/TR/wai-aria-1.2/#checkbox>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-checked>
+* <https://www.w3.org/TR/wai-aria-1.3/#checkbox>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-checked>
 
 ### Selector
 ```css
@@ -1569,8 +1569,8 @@ category: Errors
 `[aria-expanded]` is required on `[role="combobox"]`.
 
 ### References
-* <https://www.w3.org/TR/wai-aria-1.2/#combobox>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-expanded>
+* <https://www.w3.org/TR/wai-aria-1.3/#combobox>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-expanded>
 
 ### Selector
 ```css
@@ -1608,12 +1608,12 @@ Some properties are required to comply the `[role="scrollbar"]` pattern:
 * `[aria-orientation]`
 
 ### References
-* <https://www.w3.org/TR/wai-aria-1.2/#scrollbar>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-controls>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemin>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuemax>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-valuenow>
-* <https://www.w3.org/TR/wai-aria-1.2/#aria-orientation>
+* <https://www.w3.org/TR/wai-aria-1.3/#scrollbar>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-controls>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-valuemin>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-valuemax>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-valuenow>
+* <https://www.w3.org/TR/wai-aria-1.3/#aria-orientation>
 
 ### Selector
 ```css
@@ -1651,8 +1651,8 @@ An interactive element should not be contained in another interactive element (e
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#8.2>
-* <https://www.w3.org/TR/WCAG21/#parsing>
-* <https://www.w3.org/TR/WCAG21/#name-role-value>
+* <https://www.w3.org/TR/WCAG22/#parsing>
+* <https://www.w3.org/TR/WCAG22/#name-role-value>
 * <https://www.w3.org/TR/xhtml1/#prohibitions>
 * <https://html.spec.whatwg.org/multipage/dom.html#interactive-content-2>
 * <https://html.spec.whatwg.org/multipage/forms.html#the-form-element>
