@@ -283,11 +283,11 @@ You could use a `[title]`, for example.
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#13.2>
-* <https://www.w3.org/TR/WCAG21/#link-purpose-in-context>
-* <https://www.w3.org/TR/WCAG21/#change-on-request>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H33>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H83>
-* <https://www.w3.org/WAI/WCAG21/Techniques/failures/F22>
+* <https://www.w3.org/TR/WCAG22/#link-purpose-in-context>
+* <https://www.w3.org/TR/WCAG22/#change-on-request>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H33>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H83>
+* <https://www.w3.org/WAI/WCAG22/Techniques/failures/F22>
 
 ### Selector
 ```css
@@ -316,8 +316,8 @@ A link to a file should indicate the file format, the file size and if different
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#13.3>
-* <https://www.w3.org/TR/WCAG21/#link-purpose-in-context>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H33>
+* <https://www.w3.org/TR/WCAG22/#link-purpose-in-context>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H33>
 
 ### Selector
 ```css
@@ -370,7 +370,7 @@ Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[c
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#12.6>
-* <https://www.w3.org/TR/WCAG21/#bypass-blocks>
+* <https://www.w3.org/TR/WCAG22/#bypass-blocks>
 
 ### Selector
 ```css
@@ -406,7 +406,7 @@ A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#12.6>
-* <https://www.w3.org/TR/WCAG21/#bypass-blocks>
+* <https://www.w3.org/TR/WCAG22/#bypass-blocks>
 
 ### Selector
 ```css
@@ -450,7 +450,7 @@ A `[required]` or `[aria-required]` should be visually understandable.
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#11.10>
-* <https://www.w3.org/TR/WCAG21/#labels-or-instructions>
+* <https://www.w3.org/TR/WCAG22/#labels-or-instructions>
 
 ### Selector
 ```css
@@ -493,7 +493,7 @@ A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#10.8>
-* <https://www.w3.org/TR/WCAG21/#name-role-value>
+* <https://www.w3.org/TR/WCAG22/#name-role-value>
 
 ### Selector
 ```css
@@ -557,10 +557,10 @@ A `<video>` or `<audio>` needs a few things to be accessible, like a transcript,
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.1>
-* <https://www.w3.org/TR/WCAG21/#audio-only-and-video-only-prerecorded>
-* <https://www.w3.org/TR/WCAG21/#audio-description-or-media-alternative-prerecorded>
+* <https://www.w3.org/TR/WCAG22/#audio-only-and-video-only-prerecorded>
+* <https://www.w3.org/TR/WCAG22/#audio-description-or-media-alternative-prerecorded>
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#4.13>
-* <https://www.w3.org/TR/WCAG21/#media-alternative-prerecorded>
+* <https://www.w3.org/TR/WCAG22/#media-alternative-prerecorded>
 
 ### Selector
 ```css
@@ -591,7 +591,7 @@ A `[title]` on any graphic content should be equal to `[aria-label]` or `[alt]`.
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.3>
-* <https://www.w3.org/TR/WCAG21/#non-text-content>
+* <https://www.w3.org/TR/WCAG22/#non-text-content>
 * <https://www.w3.org/WAI/tutorials/images/decision-tree/>
 * <https://html.spec.whatwg.org/multipage/images.html#alt>
 
@@ -653,8 +653,8 @@ A `[scope]` can be col or row (and nothing else) and it has to be relevant.
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#5.7>
-* <https://www.w3.org/TR/WCAG21/#info-and-relationships>
-* <https://www.w3.org/WAI/WCAG21/Techniques/html/H63>
+* <https://www.w3.org/TR/WCAG22/#info-and-relationships>
+* <https://www.w3.org/WAI/WCAG22/Techniques/html/H63>
 
 ### Selector
 ```css
@@ -701,7 +701,7 @@ A `[role="presentation"]` is a good idea for any `<table>` used for layout, but 
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#5.3>
-* <https://www.w3.org/TR/WCAG21/#meaningful-sequence>
+* <https://www.w3.org/TR/WCAG22/#meaningful-sequence>
 
 ### Selector
 ```css
