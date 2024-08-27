@@ -32,7 +32,7 @@
     "build": "sass sass/:css/ -c -s compressed --source-map --no-error-css",
     "postbuild": "postcss css/*.css -r -u autoprefixer cssnano -m",
     "watch:css": "sass sass/:css/ -c -s compressed --source-map --no-error-css -w",
-    "prepublishOnly": "npm run build",
+    "preversion": "npm run build",
     "test": "stylelint \"./sass/**/*.scss\"",
     "bundlewatch": "bundlewatch"
   },
