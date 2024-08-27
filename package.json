@@ -51,7 +51,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "autoprefixer": "^10.4.8",
-    "bundlewatch": "^0.3.3",
+    "bundlewatch": "^0.4.0",
     "concurrently": "^7.3.0",
     "cssnano": "^6.0.0",
     "front-matter": "^4.0.2",
