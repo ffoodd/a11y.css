@@ -877,8 +877,8 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 ### Selector
 ```css
-:not(img, object, embed, svg, canvas)[width],
-:not(img, object, embed, svg, canvas)[height]
+:not(img, object, embed, svg, canvas, picture > source)[width],
+:not(img, object, embed, svg, canvas, picture > source)[height]
 ```
 
 ### Test
@@ -886,8 +886,8 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 <p width="20">Damned! I feel sooo strait :(</p>
 ```
 */
-:not(img, object, embed, svg, canvas)[width],
-:not(img, object, embed, svg, canvas)[height] {
+:not(img, object, embed, svg, canvas, picture > source)[width],
+:not(img, object, embed, svg, canvas, picture > source)[height] {
   @include error('dimensions');
 
   @include void-tags {
