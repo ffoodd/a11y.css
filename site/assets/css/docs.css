@@ -497,10 +497,16 @@ aside .box {
 }
 
 .box-title {
+  align-items: center;
+  display: flex;
   font-size: var(--h5);
-  line-height: 1.5;
   font-weight: bold;
+  line-height: 1.5;
   margin: 0;
+}
+
+.box-title code {
+  margin-inline-start: auto;
 }
 
 /* Main navigation */
