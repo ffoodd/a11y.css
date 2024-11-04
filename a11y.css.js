@@ -1,10 +1,10 @@
-const fs = require('fs')
-const path = require('path')
-const showdown = require('showdown')
-const fm = require('front-matter')
-const prism = require('prismjs')
-const loadLanguages = require('prismjs/components/');
-loadLanguages(['scss', 'css-extras']);
+import fs from 'node:fs'
+import path from 'node:path'
+import showdown from 'showdown'
+import fm from 'front-matter'
+import prism from 'prismjs'
+import loadLanguages from 'prismjs/components/index.js'
+loadLanguages(['scss', 'css-extras'])
 
 const DIRECTORIES = {
   sass: {
@@ -144,6 +144,6 @@ const generateJsonDocumentation = () => {
   )
 }
 
-module.exports = function () {
+export default function () {
   generateJsonDocumentation()
 }

@@ -1,6 +1,6 @@
-const a11yCSS = require('./a11y.css')
+import a11yCSS from './a11y.css.js'
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false)
 
   eleventyConfig.addPlugin(a11yCSS)

@@ -5,6 +5,7 @@
   "version": "5.2.1",
   "style": "css/a11y-en.css",
   "sass": "sass/a11y-en.scss",
+  "type": "module",
   "author": {
     "name": "Gaël Poupard",
     "url": "https://www.ffoodd.fr",
@@ -49,7 +50,7 @@
     "last 1 versions"
   ],
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0",
     "autoprefixer": "^10.4.8",
     "bundlewatch": "^0.4.0",
     "concurrently": "^7.3.0",
