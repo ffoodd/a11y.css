@@ -51,29 +51,28 @@
   ],
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "autoprefixer": "^10.4.8",
+    "autoprefixer": "^10.4.20",
     "bundlewatch": "^0.4.0",
-    "concurrently": "^7.3.0",
-    "cssnano": "^6.0.0",
+    "concurrently": "^9.1.0",
+    "cssnano": "^7.0.6",
     "front-matter": "^4.0.2",
     "link-checker": "^1.4.2",
-    "nodemon": "^2.0.19",
-    "postcss": "^8.4.16",
-    "postcss-cli": "^10.0.0",
+    "nodemon": "^3.1.7",
+    "postcss": "^8.4.47",
+    "postcss-cli": "^11.0.0",
     "prismjs": "^1.29.0",
     "sass": "^1.54.8",
     "showdown": "^2.1.0",
-    "stylelint": "^15.6.0",
-    "stylelint-config-recommended": "^12.0.0",
-    "stylelint-config-standard-scss": "^9.0.0",
-    "uglify-js": "^3.17.0"
+    "stylelint": "^16.10.0",
+    "stylelint-config-recommended": "^14.0.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "uglify-js": "^3.19.3"
   },
   "stylelint": {
     "extends": "stylelint-config-standard-scss",
     "rules": {
       "no-invalid-position-at-import-rule": null,
       "comment-whitespace-inside": null,
-      "string-quotes": null,
       "color-function-notation": null,
       "at-rule-empty-line-before": null,
       "declaration-empty-line-before": null,
@@ -81,8 +80,6 @@
       "no-duplicate-selectors": null,
       "no-descending-specificity": null,
       "selector-type-no-unknown": null,
-      "selector-list-comma-newline-after": null,
-      "number-leading-zero": null,
       "scss/no-global-function-names": null,
       "scss/operator-no-newline-before": null,
       "scss/dollar-variable-colon-space-after": null,
@@ -95,7 +92,7 @@
     "files": [
       {
         "path": "./css/a11y-en_error.css",
-        "maxSize": "7.6 kB"
+        "maxSize": "7.75 kB"
       },
       {
         "path": "./css/a11y-en_warning.css",
@@ -107,7 +104,7 @@
       },
       {
         "path": "./css/a11y-en.css",
-        "maxSize": "20.5 kB"
+        "maxSize": "20 kB"
       }
     ]
   }
