@@ -24,9 +24,12 @@ frame,
 frameset,
 noframes,
 isindex,
+keygen,
+menuitem,
 listing,
 nextid,
 noembed,
+param,
 plaintext,
 rb,
 rtc,
@@ -41,10 +44,7 @@ marquee,
 multicol,
 nobr,
 spacer,
-tt,
-keygen,
-menu,
-menuitem
+tt
 ```
 
 ### Test
@@ -60,9 +60,12 @@ frame,
 frameset,
 noframes,
 isindex,
+keygen,
+menuitem,
 listing,
 nextid,
 noembed,
+param,
 plaintext,
 rb,
 rtc,
@@ -77,10 +80,7 @@ marquee,
 multicol,
 nobr,
 spacer,
-tt,
-keygen,
-menu,
-menuitem {
+tt {
   @include obsolete('tags');
 }
 
