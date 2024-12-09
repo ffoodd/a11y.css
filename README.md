@@ -9,7 +9,7 @@ Pronounced *Alix*. Because it’s simpler.
 
 This CSS file intends to warn developers about **possible risks and mistakes** that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.
 
-CSS files are available in French, English, Spanish, Greek, Arabic, Portuguese, Russian, Chinese and Polish — and leveled or full.
+CSS files are available in French, English, Spanish, Greek, Arabic, Portuguese, Russian, Chinese, Polish and Dutch — and leveled or full.
 
 ## How to use?
 
