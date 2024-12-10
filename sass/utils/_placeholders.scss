@@ -12,23 +12,23 @@ Common styles for messages, mostly resetting text styles and preventing layout q
 
 ```scss
 %a11y-before {
-  border-radius: 0 !important;
-  color: #fff !important;
-  contain: content;
-  display: block !important;
-  font: 700 normal 14px/1.5 sans-serif !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
-  height: auto !important;
-  max-width: 100vw !important;
-  padding: 4px !important;
-  pointer-events: none !important;
-  position: absolute !important;
-  text-decoration: none !important;
-  text-shadow: none !important;
-  text-transform: none !important;
-  transform: none !important;
-  white-space: pre !important;
-  width: auto !important;
+	border-radius: 0 !important;
+	color: #fff !important;
+	contain: content;
+	display: block !important;
+	font: 700 normal 14px/1.5 sans-serif !important;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+	height: auto !important;
+	max-width: 100vw !important;
+	padding: 4px !important;
+	pointer-events: none !important;
+	position: absolute !important;
+	text-decoration: none !important;
+	text-shadow: none !important;
+	text-transform: none !important;
+	transform: none !important;
+	white-space: pre !important;
+	width: auto !important;
 }
 ```
 
@@ -37,23 +37,23 @@ Common styles for messages, mostly resetting text styles and preventing layout q
 - [`a11y()` mixin](#Mixins-a11y)
 */
 %a11y-before {
-  border-radius: 0 !important;
-  color: #fff !important;
-  contain: content;
-  display: block !important;
-  font: 700 normal 14px/1.5 sans-serif !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
-  height: auto !important;
-  max-width: 100vw !important;
-  padding: 4px !important;
-  pointer-events: none !important;
-  position: absolute !important;
-  text-decoration: none !important;
-  text-shadow: none !important;
-  text-transform: none !important;
-  transform: none !important;
-  white-space: pre !important;
-  width: auto !important;
+	border-radius: 0 !important;
+	color: #fff !important;
+	contain: content;
+	display: block !important;
+	font: 700 normal 14px/1.5 sans-serif !important;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important;
+	height: auto !important;
+	max-width: 100vw !important;
+	padding: 4px !important;
+	pointer-events: none !important;
+	position: absolute !important;
+	text-decoration: none !important;
+	text-shadow: none !important;
+	text-transform: none !important;
+	transform: none !important;
+	white-space: pre !important;
+	width: auto !important;
 }
 
 /*doc
@@ -70,11 +70,11 @@ Level-specific styles for messages, incrementing `counter` and enforcing `outlin
 
 ```scss
 @each $theme in map-keys($themes) {
-  %a11y-#​{$theme} {
-    counter-increment: unquote($theme) !important;
-    outline: 4px solid theme-conf($theme, 'color') !important;
-    outline-offset: -4px !important;
-  }
+	%a11y-#​{$theme} {
+		counter-increment: unquote($theme) !important;
+		outline: 4px solid theme-conf($theme, 'color') !important;
+		outline-offset: -4px !important;
+	}
 }
 ```
 
@@ -83,11 +83,11 @@ Level-specific styles for messages, incrementing `counter` and enforcing `outlin
 - [`a11y()` mixin](#Mixins-a11y)
 */
 @each $theme in map-keys($themes) {
-  %a11y-#{$theme} {
-    counter-increment: unquote($theme) !important;
-    outline: 4px solid theme-conf($theme, 'color') !important;
-    outline-offset: -4px !important;
-  }
+	%a11y-#{$theme} {
+		counter-increment: unquote($theme) !important;
+		outline: 4px solid theme-conf($theme, 'color') !important;
+		outline-offset: -4px !important;
+	}
 }
 
 
@@ -105,14 +105,14 @@ Provides a way to cancel a message by resetting its core properties.
 
 ```scss
 %a11y-reset {
-  counter-increment: none !important;
-  outline: 0 !important;
+	counter-increment: none !important;
+	outline: 0 !important;
 
-  &::after,
-  & + ::before {
-    content: '' !important;
-    display: none !important;
-  }
+	&::after,
+	& + ::before {
+		content: '' !important;
+		display: none !important;
+	}
 }
 ```
 
@@ -125,14 +125,14 @@ Provides a way to cancel a message by resetting its core properties.
 - [`[type="radio"]` outside a `fieldset` error](/errors.html#radio-group)
 */
 %a11y-reset {
-  counter-increment: none !important;
-  outline: 0 !important;
+	counter-increment: none !important;
+	outline: 0 !important;
 
-  &::after,
-  & + ::before {
-    content: '' !important;
-    display: none !important;
-  }
+	&::after,
+	& + ::before {
+		content: '' !important;
+		display: none !important;
+	}
 }
 
 /*doc
@@ -149,7 +149,7 @@ Displays elements in `<head>`, to allow their messages to appear.
 
 ```scss
 %a11y-head {
-  display: block !important;
+	display: block !important;
 }
 ```
 
@@ -158,5 +158,5 @@ Displays elements in `<head>`, to allow their messages to appear.
 - [`a11y-head()` mixin](#Mixins-a11y-head)
 */
 %a11y-head {
-  display: block !important;
+	display: block !important;
 }

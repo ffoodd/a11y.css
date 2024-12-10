@@ -1,44 +1,44 @@
 [
-  {
-    "title": "Advices",
-    "theme": "advice"
-  },
-  {
-    "title": "Errors",
-    "theme": "error"
-  },
-  {
-    "title": "Obsoletes",
-    "theme": "obsolete"
-  },
-  {
-    "title": "Warnings",
-    "theme": "warning"
-  },
-  {
-    "title": "WebExtension",
-    "theme": "webextension"
-  },
-  {
-    "title": "Docs",
-    "theme": "api",
-    "subthemes":  [
-      {
-        "title": "Functions",
-        "theme": "functions"
-      },
-      {
-        "title": "Mixins",
-        "theme": "mixins"
-      },
-      {
-        "title": "Placeholders",
-        "theme": "placeholders"
-      },
-      {
-        "title": "Variables",
-        "theme": "variables"
-      }
-    ]
-  }
+	{
+		"title": "Advices",
+		"theme": "advice"
+	},
+	{
+		"title": "Errors",
+		"theme": "error"
+	},
+	{
+		"title": "Obsoletes",
+		"theme": "obsolete"
+	},
+	{
+		"title": "Warnings",
+		"theme": "warning"
+	},
+	{
+		"title": "WebExtension",
+		"theme": "webextension"
+	},
+	{
+		"title": "Docs",
+		"theme": "api",
+		"subthemes": [
+			{
+				"title": "Functions",
+				"theme": "functions"
+			},
+			{
+				"title": "Mixins",
+				"theme": "mixins"
+			},
+			{
+				"title": "Placeholders",
+				"theme": "placeholders"
+			},
+			{
+				"title": "Variables",
+				"theme": "variables"
+			}
+		]
+	}
 ]

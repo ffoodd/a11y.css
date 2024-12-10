@@ -29,11 +29,11 @@ map[name*=" "]
 [id*=" "],
 [lang*=" "],
 map[name*=" "] {
-  @include error('attribute-whitespace');
+	@include error('attribute-whitespace');
 
-  @include void-tags {
-    @include error('attribute-whitespace', $self-closing: true);
-  }
+	@include void-tags {
+		@include error('attribute-whitespace', $self-closing: true);
+	}
 }
 
 
@@ -63,11 +63,11 @@ The `[tabindex]` attribute should never be greater than 0.
 ```
 */
 [tabindex]:not([tabindex="0"], [tabindex^="-"]) {
-  @include error('tab-order');
+	@include error('tab-order');
 
-  @include void-tags {
-    @include error('tab-order', $self-closing: true);
-  }
+	@include void-tags {
+		@include error('tab-order', $self-closing: true);
+	}
 }
 
 
@@ -99,7 +99,7 @@ a[href=" "]
 */
 a[href=""],
 a[href=" "] {
-  @include error('empty-href');
+	@include error('empty-href');
 }
 
 
@@ -140,7 +140,7 @@ a:empty[title=""],
 a:empty[aria-label=""],
 a:empty[aria-labelledby=""],
 a:empty:not([title], [aria-label], [aria-labelledby]) {
-  @include error('empty-link');
+	@include error('empty-link');
 }
 
 
@@ -185,7 +185,7 @@ input[type="image"][alt=" "],
 img:not([alt]),
 area:not([alt]),
 input[type="image"]:not([alt]) {
-  @include error('no-alt', $self-closing: true);
+	@include error('no-alt', $self-closing: true);
 }
 
 
@@ -215,18 +215,18 @@ svg[role="img"]:not([aria-hidden="true"], [aria-label], [aria-labelledby])
 ### Test
 ``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg" role="img">
-  <rect x="400" y="100" width="400" height="200"
-        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+	xmlns="http://www.w3.org/2000/svg" role="img">
+	<rect x="400" y="100" width="400" height="200"
+		fill="forestgreen" stroke="darkgreen" stroke-width="10"/>
 </svg><span>†</span>
 ```
 */
 [role="img"]:not([aria-hidden="true"], [aria-label], [aria-labelledby]) {
-  @include error('no-aria-label');
+	@include error('no-aria-label');
 }
 
 svg[role="img"]:not([aria-hidden="true"], [aria-label], [aria-labelledby]) {
-  @include error('no-aria-label', $self-closing: true);
+	@include error('no-aria-label', $self-closing: true);
 }
 
 
@@ -273,7 +273,7 @@ input[type="image"][srcset="/"]
 */
 img:not([src], [srcset]),
 input[type="image"]:not([src], [srcset]) {
-  @include error('no-src');
+	@include error('no-src');
 }
 
 
@@ -285,7 +285,7 @@ input[type="image"][src=""],
 input[type="image"][src=" "],
 input[type="image"][src="#"],
 input[type="image"][src="/"] {
-  @include error('bad-src');
+	@include error('bad-src');
 }
 
 img[srcset=""],
@@ -296,7 +296,7 @@ input[type="image"][srcset=""],
 input[type="image"][srcset=" "],
 input[type="image"][srcset="#"],
 input[type="image"][srcset="/"] {
-  @include error('bad-srcset');
+	@include error('bad-srcset');
 }
 
 
@@ -333,7 +333,7 @@ label[for=" "]
 */
 label[for=""],
 label[for=" "] {
-  @include error('empty-for');
+	@include error('empty-for');
 }
 
 
@@ -369,7 +369,7 @@ select:not([id], [aria-label], [aria-labelledby])
 input:not([type="button"], [type="submit"], [type="hidden"], [type="reset"], [type="image"], [id], [aria-label], [title], [aria-labelledby]),
 textarea:not([id], [aria-label], [aria-labelledby]),
 select:not([id], [aria-label], [aria-labelledby]) {
-  @include error('no-id', $self-closing: true);
+	@include error('no-id', $self-closing: true);
 }
 
 
@@ -404,7 +404,7 @@ input[type="button"]:not([value], [title], [aria-label], [aria-labelledby])
 input[type="reset"]:not([value], [title], [aria-label], [aria-labelledby]),
 input[type="submit"]:not([value], [title], [aria-label], [aria-labelledby]),
 input[type="button"]:not([value], [title], [aria-label], [aria-labelledby]) {
-  @include error('no-value', $self-closing: true);
+	@include error('no-value', $self-closing: true);
 }
 
 
@@ -436,7 +436,7 @@ button:empty:not([aria-label], [aria-labelledby], [title])
 ```
 */
 button:empty:not([aria-label], [aria-labelledby], [title]) {
-  @include error('empty-button');
+	@include error('empty-button');
 }
 
 
@@ -470,15 +470,15 @@ button[aria-labelledby=""]
 ```
 */
 button[title=""] {
-  @include error('empty-button-title');
+	@include error('empty-button-title');
 }
 
 button[aria-label=""] {
-  @include error('empty-button-aria-label');
+	@include error('empty-button-aria-label');
 }
 
 button[aria-labelledby=""] {
-  @include error('empty-button-aria-labelledby');
+	@include error('empty-button-aria-labelledby');
 }
 
 
@@ -511,11 +511,11 @@ button:not([type], [form], [formaction], [formtarget])
 ```
 */
 button:not([type], [form], [formaction], [formtarget]) {
-  @include error('not-form-button');
+	@include error('not-form-button');
 }
 
 form button:not([type], [form], [formaction], [formtarget]) {
-  @extend %a11y-reset;
+	@extend %a11y-reset;
 }
 
 /*doc
@@ -557,13 +557,13 @@ button[type="button"][formnovalidate]
 */
 button[type="reset"],
 button[type="button"] {
-  &[formmethod],
-  &[formaction],
-  &[formtarget],
-  &[formenctype],
-  &[formnovalidate] {
-    @include error('not-submit-button');
-  }
+	&[formmethod],
+	&[formaction],
+	&[formtarget],
+	&[formenctype],
+	&[formnovalidate] {
+		@include error('not-submit-button');
+	}
 }
 
 /*doc
@@ -591,7 +591,7 @@ button[class*="disabled"]:not([disabled], [readonly])
 ```
 */
 button[class*="disabled"]:not([disabled], [readonly]) {
-  @include error('disabled-button');
+	@include error('disabled-button');
 }
 
 /*doc
@@ -624,7 +624,7 @@ input[type=""]
 input:not([type]),
 input[type=" "],
 input[type=""] {
-  @include error('no-type', $self-closing: true);
+	@include error('no-type', $self-closing: true);
 }
 
 
@@ -651,22 +651,22 @@ optgroup:not([label])
 ### Test
 ``` html
 <form action="/">
-    <label for="optgroup-test">Oh, hey</label>
-    <select id="optgroup-test">
-      <optgroup label="I'm a group">
-        <option value="1">I'm an option</option>
-        <option value="2">I'm another option</option>
-      </optgroup>
-      <optgroup>
-        <option value="3">I'm an option, but from another group</option>
-        <option value="4">I'm another option, still from another group</option>
-     </optgroup>
-   </select>
+	<label for="optgroup-test">Oh, hey</label>
+	<select id="optgroup-test">
+		<optgroup label="I'm a group">
+			<option value="1">I'm an option</option>
+			<option value="2">I'm another option</option>
+		</optgroup>
+		<optgroup>
+			<option value="3">I'm an option, but from another group</option>
+			<option value="4">I'm another option, still from another group</option>
+		</optgroup>
+	</select>
 </form>
 ```
 */
 optgroup:not([label]) {
-  @include error('optgroup', $self-closing: true);
+	@include error('optgroup', $self-closing: true);
 }
 
 
@@ -700,7 +700,7 @@ iframe[title=""]
 iframe:not([title]),
 iframe[title=" "],
 iframe[title=""] {
-  @include error('no-title', $self-closing: true);
+	@include error('no-title', $self-closing: true);
 }
 
 
@@ -727,17 +727,17 @@ form[action=""]
 ### Test
 ``` html
 <form>
-  <label for="input">Guess what do we do with your datas?</label>
-  <input id="input" type="text" />
+	<label for="input">Guess what do we do with your datas?</label>
+	<input id="input" type="text" />
 
-  <input type="submit" value="No idea, huh?"/>
+	<input type="submit" value="No idea, huh?"/>
 </form>
 ```
 */
 form:not([action]),
 form[action=" "],
 form[action=""] {
-  @include error('no-action');
+	@include error('no-action');
 }
 
 
@@ -774,26 +774,26 @@ html[lang=""]
 ### Test
 ``` html
 <iframe title="No language defined example" srcdoc="<!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset='utf-8'/>
-      <title>Je ne parle pas Français</title>
-      <style>html{font:.75rem sans-serif}</style>
-      <link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
-    </head>
-    <body>
-      <ul>
-        <li>Speak French?</li>
-        <li>Habla usted francés?</li>
-        <li>Sprechen Sie Französisch?</li>
-    </ul>">
+	<html>
+		<head>
+			<meta charset='utf-8'/>
+			<title>Je ne parle pas Français</title>
+			<style>html{font:.75rem sans-serif}</style>
+			<link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
+		</head>
+		<body>
+			<ul>
+				<li>Speak French?</li>
+				<li>Habla usted francés?</li>
+				<li>Sprechen Sie Französisch?</li>
+			</ul>">
 </iframe>
 ```
 */
 html:not([lang]),
 html[lang*=" "],
 html[lang=""] {
-  @include error('no-lang');
+	@include error('no-lang');
 }
 
 
@@ -837,12 +837,12 @@ table[role="presentation"] [headers]
 ### Test
 ``` html
 <table role="presentation">
-  <caption>I do not mean anything!</caption>
-  <tbody>
-    <tr>
-      <td colspan="2">It works</td>
-    </tr>
-  </tbody>
+	<caption>I do not mean anything!</caption>
+	<tbody>
+		<tr>
+			<td colspan="2">It works</td>
+		</tr>
+	</tbody>
 </table>
 ```
 */
@@ -854,7 +854,7 @@ table[role="presentation"] colgroup,
 table[role="presentation"] [axis],
 table[role="presentation"] [scope],
 table[role="presentation"] [headers] {
-  @include error('table-for-layout');
+	@include error('table-for-layout');
 }
 
 
@@ -888,11 +888,11 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 */
 :not(img, object, embed, svg, canvas, picture > source)[width],
 :not(img, object, embed, svg, canvas, picture > source)[height] {
-  @include error('dimensions');
+	@include error('dimensions');
 
-  @include void-tags {
-    @include error('dimensions', $self-closing: true);
-  }
+	@include void-tags {
+		@include error('dimensions', $self-closing: true);
+	}
 }
 
 
@@ -962,7 +962,7 @@ Prefer either CSS pseudo-classes (`:hover`, `:focus`, `:active`, etc.) or JS eve
 [onratechange], [onreadystatechange], [onseeked],
 [onseeking], [onstalled], [onsuspend], [ontimeupdate],
 [onvolumechange], [onwaiting] {
-  @include error('js-events');
+	@include error('js-events');
 }
 
 
@@ -1054,7 +1054,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 [id^="-8"],
 [id^="-9"],
 [id^="-0"] {
-  @include error('id-namespace');
+	@include error('id-namespace');
 }
 
 [class^="1"],
@@ -1078,7 +1078,7 @@ Yep. Digits, two hyphens, or hyphen followed by a digit.
 [class^="-8"],
 [class^="-9"],
 [class^="-0"] {
-  @include error('class-namespace');
+	@include error('class-namespace');
 }
 
 
@@ -1119,8 +1119,8 @@ title:empty
 ```
 */
 title:empty {
-  @include error('no-page-title');
-  @include a11y-head;
+	@include error('no-page-title');
+	@include a11y-head;
 }
 
 
@@ -1152,24 +1152,24 @@ meta[name="viewport"][content*="user-scalable=no"]
 ### Test
 ``` html
 <iframe title="Wrong viewport instruction example" srcdoc="<!DOCTYPE html>
-  <html lang='en'>
-    <head>
-      <meta charset='utf-8'/>
-      <title>Wrong viewport instruction</title>
-      <meta name='viewport' content='user-scalable=no'/>
-      <style>html{font:.75rem sans-serif}</style>
-      <link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
-    </head>
-    <body>
-      <h1>Wrong <code>viewport</code> instruction</h1>">
+	<html lang='en'>
+		<head>
+			<meta charset='utf-8'/>
+			<title>Wrong viewport instruction</title>
+			<meta name='viewport' content='user-scalable=no'/>
+			<style>html{font:.75rem sans-serif}</style>
+			<link rel='stylesheet' type='text/css' href='https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css'>
+		</head>
+		<body>
+			<h1>Wrong <code>viewport</code> instruction</h1>">
 </iframe>
 ```
 */
 meta[name="viewport"][content*="maximum-scale"],
 meta[name="viewport"][content*="minimum-scale"],
 meta[name="viewport"][content*="user-scalable=no"] {
-  @include error('unaccessible-viewport', $self-closing: true, $head: true);
-  @include a11y-head($self-closing: true);
+	@include error('unaccessible-viewport', $self-closing: true, $head: true);
+	@include a11y-head($self-closing: true);
 }
 
 
@@ -1206,8 +1206,8 @@ meta[charset]:not([charset="utf-8"], [charset="UTF-8"])
 ```
 */
 meta[charset]:not([charset="utf-8"], [charset="UTF-8"]) {
-  @include error('incorrect-charset', $self-closing: true, $head: true);
-  @include a11y-head($self-closing: true);
+	@include error('incorrect-charset', $self-closing: true, $head: true);
+	@include a11y-head($self-closing: true);
 }
 
 
@@ -1241,20 +1241,20 @@ head :first-child:not([charset])
 ### Test
 ``` html
 <iframe title="Late charset example" srcdoc="<!DOCTYPE html>
-  <html lang=en>
-    <head>
-      <title>Oups !</title>
-      <style>html{font:.75rem sans-serif}</style>
-      <link rel=stylesheet type=text/css href=https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css>
-    </head>
-    <body>
-      <h1>How am I encoded, buddy?</h1>">
+	<html lang=en>
+		<head>
+			<title>Oups !</title>
+			<style>html{font:.75rem sans-serif}</style>
+			<link rel=stylesheet type=text/css href=https://ffoodd.github.io/a11y.css/css/a11y-en_errors-only.css>
+		</head>
+		<body>
+			<h1>How am I encoded, buddy?</h1>">
 </iframe>
 ```
 */
 head :first-child:not([charset]) {
-  @include error('late-charset', $self-closing: false, $head: true);
-  @include a11y-head($self-closing: true);
+	@include error('late-charset', $self-closing: false, $head: true);
+	@include a11y-head($self-closing: true);
 }
 
 
@@ -1285,7 +1285,7 @@ The `[dir]` attribute — used to specify the element’s text directionality �
 ```
 */
 [dir]:not([dir="rtl"], [dir="ltr"], [dir="auto"]) {
-  @include error('invalid-dir');
+	@include error('invalid-dir');
 }
 
 
@@ -1322,7 +1322,7 @@ This is opinionated: in a perfect world, `[accesskey]` could be used wisely. Yup
 ```
 */
 [accesskey] {
-  @include error('accesskey');
+	@include error('accesskey');
 }
 
 
@@ -1353,23 +1353,23 @@ thus is needed.
 ### Test
 ``` html
 <form action="/">
-  <fieldset>
-    <legend>Options</legend>
-    <p>
-      <label for="option-1">Option N<sup>o</sup>1</label>
-      <input type="radio" id="option-1"><span>†</span>
-    </p>
-    <p>
-      <label for="option-2">Option N<sup>o</sup>2</label>
-      <input type="radio" id="option-2" name="options">
-    </p>
-  </fieldset>
+	<fieldset>
+		<legend>Options</legend>
+		<p>
+			<label for="option-1">Option N<sup>o</sup>1</label>
+			<input type="radio" id="option-1"><span>†</span>
+		</p>
+		<p>
+			<label for="option-2">Option N<sup>o</sup>2</label>
+			<input type="radio" id="option-2" name="options">
+		</p>
+	</fieldset>
 </form>
 ```
 */
 [type="radio"]:not([name]),
 [type="checkbox"]:not(:only-of-type, [name]) {
-  @include error('inputs-group', $self-closing: true);
+	@include error('inputs-group', $self-closing: true);
 }
 
 
@@ -1404,29 +1404,29 @@ This test could be a warning…
 ### Test
 ``` html
 <form action="/">
-  <p>
-    <label for="option-1">Option N<sup>o</sup>1</label>
-    <input type="radio" id="option-1" name="options"><span>†</span>
-  </p>
+	<p>
+		<label for="option-1">Option N<sup>o</sup>1</label>
+		<input type="radio" id="option-1" name="options"><span>†</span>
+	</p>
 
-  <br>
+	<br>
 
-  <fieldset>
-    <legend>Trying within a fieldset, shouldn't match</legend>
-    <p>
-      <label for="option-2">Option N<sup>o</sup>2</label>
-      <input type="radio" id="option-2" name="options"><span>†</span>
-    </p>
-  </fieldset>
+	<fieldset>
+		<legend>Trying within a fieldset, shouldn't match</legend>
+		<p>
+			<label for="option-2">Option N<sup>o</sup>2</label>
+			<input type="radio" id="option-2" name="options"><span>†</span>
+		</p>
+	</fieldset>
 </form>
 ```
 */
 [type="radio"] {
-  @include error('radio-group', $self-closing: true);
+	@include error('radio-group', $self-closing: true);
 }
 
 fieldset [type="radio"] {
-  @extend %a11y-reset;
+	@extend %a11y-reset;
 }
 
 
@@ -1473,11 +1473,11 @@ Also `[aria-valuetext]` is welcome, even though it's not required by ARIA specif
 [role="slider"]:not([aria-valuemin]),
 [role="slider"]:not([aria-valuemax]),
 [role="slider"]:not([aria-valuenow]) {
-  @include error('role-slider');
+	@include error('role-slider');
 
-  @include void-tags {
-    @include error('role-slider', $self-closing: true);
-  }
+	@include void-tags {
+		@include error('role-slider', $self-closing: true);
+	}
 }
 
 
@@ -1517,11 +1517,11 @@ category: Errors
 [role="spinbutton"]:not([aria-valuemin]),
 [role="spinbutton"]:not([aria-valuemax]),
 [role="spinbutton"]:not([aria-valuenow]) {
-  @include error('role-spinbutton');
+	@include error('role-spinbutton');
 
-  @include void-tags {
-    @include error('role-spinbutton', $self-closing: true);
-  }
+	@include void-tags {
+		@include error('role-spinbutton', $self-closing: true);
+	}
 }
 
 
@@ -1550,11 +1550,11 @@ category: Errors
 ```
 */
 [role="checkbox"]:not([aria-checked]) {
-  @include error('role-checkbox');
+	@include error('role-checkbox');
 
-  @include void-tags {
-    @include error('role-checkbox', $self-closing: true);
-  }
+	@include void-tags {
+		@include error('role-checkbox', $self-closing: true);
+	}
 }
 
 
@@ -1583,11 +1583,11 @@ category: Errors
 ```
 */
 [role="combobox"]:not([aria-expanded]) {
-  @include error('role-combobox');
+	@include error('role-combobox');
 
-  @include void-tags {
-    @include error('role-combobox', $self-closing: true);
-  }
+	@include void-tags {
+		@include error('role-combobox', $self-closing: true);
+	}
 }
 
 
@@ -1634,7 +1634,7 @@ Some properties are required to comply the `[role="scrollbar"]` pattern:
 [role="scrollbar"]:not([aria-valuemax]),
 [role="scrollbar"]:not([aria-valuenow]),
 [role="scrollbar"]:not([aria-orientation]) {
-  @include error('role-scrollbar');
+	@include error('role-scrollbar');
 }
 
 
@@ -1697,14 +1697,14 @@ progress progress
 ### Test
 ``` html
 <a href="https://www.ffoodd.fr">
-  <button type=button">Oh wait, what should I trigger?</button>
+	<button type=button">Oh wait, what should I trigger?</button>
 </a>
 ```
 */
 $tags: ();
 
 @each $tag in $interactive {
-  $tags: append($tags, unquote('a #{$tag}, button #{$tag}'), 'comma');
+	$tags: append($tags, unquote('a #{$tag}, button #{$tag}'), 'comma');
 }
 
 #{$tags},
@@ -1712,5 +1712,5 @@ form form,
 label label,
 meter meter,
 progress progress {
-  @include error('nested-interactive');
+	@include error('nested-interactive');
 }

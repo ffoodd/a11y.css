@@ -21,19 +21,19 @@ Either:
 
 ```scss
 @mixin set-minimum-level($level) {
-  $level: to-lower-case($level);
-  $levels: map-keys($themes);
+	$level: to-lower-case($level);
+	$levels: map-keys($themes);
 
-  @if not index($levels, $level) {
-    $default-level: nth($levels, -1);
-    $level: $default-level;
+	@if not index($levels, $level) {
+		$default-level: nth($levels, -1);
+		$level: $default-level;
 
-    @warn 'Level `#​{$level}` does not exist. '
-      + 'Please choose one of `#​{inspect($levels)}`. '
-      + 'Falling back on `#​{$default-level}`';
-  }
+		@warn 'Level `#​{$level}` does not exist. '
+			+ 'Please choose one of `#​{inspect($levels)}`. '
+			+ 'Falling back on `#​{$default-level}`';
+	}
 
-  $minimum-level: $level !global;
+	$minimum-level: $level !global;
 }
 ```
 
@@ -50,19 +50,19 @@ Either:
 ```
 */
 @mixin set-minimum-level($level) {
-  $level: to-lower-case($level);
-  $levels: map-keys($themes);
+	$level: to-lower-case($level);
+	$levels: map-keys($themes);
 
-  @if not index($levels, $level) {
-    $default-level: nth($levels, -1);
-    $level: $default-level;
+	@if not index($levels, $level) {
+		$default-level: nth($levels, -1);
+		$level: $default-level;
 
-    @warn 'Level `#{$level}` does not exist. '
-      + 'Please choose one of `#{inspect($levels)}`. '
-      + 'Falling back on `#{$default-level}`';
-  }
+		@warn 'Level `#{$level}` does not exist. '
+			+ 'Please choose one of `#{inspect($levels)}`. '
+			+ 'Falling back on `#{$default-level}`';
+	}
 
-  $minimum-level: $level !global;
+	$minimum-level: $level !global;
 }
 
 
@@ -80,7 +80,7 @@ Get a message from the translation map based on the defined language and output 
 
 ```scss
 @mixin message($theme, $key) {
-  content: replace-attr(quote("#​{message($theme, $key)}")) !important;
+	content: replace-attr(quote("#​{message($theme, $key)}")) !important;
 }
 ```
 
@@ -95,18 +95,18 @@ Get a message from the translation map based on the defined language and output 
 
 ```sass
 .selector {
-  @include message('advice', 'nav');
+	@include message('advice', 'nav');
 }
 ```
 
 ```css
 .selector {
-  content: 'Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?';
+	content: 'Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?';
 }
 ```
 */
 @mixin message($theme, $key) {
-  content: replace-attr(quote("#{message($theme, $key)}")) !important;
+	content: replace-attr(quote("#{message($theme, $key)}")) !important;
 }
 
 
@@ -125,9 +125,9 @@ Notice the `&` before the selector, and `$self-closing: true` argument.
 
 ```scss
 @mixin void-tags {
-  @at-root #​{selector-unify($void-tags, &)} {
-    @content;
-  }
+	@at-root #​{selector-unify($void-tags, &)} {
+		@content;
+	}
 }
 
 ```
@@ -136,24 +136,24 @@ Notice the `&` before the selector, and `$self-closing: true` argument.
 
 ```sass
 .selector {
-  @include advice('nav')
+	@include advice('nav')
 
-  @include void-tags {
-    @include advice('nav', $self-closing: true);
-  }
+	@include void-tags {
+		@include advice('nav', $self-closing: true);
+	}
 }
 ```
 
 ```css
 area .selector, base .selector, br .selector, col .selector, command .selector, embed .selector, hr .selector, img .selector, input .selector, keygen .selector, link .selector, meta .selector, param .selector, source .selector, track .selector, wbr .selector, textarea .selector, select .selector, svg .selector, audio .selector, video .selector, iframe .selector {
-  content: "Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
+	content: "Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
 }
 ```
 */
 @mixin void-tags {
-  @at-root #{selector-unify($void-tags, &)} {
-    @content;
-  }
+	@at-root #{selector-unify($void-tags, &)} {
+		@content;
+	}
 }
 
 
@@ -171,12 +171,12 @@ Theme mixin including everything needed for the `$theme`, and checking test is n
 
 ```scss
 @mixin item($theme, $key, $self-closing: false, $head: false) {
-  $message-key: $theme + ':' + $key;
-  $is-disabled: index($disabled-tests, $message-key);
+	$message-key: $theme + ':' + $key;
+	$is-disabled: index($disabled-tests, $message-key);
 
-  @if is-level-enough($theme) and not $is-disabled {
-    @include a11y($theme, $key, $self-closing, $head);
-  }
+	@if is-level-enough($theme) and not $is-disabled {
+		@include a11y($theme, $key, $self-closing, $head);
+	}
 }
 ```
 
@@ -190,12 +190,12 @@ Theme mixin including everything needed for the `$theme`, and checking test is n
 | `$head`         | Whether or not a self-closing tag sits in document's head. | `Boolean` | `false`       |
 */
 @mixin item($theme, $key, $self-closing: false, $head: false) {
-  $message-key: $theme + ':' + $key;
-  $is-disabled: index($disabled-tests, $message-key);
+	$message-key: $theme + ':' + $key;
+	$is-disabled: index($disabled-tests, $message-key);
 
-  @if is-level-enough($theme) and not $is-disabled {
-    @include a11y($theme, $key, $self-closing, $head);
-  }
+	@if is-level-enough($theme) and not $is-disabled {
+		@include a11y($theme, $key, $self-closing, $head);
+	}
 }
 
 
@@ -213,7 +213,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ```scss
 @mixin error($key, $self-closing: false, $head: false) {
-  @include item('error', $key, $self-closing, $head);
+	@include item('error', $key, $self-closing, $head);
 }
 ```
 
@@ -229,12 +229,12 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ```sass
 .selector {
-  @include error("no-src");
+	@include error("no-src");
 }
 ```
 */
 @mixin error($key, $self-closing: false, $head: false) {
-  @include item('error', $key, $self-closing, $head);
+	@include item('error', $key, $self-closing, $head);
 }
 
 
@@ -252,7 +252,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ```scss
 @mixin warning($key, $self-closing: false, $head: false) {
-  @include item('warning', $key, $self-closing, $head);
+	@include item('warning', $key, $self-closing, $head);
 }
 ```
 
@@ -268,12 +268,12 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ```sass
 .selector {
-  @include warning("abbr");
+	@include warning("abbr");
 }
 ```
 */
 @mixin warning($key, $self-closing: false, $head: false) {
-  @include item('warning', $key, $self-closing, $head);
+	@include item('warning', $key, $self-closing, $head);
 }
 
 
@@ -291,7 +291,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ```scss
 @mixin obsolete($key, $self-closing: false, $head: false) {
-  @include item('obsolete', $key, $self-closing, $head);
+	@include item('obsolete', $key, $self-closing, $head);
 }
 ```
 
@@ -307,12 +307,12 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ```sass
 .selector {
-  @include obsolete("any");
+	@include obsolete("any");
 }
 ```
 */
 @mixin obsolete($key, $self-closing: false, $head: false) {
-  @include item('obsolete', $key, $self-closing, $head);
+	@include item('obsolete', $key, $self-closing, $head);
 }
 
 
@@ -330,7 +330,7 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ```scss
 @mixin advice($key, $self-closing: false, $head: false) {
-  @include item('advice', $key, $self-closing, $head);
+	@include item('advice', $key, $self-closing, $head);
 }
 ```
 
@@ -346,12 +346,12 @@ Level related mixins use `item()` mixin with a hardcoded theme name.
 
 ```sass
 .selector {
-  @include advice("nav");
+	@include advice("nav");
 }
 ```
 */
 @mixin advice($key, $self-closing: false, $head: false) {
-  @include item('advice', $key, $self-closing, $head);
+	@include item('advice', $key, $self-closing, $head);
 }
 
 
@@ -370,9 +370,9 @@ made of a level and a test identifier separated by a double-colon, e.g. `error:t
 
 ```scss
 @mixin disable-tests($keys...) {
-  @each $key in $keys {
-    $disabled-tests: append($disabled-tests, $key) !global;
-  }
+	@each $key in $keys {
+		$disabled-tests: append($disabled-tests, $key) !global;
+	}
 }
 ```
 
@@ -389,9 +389,9 @@ made of a level and a test identifier separated by a double-colon, e.g. `error:t
 ```
 */
 @mixin disable-tests($keys...) {
-  @each $key in $keys {
-    $disabled-tests: append($disabled-tests, $key) !global;
-  }
+	@each $key in $keys {
+		$disabled-tests: append($disabled-tests, $key) !global;
+	}
 }
 
 
@@ -409,14 +409,14 @@ Display messages on `<head>`'s tags.
 
 ```scss
 @mixin a11y-head($self-closing: false) {
-  // Because it's in the <head>
-  @extend %a11y-head;
+	// Because it's in the <head>
+	@extend %a11y-head;
 
-  @if $self-closing {
-    ~ link:last-of-type {
-      @extend %a11y-head;
-    }
-  }
+	@if $self-closing {
+		~ link:last-of-type {
+			@extend %a11y-head;
+		}
+	}
 }
 ```
 
@@ -430,19 +430,19 @@ Display messages on `<head>`'s tags.
 
 ```sass
 .selector {
-  @include a11y-head();
+	@include a11y-head();
 }
 ```
 */
 @mixin a11y-head($self-closing: false) {
-  // Because it's in the <head>
-  @extend %a11y-head;
+	// Because it's in the <head>
+	@extend %a11y-head;
 
-  @if $self-closing {
-    ~ link:last-of-type {
-      @extend %a11y-head;
-    }
-  }
+	@if $self-closing {
+		~ link:last-of-type {
+			@extend %a11y-head;
+		}
+	}
 }
 
 
@@ -460,27 +460,27 @@ Defines `body::after`’s `content` and `background-image` depending on `$minimu
 
 ```scss
 @mixin base-content($minimum-level) {
-  $background: ();
-  $content: ();
+	$background: ();
+	$content: ();
 
-  // @note Line breaks can be triggered by «\A» within the message content.
-  // @see issue #7, solution from @7studio
-  @each $theme in map-keys($themes) {
-    @if is-level-enough($theme) {
-      $background-offset: theme-conf($theme, 'background-offset');
-      $background-theme:
-        transparent $background-offset,
-        theme-conf($theme, 'color') $background-offset,
-        theme-conf($theme, 'color') ($background-offset + 0.2em),
-        transparent ($background-offset + 0.2em);
-      $background: append($background, $background-theme, 'comma');
-      $content-theme: quote(message('ui', $theme)) ': ' #​{counter(unquote($theme))} '\A ';
-      $content: append($content, $content-theme);
-    }
-  }
+	// @note Line breaks can be triggered by «\A» within the message content.
+	// @see issue #7, solution from @7studio
+	@each $theme in map-keys($themes) {
+		@if is-level-enough($theme) {
+			$background-offset: theme-conf($theme, 'background-offset');
+			$background-theme:
+				transparent $background-offset,
+				theme-conf($theme, 'color') $background-offset,
+				theme-conf($theme, 'color') ($background-offset + 0.2em),
+				transparent ($background-offset + 0.2em);
+			$background: append($background, $background-theme, 'comma');
+			$content-theme: quote(message('ui', $theme)) ': ' #​{counter(unquote($theme))} '\A ';
+			$content: append($content, $content-theme);
+		}
+	}
 
-  background-image: linear-gradient(to bottom, transparent, $background, transparent 100%);
-  content: $content;
+	background-image: linear-gradient(to bottom, transparent, $background, transparent 100%);
+	content: $content;
 }
 ```
 
@@ -497,27 +497,26 @@ Defines `body::after`’s `content` and `background-image` depending on `$minimu
 ```
 */
 @mixin base-content($minimum-level) {
-  $background: ();
-  $content: ();
+	$background: ();
+	$content: ();
 
-  // @note Line breaks can be triggered by «\A» within the message content.
-  // @see issue #7, solution from @7studio
-  @each $theme in map-keys($themes) {
-    @if is-level-enough($theme) {
-      $background-offset: theme-conf($theme, 'background-offset');
-      $background-theme:
-        transparent $background-offset,
-        theme-conf($theme, 'color') $background-offset,
-        theme-conf($theme, 'color') ($background-offset + 0.2em),
-        transparent ($background-offset + 0.2em);
-      $background: append($background, $background-theme, 'comma');
-      $content-theme: quote(message('ui', $theme)) ': ' #{counter(unquote($theme))} '\A ';
-      $content: append($content, $content-theme);
-    }
-  }
+	// @note Line breaks can be triggered by «\A» within the message content.
+	// @see issue #7, solution from @7studio
+	@each $theme in map-keys($themes) {
+		@if is-level-enough($theme) {
+			$background-offset: theme-conf($theme, 'background-offset');
+			$background-theme: transparent $background-offset,
+			theme-conf($theme, 'color') $background-offset,
+			theme-conf($theme, 'color') ($background-offset + 0.2em),
+			transparent ($background-offset + 0.2em);
+			$background: append($background, $background-theme, 'comma');
+			$content-theme: quote(message('ui', $theme)) ': ' #{counter(unquote($theme))} '\A ';
+			$content: append($content, $content-theme);
+		}
+	}
 
-  background-image: linear-gradient(to bottom, transparent, $background, transparent 100%);
-  content: $content;
+	background-image: linear-gradient(to bottom, transparent, $background, transparent 100%);
+	content: $content;
 }
 
 
@@ -535,24 +534,24 @@ Main mixin to display a message.
 
 ```scss
 @mixin a11y($theme, $key, $self-closing: false, $head: false) {
-  @extend %a11y-#​{$theme};
+	@extend %a11y-#​{$theme};
 
-  $base-selector: '&::after';
+	$base-selector: '&::after';
 
-  @if $self-closing {
-    $base-selector: '& + ::before';
-  }
+	@if $self-closing {
+		$base-selector: '& + ::before';
+	}
 
-  @if $head {
-    $base-selector: '& ~ link:last-of-type::before';
-  }
+	@if $head {
+		$base-selector: '& ~ link:last-of-type::before';
+	}
 
-  #​{$base-selector} {
-    @extend %a11y-before;
-    @include message($theme, $key);
-    background: theme-conf($theme, 'color') !important;
-    z-index: theme-conf($theme, 'index') !important;
-  }
+	#​{$base-selector} {
+		@extend %a11y-before;
+		@include message($theme, $key);
+		background: theme-conf($theme, 'color') !important;
+		z-index: theme-conf($theme, 'index') !important;
+	}
 }
 ```
 
@@ -572,22 +571,22 @@ Main mixin to display a message.
 ```
 */
 @mixin a11y($theme, $key, $self-closing: false, $head: false) {
-  @extend %a11y-#{$theme};
+	@extend %a11y-#{$theme};
 
-  $base-selector: '&::after';
+	$base-selector: '&::after';
 
-  @if $self-closing {
-    $base-selector: '& + ::before';
-  }
+	@if $self-closing {
+		$base-selector: '& + ::before';
+	}
 
-  @if $head {
-    $base-selector: '& ~ link:last-of-type::before';
-  }
+	@if $head {
+		$base-selector: '& ~ link:last-of-type::before';
+	}
 
-  #{$base-selector} {
-    @extend %a11y-before;
-    @include message($theme, $key);
-    background: theme-conf($theme, 'color') !important;
-    z-index: theme-conf($theme, 'index') !important;
-  }
+	#{$base-selector} {
+		@extend %a11y-before;
+		@include message($theme, $key);
+		background: theme-conf($theme, 'color') !important;
+		z-index: theme-conf($theme, 'index') !important;
+	}
 }

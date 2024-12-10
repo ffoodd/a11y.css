@@ -1,37 +1,37 @@
 [
-  {
-    "label": "Errors",
-    "href": "/errors.html",
-    "htmlClass": "errors"
-  },
-  {
-    "label": "Warnings",
-    "href": "/warnings.html",
-    "htmlClass": "warnings"
-  },
-  {
-    "label": "Obsoletes",
-    "href": "/obsoletes.html",
-    "htmlClass": "obsolete"
-  },
-  {
-    "label": "Advices",
-    "href": "/advices.html",
-    "htmlClass": "advices"
-  },
-  {
-    "label": "WebExtension",
-    "href": "/webextension.html",
-    "htmlClass": "webextension"
-  },
-  {
-    "label": "<b><abbr title=\"Application Programming Interface\">API</abbr></b> Doc",
-    "href": "/docs.html",
-    "htmlClass": "sassdoc"
-  },
-  {
-    "label": "On <b>Github</b>",
-    "href": "https://github.com/ffoodd/a11y.css",
-    "external": true
-  }
+	{
+		"label": "Errors",
+		"href": "/errors.html",
+		"htmlClass": "errors"
+	},
+	{
+		"label": "Warnings",
+		"href": "/warnings.html",
+		"htmlClass": "warnings"
+	},
+	{
+		"label": "Obsoletes",
+		"href": "/obsoletes.html",
+		"htmlClass": "obsolete"
+	},
+	{
+		"label": "Advices",
+		"href": "/advices.html",
+		"htmlClass": "advices"
+	},
+	{
+		"label": "WebExtension",
+		"href": "/webextension.html",
+		"htmlClass": "webextension"
+	},
+	{
+		"label": "<b><abbr title=\"Application Programming Interface\">API</abbr></b> Doc",
+		"href": "/docs.html",
+		"htmlClass": "sassdoc"
+	},
+	{
+		"label": "On <b>Github</b>",
+		"href": "https://github.com/ffoodd/a11y.css",
+		"external": true
+	}
 ]

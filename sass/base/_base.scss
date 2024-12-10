@@ -1,26 +1,26 @@
 @charset "UTF-8";
 
 html {
-  counter-reset: error warning obsolete advice;
+	counter-reset: error warning obsolete advice;
 }
 
 body::after {
-  @include base-content($minimum-level);
-  background-color: rgb(62, 75, 85);
-  background-position: 0.5em 0;
-  background-repeat: no-repeat;
-  background-size: 0.5em 100%;
-  color: rgb(252, 249, 233);
-  contain: content;
-  font: 700 18px/1.5 sans-serif;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  height: auto;
-  inset: auto auto 1em 1em;
-  padding: .75em 1em .75em 1.5em;
-  position: fixed;
-  width: auto;
-  white-space: pre;
-  z-index: 2147483647;
+	@include base-content($minimum-level);
+	background-color: rgb(62, 75, 85);
+	background-position: 0.5em 0;
+	background-repeat: no-repeat;
+	background-size: 0.5em 100%;
+	color: rgb(252, 249, 233);
+	contain: content;
+	font: 700 18px/1.5 sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	height: auto;
+	inset: auto auto 1em 1em;
+	padding: .75em 1em .75em 1.5em;
+	position: fixed;
+	width: auto;
+	white-space: pre;
+	z-index: 2147483647;
 }
 
 // In order to display messages in <head>
@@ -28,9 +28,9 @@ body::after {
 // Based on an idea from Mathias Bynens
 // @see https://mathiasbynens.be/notes/css-hidden-elements
 head {
-  display: block;
+	display: block;
 }
 
 head * {
-  display: none;
+	display: none;
 }

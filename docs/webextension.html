@@ -1,128 +1,134 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>WebExtension | a11y.css</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-          content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
-    <meta name="generator" content="Eleventy v3.0.0">
-    <link rel="stylesheet" href="./static/docs.css?v=1733823092538">
-    <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
-    <link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="stylesheet" href="./static/css/a11y-light.min.css">
+<head>
+	<meta charset="utf-8">
+	<title>WebExtension | a11y.css</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		  content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
+	<meta name="generator" content="Eleventy v3.0.0">
+	<link rel="stylesheet" href="./static/docs.css?v=1733827468423">
+	<link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
+	<link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	<link rel="stylesheet" href="./static/css/a11y-light.min.css">
 </head>
-  <body>
-    <div class="sr-only-focusable" id="skip-links">
-      <a href="#toc">Skip to table of content</a>
-      <a href="#content">Skip to content</a>
-    </div>
-    <header role="banner" id="top" tabindex="-1">
-  <a href="." id="logo">
-    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="89.905" viewBox="0 0 180 179.81" role="img" aria-labelledby="titre">
-      <title id="titre">a11y.css</title>
-      <path fill="#ffce00" d="M0 8a8 8 0 0 1 8-8h164a8 8 0 0 1 8 8v163.81a8 8 0 0 1-8 8H8a8 8 0 0 1-8-8V8z"/>
-      <path fill="currentColor" d="M80.83 36.9a10 10 0 0 1 5.06-7.18 7.43 7.43 0 0 1 8.53 1.53 8.76 8.76 0 0 1 2.91 6.18c0 4.71.09 64.9 0 68.32a10.42 10.42 0 0 1-1.77 5.83 8 8 0 0 1-8 3.23c-4-.86-6.63-4.74-6.75-8.71s-.01-69.07.02-69.2zM27 120.87c6-4.4 11.77-9.09 17.83-13.4-4-3.22-7.94-6.52-12.17-9.39-3.62-2.46-8.14-5.36-7-10.42a5.86 5.86 0 0 1 3.8-4.43 7.07 7.07 0 0 1 6.19 1.41c2.23 1.7 22.88 17.71 24.22 19.61a5.75 5.75 0 0 1 .63 5.93 13.16 13.16 0 0 1-5 4.79c-4.37 2.7-17.18 12.84-19.54 14.66a8.32 8.32 0 0 1-6.87 1.74 5.47 5.47 0 0 1-4-5 7.62 7.62 0 0 1 .57-3.52 5.84 5.84 0 0 1 1.34-1.98zm126.43.81c2.18 3.27 1.27 7.87-2.57 9.37-4.27 1.67-8-2.09-11.07-4.4-3.81-2.83-7.55-5.73-11.35-8.57-1.72-1.29-3.48-2.48-5.25-3.71a12.08 12.08 0 0 1-4.18-4.35 5.81 5.81 0 0 1 .42-5.41c1-1.69 23.77-19.87 25.64-20.75a6.78 6.78 0 0 1 5.5-.45 6 6 0 0 1 3.43 4.08c1.29 5.07-3.31 8.09-6.93 10.53-2.08 1.41-10.21 7.81-12.27 9.48 3.42 2.33 16.62 12.48 17.46 13.11a10 10 0 0 0 1.21 1.06zM100 141.25a11 11 0 1 1-11-11 11 11 0 0 1 11 11z"/>
-    </svg>
-  </a><nav role="navigation" aria-label="Main navigation" class="nav">
-  <ul class="list-unstyled">
-      <li>
-        <a href="./errors.html" class="errors">Errors
-        </a>
-      </li>
-      <li>
-        <a href="./warnings.html" class="warnings">Warnings
-        </a>
-      </li>
-      <li>
-        <a href="./obsoletes.html" class="obsolete">Obsoletes
-        </a>
-      </li>
-      <li>
-        <a href="./advices.html" class="advices">Advices
-        </a>
-      </li>
-      <li>
-        <a href="./webextension.html" class="webextension" aria-current="page">WebExtension
-        </a>
-      </li>
-      <li>
-        <a href="./docs.html" class="sassdoc"><b><abbr title="Application Programming Interface">API</abbr></b> Doc
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/ffoodd/a11y.css">On <b>Github</b><span class="sr-only">&nbsp;(external link)</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" width="10" height="10">
-  <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
-  <polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
+<body>
+<div class="sr-only-focusable" id="skip-links">
+	<a href="#toc">Skip to table of content</a>
+	<a href="#content">Skip to content</a>
+</div>
+<header role="banner" id="top" tabindex="-1">
+	<a href="." id="logo">
+		<svg xmlns="http://www.w3.org/2000/svg" width="90" height="89.905" viewBox="0 0 180 179.81" role="img"
+			 aria-labelledby="titre">
+			<title id="titre">a11y.css</title>
+			<path fill="#ffce00" d="M0 8a8 8 0 0 1 8-8h164a8 8 0 0 1 8 8v163.81a8 8 0 0 1-8 8H8a8 8 0 0 1-8-8V8z"/>
+			<path fill="currentColor"
+				  d="M80.83 36.9a10 10 0 0 1 5.06-7.18 7.43 7.43 0 0 1 8.53 1.53 8.76 8.76 0 0 1 2.91 6.18c0 4.71.09 64.9 0 68.32a10.42 10.42 0 0 1-1.77 5.83 8 8 0 0 1-8 3.23c-4-.86-6.63-4.74-6.75-8.71s-.01-69.07.02-69.2zM27 120.87c6-4.4 11.77-9.09 17.83-13.4-4-3.22-7.94-6.52-12.17-9.39-3.62-2.46-8.14-5.36-7-10.42a5.86 5.86 0 0 1 3.8-4.43 7.07 7.07 0 0 1 6.19 1.41c2.23 1.7 22.88 17.71 24.22 19.61a5.75 5.75 0 0 1 .63 5.93 13.16 13.16 0 0 1-5 4.79c-4.37 2.7-17.18 12.84-19.54 14.66a8.32 8.32 0 0 1-6.87 1.74 5.47 5.47 0 0 1-4-5 7.62 7.62 0 0 1 .57-3.52 5.84 5.84 0 0 1 1.34-1.98zm126.43.81c2.18 3.27 1.27 7.87-2.57 9.37-4.27 1.67-8-2.09-11.07-4.4-3.81-2.83-7.55-5.73-11.35-8.57-1.72-1.29-3.48-2.48-5.25-3.71a12.08 12.08 0 0 1-4.18-4.35 5.81 5.81 0 0 1 .42-5.41c1-1.69 23.77-19.87 25.64-20.75a6.78 6.78 0 0 1 5.5-.45 6 6 0 0 1 3.43 4.08c1.29 5.07-3.31 8.09-6.93 10.53-2.08 1.41-10.21 7.81-12.27 9.48 3.42 2.33 16.62 12.48 17.46 13.11a10 10 0 0 0 1.21 1.06zM100 141.25a11 11 0 1 1-11-11 11 11 0 0 1 11 11z"/>
+		</svg>
+	</a><nav role="navigation" aria-label="Main navigation" class="nav">
+	<ul class="list-unstyled">
+			<li>
+				<a href="./errors.html" class="errors">Errors
+				</a>
+			</li>
+			<li>
+				<a href="./warnings.html" class="warnings">Warnings
+				</a>
+			</li>
+			<li>
+				<a href="./obsoletes.html" class="obsolete">Obsoletes
+				</a>
+			</li>
+			<li>
+				<a href="./advices.html" class="advices">Advices
+				</a>
+			</li>
+			<li>
+				<a href="./webextension.html" class="webextension" aria-current="page">WebExtension
+				</a>
+			</li>
+			<li>
+				<a href="./docs.html" class="sassdoc"><b><abbr title="Application Programming Interface">API</abbr></b> Doc
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/ffoodd/a11y.css">On <b>Github</b><span class="sr-only">&nbsp;(external link)</span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" width="10" height="10">
+	<polygon fill="currentColor"
+			 points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
+	<polygon fill="currentColor"
+			 points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
 </svg>
-        </a>
-      </li>
-  </ul>
+				</a>
+			</li>
+	</ul>
 </nav>
 </header>
 
 
-    <aside role="complementary">
-      <div class="box">
-        <h3 class="box-title">Current release <code>5.2.2</code></h3>
-      </div>
-      
-<nav role="navigation" aria-labelledby="toc-title" id="toc">
-  <p class="box-title" id="toc-title">Table of content</p>
-  
-    <ol>
-        <li>
-          <a href="#check-alt-1">No alt, no title</a>
-        </li>
-        <li>
-          <a href="#check-alt-2">One alt, one title</a>
-        </li>
-        <li>
-          <a href="#check-alt-3">Empty alt, no title</a>
-        </li>
-        <li>
-          <a href="#check-alt-4">One alt, no title</a>
-        </li>
-        <li>
-          <a href="#check-alt-6">[lang]</a>
-        </li>
-        <li>
-          <a href="#check-alt-5">[hreflang]</a>
-        </li>
-    </ol>
-</nav>
+<aside role="complementary">
+	<div class="box">
+		<h3 class="box-title">Current release <code>5.2.2</code></h3>
+	</div>
+	
+	<nav role="navigation" aria-labelledby="toc-title" id="toc">
+		<p class="box-title" id="toc-title">Table of content</p>
+		
+			<ol>
+						<li>
+							<a href="#check-alt-1">No alt, no title</a>
+						</li>
+						<li>
+							<a href="#check-alt-2">One alt, one title</a>
+						</li>
+						<li>
+							<a href="#check-alt-3">Empty alt, no title</a>
+						</li>
+						<li>
+							<a href="#check-alt-4">One alt, no title</a>
+						</li>
+						<li>
+							<a href="#check-alt-6">[lang]</a>
+						</li>
+						<li>
+							<a href="#check-alt-5">[hreflang]</a>
+						</li>
+			</ol>
+	</nav>
 
 
-      <div class="box hidden-sm">
-        <h3 class="box-title">Web extensions</h3>
-        <ul class="list-unstyled">
-          <li>
-            <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
-              <img src="./static/firefox.svg" width="112" height="42" alt="a11y.css Firefox add-on"/>
-            </a>
-          </li>
-          <li>
-            <a href="https://microsoftedge.microsoft.com/addons/detail/a11ycss/lkehmahcnhddkdaemngepjckgcjnidpe" title="a11y.css Edge add-on">
-              <img src="./static/edge.svg" width="112" height="42" alt="a11y.css Edge add-on"/>
-            </a>
-          </li>
-          <li>
-            <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css Chrome extension">
-              <img src="./static/chrome.svg" width="119" height="42" alt="a11y.css Chrome extension"/>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </aside>
+	<div class="box hidden-sm">
+		<h3 class="box-title">Web extensions</h3>
+		<ul class="list-unstyled">
+			<li>
+				<a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
+					<img src="./static/firefox.svg" width="112" height="42" alt="a11y.css Firefox add-on"/>
+				</a>
+			</li>
+			<li>
+				<a href="https://microsoftedge.microsoft.com/addons/detail/a11ycss/lkehmahcnhddkdaemngepjckgcjnidpe"
+				   title="a11y.css Edge add-on">
+					<img src="./static/edge.svg" width="112" height="42" alt="a11y.css Edge add-on"/>
+				</a>
+			</li>
+			<li>
+				<a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr"
+				   title="a11y.css Chrome extension">
+					<img src="./static/chrome.svg" width="119" height="42" alt="a11y.css Chrome extension"/>
+				</a>
+			</li>
+		</ul>
+	</div>
+</aside>
 
-    <main role="main" id="content" tabindex="-1">
-      
-  <h1>WebExtension</h1>
-  
-        <article>
-          <h2 id="check-alt-0"></h2>
-          <p>The <a href="https://github.com/ffoodd/a11y.css-webextension">WebExtension — which has its own repository —</a> provides some more tools requiring a bit of JavaScript:</p>
+<main role="main" id="content" tabindex="-1">
+	
+	<h1>WebExtension</h1>
+	
+			<article>
+				<h2 id="check-alt-0"></h2>
+				<p>The <a href="https://github.com/ffoodd/a11y.css-webextension">WebExtension — which has its own repository —</a> provides some more tools requiring a bit of JavaScript:</p>
 <ul>
 <li>Force focus;</li>
 <li>Show <code>lang</code> attributes;</li>
@@ -157,71 +163,75 @@
 <li><a href="https://www.w3.org/TR/WCAG22/#text-spacing">https://www.w3.org/TR/WCAG22/#text-spacing</a></li>
 <li><a href="https://www.tpgi.com/short-note-on-getting-spaced-out-with-sc-1-4-12-text-spacing/">https://www.tpgi.com/short-note-on-getting-spaced-out-with-sc-1-4-12-text-spacing/</a>.</li>
 </ul>
-        </article>
-        <article>
-          <h2 id="check-alt-1">No alt, no title</h2>
-          <div class="pre"><div><img src="/static/checkalts/1.jpg" /><span>†</span>
+			</article>
+			<article>
+				<h2 id="check-alt-1">No alt, no title</h2>
+				<div class="pre"><div><img src="/static/checkalts/1.jpg" /><span>†</span>
 </div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/checkalts/1.jpg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
-        </article>
-        <article>
-          <h2 id="check-alt-2">One alt, one title</h2>
-          <div class="pre"><div><img alt="A typewriter" title="Last day of August" src="/static/checkalts/2.jpg" /><span>†</span>
+			</article>
+			<article>
+				<h2 id="check-alt-2">One alt, one title</h2>
+				<div class="pre"><div><img alt="A typewriter" title="Last day of August" src="/static/checkalts/2.jpg" /><span>†</span>
 </div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>A typewriter<span class="token punctuation">"</span></span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Last day of August<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/checkalts/2.jpg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
-        </article>
-        <article>
-          <h2 id="check-alt-3">Empty alt, no title</h2>
-          <div class="pre"><div><img alt="" src="/static/checkalts/3.jpg" /><span>†</span>
+			</article>
+			<article>
+				<h2 id="check-alt-3">Empty alt, no title</h2>
+				<div class="pre"><div><img alt="" src="/static/checkalts/3.jpg" /><span>†</span>
 </div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/checkalts/3.jpg<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
-        </article>
-        <article>
-          <h2 id="check-alt-4">One alt, no title</h2>
-          <div class="pre"><div><img src="/static/checkalts/4.jpg" alt="Sunset" /><span>†</span>
+			</article>
+			<article>
+				<h2 id="check-alt-4">One alt, no title</h2>
+				<div class="pre"><div><img src="/static/checkalts/4.jpg" alt="Sunset" /><span>†</span>
 </div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/checkalts/4.jpg<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Sunset<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>†<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 </code></pre></div>
-        </article>
-        <article>
-          <h2 id="check-alt-6">[lang]</h2>
-          <h3>Selector</h3>
+			</article>
+			<article>
+				<h2 id="check-alt-6">[lang]</h2>
+				<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css" data-language="CSS">[lang]
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><p>Just testing languages. <span lang="fr">Voilà</span>.</p>
 </div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Just testing languages. <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fr<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Voilà<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 </code></pre></div>
-        </article>
-        <article>
-          <h2 id="check-alt-5">[hreflang]</h2>
-          <h3>Selector</h3>
+			</article>
+			<article>
+				<h2 id="check-alt-5">[hreflang]</h2>
+				<h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css" data-language="CSS">[hreflang]
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><p>Here comes a simple to <a href="https://www.ffoodd.fr" hreflang="fr">my very own website</a>.</p>
 </div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Here comes a simple to <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://www.ffoodd.fr<span class="token punctuation">"</span></span> <span class="token attr-name">hreflang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fr<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>my very own website<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
 </code></pre></div>
-        </article>
+			</article>
 
-      
-    </main>
-    <footer role="contentinfo">
-  <p class="builtWith box">
-      Built with
-      <a href="https://www.11ty.dev/">
-        Eleventy
-        <span class="sr-only">&nbsp;(external link)</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" width="10" height="10">
-  <polygon fill="currentColor" points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
-  <polygon fill="currentColor" points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
+	
+</main>
+<footer role="contentinfo">
+	<p class="builtWith box">
+		Built with
+		<a href="https://www.11ty.dev/">
+			Eleventy
+			<span class="sr-only">&nbsp;(external link)</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" width="10" height="10">
+	<polygon fill="currentColor"
+			 points="91.875,62 85,62 85,85 15,85 15,15 38,15 38,8.125 38,0 0,0 0,100 100,100 100,62 "></polygon>
+	<polygon fill="currentColor"
+			 points="54,0 54,0.627 71.787,18.477 52.701,38 38,38 38,62 62,62 62,49.799 82.773,29.462 99.374,46 100,46 100,0 "></polygon>
 </svg>-
-      </a>.
-    </p>
-    <div>
-      <p>® 2014 —&nbsp;2024 <strong>Gaël Poupard</strong></p>
-      <p>This project is distributed under license <a href="https://opensource.org/license/mit/">MIT</a> and <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="#skip-links">Back to top</a></p>
-    </div>
+		</a>.
+	</p>
+	<div>
+		<p>® 2014 —&nbsp;2024 <strong>Gaël Poupard</strong></p>
+		<p>This project is distributed under license <a href="https://opensource.org/license/mit/">MIT</a> and <a
+				href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. <a href="#skip-links">Back to top</a>
+		</p>
+	</div>
 </footer>
 
-    <script src="./static/docs.js?v=1733823092539"></script>
-  </body>
+<script src="./static/docs.js?v=1733827468423"></script>
+</body>
 </html>
