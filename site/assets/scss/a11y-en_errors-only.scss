@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+@import '../../../sass/locales/en';
+
+@import '../../../sass/utils/all';
+@include set-minimum-level('error');
+@import '../../../sass/base/base';
+@import '../../../sass/themes/error';
