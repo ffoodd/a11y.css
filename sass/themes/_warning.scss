@@ -149,22 +149,25 @@ category: Warnings
 
 /*doc
 ---
-title: "figure without the group ARIA role"
+title: "figure without an ARIA role"
 name: figure-role
 category: Warnings
 ---
 
 ### Description
-`<figure>` needs `[role="group"]` for accessibility reason.
+`<figure>` needs `[role="figure"]` for accessibility reason.
+
+`[role="group"]` is allowed because still suggested in RGAA v4.1.2 but `[role="figure"]` should be preferred.
 
 ### References
+* <https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html>
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.9>
 * <https://www.w3.org/WAI/tutorials/images/groups/>
 * <https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element>
 
 ### Selector
 ```css
-figure:not([role="group"])
+figure:not([role="group"]):not([role="figure"])
 ```
 
 ### Test
@@ -175,7 +178,7 @@ figure:not([role="group"])
 </figure>
 ```
 */
-figure:not([role="group"]) {
+figure:not([role="group"]):not([role="figure"]) {
 	@include warning('figure-role');
 }
 
