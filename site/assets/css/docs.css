@@ -166,6 +166,7 @@ footer div {
   display: flex;
   flex: 1 0 100%;
   justify-content: space-between;
+  padding-inline: 2rem;
 }
 
 aside {
