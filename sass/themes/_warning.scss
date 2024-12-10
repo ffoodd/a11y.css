@@ -167,7 +167,7 @@ category: Warnings
 
 ### Selector
 ```css
-figure:not([role="group"]):not([role="figure"])
+figure:not([role="group"], [role="figure"])
 ```
 
 ### Test
@@ -178,7 +178,7 @@ figure:not([role="group"]):not([role="figure"])
 </figure>
 ```
 */
-figure:not([role="group"]):not([role="figure"]) {
+figure:not([role="group"], [role="figure"]) {
 	@include warning('figure-role');
 }
 

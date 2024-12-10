@@ -7,7 +7,7 @@
 	<meta name="description"
 		  content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
 	<meta name="generator" content="Eleventy v3.0.0">
-	<link rel="stylesheet" href="./static/css/docs.css?v=1733844219347">
+	<link rel="stylesheet" href="./static/css/docs.css?v=1733849070260">
 	<link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
 	<link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 	<link rel="stylesheet" href="./static/css/a11y-en_warnings-only.css"><link rel="stylesheet" href="./static/css/a11y-light.min.css">
@@ -320,7 +320,7 @@ dl > <span class="token punctuation">:</span><span class="token function">not</s
 <li><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">figure</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"group"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"figure"</span>]<span class="token punctuation">)</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">figure</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"group"</span>]<span class="token punctuation">,</span> [role=<span class="token string">"figure"</span>]<span class="token punctuation">)</span>
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><figure>
@@ -1387,6 +1387,6 @@ This also requires to check any in-page language change (marked up with <code>[l
 	</div>
 </footer>
 
-<script src="./static/docs.js?v=1733844219347"></script>
+<script src="./static/docs.js?v=1733849070260"></script>
 </body>
 </html>
