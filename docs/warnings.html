@@ -7,7 +7,7 @@
     <meta name="description"
           content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
     <meta name="generator" content="Eleventy v3.0.0">
-    <link rel="stylesheet" href="./static/docs.css?v=1733822692031">
+    <link rel="stylesheet" href="./static/docs.css?v=1733823092536">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="./static/css/a11y-en_warnings-only.css"><link rel="stylesheet" href="./static/css/a11y-light.min.css">
@@ -161,9 +161,6 @@
         </li>
         <li>
           <a href="#style-attr">[style] attribute</a>
-        </li>
-        <li>
-          <a href="#unsecured-target">Unsecured [target=_blank]</a>
         </li>
         <li>
           <a href="#no-aria-level">Missing [aria-level]</a>
@@ -1287,28 +1284,6 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 </code></pre></div>
         </article>
         <article>
-          <h2 id="unsecured-target">Unsecured [target=_blank]</h2>
-          <h3>Description</h3>
-<p><code>[target="_blank"]</code> links might be used for phishing.
-This is not actually an accessibility related issue, but everything helping users is welcome.</p>
-<h3>References*</h3>
-<ul>
-<li><a href="https://mathiasbynens.github.io/rel-noopener/">https://mathiasbynens.github.io/rel-noopener/</a></li>
-<li><a href="https://html.spec.whatwg.org/multipage/semantics.html#link-type-noopener">https://html.spec.whatwg.org/multipage/semantics.html#link-type-noopener</a></li>
-<li><a href="https://html.spec.whatwg.org/multipage/semantics.html#link-type-noreferrer">https://html.spec.whatwg.org/multipage/semantics.html#link-type-noreferrer</a></li>
-<li><a href="https://dev.to/ben/the-targetblank-vulnerability-by-example">https://dev.to/ben/the-targetblank-vulnerability-by-example</a></li>
-</ul>
-<h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS">[target$=<span class="token string">"blank"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[rel]<span class="token punctuation">)</span><span class="token punctuation">,</span>
-[target$=<span class="token string">"blank"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[rel*=<span class="token string">"noopener"</span>]<span class="token punctuation">)</span><span class="token punctuation">,</span>
-[target$=<span class="token string">"blank"</span>]<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[rel*=<span class="token string">"noreferrer"</span>]<span class="token punctuation">)</span>
-</code></pre></div>
-<h3>Test</h3>
-<div class="pre"><div><a href="/" target="_blank">I feel vulnerable…</a>
-</div><pre><code class="html language-html" data-language="Example"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">target</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>_blank<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>I feel vulnerable…<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-</code></pre></div>
-        </article>
-        <article>
           <h2 id="no-aria-level">Missing [aria-level]</h2>
           <h3>Description</h3>
 <p>Though <code>[aria-level]</code> is not required by ARIA specification, it's actually better to specify it.</p>
@@ -1398,6 +1373,6 @@ This also requires to check any in-page language change (marked up with <code>[l
     </div>
 </footer>
 
-    <script src="./static/docs.js?v=1733822692032"></script>
+    <script src="./static/docs.js?v=1733823092537"></script>
   </body>
 </html>

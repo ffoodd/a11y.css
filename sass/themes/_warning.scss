@@ -1463,42 +1463,6 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 
 /*doc
 ---
-title: "Unsecured [target=_blank]"
-name: unsecured-target
-category: Warnings
----
-
-### Description
-`[target="_blank"]` links might be used for phishing.
-This is not actually an accessibility related issue, but everything helping users is welcome.
-
-### References*
-* <https://mathiasbynens.github.io/rel-noopener/>
-* <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noopener>
-* <https://html.spec.whatwg.org/multipage/semantics.html#link-type-noreferrer>
-* <https://dev.to/ben/the-targetblank-vulnerability-by-example>
-
-### Selector
-```css
-[target$="blank"]:not([rel]),
-[target$="blank"]:not([rel*="noopener"]),
-[target$="blank"]:not([rel*="noreferrer"])
-```
-
-### Test
-``` html
-<a href="/" target="_blank">I feel vulnerable…</a>
-```
-*/
-[target$="blank"]:not([rel]),
-[target$="blank"]:not([rel*="noopener"]),
-[target$="blank"]:not([rel*="noreferrer"]) {
-  @include warning('unsecured-target');
-}
-
-
-/*doc
----
 title: "Missing [aria-level]"
 name: no-aria-level
 category: Warnings
