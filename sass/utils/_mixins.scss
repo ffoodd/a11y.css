@@ -145,7 +145,7 @@ Notice the `&` before the selector, and `$self-closing: true` argument.
 ```
 
 ```css
-area .selector, base .selector, br .selector, col .selector, command .selector, embed .selector, hr .selector, img .selector, input .selector, keygen .selector, link .selector, meta .selector, param .selector, source .selector, track .selector, wbr .selector, textarea .selector, select .selector, svg .selector, audio .selector, video .selector, iframe .selector {
+area.selector, base.selector, br.selector, col.selector, command.selector, embed.selector, hr.selector, img.selector, input.selector, keygen.selector, link.selector, meta.selector, param.selector, source.selector, track.selector, wbr.selector, textarea.selector, select.selector, svg.selector, audio.selector, video.selector, iframe.selector {
 	content: "Did you know the <nav> tag is exclusively restricted to primary and secondary navigation area?";
 }
 ```

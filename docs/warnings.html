@@ -7,7 +7,7 @@
 	<meta name="description"
 		  content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
 	<meta name="generator" content="Eleventy v3.0.0">
-	<link rel="stylesheet" href="./static/css/docs.css?v=1733840792334">
+	<link rel="stylesheet" href="./static/css/docs.css?v=1733844219347">
 	<link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
 	<link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 	<link rel="stylesheet" href="./static/css/a11y-en_warnings-only.css"><link rel="stylesheet" href="./static/css/a11y-light.min.css">
@@ -89,7 +89,7 @@
 							<a href="#invalid-figcaption-nesting">figcaption outside a figure</a>
 						</li>
 						<li>
-							<a href="#figure-role">figure without the group ARIA role</a>
+							<a href="#figure-role">figure without an ARIA role</a>
 						</li>
 						<li>
 							<a href="#invalid-nesting">Invalid nesting</a>
@@ -308,17 +308,19 @@ dl > <span class="token punctuation">:</span><span class="token function">not</s
 </code></pre></div>
 			</article>
 			<article>
-				<h2 id="figure-role">figure without the group ARIA role</h2>
+				<h2 id="figure-role">figure without an ARIA role</h2>
 				<h3>Description</h3>
-<p><code>&lt;figure&gt;</code> needs <code>[role="group"]</code> for accessibility reason.</p>
+<p><code>&lt;figure&gt;</code> needs <code>[role="figure"]</code> for accessibility reason.</p>
+<p><code>[role="group"]</code> is allowed because still suggested in RGAA v4.1.2 but <code>[role="figure"]</code> should be preferred.</p>
 <h3>References</h3>
 <ul>
+<li><a href="https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html">https://www.scottohara.me/blog/2019/01/21/how-do-you-figure.html</a></li>
 <li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.9">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#1.9</a></li>
 <li><a href="https://www.w3.org/WAI/tutorials/images/groups/">https://www.w3.org/WAI/tutorials/images/groups/</a></li>
 <li><a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">figure</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"group"</span>]<span class="token punctuation">)</span>
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token property">figure</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"group"</span>]<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>[role=<span class="token string">"figure"</span>]<span class="token punctuation">)</span>
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><figure>
@@ -1385,6 +1387,6 @@ This also requires to check any in-page language change (marked up with <code>[l
 	</div>
 </footer>
 
-<script src="./static/docs.js?v=1733840792334"></script>
+<script src="./static/docs.js?v=1733844219347"></script>
 </body>
 </html>
