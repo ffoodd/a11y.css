@@ -7,7 +7,7 @@
     <meta name="description"
           content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
     <meta name="generator" content="Eleventy v3.0.0">
-    <link rel="stylesheet" href="./static/docs.css?v=1730757200751">
+    <link rel="stylesheet" href="./static/docs.css?v=1733822692030">
     <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
     <link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="stylesheet" href="./static/css/a11y-en_obsoletes-only.css"><link rel="stylesheet" href="./static/css/a11y-light.min.css">
@@ -65,7 +65,7 @@
 
     <aside role="complementary">
       <div class="box">
-        <h3 class="box-title">Current release <code>5.2.1</code></h3>
+        <h3 class="box-title">Current release <code>5.2.2</code></h3>
       </div>
       
 <nav role="navigation" aria-labelledby="toc-title" id="toc">
@@ -126,9 +126,12 @@ frame<span class="token punctuation">,</span>
 frameset<span class="token punctuation">,</span>
 noframes<span class="token punctuation">,</span>
 isindex<span class="token punctuation">,</span>
+keygen<span class="token punctuation">,</span>
+menuitem<span class="token punctuation">,</span>
 listing<span class="token punctuation">,</span>
 nextid<span class="token punctuation">,</span>
 noembed<span class="token punctuation">,</span>
+param<span class="token punctuation">,</span>
 plaintext<span class="token punctuation">,</span>
 rb<span class="token punctuation">,</span>
 rtc<span class="token punctuation">,</span>
@@ -143,10 +146,7 @@ marquee<span class="token punctuation">,</span>
 multicol<span class="token punctuation">,</span>
 nobr<span class="token punctuation">,</span>
 spacer<span class="token punctuation">,</span>
-tt<span class="token punctuation">,</span>
-keygen<span class="token punctuation">,</span>
-menu<span class="token punctuation">,</span>
-menuitem
+tt
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><acronym title="World Wide Web Consortium">W3C</acronym>
@@ -166,36 +166,21 @@ menuitem
 </ul>
 <h3>Selector</h3>
 <div class="pre"><pre><code class="css language-css" data-language="CSS">[dropzone]<span class="token punctuation">,</span>
+[contextmenu]<span class="token punctuation">,</span>
+[onshow]<span class="token punctuation">,</span>
 a[charset]<span class="token punctuation">,</span> link[charset]<span class="token punctuation">,</span>
 a[coords]<span class="token punctuation">,</span>
 a[shape]<span class="token punctuation">,</span>
 a[methods]<span class="token punctuation">,</span> link[methods]<span class="token punctuation">,</span>
-a[name]<span class="token punctuation">,</span> embed[name]<span class="token punctuation">,</span> img[name]<span class="token punctuation">,</span> option[name]<span class="token punctuation">,</span>
+a[name]<span class="token punctuation">,</span> option[name]<span class="token punctuation">,</span> embed[name]<span class="token punctuation">,</span> img[name]<span class="token punctuation">,</span>
 a[rev]<span class="token punctuation">,</span> link[rev]<span class="token punctuation">,</span>
 a[urn]<span class="token punctuation">,</span> link[urn]<span class="token punctuation">,</span>
 form[accept]<span class="token punctuation">,</span>
-area[nohref]<span class="token punctuation">,</span>
-area[type]<span class="token punctuation">,</span>
-area[hreflang]<span class="token punctuation">,</span>
 head[profile]<span class="token punctuation">,</span>
 html[version]<span class="token punctuation">,</span>
-input[ismap]<span class="token punctuation">,</span>
-input[usemap]<span class="token punctuation">,</span>
-input[inputmode]<span class="token punctuation">,</span>
-iframe[longdesc]<span class="token punctuation">,</span> img[longdesc]<span class="token punctuation">,</span>
-img[lowsrc]<span class="token punctuation">,</span>
 link[target]<span class="token punctuation">,</span>
-meta[scheme]<span class="token punctuation">,</span>
-meta[http-equiv=<span class="token string">"content-language"</span>]<span class="token punctuation">,</span>
-meta[http-equiv=<span class="token string">"content-type"</span>]<span class="token punctuation">,</span>
-meta[http-equiv=<span class="token string">"set-cookie"</span>]<span class="token punctuation">,</span>
-object[archive]<span class="token punctuation">,</span>
-object[classid]<span class="token punctuation">,</span>
-object[code]<span class="token punctuation">,</span>
-object[codebase]<span class="token punctuation">,</span>
-object[codetype]<span class="token punctuation">,</span>
-object[declare]<span class="token punctuation">,</span>
-object[standby]<span class="token punctuation">,</span>
+menu[type]<span class="token punctuation">,</span>
+menu[label]<span class="token punctuation">,</span>
 param[type]<span class="token punctuation">,</span>
 param[valuetype]<span class="token punctuation">,</span>
 script[language]<span class="token punctuation">,</span>
@@ -206,37 +191,26 @@ table[summary]<span class="token punctuation">,</span>
 td[axis]<span class="token punctuation">,</span> th[axis]<span class="token punctuation">,</span>
 td[scope]<span class="token punctuation">,</span>
 td[abbr]<span class="token punctuation">,</span>
-a[datasrc]<span class="token punctuation">,</span> applet[datasrc]<span class="token punctuation">,</span> button[datasrc]<span class="token punctuation">,</span> div[datasrc]<span class="token punctuation">,</span> frame[datasrc]<span class="token punctuation">,</span> iframe[datasrc]<span class="token punctuation">,</span> img[datasrc]<span class="token punctuation">,</span> input[datasrc]<span class="token punctuation">,</span> label[datasrc]<span class="token punctuation">,</span> legend[datasrc]<span class="token punctuation">,</span> marquee[datasrc]<span class="token punctuation">,</span> object[datasrc]<span class="token punctuation">,</span> option[datasrc]<span class="token punctuation">,</span> select[datasrc]<span class="token punctuation">,</span> span[datasrc]<span class="token punctuation">,</span> table[datasrc]<span class="token punctuation">,</span> textarea[datasrc]<span class="token punctuation">,</span>
-a[datafld]<span class="token punctuation">,</span> applet[datafld]<span class="token punctuation">,</span> button[datafld]<span class="token punctuation">,</span> div[datafld]<span class="token punctuation">,</span> fieldset[datafld]<span class="token punctuation">,</span> frame[datafld]<span class="token punctuation">,</span> iframe[datafld]<span class="token punctuation">,</span> img[datafld]<span class="token punctuation">,</span> input[datafld]<span class="token punctuation">,</span> label[datafld]<span class="token punctuation">,</span> legend[datafld]<span class="token punctuation">,</span> marquee[datafld]<span class="token punctuation">,</span> object[datafld]<span class="token punctuation">,</span> param[datafld]<span class="token punctuation">,</span> select[datafld]<span class="token punctuation">,</span> span[datafld]<span class="token punctuation">,</span> textarea[datafld]<span class="token punctuation">,</span>
-button[dataformatas]<span class="token punctuation">,</span> div[dataformatas]<span class="token punctuation">,</span> input[dataformatas]<span class="token punctuation">,</span> label[dataformatas]<span class="token punctuation">,</span> legend[dataformatas]<span class="token punctuation">,</span> marquee[dataformatas]<span class="token punctuation">,</span> object[dataformatas]<span class="token punctuation">,</span> option[dataformatas]<span class="token punctuation">,</span> select[dataformatas]<span class="token punctuation">,</span> span[dataformatas]<span class="token punctuation">,</span> table[dataformatas]<span class="token punctuation">,</span>
+a[datasrc]<span class="token punctuation">,</span> applet[datasrc]<span class="token punctuation">,</span> button[datasrc]<span class="token punctuation">,</span> div[datasrc]<span class="token punctuation">,</span> frame[datasrc]<span class="token punctuation">,</span> label[datasrc]<span class="token punctuation">,</span> legend[datasrc]<span class="token punctuation">,</span> marquee[datasrc]<span class="token punctuation">,</span> option[datasrc]<span class="token punctuation">,</span> span[datasrc]<span class="token punctuation">,</span> table[datasrc]<span class="token punctuation">,</span>
+a[datafld]<span class="token punctuation">,</span> applet[datafld]<span class="token punctuation">,</span> button[datafld]<span class="token punctuation">,</span> div[datafld]<span class="token punctuation">,</span> fieldset[datafld]<span class="token punctuation">,</span> frame[datafld]<span class="token punctuation">,</span> label[datafld]<span class="token punctuation">,</span> legend[datafld]<span class="token punctuation">,</span> marquee[datafld]<span class="token punctuation">,</span> param[datafld]<span class="token punctuation">,</span> span[datafld]<span class="token punctuation">,</span>
+button[dataformatas]<span class="token punctuation">,</span> div[dataformatas]<span class="token punctuation">,</span> label[dataformatas]<span class="token punctuation">,</span> legend[dataformatas]<span class="token punctuation">,</span> marquee[dataformatas]<span class="token punctuation">,</span> option[dataformatas]<span class="token punctuation">,</span> span[dataformatas]<span class="token punctuation">,</span> table[dataformatas]<span class="token punctuation">,</span>
 body[alink]<span class="token punctuation">,</span>
 body[bgcolor]<span class="token punctuation">,</span> table[bgcolor]<span class="token punctuation">,</span> td[bgcolor]<span class="token punctuation">,</span> th[bgcolor]<span class="token punctuation">,</span> tr[bgcolor]<span class="token punctuation">,</span>
 body[link]<span class="token punctuation">,</span>
-body[marginbottom]<span class="token punctuation">,</span>
-body[marginheight]<span class="token punctuation">,</span> iframe[marginheight]<span class="token punctuation">,</span>
-body[marginleft]<span class="token punctuation">,</span>
-body[marginright]<span class="token punctuation">,</span>
-body[margintop]<span class="token punctuation">,</span>
-body[marginwidth]<span class="token punctuation">,</span> iframe[marginwidth]<span class="token punctuation">,</span>
+body[bottommargin]<span class="token punctuation">,</span>
+body[leftmargin]<span class="token punctuation">,</span>
+body[rightmargin]<span class="token punctuation">,</span>
+body[topmargin]<span class="token punctuation">,</span>
+body[marginheight]<span class="token punctuation">,</span>
+body[marginwidth]<span class="token punctuation">,</span>
 body[text]<span class="token punctuation">,</span>
 body[vlink]<span class="token punctuation">,</span>
-br[clear]<span class="token punctuation">,</span>
 col[char]<span class="token punctuation">,</span> tbody[char]<span class="token punctuation">,</span> thead[char]<span class="token punctuation">,</span> tfoot[char]<span class="token punctuation">,</span> td[char]<span class="token punctuation">,</span> th[char]<span class="token punctuation">,</span> tr[char]<span class="token punctuation">,</span>
 col[charoff]<span class="token punctuation">,</span> tbody[charoff]<span class="token punctuation">,</span> thead[charoff]<span class="token punctuation">,</span> tfoot[charoff]<span class="token punctuation">,</span> td[charoff]<span class="token punctuation">,</span> th[charoff]<span class="token punctuation">,</span> tr[charoff]<span class="token punctuation">,</span>
 col[valign]<span class="token punctuation">,</span> tbody[valign]<span class="token punctuation">,</span> thead[valign]<span class="token punctuation">,</span> tfoot[valign]<span class="token punctuation">,</span> td[valign]<span class="token punctuation">,</span> th[valign]<span class="token punctuation">,</span> tr[valign]<span class="token punctuation">,</span>
-col[width]<span class="token punctuation">,</span> hr[width]<span class="token punctuation">,</span> pre[width]<span class="token punctuation">,</span> table[width]<span class="token punctuation">,</span> td[width]<span class="token punctuation">,</span> th[width]<span class="token punctuation">,</span>
+col[width]<span class="token punctuation">,</span> pre[width]<span class="token punctuation">,</span> table[width]<span class="token punctuation">,</span> td[width]<span class="token punctuation">,</span> th[width]<span class="token punctuation">,</span>
 dl[compact]<span class="token punctuation">,</span> ol[compact]<span class="token punctuation">,</span> ul[compact]<span class="token punctuation">,</span>
-embed[hspace]<span class="token punctuation">,</span> iframe[hspace]<span class="token punctuation">,</span> input[hspace]<span class="token punctuation">,</span> img[hspace]<span class="token punctuation">,</span> object[hspace]<span class="token punctuation">,</span>
-embed[vspace]<span class="token punctuation">,</span> iframe[vspace]<span class="token punctuation">,</span> input[vspace]<span class="token punctuation">,</span> img[vspace]<span class="token punctuation">,</span> object[vspace]<span class="token punctuation">,</span>
-hr[color]<span class="token punctuation">,</span>
-hr[noshade]<span class="token punctuation">,</span>
-hr[size]<span class="token punctuation">,</span>
-h1[align]<span class="token punctuation">,</span> h2[align]<span class="token punctuation">,</span> h3[align]<span class="token punctuation">,</span> h4[align]<span class="token punctuation">,</span> h5[align]<span class="token punctuation">,</span> h6[align]<span class="token punctuation">,</span> iframe[align]<span class="token punctuation">,</span> caption[align]<span class="token punctuation">,</span> col[align]<span class="token punctuation">,</span> div[align]<span class="token punctuation">,</span> embed[align]<span class="token punctuation">,</span> hr[align]<span class="token punctuation">,</span> input[align]<span class="token punctuation">,</span> img[align]<span class="token punctuation">,</span> legend[align]<span class="token punctuation">,</span> object[align]<span class="token punctuation">,</span> p[align]<span class="token punctuation">,</span> table[align]<span class="token punctuation">,</span> tbody[align]<span class="token punctuation">,</span> thead[align]<span class="token punctuation">,</span> tfoot[align]<span class="token punctuation">,</span> td[align]<span class="token punctuation">,</span> th[align]<span class="token punctuation">,</span> tr[align]<span class="token punctuation">,</span>
-iframe[allowtransparency]<span class="token punctuation">,</span>
-iframe[frameborder]<span class="token punctuation">,</span>
-iframe[framespacing]<span class="token punctuation">,</span>
-iframe[scrolling]<span class="token punctuation">,</span>
-img[border]<span class="token punctuation">,</span> object[border]<span class="token punctuation">,</span>
+h1[align]<span class="token punctuation">,</span> h2[align]<span class="token punctuation">,</span> h3[align]<span class="token punctuation">,</span> h4[align]<span class="token punctuation">,</span> h5[align]<span class="token punctuation">,</span> h6[align]<span class="token punctuation">,</span> caption[align]<span class="token punctuation">,</span> col[align]<span class="token punctuation">,</span> div[align]<span class="token punctuation">,</span> legend[align]<span class="token punctuation">,</span> p[align]<span class="token punctuation">,</span> table[align]<span class="token punctuation">,</span> tbody[align]<span class="token punctuation">,</span> thead[align]<span class="token punctuation">,</span> tfoot[align]<span class="token punctuation">,</span> td[align]<span class="token punctuation">,</span> th[align]<span class="token punctuation">,</span> tr[align]<span class="token punctuation">,</span>
 li[type]<span class="token punctuation">,</span> ul[type]<span class="token punctuation">,</span>
 table[cellpadding]<span class="token punctuation">,</span>
 table[cellspacing]<span class="token punctuation">,</span>
@@ -244,7 +218,50 @@ table[frame]<span class="token punctuation">,</span>
 table[rules]<span class="token punctuation">,</span>
 td[height]<span class="token punctuation">,</span> th[height]<span class="token punctuation">,</span>
 td[nowrap]<span class="token punctuation">,</span> th[nowrap]<span class="token punctuation">,</span>
-body[background]<span class="token punctuation">,</span> table[background]<span class="token punctuation">,</span> thead[background]<span class="token punctuation">,</span> tbody[background]<span class="token punctuation">,</span> tfoot[background]<span class="token punctuation">,</span> tr[background]<span class="token punctuation">,</span> td[background]<span class="token punctuation">,</span> th[background]
+body[background]<span class="token punctuation">,</span> table[background]<span class="token punctuation">,</span> thead[background]<span class="token punctuation">,</span> tbody[background]<span class="token punctuation">,</span> tfoot[background]<span class="token punctuation">,</span> tr[background]<span class="token punctuation">,</span> td[background]<span class="token punctuation">,</span> th[background]<span class="token punctuation">,</span>
+// Self-closing tags
+embed[name]<span class="token punctuation">,</span> img[name]<span class="token punctuation">,</span>
+area[nohref]<span class="token punctuation">,</span>
+area[type]<span class="token punctuation">,</span>
+area[hreflang]<span class="token punctuation">,</span>
+input[ismap]<span class="token punctuation">,</span>
+input[usemap]<span class="token punctuation">,</span>
+iframe[longdesc]<span class="token punctuation">,</span> img[longdesc]<span class="token punctuation">,</span>
+img[lowsrc]<span class="token punctuation">,</span>
+object[archive]<span class="token punctuation">,</span>
+object[classid]<span class="token punctuation">,</span>
+object[code]<span class="token punctuation">,</span>
+object[codebase]<span class="token punctuation">,</span>
+object[codetype]<span class="token punctuation">,</span>
+object[declare]<span class="token punctuation">,</span>
+object[standby]<span class="token punctuation">,</span>
+object[typemustmatch]<span class="token punctuation">,</span>
+iframe[datasrc]<span class="token punctuation">,</span> img[datasrc]<span class="token punctuation">,</span> input[datasrc]<span class="token punctuation">,</span>object[datasrc]<span class="token punctuation">,</span> select[datasrc]<span class="token punctuation">,</span> textarea[datasrc]<span class="token punctuation">,</span>
+iframe[datafld]<span class="token punctuation">,</span> img[datafld]<span class="token punctuation">,</span> input[datafld]<span class="token punctuation">,</span> object[datafld]<span class="token punctuation">,</span> select[datafld]<span class="token punctuation">,</span> textarea[datafld]<span class="token punctuation">,</span>
+input[dataformatas]<span class="token punctuation">,</span> object[dataformatas]<span class="token punctuation">,</span> select[dataformatas]<span class="token punctuation">,</span>
+iframe[marginheight]<span class="token punctuation">,</span>
+iframe[marginwidth]<span class="token punctuation">,</span>
+br[clear]<span class="token punctuation">,</span>
+hr[width]<span class="token punctuation">,</span>
+embed[hspace]<span class="token punctuation">,</span> iframe[hspace]<span class="token punctuation">,</span> input[hspace]<span class="token punctuation">,</span> img[hspace]<span class="token punctuation">,</span> object[hspace]<span class="token punctuation">,</span>
+embed[vspace]<span class="token punctuation">,</span> iframe[vspace]<span class="token punctuation">,</span> input[vspace]<span class="token punctuation">,</span> img[vspace]<span class="token punctuation">,</span> object[vspace]<span class="token punctuation">,</span>
+hr[color]<span class="token punctuation">,</span>
+hr[noshade]<span class="token punctuation">,</span>
+hr[size]<span class="token punctuation">,</span>
+iframe[align]<span class="token punctuation">,</span> embed[align]<span class="token punctuation">,</span> hr[align]<span class="token punctuation">,</span> input[align]<span class="token punctuation">,</span> img[align]<span class="token punctuation">,</span> object[align]<span class="token punctuation">,</span>
+iframe[allowtransparency]<span class="token punctuation">,</span>
+iframe[frameborder]<span class="token punctuation">,</span>
+iframe[framespacing]<span class="token punctuation">,</span>
+iframe[scrolling]<span class="token punctuation">,</span>
+img[border]<span class="token punctuation">,</span> object[border]<span class="token punctuation">,</span>
+// Tags in head
+link[charset]<span class="token punctuation">,</span> link[methods]<span class="token punctuation">,</span>
+link[rev]<span class="token punctuation">,</span> link[urn]<span class="token punctuation">,</span>
+link[target]<span class="token punctuation">,</span>
+meta[scheme]<span class="token punctuation">,</span>
+script[language]<span class="token punctuation">,</span>
+script[event]<span class="token punctuation">,</span>
+script[for]
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><h3 align="right">I'm using [align]!</h3>
@@ -271,6 +288,6 @@ body[background]<span class="token punctuation">,</span> table[background]<span 
     </div>
 </footer>
 
-    <script src="./static/docs.js?v=1730757200751"></script>
+    <script src="./static/docs.js?v=1733822692031"></script>
   </body>
 </html>
