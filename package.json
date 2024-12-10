@@ -20,6 +20,12 @@
 		"sass",
 		"scss"
 	],
+	"files": [
+		"sass/",
+		"css/"
+	],
+	"sass": "sass/a11y-en.scss",
+	"style": "css/a11y-en.css",
 	"scripts": {
 		"start": "concurrently --kill-others \"npm:watch:*\"",
 		"docs": "npm run docs:js && npm run docs:css && eleventy",
