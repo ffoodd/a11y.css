@@ -15,26 +15,26 @@ This map holds configuration for all themes. Each theme has an icon, a color and
 
 ```scss
 $themes: (
-  'error': (
-    'color': #d90b0b,
-    'index': 2147483647,
-    'background-offset': 1.4em
-  ),
-  'warning': (
-    'color': #f50,
-    'index': 2147483646,
-    'background-offset': 2.9em
-  ),
-  'obsolete': (
-    'color': royalblue,
-    'index': 2147483645,
-    'background-offset': 4.4em
-  ),
-  'advice': (
-    'color': green,
-    'index': 2147483644,
-    'background-offset': 5.9em
-  ),
+	'error': (
+		'color': #d90b0b,
+		'index': 2147483647,
+		'background-offset': 1.4em
+	),
+	'warning': (
+		'color': #f50,
+		'index': 2147483646,
+		'background-offset': 2.9em
+	),
+	'obsolete': (
+		'color': royalblue,
+		'index': 2147483645,
+		'background-offset': 4.4em
+	),
+	'advice': (
+		'color': green,
+		'index': 2147483644,
+		'background-offset': 5.9em
+	),
 );
 ```
 
@@ -53,26 +53,26 @@ $themes: (
 - [`base-content()` mixin](#Mixins-base-content)
 */
 $themes: (
-  'error': (
-    'color': #d90b0b,
-    'index': 2147483647,
-    'background-offset': 1.4em
-  ),
-  'warning': (
-    'color': #f50,
-    'index': 2147483646,
-    'background-offset': 2.9em
-  ),
-  'obsolete': (
-    'color': royalblue,
-    'index': 2147483645,
-    'background-offset': 4.4em
-  ),
-  'advice': (
-    'color': green,
-    'index': 2147483644,
-    'background-offset': 5.9em
-  ),
+	'error': (
+		'color': #d90b0b,
+		'index': 2147483647,
+		'background-offset': 1.4em
+	),
+	'warning': (
+		'color': #f50,
+		'index': 2147483646,
+		'background-offset': 2.9em
+	),
+	'obsolete': (
+		'color': royalblue,
+		'index': 2147483645,
+		'background-offset': 4.4em
+	),
+	'advice': (
+		'color': green,
+		'index': 2147483644,
+		'background-offset': 5.9em
+	),
 );
 
 

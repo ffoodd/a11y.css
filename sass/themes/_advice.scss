@@ -24,14 +24,14 @@ select[required]:not([multiple], [size])
 ## Test
 ```html
 <select name="slices" required>
-  <option value="1">Cheese</option>
-  <option value="2">Salami</option>
+	<option value="1">Cheese</option>
+	<option value="2">Salami</option>
 </select><span>†</span>
 ```
 */
 select[required]:not([multiple])[size="1"],
 select[required]:not([multiple], [size]) {
-  @include advice('select-option-not-empty', $self-closing: true);
+	@include advice('select-option-not-empty', $self-closing: true);
 }
 
 
@@ -58,11 +58,11 @@ category: Advices
 */
 [class=""],
 [class=" "] {
-  @include advice('empty-class');
+	@include advice('empty-class');
 
-  @include void-tags {
-    @include advice('empty-class', $self-closing: true);
-  }
+	@include void-tags {
+		@include advice('empty-class', $self-closing: true);
+	}
 }
 
 
@@ -89,11 +89,11 @@ category: Advices
 */
 [id=""],
 [id=" "] {
-  @include advice('empty-id');
+	@include advice('empty-id');
 
-  @include void-tags {
-    @include advice('empty-id', $self-closing: true);
-  }
+	@include void-tags {
+		@include advice('empty-id', $self-closing: true);
+	}
 }
 
 
@@ -122,7 +122,7 @@ main ~ main:not([hidden])
 ```
 */
 main ~ main:not([hidden]) {
-  @include advice('main');
+	@include advice('main');
 }
 
 
@@ -147,14 +147,14 @@ figcaption:not(:first-of-type)
 ### Test
 ``` html
 <figure role="group">
-  <figcaption>I'm the caption.</figcaption>
-  <img src="/static/ffoodd.png" alt="Needed" width="144" height="144" />
-  <figcaption>I'm the caption too.</figcaption>
+	<figcaption>I'm the caption.</figcaption>
+	<img src="/static/ffoodd.png" alt="Needed" width="144" height="144" />
+	<figcaption>I'm the caption too.</figcaption>
 </figure>
 ```
 */
 figcaption:not(:first-of-type) {
-  @include advice('figcaption');
+	@include advice('figcaption');
 }
 
 
@@ -179,14 +179,14 @@ figcaption:not(:first-child, :last-child)
 ### Test
 ``` html
 <figure role="group">
-  <img src="/static/ffoodd.png" alt="Needed" width="144" height="144" />
-  <figcaption>I'm the caption.</figcaption>
-  <p>I'm something else. Oh, wait.</p>
+	<img src="/static/ffoodd.png" alt="Needed" width="144" height="144" />
+	<figcaption>I'm the caption.</figcaption>
+	<p>I'm something else. Oh, wait.</p>
 </figure>
 ```
 */
 figcaption:not(:first-child, :last-child) {
-  @include advice('figcaption-order');
+	@include advice('figcaption-order');
 }
 
 
@@ -212,7 +212,7 @@ Otherwise you may annoy your users.
 ```
 */
 [href^="mailto"] {
-  @include advice('mailto');
+	@include advice('mailto');
 }
 
 
@@ -238,7 +238,7 @@ Otherwise you may make your users to call anubody.
 ```
 */
 [href^="tel"] {
-  @include advice('tel');
+	@include advice('tel');
 }
 
 
@@ -266,7 +266,7 @@ a[role="button"]
 ```
 */
 a[role="button"] {
-  @include advice('role-button');
+	@include advice('role-button');
 }
 
 
@@ -300,7 +300,7 @@ You could use a `[title]`, for example.
 ```
 */
 [target$="blank"] {
-  @include advice('target-blank');
+	@include advice('target-blank');
 }
 
 
@@ -350,11 +350,11 @@ A link to a file should indicate the file format, the file size and if different
 $href: ('[download]');
 
 @each $format in $formats {
-  $href: append($href, unquote('[href$=".#{$format}"]:not(link)'), 'comma');
+	$href: append($href, unquote('[href$=".#{$format}"]:not(link)'), 'comma');
 }
 
 #{$href} {
-  @include advice('file-format');
+	@include advice('file-format');
 }
 
 
@@ -390,7 +390,7 @@ Some ARIA roles should be unique: at least `[main]`, `[search]`, `[banner]`, `[c
 [role="search"] ~ [role="search"],
 [role="banner"] ~ [role="banner"],
 [role="contentinfo"] ~ [role="contentinfo"] {
-  @include advice('duplicate-roles');
+	@include advice('duplicate-roles');
 }
 
 
@@ -417,24 +417,24 @@ A `[class]` or `[id]` containing search may carry the search ARIA `[role]`.
 ### Test
 ``` html
 <form class="search" action="">
-  <label for="field">Search</label>
-  <input type="search" id="field" /><span>†</span>
+	<label for="field">Search</label>
+	<input type="search" id="field" /><span>†</span>
 </form>
 ```
 */
 [id*="search"]:not([role="search"]),
 [class*="search"]:not([role="search"]) {
-  @include advice('missing-role');
+	@include advice('missing-role');
 }
 
 input[id*="search"]:not([role="search"]),
 input[class*="search"]:not([role="search"]) {
-  @include advice('missing-role', $self-closing: true);
+	@include advice('missing-role', $self-closing: true);
 }
 
 [role="search"] [id*="search"]:not([role="search"]),
 [role="search"] [class*="search"]:not([role="search"]) {
-  @extend %a11y-reset;
+	@extend %a11y-reset;
 }
 
 
@@ -461,14 +461,14 @@ A `[required]` or `[aria-required]` should be visually understandable.
 ### Test
 ``` html
 <form action="">
-  <label for="field">Fied</label>
-  <textarea id="field" required></textarea><span>†</span>
+	<label for="field">Fied</label>
+	<textarea id="field" required></textarea><span>†</span>
 </form>
 ```
 */
 [required],
 [aria-required] {
-  @include advice('required', $self-closing: true);
+	@include advice('required', $self-closing: true);
 }
 
 input[required],
@@ -477,7 +477,7 @@ select[required],
 select[aria-required],
 textarea[required],
 textarea[aria-required] {
-  @include advice('required', $self-closing: true);
+	@include advice('required', $self-closing: true);
 }
 
 
@@ -508,11 +508,11 @@ A `[hidden]` or `[aria-hidden]` may not be a good idea if hiding content.
 */
 [hidden]:not(:empty),
 [aria-hidden="true"]:not(:empty) {
-  @include advice('hidden');
+	@include advice('hidden');
 
-  @include void-tags {
-    @include advice('hidden', $self-closing: true);
-  }
+	@include void-tags {
+		@include advice('hidden', $self-closing: true);
+	}
 }
 
 
@@ -537,11 +537,11 @@ A `[placeholder]` is not a label, is it?
 ```
 */
 [placeholder]:not([title], [aria-label], [aria-labelledby]) {
-  @include advice('placeholder', $self-closing: true);
+	@include advice('placeholder', $self-closing: true);
 }
 
 label [placeholder]:not([title], [aria-label], [aria-labelledby]) {
-  @extend %a11y-reset;
+	@extend %a11y-reset;
 }
 
 
@@ -575,7 +575,7 @@ audio
 */
 video,
 audio {
-  @include advice('video-audio', $self-closing: true);
+	@include advice('video-audio', $self-closing: true);
 }
 
 
@@ -610,7 +610,7 @@ svg[aria-label][title]
 img[alt][title],
 area[alt][title],
 svg[aria-label][title] {
-  @include advice('title', $self-closing: true);
+	@include advice('title', $self-closing: true);
 }
 
 
@@ -637,7 +637,7 @@ time,
 */
 time,
 [datetime] {
-  @include advice('time');
+	@include advice('time');
 }
 
 
@@ -664,28 +664,28 @@ th[scope]
 ### Test
 ``` html
 <table>
-  <caption>I'm a caption</caption>
-  <thead>
-    <tr>
-      <th scope="col">First column</th>
-      <td>Second column</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>First cell</td>
-      <td>Second cell</td>
-    </tr>
-    <tr>
-      <td>First cell</td>
-      <td>Second cell</td>
-    </tr>
-  </tbody>
+	<caption>I'm a caption</caption>
+	<thead>
+		<tr>
+			<th scope="col">First column</th>
+			<td>Second column</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>First cell</td>
+			<td>Second cell</td>
+		</tr>
+		<tr>
+			<td>First cell</td>
+			 <td>Second cell</td>
+		</tr>
+	</tbody>
 </table>
 ```
 */
 th[scope] {
-  @include advice('th-scope');
+	@include advice('th-scope');
 }
 
 
@@ -711,19 +711,19 @@ table[role="presentation"]
 ### Test
 ``` html
 <table role="presentation">
-  <tr>
-    <td>First cell</td>
-    <td>Second cell</td>
-  </tr>
-  <tr>
-    <td>First cell</td>
-    <td>Second cell</td>
-  </tr>
+	<tr>
+		<td>First cell</td>
+		<td>Second cell</td>
+	</tr>
+	<tr>
+		<td>First cell</td>
+		<td>Second cell</td>
+	</tr>
 </table>
 ```
 */
 table[role="presentation"] {
-  @include advice('table-presentation');
+	@include advice('table-presentation');
 }
 
 
@@ -753,7 +753,7 @@ a:not([href])
 ```
 */
 a:not([href]) {
-  @include advice('no-href');
+	@include advice('no-href');
 }
 
 
@@ -785,5 +785,5 @@ When possible, try to use HTTPS.
 */
 [src^="http:"],
 [href^="http:"] {
-  @include advice('no-https');
+	@include advice('no-https');
 }

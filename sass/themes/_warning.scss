@@ -28,14 +28,14 @@ ol > :not(li),
 ### Test
 ``` html
 <ul>
-  <p>I feel like I'm lost.</p>
+	<p>I feel like I'm lost.</p>
 </ul>
 ```
 */
 ul > :not(li),
 ol > :not(li),
 :not(ul, ol) > li {
-  @include warning('invalid-list-nesting');
+	@include warning('invalid-list-nesting');
 }
 
 
@@ -65,14 +65,14 @@ dt + :not(dd),
 ### Test
 ``` html
 <dl>
-  <dt>I need a definition, don't you think?</dt>
-  <li>I'm a list item.</li>
+	<dt>I need a definition, don't you think?</dt>
+	<li>I'm a list item.</li>
 </dl>
 ```
 */
 dt + :not(dd),
 :not(dt, dd) + dd {
-  @include warning('invalid-def');
+	@include warning('invalid-def');
 }
 
 
@@ -105,14 +105,14 @@ dl > :not(dt, dd, div)
 ### Test
 ``` html
 <dl>
-  <li>I'm a list item.</li>
+	<li>I'm a list item.</li>
 </dl>
 ```
 */
 :not(dl) > dt,
 :not(dl) > dd,
 dl > :not(dt, dd, div) {
-  @include warning('invalid-def-nesting');
+	@include warning('invalid-def-nesting');
 }
 
 
@@ -143,7 +143,7 @@ category: Warnings
 ```
 */
 :not(figure) > figcaption {
-  @include warning('invalid-figcaption-nesting');
+	@include warning('invalid-figcaption-nesting');
 }
 
 
@@ -170,13 +170,13 @@ figure:not([role="group"])
 ### Test
 ``` html
 <figure>
-  <img src="/static/ffoodd.png" width="144" height="144" alt="Figcaption test"/>
-  <figcaption>I'm a figcaption</figcaption>
+	<img src="/static/ffoodd.png" width="144" height="144" alt="Figcaption test"/>
+	<figcaption>I'm a figcaption</figcaption>
 </figure>
 ```
 */
 figure:not([role="group"]) {
-  @include warning('figure-role');
+	@include warning('figure-role');
 }
 
 
@@ -190,8 +190,8 @@ category: Warnings
 ### Description
 Some nestings are forbidden, and do not have their own test case for now:
 
-* `<main>`  contained in any of `<nav>`, `<aside>`, `<footer>`, `<header>` or `<article>`;
-* `<address>`  containing any of `<address>`, `<nav>`, `<aside>`, `<section>`, `<footer>`, `<header>` or `<article>` — neither headings;
+* `<main>` contained in any of `<nav>`, `<aside>`, `<footer>`, `<header>` or `<article>`;
+* `<address>` containing any of `<address>`, `<nav>`, `<aside>`, `<section>`, `<footer>`, `<header>` or `<article>` — neither headings;
 * `<option>` and `<optgroup>` outside a `<select>`;
 * `<legend>` outside a `<fieldset>`;
 * `<td>` or `<th>` outside a `<tr>`;
@@ -274,7 +274,7 @@ address footer,
 address address,
 address article,
 address section {
-  @include warning('invalid-nesting');
+	@include warning('invalid-nesting');
 }
 
 
@@ -323,7 +323,7 @@ span div,
 small div,
 label div,
 strong div {
-  @include warning('misplaced-div');
+	@include warning('misplaced-div');
 }
 
 
@@ -356,7 +356,7 @@ article > article:first-child
 ### Test
 ``` html
 <aside>
-  <section>I'm wrapping, you know.</section>
+	<section>I'm wrapping, you know.</section>
 </aside>
 ```
 */
@@ -367,7 +367,7 @@ aside > section:first-child,
 section > section:first-child,
 article > section:first-child,
 article > article:first-child {
-  @include warning('sectioning-tags');
+	@include warning('sectioning-tags');
 }
 
 
@@ -397,13 +397,13 @@ fieldset > legend:not(:first-child)
 ### Test
 ``` html
 <fieldset>
-  <label>I'm not a legend.</label>
+	<label>I'm not a legend.</label>
 </fieldset>
 ```
 */
 fieldset > *:not(legend):first-child,
 fieldset > legend:not(:first-child) {
-  @include warning('fieldset');
+	@include warning('fieldset');
 }
 
 
@@ -434,13 +434,13 @@ details > summary:not(:first-child)
 ### Test
 ``` html
 <details>
-  <legend>I'm not a summary.</legend>
+	<legend>I'm not a summary.</legend>
 </details>
 ```
 */
 details > *:not(summary):first-child,
 details > summary:not(:first-child) {
-  @include warning('details');
+	@include warning('details');
 }
 
 
@@ -477,7 +477,7 @@ abbr[title=""]
 abbr:not([title]),
 abbr[title=" "],
 abbr[title=""] {
-  @include warning('empty-title');
+	@include warning('empty-title');
 }
 
 
@@ -520,12 +520,12 @@ object[type="image"][alt=""]
 img[alt=""],
 area[alt=""],
 input[type="image"][alt=""] {
-  @include warning('empty-alt', $self-closing: true);
+	@include warning('empty-alt', $self-closing: true);
 }
 
 embed[type="image"][alt=""],
 object[type="image"][alt=""] {
-  @include warning('empty-alt');
+	@include warning('empty-alt');
 }
 
 
@@ -652,16 +652,16 @@ $alt: ();
 $self-alt: ();
 
 @each $format in $formats {
-  $alt: append($alt, unquote('img[alt$=".#{$format}"], area[alt$=".#{$format}"], input[type="image"][alt$=".#{$format}"]'), 'comma');
-  $self-alt: append($self-alt, unquote('embed[type="image"][alt$=".#{$format}"], object[type="image"][alt$=".#{$format}"]'), 'comma');
+	$alt: append($alt, unquote('img[alt$=".#{$format}"], area[alt$=".#{$format}"], input[type="image"][alt$=".#{$format}"]'), 'comma');
+	$self-alt: append($self-alt, unquote('embed[type="image"][alt$=".#{$format}"], object[type="image"][alt$=".#{$format}"]'), 'comma');
 }
 
 #{$alt} {
-  @include warning('filename-alt', $self-closing: true);
+	@include warning('filename-alt', $self-closing: true);
 }
 
 #{$self-alt} {
-  @include warning('filename-alt');
+	@include warning('filename-alt');
 }
 
 
@@ -730,10 +730,10 @@ object[type="image"][aria-hidden="true"][aria-describedby],
 ### Test
 ``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg"
-     aria-hidden="true" title="Decorative SVG, you punk!">
-  <rect x="400" y="100" width="400" height="200"
-        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+	xmlns="http://www.w3.org/2000/svg"
+	aria-hidden="true" title="Decorative SVG, you punk!">
+	<rect x="400" y="100" width="400" height="200"
+		fill="forestgreen" stroke="darkgreen" stroke-width="10"/>
 </svg><span>†</span>
 ```
 */
@@ -754,7 +754,7 @@ embed[type="image"][aria-hidden="true"][title],
 embed[type="image"][aria-hidden="true"][aria-label],
 embed[type="image"][aria-hidden="true"][aria-labelledby],
 embed[type="image"][aria-hidden="true"][aria-describedby], {
-  @include warning('decoration', $self-closing: true);
+	@include warning('decoration', $self-closing: true);
 }
 
 canvas[aria-hidden="true"][title],
@@ -765,7 +765,7 @@ object[type="image"][aria-hidden="true"][title],
 object[type="image"][aria-hidden="true"][aria-label],
 object[type="image"][aria-hidden="true"][aria-labelledby],
 object[type="image"][aria-hidden="true"][aria-describedby] {
-  @include warning('decoration');
+	@include warning('decoration');
 }
 
 
@@ -799,10 +799,10 @@ object[role="presentation"]
 ### Test
 ``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg"
-     role="presentation">
-  <rect x="400" y="100" width="400" height="200"
-        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+	xmlns="http://www.w3.org/2000/svg"
+	role="presentation">
+	<rect x="400" y="100" width="400" height="200"
+		fill="forestgreen" stroke="darkgreen" stroke-width="10"/>
 </svg><span>†</span>
 ```
 */
@@ -810,12 +810,12 @@ img[role="presentation"],
 svg[role="presentation"],
 area[role="presentation"],
 embed[role="presentation"] {
-  @include warning('presentation', $self-closing: true);
+	@include warning('presentation', $self-closing: true);
 }
 
 canvas[role="presentation"],
 object[role="presentation"] {
-  @include warning('presentation');
+	@include warning('presentation');
 }
 
 
@@ -842,15 +842,15 @@ svg:not([aria-hidden="true"], [role="img"])
 ### Test
 ``` html
 <svg width="12cm" height="4cm" viewBox="0 0 1200 400"
-     xmlns="http://www.w3.org/2000/svg"
-     aria-label="Decorative SVG, you punk!">
-  <rect x="400" y="100" width="400" height="200"
-        fill="forestgreen" stroke="darkgreen" stroke-width="10"  />
+	xmlns="http://www.w3.org/2000/svg"
+	aria-label="Decorative SVG, you punk!">
+	<rect x="400" y="100" width="400" height="200"
+		fill="forestgreen" stroke="darkgreen" stroke-width="10"/>
 </svg><span>†</span>
 ```
 */
 svg:not([aria-hidden="true"], [role="img"]) {
-  @include warning('no-aria-role', $self-closing: true);
+	@include warning('no-aria-role', $self-closing: true);
 }
 
 
@@ -883,7 +883,7 @@ audio[autoplay]
 */
 video[autoplay],
 audio[autoplay] {
-  @include warning('autoplay', $self-closing: true);
+	@include warning('autoplay', $self-closing: true);
 }
 
 
@@ -918,7 +918,7 @@ audio:not([controls])
 */
 video:not([controls]),
 audio:not([controls]) {
-  @include warning('controls', $self-closing: true);
+	@include warning('controls', $self-closing: true);
 }
 
 
@@ -966,14 +966,14 @@ body *:empty:not([hidden], [aria-hidden], [src], button, a, iframe, textarea, ar
  * @note Won't do anything for inline elements.
  */
 body *:empty:not([hidden], [aria-hidden], [src], button, a, iframe, textarea, area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, title) {
-  @include warning('empty-nodes');
-  /* 1 */
-  min-height: 1px;
-  min-width: 1px;
+	@include warning('empty-nodes');
+	/* 1 */
+	min-height: 1px;
+	min-width: 1px;
 }
 
 svg *:empty:not(title, desc, [hidden], [aria-hidden], [src], button, a, iframe, textarea, area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr) {
-  @extend %a11y-reset;
+	@extend %a11y-reset;
 }
 
 
@@ -1001,23 +1001,23 @@ table:not([role="presentation"]) > tbody > tr:only-child
 ### Test
 ``` html
 <table>
-  <caption>I'm a caption :3</caption>
-  <thead>
-    <tr>
-      <th scope="col">Oh boy…</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>I'm a poor lonesone table-roooow!</td>
-    </tr>
-  </tbody>
+	<caption>I'm a caption :3</caption>
+	<thead>
+		<tr>
+			<th scope="col">Oh boy…</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>I'm a poor lonesone table-roooow!</td>
+		</tr>
+	</tbody>
 </table>
 ```
 */
 table:not([role="presentation"]) > tr:only-child,
 table:not([role="presentation"]) > tbody > tr:only-child {
-  @include warning('table-layout');
+	@include warning('table-layout');
 }
 
 
@@ -1045,41 +1045,42 @@ table table
 ### Test
 ``` html
 <table>
-  <caption>I'm a caption :3</caption>
-  <thead>
-    <tr>
-      <th scope="col">Oh boy…</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>I'm a table-cell!</td>
-    </tr>
-    <tr>
-      <td>
-        <table>
-          <caption>I'm a caption too!</caption>
-          <thead>
-            <tr>
-              <th scope="col">Oh boy…</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>I'm a table-cell!</td>
-            </tr>
-            <tr>
-              <td>I'm a table-cell!</td>
-            </tr>
-        </table>
-      </td>
-    </tr>
-  </tbody>
+	<caption>I'm a caption :3</caption>
+	<thead>
+		<tr>
+			<th scope="col">Oh boy…</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>I'm a table-cell!</td>
+		</tr>
+		<tr>
+			<td>
+				<table>
+					<caption>I'm a caption too!</caption>
+					<thead>
+						<tr>
+							<th scope="col">Oh boy…</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>I'm a table-cell!</td>
+						</tr>
+						<tr>
+							<td>I'm a table-cell!</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
 </table>
 ```
 */
 table table {
-  @include warning('nested-table');
+	@include warning('nested-table');
 }
 
 
@@ -1110,26 +1111,26 @@ table:not([role="presentation"]) > *:first-child:not(caption)
 ### Test
 ``` html
 <table>
-  <thead>
-    <tr>
-      <th id="th-one">I'm a table without a caption!</th>
-      <th id="th-two">I'm a table without a caption!</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan="2" headers="th-one th-two">I'm a table without a caption!</td>
-    </tr>
-    <tr>
-      <td colspan="2" headers="th-one th-two">I'm a table without a caption!</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th id="th-one">I'm a table without a caption!</th>
+			<th id="th-two">I'm a table without a caption!</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2" headers="th-one th-two">I'm a table without a caption!</td>
+		</tr>
+		<tr>
+			<td colspan="2" headers="th-one th-two">I'm a table without a caption!</td>
+		</tr>
+	</tbody>
 </table>
 ```
 */
 table:not([role="presentation"]) > caption:not(:first-child),
 table:not([role="presentation"]) > *:first-child:not(caption) {
-  @include warning('table-caption');
+	@include warning('table-caption');
 }
 
 
@@ -1162,26 +1163,26 @@ table > tbody ~ colgroup
 ### Test
 ``` html
 <table>
-  <caption>I'm a caption</caption>
-  <thead>
-    <tr>
-      <th scope="col">Where's my foot?</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>I'm a table with tfoot done wrong.</td>
-      <td>I'm a table with tfoot done wrong.</td>
-    </tr>
-    <tr>
-      <td>I'm a table with tfoot done wrong.</td>
-      <td>I'm a table with tfoot done wrong.</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <th id="th-1">I'm a table with tfoot done wrong.</th>
-    <th id="th-2">I'm a table with tfoot done wrong.</th>
-  </tfoot>
+	<caption>I'm a caption</caption>
+	<thead>
+		<tr>
+			<th scope="col">Where's my foot?</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>I'm a table with tfoot done wrong.</td>
+			<td>I'm a table with tfoot done wrong.</td>
+		</tr>
+		<tr>
+			<td>I'm a table with tfoot done wrong.</td>
+			<td>I'm a table with tfoot done wrong.</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<th id="th-1">I'm a table with tfoot done wrong.</th>
+		<th id="th-2">I'm a table with tfoot done wrong.</th>
+	</tfoot>
 </table>
 ```
 */
@@ -1191,7 +1192,7 @@ table > tbody ~ thead,
 table > tfoot ~ colgroup,
 table > tbody ~ colgroup,
 table > tbody ~ colgroup {
-  @include warning('table-structure');
+	@include warning('table-structure');
 }
 
 
@@ -1214,23 +1215,23 @@ table:not([role="presentation"]) > tbody:first-child
 ### Test
 ``` html
 <table>
-  <caption>Missing thead</caption>
-  <tbody>
-    <tr>
-      <td>I'm a table without thead.</td>
-      <td>I'm a table without thead.</td>
-    </tr>
-    <tr>
-      <td>I'm a table without thead.</td>
-      <td>I'm a table without thead.</td>
-    </tr>
-  </tbody>
+	<caption>Missing thead</caption>
+	<tbody>
+		<tr>
+			<td>I'm a table without thead.</td>
+			<td>I'm a table without thead.</td>
+		</tr>
+		<tr>
+			<td>I'm a table without thead.</td>
+			<td>I'm a table without thead.</td>
+		</tr>
+	</tbody>
 </table>
 ```
 */
 table:not([role="presentation"]) > caption + tbody,
 table:not([role="presentation"]) > tbody:first-child {
-  @include warning('missing-thead');
+	@include warning('missing-thead');
 }
 
 
@@ -1257,28 +1258,28 @@ th:not([scope], [id])
 ### Test
 ``` html
 <table>
-  <caption>Need for a [scope] or [id]</caption>
-  <thead>
-    <tr>
-      <th>I'm a th without [scope] or [id].</th>
-      <th scope="col">I'm a th with [scope].</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>I'm a td missing something.</td>
-      <td>I'm a td missing something.</td>
-    </tr>
-    <tr>
-      <td>I'm a td feeling well.</td>
-      <td>I'm a td feeling well.</td>
-    </tr>
-  </tbody>
+	<caption>Need for a [scope] or [id]</caption>
+	<thead>
+		<tr>
+			<th>I'm a th without [scope] or [id].</th>
+			<th scope="col">I'm a th with [scope].</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>I'm a td missing something.</td>
+			<td>I'm a td missing something.</td>
+		</tr>
+		<tr>
+			<td>I'm a td feeling well.</td>
+			<td>I'm a td feeling well.</td>
+		</tr>
+	</tbody>
 </table>
 ```
 */
 th:not([scope], [id]) {
-  @include warning('th-no-scope');
+	@include warning('th-no-scope');
 }
 
 
@@ -1318,7 +1319,7 @@ img[src*="spacer.gif"]:not([role="presentation"]),
 img[src*="dotclear.gif"]:not([role="presentation"]),
 img[src*="transparent.gif"]:not([role="presentation"]),
 img[src*="pixel-1x1-clear.gif"]:not([role="presentation"]) {
-  @include warning('spacer-gif', $self-closing: true);
+	@include warning('spacer-gif', $self-closing: true);
 }
 
 
@@ -1350,21 +1351,21 @@ Don't laugh, shit happens.
 [class*="NaN"],
 [class*="null"],
 [class*="undefined"] {
-  @include warning('undefined-class');
+	@include warning('undefined-class');
 
-  @include void-tags {
-    @include warning('undefined-class', $self-closing: true);
-  }
+	@include void-tags {
+		@include warning('undefined-class', $self-closing: true);
+	}
 }
 
 [id*="NaN"],
 [id*="null"],
 [id*="undefined"] {
-  @include warning('undefined-id');
+	@include warning('undefined-id');
 
-  @include void-tags {
-    @include warning('undefined-id', $self-closing: true);
-  }
+	@include void-tags {
+		@include warning('undefined-id', $self-closing: true);
+	}
 }
 
 /*doc
@@ -1393,7 +1394,7 @@ a[href^="javascript"]:not([role="button"])
 ```
 */
 a[href^="javascript"]:not([role="button"]) {
-  @include warning('href-js');
+	@include warning('href-js');
 }
 
 
@@ -1422,7 +1423,7 @@ a[href="#"]:not([role="button"])
 ```
 */
 a[href="#"]:not([role="button"]) {
-  @include warning('empty-href');
+	@include warning('empty-href');
 }
 
 
@@ -1453,11 +1454,11 @@ And no, JS shouldn't manipulate styles: it's better to play with classes, for ex
 ```
 */
 [style] {
-  @include warning('style-attr');
+	@include warning('style-attr');
 
-  @include void-tags {
-    @include warning('style-attr', $self-closing: true);
-  }
+	@include void-tags {
+		@include warning('style-attr', $self-closing: true);
+	}
 }
 
 
@@ -1491,7 +1492,7 @@ Though `[aria-level]` is not required by ARIA specification, it's actually bette
 ```
 */
 [role="heading"]:not([aria-level]) {
-  @include warning('no-aria-level');
+	@include warning('no-aria-level');
 }
 
 
@@ -1527,7 +1528,7 @@ label:not([for])
 ```
 */
 label:not([for]) {
-  @include warning('no-for');
+	@include warning('no-for');
 }
 
 
@@ -1567,5 +1568,5 @@ This also requires to check any in-page language change (marked up with `[lang]`
 [lang="ar"] [lang]:not([dir="ltr"]),
 [lang="he"] [lang]:not([dir="ltr"]),
 [dir="rtl"]:not([lang="ar"], [lang="he"]) {
-  @include warning('mismatched-dir');
+	@include warning('mismatched-dir');
 }

@@ -1,111 +1,111 @@
 {
-  "title": "a11y.css",
-  "name": "a11y.css",
-  "description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
-  "version": "5.2.2",
-  "style": "css/a11y-en.css",
-  "sass": "sass/a11y-en.scss",
-  "type": "module",
-  "author": {
-    "name": "Gaël Poupard",
-    "url": "https://www.ffoodd.fr",
-    "email": "gael+npm@ffoodd.fr"
-  },
-  "keywords": [
-    "a11y",
-    "accessibility",
-    "accessibility-checker",
-    "testing",
-    "css",
-    "sass",
-    "scss"
-  ],
-  "scripts": {
-    "start": "concurrently --kill-others \"npm:watch:*\"",
-    "docs": "npm run docs:js && npm run docs:css && eleventy",
-    "docs:debug": "DEBUG=Eleventy* eleventy",
-    "docs:lint": "link-checker ./docs/ --allow-hash-href --http-status-ignore 403 --url-ignore ['http://www.ffoodd.fr','tel:012345678']",
-    "docs:js": "uglifyjs site/assets/js/docs.js -o site/static/docs.js -c -m",
-    "docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano -m",
-    "watch:docs": "eleventy --serve",
-    "watch:docs:js": "nodemon --watch site/assets/js/ --ext js --exec \"npm run docs:js\"",
-    "watch:docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano -m -w",
-    "build": "sass sass/:css/ -c -s compressed --source-map --no-error-css",
-    "postbuild": "postcss css/*.css -r -u autoprefixer cssnano -m",
-    "watch:css": "sass sass/:css/ -c -s compressed --source-map --no-error-css -w",
-    "preversion": "npm run build",
-    "test": "stylelint \"./sass/**/*.scss\"",
-    "bundlewatch": "bundlewatch"
-  },
-  "license": "MIT",
-  "homepage": "https://ffoodd.github.io/a11y.css",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ffoodd/a11y.css"
-  },
-  "bugs": {
-    "url": "https://github.com/ffoodd/a11y.css/issues"
-  },
-  "browserslist": [
-    "last 1 versions"
-  ],
-  "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "autoprefixer": "^10.4.20",
-    "bundlewatch": "^0.4.0",
-    "concurrently": "^9.1.0",
-    "cssnano": "^7.0.6",
-    "front-matter": "^4.0.2",
-    "link-checker": "^1.4.2",
-    "nodemon": "^3.1.7",
-    "postcss": "^8.4.47",
-    "postcss-cli": "^11.0.0",
-    "prismjs": "^1.29.0",
-    "sass": "^1.54.8",
-    "showdown": "^2.1.0",
-    "stylelint": "^16.10.0",
-    "stylelint-config-recommended": "^14.0.1",
-    "stylelint-config-standard-scss": "^13.1.0",
-    "uglify-js": "^3.19.3"
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard-scss",
-    "rules": {
-      "no-invalid-position-at-import-rule": null,
-      "comment-whitespace-inside": null,
-      "color-function-notation": null,
-      "at-rule-empty-line-before": null,
-      "declaration-empty-line-before": null,
-      "comment-empty-line-before": null,
-      "no-duplicate-selectors": null,
-      "no-descending-specificity": null,
-      "selector-type-no-unknown": null,
-      "scss/no-global-function-names": null,
-      "scss/operator-no-newline-before": null,
-      "scss/dollar-variable-colon-space-after": null,
-      "scss/function-quote-no-quoted-strings-inside": null,
-      "scss/function-unquote-no-unquoted-strings-inside": null,
-      "scss/dollar-variable-empty-line-before": null
-    }
-  },
-  "bundlewatch": {
-    "files": [
-      {
-        "path": "./css/a11y-en_error.css",
-        "maxSize": "7.75 kB"
-      },
-      {
-        "path": "./css/a11y-en_warning.css",
-        "maxSize": "13.5 kB"
-      },
-      {
-        "path": "./css/a11y-en_obsolete.css",
-        "maxSize": "17 kB"
-      },
-      {
-        "path": "./css/a11y-en.css",
-        "maxSize": "20 kB"
-      }
-    ]
-  }
+	"title": "a11y.css",
+	"name": "a11y.css",
+	"description": "This file aims to warn front-end devs about mistakes and potential accessibility failures - but it also helps to rate client-side code and to spot its weaknesses.",
+	"version": "5.2.2",
+	"style": "css/a11y-en.css",
+	"sass": "sass/a11y-en.scss",
+	"type": "module",
+	"author": {
+		"name": "Gaël Poupard",
+		"url": "https://www.ffoodd.fr",
+		"email": "gael+npm@ffoodd.fr"
+	},
+	"keywords": [
+		"a11y",
+		"accessibility",
+		"accessibility-checker",
+		"testing",
+		"css",
+		"sass",
+		"scss"
+	],
+	"scripts": {
+		"start": "concurrently --kill-others \"npm:watch:*\"",
+		"docs": "npm run docs:js && npm run docs:css && eleventy",
+		"docs:debug": "DEBUG=Eleventy* eleventy",
+		"docs:lint": "link-checker ./docs/ --allow-hash-href --http-status-ignore 403 --url-ignore ['http://www.ffoodd.fr','tel:012345678']",
+		"docs:js": "uglifyjs site/assets/js/docs.js -o site/static/docs.js -c -m",
+		"docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano -m",
+		"watch:docs": "eleventy --serve",
+		"watch:docs:js": "nodemon --watch site/assets/js/ --ext js --exec \"npm run docs:js\"",
+		"watch:docs:css": "postcss site/assets/css/docs.css -d site/static/ -u autoprefixer cssnano -m -w",
+		"build": "sass sass/:css/ -c -s compressed --source-map --no-error-css",
+		"postbuild": "postcss css/*.css -r -u autoprefixer cssnano -m",
+		"watch:css": "sass sass/:css/ -c -s compressed --source-map --no-error-css -w",
+		"preversion": "npm run build",
+		"test": "stylelint \"./sass/**/*.scss\"",
+		"bundlewatch": "bundlewatch"
+	},
+	"license": "MIT",
+	"homepage": "https://ffoodd.github.io/a11y.css",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ffoodd/a11y.css"
+	},
+	"bugs": {
+		"url": "https://github.com/ffoodd/a11y.css/issues"
+	},
+	"browserslist": [
+		"last 1 versions"
+	],
+	"devDependencies": {
+		"@11ty/eleventy": "^3.0.0",
+		"autoprefixer": "^10.4.20",
+		"bundlewatch": "^0.4.0",
+		"concurrently": "^9.1.0",
+		"cssnano": "^7.0.6",
+		"front-matter": "^4.0.2",
+		"link-checker": "^1.4.2",
+		"nodemon": "^3.1.7",
+		"postcss": "^8.4.47",
+		"postcss-cli": "^11.0.0",
+		"prismjs": "^1.29.0",
+		"sass": "^1.54.8",
+		"showdown": "^2.1.0",
+		"stylelint": "^16.10.0",
+		"stylelint-config-recommended": "^14.0.1",
+		"stylelint-config-standard-scss": "^13.1.0",
+		"uglify-js": "^3.19.3"
+	},
+	"stylelint": {
+		"extends": "stylelint-config-standard-scss",
+		"rules": {
+			"no-invalid-position-at-import-rule": null,
+			"comment-whitespace-inside": null,
+			"color-function-notation": null,
+			"at-rule-empty-line-before": null,
+			"declaration-empty-line-before": null,
+			"comment-empty-line-before": null,
+			"no-duplicate-selectors": null,
+			"no-descending-specificity": null,
+			"selector-type-no-unknown": null,
+			"scss/no-global-function-names": null,
+			"scss/operator-no-newline-before": null,
+			"scss/dollar-variable-colon-space-after": null,
+			"scss/function-quote-no-quoted-strings-inside": null,
+			"scss/function-unquote-no-unquoted-strings-inside": null,
+			"scss/dollar-variable-empty-line-before": null
+		}
+	},
+	"bundlewatch": {
+		"files": [
+			{
+				"path": "./css/a11y-en_error.css",
+				"maxSize": "7.75 kB"
+			},
+			{
+				"path": "./css/a11y-en_warning.css",
+				"maxSize": "13.5 kB"
+			},
+			{
+				"path": "./css/a11y-en_obsolete.css",
+				"maxSize": "17 kB"
+			},
+			{
+				"path": "./css/a11y-en.css",
+				"maxSize": "20 kB"
+			}
+		]
+	}
 }

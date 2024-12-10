@@ -1,57 +1,59 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>{% block title %}{% endblock %} | a11y.css</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-          content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
-    <meta name="generator" content="{{ eleventy.generator }}">
-    <link rel="stylesheet" href="./static/docs.css?v={% version %}">
-    <link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
-    <link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    {% block css -%}{%- endblock -%}
-  </head>
-  <body>
-    <div class="sr-only-focusable" id="skip-links">
-      {% if title != 'a11y.css’ documentation' -%}<a href="#toc">Skip to table of content</a>{%- endif %}
-      <a href="#content">Skip to content</a>
-    </div>
-    {% include "partials/header.njk" %}
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}{% endblock %} | a11y.css</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		  content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
+	<meta name="generator" content="{{ eleventy.generator }}">
+	<link rel="stylesheet" href="./static/docs.css?v={% version %}">
+	<link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
+	<link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	{% block css -%}{%- endblock -%}
+</head>
+<body>
+<div class="sr-only-focusable" id="skip-links">
+	{% if title != 'a11y.css’ documentation' -%}<a href="#toc">Skip to table of content</a>{%- endif %}
+	<a href="#content">Skip to content</a>
+</div>
+{% include "partials/header.njk" %}
 
-    <aside role="complementary">
-      <div class="box">
-        <h3 class="box-title">Current release <code>{{ pkg.version }}</code></h3>
-      </div>
-      {% block sidebar %}{% endblock %}
+<aside role="complementary">
+	<div class="box">
+		<h3 class="box-title">Current release <code>{{ pkg.version }}</code></h3>
+	</div>
+	{% block sidebar %}{% endblock %}
 
-      <div class="box hidden-sm">
-        <h3 class="box-title">Web extensions</h3>
-        <ul class="list-unstyled">
-          <li>
-            <a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
-              <img src="./static/firefox.svg" width="112" height="42" alt="a11y.css Firefox add-on"/>
-            </a>
-          </li>
-          <li>
-            <a href="https://microsoftedge.microsoft.com/addons/detail/a11ycss/lkehmahcnhddkdaemngepjckgcjnidpe" title="a11y.css Edge add-on">
-              <img src="./static/edge.svg" width="112" height="42" alt="a11y.css Edge add-on"/>
-            </a>
-          </li>
-          <li>
-            <a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr" title="a11y.css Chrome extension">
-              <img src="./static/chrome.svg" width="119" height="42" alt="a11y.css Chrome extension"/>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </aside>
+	<div class="box hidden-sm">
+		<h3 class="box-title">Web extensions</h3>
+		<ul class="list-unstyled">
+			<li>
+				<a href="https://addons.mozilla.org/en-GB/firefox/addon/a11ycss/" title="a11y.css Firefox add-on">
+					<img src="./static/firefox.svg" width="112" height="42" alt="a11y.css Firefox add-on"/>
+				</a>
+			</li>
+			<li>
+				<a href="https://microsoftedge.microsoft.com/addons/detail/a11ycss/lkehmahcnhddkdaemngepjckgcjnidpe"
+				   title="a11y.css Edge add-on">
+					<img src="./static/edge.svg" width="112" height="42" alt="a11y.css Edge add-on"/>
+				</a>
+			</li>
+			<li>
+				<a href="https://chrome.google.com/webstore/detail/a11ycss/iolfinldndiiobhednboghogkiopppid?hl=fr"
+				   title="a11y.css Chrome extension">
+					<img src="./static/chrome.svg" width="119" height="42" alt="a11y.css Chrome extension"/>
+				</a>
+			</li>
+		</ul>
+	</div>
+</aside>
 
-    <main role="main" id="content" tabindex="-1">
-      {% block content %}{% endblock %}
-      {{ content | safe }}
-    </main>
-    {% include "partials/footer.njk" %}
-    <script src="./static/docs.js?v={% version %}"></script>
-  </body>
+<main role="main" id="content" tabindex="-1">
+	{% block content %}{% endblock %}
+	{{ content | safe }}
+</main>
+{% include "partials/footer.njk" %}
+<script src="./static/docs.js?v={% version %}"></script>
+</body>
 </html>
