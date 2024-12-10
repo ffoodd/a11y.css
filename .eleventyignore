@@ -1,2 +1,3 @@
 /site/assets/
 /site/static/*.html
+/site/static/css/.gitkeep

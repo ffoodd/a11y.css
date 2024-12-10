@@ -1,15 +1,43 @@
-.sass-cache
-node_modules
-.idea
-_site/
-site/_data/sass
-site/_data/sassdoc
-site/static/docs.css
-site/static/docs.js
-*.log
-.vscode
-.DS_Store
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# While working on 11ty refactor
-_site/
-src/
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.idea
+/.idea:*
+/.idea/*
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/*
+.history/*
+
+# misc
+/.sass-cache
+
+# System Files
+.DS_Store
+._*
+Thumbs.db
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.log
+*.rej
+
+# Compiled assets
+/site/_data/sass
+/site/_data/sassdoc
+/site/static/css/*.css
+/site/static/css/*.css.map
+/site/static/docs.js
+/docs/static/css/.gitkeep
+
+# Dist files
+/css/
