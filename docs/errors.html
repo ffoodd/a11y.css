@@ -7,7 +7,7 @@
 	<meta name="description"
 		  content="This CSS file intends to warn developers about possible risks and mistakes that exist in HTML code. It can also be used to roughly evaluate a site's quality by simply including it as an external stylesheet.">
 	<meta name="generator" content="Eleventy v3.0.0">
-	<link rel="stylesheet" href="./static/css/docs.css?v=1733840792332">
+	<link rel="stylesheet" href="./static/css/docs.css?v=1733844219346">
 	<link rel="shortcut icon" href="https://ffoodd.github.io/a11y.css/static/favicon.ico">
 	<link rel="preload" href="./static/fonts/firasans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 	<link rel="stylesheet" href="./static/css/a11y-en_errors-only.css"><link rel="stylesheet" href="./static/css/a11y-light.min.css">
@@ -794,7 +794,7 @@ table[role=<span class="token string">"presentation"</span>] [headers]
 				<h2 id="dimensions">[width] &amp; [height] attributes</h2>
 				<h3>Description</h3>
 <p><code>[width]</code> and <code>[height]</code> are presentation informations.
-Therefore it shouldn't be used in markup, except for <code>&lt;img&gt;</code>. Use CSS instead.</p>
+Therefore it shouldn't be used in markup, except for a few elements. Use CSS instead.</p>
 <h3>References</h3>
 <ul>
 <li><a href="https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#10">https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#10</a></li>
@@ -803,8 +803,8 @@ Therefore it shouldn't be used in markup, except for <code>&lt;img&gt;</code>. U
 <li><a href="https://www.w3.org/TR/WCAG22/#meaningful-sequence">https://www.w3.org/TR/WCAG22/#meaningful-sequence</a></li>
 </ul>
 <h3>Selector</h3>
-<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>img<span class="token punctuation">,</span> object<span class="token punctuation">,</span> embed<span class="token punctuation">,</span> svg<span class="token punctuation">,</span> canvas<span class="token punctuation">,</span> picture > source<span class="token punctuation">)</span>[width]<span class="token punctuation">,</span>
-<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>img<span class="token punctuation">,</span> object<span class="token punctuation">,</span> embed<span class="token punctuation">,</span> svg<span class="token punctuation">,</span> canvas<span class="token punctuation">,</span> picture > source<span class="token punctuation">)</span>[height]
+<div class="pre"><pre><code class="css language-css" data-language="CSS"><span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>img<span class="token punctuation">,</span> object<span class="token punctuation">,</span> embed<span class="token punctuation">,</span> svg<span class="token punctuation">,</span> canvas<span class="token punctuation">,</span> picture > source<span class="token punctuation">,</span> iframe<span class="token punctuation">)</span>[width]<span class="token punctuation">,</span>
+<span class="token punctuation">:</span><span class="token function">not</span><span class="token punctuation">(</span>img<span class="token punctuation">,</span> object<span class="token punctuation">,</span> embed<span class="token punctuation">,</span> svg<span class="token punctuation">,</span> canvas<span class="token punctuation">,</span> picture > source<span class="token punctuation">,</span> iframe<span class="token punctuation">)</span>[height]
 </code></pre></div>
 <h3>Test</h3>
 <div class="pre"><div><p width="20">Damned! I feel sooo strait :(</p>
@@ -1403,6 +1403,6 @@ progress progress
 	</div>
 </footer>
 
-<script src="./static/docs.js?v=1733840792333"></script>
+<script src="./static/docs.js?v=1733844219346"></script>
 </body>
 </html>

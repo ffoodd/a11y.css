@@ -867,7 +867,7 @@ category: Errors
 
 ### Description
 `[width]` and `[height]` are presentation informations.
-Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
+Therefore it shouldn't be used in markup, except for a few elements. Use CSS instead.
 
 ### References
 * <https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/#10>
@@ -877,8 +877,8 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 
 ### Selector
 ```css
-:not(img, object, embed, svg, canvas, picture > source)[width],
-:not(img, object, embed, svg, canvas, picture > source)[height]
+:not(img, object, embed, svg, canvas, picture > source, iframe)[width],
+:not(img, object, embed, svg, canvas, picture > source, iframe)[height]
 ```
 
 ### Test
@@ -886,11 +886,11 @@ Therefore it shouldn't be used in markup, except for `<img>`. Use CSS instead.
 <p width="20">Damned! I feel sooo strait :(</p>
 ```
 */
-:not(img, object, embed, svg, canvas, picture > source)[width],
-:not(img, object, embed, svg, canvas, picture > source)[height] {
+:not(img, object, embed, svg, canvas, picture > source, iframe)[width],
+:not(img, object, embed, svg, canvas, picture > source, iframe)[height] {
 	@include error('dimensions');
 
-	@include void-tags {
+	@at-root #{selector-unify($void-tags-dimensions, &)} {
 		@include error('dimensions', $self-closing: true);
 	}
 }
