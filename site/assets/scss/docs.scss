@@ -239,7 +239,7 @@ h2[id] {
 	font-size: var(--h2);
 	padding: 0 0 0 1.25ch;
 	position: relative;
-	width: max-content;
+	max-width: max-content;
 	z-index: 1;
 }
 
