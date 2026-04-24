@@ -30,14 +30,14 @@
 		"docs:debug": "DEBUG=Eleventy* eleventy",
 		"docs:lint": "link-checker ./docs/ --allow-hash-href --http-status-ignore 403 --url-ignore ['http://www.ffoodd.fr','tel:012345678']",
 		"docs:js": "uglifyjs site/assets/js/docs.js -o site/static/docs.js -c -m",
-		"docs:css": "sass site/assets/scss/:site/static/css/ -c -s compressed --source-map --no-error-css",
+		"docs:css": "sass site/assets/scss/:site/static/css/ -s compressed --no-error-css",
 		"postdocs:css": "postcss site/static/css/*.css -r -u autoprefixer cssnano -m",
 		"watch:docs": "eleventy --serve",
 		"watch:docs:js": "nodemon --watch site/assets/js/ --ext js --exec \"npm run docs:js\"",
-		"watch:docs:css": "sass site/assets/scss/:site/static/css/ -c -s compressed --source-map --no-error-css -w",
-		"build": "sass sass/:css/ -c -s compressed --source-map --no-error-css",
+		"watch:docs:css": "sass site/assets/scss/:site/static/css/ -s compressed --no-error-css -w",
+		"build": "sass sass/:css/ -s compressed --no-error-css",
 		"postbuild": "postcss css/*.css -r -u autoprefixer cssnano -m",
-		"watch:css": "sass sass/:css/ -c -s compressed --source-map --no-error-css -w",
+		"watch:css": "sass sass/:css/ -s compressed --no-error-css -w",
 		"preversion": "npm run build",
 		"test": "stylelint \"./sass/**/*.scss\"",
 		"bundlewatch": "bundlewatch"
@@ -55,20 +55,20 @@
 		"last 1 versions"
 	],
 	"devDependencies": {
-		"@11ty/eleventy": "^3.1.2",
-		"autoprefixer": "^10.4.24",
+		"@11ty/eleventy": "^3.1.5",
+		"autoprefixer": "^10.5.0",
 		"bundlewatch": "^0.4.0",
 		"concurrently": "^9.2.1",
-		"cssnano": "^7.1.2",
+		"cssnano": "^7.1.7",
 		"front-matter": "^4.0.2",
 		"link-checker": "^1.4.2",
-		"nodemon": "^3.1.11",
-		"postcss": "^8.5.6",
+		"nodemon": "^3.1.14",
+		"postcss": "^8.5.10",
 		"postcss-cli": "^11.0.1",
 		"prismjs": "^1.29.0",
-		"sass": "^1.54.8",
+		"sass": "1.78",
 		"showdown": "^2.1.0",
-		"stylelint": "^17.1.1",
+		"stylelint": "^17.9.0",
 		"stylelint-config-recommended": "^18.0.0",
 		"stylelint-config-standard-scss": "^17.0.0",
 		"uglify-js": "^3.19.3"
@@ -97,19 +97,19 @@
 		"files": [
 			{
 				"path": "./css/a11y-en_error.css",
-				"maxSize": "7.75 kB"
+				"maxSize": "7.5 kB"
 			},
 			{
 				"path": "./css/a11y-en_warning.css",
-				"maxSize": "13.5 kB"
+				"maxSize": "13.25 kB"
 			},
 			{
 				"path": "./css/a11y-en_obsolete.css",
-				"maxSize": "17 kB"
+				"maxSize": "16.75 kB"
 			},
 			{
 				"path": "./css/a11y-en.css",
-				"maxSize": "20 kB"
+				"maxSize": "19.75 kB"
 			}
 		]
 	}

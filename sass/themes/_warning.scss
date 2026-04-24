@@ -1,6 +1,3 @@
-@charset "UTF-8";
-
-
 /*doc
 ---
 title: "Invalid nesting in a list"
@@ -756,7 +753,7 @@ svg[aria-hidden="true"][aria-describedby],
 embed[type="image"][aria-hidden="true"][title],
 embed[type="image"][aria-hidden="true"][aria-label],
 embed[type="image"][aria-hidden="true"][aria-labelledby],
-embed[type="image"][aria-hidden="true"][aria-describedby], {
+embed[type="image"][aria-hidden="true"][aria-describedby] {
 	@include warning('decoration', $self-closing: true);
 }
 
@@ -969,10 +966,10 @@ body *:empty:not([hidden], [aria-hidden], [src], button, a, iframe, textarea, ar
  * @note Won't do anything for inline elements.
  */
 body *:empty:not([hidden], [aria-hidden], [src], button, a, iframe, textarea, area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr, title) {
-	@include warning('empty-nodes');
 	/* 1 */
 	min-height: 1px;
 	min-width: 1px;
+	@include warning('empty-nodes');
 }
 
 svg *:empty:not(title, desc, [hidden], [aria-hidden], [src], button, a, iframe, textarea, area, base, br, col, command, embed, hr, img, input, keygen, link, meta, param, source, track, wbr) {
