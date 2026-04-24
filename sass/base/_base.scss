@@ -18,7 +18,7 @@ body::after {
 	position: fixed;
 	width: auto;
 	white-space: pre;
-	z-index: 2147483647;
+	z-index: calc(infinity);
 }
 
 // In order to display messages in <head>
